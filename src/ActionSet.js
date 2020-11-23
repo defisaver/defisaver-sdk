@@ -6,12 +6,10 @@ class ActionSet {
   /**
    * @param name {String}
    * @param actions {Array<Action>}
-   * @param paramMappings {Array<Array<Number>>}
    */
-  constructor(name, actions = [], paramMappings = []) {
+  constructor(name, actions = []) {
     this.name = name;
     this.actions = actions;
-    this.paramMappings = paramMappings;
   }
 
   /**
