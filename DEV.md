@@ -2,14 +2,18 @@
 
 <dl>
 <dt><a href="#Action">Action</a> ℗</dt>
-<dd></dd>
+<dd><p>Single action that can be executed directly, or combined into a set (ie. supply a vault)</p>
+</dd>
 <dt><a href="#ActionSet">ActionSet</a> ℗</dt>
-<dd></dd>
+<dd><p>Set of Actions to be performed sequentially in a single transaction</p>
+</dd>
 </dl>
 
 <a name="Action"></a>
 
 ## Action ℗
+Single action that can be executed directly, or combined into a set (ie. supply a vault)
+
 **Kind**: global class  
 **Access**: private  
 
@@ -62,6 +66,8 @@ Encodes action for ActionSet call
 <a name="ActionSet"></a>
 
 ## ActionSet ℗
+Set of Actions to be performed sequentially in a single transaction
+
 **Kind**: global class  
 **Access**: private  
 

@@ -1,6 +1,6 @@
 /**
- * @private
  * Set of Actions to be performed sequentially in a single transaction
+ * @private
  */
 class ActionSet {
   /**

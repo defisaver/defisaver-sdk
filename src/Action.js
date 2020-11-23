@@ -2,8 +2,8 @@ const AbiCoder = require('web3-eth-abi');
 const Web3Utils = require('web3-utils');
 
 /**
- * @private
  * Single action that can be executed directly, or combined into a set (ie. supply a vault)
+ * @private
  */
 class Action {
   /**
