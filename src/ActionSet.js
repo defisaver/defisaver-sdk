@@ -1,3 +1,7 @@
+const AbiCoder = require('web3-eth-abi');
+
+const ActionSetAbi = require('./abis/ActionSet.json');
+
 /**
  * Set of Actions to be performed sequentially in a single transaction
  * @private
@@ -10,6 +14,7 @@ class ActionSet {
   constructor(name, actions = []) {
     this.name = name;
     this.actions = actions;
+    this.taskExecutorAddress = '0xdeadbeeddeadbeeddeadbeeddeadbeeddeadbeed';
   }
 
   /**
@@ -24,15 +29,23 @@ class ActionSet {
    */
   encodeForCall() {
     const encoded = this.actions.map(action => action.encodeForActionSet());
-    return encoded[0].map((_, colIndex) => encoded.map(row => row[colIndex]));
+    const transposed = encoded[0].map((_, colIndex) => encoded.map(row => row[colIndex]));
+    const taskStruct = [
+      this.name,
+      ...transposed,
+    ];
+    return [taskStruct]
   }
 
   /**
-   * TODO
    * @returns {Array<Array<*>>}
    */
   encodeForDsProxyCall() {
-    return [];
+    const executeTaskAbi = ActionSetAbi.find(({name}) => name === 'executeTask');
+    return [
+      this.taskExecutorAddress,
+      AbiCoder.encodeFunctionCall(executeTaskAbi, this.encodeForCall()),
+    ];
   }
 
   _validateParamMappings() {

@@ -41,12 +41,13 @@ class Action {
 
   /**
    * Encode arguments for calling the action directly
-   * @returns {Array<String>} bytes-encoded args
+   * @returns {Array<Array<String>>} bytes-encoded args
    */
   encodeForCall() {
-    return this.args
+    const bytesEncodedArgs = this.args
       .map(arg => new RegExp(/\$\d+/).test(arg) ? 0 : arg)
       .map((arg, i) => AbiCoder.encodeParameter(this.paramTypes[i], arg));
+    return [bytesEncodedArgs];
   }
 
   /**
@@ -57,7 +58,7 @@ class Action {
     const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
     return [
       this.contractAddress,
-      AbiCoder.encodeFunctionCall(executeActionDirectAbi, [this.encodeForCall()]),
+      AbiCoder.encodeFunctionCall(executeActionDirectAbi, this.encodeForCall()),
     ];
   }
 
@@ -67,9 +68,10 @@ class Action {
    */
   encodeForActionSet() {
     return [
-      this.getId(),
-      this.encodeForCall(),
-      this.getArgumentMapping(),
+      this.encodeForCall()[0],   // actionCallData
+      [],                        // subData
+      this.getId(),              // actionIds
+      this.getArgumentMapping(), // paramMappings
     ]
   }
 }
