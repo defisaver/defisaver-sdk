@@ -4,7 +4,7 @@
 <dt><a href="#Action">Action</a> ℗</dt>
 <dd><p>Single action that can be executed directly, or combined into a set (ie. supply a vault)</p>
 </dd>
-<dt><a href="#ActionSet">ActionSet</a> ℗</dt>
+<dt><a href="#ActionSet">ActionSet</a></dt>
 <dd><p>Set of Actions to be performed sequentially in a single transaction</p>
 </dd>
 </dl>
@@ -21,7 +21,7 @@ Single action that can be executed directly, or combined into a set (ie. supply 
     * [new Action(name, contractAddress, paramTypes, args)](#new_Action_new)
     * [.getId()](#Action+getId) ⇒ <code>String</code>
     * [.getArgumentMapping()](#Action+getArgumentMapping) ⇒ <code>Array.&lt;Number&gt;</code>
-    * [.encodeForCall()](#Action+encodeForCall) ⇒ <code>Array.&lt;String&gt;</code>
+    * [.encodeForCall()](#Action+encodeForCall) ⇒ <code>Array.&lt;Array.&lt;String&gt;&gt;</code>
     * [.encodeForDsProxyCall()](#Action+encodeForDsProxyCall) ⇒ <code>Array.&lt;String&gt;</code>
     * [.encodeForActionSet()](#Action+encodeForActionSet) ⇒ <code>Array.&lt;String&gt;</code>
 
@@ -45,18 +45,18 @@ Single action that can be executed directly, or combined into a set (ie. supply 
 **Kind**: instance method of [<code>Action</code>](#Action)  
 <a name="Action+encodeForCall"></a>
 
-### action.encodeForCall() ⇒ <code>Array.&lt;String&gt;</code>
+### action.encodeForCall() ⇒ <code>Array.&lt;Array.&lt;String&gt;&gt;</code>
 Encode arguments for calling the action directly
 
 **Kind**: instance method of [<code>Action</code>](#Action)  
-**Returns**: <code>Array.&lt;String&gt;</code> - bytes-encoded args  
+**Returns**: <code>Array.&lt;Array.&lt;String&gt;&gt;</code> - bytes-encoded args  
 <a name="Action+encodeForDsProxyCall"></a>
 
 ### action.encodeForDsProxyCall() ⇒ <code>Array.&lt;String&gt;</code>
-Encode arguments for calling the action directly via DSProxy
+Encode arguments for calling the action via DsProxy
 
 **Kind**: instance method of [<code>Action</code>](#Action)  
-**Returns**: <code>Array.&lt;String&gt;</code> - array to be passed on to DSProxy's `execute(address _target, bytes memory _data)`  
+**Returns**: <code>Array.&lt;String&gt;</code> - `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`  
 <a name="Action+encodeForActionSet"></a>
 
 ### action.encodeForActionSet() ⇒ <code>Array.&lt;String&gt;</code>
@@ -65,30 +65,29 @@ Encodes action for ActionSet call
 **Kind**: instance method of [<code>Action</code>](#Action)  
 <a name="ActionSet"></a>
 
-## ActionSet ℗
+## ActionSet
 Set of Actions to be performed sequentially in a single transaction
 
 **Kind**: global class  
-**Access**: private  
 
-* [ActionSet](#ActionSet) ℗
-    * [new ActionSet(name, actions, paramMappings)](#new_ActionSet_new)
-    * [.addAction(action)](#ActionSet+addAction)
-    * [.encodeForCall()](#ActionSet+encodeForCall) ⇒ <code>Array.&lt;Array.&lt;\*&gt;&gt;</code>
-    * [.encodeForDsProxyCall()](#ActionSet+encodeForDsProxyCall) ⇒ <code>Array.&lt;Array.&lt;\*&gt;&gt;</code>
+* [ActionSet](#ActionSet)
+    * [new ActionSet(name, actions)](#new_ActionSet_new)
+    * [.addAction(action)](#ActionSet+addAction) ⇒ [<code>ActionSet</code>](#ActionSet)
+    * [.encodeForCall()](#ActionSet+encodeForCall) ⇒ <code>Array.&lt;(String\|Array.&lt;\*&gt;)&gt;</code>
+    * [.encodeForDsProxyCall()](#ActionSet+encodeForDsProxyCall) ⇒ <code>Array.&lt;String&gt;</code>
+    * [._validateParamMappings()](#ActionSet+_validateParamMappings)
 
 <a name="new_ActionSet_new"></a>
 
-### new ActionSet(name, actions, paramMappings)
+### new ActionSet(name, actions)
 **Params**
 
 - name <code>String</code>
 - actions [<code>Array.&lt;Action&gt;</code>](#Action)
-- paramMappings <code>Array.&lt;Array.&lt;Number&gt;&gt;</code>
 
 <a name="ActionSet+addAction"></a>
 
-### actionSet.addAction(action)
+### actionSet.addAction(action) ⇒ [<code>ActionSet</code>](#ActionSet)
 **Kind**: instance method of [<code>ActionSet</code>](#ActionSet)  
 **Params**
 
@@ -96,11 +95,22 @@ Set of Actions to be performed sequentially in a single transaction
 
 <a name="ActionSet+encodeForCall"></a>
 
-### actionSet.encodeForCall() ⇒ <code>Array.&lt;Array.&lt;\*&gt;&gt;</code>
+### actionSet.encodeForCall() ⇒ <code>Array.&lt;(String\|Array.&lt;\*&gt;)&gt;</code>
+Encode arguments for calling the action set directly
+You most likely don't want to use this directly.
+Instead, you probably want to use `encodeForDsProxyCall`
+
 **Kind**: instance method of [<code>ActionSet</code>](#ActionSet)  
 <a name="ActionSet+encodeForDsProxyCall"></a>
 
-### actionSet.encodeForDsProxyCall() ⇒ <code>Array.&lt;Array.&lt;\*&gt;&gt;</code>
-TODO
+### actionSet.encodeForDsProxyCall() ⇒ <code>Array.&lt;String&gt;</code>
+Encode arguments for calling the action set via DsProxy
+
+**Kind**: instance method of [<code>ActionSet</code>](#ActionSet)  
+**Returns**: <code>Array.&lt;String&gt;</code> - `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`  
+<a name="ActionSet+_validateParamMappings"></a>
+
+### actionSet.\_validateParamMappings()
+Logs parameter mapping in verbose format for validation. Used for testing in development.
 
 **Kind**: instance method of [<code>ActionSet</code>](#ActionSet)  

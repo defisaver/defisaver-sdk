@@ -51,8 +51,8 @@ class Action {
   }
 
   /**
-   * Encode arguments for calling the action directly via DSProxy
-   * @returns {Array<String>} array to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
+   * Encode arguments for calling the action via DsProxy
+   * @returns {Array<String>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
     const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');

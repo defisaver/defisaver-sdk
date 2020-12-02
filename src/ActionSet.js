@@ -1,10 +1,10 @@
 const AbiCoder = require('web3-eth-abi');
 
+const Action = require('./Action');
 const ActionSetAbi = require('./abis/ActionSet.json');
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
- * @private
  */
 class ActionSet {
   /**
@@ -12,6 +12,10 @@ class ActionSet {
    * @param actions {Array<Action>}
    */
   constructor(name, actions = []) {
+    actions.forEach((action) => {
+      if (!action instanceof Action) throw new TypeError('Supplied action does not inherit Action');
+    });
+
     this.name = name;
     this.actions = actions;
     this.taskExecutorAddress = '0xdeadbeeddeadbeeddeadbeeddeadbeeddeadbeed';
@@ -19,13 +23,19 @@ class ActionSet {
 
   /**
    * @param action {Action}
+   * @returns {ActionSet}
    */
   addAction(action) {
+    if (!action instanceof Action) throw new TypeError('Supplied action does not inherit Action');
     this.actions.push(action);
+    return this;
   }
 
   /**
-   * @returns {Array<Array<*>>}
+   * Encode arguments for calling the action set directly
+   * You most likely don't want to use this directly.
+   * Instead, you probably want to use `encodeForDsProxyCall`
+   * @returns {Array<String|Array<*>>}
    */
   encodeForCall() {
     const encoded = this.actions.map(action => action.encodeForActionSet());
@@ -34,11 +44,12 @@ class ActionSet {
       this.name,
       ...transposed,
     ];
-    return [taskStruct]
+    return [taskStruct];
   }
 
   /**
-   * @returns {Array<Array<*>>}
+   * Encode arguments for calling the action set via DsProxy
+   * @returns {Array<String>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
     const executeTaskAbi = ActionSetAbi.find(({name}) => name === 'executeTask');
@@ -48,6 +59,9 @@ class ActionSet {
     ];
   }
 
+  /**
+   * Logs parameter mapping in verbose format for validation. Used for testing in development.
+   */
   _validateParamMappings() {
     this.actions.forEach((action, i) => {
       action.getArgumentMapping().forEach((source, j) => {
