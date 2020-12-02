@@ -4,6 +4,7 @@ const openMyVault = new dfs.actions.maker.MakerOpenVaultAction('0x2F0b23f5373425
 
 console.log(openMyVault);
 console.log(openMyVault.encodeForCall());
+console.log(openMyVault.encodeForDsProxyCall());
 
 const mockSet = new dfs.ActionSet(
   'MockTest',

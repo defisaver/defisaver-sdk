@@ -1,6 +1,8 @@
 const AbiCoder = require('web3-eth-abi');
 const Web3Utils = require('web3-utils');
 
+const ActionAbi = require('./abis/Action.json');
+
 /**
  * Single action that can be executed directly, or combined into a set (ie. supply a vault)
  * @private
@@ -15,7 +17,7 @@ class Action {
   constructor(name, contractAddress, paramTypes, args) {
     // if (new.target === Action) throw new TypeError("Actions are instantiated using derived classes");
 
-    if (paramTypes.length !== args.length) throw new Error('Parameters/arguments length mismatch on executeActionDirect')
+    if (paramTypes.length !== args.length) throw new Error('Parameters/arguments length mismatch')
 
     this.contractAddress = contractAddress;
     this.paramTypes = paramTypes;
@@ -52,9 +54,10 @@ class Action {
    * @returns {Array<String>} array to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
+    const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
     return [
       this.contractAddress,
-      AbiCoder.encodeParameter('bytes', this.encodeForCall()),
+      AbiCoder.encodeFunctionCall(executeActionDirectAbi, [this.encodeForCall()]),
     ];
   }
 
