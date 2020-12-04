@@ -1,7 +1,7 @@
 ## Classes
 
 <dl>
-<dt><a href="#Action">Action</a> ℗</dt>
+<dt><a href="#Action">Action</a></dt>
 <dd><p>Single action that can be executed directly, or combined into a set (ie. supply a vault)</p>
 </dd>
 <dt><a href="#ActionSet">ActionSet</a></dt>
@@ -11,13 +11,12 @@
 
 <a name="Action"></a>
 
-## Action ℗
+## Action
 Single action that can be executed directly, or combined into a set (ie. supply a vault)
 
 **Kind**: global class  
-**Access**: private  
 
-* [Action](#Action) ℗
+* [Action](#Action)
     * [new Action(name, contractAddress, paramTypes, args)](#new_Action_new)
     * [.getId()](#Action+getId) ⇒ <code>String</code>
     * [.getArgumentMapping()](#Action+getArgumentMapping) ⇒ <code>Array.&lt;Number&gt;</code>

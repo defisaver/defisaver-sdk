@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devDocument": "jsdoc2md -p list --files src/**.js --private > DEV.md",
+    "devDocument": "jsdoc2md -p list --files src/**.js > DEV.md",
     "document": "jsdoc2md -p list --files src/actions/**/**.js > README.md"
   },
   "author": "",
