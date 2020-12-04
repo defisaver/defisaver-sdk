@@ -18,8 +18,6 @@ Single action that can be executed directly, or combined into a set (ie. supply 
 
 * [Action](#Action)
     * [new Action(name, contractAddress, paramTypes, args)](#new_Action_new)
-    * [.getId()](#Action+getId) ⇒ <code>String</code>
-    * [.getArgumentMapping()](#Action+getArgumentMapping) ⇒ <code>Array.&lt;Number&gt;</code>
     * [.encodeForCall()](#Action+encodeForCall) ⇒ <code>Array.&lt;Array.&lt;String&gt;&gt;</code>
     * [.encodeForDsProxyCall()](#Action+encodeForDsProxyCall) ⇒ <code>Array.&lt;String&gt;</code>
     * [.encodeForActionSet()](#Action+encodeForActionSet) ⇒ <code>Array.&lt;String&gt;</code>
@@ -34,14 +32,6 @@ Single action that can be executed directly, or combined into a set (ie. supply 
 - paramTypes <code>Array.&lt;String&gt;</code>
 - args <code>Array.&lt;\*&gt;</code>
 
-<a name="Action+getId"></a>
-
-### action.getId() ⇒ <code>String</code>
-**Kind**: instance method of [<code>Action</code>](#Action)  
-<a name="Action+getArgumentMapping"></a>
-
-### action.getArgumentMapping() ⇒ <code>Array.&lt;Number&gt;</code>
-**Kind**: instance method of [<code>Action</code>](#Action)  
 <a name="Action+encodeForCall"></a>
 
 ### action.encodeForCall() ⇒ <code>Array.&lt;Array.&lt;String&gt;&gt;</code>

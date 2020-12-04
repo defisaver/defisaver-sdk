@@ -22,21 +22,29 @@ class Action {
     this.paramTypes = paramTypes;
     this.name = name;
     this.args = args;
-    this.mappableArgs = args;
+    this.mappableArgs = args; // TODO change to class method
   }
 
   /**
    * @returns {String}
+   * @private
    */
-  getId() {
+  _getId() {
     return Web3Utils.keccak256(this.name);
   }
 
   /**
    * @returns {Array<Number>}
+   * @private
    */
-  getArgumentMapping() {
-    return this.mappableArgs.map(arg => new RegExp(/\$\d+/).test(arg) ? parseInt(arg.substr(1)) : 0);
+  _getArgumentMapping() {
+    return this.mappableArgs.map(arg => {
+      if (new RegExp(/\$\d+/).test(arg)) {
+        if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
+        return parseInt(arg.substr(1))
+      }
+      return 0;
+    });
   }
 
   /**
@@ -102,8 +110,8 @@ class Action {
     return [
       this.encodeForCall()[0],   // actionCallData
       [],                        // subData
-      this.getId(),              // actionIds
-      this.getArgumentMapping(), // paramMappings
+      this._getId(),              // actionIds
+      this._getArgumentMapping(), // paramMappings
     ]
   }
 }
