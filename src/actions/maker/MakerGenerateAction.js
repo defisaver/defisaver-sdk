@@ -9,7 +9,7 @@ class MakerGenerateAction extends Action {
    * @param amount {String}
    * @param to {String}
    */
-  constructor(joinAddr) {
+  constructor(vaultId, amount, to) {
     super('McdGenerate', '0x0', ['uint256','uint256','address'], [...arguments]);
   }
 }
