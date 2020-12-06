@@ -11,7 +11,7 @@ class MakerWithdrawAction extends Action {
    * @param to {String}
    */
   constructor(vaultId, amount, joinAddr, to) {
-    super('MakerWithdraw', '0x0', ['uint256','uint256','address','address'], [...arguments]);
+    super('McdWithdraw', '0x0', ['uint256','uint256','address','address'], [...arguments]);
   }
 }
 
