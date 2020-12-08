@@ -8,7 +8,7 @@ class MakerOpenVaultAction extends Action {
    * @param joinAddr {String}
    */
   constructor(joinAddr) {
-    super('MCDOpen', '0xdeadbeeddeadbeeddeadbeeddeadbeeddeadbeed', ['address'], [...arguments]);
+    super('McdOpen', '0xdeadbeeddeadbeeddeadbeeddeadbeeddeadbeed', ['address'], [...arguments]);
   }
 }
 
