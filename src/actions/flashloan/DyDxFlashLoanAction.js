@@ -9,7 +9,7 @@ class DyDxFlashLoanAction extends Action {
    * @param tokenAddr {String}
    */
   constructor(loanAmount, tokenAddr) {
-    super('FLDyDx', '0x0', ['uint256','address'], [...arguments]);
+    super('FLDyDx', '0x0', ['uint256','address', 'uint256'], [loanAmount, tokenAddr, 0]);
   }
 }
 
