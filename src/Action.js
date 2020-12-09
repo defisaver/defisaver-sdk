@@ -99,7 +99,7 @@ class Action {
   /**
    * @param recipeBalance
    * @param returnValues
-   * @returns {{returnValue: String, recipeBalance: Object}}
+   * @returns {Promise<{returnValue: String, recipeBalance: Object}>}
    */
   async getAfterValues(recipeBalance = {}, returnValues = []) {
     return {

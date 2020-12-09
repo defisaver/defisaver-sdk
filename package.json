@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "decimal.js": "^10.2.1",
+    "defisaver-tokens": "git+ssh://git@github.com/DecenterApps/defisaver-tokens.git",
     "web3-eth-abi": "^1.3.0",
     "web3-utils": "^1.3.0"
   },
