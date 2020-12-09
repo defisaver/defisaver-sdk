@@ -73,12 +73,18 @@ class ActionSet {
   async afterValues() {
     let recipeBalance = {};
     const returnValues = [];
+    const actionCalls = [];
     for (const action of recipe.actions) {
       const res = await action.getAfterValues(recipeBalance, returnValues);
       recipeBalance = res.recipeBalance;
       returnValues.push(res.returnValue);
+      actionCalls.push({
+        args: action.mapReturnValuesToArgs(returnValues),
+        returnValue: res.returnValue,
+        balanceAfter: { ...recipeBalance },
+      })
     }
-    return {recipeBalance, returnValues};
+    return {recipeBalance, returnValues, actionCalls};
   }
 }
 
