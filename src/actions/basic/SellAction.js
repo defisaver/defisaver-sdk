@@ -32,7 +32,7 @@ class SellAction extends Action {
     ];
   }
 
-  getArgsFromReturnVals(returnValues) {
+  mapReturnValuesToArgs(returnValues) {
     const _args = this.args;
     if (new RegExp(/\$\d+/).test(_args[0][0])) _args[0][0] = returnValues[parseInt(_args[0][0].substr(1)) - 1];
     if (new RegExp(/\$\d+/).test(_args[0][1])) _args[0][1] = returnValues[parseInt(_args[0][1].substr(1)) - 1];

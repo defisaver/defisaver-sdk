@@ -41,10 +41,12 @@ class Action {
   }
 
   /**
-   * @returns {Array<*>}
+   * To be used from Action.getAfterValues when calculating after values for the whole recipe
+   * @param returnValues {Array<*>} Array of values that previous Actions in Recipe have returned
+   * @returns {Array<*>} Actual arguments that will be used when calling this Action
    * @private
    */
-  getArgsFromReturnVals(returnValues) {
+  mapReturnValuesToArgs(returnValues) {
     return [...this.args].map((arg, ) => {
       if (new RegExp(/\$\d+/).test(arg)) return returnValues[parseInt(arg.substr(1)) - 1];
       return arg;
