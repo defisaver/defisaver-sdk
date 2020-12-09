@@ -1,6 +1,5 @@
 const dfs = require('../index.js');
 const {encodeForCall, encodeForDsProxyCall} = require('./_actionSetUtils');
-const { expect } = require('chai');
 
 describe('ActionSet', () => {
 
@@ -50,7 +49,7 @@ describe('ActionSet', () => {
         ],
       );
       const action = new dfs.Action('MockSwap', '0x0', [['uint256', 'uint256'], 'address'], [[1, '$1'], '0x2F0b23f53734252Bda2277357e97e1517d6B042A']);
-      action.mappableArgs = [action.args[0][1], action.args[1]];
+      action._getMappableArgs = () => [action.args[0][1], action.args[1]];
       set.addAction(action);
     })
 

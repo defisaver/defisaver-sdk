@@ -69,6 +69,17 @@ class ActionSet {
       })
     });
   }
+
+  async afterValues() {
+    let recipeBalance = {};
+    const returnValues = [];
+    for (const action of recipe.actions) {
+      const res = await action.getAfterValues(recipeBalance, returnValues);
+      recipeBalance = res.recipeBalance;
+      returnValues.push(res.returnValue);
+    }
+    return {recipeBalance, returnValues};
+  }
 }
 
 module.exports = ActionSet;

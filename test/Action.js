@@ -54,11 +54,11 @@ describe('Action', () => {
     })
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
-    it('encodeForActionSet with incorrect mappableArgs throws', () => {
+    it('encodeForActionSet with incorrect _getMappableArgs() throws', () => {
       expect(() => encodeForActionSet(action)).to.throw();
     });
-    it('encodeForActionSet with custom mappableArgs', () => {
-      action.mappableArgs = [action.args[0][0], action.args[1]];
+    it('encodeForActionSet with custom _getMappableArgs()', () => {
+      action._getMappableArgs = () => [action.args[0][0], action.args[1]];
       encodeForActionSet(action)
     });
   })

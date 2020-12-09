@@ -22,7 +22,6 @@ class Action {
     this.paramTypes = paramTypes;
     this.name = name;
     this.args = args;
-    this.mappableArgs = args; // TODO change to class method
   }
 
   /**
@@ -34,13 +33,32 @@ class Action {
   }
 
   /**
+   * @returns {Array<*>}
+   * @private
+   */
+  _getMappableArgs() {
+    return this.args;
+  }
+
+  /**
+   * @returns {Array<*>}
+   * @private
+   */
+  getArgsFromReturnVals(returnValues) {
+    return [...this.args].map((arg, ) => {
+      if (new RegExp(/\$\d+/).test(arg)) return returnValues[parseInt(arg.substr(1)) - 1];
+      return arg;
+    })
+  }
+
+  /**
    * @returns {Array<Number>}
    * @private
    */
   _getArgumentMapping() {
-    return this.mappableArgs.map(arg => {
+    return this._getMappableArgs().map(arg => {
       if (new RegExp(/\$\d+/).test(arg)) {
-        if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
+        if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Override `_getMappableArgs` function in constructor.');
         return parseInt(arg.substr(1))
       }
       return 0;
@@ -74,6 +92,18 @@ class Action {
   _formatType(paramType) {
     if (Array.isArray(paramType)) return `(${paramType.map((_paramType) => this._formatType(_paramType))})`;
     return paramType;
+  }
+
+  /**
+   * @param recipeBalance
+   * @param returnValues
+   * @returns {{returnValue: String, recipeBalance: Object}}
+   */
+  async getAfterValues(recipeBalance = {}, returnValues = []) {
+    return {
+      recipeBalance,
+      returnValue: '0',
+    }
   }
 
   /**

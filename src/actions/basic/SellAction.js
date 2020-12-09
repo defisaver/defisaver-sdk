@@ -20,14 +20,26 @@ class SellAction extends Action {
       ],
       [...arguments]
     );
+  }
 
-    this.mappableArgs = [
+  _getMappableArgs() {
+    return [
       this.args[0][0],
       this.args[0][1],
       this.args[0][2],
       this.args[1],
       this.args[2],
     ];
+  }
+
+  getArgsFromReturnVals(returnValues) {
+    const _args = this.args;
+    if (new RegExp(/\$\d+/).test(_args[0][0])) _args[0][0] = returnValues[parseInt(_args[0][0].substr(1)) - 1];
+    if (new RegExp(/\$\d+/).test(_args[0][1])) _args[0][1] = returnValues[parseInt(_args[0][1].substr(1)) - 1];
+    if (new RegExp(/\$\d+/).test(_args[0][2])) _args[0][2] = returnValues[parseInt(_args[0][2].substr(1)) - 1];
+    if (new RegExp(/\$\d+/).test(_args[1])) _args[1] = returnValues[parseInt(_args[1].substr(1)) - 1];
+    if (new RegExp(/\$\d+/).test(_args[2])) _args[2] = returnValues[parseInt(_args[2].substr(1)) - 1];
+    return _args;
   }
 }
 
