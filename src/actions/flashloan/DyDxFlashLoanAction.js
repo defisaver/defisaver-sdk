@@ -22,7 +22,7 @@ class DyDxFlashLoanAction extends Action {
     recipeBalance[`dydx_${asset}`] = new Dec(recipeBalance[`dydx_${asset}`] || 0).plus(amount).toString();
     return {
       recipeBalance,
-      returnValue: amount,
+      returnValue: this.args[0],
     };
   }
 }
