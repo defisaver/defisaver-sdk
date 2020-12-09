@@ -18,8 +18,8 @@ class DyDxFlashLoanAction extends Action {
     const asset = getAssetInfoByAddress(this.args[1]).symbol;
     const amount = assetAmountInEth(this.args[0], asset);
     const recipeBalance = { ..._recipeBalance };
-    recipeBalance[asset] = new Dec(recipeBalance[asset] || 0).minus(amount).toString();
-    recipeBalance[`dydx_${asset}`] = new Dec(recipeBalance[`dydx_${asset}`] || 0).plus(amount).toString();
+    recipeBalance[asset] = new Dec(recipeBalance[asset] || 0).plus(amount).toString();
+    recipeBalance[`dydx_${asset}`] = new Dec(recipeBalance[`dydx_${asset}`] || 0).minus(amount).toString();
     return {
       recipeBalance,
       returnValue: this.args[0],
