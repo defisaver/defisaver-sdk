@@ -1,0 +1,16 @@
+const Action = require("../../Action");
+
+/**
+ * CompoundPaybackAction - Payback borrowed tokens from Compound
+ */
+class CompoundPaybackAction extends Action {
+  /**
+   * @param tokenAddr {String}
+   * @param amount {String}
+   */
+  constructor(tokenAddr, amount) {
+    super('CompPayback', '0x0', ['address','uint256'], [...arguments]);
+  }
+}
+
+module.exports = CompoundPaybackAction;
