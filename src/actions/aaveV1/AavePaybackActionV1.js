@@ -5,12 +5,13 @@ const Action = require("../../Action");
  */
 class AavePaybackActionV1 extends Action {
   /**
-   * @param tokenAddr {String}
+   * @param tokenAddr {address}
    * @param amount {String}
-   * @param from {String}
+   * @param from {address}
+   * @param onBehalf {address}
    */
-  constructor(tokenAddr, amount, from) {
-    super('AavePaybackV1', '0x0', ['address','uint256','address'], [...arguments]);
+  constructor(tokenAddr, amount, from, onBehalf) {
+    super('AavePaybackV1', '0x0', ['address','uint256','address', 'address'], [...arguments]);
   }
 }
 
