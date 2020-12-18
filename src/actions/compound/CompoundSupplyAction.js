@@ -10,7 +10,7 @@ class CompoundSupplyAction extends Action {
    * @param from {String}
    */
   constructor(tokenAddr, amount, from) {
-    super('CompSupply', '0x0', [,'address','uint256','address'], [...arguments]);
+    super('CompSupply', '0x0', ['address','uint256','address'], [...arguments]);
   }
 }
 
