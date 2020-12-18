@@ -13,8 +13,8 @@ class AaveCustomFlashLoanV2Action extends Action {
     super(
       'FLCustomAaveV2',
       '0x0',
-      ['address', 'address', 'bytes'],
-      [viewer, loanPayer, viewerData]
+      ['address', 'address', 'bytes', 'uint256'],
+      [viewer, loanPayer, viewerData, 0]
     );
   }
 }
