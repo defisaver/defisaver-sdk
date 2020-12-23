@@ -1,14 +1,19 @@
 const Action = require("../../Action");
 
+const {
+  MCD_MONITOR_ADDR,
+} = require("../../constants");
+
 /**
- * Test
+ * MakerOpenVaultAction
  */
 class MakerOpenVaultAction extends Action {
   /**
    * @param joinAddr {String}
+   * @param mcdManager {String}
    */
-  constructor(joinAddr) {
-    super('McdOpen', '0xdeadbeeddeadbeeddeadbeeddeadbeeddeadbeed', ['address'], [...arguments]);
+  constructor(joinAddr, mcdManager = MCD_MONITOR_ADDR) {
+    super('McdOpen', '0xdeadbeeddeadbeeddeadbeeddeadbeeddeadbeed', ['address','address'], [...arguments]);
   }
 }
 
