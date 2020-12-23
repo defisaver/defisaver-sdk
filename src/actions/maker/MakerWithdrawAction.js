@@ -1,8 +1,5 @@
 const Action = require("../../Action");
 
-const {
-  MCD_MONITOR_ADDR,
-} = require("../../constants");
 
 /**
  * MakerWithdrawAction - Withdraw token from a Vault
@@ -15,7 +12,7 @@ class MakerWithdrawAction extends Action {
    * @param to {String}
    * @param mcdManager {String}
    */
-  constructor(vaultId, amount, joinAddr, to, mcdManager = MCD_MONITOR_ADDR) {
+  constructor(vaultId, amount, joinAddr, to, mcdManager) {
     super('McdWithdraw', '0x0', ['uint256','uint256','address','address','address'], [...arguments]);
   }
 }

@@ -1,6 +1,0 @@
-
-const MCD_MONITOR_ADDR = '0x5ef30b9986345249bc32d8928B7ee64DE9435E39';
-
-module.exports = {
-  MCD_MONITOR_ADDR,
-};
