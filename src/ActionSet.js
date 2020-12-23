@@ -18,7 +18,7 @@ class ActionSet {
 
     this.name = name;
     this.actions = actions;
-    this.taskExecutorAddress = '0xdeadbeeddeadbeeddeadbeeddeadbeeddeadbeed';
+    this.taskExecutorAddress = '0xb487e3829c510960d3f98983431227d4a05a3ac9';
   }
 
   /**

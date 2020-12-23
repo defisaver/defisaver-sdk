@@ -13,7 +13,7 @@ class MakerSupplyAction extends Action {
    * @param mcdManager {String}
    */
   constructor(vaultId, amount, joinAddr, from, mcdManager) {
-    super('McdSupply', '0x0', ['uint256','uint256','address','address','address'], [...arguments]);
+    super('McdSupply', '0x0bCF4f9325D89DC504585D44BB819Df4b153Abf6', ['uint256','uint256','address','address','address'], [...arguments]);
   }
 }
 
