@@ -1,5 +1,6 @@
 const dfs = require('../../../index.js');
-const {encodeForCall, encodeForDsProxyCall, encodeForActionSet} = require('../../_actionUtils');
+const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
+const {assert} = require('chai');
 
 describe('Action: Sell', () => {
   let action;
@@ -14,7 +15,17 @@ describe('Action: Sell', () => {
     })
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
-    it('encodeForActionSet', () => encodeForActionSet(action));
+    it('encodeForRecipe', () => encodeForRecipe(action));
+    it('getAssetsToApprove', async () => {
+      const assetOwnerPairs = await action.getAssetsToApprove();
+      assert.lengthOf(assetOwnerPairs, 1);
+      assert.equal(assetOwnerPairs[0].asset, '0x6b175474e89094c44da98b954eedeac495271d0f');
+      assert.equal(assetOwnerPairs[0].owner, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
+    })
+    it('getEthValue', async () => {
+      const ethValue = await action.getEthValue();
+      assert.equal(ethValue, '0');
+    })
   })
 
   context('With param mappings inside tuple', () => {
@@ -27,6 +38,12 @@ describe('Action: Sell', () => {
     })
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
-    it('encodeForActionSet', () => encodeForActionSet(action));
+    it('encodeForRecipe', () => encodeForRecipe(action));
+  })
+
+  context('Get assets to approve', async () => {
+    const assetOwnerPairs = await action.getAssetsToApprove();
+    assert.lengthOf(assetOwnerPairs, 1);
+    assert.equal(assetOwnerPairs[0].asset, 1);
   })
 })

@@ -4,7 +4,7 @@
 <dt><a href="#Action">Action</a></dt>
 <dd><p>Single action that can be executed directly, or combined into a set (ie. supply a vault)</p>
 </dd>
-<dt><a href="#ActionSet">ActionSet</a></dt>
+<dt><a href="#Recipe">Recipe</a></dt>
 <dd><p>Set of Actions to be performed sequentially in a single transaction</p>
 </dd>
 </dl>
@@ -20,7 +20,9 @@ Single action that can be executed directly, or combined into a set (ie. supply 
     * [new Action(name, contractAddress, paramTypes, args)](#new_Action_new)
     * [.encodeForCall()](#Action+encodeForCall) ⇒ <code>Array.&lt;Array.&lt;String&gt;&gt;</code>
     * [.encodeForDsProxyCall()](#Action+encodeForDsProxyCall) ⇒ <code>Array.&lt;String&gt;</code>
-    * [.encodeForActionSet()](#Action+encodeForActionSet) ⇒ <code>Array.&lt;String&gt;</code>
+    * [.encodeForRecipe()](#Action+encodeForRecipe) ⇒ <code>Array.&lt;String&gt;</code>
+    * [.getAssetsToApprove()](#Action+getAssetsToApprove) ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
+    * [.getEthValue()](#Action+getEthValue) ⇒ <code>Promise.&lt;String&gt;</code>
 
 <a name="new_Action_new"></a>
 
@@ -46,60 +48,74 @@ Encode arguments for calling the action via DsProxy
 
 **Kind**: instance method of [<code>Action</code>](#Action)  
 **Returns**: <code>Array.&lt;String&gt;</code> - `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`  
-<a name="Action+encodeForActionSet"></a>
+<a name="Action+encodeForRecipe"></a>
 
-### action.encodeForActionSet() ⇒ <code>Array.&lt;String&gt;</code>
-Encodes action for ActionSet call
+### action.encodeForRecipe() ⇒ <code>Array.&lt;String&gt;</code>
+Encodes action for Recipe call
 
 **Kind**: instance method of [<code>Action</code>](#Action)  
-<a name="ActionSet"></a>
+<a name="Action+getAssetsToApprove"></a>
 
-## ActionSet
+### action.getAssetsToApprove() ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
+Assets requiring approval to be used by DsProxy
+Approval is done from owner to DsProxy
+
+**Kind**: instance method of [<code>Action</code>](#Action)  
+<a name="Action+getEthValue"></a>
+
+### action.getEthValue() ⇒ <code>Promise.&lt;String&gt;</code>
+ETH value to be sent with transaction
+
+**Kind**: instance method of [<code>Action</code>](#Action)  
+**Returns**: <code>Promise.&lt;String&gt;</code> - ETH value in wei  
+<a name="Recipe"></a>
+
+## Recipe
 Set of Actions to be performed sequentially in a single transaction
 
 **Kind**: global class  
 
-* [ActionSet](#ActionSet)
-    * [new ActionSet(name, actions)](#new_ActionSet_new)
-    * [.addAction(action)](#ActionSet+addAction) ⇒ [<code>ActionSet</code>](#ActionSet)
-    * [.encodeForCall()](#ActionSet+encodeForCall) ⇒ <code>Array.&lt;(String\|Array.&lt;\*&gt;)&gt;</code>
-    * [.encodeForDsProxyCall()](#ActionSet+encodeForDsProxyCall) ⇒ <code>Array.&lt;String&gt;</code>
-    * [._validateParamMappings()](#ActionSet+_validateParamMappings)
+* [Recipe](#Recipe)
+    * [new Recipe(name, actions)](#new_Recipe_new)
+    * [.addAction(action)](#Recipe+addAction) ⇒ [<code>Recipe</code>](#Recipe)
+    * [.encodeForCall()](#Recipe+encodeForCall) ⇒ <code>Array.&lt;(String\|Array.&lt;\*&gt;)&gt;</code>
+    * [.encodeForDsProxyCall()](#Recipe+encodeForDsProxyCall) ⇒ <code>Array.&lt;String&gt;</code>
+    * [._validateParamMappings()](#Recipe+_validateParamMappings)
 
-<a name="new_ActionSet_new"></a>
+<a name="new_Recipe_new"></a>
 
-### new ActionSet(name, actions)
+### new Recipe(name, actions)
 **Params**
 
 - name <code>String</code>
 - actions [<code>Array.&lt;Action&gt;</code>](#Action)
 
-<a name="ActionSet+addAction"></a>
+<a name="Recipe+addAction"></a>
 
-### actionSet.addAction(action) ⇒ [<code>ActionSet</code>](#ActionSet)
-**Kind**: instance method of [<code>ActionSet</code>](#ActionSet)  
+### recipe.addAction(action) ⇒ [<code>Recipe</code>](#Recipe)
+**Kind**: instance method of [<code>Recipe</code>](#Recipe)  
 **Params**
 
 - action [<code>Action</code>](#Action)
 
-<a name="ActionSet+encodeForCall"></a>
+<a name="Recipe+encodeForCall"></a>
 
-### actionSet.encodeForCall() ⇒ <code>Array.&lt;(String\|Array.&lt;\*&gt;)&gt;</code>
+### recipe.encodeForCall() ⇒ <code>Array.&lt;(String\|Array.&lt;\*&gt;)&gt;</code>
 Encode arguments for calling the action set directly
 You most likely don't want to use this directly.
 Instead, you probably want to use `encodeForDsProxyCall`
 
-**Kind**: instance method of [<code>ActionSet</code>](#ActionSet)  
-<a name="ActionSet+encodeForDsProxyCall"></a>
+**Kind**: instance method of [<code>Recipe</code>](#Recipe)  
+<a name="Recipe+encodeForDsProxyCall"></a>
 
-### actionSet.encodeForDsProxyCall() ⇒ <code>Array.&lt;String&gt;</code>
+### recipe.encodeForDsProxyCall() ⇒ <code>Array.&lt;String&gt;</code>
 Encode arguments for calling the action set via DsProxy
 
-**Kind**: instance method of [<code>ActionSet</code>](#ActionSet)  
+**Kind**: instance method of [<code>Recipe</code>](#Recipe)  
 **Returns**: <code>Array.&lt;String&gt;</code> - `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`  
-<a name="ActionSet+_validateParamMappings"></a>
+<a name="Recipe+_validateParamMappings"></a>
 
-### actionSet.\_validateParamMappings()
+### recipe.\_validateParamMappings()
 Logs parameter mapping in verbose format for validation. Used for testing in development.
 
-**Kind**: instance method of [<code>ActionSet</code>](#ActionSet)  
+**Kind**: instance method of [<code>Recipe</code>](#Recipe)  

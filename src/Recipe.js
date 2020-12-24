@@ -1,12 +1,13 @@
 const AbiCoder = require('web3-eth-abi');
+const { BN } = require('web3-utils');
 
 const Action = require('./Action');
-const ActionSetAbi = require('./abis/ActionSet.json');
+const RecipeAbi = require('./abis/Recipe.json');
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
  */
-class ActionSet {
+class Recipe {
   /**
    * @param name {String}
    * @param actions {Array<Action>}
@@ -23,7 +24,7 @@ class ActionSet {
 
   /**
    * @param action {Action}
-   * @returns {ActionSet}
+   * @returns {Recipe}
    */
   addAction(action) {
     if (!action instanceof Action) throw new TypeError('Supplied action does not inherit Action');
@@ -38,7 +39,7 @@ class ActionSet {
    * @returns {Array<String|Array<*>>}
    */
   encodeForCall() {
-    const encoded = this.actions.map(action => action.encodeForActionSet());
+    const encoded = this.actions.map(action => action.encodeForRecipe());
     const transposed = encoded[0].map((_, colIndex) => encoded.map(row => row[colIndex]));
     const taskStruct = [
       this.name,
@@ -52,7 +53,7 @@ class ActionSet {
    * @returns {Array<String>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
-    const executeTaskAbi = ActionSetAbi.find(({name}) => name === 'executeTask');
+    const executeTaskAbi = RecipeAbi.find(({name}) => name === 'executeTask');
     return [
       this.taskExecutorAddress,
       AbiCoder.encodeFunctionCall(executeTaskAbi, this.encodeForCall()),
@@ -69,6 +70,34 @@ class ActionSet {
       })
     });
   }
+
+  /**
+   * Assets requiring approval to be used by DsProxy
+   * Approval is done from owner to DsProxy
+   * @returns {Promise<Array<{owner: string, asset: string}>>}
+   */
+  async getAssetsToApprove() {
+    const uniqueAssetOwnerPairs = [];
+    const assetOwnerPairs = await Promise.all(this.actions.map(a => a.getAssetsToApprove()));
+    for (const pairsPerAction of assetOwnerPairs) {
+      for (const pair of pairsPerAction) {
+        if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && _pair.asset === pair.asset)) {
+          uniqueAssetOwnerPairs.push(pair);
+        }
+      }
+    }
+    return uniqueAssetOwnerPairs;
+  }
+
+  /**
+   * ETH value to be sent with transaction
+   * @returns {Promise<String>} ETH value in wei
+   */
+  async getEthValue() {
+    return (await Promise.all(this.actions.map(a => a.getEthValue())))
+      .reduce((acc, val) => acc.add(new BN(val)), new BN(0))
+      .toString();
+  }
 }
 
-module.exports = ActionSet;
+module.exports = Recipe;

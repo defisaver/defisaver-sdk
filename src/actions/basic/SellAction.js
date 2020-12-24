@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const {getAssetInfoByAddress} = require("defisaver-tokens");
 
 /**
  * Sells token on DeFi Saver exchange aggregator
@@ -28,6 +29,17 @@ class SellAction extends Action {
       this.args[1],
       this.args[2],
     ];
+  }
+
+  async getAssetsToApprove() {
+    const asset = getAssetInfoByAddress(this.args[0][0]);
+    if (asset !== 'ETH') return [{asset: this.args[0][0], owner: this.args[1]}];
+    return [];
+  }
+
+  async getEthValue() {
+    // TODO
+    return '0';
   }
 }
 

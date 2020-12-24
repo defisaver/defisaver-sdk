@@ -1,9 +1,9 @@
 const AbiCoder = require('web3-eth-abi');
-const ActionSetAbi = require('../src/abis/ActionSet.json');
+const RecipeAbi = require('../src/abis/Recipe.json');
 const DsProxyAbi = require('../src/abis/DsProxy.json');
 
 const encodeForCall = (action) => {
-  const executeActionDirectAbi = ActionSetAbi.find(({ name }) => name === 'executeTask');
+  const executeActionDirectAbi = RecipeAbi.find(({ name }) => name === 'executeTask');
   AbiCoder.encodeFunctionCall(executeActionDirectAbi, action.encodeForCall());
 }
 
@@ -12,12 +12,12 @@ const encodeForDsProxyCall = (action) => {
   AbiCoder.encodeFunctionCall(executeAbi, action.encodeForDsProxyCall());
 }
 
-const encodeForActionSet = (action) => {
-  action.encodeForActionSet()
+const encodeForRecipe = (action) => {
+  action.encodeForRecipe()
 }
 
 module.exports = {
   encodeForCall,
   encodeForDsProxyCall,
-  encodeForActionSet,
+  encodeForRecipe,
 }

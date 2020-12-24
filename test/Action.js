@@ -1,6 +1,6 @@
 const dfs = require('../index.js');
-const {encodeForCall, encodeForDsProxyCall, encodeForActionSet} = require('./_actionUtils');
-const { expect } = require('chai');
+const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('./_actionUtils');
+const {assert} = require('chai');
 
 describe('Action', () => {
 
@@ -11,7 +11,7 @@ describe('Action', () => {
     })
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
-    it('encodeForActionSet', () => encodeForActionSet(action));
+    it('encodeForRecipe', () => encodeForRecipe(action));
   });
 
   context('With tuples', () => {
@@ -34,7 +34,7 @@ describe('Action', () => {
     })
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
-    it('encodeForActionSet', () => encodeForActionSet(action));
+    it('encodeForRecipe', () => encodeForRecipe(action));
   })
 
   context('With param mapping', () => {
@@ -44,7 +44,7 @@ describe('Action', () => {
     })
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
-    it('encodeForActionSet', () => encodeForActionSet(action));
+    it('encodeForRecipe', () => encodeForRecipe(action));
   })
 
   context('With param mapping inside a tuple', () => {
@@ -54,12 +54,12 @@ describe('Action', () => {
     })
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
-    it('encodeForActionSet with incorrect mappableArgs throws', () => {
-      expect(() => encodeForActionSet(action)).to.throw();
+    it('encodeForRecipe with incorrect mappableArgs throws', () => {
+      assert.throws(() => encodeForRecipe(action));
     });
-    it('encodeForActionSet with custom mappableArgs', () => {
+    it('encodeForRecipe with custom mappableArgs', () => {
       action.mappableArgs = [action.args[0][0], action.args[1]];
-      encodeForActionSet(action)
+      encodeForRecipe(action)
     });
   })
 })
