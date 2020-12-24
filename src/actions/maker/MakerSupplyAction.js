@@ -1,6 +1,8 @@
 const Action = require("../../Action");
 const { tokenFromJoin, getAssetInfo } = require('defisaver-tokens');
 
+const { getAddr } = require('../../addresses.json');
+
 /**
  * MakerSupplyAction - Supply token to a Vault
  */
@@ -13,7 +15,7 @@ class MakerSupplyAction extends Action {
    * @param mcdManager {String}
    */
   constructor(vaultId, amount, joinAddr, from, mcdManager) {
-    super('McdSupply', '0x0bCF4f9325D89DC504585D44BB819Df4b153Abf6', ['uint256','uint256','address','address','address'], [...arguments]);
+    super('McdSupply', getAddr('McdSupply'), ['uint256','uint256','address','address','address'], [...arguments]);
   }
 
   async getAssetsToApprove() {

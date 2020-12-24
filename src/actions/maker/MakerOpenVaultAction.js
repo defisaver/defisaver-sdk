@@ -1,5 +1,7 @@
 const Action = require("../../Action");
 
+const { getAddr } = require('../../addresses.json');
+
 /**
  * MakerOpenVaultAction
  */
@@ -9,7 +11,7 @@ class MakerOpenVaultAction extends Action {
    * @param mcdManager {String}
    */
   constructor(joinAddr, mcdManager) {
-    super('McdOpen', '0x5D1D78fFBef7bE0F936c169fd570326deAA45886', ['address','address'], [...arguments]);
+    super('McdOpen', getAddr('McdOpen'), ['address','address'], [...arguments]);
   }
 }
 
