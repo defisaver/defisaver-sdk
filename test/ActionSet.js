@@ -11,7 +11,7 @@ describe('ActionSet', () => {
       set = new dfs.ActionSet(
         'MockTest',
         [
-          new dfs.actions.maker.MakerOpenVaultAction('0x2F0b23f53734252Bda2277357e97e1517d6B042A'),
+          new dfs.actions.maker.MakerOpenVaultAction('0x2F0b23f53734252Bda2277357e97e1517d6B042A', '0x5ef30b9986345249bc32d8928B7ee64DE9435E39'),
           new dfs.Action('MockSwap', '0x0', ['uint256', 'address'], [5, '0x2F0b23f53734252Bda2277357e97e1517d6B042A']),
           new dfs.Action('MockDeposit', '0x0', ['uint256', 'uint256', 'uint256'], [123, 0, 456]),
         ],

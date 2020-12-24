@@ -1,5 +1,6 @@
 const dfs = require('../../../index.js');
 const {encodeForCall, encodeForDsProxyCall, encodeForActionSet} = require('../../_actionUtils');
+const { expect } = require('chai');
 
 describe('Action: Sell', () => {
   let action;
@@ -15,6 +16,16 @@ describe('Action: Sell', () => {
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForActionSet', () => encodeForActionSet(action));
+    it('getAssetsToApprove', async () => {
+      const assetOwnerPairs = await action.getAssetsToApprove();
+      expect(assetOwnerPairs.length === 1);
+      expect(assetOwnerPairs[0].asset === '0x6b175474e89094c44da98b954eedeac495271d0f');
+      expect(assetOwnerPairs[0].owner === '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
+    })
+    it('getEthValue', async () => {
+      const ethValue = action.getEthValue();
+      expect(ethValue === '0');
+    })
   })
 
   context('With param mappings inside tuple', () => {
@@ -28,5 +39,12 @@ describe('Action: Sell', () => {
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForActionSet', () => encodeForActionSet(action));
+  })
+
+  context('Get assets to approve', async () => {
+    const assetOwnerPairs = await action.getAssetsToApprove();
+    console.log(assetOwnerPairs);
+    expect(assetOwnerPairs.length === 1);
+    expect(assetOwnerPairs[0].asset === 1);
   })
 })

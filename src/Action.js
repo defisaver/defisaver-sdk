@@ -114,6 +114,23 @@ class Action {
       this._getArgumentMapping(), // paramMappings
     ]
   }
+
+  /**
+   * Assets requiring approval to be used by DsProxy
+   * Approval is done from owner to DsProxy
+   * @returns {Promise<Array<{owner: string, asset: string}>>}
+   */
+  async getAssetsToApprove() {
+    return [];
+  }
+
+  /**
+   * ETH value to be sent with transaction
+   * @returns {Promise<String>} ETH value in wei
+   */
+  async getEthValue() {
+    return '0';
+  }
 }
 
 module.exports = Action;
