@@ -1,6 +1,6 @@
 const dfs = require('../index.js');
 const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('./_actionUtils');
-const { expect } = require('chai');
+const {assert} = require('chai');
 
 describe('Action', () => {
 
@@ -55,7 +55,7 @@ describe('Action', () => {
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe with incorrect mappableArgs throws', () => {
-      expect(() => encodeForRecipe(action)).to.throw();
+      assert.throws(() => encodeForRecipe(action));
     });
     it('encodeForRecipe with custom mappableArgs', () => {
       action.mappableArgs = [action.args[0][0], action.args[1]];

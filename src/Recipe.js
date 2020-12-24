@@ -1,4 +1,5 @@
 const AbiCoder = require('web3-eth-abi');
+const { BN } = require('web3-utils');
 
 const Action = require('./Action');
 const RecipeAbi = require('./abis/Recipe.json');
@@ -68,6 +69,34 @@ class Recipe {
         if (source) console.log(`${this.actions[i].name} takes argument #${j + 1} from ${this.actions[source - 1].name} (action #${source})`);
       })
     });
+  }
+
+  /**
+   * Assets requiring approval to be used by DsProxy
+   * Approval is done from owner to DsProxy
+   * @returns {Promise<Array<{owner: string, asset: string}>>}
+   */
+  async getAssetsToApprove() {
+    const uniqueAssetOwnerPairs = [];
+    const assetOwnerPairs = await Promise.all(this.actions.map(a => a.getAssetsToApprove()));
+    for (const pairsPerAction of assetOwnerPairs) {
+      for (const pair of pairsPerAction) {
+        if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && _pair.asset === pair.asset)) {
+          uniqueAssetOwnerPairs.push(pair);
+        }
+      }
+    }
+    return uniqueAssetOwnerPairs;
+  }
+
+  /**
+   * ETH value to be sent with transaction
+   * @returns {Promise<String>} ETH value in wei
+   */
+  async getEthValue() {
+    return (await Promise.all(this.actions.map(a => a.getEthValue())))
+      .reduce((acc, val) => acc.add(new BN(val)), new BN(0))
+      .toString();
   }
 }
 

@@ -1,6 +1,6 @@
 const dfs = require('../../../index.js');
 const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
-const { expect } = require('chai');
+const {assert} = require('chai');
 
 describe('Action: Sell', () => {
   let action;
@@ -18,13 +18,13 @@ describe('Action: Sell', () => {
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
       const assetOwnerPairs = await action.getAssetsToApprove();
-      expect(assetOwnerPairs.length === 1);
-      expect(assetOwnerPairs[0].asset === '0x6b175474e89094c44da98b954eedeac495271d0f');
-      expect(assetOwnerPairs[0].owner === '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
+      assert.lengthOf(assetOwnerPairs, 1);
+      assert.equal(assetOwnerPairs[0].asset, '0x6b175474e89094c44da98b954eedeac495271d0f');
+      assert.equal(assetOwnerPairs[0].owner, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
     })
     it('getEthValue', async () => {
-      const ethValue = action.getEthValue();
-      expect(ethValue === '0');
+      const ethValue = await action.getEthValue();
+      assert.equal(ethValue, '0');
     })
   })
 
@@ -43,8 +43,7 @@ describe('Action: Sell', () => {
 
   context('Get assets to approve', async () => {
     const assetOwnerPairs = await action.getAssetsToApprove();
-    console.log(assetOwnerPairs);
-    expect(assetOwnerPairs.length === 1);
-    expect(assetOwnerPairs[0].asset === 1);
+    assert.lengthOf(assetOwnerPairs, 1);
+    assert.equal(assetOwnerPairs[0].asset, 1);
   })
 })
