@@ -1,5 +1,6 @@
 const Action = require("../../Action");
 const {getAssetInfoByAddress} = require("defisaver-tokens");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * Sells token on DeFi Saver exchange aggregator
@@ -13,7 +14,7 @@ class SellAction extends Action {
   constructor(exchangeOrder, from, to) {
     super(
       'DFSSell',
-      '0xdeadbeeddeadbeeddeadbeeddeadbeeddeadbeed',
+      getAddr('DFSSell'),
       [
         ["address","address","uint256","uint256","uint256","uint256","address","address","bytes",["address","address","uint256","uint256","bytes"]],
         "address",

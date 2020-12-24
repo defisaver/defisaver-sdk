@@ -1,5 +1,6 @@
 const Action = require("../../Action");
 const {getAssetInfoByAddress} = require("defisaver-tokens");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * AavePaybackAction - Payback borrowed tokens from Aave
@@ -14,7 +15,7 @@ class AavePaybackAction extends Action {
    * @param onBehlaf {String}
    */
   constructor(market, tokenAddr, amount, rateMode, from, onBehlaf) {
-    super('AavePayback', '0x0', ['address','address','uint256','uint256','address', 'address'], [...arguments]);
+    super('AavePayback', getAddr('AavePayback'), ['address','address','uint256','uint256','address', 'address'], [...arguments]);
   }
 
   async getAssetsToApprove() {

@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveFlashLoanAction - Gets a flashloan from Aave v1
@@ -9,7 +10,7 @@ class AaveFlashLoanAction extends Action {
    * @param tokenAddr {String}
    */
   constructor(loanAmount, tokenAddr) {
-    super('FLAave', '0x0', ['uint256','address', 'uint256'], [loanAmount, tokenAddr, 0]);
+    super('FLAave', getAddr('FLAave'), ['uint256','address', 'uint256'], [loanAmount, tokenAddr, 0]);
   }
 }
 

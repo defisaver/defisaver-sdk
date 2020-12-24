@@ -1,5 +1,6 @@
 const Action = require("../../Action");
 const {getAssetInfoByAddress} = require("defisaver-tokens");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * CompoundPaybackAction - Payback borrowed tokens from Compound
@@ -11,7 +12,7 @@ class CompoundPaybackAction extends Action {
    * @param from {String}
    */
   constructor(tokenAddr, amount, from) {
-    super('CompPayback', '0x0', ['address','uint256','address'], [...arguments]);
+    super('CompPayback', getAddr('CompPayback'), ['address','uint256','address'], [...arguments]);
   }
 
   async getAssetsToApprove() {

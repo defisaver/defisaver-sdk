@@ -1,5 +1,6 @@
 const Action = require("../../Action");
 const {getAssetInfoByAddress} = require("defisaver-tokens");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * CompoundSupplyAction - Supply token to an Compound position
@@ -11,7 +12,7 @@ class CompoundSupplyAction extends Action {
    * @param from {String}
    */
   constructor(tokenAddr, amount, from) {
-    super('CompSupply', '0x0', ['address','uint256','address'], [...arguments]);
+    super('CompSupply', getAddr('CompSupply'), ['address','uint256','address'], [...arguments]);
   }
 
   async getAssetsToApprove() {

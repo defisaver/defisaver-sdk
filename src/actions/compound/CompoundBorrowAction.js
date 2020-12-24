@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * CompoundBorrowAction - Borrow tokens from Compound
@@ -10,7 +11,7 @@ class CompoundBorrowAction extends Action {
    * @param to {String}
    */
   constructor(tokenAddr, amount, to) {
-    super('CompBorrow', '0x0', ['address','uint256','address'], [...arguments]);
+    super('CompBorrow', getAddr('CompBorrow'), ['address','uint256','address'], [...arguments]);
   }
 }
 

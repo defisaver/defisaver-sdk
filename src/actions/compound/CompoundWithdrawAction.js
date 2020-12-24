@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * CompoundWithdrawAction - Withdraw token from an Compound position
@@ -10,7 +11,7 @@ class CompoundWithdrawAction extends Action {
    * @param to {String}
    */
   constructor(tokenAddr, amount, to) {
-    super('CompWithdraw', '0x0', ['address','uint256','address'], [...arguments]);
+    super('CompWithdraw', getAddr('CompWithdraw'), ['address','uint256','address'], [...arguments]);
   }
 }
 

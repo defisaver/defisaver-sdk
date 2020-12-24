@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveBorrowAction - Borrow tokens from Aave
@@ -13,7 +14,7 @@ class AaveBorrowAction extends Action {
    * @param onBehlaf {String}
    */
   constructor(market, tokenAddr, amount, rateMode, to, onBehlaf) {
-    super('AaveBorrow', '0x0', ['address','address','uint256','uint256','address','address'], [...arguments]);
+    super('AaveBorrow', getAddr('AaveBorrow'), ['address','address','uint256','uint256','address','address'], [...arguments]);
   }
 }
 

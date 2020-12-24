@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveMigrateLendAction - Migrates Lend to Aave
@@ -10,7 +11,7 @@ class AaveMigrateLendAction extends Action {
    * @param to {String}
    */
   constructor(lendAmount, from, to) {
-    super('AaveMigrateLend', '0x0', ["uint256", "address", "address"], [...arguments]);
+    super('AaveMigrateLend', getAddr('AaveMigrateLend'), ["uint256", "address", "address"], [...arguments]);
   }
 }
 

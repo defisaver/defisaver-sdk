@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveWithdrawAction - Withdraw token from an aave position
@@ -11,7 +12,7 @@ class AaveWithdrawAction extends Action {
    * @param to {String}
    */
   constructor(market, tokenAddr, amount, to) {
-    super('AaveWithdraw', '0x0', ['address','address','uint256','address'], [...arguments]);
+    super('AaveWithdraw', getAddr('AaveWithdraw'), ['address','address','uint256','address'], [...arguments]);
   }
 }
 
