@@ -1,7 +1,7 @@
 const Action = require("../../Action");
 const { getAssetInfo } = require('defisaver-tokens');
 
-const { getAddr } = require('../../addresses.json');
+const { getAddr } = require('../../addresses.js');
 
 /**
  * MakerPaybackAction - Payback dai to a Vault

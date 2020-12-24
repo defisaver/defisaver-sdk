@@ -1,6 +1,6 @@
 const Action = require("../../Action");
 
-const { getAddr } = require('../../addresses.json');
+const { getAddr } = require('../../addresses.js');
 
 /**
  * MakerOpenVaultAction

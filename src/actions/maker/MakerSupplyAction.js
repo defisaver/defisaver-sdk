@@ -1,7 +1,7 @@
 const Action = require("../../Action");
 const { tokenFromJoin, getAssetInfo } = require('defisaver-tokens');
 
-const { getAddr } = require('../../addresses.json');
+const { getAddr } = require('../../addresses.js');
 
 /**
  * MakerSupplyAction - Supply token to a Vault
