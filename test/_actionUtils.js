@@ -12,12 +12,12 @@ const encodeForDsProxyCall = (action) => {
   AbiCoder.encodeFunctionCall(executeAbi, action.encodeForDsProxyCall());
 }
 
-const encodeForActionSet = (action) => {
-  action.encodeForActionSet()
+const encodeForRecipe = (action) => {
+  action.encodeForRecipe()
 }
 
 module.exports = {
   encodeForCall,
   encodeForDsProxyCall,
-  encodeForActionSet,
+  encodeForRecipe,
 }

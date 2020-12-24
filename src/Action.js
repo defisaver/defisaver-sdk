@@ -103,10 +103,10 @@ class Action {
   }
 
   /**
-   * Encodes action for ActionSet call
+   * Encodes action for Recipe call
    * @returns {Array<String>}
    */
-  encodeForActionSet() {
+  encodeForRecipe() {
     return [
       this.encodeForCall()[0],   // actionCallData
       [],                        // subData

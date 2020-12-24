@@ -1,10 +1,10 @@
 const Action = require('./src/Action');
-const ActionSet = require('./src/ActionSet');
+const Recipe = require('./src/Recipe');
 
 const actions = require('./src/actions/');
 
 module.exports = {
   Action,
-  ActionSet,
+  Recipe,
   actions,
 }

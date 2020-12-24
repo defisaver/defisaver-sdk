@@ -1,5 +1,5 @@
 const dfs = require('../../../index.js');
-const {encodeForCall, encodeForDsProxyCall, encodeForActionSet} = require('../../_actionUtils');
+const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const { expect } = require('chai');
 
 describe('Action: Sell', () => {
@@ -15,7 +15,7 @@ describe('Action: Sell', () => {
     })
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
-    it('encodeForActionSet', () => encodeForActionSet(action));
+    it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
       const assetOwnerPairs = await action.getAssetsToApprove();
       expect(assetOwnerPairs.length === 1);
@@ -38,7 +38,7 @@ describe('Action: Sell', () => {
     })
     it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
-    it('encodeForActionSet', () => encodeForActionSet(action));
+    it('encodeForRecipe', () => encodeForRecipe(action));
   })
 
   context('Get assets to approve', async () => {
