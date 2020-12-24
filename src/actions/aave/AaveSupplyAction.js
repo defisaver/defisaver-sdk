@@ -10,9 +10,10 @@ class AaveSupplyAction extends Action {
    * @param tokenAddr {String}
    * @param amount {String}
    * @param from {String}
+   * @param onBehlaf {String}
    */
-  constructor(market, tokenAddr, amount, from) {
-    super('AaveSupply', '0x0', ['address','address','uint256','address'], [...arguments]);
+  constructor(market, tokenAddr, amount, from, onBehlaf) {
+    super('AaveSupply', '0x0', ['address','address','uint256','address','address'], [...arguments]);
   }
 
   async getAssetsToApprove() {

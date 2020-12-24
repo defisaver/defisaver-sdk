@@ -11,9 +11,10 @@ class AavePaybackAction extends Action {
    * @param amount {String}
    * @param rateMode {Number}
    * @param from {String}
+   * @param onBehlaf {String}
    */
-  constructor(market, tokenAddr, amount, rateMode, from) {
-    super('AavePayback', '0x0', ['address','address','uint256','uint256','address'], [...arguments]);
+  constructor(market, tokenAddr, amount, rateMode, from, onBehlaf) {
+    super('AavePayback', '0x0', ['address','address','uint256','uint256','address', 'address'], [...arguments]);
   }
 
   async getAssetsToApprove() {

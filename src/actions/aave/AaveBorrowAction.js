@@ -10,9 +10,10 @@ class AaveBorrowAction extends Action {
    * @param amount {String}
    * @param rateMode {Number}
    * @param to {String}
+   * @param onBehlaf {String}
    */
-  constructor(market, tokenAddr, amount, rateMode, to) {
-    super('AaveBorrow', '0x0', ['address','address','uint256','uint256','address'], [...arguments]);
+  constructor(market, tokenAddr, amount, rateMode, to, onBehlaf) {
+    super('AaveBorrow', '0x0', ['address','address','uint256','uint256','address','address'], [...arguments]);
   }
 }
 
