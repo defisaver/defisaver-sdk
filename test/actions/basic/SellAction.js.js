@@ -40,10 +40,4 @@ describe('Action: Sell', () => {
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
   })
-
-  context('Get assets to approve', async () => {
-    const assetOwnerPairs = await action.getAssetsToApprove();
-    assert.lengthOf(assetOwnerPairs, 1);
-    assert.equal(assetOwnerPairs[0].asset, 1);
-  })
 })
