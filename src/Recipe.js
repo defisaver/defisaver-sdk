@@ -19,7 +19,7 @@ class Recipe {
 
     this.name = name;
     this.actions = actions;
-    this.taskExecutorAddress = '0xb487e3829c510960d3f98983431227d4a05a3ac9';
+    this.taskExecutorAddress = '0x30a2d7d745d8ac8494425330ce519c49db4fe963';
   }
 
   /**
