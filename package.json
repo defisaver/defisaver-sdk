@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive",
-    "devDocument": "jsdoc2md -p list --files src/**.js > DEV.md",
-    "document": "jsdoc2md -p list --files src/actions/**/**.js > README.md"
+    "documentDev": "jsdoc2md -p list --files src/**.js > DEV.md",
+    "documentActions": "jsdoc2md -p list --files src/actions/**/**.js > ACTIONS.md"
   },
   "author": "",
   "license": "ISC",

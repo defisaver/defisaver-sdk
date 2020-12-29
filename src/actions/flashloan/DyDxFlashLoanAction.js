@@ -2,7 +2,7 @@ const Action = require("../../Action");
 const { getAddr } = require('../../addresses.js');
 
 /**
- * DyDxFlashLoanAction - Gets a flashloan from DyDx
+ * Gets a flashloan from DyDx
  */
 class DyDxFlashLoanAction extends Action {
   /**

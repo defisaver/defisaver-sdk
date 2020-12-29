@@ -2,9 +2,9 @@ const Action = require("../../Action");
 const { getAddr } = require('../../addresses.js');
 
 /**
- * AaveFlashLoanV2Action - Gets a flashloan from Aave v2
+ * Gets a flashloan from Aave v2
  */
-class AaveFlashLoanV2Action extends Action {
+class AaveV2FlashLoanAction extends Action {
   /**
    * @param loanAmounts {Array}
    * @param tokens {Array}
@@ -21,4 +21,4 @@ class AaveFlashLoanV2Action extends Action {
   }
 }
 
-module.exports = AaveFlashLoanV2Action;
+module.exports = AaveV2FlashLoanAction;

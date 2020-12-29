@@ -81,6 +81,8 @@ Set of Actions to be performed sequentially in a single transaction
     * [.encodeForCall()](#Recipe+encodeForCall) ⇒ <code>Array.&lt;(String\|Array.&lt;\*&gt;)&gt;</code>
     * [.encodeForDsProxyCall()](#Recipe+encodeForDsProxyCall) ⇒ <code>Array.&lt;String&gt;</code>
     * [._validateParamMappings()](#Recipe+_validateParamMappings)
+    * [.getAssetsToApprove()](#Recipe+getAssetsToApprove) ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
+    * [.getEthValue()](#Recipe+getEthValue) ⇒ <code>Promise.&lt;String&gt;</code>
 
 <a name="new_Recipe_new"></a>
 
@@ -119,3 +121,17 @@ Encode arguments for calling the action set via DsProxy
 Logs parameter mapping in verbose format for validation. Used for testing in development.
 
 **Kind**: instance method of [<code>Recipe</code>](#Recipe)  
+<a name="Recipe+getAssetsToApprove"></a>
+
+### recipe.getAssetsToApprove() ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
+Assets requiring approval to be used by DsProxy
+Approval is done from owner to DsProxy
+
+**Kind**: instance method of [<code>Recipe</code>](#Recipe)  
+<a name="Recipe+getEthValue"></a>
+
+### recipe.getEthValue() ⇒ <code>Promise.&lt;String&gt;</code>
+ETH value to be sent with transaction
+
+**Kind**: instance method of [<code>Recipe</code>](#Recipe)  
+**Returns**: <code>Promise.&lt;String&gt;</code> - ETH value in wei  
