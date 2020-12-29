@@ -38,7 +38,11 @@ const actionAddresses = {
   // utils
   'SumInputs': '0x989D9f9d3817aD3F451734A8250553C013034203',
   'SendToken': '0xa3aDe42FAFe3B378654ade89192c18E52FFf20cA',
-  'PullToken': '0xdCbdeeB21C1D56C83B8639e28c15478D895E1A9d'
+  'PullToken': '0xdCbdeeB21C1D56C83B8639e28c15478D895E1A9d',
+
+  // uniswap
+  'UniSupply': '0x5F128F17737970a3D40256a9fa417C90F4EECAe9',
+  'UniWithdraw': '0x47A8e129c4D096407FB8537D4BBdAc077b07bF46'
 
 };
 
