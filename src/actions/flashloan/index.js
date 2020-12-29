@@ -1,11 +1,17 @@
-const AaveFlashLoanAction = require('./AaveFlashLoanAction');
 const DyDxFlashLoanAction = require('./DyDxFlashLoanAction');
-const AaveFlashLoanV2Action = require('./AaveFlashLoanV2Action');
+const DyDxFlashLoanPaybackAction = require('./DyDxFlashLoanPaybackAction');
+const AaveFlashLoanAction = require('./AaveFlashLoanAction');
+const AaveFlashLoanPaybackAction = require('./AaveFlashLoanPaybackAction');
+const AaveV2FlashLoanAction = require('./AaveV2FlashLoanAction');
+const AaveV2FlashLoanPaybackAction = require('./AaveV2FlashLoanPaybackAction');
 const AaveCustomFlashLoanV2Action = require('./AaveCustomFlashLoanV2Action');
 
 module.exports = {
-  AaveFlashLoanAction,
   DyDxFlashLoanAction,
-  AaveFlashLoanV2Action,
+  DyDxFlashLoanPaybackAction,
+  AaveFlashLoanAction,
+  AaveFlashLoanPaybackAction,
+  AaveV2FlashLoanAction,
+  AaveV2FlashLoanPaybackAction,
   AaveCustomFlashLoanV2Action,
 };
