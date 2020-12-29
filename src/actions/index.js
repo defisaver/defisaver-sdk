@@ -4,6 +4,7 @@ const aaveV1 = require('./aaveV1');
 const compound = require('./compound');
 const basic = require('./basic');
 const flashloan = require('./flashloan');
+const uniswap = require('./uniswap');
 
 module.exports = {
   maker,
@@ -12,4 +13,5 @@ module.exports = {
   compound,
   basic,
   flashloan,
+  uniswap,
 };
