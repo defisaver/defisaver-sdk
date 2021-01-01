@@ -13,8 +13,8 @@ class SendTokenAction extends Action {
    */
   constructor(token, to, amount) {
     super(
-      'DFSSell',
-      getAddr('DFSSell'),
+      'SendToken',
+      getAddr('SendToken'),
       [
         "address",
         "address",
