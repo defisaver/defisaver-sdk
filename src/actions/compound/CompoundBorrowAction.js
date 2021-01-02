@@ -6,11 +6,11 @@ const { getAddr } = require('../../addresses.js');
  */
 class CompoundBorrowAction extends Action {
   /**
-   * @param tokenAddr {String}
+   * @param cTokenAddr {String}
    * @param amount {String}
    * @param to {String}
    */
-  constructor(tokenAddr, amount, to) {
+  constructor(cTokenAddr, amount, to) {
     super('CompBorrow', getAddr('CompBorrow'), ['address','uint256','address'], [...arguments]);
   }
 }
