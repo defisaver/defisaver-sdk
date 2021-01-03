@@ -6,11 +6,11 @@ const { getAddr } = require('../../addresses.js');
  */
 class CompoundWithdrawAction extends Action {
   /**
-   * @param tokenAddr {String}
+   * @param cTokenAddr {String}
    * @param amount {String}
    * @param to {String}
    */
-  constructor(tokenAddr, amount, to) {
+  constructor(cTokenAddr, amount, to) {
     super('CompWithdraw', getAddr('CompWithdraw'), ['address','uint256','address'], [...arguments]);
   }
 }

@@ -3,6 +3,8 @@ const MakerGenerateAction = require('./MakerGenerateAction');
 const MakerSupplyAction = require('./MakerSupplyAction');
 const MakerPaybackAction = require('./MakerPaybackAction');
 const MakerWithdrawAction = require('./MakerWithdrawAction');
+const MakerGiveAction = require('./MakerGiveAction');
+const MakerMergeAction = require('./MakerMergeAction');
 
 module.exports = {
   MakerOpenVaultAction,
@@ -10,4 +12,6 @@ module.exports = {
   MakerSupplyAction,
   MakerPaybackAction,
   MakerWithdrawAction,
+  MakerGiveAction,
+  MakerMergeAction,
 };
