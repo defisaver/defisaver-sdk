@@ -1,6 +1,6 @@
 const dfs = require('../../../index.js');
 const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
-const {getAssetInfo, assetAmountInWei} = require("defisaver-tokens");
+const {getAssetInfo, assetAmountInWei} = require("@defisaver/tokens");
 const {assert} = require('chai');
 
 describe('Action: DyDxFlashLoanAction', () => {

@@ -1,7 +1,7 @@
 const dfs = require('../index.js');
-const {getAssetInfo} = require("defisaver-tokens");
-const {getIlkInfo} = require("defisaver-tokens");
-const {assetAmountInWei} = require("defisaver-tokens");
+const {getAssetInfo} = require("@defisaver/tokens");
+const {getIlkInfo} = require("@defisaver/tokens");
+const {assetAmountInWei} = require("@defisaver/tokens");
 const {encodeForCall, encodeForDsProxyCall} = require('./_recipeUtils');
 const {assert} = require('chai');
 

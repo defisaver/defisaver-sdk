@@ -1,5 +1,5 @@
 const Action = require("../../Action");
-const {getAssetInfoByAddress} = require("defisaver-tokens");
+const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
