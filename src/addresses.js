@@ -46,11 +46,16 @@ const actionAddresses = {
 
 };
 
+const otherAddresses = {
+  'McdCdpManager': '0x5ef30b9986345249bc32d8928b7ee64de9435e39',
+  'BCdpManager': '0x3f30c2381CD8B917Dd96EB2f1A4F96D91324BBed',
+}
+
 
 const getAddr = (name) => {
-  if (!actionAddresses[name]) return '0x0';
+  if (!actionAddresses[name] && !otherAddresses[name]) return '0x0';
 
-  return actionAddresses[name];
+  return actionAddresses[name] || otherAddresses[name];
 };
 
 module.exports = {

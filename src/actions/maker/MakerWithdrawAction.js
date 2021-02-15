@@ -7,14 +7,14 @@ const { getAddr } = require('../../addresses.js');
  */
 class MakerWithdrawAction extends Action {
   /**
-   * @param vaultId {String}
-   * @param amount {String}
-   * @param joinAddr {String}
-   * @param to {String}
-   * @param mcdManager {String}
+   * @param vaultId {VaultId}
+   * @param amount {string}
+   * @param joinAddr {EthAddress}
+   * @param to {EthAddress}
+   * @param mcdManager {EthAddress}
    */
-  constructor(vaultId, amount, joinAddr, to, mcdManager) {
-    super('McdWithdraw', getAddr('McdWithdraw'), ['uint256','uint256','address','address','address'], [...arguments]);
+  constructor(vaultId, amount, joinAddr, to, mcdManager= getAddr('McdCdpManager')) {
+    super('McdWithdraw', getAddr('McdWithdraw'), ['uint256','uint256','address','address','address'], [vaultId, amount, joinAddr, to, mcdManager]);
   }
 }
 

@@ -1,6 +1,7 @@
 const Action = require("../../Action");
 const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
+const { BN } = require('web3-utils');
 
 /**
  * Sells token on DeFi Saver exchange aggregator
@@ -34,13 +35,16 @@ class SellAction extends Action {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[0][0]);
-    if (asset !== 'ETH') return [{asset: this.args[0][0], owner: this.args[1]}];
+    if (asset.symbol !== 'ETH') return [{asset: this.args[0][0], owner: this.args[1]}];
     return [];
   }
 
   async getEthValue() {
-    // TODO
-    return '0';
+    let val = new BN('0');
+    const asset = getAssetInfoByAddress(this.args[0][0]);
+    if (asset.symbol === 'ETH' || asset.symbol === 'WETH') val = val.add(new BN(this.args[0][2]));
+    // TODO add 0x fee
+    return val.toString();
   }
 }
 

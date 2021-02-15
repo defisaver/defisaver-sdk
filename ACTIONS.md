@@ -22,6 +22,9 @@
 <dt><a href="#AaveWithdrawActionV1">AaveWithdrawActionV1</a></dt>
 <dd><p>AaveWithdrawActionV1 - Withdraw token from an aaveV1 position</p>
 </dd>
+<dt><a href="#BuyAction">BuyAction</a></dt>
+<dd><p>Buys an exact amount of dest token on DeFi Saver exchange aggregator</p>
+</dd>
 <dt><a href="#SellAction">SellAction</a></dt>
 <dd><p>Sells token on DeFi Saver exchange aggregator</p>
 </dd>
@@ -30,6 +33,9 @@
 </dd>
 <dt><a href="#CompoundBorrowAction">CompoundBorrowAction</a></dt>
 <dd><p>CompoundBorrowAction - Borrow tokens from Compound</p>
+</dd>
+<dt><a href="#CompoundClaimAction">CompoundClaimAction</a></dt>
+<dd><p>CompoundClaimAction - Claims Comp tokens for the specified address</p>
 </dd>
 <dt><a href="#CompoundPaybackAction">CompoundPaybackAction</a></dt>
 <dd><p>CompoundPaybackAction - Payback borrowed tokens from Compound</p>
@@ -63,6 +69,12 @@
 </dd>
 <dt><a href="#MakerGenerateAction">MakerGenerateAction</a></dt>
 <dd><p>MakerGenerateAction - Generated Dai from a Vault</p>
+</dd>
+<dt><a href="#MakerGiveAction">MakerGiveAction</a></dt>
+<dd><p>MakerGiveAction - gives a vault to a selected address</p>
+</dd>
+<dt><a href="#MakerMergeAction">MakerMergeAction</a></dt>
+<dd><p>MakerMergeAction - merged two vaults of the same type</p>
 </dd>
 <dt><a href="#MakerOpenVaultAction">MakerOpenVaultAction</a></dt>
 <dd><p>MakerOpenVaultAction</p>
@@ -199,6 +211,21 @@ AaveWithdrawActionV1 - Withdraw token from an aaveV1 position
 - amount <code>String</code>
 - to <code>String</code>
 
+<a name="BuyAction"></a>
+
+## BuyAction
+Buys an exact amount of dest token on DeFi Saver exchange aggregator
+
+**Kind**: global class  
+<a name="new_BuyAction_new"></a>
+
+### new BuyAction(exchangeOrder, from, to)
+**Params**
+
+- exchangeOrder <code>Array</code> - Stardard DFS Exchange data
+- from <code>String</code> - Order sender
+- to <code>String</code> - Order recipient
+
 <a name="SellAction"></a>
 
 ## SellAction
@@ -237,11 +264,27 @@ CompoundBorrowAction - Borrow tokens from Compound
 **Kind**: global class  
 <a name="new_CompoundBorrowAction_new"></a>
 
-### new CompoundBorrowAction(tokenAddr, amount, to)
+### new CompoundBorrowAction(cTokenAddr, amount, to)
 **Params**
 
-- tokenAddr <code>String</code>
+- cTokenAddr <code>String</code>
 - amount <code>String</code>
+- to <code>String</code>
+
+<a name="CompoundClaimAction"></a>
+
+## CompoundClaimAction
+CompoundClaimAction - Claims Comp tokens for the specified address
+
+**Kind**: global class  
+<a name="new_CompoundClaimAction_new"></a>
+
+### new CompoundClaimAction(cSupplyAddresses, cBorrowAddresses, from, to)
+**Params**
+
+- cSupplyAddresses <code>Array.&lt;String&gt;</code>
+- cBorrowAddresses <code>Array.&lt;String&gt;</code>
+- from <code>String</code>
 - to <code>String</code>
 
 <a name="CompoundPaybackAction"></a>
@@ -252,10 +295,10 @@ CompoundPaybackAction - Payback borrowed tokens from Compound
 **Kind**: global class  
 <a name="new_CompoundPaybackAction_new"></a>
 
-### new CompoundPaybackAction(tokenAddr, amount, from)
+### new CompoundPaybackAction(cTokenAddr, amount, from)
 **Params**
 
-- tokenAddr <code>String</code>
+- cTokenAddr <code>String</code>
 - amount <code>String</code>
 - from <code>String</code>
 
@@ -267,10 +310,10 @@ CompoundSupplyAction - Supply token to an Compound position
 **Kind**: global class  
 <a name="new_CompoundSupplyAction_new"></a>
 
-### new CompoundSupplyAction(tokenAddr, amount, from)
+### new CompoundSupplyAction(cTokenAddr, amount, from)
 **Params**
 
-- tokenAddr <code>String</code>
+- cTokenAddr <code>String</code>
 - amount <code>String</code>
 - from <code>String</code>
 
@@ -282,10 +325,10 @@ CompoundWithdrawAction - Withdraw token from an Compound position
 **Kind**: global class  
 <a name="new_CompoundWithdrawAction_new"></a>
 
-### new CompoundWithdrawAction(tokenAddr, amount, to)
+### new CompoundWithdrawAction(cTokenAddr, amount, to)
 **Params**
 
-- tokenAddr <code>String</code>
+- cTokenAddr <code>String</code>
 - amount <code>String</code>
 - to <code>String</code>
 
@@ -401,10 +444,41 @@ MakerGenerateAction - Generated Dai from a Vault
 ### new MakerGenerateAction(vaultId, amount, to, mcdManager)
 **Params**
 
-- vaultId <code>String</code>
-- amount <code>String</code>
-- to <code>String</code>
-- mcdManager <code>String</code>
+- vaultId <code>VaultId</code>
+- amount <code>string</code> - Amount of DAI to generate in wei
+- to <code>EthAddress</code> - Generated DAI will be sent to this address
+- mcdManager <code>EthAddress</code>
+
+<a name="MakerGiveAction"></a>
+
+## MakerGiveAction
+MakerGiveAction - gives a vault to a selected address
+
+**Kind**: global class  
+<a name="new_MakerGiveAction_new"></a>
+
+### new MakerGiveAction(vaultId, newOwner, createProxy, mcdManager)
+**Params**
+
+- vaultId <code>VaultId</code>
+- newOwner <code>EthAddress</code>
+- createProxy <code>boolean</code>
+- mcdManager <code>EthAddress</code>
+
+<a name="MakerMergeAction"></a>
+
+## MakerMergeAction
+MakerMergeAction - merged two vaults of the same type
+
+**Kind**: global class  
+<a name="new_MakerMergeAction_new"></a>
+
+### new MakerMergeAction(srcVaultId, destVaultId, mcdManager)
+**Params**
+
+- srcVaultId <code>VaultId</code>
+- destVaultId <code>VaultId</code>
+- mcdManager <code>EthAddress</code>
 
 <a name="MakerOpenVaultAction"></a>
 
@@ -417,8 +491,8 @@ MakerOpenVaultAction
 ### new MakerOpenVaultAction(joinAddr, mcdManager)
 **Params**
 
-- joinAddr <code>String</code>
-- mcdManager <code>String</code>
+- joinAddr <code>Address</code>
+- mcdManager <code>Address</code>
 
 <a name="MakerPaybackAction"></a>
 
@@ -431,10 +505,10 @@ MakerPaybackAction - Payback dai to a Vault
 ### new MakerPaybackAction(vaultId, amount, from, mcdManager)
 **Params**
 
-- vaultId <code>String</code>
-- amount <code>String</code>
-- from <code>String</code>
-- mcdManager <code>String</code>
+- vaultId <code>VaultId</code>
+- amount <code>string</code>
+- from <code>EthAddress</code> - DAI will be transferred from this address
+- mcdManager <code>EthAddress</code>
 
 <a name="MakerSupplyAction"></a>
 
@@ -447,11 +521,11 @@ MakerSupplyAction - Supply token to a Vault
 ### new MakerSupplyAction(vaultId, amount, joinAddr, from, mcdManager)
 **Params**
 
-- vaultId <code>String</code>
-- amount <code>String</code>
-- joinAddr <code>String</code>
-- from <code>String</code>
-- mcdManager <code>String</code>
+- vaultId <code>VaultId</code>
+- amount <code>string</code>
+- joinAddr <code>EthAddress</code>
+- from <code>EthAddress</code>
+- mcdManager <code>EthAddress</code>
 
 <a name="MakerWithdrawAction"></a>
 
@@ -464,11 +538,11 @@ MakerWithdrawAction - Withdraw token from a Vault
 ### new MakerWithdrawAction(vaultId, amount, joinAddr, to, mcdManager)
 **Params**
 
-- vaultId <code>String</code>
-- amount <code>String</code>
-- joinAddr <code>String</code>
-- to <code>String</code>
-- mcdManager <code>String</code>
+- vaultId <code>VaultId</code>
+- amount <code>string</code>
+- joinAddr <code>EthAddress</code>
+- to <code>EthAddress</code>
+- mcdManager <code>EthAddress</code>
 
 <a name="UniswapSupplyAction"></a>
 

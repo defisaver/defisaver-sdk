@@ -9,6 +9,17 @@
 </dd>
 </dl>
 
+## Typedefs
+
+<dl>
+<dt><a href="#EthAddress">EthAddress</a> : <code>string</code></dt>
+<dd><p>Ethereum address</p>
+</dd>
+<dt><a href="#VaultId">VaultId</a> : <code>string</code> | <code>number</code></dt>
+<dd><p>Maker vault ID</p>
+</dd>
+</dl>
+
 <a name="Action"></a>
 
 ## Action
@@ -135,3 +146,15 @@ ETH value to be sent with transaction
 
 **Kind**: instance method of [<code>Recipe</code>](#Recipe)  
 **Returns**: <code>Promise.&lt;String&gt;</code> - ETH value in wei  
+<a name="EthAddress"></a>
+
+## EthAddress : <code>string</code>
+Ethereum address
+
+**Kind**: global typedef  
+<a name="VaultId"></a>
+
+## VaultId : <code>string</code> \| <code>number</code>
+Maker vault ID
+
+**Kind**: global typedef  

@@ -8,17 +8,17 @@ const { getAddr } = require('../../addresses.js');
  */
 class MakerPaybackAction extends Action {
   /**
-   * @param vaultId {String}
-   * @param amount {String}
-   * @param from {String}
-   * @param mcdManager {String}
+   * @param vaultId {VaultId}
+   * @param amount {string}
+   * @param from {EthAddress} DAI will be transferred from this address
+   * @param mcdManager {EthAddress}
    */
-  constructor(vaultId, amount, from, mcdManager) {
-    super('McdPayback', getAddr('McdPayback'), ['uint256','uint256','address','address'], [...arguments]);
+  constructor(vaultId, amount, from, mcdManager= getAddr('McdCdpManager')) {
+    super('McdPayback', getAddr('McdPayback'), ['uint256','uint256','address','address'], [vaultId, amount, from, mcdManager]);
   }
 
   async getAssetsToApprove() {
-    return [{asset: getAssetInfo('DAI').address, owner: this.args[3]}];
+    return [{asset: getAssetInfo('DAI').address, owner: this.args[2]}];
   }
 }
 

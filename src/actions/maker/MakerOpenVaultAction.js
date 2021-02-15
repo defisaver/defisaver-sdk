@@ -1,5 +1,4 @@
 const Action = require("../../Action");
-
 const { getAddr } = require('../../addresses.js');
 
 /**
@@ -7,11 +6,11 @@ const { getAddr } = require('../../addresses.js');
  */
 class MakerOpenVaultAction extends Action {
   /**
-   * @param joinAddr {String}
-   * @param mcdManager {String}
+   * @param joinAddr {Address}
+   * @param mcdManager {Address}
    */
-  constructor(joinAddr, mcdManager) {
-    super('McdOpen', getAddr('McdOpen'), ['address','address'], [...arguments]);
+  constructor(joinAddr, mcdManager= getAddr('McdCdpManager')) {
+    super('McdOpen', getAddr('McdOpen'), ['address','address'], [joinAddr, mcdManager]);
   }
 }
 

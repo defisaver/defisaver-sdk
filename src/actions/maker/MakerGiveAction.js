@@ -7,13 +7,13 @@ const { getAddr } = require('../../addresses.js');
  */
 class MakerGiveAction extends Action {
   /**
-   * @param vaultId {String}
-   * @param newOwner {String}
-   * @param createProxy {Bool}
-   * @param mcdManager {String}
+   * @param vaultId {VaultId}
+   * @param newOwner {EthAddress}
+   * @param createProxy {boolean}
+   * @param mcdManager {EthAddress}
    */
-  constructor(vaultId, newOwner, createProxy, mcdManager) {
-    super('McdGive', getAddr('McdGive'), ["uint256", "address", "bool", "address"], [...arguments]);
+  constructor(vaultId, newOwner, createProxy, mcdManager= getAddr('McdCdpManager')) {
+    super('McdGive', getAddr('McdGive'), ["uint256", "address", "bool", "address"], [vaultId, newOwner, createProxy, mcdManager]);
   }
 }
 

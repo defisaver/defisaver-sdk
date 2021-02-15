@@ -8,14 +8,14 @@ const { getAddr } = require('../../addresses.js');
  */
 class MakerSupplyAction extends Action {
   /**
-   * @param vaultId {String}
-   * @param amount {String}
-   * @param joinAddr {String}
-   * @param from {String}
-   * @param mcdManager {String}
+   * @param vaultId {VaultId}
+   * @param amount {string}
+   * @param joinAddr {EthAddress}
+   * @param from {EthAddress}
+   * @param mcdManager {EthAddress}
    */
-  constructor(vaultId, amount, joinAddr, from, mcdManager) {
-    super('McdSupply', getAddr('McdSupply'), ['uint256','uint256','address','address','address'], [...arguments]);
+  constructor(vaultId, amount, joinAddr, from, mcdManager= getAddr('McdCdpManager')) {
+    super('McdSupply', getAddr('McdSupply'), ['uint256','uint256','address','address','address'], [vaultId, amount, joinAddr, from, mcdManager]);
   }
 
   async getAssetsToApprove() {

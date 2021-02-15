@@ -7,12 +7,12 @@ const { getAddr } = require('../../addresses.js');
  */
 class MakerMergeAction extends Action {
   /**
-   * @param srcVaultId {String}
-   * @param destVaultId {String}
-   * @param mcdManager {String}
+   * @param srcVaultId {VaultId}
+   * @param destVaultId {VaultId}
+   * @param mcdManager {EthAddress}
    */
-  constructor(srcVaultId, destVaultId, mcdManager) {
-    super('McdMerge', getAddr('McdMerge'), ['uint256','uint256','address'], [...arguments]);
+  constructor(srcVaultId, destVaultId, mcdManager = getAddr('McdCdpManager')) {
+    super('McdMerge', getAddr('McdMerge'), ['uint256','uint256','address'], [srcVaultId, destVaultId, mcdManager]);
   }
 }
 

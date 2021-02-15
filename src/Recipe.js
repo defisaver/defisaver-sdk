@@ -3,6 +3,7 @@ const { BN } = require('web3-utils');
 
 const Action = require('./Action');
 const RecipeAbi = require('./abis/Recipe.json');
+const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
@@ -86,7 +87,7 @@ class Recipe {
         }
       }
     }
-    return uniqueAssetOwnerPairs;
+    return uniqueAssetOwnerPairs.filter(({ address }) => !compare(address, getAssetInfo('ETH').address));
   }
 
   /**
