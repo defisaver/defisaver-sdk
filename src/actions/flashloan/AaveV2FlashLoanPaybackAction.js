@@ -6,8 +6,8 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV2FlashLoanPaybackAction extends SendTokenAction {
   /**
-   * @param loanAmount {String}
-   * @param tokenAddr {String}
+   * @param loanAmount {string}
+   * @param tokenAddr {EthAddress}
    */
   constructor(loanAmount, tokenAddr) {
     super(tokenAddr, getAddr('FLAaveV2'), loanAmount);

@@ -1,24 +1,23 @@
 const Action = require("../../Action");
 const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+const {getAddr} = require('../../addresses.js');
 
 /**
  * Supplies a pair tokens to uniswap pool
  */
 class UniswapSupplyAction extends Action {
   /**
-   * @param uniSupplyData {Array} Uni supply struct
-   * address tokenA;
-   * address tokenB;
-   * address from;
-   * address to;
-   * uint256 amountADesired;
-   * uint256 amountBDesired;
-   * uint256 amountAMin;
-   * uint256 amountBMin;
-   * uint256 deadline;
+   * @param {EthAddress} tokenA
+   * @param {EthAddress} tokenB
+   * @param {EthAddress} from
+   * @param {EthAddress} to
+   * @param {string} amountADesired
+   * @param {string} amountBDesired
+   * @param {string} amountAMin
+   * @param {string} amountBMin
+   * @param {number} deadline
    */
-  constructor(uniSupplyData) {
+  constructor(tokenA, tokenB, from, to, amountADesired, amountBDesired, amountAMin, amountBMin, deadline) {
     super(
       'UniSupply',
       getAddr('UniSupply'),
@@ -33,9 +32,9 @@ class UniswapSupplyAction extends Action {
           "uint256",
           "uint256",
           "uint256",
+        ],
       ],
-    ],
-      [...arguments]
+      [[...arguments]]
     );
 
     this.mappableArgs = [
@@ -52,10 +51,20 @@ class UniswapSupplyAction extends Action {
 
     const approveArr = [];
 
-    if (assetA !== 'ETH') approveArr.push({asset: this.args[0][0], owner: this.args[0][2]});;
-    if (assetB !== 'ETH') approveArr.push({asset: this.args[0][1], owner: this.args[0][2]});
+    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[0][0], owner: this.args[0][2]});
+    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[0][1], owner: this.args[0][2]});
 
     return approveArr;
+  }
+
+  async getEthValue() {
+    const assetA = getAssetInfoByAddress(this.args[0][0]);
+    const assetB = getAssetInfoByAddress(this.args[0][1]);
+
+    if (assetA.symbol === 'ETH') return this.args[0][4];
+    if (assetB.symbol === 'ETH') return this.args[0][5];
+
+    return '0';
   }
 
 }

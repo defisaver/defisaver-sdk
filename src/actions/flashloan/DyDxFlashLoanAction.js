@@ -6,8 +6,8 @@ const { getAddr } = require('../../addresses.js');
  */
 class DyDxFlashLoanAction extends Action {
   /**
-   * @param loanAmount {String}
-   * @param tokenAddr {String}
+   * @param loanAmount {string}
+   * @param tokenAddr {EthAddress}
    */
   constructor(loanAmount, tokenAddr) {
     super('FLDyDx', getAddr('FLDyDx'), ['uint256','address', 'uint256'], [loanAmount, tokenAddr, 0]);

@@ -6,10 +6,10 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV2FlashLoanAction extends Action {
   /**
-   * @param loanAmounts {Array}
-   * @param tokens {Array}
-   * @param modes {Array}
-   * @param loanPayer {address}
+   * @param loanAmounts {Array<string>}
+   * @param tokens {Array<EthAddress>}
+   * @param modes {Array<number>}
+   * @param loanPayer {EthAddress}
    */
   constructor(loanAmounts, tokens, modes, loanPayer) {
     super(

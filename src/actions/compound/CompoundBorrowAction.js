@@ -6,9 +6,9 @@ const { getAddr } = require('../../addresses.js');
  */
 class CompoundBorrowAction extends Action {
   /**
-   * @param cTokenAddr {String}
-   * @param amount {String}
-   * @param to {String}
+   * @param cTokenAddr {EthAddress}
+   * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
+   * @param to {EthAddress}
    */
   constructor(cTokenAddr, amount, to) {
     super('CompBorrow', getAddr('CompBorrow'), ['address','uint256','address'], [...arguments]);

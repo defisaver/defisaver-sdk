@@ -1,23 +1,22 @@
 const Action = require("../../Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+const {getPoolAddressByAddresses} = require("../../utils/uniswap");
+const {getAddr} = require('../../addresses.js');
 
 /**
  * Withdraws liquidity from uniswap pool
  */
 class UniswapWithdrawAction extends Action {
   /**
-   * @param uniWithdrawData {Array} Uni withdraw struct
-   * address tokenA;
-   * address tokenB;
-   * uint256 liquidity;
-   * address to;
-   * address from;
-   * uint256 amountAMin;
-   * uint256 amountBMin;
-   * uint256 deadline;
+   * @param {EthAddress} tokenA
+   * @param {EthAddress} tokenB
+   * @param {string} liquidity
+   * @param {EthAddress} to
+   * @param {EthAddress} from
+   * @param {string} amountAMin
+   * @param {string} amountBMin
+   * @param {number} deadline
    */
-  constructor(uniWithdrawData) {
+  constructor(tokenA, tokenB, liquidity, to, from, amountAMin, amountBMin, deadline) {
     super(
       'UniWithdraw',
       getAddr('UniWithdraw'),
@@ -31,9 +30,9 @@ class UniswapWithdrawAction extends Action {
           "uint256",
           "uint256",
           "uint256",
+        ],
       ],
-    ],
-      [...arguments]
+      [[...arguments]]
     );
 
     this.mappableArgs = [
@@ -45,10 +44,10 @@ class UniswapWithdrawAction extends Action {
     ];
   }
 
-  // should approve lpAddr but we don't have that info witouth web3 call
-  // async getAssetsToApprove() {
-  // }
-
+  async getAssetsToApprove() {
+    const lpAddress = getPoolAddressByAddresses(this.args[0][0], this.args[0][1])
+    return [{asset: lpAddress, owner: this.args[0][4]}];
+  }
 }
 
 module.exports = UniswapWithdrawAction;

@@ -6,10 +6,10 @@ const { getAddr } = require('../../addresses.js');
  */
 class CompoundClaimAction extends Action {
   /**
-   * @param cSupplyAddresses {String[]}
-   * @param cBorrowAddresses {String[]}
-   * @param from {String}
-   * @param to {String}
+   * @param cSupplyAddresses {EthAddress[]}
+   * @param cBorrowAddresses {EthAddress[]}
+   * @param from {EthAddress}
+   * @param to {EthAddress}
    */
   constructor(cSupplyAddresses, cBorrowAddresses, from, to) {
     super('CompClaim', getAddr('CompClaim'), ["address[]", "address[]", "address", "address"], [...arguments]);

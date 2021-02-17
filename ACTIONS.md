@@ -16,10 +16,10 @@
 <dt><a href="#AaveWithdrawAction">AaveWithdrawAction</a></dt>
 <dd><p>AaveWithdrawAction - Withdraw token from an aave position</p>
 </dd>
-<dt><a href="#AavePaybackActionV1">AavePaybackActionV1</a></dt>
-<dd><p>AavePaybackActionV1 - Payback borrowed tokens from AaveV1</p>
+<dt><a href="#AaveV1PaybackAction">AaveV1PaybackAction</a></dt>
+<dd><p>AavePaybackActionV1 - Pay back borrowed tokens from AaveV1</p>
 </dd>
-<dt><a href="#AaveWithdrawActionV1">AaveWithdrawActionV1</a></dt>
+<dt><a href="#AaveV1WithdrawAction">AaveV1WithdrawAction</a></dt>
 <dd><p>AaveWithdrawActionV1 - Withdraw token from an aaveV1 position</p>
 </dd>
 <dt><a href="#BuyAction">BuyAction</a></dt>
@@ -104,15 +104,15 @@ AaveBorrowAction - Borrow tokens from Aave
 **Kind**: global class  
 <a name="new_AaveBorrowAction_new"></a>
 
-### new AaveBorrowAction(market, tokenAddr, amount, rateMode, to, onBehlaf)
+### new AaveBorrowAction(market, tokenAddr, amount, rateMode, to, onBehalf)
 **Params**
 
-- market <code>String</code>
-- tokenAddr <code>String</code>
-- amount <code>String</code>
-- rateMode <code>Number</code>
-- to <code>String</code>
-- onBehlaf <code>String</code>
+- market <code>EthAddress</code>
+- tokenAddr <code>EthAddress</code>
+- amount <code>string</code>
+- rateMode <code>number</code> - Borrow rate mode: Stable: 1, Variable: 2
+- to <code>EthAddress</code> - Borrowed tokens will be sent to this address
+- onBehalf <code>EthAddress</code>
 
 <a name="AaveMigrateLendAction"></a>
 
@@ -125,9 +125,9 @@ AaveMigrateLendAction - Migrates Lend to Aave
 ### new AaveMigrateLendAction(lendAmount, from, to)
 **Params**
 
-- lendAmount <code>String</code>
-- from <code>String</code>
-- to <code>String</code>
+- lendAmount <code>string</code>
+- from <code>EthAddress</code>
+- to <code>EthAddress</code>
 
 <a name="AavePaybackAction"></a>
 
@@ -137,15 +137,15 @@ AavePaybackAction - Payback borrowed tokens from Aave
 **Kind**: global class  
 <a name="new_AavePaybackAction_new"></a>
 
-### new AavePaybackAction(market, tokenAddr, amount, rateMode, from, onBehlaf)
+### new AavePaybackAction(market, tokenAddr, amount, rateMode, from, onBehalf)
 **Params**
 
-- market <code>String</code>
-- tokenAddr <code>String</code>
-- amount <code>String</code>
-- rateMode <code>Number</code>
-- from <code>String</code>
-- onBehlaf <code>String</code>
+- market <code>EthAddress</code>
+- tokenAddr <code>EthAddress</code>
+- amount <code>string</code>
+- rateMode <code>number</code> - Borrow rate mode: Stable: 1, Variable: 2
+- from <code>EthAddress</code> - Tokens will be sent from this address
+- onBehalf <code>EthAddress</code>
 
 <a name="AaveSupplyAction"></a>
 
@@ -155,14 +155,14 @@ AaveSupplyAction - Supply token to an aave position
 **Kind**: global class  
 <a name="new_AaveSupplyAction_new"></a>
 
-### new AaveSupplyAction(market, tokenAddr, amount, from, onBehlaf)
+### new AaveSupplyAction(market, tokenAddr, amount, from, onBehalf)
 **Params**
 
-- market <code>String</code>
-- tokenAddr <code>String</code>
-- amount <code>String</code>
-- from <code>String</code>
-- onBehlaf <code>String</code>
+- market <code>EthAddress</code>
+- tokenAddr <code>EthAddress</code>
+- amount <code>string</code>
+- from <code>EthAddress</code> - Tokens will be supplied from this address
+- onBehalf <code>EthAddress</code> - Tokens will be supplied to this address' position (defaults to sender's proxy)
 
 <a name="AaveWithdrawAction"></a>
 
@@ -175,41 +175,41 @@ AaveWithdrawAction - Withdraw token from an aave position
 ### new AaveWithdrawAction(market, tokenAddr, amount, to)
 **Params**
 
-- market <code>String</code>
-- tokenAddr <code>String</code>
-- amount <code>String</code>
-- to <code>String</code>
+- market <code>EthAddress</code>
+- tokenAddr <code>EthAddress</code>
+- amount <code>string</code>
+- to <code>EthAddress</code> - Tokens will be withdrawn to this address
 
-<a name="AavePaybackActionV1"></a>
+<a name="AaveV1PaybackAction"></a>
 
-## AavePaybackActionV1
-AavePaybackActionV1 - Payback borrowed tokens from AaveV1
+## AaveV1PaybackAction
+AavePaybackActionV1 - Pay back borrowed tokens from AaveV1
 
 **Kind**: global class  
-<a name="new_AavePaybackActionV1_new"></a>
+<a name="new_AaveV1PaybackAction_new"></a>
 
-### new AavePaybackActionV1(tokenAddr, amount, from, onBehalf)
+### new AaveV1PaybackAction(tokenAddr, amount, from, onBehalf)
 **Params**
 
-- tokenAddr <code>address</code>
-- amount <code>String</code>
-- from <code>address</code>
-- onBehalf <code>address</code>
+- tokenAddr <code>EthAddress</code>
+- amount <code>string</code>
+- from <code>EthAddress</code> - Tokens will be sent from this address
+- onBehalf <code>EthAddress</code>
 
-<a name="AaveWithdrawActionV1"></a>
+<a name="AaveV1WithdrawAction"></a>
 
-## AaveWithdrawActionV1
+## AaveV1WithdrawAction
 AaveWithdrawActionV1 - Withdraw token from an aaveV1 position
 
 **Kind**: global class  
-<a name="new_AaveWithdrawActionV1_new"></a>
+<a name="new_AaveV1WithdrawAction_new"></a>
 
-### new AaveWithdrawActionV1(tokenAddr, amount, to)
+### new AaveV1WithdrawAction(tokenAddr, amount, to)
 **Params**
 
-- tokenAddr <code>String</code>
-- amount <code>String</code>
-- to <code>String</code>
+- tokenAddr <code>EthAddress</code>
+- amount <code>string</code>
+- to <code>EthAddress</code> - Tokens will be withdrawn to this address
 
 <a name="BuyAction"></a>
 
@@ -267,9 +267,9 @@ CompoundBorrowAction - Borrow tokens from Compound
 ### new CompoundBorrowAction(cTokenAddr, amount, to)
 **Params**
 
-- cTokenAddr <code>String</code>
-- amount <code>String</code>
-- to <code>String</code>
+- cTokenAddr <code>EthAddress</code>
+- amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
+- to <code>EthAddress</code>
 
 <a name="CompoundClaimAction"></a>
 
@@ -282,10 +282,10 @@ CompoundClaimAction - Claims Comp tokens for the specified address
 ### new CompoundClaimAction(cSupplyAddresses, cBorrowAddresses, from, to)
 **Params**
 
-- cSupplyAddresses <code>Array.&lt;String&gt;</code>
-- cBorrowAddresses <code>Array.&lt;String&gt;</code>
-- from <code>String</code>
-- to <code>String</code>
+- cSupplyAddresses <code>Array.&lt;EthAddress&gt;</code>
+- cBorrowAddresses <code>Array.&lt;EthAddress&gt;</code>
+- from <code>EthAddress</code>
+- to <code>EthAddress</code>
 
 <a name="CompoundPaybackAction"></a>
 
@@ -298,9 +298,9 @@ CompoundPaybackAction - Payback borrowed tokens from Compound
 ### new CompoundPaybackAction(cTokenAddr, amount, from)
 **Params**
 
-- cTokenAddr <code>String</code>
-- amount <code>String</code>
-- from <code>String</code>
+- cTokenAddr <code>EthAddress</code>
+- amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
+- from <code>EthAddress</code>
 
 <a name="CompoundSupplyAction"></a>
 
@@ -313,9 +313,9 @@ CompoundSupplyAction - Supply token to an Compound position
 ### new CompoundSupplyAction(cTokenAddr, amount, from)
 **Params**
 
-- cTokenAddr <code>String</code>
-- amount <code>String</code>
-- from <code>String</code>
+- cTokenAddr <code>EthAddress</code>
+- amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
+- from <code>EthAddress</code>
 
 <a name="CompoundWithdrawAction"></a>
 
@@ -328,9 +328,9 @@ CompoundWithdrawAction - Withdraw token from an Compound position
 ### new CompoundWithdrawAction(cTokenAddr, amount, to)
 **Params**
 
-- cTokenAddr <code>String</code>
-- amount <code>String</code>
-- to <code>String</code>
+- cTokenAddr <code>EthAddress</code>
+- amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
+- to <code>EthAddress</code>
 
 <a name="AaveCustomFlashLoanV2Action"></a>
 
@@ -343,9 +343,9 @@ AaveCustomFlashLoanV2Action - Gets a flashloan from Aave v2
 ### new AaveCustomFlashLoanV2Action(viewer, loanPayer, viewerData)
 **Params**
 
-- viewer <code>address</code>
-- loanPayer <code>address</code>
-- viewerData <code>bytes</code>
+- viewer <code>EthAddress</code>
+- loanPayer <code>EthAddress</code>
+- viewerData <code>string</code> - (bytes)
 
 <a name="AaveFlashLoanAction"></a>
 
@@ -358,8 +358,8 @@ Gets a flashloan from Aave v1
 ### new AaveFlashLoanAction(loanAmount, tokenAddr)
 **Params**
 
-- loanAmount <code>String</code>
-- tokenAddr <code>String</code>
+- loanAmount <code>string</code>
+- tokenAddr <code>EthAddress</code>
 
 <a name="AaveFlashLoanPaybackAction"></a>
 
@@ -372,8 +372,8 @@ Pays back a flashloan from Aave v1
 ### new AaveFlashLoanPaybackAction(loanAmount, tokenAddr)
 **Params**
 
-- loanAmount <code>String</code>
-- tokenAddr <code>String</code>
+- loanAmount <code>string</code>
+- tokenAddr <code>EthAddress</code>
 
 <a name="AaveV2FlashLoanAction"></a>
 
@@ -386,10 +386,10 @@ Gets a flashloan from Aave v2
 ### new AaveV2FlashLoanAction(loanAmounts, tokens, modes, loanPayer)
 **Params**
 
-- loanAmounts <code>Array</code>
-- tokens <code>Array</code>
-- modes <code>Array</code>
-- loanPayer <code>address</code>
+- loanAmounts <code>Array.&lt;string&gt;</code>
+- tokens <code>Array.&lt;EthAddress&gt;</code>
+- modes <code>Array.&lt;number&gt;</code>
+- loanPayer <code>EthAddress</code>
 
 <a name="AaveV2FlashLoanPaybackAction"></a>
 
@@ -402,8 +402,8 @@ Pays back a single flashloan from Aave v2
 ### new AaveV2FlashLoanPaybackAction(loanAmount, tokenAddr)
 **Params**
 
-- loanAmount <code>String</code>
-- tokenAddr <code>String</code>
+- loanAmount <code>string</code>
+- tokenAddr <code>EthAddress</code>
 
 <a name="DyDxFlashLoanAction"></a>
 
@@ -416,8 +416,8 @@ Gets a flashloan from DyDx
 ### new DyDxFlashLoanAction(loanAmount, tokenAddr)
 **Params**
 
-- loanAmount <code>String</code>
-- tokenAddr <code>String</code>
+- loanAmount <code>string</code>
+- tokenAddr <code>EthAddress</code>
 
 <a name="DyDxFlashLoanPaybackAction"></a>
 
@@ -430,8 +430,8 @@ Pays back a flashloan from DyDx
 ### new DyDxFlashLoanPaybackAction(loanAmount, tokenAddr)
 **Params**
 
-- loanAmount <code>String</code>
-- tokenAddr <code>String</code>
+- loanAmount <code>string</code>
+- tokenAddr <code>EthAddress</code>
 
 <a name="MakerGenerateAction"></a>
 
@@ -507,7 +507,7 @@ MakerPaybackAction - Payback dai to a Vault
 
 - vaultId <code>VaultId</code>
 - amount <code>string</code>
-- from <code>EthAddress</code> - DAI will be transferred from this address
+- from <code>EthAddress</code> - DAI will be sent from this address
 - mcdManager <code>EthAddress</code>
 
 <a name="MakerSupplyAction"></a>
@@ -524,7 +524,7 @@ MakerSupplyAction - Supply token to a Vault
 - vaultId <code>VaultId</code>
 - amount <code>string</code>
 - joinAddr <code>EthAddress</code>
-- from <code>EthAddress</code>
+- from <code>EthAddress</code> - Tokens will be supplied from this address
 - mcdManager <code>EthAddress</code>
 
 <a name="MakerWithdrawAction"></a>
@@ -552,19 +552,18 @@ Supplies a pair tokens to uniswap pool
 **Kind**: global class  
 <a name="new_UniswapSupplyAction_new"></a>
 
-### new UniswapSupplyAction(uniSupplyData)
+### new UniswapSupplyAction(tokenA, tokenB, from, to, amountADesired, amountBDesired, amountAMin, amountBMin, deadline)
 **Params**
 
-- uniSupplyData <code>Array</code> - Uni supply struct
-address tokenA;
-address tokenB;
-address from;
-address to;
-uint256 amountADesired;
-uint256 amountBDesired;
-uint256 amountAMin;
-uint256 amountBMin;
-uint256 deadline;
+- tokenA <code>EthAddress</code>
+- tokenB <code>EthAddress</code>
+- from <code>EthAddress</code>
+- to <code>EthAddress</code>
+- amountADesired <code>string</code>
+- amountBDesired <code>string</code>
+- amountAMin <code>string</code>
+- amountBMin <code>string</code>
+- deadline <code>number</code>
 
 <a name="UniswapWithdrawAction"></a>
 
@@ -574,16 +573,15 @@ Withdraws liquidity from uniswap pool
 **Kind**: global class  
 <a name="new_UniswapWithdrawAction_new"></a>
 
-### new UniswapWithdrawAction(uniWithdrawData)
+### new UniswapWithdrawAction(tokenA, tokenB, liquidity, to, from, amountAMin, amountBMin, deadline)
 **Params**
 
-- uniWithdrawData <code>Array</code> - Uni withdraw struct
-address tokenA;
-address tokenB;
-uint256 liquidity;
-address to;
-address from;
-uint256 amountAMin;
-uint256 amountBMin;
-uint256 deadline;
+- tokenA <code>EthAddress</code>
+- tokenB <code>EthAddress</code>
+- liquidity <code>string</code>
+- to <code>EthAddress</code>
+- from <code>EthAddress</code>
+- amountAMin <code>string</code>
+- amountBMin <code>string</code>
+- deadline <code>number</code>
 
