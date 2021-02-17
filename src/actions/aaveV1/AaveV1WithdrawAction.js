@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const {requireAddress} = require("../../utils/general");
 const { getAddr } = require('../../addresses.js');
 
 /**
@@ -11,6 +12,7 @@ class AaveV1WithdrawAction extends Action {
    * @param to {EthAddress} Tokens will be withdrawn to this address
    */
   constructor(tokenAddr, amount, to) {
+    requireAddress(to);
     super('AaveWithdrawV1', getAddr('AaveWithdrawV1'), ['address','uint256','address'], [...arguments]);
   }
 }

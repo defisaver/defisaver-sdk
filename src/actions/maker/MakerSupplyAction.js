@@ -14,7 +14,7 @@ class MakerSupplyAction extends Action {
    * @param from {EthAddress} Tokens will be supplied from this address
    * @param mcdManager {EthAddress}
    */
-  constructor(vaultId, amount, joinAddr, from, mcdManager= getAddr('McdCdpManager')) {
+  constructor(vaultId, amount, joinAddr, from, mcdManager = getAddr('McdCdpManager')) {
     super('McdSupply', getAddr('McdSupply'), ['uint256','uint256','address','address','address'], [vaultId, amount, joinAddr, from, mcdManager]);
   }
 

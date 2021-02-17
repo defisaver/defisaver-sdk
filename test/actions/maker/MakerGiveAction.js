@@ -51,4 +51,16 @@ describe('Action: MakerGiveAction', () => {
       assert.equal(ethValue, '0');
     })
   })
+
+  context('Give vault DAI to invalid address', () => {
+    it('constructor throws', () => {
+      assert.throws(() => {
+        action = new dfs.actions.maker.MakerGiveAction(
+          '1234',
+          '0x0000000000000000000000000000000000000000',
+          true,
+        );
+      });
+    });
+  })
 })

@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const {requireAddress} = require("../../utils/general");
 const {getAddr} = require('../../addresses.js');
 
 /**
@@ -14,6 +15,7 @@ class AaveBorrowAction extends Action {
    * @param onBehalf {EthAddress}
    */
   constructor(market, tokenAddr, amount, rateMode, to, onBehalf = getAddr('Empty')) {
+    requireAddress(to);
     super(
       'AaveBorrow',
       getAddr('AaveBorrow'),

@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const {requireAddress} = require("../../utils/general");
 const { getAddr } = require('../../addresses.js');
 
 /**
@@ -11,6 +12,7 @@ class CompoundWithdrawAction extends Action {
    * @param to {EthAddress}
    */
   constructor(cTokenAddr, amount, to) {
+    requireAddress(to);
     super('CompWithdraw', getAddr('CompWithdraw'), ['address','uint256','address'], [...arguments]);
   }
 }

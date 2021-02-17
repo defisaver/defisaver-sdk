@@ -51,4 +51,16 @@ describe('Action: MakerGenerateAction', () => {
       assert.equal(ethValue, '0');
     })
   })
+
+  context('Generate DAI to invalid address', () => {
+    it('constructor throws', () => {
+      assert.throws(() => {
+        action = new dfs.actions.maker.MakerGenerateAction(
+          '1234',
+          assetAmountInWei(1, 'DAI'),
+          '0x0000000000000000000000000000000000000000',
+        );
+      });
+    });
+  })
 })

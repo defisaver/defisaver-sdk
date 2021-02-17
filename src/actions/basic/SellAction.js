@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const {requireAddress} = require("../../utils/general");
 const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 const { BN } = require('web3-utils');
@@ -13,6 +14,7 @@ class SellAction extends Action {
    * @param to {string} Order recipient
    */
   constructor(exchangeOrder, from, to) {
+    requireAddress(to);
     super(
       'DFSSell',
       getAddr('DFSSell'),

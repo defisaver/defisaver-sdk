@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const {requireAddress} = require("../../utils/general");
 
 const { getAddr } = require('../../addresses.js');
 
@@ -13,7 +14,8 @@ class MakerWithdrawAction extends Action {
    * @param to {EthAddress}
    * @param mcdManager {EthAddress}
    */
-  constructor(vaultId, amount, joinAddr, to, mcdManager= getAddr('McdCdpManager')) {
+  constructor(vaultId, amount, joinAddr, to, mcdManager = getAddr('McdCdpManager')) {
+    requireAddress(to);
     super('McdWithdraw', getAddr('McdWithdraw'), ['uint256','uint256','address','address','address'], [vaultId, amount, joinAddr, to, mcdManager]);
   }
 }

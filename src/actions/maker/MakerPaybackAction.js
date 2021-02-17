@@ -13,7 +13,7 @@ class MakerPaybackAction extends Action {
    * @param from {EthAddress} DAI will be sent from this address
    * @param mcdManager {EthAddress}
    */
-  constructor(vaultId, amount, from, mcdManager= getAddr('McdCdpManager')) {
+  constructor(vaultId, amount, from, mcdManager = getAddr('McdCdpManager')) {
     super('McdPayback', getAddr('McdPayback'), ['uint256','uint256','address','address'], [vaultId, amount, from, mcdManager]);
   }
 

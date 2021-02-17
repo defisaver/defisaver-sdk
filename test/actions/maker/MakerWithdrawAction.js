@@ -53,4 +53,17 @@ describe('Action: MakerWithdrawAction', () => {
       assert.equal(ethValue, '0');
     })
   })
+
+  context('Withdraw 1 ETH to invalid address', () => {
+    it('constructor throws', () => {
+      assert.throws(() => {
+        action = new dfs.actions.maker.MakerWithdrawAction(
+          '1234',
+          assetAmountInWei(1, 'ETH'),
+          getIlkInfo('ETH-A').join,
+          '0x0000000000000000000000000000000000000000',
+        );
+      });
+    });
+  })
 })

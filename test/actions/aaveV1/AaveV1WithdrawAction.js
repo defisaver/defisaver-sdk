@@ -27,4 +27,16 @@ describe('Action: AaveV1WithdrawAction', () => {
       assert.equal(ethValue, '0');
     })
   })
+
+  context('Withdraw 1 ETH to invalid address', () => {
+    it('constructor throws', () => {
+      assert.throws(() => {
+        action = new dfs.actions.aaveV1.AaveV1WithdrawAction(
+          getAssetInfo('ETH').address,
+          assetAmountInWei(1, 'ETH'),
+          '0x0000000000000000000000000000000000000000',
+        );
+      });
+    });
+  })
 })

@@ -1,4 +1,5 @@
 const Action = require("../../Action");
+const {requireAddress} = require("../../utils/general");
 const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
@@ -12,6 +13,7 @@ class SendTokenAction extends Action {
    * @param amount {string} Transfer amount (-1 for whole Recipe (DsProxy) balance)
    */
   constructor(token, to, amount) {
+    requireAddress(to);
     super(
       'SendToken',
       getAddr('SendToken'),

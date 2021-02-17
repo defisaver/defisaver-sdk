@@ -56,4 +56,19 @@ describe('Action: AaveBorrowAction', () => {
       assert.equal(ethValue, '0');
     })
   })
+
+  context('Borrow 1 ETH to invalid address', () => {
+    it('constructor throws', () => {
+      assert.throws(() => {
+        action = new dfs.actions.aave.AaveBorrowAction(
+          getAddr('AaveDefaultMarket'),
+          getAssetInfo('ETH').address,
+          assetAmountInWei(1, 'ETH'),
+          1,
+          '0x0000000000000000000000000000000000000000',
+          '0xdeafbeefdeadbeefdeafbeefdeadbeefdeafbeef',
+        );
+      });
+    });
+  })
 })

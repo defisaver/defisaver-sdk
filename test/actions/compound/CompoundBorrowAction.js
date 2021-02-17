@@ -51,4 +51,16 @@ describe('Action: CompoundBorrowAction', () => {
       assert.equal(ethValue, '0');
     })
   })
+
+  context('Borrow 1 ETH to invalid address', () => {
+    it('constructor throws', () => {
+      assert.throws(() => {
+        action = new dfs.actions.compound.CompoundBorrowAction(
+          getAssetInfo('cETH').address,
+          assetAmountInWei(1, 'cETH'),
+          '0x0000000000000000000000000000000000000000',
+        );
+      });
+    });
+  })
 })
