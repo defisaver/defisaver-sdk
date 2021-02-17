@@ -9,8 +9,8 @@ const { BN } = require('web3-utils');
 class BuyAction extends Action {
   /**
    * @param exchangeOrder {Array} Stardard DFS Exchange data
-   * @param from {String} Order sender
-   * @param to {String} Order recipient
+   * @param from {string} Order sender
+   * @param to {string} Order recipient
    */
   constructor(exchangeOrder, from, to) {
     super(

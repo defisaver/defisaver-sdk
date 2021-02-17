@@ -45,7 +45,7 @@ describe('Action: SendToken', () => {
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
-      assert.equal(ethValue, assetAmountInWei(1, 'ETH'));
+      assert.equal(ethValue, '0');
     })
   })
 })

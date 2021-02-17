@@ -3,13 +3,13 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
- * Transfers specified token to specified address
+ * Transfers specified token from recipe (DsProxy) to specified address
  */
 class SendTokenAction extends Action {
   /**
-   * @param token {String} Token address
-   * @param to {String} Transfer recipient
-   * @param amount {String} Transfer amount
+   * @param token {string} Token address
+   * @param to {string} Transfer recipient
+   * @param amount {string} Transfer amount (-1 for whole Recipe (DsProxy) balance)
    */
   constructor(token, to, amount) {
     super(
@@ -22,14 +22,6 @@ class SendTokenAction extends Action {
       ],
       [...arguments]
     );
-  }
-
-  async getEthValue() {
-    const asssetInfo = getAssetInfoByAddress(this.args[0])
-    if (asssetInfo && asssetInfo.symbol === 'ETH') {
-      return this.args[2];
-    }
-    return '0';
   }
 }
 

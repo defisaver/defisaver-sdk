@@ -29,39 +29,39 @@ Single action that can be executed directly, or combined into a set (ie. supply 
 
 * [Action](#Action)
     * [new Action(name, contractAddress, paramTypes, args)](#new_Action_new)
-    * [.encodeForCall()](#Action+encodeForCall) ⇒ <code>Array.&lt;Array.&lt;String&gt;&gt;</code>
-    * [.encodeForDsProxyCall()](#Action+encodeForDsProxyCall) ⇒ <code>Array.&lt;String&gt;</code>
-    * [.encodeForRecipe()](#Action+encodeForRecipe) ⇒ <code>Array.&lt;String&gt;</code>
+    * [.encodeForCall()](#Action+encodeForCall) ⇒ <code>Array.&lt;Array.&lt;string&gt;&gt;</code>
+    * [.encodeForDsProxyCall()](#Action+encodeForDsProxyCall) ⇒ <code>Array.&lt;string&gt;</code>
+    * [.encodeForRecipe()](#Action+encodeForRecipe) ⇒ <code>Array.&lt;string&gt;</code>
     * [.getAssetsToApprove()](#Action+getAssetsToApprove) ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
-    * [.getEthValue()](#Action+getEthValue) ⇒ <code>Promise.&lt;String&gt;</code>
+    * [.getEthValue()](#Action+getEthValue) ⇒ <code>Promise.&lt;string&gt;</code>
 
 <a name="new_Action_new"></a>
 
 ### new Action(name, contractAddress, paramTypes, args)
 **Params**
 
-- name <code>String</code>
-- contractAddress <code>String</code>
-- paramTypes <code>Array.&lt;String&gt;</code>
+- name <code>string</code>
+- contractAddress <code>string</code>
+- paramTypes <code>Array.&lt;string&gt;</code>
 - args <code>Array.&lt;\*&gt;</code>
 
 <a name="Action+encodeForCall"></a>
 
-### action.encodeForCall() ⇒ <code>Array.&lt;Array.&lt;String&gt;&gt;</code>
+### action.encodeForCall() ⇒ <code>Array.&lt;Array.&lt;string&gt;&gt;</code>
 Encode arguments for calling the action directly
 
 **Kind**: instance method of [<code>Action</code>](#Action)  
-**Returns**: <code>Array.&lt;Array.&lt;String&gt;&gt;</code> - bytes-encoded args  
+**Returns**: <code>Array.&lt;Array.&lt;string&gt;&gt;</code> - bytes-encoded args  
 <a name="Action+encodeForDsProxyCall"></a>
 
-### action.encodeForDsProxyCall() ⇒ <code>Array.&lt;String&gt;</code>
+### action.encodeForDsProxyCall() ⇒ <code>Array.&lt;string&gt;</code>
 Encode arguments for calling the action via DsProxy
 
 **Kind**: instance method of [<code>Action</code>](#Action)  
-**Returns**: <code>Array.&lt;String&gt;</code> - `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`  
+**Returns**: <code>Array.&lt;string&gt;</code> - `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`  
 <a name="Action+encodeForRecipe"></a>
 
-### action.encodeForRecipe() ⇒ <code>Array.&lt;String&gt;</code>
+### action.encodeForRecipe() ⇒ <code>Array.&lt;string&gt;</code>
 Encodes action for Recipe call
 
 **Kind**: instance method of [<code>Action</code>](#Action)  
@@ -74,11 +74,11 @@ Approval is done from owner to DsProxy
 **Kind**: instance method of [<code>Action</code>](#Action)  
 <a name="Action+getEthValue"></a>
 
-### action.getEthValue() ⇒ <code>Promise.&lt;String&gt;</code>
+### action.getEthValue() ⇒ <code>Promise.&lt;string&gt;</code>
 ETH value to be sent with transaction
 
 **Kind**: instance method of [<code>Action</code>](#Action)  
-**Returns**: <code>Promise.&lt;String&gt;</code> - ETH value in wei  
+**Returns**: <code>Promise.&lt;string&gt;</code> - ETH value in wei  
 <a name="Recipe"></a>
 
 ## Recipe
@@ -89,18 +89,18 @@ Set of Actions to be performed sequentially in a single transaction
 * [Recipe](#Recipe)
     * [new Recipe(name, actions)](#new_Recipe_new)
     * [.addAction(action)](#Recipe+addAction) ⇒ [<code>Recipe</code>](#Recipe)
-    * [.encodeForCall()](#Recipe+encodeForCall) ⇒ <code>Array.&lt;(String\|Array.&lt;\*&gt;)&gt;</code>
-    * [.encodeForDsProxyCall()](#Recipe+encodeForDsProxyCall) ⇒ <code>Array.&lt;String&gt;</code>
+    * [.encodeForCall()](#Recipe+encodeForCall) ⇒ <code>Array.&lt;(string\|Array.&lt;\*&gt;)&gt;</code>
+    * [.encodeForDsProxyCall()](#Recipe+encodeForDsProxyCall) ⇒ <code>Array.&lt;string&gt;</code>
     * [._validateParamMappings()](#Recipe+_validateParamMappings)
     * [.getAssetsToApprove()](#Recipe+getAssetsToApprove) ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
-    * [.getEthValue()](#Recipe+getEthValue) ⇒ <code>Promise.&lt;String&gt;</code>
+    * [.getEthValue()](#Recipe+getEthValue) ⇒ <code>Promise.&lt;string&gt;</code>
 
 <a name="new_Recipe_new"></a>
 
 ### new Recipe(name, actions)
 **Params**
 
-- name <code>String</code>
+- name <code>string</code>
 - actions [<code>Array.&lt;Action&gt;</code>](#Action)
 
 <a name="Recipe+addAction"></a>
@@ -113,7 +113,7 @@ Set of Actions to be performed sequentially in a single transaction
 
 <a name="Recipe+encodeForCall"></a>
 
-### recipe.encodeForCall() ⇒ <code>Array.&lt;(String\|Array.&lt;\*&gt;)&gt;</code>
+### recipe.encodeForCall() ⇒ <code>Array.&lt;(string\|Array.&lt;\*&gt;)&gt;</code>
 Encode arguments for calling the action set directly
 You most likely don't want to use this directly.
 Instead, you probably want to use `encodeForDsProxyCall`
@@ -121,11 +121,11 @@ Instead, you probably want to use `encodeForDsProxyCall`
 **Kind**: instance method of [<code>Recipe</code>](#Recipe)  
 <a name="Recipe+encodeForDsProxyCall"></a>
 
-### recipe.encodeForDsProxyCall() ⇒ <code>Array.&lt;String&gt;</code>
+### recipe.encodeForDsProxyCall() ⇒ <code>Array.&lt;string&gt;</code>
 Encode arguments for calling the action set via DsProxy
 
 **Kind**: instance method of [<code>Recipe</code>](#Recipe)  
-**Returns**: <code>Array.&lt;String&gt;</code> - `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`  
+**Returns**: <code>Array.&lt;string&gt;</code> - `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`  
 <a name="Recipe+_validateParamMappings"></a>
 
 ### recipe.\_validateParamMappings()
@@ -141,11 +141,11 @@ Approval is done from owner to DsProxy
 **Kind**: instance method of [<code>Recipe</code>](#Recipe)  
 <a name="Recipe+getEthValue"></a>
 
-### recipe.getEthValue() ⇒ <code>Promise.&lt;String&gt;</code>
+### recipe.getEthValue() ⇒ <code>Promise.&lt;string&gt;</code>
 ETH value to be sent with transaction
 
 **Kind**: instance method of [<code>Recipe</code>](#Recipe)  
-**Returns**: <code>Promise.&lt;String&gt;</code> - ETH value in wei  
+**Returns**: <code>Promise.&lt;string&gt;</code> - ETH value in wei  
 <a name="EthAddress"></a>
 
 ## EthAddress : <code>string</code>

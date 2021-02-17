@@ -82,7 +82,7 @@ describe('Action: DyDxFlashLoanAction', () => {
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
-      assert.equal(ethValue, assetAmountInWei(100, 'ETH'));
+      assert.equal(ethValue, '0');
     })
   })
 })

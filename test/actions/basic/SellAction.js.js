@@ -27,7 +27,8 @@ describe('Action: Sell', () => {
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
-      assert.equal(ethValue, '0');
+      // TODO add 0x fee
+      assert.isAbove(+assetAmountInEth(ethValue, 'ETH'), 0);
     })
   })
 

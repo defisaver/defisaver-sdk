@@ -223,8 +223,8 @@ Buys an exact amount of dest token on DeFi Saver exchange aggregator
 **Params**
 
 - exchangeOrder <code>Array</code> - Stardard DFS Exchange data
-- from <code>String</code> - Order sender
-- to <code>String</code> - Order recipient
+- from <code>string</code> - Order sender
+- to <code>string</code> - Order recipient
 
 <a name="SellAction"></a>
 
@@ -237,9 +237,9 @@ Sells token on DeFi Saver exchange aggregator
 ### new SellAction(exchangeOrder, from, to)
 **Params**
 
-- exchangeOrder <code>Array</code> - Stardard DFS Exchange data
-- from <code>String</code> - Order sender
-- to <code>String</code> - Order recipient
+- exchangeOrder <code>Array</code> - Standard DFS Exchange data
+- from <code>string</code> - Order sender
+- to <code>string</code> - Order recipient
 
 <a name="SendTokenAction"></a>
 
@@ -252,9 +252,9 @@ Transfers specified token to specified address
 ### new SendTokenAction(token, to, amount)
 **Params**
 
-- token <code>String</code> - Token address
-- to <code>String</code> - Transfer recipient
-- amount <code>String</code> - Transfer amount
+- token <code>string</code> - Token address
+- to <code>string</code> - Transfer recipient
+- amount <code>string</code> - Transfer amount
 
 <a name="CompoundBorrowAction"></a>
 

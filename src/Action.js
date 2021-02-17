@@ -8,9 +8,9 @@ const ActionAbi = require('./abis/Action.json');
  */
 class Action {
   /**
-   * @param name {String}
-   * @param contractAddress {String}
-   * @param paramTypes {Array<String>}
+   * @param name {string}
+   * @param contractAddress {string}
+   * @param paramTypes {Array<string>}
    * @param args {Array<*>}
    */
   constructor(name, contractAddress, paramTypes, args) {
@@ -26,7 +26,7 @@ class Action {
   }
 
   /**
-   * @returns {String}
+   * @returns {string}
    * @private
    */
   _getId() {
@@ -34,7 +34,7 @@ class Action {
   }
 
   /**
-   * @returns {Array<Number>}
+   * @returns {Array<number>}
    * @private
    */
   _getArgumentMapping() {
@@ -78,7 +78,7 @@ class Action {
 
   /**
    * Encode arguments for calling the action directly
-   * @returns {Array<Array<String>>} bytes-encoded args
+   * @returns {Array<Array<string>>} bytes-encoded args
    */
   encodeForCall() {
     const bytesEncodedArgs = this.args.map((arg, i) => {
@@ -92,7 +92,7 @@ class Action {
 
   /**
    * Encode arguments for calling the action via DsProxy
-   * @returns {Array<String>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
+   * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
     const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
@@ -104,7 +104,7 @@ class Action {
 
   /**
    * Encodes action for Recipe call
-   * @returns {Array<String>}
+   * @returns {Array<string>}
    */
   encodeForRecipe() {
     return [
@@ -126,7 +126,7 @@ class Action {
 
   /**
    * ETH value to be sent with transaction
-   * @returns {Promise<String>} ETH value in wei
+   * @returns {Promise<string>} ETH value in wei
    */
   async getEthValue() {
     return '0';

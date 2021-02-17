@@ -10,7 +10,7 @@ const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
  */
 class Recipe {
   /**
-   * @param name {String}
+   * @param name {string}
    * @param actions {Array<Action>}
    */
   constructor(name, actions = []) {
@@ -37,7 +37,7 @@ class Recipe {
    * Encode arguments for calling the action set directly
    * You most likely don't want to use this directly.
    * Instead, you probably want to use `encodeForDsProxyCall`
-   * @returns {Array<String|Array<*>>}
+   * @returns {Array<string|Array<*>>}
    */
   encodeForCall() {
     const encoded = this.actions.map(action => action.encodeForRecipe());
@@ -51,7 +51,7 @@ class Recipe {
 
   /**
    * Encode arguments for calling the action set via DsProxy
-   * @returns {Array<String>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
+   * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
     const executeTaskAbi = RecipeAbi.find(({name}) => name === 'executeTask');
@@ -92,7 +92,7 @@ class Recipe {
 
   /**
    * ETH value to be sent with transaction
-   * @returns {Promise<String>} ETH value in wei
+   * @returns {Promise<string>} ETH value in wei
    */
   async getEthValue() {
     return (await Promise.all(this.actions.map(a => a.getEthValue())))
