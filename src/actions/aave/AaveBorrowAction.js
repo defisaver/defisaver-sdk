@@ -1,20 +1,25 @@
 const Action = require("../../Action");
-const { getAddr } = require('../../addresses.js');
+const {getAddr} = require('../../addresses.js');
 
 /**
  * AaveBorrowAction - Borrow tokens from Aave
  */
 class AaveBorrowAction extends Action {
   /**
-   * @param market {String}
-   * @param tokenAddr {String}
-   * @param amount {String}
-   * @param rateMode {Number}
-   * @param to {String}
-   * @param onBehlaf {String}
+   * @param market {EthAddress}
+   * @param tokenAddr {EthAddress}
+   * @param amount {string}
+   * @param rateMode {number} Borrow rate mode: Stable: 1, Variable: 2
+   * @param to {EthAddress} Borrowed tokens will be sent to this address
+   * @param onBehalf {EthAddress}
    */
-  constructor(market, tokenAddr, amount, rateMode, to, onBehlaf) {
-    super('AaveBorrow', getAddr('AaveBorrow'), ['address','address','uint256','uint256','address','address'], [...arguments]);
+  constructor(market, tokenAddr, amount, rateMode, to, onBehalf = getAddr('Empty')) {
+    super(
+      'AaveBorrow',
+      getAddr('AaveBorrow'),
+      ['address', 'address', 'uint256', 'uint256', 'address', 'address'],
+      [market, tokenAddr, amount, rateMode, to, onBehalf],
+    );
   }
 }
 

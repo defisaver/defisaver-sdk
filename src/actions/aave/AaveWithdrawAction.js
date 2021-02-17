@@ -6,10 +6,10 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveWithdrawAction extends Action {
   /**
-   * @param market {String}
-   * @param tokenAddr {String}
-   * @param amount {String}
-   * @param to {String}
+   * @param market {EthAddress}
+   * @param tokenAddr {EthAddress}
+   * @param amount {string}
+   * @param to {EthAddress} Tokens will be withdrawn to this address
    */
   constructor(market, tokenAddr, amount, to) {
     super('AaveWithdraw', getAddr('AaveWithdraw'), ['address','address','uint256','address'], [...arguments]);

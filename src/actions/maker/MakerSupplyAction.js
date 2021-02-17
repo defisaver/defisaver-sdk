@@ -11,7 +11,7 @@ class MakerSupplyAction extends Action {
    * @param vaultId {VaultId}
    * @param amount {string}
    * @param joinAddr {EthAddress}
-   * @param from {EthAddress}
+   * @param from {EthAddress} Tokens will be supplied from this address
    * @param mcdManager {EthAddress}
    */
   constructor(vaultId, amount, joinAddr, from, mcdManager= getAddr('McdCdpManager')) {

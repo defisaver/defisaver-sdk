@@ -10,7 +10,7 @@ class MakerPaybackAction extends Action {
   /**
    * @param vaultId {VaultId}
    * @param amount {string}
-   * @param from {EthAddress} DAI will be transferred from this address
+   * @param from {EthAddress} DAI will be sent from this address
    * @param mcdManager {EthAddress}
    */
   constructor(vaultId, amount, from, mcdManager= getAddr('McdCdpManager')) {

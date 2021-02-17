@@ -1,7 +1,7 @@
-const AavePaybackActionV1 = require('./AavePaybackActionV1');
-const AaveWithdrawActionV1 = require('./AaveWithdrawActionV1');
+const AaveV1PaybackAction = require('./AaveV1PaybackAction');
+const AaveV1WithdrawAction = require('./AaveV1WithdrawAction');
 
 module.exports = {
-  AavePaybackActionV1,
-  AaveWithdrawActionV1,
+  AaveV1PaybackAction,
+  AaveV1WithdrawAction,
 };

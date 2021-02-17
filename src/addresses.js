@@ -47,8 +47,10 @@ const actionAddresses = {
 };
 
 const otherAddresses = {
+  'Empty': '0x0000000000000000000000000000000000000000',
   'McdCdpManager': '0x5ef30b9986345249bc32d8928b7ee64de9435e39',
   'BCdpManager': '0x3f30c2381CD8B917Dd96EB2f1A4F96D91324BBed',
+  'AaveDefaultMarket': '0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5',
 }
 
 

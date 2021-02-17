@@ -17,13 +17,13 @@ class CompoundSupplyAction extends Action {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[0]);
-    if (asset !== 'cETH') return [{asset: this.args[0], owner: this.args[2]}];
+    if (asset.symbol !== 'cETH') return [{asset: this.args[0], owner: this.args[2]}];
     return [];
   }
 
   async getEthValue() {
     const asset = getAssetInfoByAddress(this.args[0]);
-    if (asset === 'cETH') return this.args[1];
+    if (asset.symbol === 'cETH') return this.args[1];
     return '0';
   }
 }
