@@ -1,3 +1,12 @@
+## Modules
+
+<dl>
+<dt><a href="#utils.module_uniswapLP">uniswapLP</a></dt>
+<dd></dd>
+<dt><a href="#utils.module_zeroExExchange">zeroExExchange</a></dt>
+<dd></dd>
+</dl>
+
 ## Classes
 
 <dl>
@@ -19,6 +28,107 @@
 <dd><p>Maker vault ID</p>
 </dd>
 </dl>
+
+<a name="utils.module_uniswapLP"></a>
+
+## uniswapLP
+
+* [uniswapLP](#utils.module_uniswapLP)
+    * [.getPoolAddressByAddresses(tokenA, tokenB)](#utils.module_uniswapLP.getPoolAddressByAddresses) ⇒ [<code>EthAddress</code>](#EthAddress)
+    * [.getPoolAddressBySymbols(symbolA, symbolB)](#utils.module_uniswapLP.getPoolAddressBySymbols) ⇒ [<code>EthAddress</code>](#EthAddress)
+
+<a name="utils.module_uniswapLP.getPoolAddressByAddresses"></a>
+
+### uniswapLP.getPoolAddressByAddresses(tokenA, tokenB) ⇒ [<code>EthAddress</code>](#EthAddress)
+Computes deterministic LP address.
+Source: https://uniswap.org/docs/v2/javascript-SDK/getting-pair-addresses/#typescript
+
+**Kind**: static method of [<code>uniswapLP</code>](#utils.module_uniswapLP)  
+**Params**
+
+- tokenA [<code>EthAddress</code>](#EthAddress) - Use WETH for ETH
+- tokenB [<code>EthAddress</code>](#EthAddress) - Use WETH for ETH
+
+<a name="utils.module_uniswapLP.getPoolAddressBySymbols"></a>
+
+### uniswapLP.getPoolAddressBySymbols(symbolA, symbolB) ⇒ [<code>EthAddress</code>](#EthAddress)
+**Kind**: static method of [<code>uniswapLP</code>](#utils.module_uniswapLP)  
+**Params**
+
+- symbolA <code>string</code>
+- symbolB <code>string</code>
+
+<a name="utils.module_zeroExExchange"></a>
+
+## zeroExExchange
+
+* [zeroExExchange](#utils.module_zeroExExchange)
+    * [.estimateSellPrice(sellAmount, sellToken, buyToken)](#utils.module_zeroExExchange.estimateSellPrice) ⇒ <code>Promise.&lt;string&gt;</code>
+    * [.estimateBuyPrice(buyAmount, buyToken, sellToken)](#utils.module_zeroExExchange.estimateBuyPrice) ⇒ <code>Promise.&lt;string&gt;</code>
+    * [.getSellExchangeOrder(sellAmount, sellToken, buyToken, expectedPrice, acceptedSlippagePercent)](#utils.module_zeroExExchange.getSellExchangeOrder) ⇒ <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code>
+    * [.getBuyExchangeOrder(buyAmount, buyToken, sellToken, expectedPrice, acceptedSlippagePercent)](#utils.module_zeroExExchange.getBuyExchangeOrder) ⇒ <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code>
+
+<a name="utils.module_zeroExExchange.estimateSellPrice"></a>
+
+### zeroExExchange.estimateSellPrice(sellAmount, sellToken, buyToken) ⇒ <code>Promise.&lt;string&gt;</code>
+Gets price estimate for selling a specific amount.
+Example: getBestExchangePrice('1', 'ETH', 'DAI') - swapping 1 ETH for some DAI
+
+**Kind**: static method of [<code>zeroExExchange</code>](#utils.module_zeroExExchange)  
+**Returns**: <code>Promise.&lt;string&gt;</code> - price of sellToken in buyToken  
+**Params**
+
+- sellAmount <code>String</code> - amount of sellToken (not in wei)
+- sellToken <code>String</code> - Symbol for asset being sold
+- buyToken <code>String</code> - Symbol for asset being bought
+
+<a name="utils.module_zeroExExchange.estimateBuyPrice"></a>
+
+### zeroExExchange.estimateBuyPrice(buyAmount, buyToken, sellToken) ⇒ <code>Promise.&lt;string&gt;</code>
+Gets price estimate for buying a specific amount.
+Example: estimateBuyPrice('1000', 'DAI', 'ETH') - swapping 1000 DAI for some ETH
+
+**Kind**: static method of [<code>zeroExExchange</code>](#utils.module_zeroExExchange)  
+**Returns**: <code>Promise.&lt;string&gt;</code> - price of sellToken in buyToken  
+**Params**
+
+- buyAmount <code>String</code> - amount of buyToken (not in wei)
+- buyToken <code>String</code> - Symbol for asset being bought
+- sellToken <code>String</code> - Symbol for asset being sold
+
+<a name="utils.module_zeroExExchange.getSellExchangeOrder"></a>
+
+### zeroExExchange.getSellExchangeOrder(sellAmount, sellToken, buyToken, expectedPrice, acceptedSlippagePercent) ⇒ <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code>
+Fetches prices and creates order ready to be passed to transaction.
+This should only be called when before sending tx, not to be used for just querying the price.
+For that purpose, the estimateSellPrice method can be used.
+
+**Kind**: static method of [<code>zeroExExchange</code>](#utils.module_zeroExExchange)  
+**Returns**: <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code> - Order data array & tx value that can be passed directly to contract call  
+**Params**
+
+- sellAmount <code>string</code> - Amount of asset being sold ('1.5')
+- sellToken <code>string</code> - Symbol for asset being sold ('ETH')
+- buyToken <code>string</code> - Symbol for asset being bought ('DAI')
+- expectedPrice <code>string</code> - Price received from estimatePrice (so minPrice can be calculated based on what user saw)
+- acceptedSlippagePercent <code>string</code> | <code>Number</code> - Slippage percentage tolerated [0-100]
+
+<a name="utils.module_zeroExExchange.getBuyExchangeOrder"></a>
+
+### zeroExExchange.getBuyExchangeOrder(buyAmount, buyToken, sellToken, expectedPrice, acceptedSlippagePercent) ⇒ <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code>
+Fetches prices and creates order ready to be passed to transaction.
+This should only be called when before sending tx, not to be used for just querying the price.
+For that purpose, the estimateBuyPrice method can be used.
+
+**Kind**: static method of [<code>zeroExExchange</code>](#utils.module_zeroExExchange)  
+**Returns**: <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code> - Order data array & tx value that can be passed directly to contract call  
+**Params**
+
+- buyAmount <code>string</code> - Amount of asset being bought ('1500.123')
+- buyToken <code>string</code> - Symbol for asset being bought ('DAI')
+- sellToken <code>string</code> - Symbol for asset being sold ('ETH')
+- expectedPrice <code>string</code> - Price received from estimatePrice (so minPrice can be calculated based on what user saw)
+- acceptedSlippagePercent <code>string</code> | <code>Number</code> - Slippage percentage tolerated [0-100]
 
 <a name="Action"></a>
 

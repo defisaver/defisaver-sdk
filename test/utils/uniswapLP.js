@@ -1,6 +1,6 @@
 const {assert} = require('chai');
 const {getAssetInfo} = require("@defisaver/tokens");
-const uniswapUtils = require('../src/utils/uniswap');
+const uniswapUtils = require('../../src/utils/uniswapLP');
 
 describe('Utils', () => {
   context('Uniswap', () => {

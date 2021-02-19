@@ -1,3 +1,7 @@
+/**
+ * @module utils.uniswapLP
+ */
+
 const { pack, keccak256 } = require('@ethersproject/solidity');
 const { getCreate2Address } = require('@ethersproject/address');
 const {getAssetInfo} = require("@defisaver/tokens");
@@ -6,7 +10,7 @@ const FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
 const INIT_CODE_HASH = '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f'
 
 /**
- * Computes deterministic LP address
+ * Computes deterministic LP address.
  * Source: https://uniswap.org/docs/v2/javascript-SDK/getting-pair-addresses/#typescript
  *
  * @param tokenA {EthAddress} Use WETH for ETH
@@ -28,8 +32,8 @@ module.exports.getPoolAddressByAddresses = (tokenA, tokenB) => {
 }
 
 /**
- * @param symbolA
- * @param symbolB
+ * @param symbolA {string}
+ * @param symbolB {string}
  * @returns {EthAddress}
  */
 module.exports.getPoolAddressBySymbols = (symbolA, symbolB) => {

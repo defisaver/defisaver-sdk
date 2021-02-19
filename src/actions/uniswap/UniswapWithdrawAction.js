@@ -1,5 +1,5 @@
 const Action = require("../../Action");
-const {getPoolAddressByAddresses} = require("../../utils/uniswap");
+const {getPoolAddressByAddresses} = require("../../utils/uniswapLP");
 const {getAddr} = require('../../addresses.js');
 
 /**

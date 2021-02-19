@@ -29,7 +29,7 @@
 <dd><p>Sells token on DeFi Saver exchange aggregator</p>
 </dd>
 <dt><a href="#SendTokenAction">SendTokenAction</a></dt>
-<dd><p>Transfers specified token to specified address</p>
+<dd><p>Transfers specified token from recipe (DsProxy) to specified address</p>
 </dd>
 <dt><a href="#CompoundBorrowAction">CompoundBorrowAction</a></dt>
 <dd><p>CompoundBorrowAction - Borrow tokens from Compound</p>
@@ -222,7 +222,7 @@ Buys an exact amount of dest token on DeFi Saver exchange aggregator
 ### new BuyAction(exchangeOrder, from, to)
 **Params**
 
-- exchangeOrder <code>Array</code> - Stardard DFS Exchange data
+- exchangeOrder <code>Array</code> - Standard DFS Exchange data
 - from <code>string</code> - Order sender
 - to <code>string</code> - Order recipient
 
@@ -244,7 +244,7 @@ Sells token on DeFi Saver exchange aggregator
 <a name="SendTokenAction"></a>
 
 ## SendTokenAction
-Transfers specified token to specified address
+Transfers specified token from recipe (DsProxy) to specified address
 
 **Kind**: global class  
 <a name="new_SendTokenAction_new"></a>
@@ -254,7 +254,7 @@ Transfers specified token to specified address
 
 - token <code>string</code> - Token address
 - to <code>string</code> - Transfer recipient
-- amount <code>string</code> - Transfer amount
+- amount <code>string</code> - Transfer amount (-1 for whole Recipe (DsProxy) balance)
 
 <a name="CompoundBorrowAction"></a>
 
