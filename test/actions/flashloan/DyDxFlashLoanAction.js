@@ -1,5 +1,5 @@
 const dfs = require('../../../index.js');
-const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
+const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {getAssetInfo, assetAmountInWei} = require("@defisaver/tokens");
 const {assert} = require('chai');
 
@@ -13,7 +13,6 @@ describe('Action: DyDxFlashLoanAction', () => {
         getAssetInfo('DAI').address,
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
@@ -33,7 +32,6 @@ describe('Action: DyDxFlashLoanAction', () => {
         getAssetInfo('DAI').address,
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
@@ -53,7 +51,6 @@ describe('Action: DyDxFlashLoanAction', () => {
         getAssetInfo('ETH').address,
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
@@ -73,7 +70,6 @@ describe('Action: DyDxFlashLoanAction', () => {
         getAssetInfo('ETH').address,
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {

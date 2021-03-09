@@ -1,6 +1,6 @@
 const dfs = require('../../../index.js');
 const {getIlkInfo, assetAmountInWei,getAssetInfo} = require("@defisaver/tokens");
-const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
+const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
 const { getAddr } = require('../../../src/addresses.js');
 
@@ -16,7 +16,6 @@ describe('Action: MakerPaybackAction', () => {
       );
       assert.equal(action.args[3], getAddr('McdCdpManager'));
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
@@ -41,7 +40,6 @@ describe('Action: MakerPaybackAction', () => {
       );
       assert.equal(action.args[3], getAddr('BCdpManager'));
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {

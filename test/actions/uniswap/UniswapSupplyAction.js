@@ -1,5 +1,5 @@
 const dfs = require('../../../index.js');
-const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
+const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {getAssetInfo, assetAmountInWei, assetAmountInEth} = require("@defisaver/tokens");
 const {assert} = require('chai');
 
@@ -20,7 +20,6 @@ describe('Action: UniswapSupplyAction', () => {
         Date.now() + 1000 * 60 * 10,
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
@@ -49,7 +48,6 @@ describe('Action: UniswapSupplyAction', () => {
         Date.now() + 1000 * 60 * 10,
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {

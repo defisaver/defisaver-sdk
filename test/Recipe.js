@@ -2,7 +2,7 @@ const dfs = require('../index.js');
 const {getAssetInfo} = require("@defisaver/tokens");
 const {getIlkInfo} = require("@defisaver/tokens");
 const {assetAmountInWei} = require("@defisaver/tokens");
-const {encodeForCall, encodeForDsProxyCall} = require('./_recipeUtils');
+const {encodeForDsProxyCall} = require('./_recipeUtils');
 const {assert} = require('chai');
 
 describe('Recipe', () => {
@@ -21,7 +21,6 @@ describe('Recipe', () => {
       );
     })
 
-    it('encodeForCall', () => encodeForCall(recipe));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(recipe));
     it('getAssetsToApprove', async () => {
       const assetsToApprove = await recipe.getAssetsToApprove();
@@ -47,7 +46,6 @@ describe('Recipe', () => {
       );
     })
 
-    it('encodeForCall', () => encodeForCall(recipe));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(recipe));
     it('getAssetsToApprove', async () => {
       const assetsToApprove = await recipe.getAssetsToApprove();
@@ -74,11 +72,10 @@ describe('Recipe', () => {
       );
     })
 
-    it('encodeForCall', () => encodeForCall(recipe));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(recipe));
   })
 
-  context('With param mapping inside a tupple', () => {
+  context('With param mapping inside a tuple', () => {
     let recipe;
 
     it('Constructor', () => {
@@ -93,7 +90,6 @@ describe('Recipe', () => {
       recipe.addAction(action);
     })
 
-    it('encodeForCall', () => encodeForCall(recipe));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(recipe));
   })
 })
