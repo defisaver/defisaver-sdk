@@ -1,6 +1,6 @@
 const dfs = require('../../../index.js');
 const {getIlkInfo, assetAmountInWei,getAssetInfo} = require("@defisaver/tokens");
-const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
+const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
 const { getAddr } = require('../../../src/addresses.js');
 
@@ -15,7 +15,6 @@ describe('Action: CompoundWithdrawAction', () => {
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {

@@ -1,7 +1,7 @@
 const dfs = require('../../../index.js');
 const {assetAmountInWei} = require("@defisaver/tokens");
 const {getAssetInfo} = require("@defisaver/tokens");
-const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
+const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
 
 describe('Action: SendToken', () => {
@@ -15,7 +15,6 @@ describe('Action: SendToken', () => {
         assetAmountInWei(1, 'DAI')
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
@@ -36,7 +35,6 @@ describe('Action: SendToken', () => {
         assetAmountInWei(1, 'ETH')
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {

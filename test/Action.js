@@ -1,5 +1,5 @@
 const dfs = require('../index.js');
-const {encodeForCall, encodeForDsProxyCall, encodeForRecipe} = require('./_actionUtils');
+const {encodeForDsProxyCall, encodeForRecipe} = require('./_actionUtils');
 const {assert} = require('chai');
 
 describe('Action', () => {
@@ -9,7 +9,6 @@ describe('Action', () => {
     it('Constructor', () => {
       action = new dfs.Action('MockSwap', '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f', ['uint256', 'address'], [5, '0x6b175474e89094c44da98b954eedeac495271d0f'])
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
   });
@@ -32,7 +31,6 @@ describe('Action', () => {
         ]
       );
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
   })
@@ -42,7 +40,6 @@ describe('Action', () => {
     it('Constructor', () => {
       action = new dfs.Action('MockSwap', '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f', ['uint256', 'address'], ['$1', '0x6b175474e89094c44da98b954eedeac495271d0f']);
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
   })
@@ -52,7 +49,6 @@ describe('Action', () => {
     it('Constructor', () => {
       action = new dfs.Action('MockSwap', '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f', [['uint256'], 'address'], [['$1'], '0x6b175474e89094c44da98b954eedeac495271d0f']);
     })
-    it('encodeForCall', () => encodeForCall(action));
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe with incorrect mappableArgs throws', () => {
       assert.throws(() => encodeForRecipe(action));

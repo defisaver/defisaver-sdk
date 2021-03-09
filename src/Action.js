@@ -79,8 +79,9 @@ class Action {
   /**
    * Encode arguments for calling the action directly
    * @returns {Array<Array<string>>} bytes-encoded args
+   * @private
    */
-  encodeForCall() {
+  _encodeForCall() {
     const bytesEncodedArgs = this.args.map((arg, i) => {
       let paramType = this.paramTypes[i];
       let _arg = this._replaceWithPlaceholders(arg, paramType);
@@ -98,7 +99,7 @@ class Action {
     const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
     return [
       this.contractAddress,
-      AbiCoder.encodeFunctionCall(executeActionDirectAbi, this.encodeForCall()),
+      AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall()),
     ];
   }
 
@@ -108,7 +109,7 @@ class Action {
    */
   encodeForRecipe() {
     return [
-      this.encodeForCall()[0],   // actionCallData
+      this._encodeForCall()[0],   // actionCallData
       [],                        // subData
       this._getId(),              // actionIds
       this._getArgumentMapping(), // paramMappings
