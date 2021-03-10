@@ -2,7 +2,7 @@ const Action = require("../../Action");
 const {requireAddress} = require("../../utils/general");
 const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
-const { BN } = require('web3-utils');
+const Dec = require('decimal.js');
 
 /**
  * Sells token on DeFi Saver exchange aggregator
@@ -12,8 +12,9 @@ class SellAction extends Action {
    * @param exchangeOrder {Array} Standard DFS Exchange data
    * @param from {string} Order sender
    * @param to {string} Order recipient
+   * @param protocolFee {string} 0x fee (amount of ETH in Wei)
    */
-  constructor(exchangeOrder, from, to) {
+  constructor(exchangeOrder, from, to, protocolFee = '0') {
     requireAddress(to);
     super(
       'DFSSell',
@@ -23,8 +24,10 @@ class SellAction extends Action {
         "address",
         "address",
       ],
-      [...arguments]
+      [exchangeOrder, from, to]
     );
+
+    this.protocolFee = protocolFee;
 
     this.mappableArgs = [
       this.args[0][0],
@@ -42,10 +45,10 @@ class SellAction extends Action {
   }
 
   async getEthValue() {
-    let val = new BN('0');
+    let val = new Dec('0');
     const asset = getAssetInfoByAddress(this.args[0][0]);
-    if (asset.symbol === 'ETH' || asset.symbol === 'WETH') val = val.add(new BN(this.args[0][2]));
-    // TODO add 0x fee
+    if (asset.symbol === 'ETH' || asset.symbol === 'WETH') val = val.add(new Dec(this.args[0][2]));
+    val.add(new Dec(this.protocolFee));
     return val.toString();
   }
 }

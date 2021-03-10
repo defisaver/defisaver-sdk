@@ -1,8 +1,9 @@
 const Action = require("../../Action");
 const {requireAddress} = require("../../utils/general");
 const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
-const { BN } = require('web3-utils');
+const {getAddr} = require('../../addresses.js');
+const Dec = require('decimal.js');
+const {parsePriceFromContract} = require('../../utils/general');
 
 /**
  * Buys an exact amount of dest token on DeFi Saver exchange aggregator
@@ -12,8 +13,9 @@ class BuyAction extends Action {
    * @param exchangeOrder {Array} Standard DFS Exchange data
    * @param from {string} Order sender
    * @param to {string} Order recipient
+   * @param protocolFee {string} 0x fee (amount of ETH in Wei)
    */
-  constructor(exchangeOrder, from, to) {
+  constructor(exchangeOrder, from, to, protocolFee) {
     requireAddress(to);
     super(
       'DFSBuy',
@@ -23,8 +25,10 @@ class BuyAction extends Action {
         "address",
         "address",
       ],
-      [...arguments]
+      [exchangeOrder, from, to]
     );
+
+    this.protocolFee = protocolFee;
 
     this.mappableArgs = [
       this.args[0][0],
@@ -42,14 +46,14 @@ class BuyAction extends Action {
   }
 
   async getEthValue() {
-    let val = new BN('0');
-    const asset = getAssetInfoByAddress(this.args[0][0]);
-    if (asset.symbol === 'ETH' || asset.symbol === 'WETH') {
-    //   const price = parsePriceFromContract(this.args[0][4]);
-    //   val = val.add(new BN(this.args[0][3]).times(price));
-    // TODO return estimate using price
+    let val = new Dec('0');
+    const fromAsset = getAssetInfoByAddress(this.args[0][0]);
+    const toAsset = getAssetInfoByAddress(this.args[0][0]);
+    if (fromAsset.symbol === 'ETH' || fromAsset.symbol === 'WETH') {
+      const price = parsePriceFromContract(this.args[0][4], fromAsset.symbol, toAsset.symbol);
+      val = val.add(new Dec(this.args[0][3]).div(price).mul(1.01));
     }
-    // TODO add 0x fee
+    val.add(new Dec(this.protocolFee || 0));
     return val.toString();
   }
 }

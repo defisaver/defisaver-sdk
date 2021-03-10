@@ -2,9 +2,12 @@ const {assert} = require('chai');
 const {getAssetInfo, getAssetInfoByAddress} = require("@defisaver/tokens");
 const exchangeUtils = require('../../src/utils/zeroExExchange');
 const axios = require("axios");
+const dfs = require('../../index.js');
 
 describe('Exchange utils', () => {
   const prices = {};
+
+  const myAddr = '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f';
 
   before(async function () {
     this.timeout(10000);
@@ -80,17 +83,23 @@ describe('Exchange utils', () => {
     }).timeout(10000);
   })
 
-  context('Get sell order via 0x', function() {
-    it('Creates order', async () => {
-      const orderData = await exchangeUtils.getSellExchangeOrder('10', 'ETH', 'DAI', '0', 0);
-      console.log(orderData);
+  context('Get SellAction via 0x', function() {
+    it('Creates action', async () => {
+      const action = await exchangeUtils.createSellAction('10', 'ETH', 'DAI', '0', 0, myAddr, myAddr);
+      assert.instanceOf(action, dfs.actions.basic.SellAction);
+      assert.equal(action.args[1], myAddr);
+      assert.equal(action.args[2], myAddr);
+      console.log(action);
     }).timeout(10000);
   })
 
-  context('Get buy order via 0x', function() {
-    it('Creates order', async () => {
-      const orderData = await exchangeUtils.getBuyExchangeOrder('10000', 'DAI', 'ETH', '0', 0);
-      console.log(orderData);
+  context('Get BuyAction via 0x', function() {
+    it('Creates action', async () => {
+      const action = await exchangeUtils.createBuyAction('10000', 'DAI', 'ETH', '0', 0, myAddr, myAddr);
+      assert.instanceOf(action, dfs.actions.basic.BuyAction);
+      assert.equal(action.args[1], myAddr);
+      assert.equal(action.args[2], myAddr);
+      console.log(action);
     }).timeout(10000);
   })
 })
