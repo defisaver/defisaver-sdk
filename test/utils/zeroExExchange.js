@@ -1,8 +1,8 @@
 const {assert} = require('chai');
 const {getAssetInfo, getAssetInfoByAddress} = require("@defisaver/tokens");
-const exchangeUtils = require('../../src/utils/zeroExExchange');
 const axios = require("axios");
-const dfs = require('../../index.js');
+const dfs = require('../../index');
+const exchangeUtils = dfs.utils.zeroExExchange;
 
 describe('Exchange utils', () => {
   const prices = {};
