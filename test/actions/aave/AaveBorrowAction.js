@@ -1,5 +1,5 @@
 const dfs = require('../../../index.js');
-const {getIlkInfo, assetAmountInWei,getAssetInfo} = require("@defisaver/tokens");
+const {getAaveV2MarketInfo, assetAmountInWei,getAssetInfo} = require("@defisaver/tokens");
 const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
 const { getAddr } = require('../../../src/addresses.js');
@@ -10,7 +10,7 @@ describe('Action: AaveBorrowAction', () => {
   context('Borrow 1 DAI', () => {
     it('constructor', () => {
       action = new dfs.actions.aave.AaveBorrowAction(
-        getAddr('AaveDefaultMarket'),
+        getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
         getAssetInfo('DAI').address,
         assetAmountInWei(1, 'DAI'),
         1,
@@ -30,11 +30,10 @@ describe('Action: AaveBorrowAction', () => {
     })
   })
 
-
   context('Borrow 1 ETH on behalf of', () => {
     it('constructor', () => {
       action = new dfs.actions.aave.AaveBorrowAction(
-        getAddr('AaveDefaultMarket'),
+        getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
         getAssetInfo('ETH').address,
         assetAmountInWei(1, 'ETH'),
         1,
@@ -59,7 +58,7 @@ describe('Action: AaveBorrowAction', () => {
     it('constructor throws', () => {
       assert.throws(() => {
         action = new dfs.actions.aave.AaveBorrowAction(
-          getAddr('AaveDefaultMarket'),
+          getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
           getAssetInfo('ETH').address,
           assetAmountInWei(1, 'ETH'),
           1,

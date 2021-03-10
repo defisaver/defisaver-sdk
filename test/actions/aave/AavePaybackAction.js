@@ -1,5 +1,5 @@
 const dfs = require('../../../index.js');
-const {getIlkInfo, assetAmountInWei, assetAmountInEth, getAssetInfo} = require("@defisaver/tokens");
+const {getAaveV2MarketInfo, assetAmountInWei, assetAmountInEth, getAssetInfo} = require("@defisaver/tokens");
 const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
 const { getAddr } = require('../../../src/addresses.js');
@@ -10,7 +10,7 @@ describe('Action: AavePaybackAction', () => {
   context('Pay back 1 DAI', () => {
     it('constructor', () => {
       action = new dfs.actions.aave.AavePaybackAction(
-        getAddr('AaveDefaultMarket'),
+        getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
         getAssetInfo('DAI').address,
         assetAmountInWei(1, 'DAI'),
         1,
@@ -35,7 +35,7 @@ describe('Action: AavePaybackAction', () => {
   context('Pay back 1 DAI on behalf', () => {
     it('constructor', () => {
       action = new dfs.actions.aave.AavePaybackAction(
-        getAddr('AaveDefaultMarket'),
+        getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
         getAssetInfo('DAI').address,
         assetAmountInWei(1, 'DAI'),
         1,
@@ -61,7 +61,7 @@ describe('Action: AavePaybackAction', () => {
   context('Pay back 1 ETH', () => {
     it('constructor', () => {
       action = new dfs.actions.aave.AavePaybackAction(
-        getAddr('AaveDefaultMarket'),
+        getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
         getAssetInfo('ETH').address,
         assetAmountInWei(1, 'ETH'),
         1,
