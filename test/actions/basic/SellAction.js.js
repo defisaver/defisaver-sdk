@@ -26,8 +26,8 @@ describe('Action: Sell', () => {
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
-      // TODO add 0x fee
-      assert.isAbove(+assetAmountInEth(ethValue, 'ETH'), 0);
+      // 0x fee can be 0
+      assert.isAtLeast(+assetAmountInEth(ethValue, 'ETH'), 0);
     })
   })
 
@@ -59,8 +59,7 @@ describe('Action: Sell', () => {
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
-      // TODO add 0x fee
-      assert.equal(assetAmountInEth(ethValue, 'ETH'), '0.1');
+      assert.isAtLeast(+assetAmountInEth(ethValue, 'ETH'), 0.1);
     })
   })
 

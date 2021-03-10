@@ -4,37 +4,13 @@
 
 const Dec = require('decimal.js');
 const axios = require('axios');
-const { assetAmountInWei, getAssetInfo } = require('@defisaver/tokens');
+const {assetAmountInWei, getAssetInfo} = require('@defisaver/tokens');
 
+const SellAction = require('../actions/basic/SellAction');
+const BuyAction = require('../actions/basic/BuyAction');
+const {parsePriceFromContract, formatPriceForContract} = require('./general');
 const API_URL = 'https://api.0x.org/swap/v1/';
 const ZEROX_WRAPPER = '0x0c4e16899f2059F4e41ddB164317414a5c0d2988';
-
-/**
- * @param price {String} Price returned by contract or getOffchainPrice
- * @param from {String} Symbol for asset being sold
- * @param to {String} Symbol for asset being bought
- * @returns {String} Price in expected format (11000.00 for WBTC->USDT, 0.98 for USDc->DAI, etc)
- *
- * @private
- */
-const parsePriceFromContract = (price, from, to) => new Dec(price)
-  .div(10 ** getAssetInfo(to).decimals)
-  .div(10 ** (18 - getAssetInfo(from).decimals))
-  .toString();
-
-/**
- * @param price {String} Price returned by parsePriceFromContract
- * @param from {String} Symbol for asset being sold
- * @param to {String} Symbol for asset being bought
- * @returns {String} Price formatted like contract output (can be used for contract input for exchange v2)
- *
- * @private
- */
-const formatPriceForContract = (price, from, to) => new Dec(price)
-  .mul(10 ** getAssetInfo(to).decimals)
-  .mul(10 ** (18 - getAssetInfo(from).decimals))
-  .floor()
-  .toString();
 
 /**
  * Gets price estimate from 0x API.
@@ -46,7 +22,7 @@ const formatPriceForContract = (price, from, to) => new Dec(price)
  * @param infoOnly {Boolean} should be true if just for showing price
  * @param acceptedSlippagePercent {Number} Slippage percentage tolerated [0-100]
  * @param shouldSell {Boolean} look for price to sell or to buy
- * @returns {Promise<{data: string, price: string, protocolFee: string, to: EthAddress, value: string, wrapper: EthAddress, allowanceTarget: EthAddress, estimatedGas: string}>}
+ * @returns {Promise<{data: string, price: string, guaranteedPrice: string, protocolFee: string, to: EthAddress, value: string, wrapper: EthAddress, allowanceTarget: EthAddress, estimatedGas: string}>}
  *
  * @private
  */
@@ -147,11 +123,13 @@ module.exports.estimateBuyPrice = async (buyAmount, buyToken, sellToken) => esti
  * @param expectedPrice {string} Price received from estimatePrice (so minPrice can be calculated based on what user saw)
  * @param acceptedSlippagePercent {string|Number} Slippage percentage tolerated [0-100]
  * @param shouldSell {Boolean} look for price to sell or to buy (if false sellToken becomes becomes buyToken and vice-versa)
- * @return {Promise<{orderData: Array<*>, protocolFee: string, extraGas: number}>} Order data array & tx value that can be passed directly to contract call
+ * @param fromAccount {EthAddress} Withdraw funds from this addr
+ * @param toAccount {EthAddress} Send funds to this addr
+ * @return {Promise<(SellAction|BuyAction)>} SellAction or BuyAction
  *
  * @private
  */
-const getExchangeOrder = async (
+const createExchangeAction = async (
   sellToken,
   buyToken,
   sellAmount,
@@ -159,6 +137,8 @@ const getExchangeOrder = async (
   expectedPrice,
   acceptedSlippagePercent,
   shouldSell = true,
+  fromAccount,
+  toAccount,
 ) => {
   const sellTokenData = getAssetInfo(sellToken);
   const buyTokenData = getAssetInfo(buyToken);
@@ -188,23 +168,22 @@ const getExchangeOrder = async (
     zeroExData.data,
   ];
 
-  return {
-    orderData: [
-      sellTokenData.address,
-      buyTokenData.address,
-      assetAmountInWei(sellAmount, sellToken),
-      assetAmountInWei(buyAmount, buyToken),
-      formatPriceForContract(minPrice, sellTokenData.symbol, buyTokenData.symbol),
-      0, // set by contract
-      '0x0000000000000000000000000000000000000000', // set by contract
-      '0x0000000000000000000000000000000000000000', // onchain wrapper
-      '0x', // wrapperData,
-      offchainDataArray,
-    ],
-    protocolFee,
-    // value,
-    extraGas,
-  };
+  const orderData = [
+    sellTokenData.address,
+    buyTokenData.address,
+    assetAmountInWei(sellAmount, sellToken),
+    assetAmountInWei(buyAmount, buyToken),
+    formatPriceForContract(zeroExData.guaranteedPrice, sellTokenData.symbol, buyTokenData.symbol),
+    0, // set by contract
+    '0x0000000000000000000000000000000000000000', // set by contract
+    '0x0000000000000000000000000000000000000000', // onchain wrapper
+    '0x', // wrapperData,
+    offchainDataArray,
+  ];
+  console.log(orderData);
+  return shouldSell
+    ? new SellAction(orderData, fromAccount, toAccount, protocolFee)
+    : new BuyAction(orderData, fromAccount, toAccount, protocolFee)
 };
 
 /**
@@ -217,15 +196,19 @@ const getExchangeOrder = async (
  * @param buyToken {string} Symbol for asset being bought ('DAI')
  * @param expectedPrice {string} Price received from estimatePrice (so minPrice can be calculated based on what user saw)
  * @param acceptedSlippagePercent {string|Number} Slippage percentage tolerated [0-100]
- * @return {Promise<{orderData: Array<*>, protocolFee: string, extraGas: number}>} Order data array & tx value that can be passed directly to contract call
+ * @param fromAccount {EthAddress} Withdraw funds from this addr
+ * @param toAccount {EthAddress} Send funds to this addr
+ * @return {Promise<SellAction>}
  */
-module.exports.getSellExchangeOrder = async (
+module.exports.createSellAction = async (
   sellAmount,
   sellToken,
   buyToken,
   expectedPrice,
   acceptedSlippagePercent,
-) => getExchangeOrder(
+  fromAccount,
+  toAccount,
+) => createExchangeAction(
   sellToken,
   buyToken,
   sellAmount,
@@ -233,6 +216,8 @@ module.exports.getSellExchangeOrder = async (
   expectedPrice,
   acceptedSlippagePercent,
   true,
+  fromAccount,
+  toAccount,
 );
 
 
@@ -246,15 +231,19 @@ module.exports.getSellExchangeOrder = async (
  * @param sellToken {string} Symbol for asset being sold ('ETH')
  * @param expectedPrice {string} Price received from estimatePrice (so minPrice can be calculated based on what user saw)
  * @param acceptedSlippagePercent {string|Number} Slippage percentage tolerated [0-100]
- * @return {Promise<{orderData: Array<*>, protocolFee: string, extraGas: number}>} Order data array & tx value that can be passed directly to contract call
+ * @param fromAccount {EthAddress} Withdraw funds from this addr
+ * @param toAccount {EthAddress} Send funds to this addr
+ * @return {Promise<BuyAction>}
  */
-module.exports.getBuyExchangeOrder = async (
+module.exports.createBuyAction = async (
   buyAmount,
   buyToken,
   sellToken,
   expectedPrice,
   acceptedSlippagePercent,
-) => getExchangeOrder(
+  fromAccount,
+  toAccount,
+) => createExchangeAction(
   sellToken,
   buyToken,
   '0',
@@ -262,4 +251,6 @@ module.exports.getBuyExchangeOrder = async (
   expectedPrice,
   acceptedSlippagePercent,
   false,
+  fromAccount,
+  toAccount,
 );
