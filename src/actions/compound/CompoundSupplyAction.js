@@ -10,9 +10,10 @@ class CompoundSupplyAction extends Action {
    * @param cTokenAddr {EthAddress}
    * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
    * @param from {EthAddress}
+   * @param enableAsColl {bool} If we need to enable asset as collateral
    */
-  constructor(cTokenAddr, amount, from) {
-    super('CompSupply', getAddr('CompSupply'), ['address','uint256','address'], [...arguments]);
+  constructor(cTokenAddr, amount, from, enableAsColl) {
+    super('CompSupply', getAddr('CompSupply'), ['address','uint256','address','bool'], [...arguments]);
   }
 
   async getAssetsToApprove() {
