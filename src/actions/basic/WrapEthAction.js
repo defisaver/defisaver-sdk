@@ -13,7 +13,6 @@ class WrapEthAction extends Action {
    * @param amount {string} Transfer amount (-1 for whole Recipe (DsProxy) balance)
    */
   constructor(amount) {
-    requireAddress(to);
     super("WrapEth", getAddr("WrapEth"), ["uint256"], [...arguments]);
   }
 }
