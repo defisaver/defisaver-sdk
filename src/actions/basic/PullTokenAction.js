@@ -12,7 +12,7 @@ class PullTokenAction extends Action {
    * @param amount {string} Transfer amount (-1 for whole sender balance)
    */
   constructor(token, from, amount) {
-    requireAddress(to);
+    requireAddress(from);
     super(
       'PullToken',
       getAddr('PullToken'),
