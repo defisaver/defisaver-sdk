@@ -10,21 +10,19 @@ class UnwrapEthAction extends Action {
   /**
    * @param token {string} Token address
    * @param to {string} Transfer recipient
-   * @param amount {string} Transfer amount (-1 for whole Recipe (DsProxy) balance)
    */
-  constructor(token, to, amount) {
+  constructor(amount, to) {
     requireAddress(to);
     super(
-      'SendToken',
-      getAddr('SendToken'),
+      'UnwrapEth',
+      getAddr('UnwrapEth'),
       [
-        "address",
-        "address",
-        "uint",
+        "uint256",
+        "address"
       ],
       [...arguments]
     );
   }
 }
 
-module.exports = SendTokenAction;
+module.exports = UnwrapEthAction;
