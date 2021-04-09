@@ -1,14 +1,13 @@
 const Action = require("../../Action");
 const {requireAddress} = require("../../utils/general");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+const {getAddr} = require('../../addresses.js');
 
 /**
- * Unwraps a specified amount of Weth
+ * Unwraps a specified amount of WETH from the proxy
  */
 class UnwrapEthAction extends Action {
   /**
-   * @param token {string} Token address
+   * @param amount {string} Token address
    * @param to {string} Transfer recipient
    */
   constructor(amount, to) {

@@ -1,19 +1,19 @@
 const Action = require("../../Action");
-const { requireAddress } = require("../../utils/general");
-const { getAssetInfoByAddress } = require("@defisaver/tokens");
-const { getAddr } = require("../../addresses.js");
+const {getAddr} = require("../../addresses.js");
 
 /**
- * Wraps a specified amount of Weth
+ * Wraps a specified amount of ETH from the wallet to WETH on the recipe
  */
 class WrapEthAction extends Action {
   /**
-   * @param token {string} Token address
-   * @param to {string} Transfer recipient
-   * @param amount {string} Transfer amount (-1 for whole Recipe (DsProxy) balance)
+   * @param amount {string} Transfer amount
    */
   constructor(amount) {
     super("WrapEth", getAddr("WrapEth"), ["uint256"], [...arguments]);
+  }
+
+  async getEthValue() {
+    return this.args[0];
   }
 }
 
