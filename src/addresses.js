@@ -1,6 +1,8 @@
 
 
 const actionAddresses = {
+  'TaskExecutor': '0xb3e5371d55e1e84bfFE7D0b57Bd9c6A4C6b3C635',
+
   // maker
   "McdGenerate": "0x40F0Cf9a9F61251E7f75E59b8dD88fd5d32AA612",
   'McdWithdraw': '0xa819c79b2559AC4E974D4A685063B3f828F47beB',
