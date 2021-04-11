@@ -13,6 +13,7 @@ describe('Action: CompoundSupplyAction', () => {
         getAssetInfo('cETH').address,
         assetAmountInWei(1, 'ETH'),
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
+        true,
       );
       assert.equal(action.args[2], '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
     })
@@ -34,6 +35,7 @@ describe('Action: CompoundSupplyAction', () => {
         getAssetInfo('cWBTC').address,
         assetAmountInWei(1, 'WBTC'),
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
+        true,
       );
       assert.equal(action.args[2], '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
     })

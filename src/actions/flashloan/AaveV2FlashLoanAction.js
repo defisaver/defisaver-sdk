@@ -13,7 +13,7 @@ class AaveV2FlashLoanAction extends Action {
    * @param flParamGetterAddr {EthAddress}
    * @param flParamGetterData {bytes}
    */
-  constructor(loanAmounts, tokens, modes, loanPayer, flParamGetterAddr, flParamGetterData) {
+  constructor(loanAmounts, tokens, modes, loanPayer, flParamGetterAddr = getAddr('Empty'), flParamGetterData= []) {
     super(
       'FLAaveV2',
       getAddr('FLAaveV2'),
