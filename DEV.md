@@ -65,8 +65,8 @@ Source: https://uniswap.org/docs/v2/javascript-SDK/getting-pair-addresses/#types
 * [zeroExExchange](#utils.module_zeroExExchange)
     * [.estimateSellPrice(sellAmount, sellToken, buyToken)](#utils.module_zeroExExchange.estimateSellPrice) ⇒ <code>Promise.&lt;string&gt;</code>
     * [.estimateBuyPrice(buyAmount, buyToken, sellToken)](#utils.module_zeroExExchange.estimateBuyPrice) ⇒ <code>Promise.&lt;string&gt;</code>
-    * [.getSellExchangeOrder(sellAmount, sellToken, buyToken, expectedPrice, acceptedSlippagePercent)](#utils.module_zeroExExchange.getSellExchangeOrder) ⇒ <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code>
-    * [.getBuyExchangeOrder(buyAmount, buyToken, sellToken, expectedPrice, acceptedSlippagePercent)](#utils.module_zeroExExchange.getBuyExchangeOrder) ⇒ <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code>
+    * [.createSellAction(sellAmount, sellToken, buyToken, expectedPrice, acceptedSlippagePercent, fromAccount, toAccount)](#utils.module_zeroExExchange.createSellAction) ⇒ <code>Promise.&lt;SellAction&gt;</code>
+    * [.createBuyAction(buyAmount, buyToken, sellToken, expectedPrice, acceptedSlippagePercent, fromAccount, toAccount)](#utils.module_zeroExExchange.createBuyAction) ⇒ <code>Promise.&lt;BuyAction&gt;</code>
 
 <a name="utils.module_zeroExExchange.estimateSellPrice"></a>
 
@@ -96,15 +96,14 @@ Example: estimateBuyPrice('1000', 'DAI', 'ETH') - swapping 1000 DAI for some ETH
 - buyToken <code>String</code> - Symbol for asset being bought
 - sellToken <code>String</code> - Symbol for asset being sold
 
-<a name="utils.module_zeroExExchange.getSellExchangeOrder"></a>
+<a name="utils.module_zeroExExchange.createSellAction"></a>
 
-### zeroExExchange.getSellExchangeOrder(sellAmount, sellToken, buyToken, expectedPrice, acceptedSlippagePercent) ⇒ <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code>
+### zeroExExchange.createSellAction(sellAmount, sellToken, buyToken, expectedPrice, acceptedSlippagePercent, fromAccount, toAccount) ⇒ <code>Promise.&lt;SellAction&gt;</code>
 Fetches prices and creates order ready to be passed to transaction.
 This should only be called when before sending tx, not to be used for just querying the price.
 For that purpose, the estimateSellPrice method can be used.
 
 **Kind**: static method of [<code>zeroExExchange</code>](#utils.module_zeroExExchange)  
-**Returns**: <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code> - Order data array & tx value that can be passed directly to contract call  
 **Params**
 
 - sellAmount <code>string</code> - Amount of asset being sold ('1.5')
@@ -112,16 +111,17 @@ For that purpose, the estimateSellPrice method can be used.
 - buyToken <code>string</code> - Symbol for asset being bought ('DAI')
 - expectedPrice <code>string</code> - Price received from estimatePrice (so minPrice can be calculated based on what user saw)
 - acceptedSlippagePercent <code>string</code> | <code>Number</code> - Slippage percentage tolerated [0-100]
+- fromAccount [<code>EthAddress</code>](#EthAddress) - Withdraw funds from this addr
+- toAccount [<code>EthAddress</code>](#EthAddress) - Send funds to this addr
 
-<a name="utils.module_zeroExExchange.getBuyExchangeOrder"></a>
+<a name="utils.module_zeroExExchange.createBuyAction"></a>
 
-### zeroExExchange.getBuyExchangeOrder(buyAmount, buyToken, sellToken, expectedPrice, acceptedSlippagePercent) ⇒ <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code>
+### zeroExExchange.createBuyAction(buyAmount, buyToken, sellToken, expectedPrice, acceptedSlippagePercent, fromAccount, toAccount) ⇒ <code>Promise.&lt;BuyAction&gt;</code>
 Fetches prices and creates order ready to be passed to transaction.
 This should only be called when before sending tx, not to be used for just querying the price.
 For that purpose, the estimateBuyPrice method can be used.
 
 **Kind**: static method of [<code>zeroExExchange</code>](#utils.module_zeroExExchange)  
-**Returns**: <code>Promise.&lt;{orderData: Array.&lt;\*&gt;, protocolFee: string, extraGas: number}&gt;</code> - Order data array & tx value that can be passed directly to contract call  
 **Params**
 
 - buyAmount <code>string</code> - Amount of asset being bought ('1500.123')
@@ -129,6 +129,8 @@ For that purpose, the estimateBuyPrice method can be used.
 - sellToken <code>string</code> - Symbol for asset being sold ('ETH')
 - expectedPrice <code>string</code> - Price received from estimatePrice (so minPrice can be calculated based on what user saw)
 - acceptedSlippagePercent <code>string</code> | <code>Number</code> - Slippage percentage tolerated [0-100]
+- fromAccount [<code>EthAddress</code>](#EthAddress) - Withdraw funds from this addr
+- toAccount [<code>EthAddress</code>](#EthAddress) - Send funds to this addr
 
 <a name="Action"></a>
 
@@ -139,7 +141,6 @@ Single action that can be executed directly, or combined into a set (ie. supply 
 
 * [Action](#Action)
     * [new Action(name, contractAddress, paramTypes, args)](#new_Action_new)
-    * [.encodeForCall()](#Action+encodeForCall) ⇒ <code>Array.&lt;Array.&lt;string&gt;&gt;</code>
     * [.encodeForDsProxyCall()](#Action+encodeForDsProxyCall) ⇒ <code>Array.&lt;string&gt;</code>
     * [.encodeForRecipe()](#Action+encodeForRecipe) ⇒ <code>Array.&lt;string&gt;</code>
     * [.getAssetsToApprove()](#Action+getAssetsToApprove) ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
@@ -155,13 +156,6 @@ Single action that can be executed directly, or combined into a set (ie. supply 
 - paramTypes <code>Array.&lt;string&gt;</code>
 - args <code>Array.&lt;\*&gt;</code>
 
-<a name="Action+encodeForCall"></a>
-
-### action.encodeForCall() ⇒ <code>Array.&lt;Array.&lt;string&gt;&gt;</code>
-Encode arguments for calling the action directly
-
-**Kind**: instance method of [<code>Action</code>](#Action)  
-**Returns**: <code>Array.&lt;Array.&lt;string&gt;&gt;</code> - bytes-encoded args  
 <a name="Action+encodeForDsProxyCall"></a>
 
 ### action.encodeForDsProxyCall() ⇒ <code>Array.&lt;string&gt;</code>
@@ -199,7 +193,6 @@ Set of Actions to be performed sequentially in a single transaction
 * [Recipe](#Recipe)
     * [new Recipe(name, actions)](#new_Recipe_new)
     * [.addAction(action)](#Recipe+addAction) ⇒ [<code>Recipe</code>](#Recipe)
-    * [.encodeForCall()](#Recipe+encodeForCall) ⇒ <code>Array.&lt;(string\|Array.&lt;\*&gt;)&gt;</code>
     * [.encodeForDsProxyCall()](#Recipe+encodeForDsProxyCall) ⇒ <code>Array.&lt;string&gt;</code>
     * [._validateParamMappings()](#Recipe+_validateParamMappings)
     * [.getAssetsToApprove()](#Recipe+getAssetsToApprove) ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
@@ -221,14 +214,6 @@ Set of Actions to be performed sequentially in a single transaction
 
 - action [<code>Action</code>](#Action)
 
-<a name="Recipe+encodeForCall"></a>
-
-### recipe.encodeForCall() ⇒ <code>Array.&lt;(string\|Array.&lt;\*&gt;)&gt;</code>
-Encode arguments for calling the action set directly
-You most likely don't want to use this directly.
-Instead, you probably want to use `encodeForDsProxyCall`
-
-**Kind**: instance method of [<code>Recipe</code>](#Recipe)  
 <a name="Recipe+encodeForDsProxyCall"></a>
 
 ### recipe.encodeForDsProxyCall() ⇒ <code>Array.&lt;string&gt;</code>

@@ -1,6 +1,6 @@
 {
   "name": "@defisaver/sdk",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "documentDev": "jsdoc2md -p list --files {src/**.js,src/utils/**.js} > DEV.md",
     "documentActions": "jsdoc2md -p list --files src/actions/**/**.js > ACTIONS.md"
   },
-  "author": "",
+  "author": "DeFi Saver",
+  "repository": "https://github.com/DecenterApps/defisaver-sdk",
   "license": "ISC",
   "dependencies": {
     "@defisaver/tokens": "^1.3.31",

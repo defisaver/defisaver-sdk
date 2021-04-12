@@ -1,6 +1,10 @@
 # DeFi Saver Recipe SDK
+
+Create complex transactions that interact with multiple DeFi protocols.
+
 ---
 
- - [Dev docs](./DEV.md)
- - [Available Actions](./ACTIONS.md)
- - [Pre-made recipes - TODO](./RECIPES.md)
+ - [General docs](https://docs.defisaver.com/)
+ - [SDK docs](https://github.com/DecenterApps/defisaver-sdk/blob/master/DEV.md)
+ - [Available Actions](https://github.com/DecenterApps/defisaver-sdk/blob/master/ACTIONS.md)
+ - [Pre-made recipes - TODO](https://github.com/DecenterApps/defisaver-sdk/blob/master/RECIPES.md)
