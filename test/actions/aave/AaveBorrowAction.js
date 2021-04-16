@@ -34,8 +34,8 @@ describe('Action: AaveBorrowAction', () => {
     it('constructor', () => {
       action = new dfs.actions.aave.AaveBorrowAction(
         getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
-        getAssetInfo('ETH').address,
-        assetAmountInWei(1, 'ETH'),
+        getAssetInfo('WETH').address,
+        assetAmountInWei(1, 'WETH'),
         1,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
         '0xdeafbeefdeadbeefdeafbeefdeadbeefdeafbeef',
@@ -59,8 +59,8 @@ describe('Action: AaveBorrowAction', () => {
       assert.throws(() => {
         action = new dfs.actions.aave.AaveBorrowAction(
           getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
-          getAssetInfo('ETH').address,
-          assetAmountInWei(1, 'ETH'),
+          getAssetInfo('WETH').address,
+          assetAmountInWei(1, 'WETH'),
           1,
           '0x0000000000000000000000000000000000000000',
           '0xdeafbeefdeadbeefdeafbeefdeadbeefdeafbeef',

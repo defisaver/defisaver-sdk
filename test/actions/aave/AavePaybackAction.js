@@ -62,8 +62,8 @@ describe('Action: AavePaybackAction', () => {
     it('constructor', () => {
       action = new dfs.actions.aave.AavePaybackAction(
         getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
-        getAssetInfo('ETH').address,
-        assetAmountInWei(1, 'ETH'),
+        getAssetInfo('WETH').address,
+        assetAmountInWei(1, 'WETH'),
         1,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
       );
@@ -72,11 +72,13 @@ describe('Action: AavePaybackAction', () => {
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
       const assetOwnerPairs = await action.getAssetsToApprove();
-      assert.lengthOf(assetOwnerPairs, 0);
+      assert.lengthOf(assetOwnerPairs, 1);
+      assert.equal(assetOwnerPairs[0].asset, getAssetInfo('WETH').address);
+      assert.equal(assetOwnerPairs[0].owner, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
-      assert.equal(assetAmountInEth(ethValue), '1');
+      assert.equal(assetAmountInEth(ethValue), '0');
     })
   })
 

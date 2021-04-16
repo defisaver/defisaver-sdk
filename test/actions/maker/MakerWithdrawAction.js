@@ -11,7 +11,7 @@ describe('Action: MakerWithdrawAction', () => {
     it('constructor', () => {
       action = new dfs.actions.maker.MakerWithdrawAction(
         '1234',
-        assetAmountInWei(1, 'ETH'),
+        assetAmountInWei(1, 'WETH'),
         getIlkInfo('ETH-A').join,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f'
       );
@@ -33,7 +33,7 @@ describe('Action: MakerWithdrawAction', () => {
     it('constructor', () => {
       action = new dfs.actions.maker.MakerWithdrawAction(
         '1234',
-        assetAmountInWei(1, 'ETH'),
+        assetAmountInWei(1, 'WETH'),
         getIlkInfo('ETH-A').join,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
         getAddr('BCdpManager'),
@@ -57,7 +57,7 @@ describe('Action: MakerWithdrawAction', () => {
       assert.throws(() => {
         action = new dfs.actions.maker.MakerWithdrawAction(
           '1234',
-          assetAmountInWei(1, 'ETH'),
+          assetAmountInWei(1, 'WETH'),
           getIlkInfo('ETH-A').join,
           '0x0000000000000000000000000000000000000000',
         );

@@ -11,7 +11,7 @@ describe('Action: MakerSupplyAction', () => {
     it('constructor', () => {
       action = new dfs.actions.maker.MakerSupplyAction(
         '1234',
-        assetAmountInWei(1, 'ETH'),
+        assetAmountInWei(1, 'WETH'),
         getIlkInfo('ETH-A').join,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f'
       );
@@ -25,7 +25,7 @@ describe('Action: MakerSupplyAction', () => {
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
-      assert.equal(assetAmountInEth(ethValue), '1');
+      assert.equal(assetAmountInEth(ethValue), '0');
     })
   })
 
@@ -33,7 +33,7 @@ describe('Action: MakerSupplyAction', () => {
     it('constructor', () => {
       action = new dfs.actions.maker.MakerSupplyAction(
         '1234',
-        assetAmountInWei(1, 'ETH'),
+        assetAmountInWei(1, 'WETH'),
         getIlkInfo('ETH-A').join,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
         getAddr('BCdpManager'),
@@ -49,7 +49,7 @@ describe('Action: MakerSupplyAction', () => {
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
-      assert.equal(assetAmountInEth(ethValue), '1');
+      assert.equal(assetAmountInEth(ethValue), '0');
     })
   })
 

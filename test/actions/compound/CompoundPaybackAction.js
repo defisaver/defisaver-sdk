@@ -47,7 +47,7 @@ describe('Action: CompoundPaybackAction', () => {
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
-      assert.equal(assetAmountInEth(ethValue), '1');
+      assert.equal(assetAmountInEth(ethValue), '0');
     })
   })
 

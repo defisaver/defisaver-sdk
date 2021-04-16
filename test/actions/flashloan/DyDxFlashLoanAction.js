@@ -47,8 +47,8 @@ describe('Action: DyDxFlashLoanAction', () => {
   context('Flashloan ETH', () => {
     it('constructor', () => {
       action = new dfs.actions.flashloan.DyDxFlashLoanAction(
-        assetAmountInWei(100, 'ETH'),
-        getAssetInfo('ETH').address,
+        assetAmountInWei(100, 'WETH'),
+        getAssetInfo('WETH').address,
       );
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
@@ -63,11 +63,11 @@ describe('Action: DyDxFlashLoanAction', () => {
     })
   })
 
-  context('Manually pay back flashloaned ETH', () => {
+  context('Manually pay back flashloaned WETH', () => {
     it('constructor', () => {
       action = new dfs.actions.flashloan.DyDxFlashLoanPaybackAction(
-        assetAmountInWei(100, 'ETH'),
-        getAssetInfo('ETH').address,
+        assetAmountInWei(100, 'WETH'),
+        getAssetInfo('WETH').address,
       );
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));

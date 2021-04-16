@@ -46,15 +46,7 @@ class BuyAction extends Action {
   }
 
   async getEthValue() {
-    let val = new Dec('0');
-    const fromAsset = getAssetInfoByAddress(this.args[0][0]);
-    const toAsset = getAssetInfoByAddress(this.args[0][0]);
-    if (fromAsset.symbol === 'ETH' || fromAsset.symbol === 'WETH') {
-      const price = parsePriceFromContract(this.args[0][4], fromAsset.symbol, toAsset.symbol);
-      val = val.add(new Dec(this.args[0][3]).div(price).mul(1.01));
-    }
-    val.add(new Dec(this.protocolFee || 0));
-    return val.toString();
+    return this.protocolFee || '0';
   }
 }
 
