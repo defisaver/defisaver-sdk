@@ -45,11 +45,7 @@ class SellAction extends Action {
   }
 
   async getEthValue() {
-    let val = new Dec('0');
-    const asset = getAssetInfoByAddress(this.args[0][0]);
-    if (asset.symbol === 'ETH' || asset.symbol === 'WETH') val = val.add(new Dec(this.args[0][2]));
-    val.add(new Dec(this.protocolFee));
-    return val.toString();
+    return this.protocolFee || '0';
   }
 }
 
