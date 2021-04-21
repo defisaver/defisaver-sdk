@@ -5,6 +5,7 @@ const compound = require('./compound');
 const basic = require('./basic');
 const flashloan = require('./flashloan');
 const uniswap = require('./uniswap');
+const reflexer = require('./reflexer');
 
 module.exports = {
   maker,
@@ -14,4 +15,5 @@ module.exports = {
   basic,
   flashloan,
   uniswap,
+  reflexer,
 };
