@@ -12,21 +12,16 @@ class AaveSupplyAction extends Action {
    * @param amount {string}
    * @param from {EthAddress} Tokens will be supplied from this address
    * @param onBehalf {EthAddress} Tokens will be supplied to this address' position (defaults to sender's proxy)
+   * @param enableAsColl {boolean} If we need to enable asset as collateral
    */
-  constructor(market, tokenAddr, amount, from, onBehalf = getAddr('Empty')) {
-    super('AaveSupply', getAddr('AaveSupply'), ['address','address','uint256','address','address'], [market, tokenAddr, amount, from, onBehalf]);
+  constructor(market, tokenAddr, amount, from, onBehalf = getAddr('Empty'), enableAsColl) {
+    super('AaveSupply', getAddr('AaveSupply'), ['address','address','uint256','address','address','bool'], [market, tokenAddr, amount, from, onBehalf, enableAsColl]);
   }
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[1]);
     if (asset.symbol !== 'ETH') return [{asset: this.args[1], owner: this.args[3]}];
     return [];
-  }
-
-  async getEthValue() {
-    const asset = getAssetInfoByAddress(this.args[1]);
-    if (asset.symbol === 'ETH') return this.args[2];
-    return '0';
   }
 }
 

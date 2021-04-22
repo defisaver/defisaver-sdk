@@ -27,12 +27,6 @@ class AavePaybackAction extends Action {
     if (asset.symbol !== 'ETH') return [{asset: this.args[1], owner: this.args[4]}];
     return [];
   }
-
-  async getEthValue() {
-    const asset = getAssetInfoByAddress(this.args[1]);
-    if (asset.symbol === 'ETH') return this.args[2];
-    return '0';
-  }
 }
 
 module.exports = AavePaybackAction;

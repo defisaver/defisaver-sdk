@@ -16,20 +16,23 @@
 <dt><a href="#AaveWithdrawAction">AaveWithdrawAction</a></dt>
 <dd><p>AaveWithdrawAction - Withdraw token from an aave position</p>
 </dd>
-<dt><a href="#AaveV1PaybackAction">AaveV1PaybackAction</a></dt>
-<dd><p>AavePaybackActionV1 - Pay back borrowed tokens from AaveV1</p>
-</dd>
-<dt><a href="#AaveV1WithdrawAction">AaveV1WithdrawAction</a></dt>
-<dd><p>AaveWithdrawActionV1 - Withdraw token from an aaveV1 position</p>
-</dd>
 <dt><a href="#BuyAction">BuyAction</a></dt>
 <dd><p>Buys an exact amount of dest token on DeFi Saver exchange aggregator</p>
+</dd>
+<dt><a href="#PullTokenAction">PullTokenAction</a></dt>
+<dd><p>Transfers specified token from a specified address to DSProxy (recipe)</p>
 </dd>
 <dt><a href="#SellAction">SellAction</a></dt>
 <dd><p>Sells token on DeFi Saver exchange aggregator</p>
 </dd>
 <dt><a href="#SendTokenAction">SendTokenAction</a></dt>
 <dd><p>Transfers specified token from recipe (DsProxy) to specified address</p>
+</dd>
+<dt><a href="#UnwrapEthAction">UnwrapEthAction</a></dt>
+<dd><p>Unwraps a specified amount of WETH from the proxy</p>
+</dd>
+<dt><a href="#WrapEthAction">WrapEthAction</a></dt>
+<dd><p>Wraps a specified amount of ETH from the wallet to WETH on the recipe</p>
 </dd>
 <dt><a href="#CompoundBorrowAction">CompoundBorrowAction</a></dt>
 <dd><p>CompoundBorrowAction - Borrow tokens from Compound</p>
@@ -45,15 +48,6 @@
 </dd>
 <dt><a href="#CompoundWithdrawAction">CompoundWithdrawAction</a></dt>
 <dd><p>CompoundWithdrawAction - Withdraw token from an Compound position</p>
-</dd>
-<dt><a href="#AaveCustomFlashLoanV2Action">AaveCustomFlashLoanV2Action</a></dt>
-<dd><p>AaveCustomFlashLoanV2Action - Gets a flashloan from Aave v2</p>
-</dd>
-<dt><a href="#AaveFlashLoanAction">AaveFlashLoanAction</a></dt>
-<dd><p>Gets a flashloan from Aave v1</p>
-</dd>
-<dt><a href="#AaveFlashLoanPaybackAction">AaveFlashLoanPaybackAction</a></dt>
-<dd><p>Pays back a flashloan from Aave v1</p>
 </dd>
 <dt><a href="#AaveV2FlashLoanAction">AaveV2FlashLoanAction</a></dt>
 <dd><p>Gets a flashloan from Aave v2</p>
@@ -155,7 +149,7 @@ AaveSupplyAction - Supply token to an aave position
 **Kind**: global class  
 <a name="new_AaveSupplyAction_new"></a>
 
-### new AaveSupplyAction(market, tokenAddr, amount, from, onBehalf)
+### new AaveSupplyAction(market, tokenAddr, amount, from, onBehalf, enableAsColl)
 **Params**
 
 - market <code>EthAddress</code>
@@ -163,6 +157,7 @@ AaveSupplyAction - Supply token to an aave position
 - amount <code>string</code>
 - from <code>EthAddress</code> - Tokens will be supplied from this address
 - onBehalf <code>EthAddress</code> - Tokens will be supplied to this address' position (defaults to sender's proxy)
+- enableAsColl <code>boolean</code> - If we need to enable asset as collateral
 
 <a name="AaveWithdrawAction"></a>
 
@@ -180,37 +175,6 @@ AaveWithdrawAction - Withdraw token from an aave position
 - amount <code>string</code>
 - to <code>EthAddress</code> - Tokens will be withdrawn to this address
 
-<a name="AaveV1PaybackAction"></a>
-
-## AaveV1PaybackAction
-AavePaybackActionV1 - Pay back borrowed tokens from AaveV1
-
-**Kind**: global class  
-<a name="new_AaveV1PaybackAction_new"></a>
-
-### new AaveV1PaybackAction(tokenAddr, amount, from, onBehalf)
-**Params**
-
-- tokenAddr <code>EthAddress</code>
-- amount <code>string</code>
-- from <code>EthAddress</code> - Tokens will be sent from this address
-- onBehalf <code>EthAddress</code>
-
-<a name="AaveV1WithdrawAction"></a>
-
-## AaveV1WithdrawAction
-AaveWithdrawActionV1 - Withdraw token from an aaveV1 position
-
-**Kind**: global class  
-<a name="new_AaveV1WithdrawAction_new"></a>
-
-### new AaveV1WithdrawAction(tokenAddr, amount, to)
-**Params**
-
-- tokenAddr <code>EthAddress</code>
-- amount <code>string</code>
-- to <code>EthAddress</code> - Tokens will be withdrawn to this address
-
 <a name="BuyAction"></a>
 
 ## BuyAction
@@ -219,12 +183,28 @@ Buys an exact amount of dest token on DeFi Saver exchange aggregator
 **Kind**: global class  
 <a name="new_BuyAction_new"></a>
 
-### new BuyAction(exchangeOrder, from, to)
+### new BuyAction(exchangeOrder, from, to, protocolFee)
 **Params**
 
 - exchangeOrder <code>Array</code> - Standard DFS Exchange data
 - from <code>string</code> - Order sender
 - to <code>string</code> - Order recipient
+- protocolFee <code>string</code> - 0x fee (amount of ETH in Wei)
+
+<a name="PullTokenAction"></a>
+
+## PullTokenAction
+Transfers specified token from a specified address to DSProxy (recipe)
+
+**Kind**: global class  
+<a name="new_PullTokenAction_new"></a>
+
+### new PullTokenAction(token, from, amount)
+**Params**
+
+- token <code>string</code> - Token address
+- from <code>string</code> - Transfer sender
+- amount <code>string</code> - Transfer amount (-1 for whole sender balance)
 
 <a name="SellAction"></a>
 
@@ -234,12 +214,13 @@ Sells token on DeFi Saver exchange aggregator
 **Kind**: global class  
 <a name="new_SellAction_new"></a>
 
-### new SellAction(exchangeOrder, from, to)
+### new SellAction(exchangeOrder, from, to, protocolFee)
 **Params**
 
 - exchangeOrder <code>Array</code> - Standard DFS Exchange data
 - from <code>string</code> - Order sender
 - to <code>string</code> - Order recipient
+- protocolFee <code>string</code> <code> = &quot;0&quot;</code> - 0x fee (amount of ETH in Wei)
 
 <a name="SendTokenAction"></a>
 
@@ -255,6 +236,33 @@ Transfers specified token from recipe (DsProxy) to specified address
 - token <code>string</code> - Token address
 - to <code>string</code> - Transfer recipient
 - amount <code>string</code> - Transfer amount (-1 for whole Recipe (DsProxy) balance)
+
+<a name="UnwrapEthAction"></a>
+
+## UnwrapEthAction
+Unwraps a specified amount of WETH from the proxy
+
+**Kind**: global class  
+<a name="new_UnwrapEthAction_new"></a>
+
+### new UnwrapEthAction(amount, to)
+**Params**
+
+- amount <code>string</code> - Token address
+- to <code>string</code> - Transfer recipient
+
+<a name="WrapEthAction"></a>
+
+## WrapEthAction
+Wraps a specified amount of ETH from the wallet to WETH on the recipe
+
+**Kind**: global class  
+<a name="new_WrapEthAction_new"></a>
+
+### new WrapEthAction(amount)
+**Params**
+
+- amount <code>string</code> - Transfer amount
 
 <a name="CompoundBorrowAction"></a>
 
@@ -310,12 +318,13 @@ CompoundSupplyAction - Supply token to an Compound position
 **Kind**: global class  
 <a name="new_CompoundSupplyAction_new"></a>
 
-### new CompoundSupplyAction(cTokenAddr, amount, from)
+### new CompoundSupplyAction(cTokenAddr, amount, from, enableAsColl)
 **Params**
 
 - cTokenAddr <code>EthAddress</code>
 - amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
 - from <code>EthAddress</code>
+- enableAsColl <code>boolean</code> <code> = true</code> - If we need to enable asset as collateral
 
 <a name="CompoundWithdrawAction"></a>
 
@@ -332,49 +341,6 @@ CompoundWithdrawAction - Withdraw token from an Compound position
 - amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
 - to <code>EthAddress</code>
 
-<a name="AaveCustomFlashLoanV2Action"></a>
-
-## AaveCustomFlashLoanV2Action
-AaveCustomFlashLoanV2Action - Gets a flashloan from Aave v2
-
-**Kind**: global class  
-<a name="new_AaveCustomFlashLoanV2Action_new"></a>
-
-### new AaveCustomFlashLoanV2Action(viewer, loanPayer, viewerData)
-**Params**
-
-- viewer <code>EthAddress</code>
-- loanPayer <code>EthAddress</code>
-- viewerData <code>string</code> - (bytes)
-
-<a name="AaveFlashLoanAction"></a>
-
-## AaveFlashLoanAction
-Gets a flashloan from Aave v1
-
-**Kind**: global class  
-<a name="new_AaveFlashLoanAction_new"></a>
-
-### new AaveFlashLoanAction(loanAmount, tokenAddr)
-**Params**
-
-- loanAmount <code>string</code>
-- tokenAddr <code>EthAddress</code>
-
-<a name="AaveFlashLoanPaybackAction"></a>
-
-## AaveFlashLoanPaybackAction
-Pays back a flashloan from Aave v1
-
-**Kind**: global class  
-<a name="new_AaveFlashLoanPaybackAction_new"></a>
-
-### new AaveFlashLoanPaybackAction(loanAmount, tokenAddr)
-**Params**
-
-- loanAmount <code>string</code>
-- tokenAddr <code>EthAddress</code>
-
 <a name="AaveV2FlashLoanAction"></a>
 
 ## AaveV2FlashLoanAction
@@ -383,13 +349,15 @@ Gets a flashloan from Aave v2
 **Kind**: global class  
 <a name="new_AaveV2FlashLoanAction_new"></a>
 
-### new AaveV2FlashLoanAction(loanAmounts, tokens, modes, loanPayer)
+### new AaveV2FlashLoanAction(loanAmounts, tokens, modes, loanPayer, flParamGetterAddr, flParamGetterData)
 **Params**
 
 - loanAmounts <code>Array.&lt;string&gt;</code>
 - tokens <code>Array.&lt;EthAddress&gt;</code>
 - modes <code>Array.&lt;number&gt;</code>
 - loanPayer <code>EthAddress</code>
+- flParamGetterAddr <code>EthAddress</code>
+- flParamGetterData <code>bytes</code>
 
 <a name="AaveV2FlashLoanPaybackAction"></a>
 
@@ -413,11 +381,13 @@ Gets a flashloan from DyDx
 **Kind**: global class  
 <a name="new_DyDxFlashLoanAction_new"></a>
 
-### new DyDxFlashLoanAction(loanAmount, tokenAddr)
+### new DyDxFlashLoanAction(loanAmount, tokenAddr, flParamGetterAddr, flParamGetterData)
 **Params**
 
 - loanAmount <code>string</code>
 - tokenAddr <code>EthAddress</code>
+- flParamGetterAddr <code>EthAddress</code>
+- flParamGetterData <code>bytes</code>
 
 <a name="DyDxFlashLoanPaybackAction"></a>
 
@@ -491,8 +461,8 @@ MakerOpenVaultAction
 ### new MakerOpenVaultAction(joinAddr, mcdManager)
 **Params**
 
-- joinAddr <code>Address</code>
-- mcdManager <code>Address</code>
+- joinAddr <code>EthAddress</code>
+- mcdManager <code>EthAddress</code>
 
 <a name="MakerPaybackAction"></a>
 

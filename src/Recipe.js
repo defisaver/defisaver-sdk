@@ -1,9 +1,9 @@
 const AbiCoder = require('web3-eth-abi');
 const { BN } = require('web3-utils');
-
-const Action = require('./Action');
-const RecipeAbi = require('./abis/Recipe.json');
 const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
+const Action = require('./Action');
+const {getAddr} = require('./addresses');
+const RecipeAbi = require('./abis/Recipe.json');
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
@@ -20,7 +20,7 @@ class Recipe {
 
     this.name = name;
     this.actions = actions;
-    this.taskExecutorAddress = '0x30a2d7d745d8ac8494425330ce519c49db4fe963';
+    this.taskExecutorAddress = getAddr('TaskExecutor');
   }
 
   /**

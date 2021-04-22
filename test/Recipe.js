@@ -15,7 +15,7 @@ describe('Recipe', () => {
         'MockTest',
         [
           new dfs.actions.maker.MakerOpenVaultAction('0x2F0b23f53734252Bda2277357e97e1517d6B042A', '0x5ef30b9986345249bc32d8928B7ee64DE9435E39'),
-          new dfs.actions.maker.MakerSupplyAction('$1', assetAmountInWei(1000, 'ETH'), getIlkInfo('ETH-A').join, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f', '0x5ef30b9986345249bc32d8928B7ee64DE9435E39'),
+          new dfs.actions.maker.MakerSupplyAction('$1', assetAmountInWei(1000, 'WETH'), getIlkInfo('ETH-A').join, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f', '0x5ef30b9986345249bc32d8928B7ee64DE9435E39'),
           new dfs.actions.maker.MakerGenerateAction('$1', assetAmountInWei(1000, 'DAI'), '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f', '0x5ef30b9986345249bc32d8928B7ee64DE9435E39'),
         ],
       );
@@ -28,7 +28,7 @@ describe('Recipe', () => {
     });
     it('getEthValue', async () => {
       const ethValue = await recipe.getEthValue();
-      assert.equal(ethValue, assetAmountInWei(1000, 'ETH'));
+      assert.equal(assetAmountInWei(ethValue, 'WETH'), '0');
     });
   })
 

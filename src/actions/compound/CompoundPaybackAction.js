@@ -20,12 +20,6 @@ class CompoundPaybackAction extends Action {
     if (asset.symbol !== 'cETH') return [{asset: getAssetInfo(asset.symbol.substr(1)).address, owner: this.args[2]}];
     return [];
   }
-
-  async getEthValue() {
-    const asset = getAssetInfoByAddress(this.args[0]);
-    if (asset.symbol === 'cETH') return this.args[1];
-    return '0';
-  }
 }
 
 module.exports = CompoundPaybackAction;

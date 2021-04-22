@@ -56,17 +56,6 @@ class UniswapSupplyAction extends Action {
 
     return approveArr;
   }
-
-  async getEthValue() {
-    const assetA = getAssetInfoByAddress(this.args[0][0]);
-    const assetB = getAssetInfoByAddress(this.args[0][1]);
-
-    if (assetA.symbol === 'ETH') return this.args[0][4];
-    if (assetB.symbol === 'ETH') return this.args[0][5];
-
-    return '0';
-  }
-
 }
 
 module.exports = UniswapSupplyAction;

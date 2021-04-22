@@ -33,8 +33,8 @@ describe('Action: AaveWithdrawAction', () => {
       assert.throws(() => {
         action = new dfs.actions.aave.AaveWithdrawAction(
           getAaveV2MarketInfo('v2default').lendingPoolAddressProvider,
-          getAssetInfo('ETH').address,
-          assetAmountInWei(1, 'ETH'),
+          getAssetInfo('WETH').address,
+          assetAmountInWei(1, 'WETH'),
           '0x0000000000000000000000000000000000000000',
         );
       });
