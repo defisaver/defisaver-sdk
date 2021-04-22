@@ -82,6 +82,21 @@
 <dt><a href="#MakerWithdrawAction">MakerWithdrawAction</a></dt>
 <dd><p>MakerWithdrawAction - Withdraw token from a Vault</p>
 </dd>
+<dt><a href="#ReflexerGenerateAction">ReflexerGenerateAction</a></dt>
+<dd><p>ReflexerGenerateAction - Generated Dai from a Safe</p>
+</dd>
+<dt><a href="#ReflexerOpenSafeAction">ReflexerOpenSafeAction</a></dt>
+<dd><p>ReflexerOpenSafeAction</p>
+</dd>
+<dt><a href="#ReflexerPaybackAction">ReflexerPaybackAction</a></dt>
+<dd><p>ReflexerPaybackAction - Payback RAI to a Safe</p>
+</dd>
+<dt><a href="#ReflexerSupplyAction">ReflexerSupplyAction</a></dt>
+<dd><p>ReflexerSupplyAction - Supply token to a Safe</p>
+</dd>
+<dt><a href="#ReflexerWithdrawAction">ReflexerWithdrawAction</a></dt>
+<dd><p>ReflexerWithdrawAction - Withdraw token from a Safe</p>
+</dd>
 <dt><a href="#UniswapSupplyAction">UniswapSupplyAction</a></dt>
 <dd><p>Supplies a pair tokens to uniswap pool</p>
 </dd>
@@ -513,6 +528,81 @@ MakerWithdrawAction - Withdraw token from a Vault
 - joinAddr <code>EthAddress</code>
 - to <code>EthAddress</code>
 - mcdManager <code>EthAddress</code>
+
+<a name="ReflexerGenerateAction"></a>
+
+## ReflexerGenerateAction
+ReflexerGenerateAction - Generated Dai from a Safe
+
+**Kind**: global class  
+<a name="new_ReflexerGenerateAction_new"></a>
+
+### new ReflexerGenerateAction(safeId, amount, to)
+**Params**
+
+- safeId <code>SafeId</code>
+- amount <code>string</code> - Amount of Rai to generate in wei
+- to <code>EthAddress</code> - Generated Rai will be sent to this address
+
+<a name="ReflexerOpenSafeAction"></a>
+
+## ReflexerOpenSafeAction
+ReflexerOpenSafeAction
+
+**Kind**: global class  
+<a name="new_ReflexerOpenSafeAction_new"></a>
+
+### new ReflexerOpenSafeAction(adapterAddr)
+**Params**
+
+- adapterAddr <code>EthAddress</code>
+
+<a name="ReflexerPaybackAction"></a>
+
+## ReflexerPaybackAction
+ReflexerPaybackAction - Payback RAI to a Safe
+
+**Kind**: global class  
+<a name="new_ReflexerPaybackAction_new"></a>
+
+### new ReflexerPaybackAction(safeId, amount, from)
+**Params**
+
+- safeId <code>SafeId</code>
+- amount <code>string</code> - Amount of RAI to be payed back in wei
+- from <code>EthAddress</code> - RAI will be sent from this address
+
+<a name="ReflexerSupplyAction"></a>
+
+## ReflexerSupplyAction
+ReflexerSupplyAction - Supply token to a Safe
+
+**Kind**: global class  
+<a name="new_ReflexerSupplyAction_new"></a>
+
+### new ReflexerSupplyAction(safeId, amount, adapterAddr, from)
+**Params**
+
+- safeId <code>SafeId</code>
+- amount <code>string</code>
+- adapterAddr <code>EthAddress</code>
+- from <code>EthAddress</code> - Tokens will be supplied from this address
+
+<a name="ReflexerWithdrawAction"></a>
+
+## ReflexerWithdrawAction
+ReflexerWithdrawAction - Withdraw token from a Safe
+
+**Kind**: global class  
+<a name="new_ReflexerWithdrawAction_new"></a>
+
+### new ReflexerWithdrawAction(vaultId, amount, adapterAddr, to)
+**Params**
+
+- vaultId <code>SafeId</code>
+- amount <code>string</code>
+- adapterAddr <code>EthAddress</code>
+- to <code>EthAddress</code>
 
 <a name="UniswapSupplyAction"></a>
 
