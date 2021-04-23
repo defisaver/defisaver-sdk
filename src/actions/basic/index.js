@@ -4,6 +4,7 @@ const SendTokenAction = require('./SendTokenAction');
 const PullTokenAction = require('./PullTokenAction');
 const WrapEthAction = require('./WrapEthAction');
 const UnwrapEthAction = require('./UnwrapEthAction');
+const SumInputsAction = require('./SumInputsAction');
 
 module.exports = {
   SellAction,
@@ -11,5 +12,6 @@ module.exports = {
   SendTokenAction,
   PullTokenAction,
   WrapEthAction,
-  UnwrapEthAction
+  UnwrapEthAction,
+  SumInputsAction,
 };
