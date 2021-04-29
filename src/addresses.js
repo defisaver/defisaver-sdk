@@ -22,6 +22,13 @@ const actionAddresses = {
   'McdPayback': '0x5B1851De9E1FD9928dfC040714DB6204AF587581',
   'McdSupply': '0xD3C50623F44E97B59CFbfC1232146858be18e6cc',
   'McdWithdraw': '0x19654613812850081D80e7EC992e8F71DcbD30B4',
+  
+  // reflexer
+  'ReflexerSupply': '0x24C537A93A9ab75b5A593BA0B2dc03200345A844',
+  'ReflexerWithdraw': '0xcA99fB3430180E43bC1929a3a84d0500E3118e0A',
+  'ReflexerPayback': '0x0c8320033340277791C5dCD9BC87d20f086BB34b',
+  'ReflexerGenerate': '0x28E78093dF6d370Ca9ea1aC85668d8a097f09087',
+  'ReflexerOpen': '0xcf174aFFbB7be200afa37Dfc4CD067ae3Cb91054',
 
   // aave
   'AaveBorrow': '0xEdBbF97C505309e5174E164fbec3cAE774d310Ea',
