@@ -1,5 +1,5 @@
-const Action = require("../../Action");
-const {getAddr} = require('../../addresses.js');
+const Action = require("../../../Action");
+const {getAddr} = require('../../../addresses.js');
 
 /**
  * Burns liquidity, and returns tokens to recipient

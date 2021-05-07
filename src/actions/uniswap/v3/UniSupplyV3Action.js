@@ -42,9 +42,9 @@ const { getAssetAddrByTokenId } = require('../../../utils/uniV3.js')
       ];
     }
 
-    async getAssetsToApprove() {
+    async getAssetsToApprove(web3) {
       const tokenId = this.args[0][0];
-      tokens = await getAssetAddrByTokenId(tokenId);
+      tokens = await getAssetAddrByTokenId(web3, tokenId);
       const assetA = tokens[0];
       const assetB = tokens[1];
       const approveArr = [];
