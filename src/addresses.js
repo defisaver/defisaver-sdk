@@ -22,7 +22,7 @@ const actionAddresses = {
   'McdPayback': '0x5B1851De9E1FD9928dfC040714DB6204AF587581',
   'McdSupply': '0xD3C50623F44E97B59CFbfC1232146858be18e6cc',
   'McdWithdraw': '0x19654613812850081D80e7EC992e8F71DcbD30B4',
-  
+
   // reflexer
   'ReflexerSupply': '0x24C537A93A9ab75b5A593BA0B2dc03200345A844',
   'ReflexerWithdraw': '0xcA99fB3430180E43bC1929a3a84d0500E3118e0A',
@@ -63,7 +63,7 @@ const otherAddresses = {
 
 
 const getAddr = (name) => {
-  if (!actionAddresses[name] && !otherAddresses[name]) return '0x0';
+  if (!actionAddresses[name] && !otherAddresses[name]) return otherAddresses.Empty;
 
   return actionAddresses[name] || otherAddresses[name];
 };

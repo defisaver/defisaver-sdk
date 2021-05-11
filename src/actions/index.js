@@ -5,6 +5,7 @@ const basic = require('./basic');
 const flashloan = require('./flashloan');
 const uniswap = require('./uniswap');
 const reflexer = require('./reflexer');
+const dydx = require('./dydx');
 
 module.exports = {
   maker,
@@ -14,4 +15,5 @@ module.exports = {
   flashloan,
   uniswap,
   reflexer,
+  dydx,
 };
