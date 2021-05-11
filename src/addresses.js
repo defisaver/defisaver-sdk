@@ -59,6 +59,7 @@ const otherAddresses = {
   AaveDefaultMarket: '0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5',
   ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
   DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
+  UniswapV3PositionManager : '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
 }
 
 

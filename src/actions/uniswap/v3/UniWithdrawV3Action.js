@@ -15,7 +15,7 @@ const {getAddr} = require('../../../addresses.js');
      * @param {string} amount0Max
      * @param {string} amount1Max
      */
-    constructor(tokenId, liquidity, amount0Min, amount1Min, deadline, recipient, amount0Max, amount1Max) {
+    constructor(tokenId, liquidity, amount0Min, amount1Min, deadline, recipient, amount0Max, amount1Max, from) {
       super(
         'UniWithdrawV3',
         getAddr('UniWithdrawV3'),
@@ -31,9 +31,11 @@ const {getAddr} = require('../../../addresses.js');
             "uint128",
           ],
         ],
-        [[...arguments]]
+        [[tokenId, liquidity, amount0Min, amount1Min, deadline, recipient, amount0Max, amount1Max]]
       );
-  
+        
+      this.from = from;
+
       this.mappableArgs = [
         this.args[0][0],
         this.args[0][1],
@@ -43,7 +45,7 @@ const {getAddr} = require('../../../addresses.js');
     }
     
     async getAssetsToApprove() {
-      return [];
+      return [{asset : {positionManager : getAddr('UniswapV3PositionManager'), tokenId : this.args[0][0]}, owner : this.from}];
     }
   }
   
