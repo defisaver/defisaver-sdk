@@ -1,6 +1,5 @@
 const Action = require("../../../Action");
 const {getAddr} = require('../../../addresses.js');
-const { getAssetAddrByTokenId } = require('../../../utils/uniV3.js')
 
 
 /**
@@ -16,7 +15,7 @@ const { getAssetAddrByTokenId } = require('../../../utils/uniV3.js')
      * @param {number} deadline
      * @param {EthAddress} from
      */
-    constructor(tokenId, amount0Desired, amount1Desired, amount0Min, amount1Min, deadline, from) {
+    constructor(tokenId, amount0Desired, amount1Desired, amount0Min, amount1Min, deadline, from, token0, token1) {
       super(
         'UniSupplyV3',
         getAddr('UniSupplyV3'),
@@ -28,6 +27,8 @@ const { getAssetAddrByTokenId } = require('../../../utils/uniV3.js')
             "uint256",
             "uint256",
             "uint256",
+            "address",
+            "address",
             "address",
           ],
         ],
@@ -41,15 +42,14 @@ const { getAssetAddrByTokenId } = require('../../../utils/uniV3.js')
       ];
     }
 
-    async getAssetsToApprove(web3) {
-      const tokenId = this.args[0][0];
-      const tokens = await getAssetAddrByTokenId(web3, tokenId);
-      const assetA = tokens[0];
-      const assetB = tokens[1];
+    async getAssetsToApprove() {
+      const assetA = getAssetInfoByAddress(this.args[0][7]);
+      const assetB = getAssetInfoByAddress(this.args[0][8]);
+
       const approveArr = [];
 
-      if (assetA.symbol !== 'ETH') approveArr.push({asset: assetA, owner: this.args[0][6]});
-      if (assetB.symbol !== 'ETH') approveArr.push({asset: assetB, owner: this.args[0][6]});
+      if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[0][7], owner: this.args[0][6]});
+      if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[0][8], owner: this.args[0][6]});
 
       return approveArr;
     }
