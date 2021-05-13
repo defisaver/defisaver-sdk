@@ -14,6 +14,7 @@ const {getAddr} = require('../../../addresses.js');
      * @param {EthAddress} recipient
      * @param {string} amount0Max
      * @param {string} amount1Max
+     * @param {EthAddress} from
      */
     constructor(tokenId, liquidity, amount0Min, amount1Min, deadline, recipient, amount0Max, amount1Max, from) {
       super(
