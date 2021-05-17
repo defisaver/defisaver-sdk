@@ -50,6 +50,16 @@ const actionAddresses = {
   // uniswap
   'UniSupply': '0x20051E428c9984B256EB73957cA59c256F01938c',
   'UniWithdraw': '0x5Abf6039fe574F82115742F7FADd0F7A21c2c4dc',
+  
+  // uniswap V3
+  'UniCollectV3': '0x4D49FB2Cc0DF856b936CCA1816A9e6DD0ADFa232',
+  'UniMintV3': '0x6d61b5c47995DF6DB7e444240ceD3Ea898B2d408',
+  'UniSupplyV3': '0x1398Ea6151e8360Ed0515460214c84FeFf687C6F',
+  'UniWithdrawV3': '0xe5FAB89bdC01130c686B35540531EB1cBbaE8ff3',
+  
+  // dydx
+  'DyDxSupply': '0xA8D1C1eea86573cBcC919fbf28Db542bDfE7Ed5b',
+  'DyDxWithdraw': '0x55AA33F42D79DbD3f1885b410e4796d641549bC3',
 };
 
 const otherAddresses = {
