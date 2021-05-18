@@ -28,6 +28,9 @@
 <dt><a href="#SendTokenAction">SendTokenAction</a></dt>
 <dd><p>Transfers specified token from recipe (DsProxy) to specified address</p>
 </dd>
+<dt><a href="#SumInputsAction">SumInputsAction</a></dt>
+<dd><p>Sums up 2 inputs/return values</p>
+</dd>
 <dt><a href="#UnwrapEthAction">UnwrapEthAction</a></dt>
 <dd><p>Unwraps a specified amount of WETH from the proxy</p>
 </dd>
@@ -48,6 +51,12 @@
 </dd>
 <dt><a href="#CompoundWithdrawAction">CompoundWithdrawAction</a></dt>
 <dd><p>CompoundWithdrawAction - Withdraw token from an Compound position</p>
+</dd>
+<dt><a href="#DyDxSupplyAction">DyDxSupplyAction</a></dt>
+<dd><p>DyDxSupplyAction - Supply token to an DyDx position</p>
+</dd>
+<dt><a href="#DyDxWithdrawAction">DyDxWithdrawAction</a></dt>
+<dd><p>DyDxWithdrawAction - Withdraw token from an DyDx position</p>
 </dd>
 <dt><a href="#AaveV2FlashLoanAction">AaveV2FlashLoanAction</a></dt>
 <dd><p>Gets a flashloan from Aave v2</p>
@@ -252,6 +261,12 @@ Transfers specified token from recipe (DsProxy) to specified address
 - to <code>string</code> - Transfer recipient
 - amount <code>string</code> - Transfer amount (-1 for whole Recipe (DsProxy) balance)
 
+<a name="SumInputsAction"></a>
+
+## SumInputsAction
+Sums up 2 inputs/return values
+
+**Kind**: global class  
 <a name="UnwrapEthAction"></a>
 
 ## UnwrapEthAction
@@ -355,6 +370,36 @@ CompoundWithdrawAction - Withdraw token from an Compound position
 - cTokenAddr <code>EthAddress</code>
 - amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
 - to <code>EthAddress</code>
+
+<a name="DyDxSupplyAction"></a>
+
+## DyDxSupplyAction
+DyDxSupplyAction - Supply token to an DyDx position
+
+**Kind**: global class  
+<a name="new_DyDxSupplyAction_new"></a>
+
+### new DyDxSupplyAction(tokenAddr, amount, from)
+**Params**
+
+- tokenAddr <code>EthAddress</code>
+- amount <code>string</code>
+- from <code>EthAddress</code> - Tokens will be supplied from this address
+
+<a name="DyDxWithdrawAction"></a>
+
+## DyDxWithdrawAction
+DyDxWithdrawAction - Withdraw token from an DyDx position
+
+**Kind**: global class  
+<a name="new_DyDxWithdrawAction_new"></a>
+
+### new DyDxWithdrawAction(tokenAddr, amount, to)
+**Params**
+
+- tokenAddr <code>EthAddress</code>
+- amount <code>string</code>
+- to <code>EthAddress</code> - Tokens will be withdrawn to this address
 
 <a name="AaveV2FlashLoanAction"></a>
 
