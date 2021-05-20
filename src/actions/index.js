@@ -6,14 +6,16 @@ const flashloan = require('./flashloan');
 const uniswap = require('./uniswap');
 const reflexer = require('./reflexer');
 const dydx = require('./dydx');
+const uniswapV3 = require('./uniswapV3');
 
 module.exports = {
   maker,
-  aave,
+  aave, // Aave v2
   compound,
   basic,
   flashloan,
-  uniswap,
+  uniswap, // Uniswap v2
+  uniswapV3,
   reflexer,
   dydx,
 };
