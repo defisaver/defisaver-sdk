@@ -7,6 +7,7 @@ const uniswap = require('./uniswap');
 const reflexer = require('./reflexer');
 const dydx = require('./dydx');
 const uniswapV3 = require('./uniswapV3');
+const liquity = require('./liquity');
 
 module.exports = {
   maker,
@@ -18,4 +19,5 @@ module.exports = {
   uniswapV3,
   reflexer,
   dydx,
+  liquity,
 };
