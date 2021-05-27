@@ -5,6 +5,7 @@ const PullTokenAction = require('./PullTokenAction');
 const WrapEthAction = require('./WrapEthAction');
 const UnwrapEthAction = require('./UnwrapEthAction');
 const SumInputsAction = require('./SumInputsAction');
+const GasFeeAction = require('./GasFeeAction');
 
 module.exports = {
   SellAction,
@@ -14,4 +15,5 @@ module.exports = {
   WrapEthAction,
   UnwrapEthAction,
   SumInputsAction,
+  GasFeeAction,
 };
