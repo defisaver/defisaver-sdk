@@ -13,7 +13,7 @@ class YearnSupplyAction extends Action {
    * @param to {ETHAddress} yTokens will be sent to this address
    */
   constructor(tokenAddr, amount, from, to) {
-    super('YearnSupply', getAddr('YearnSupply'), ['address','uint256','address', 'address'], [tokenAddr, amount, from, to]);
+    super('YearnSupply', getAddr('YearnSupply'), [['address','uint256','address', 'address']], [[tokenAddr, amount, from, to]]);
   }
 
   async getAssetsToApprove() {
