@@ -48,7 +48,7 @@ const actionAddresses = {
   'FLDyDx': '0x505079b4E049B9e641deb7E04D55e9457B8ad8Bc',
 
   // uniswap
-  'UniSupply': '0x20051E428c9984B256EB73957cA59c256F01938c',
+  'UniSupply': '0xF7545C969FaB024B06EC4e3dE856E52389D7CE57',
   'UniWithdraw': '0x5Abf6039fe574F82115742F7FADd0F7A21c2c4dc',
   
   // uniswap V3
