@@ -14,9 +14,14 @@ class LiquityWithdrawAction extends Action {
     requireAddress(to);
     super('LiquityWithdraw',
         getAddr('LiquityWithdraw'),
-        ['uint256','address', 'address','address'],
-        [collAmount, to, upperHint, lowerHint]
+        [['uint256','address', 'address','address']],
+        [[...arguments]]
     );
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1]
+    ];
   }
 }
 

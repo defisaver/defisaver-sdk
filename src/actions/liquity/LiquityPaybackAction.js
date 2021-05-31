@@ -15,13 +15,18 @@ class LiquityPaybackAction extends Action {
     requireAddress(from);
     super('LiquityPayback',
         getAddr('LiquityPayback'),
-        ['uint256','address', 'address','address'],
-        [lusdAmount, from, upperHint, lowerHint]
+        [['uint256','address', 'address','address']],
+        [[...arguments]]
     );
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1]
+    ];
   }
 
   async getAssetsToApprove() {
-    return [{asset: getAssetInfo('LUSD').address, owner: this.args[1]}];
+    return [{asset: getAssetInfo('LUSD').address, owner: this.args[0][1]}];
   }
 }
 
