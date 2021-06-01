@@ -7,8 +7,8 @@ const { getAddr } = require('../../addresses.js');
  */
 class YearnSupplyAction extends Action {
   /**
-   * @param tokenAddr {EthAddress}
-   * @param amount {string}
+   * @param tokenAddr {EthAddress} token address
+   * @param amount {string} amount of tokens to supply
    * @param from {EthAddress} Tokens will be supplied from this address
    * @param to {ETHAddress} yTokens will be sent to this address
    */
