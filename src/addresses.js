@@ -60,6 +60,10 @@ const actionAddresses = {
   // dydx
   'DyDxSupply': '0xA8D1C1eea86573cBcC919fbf28Db542bDfE7Ed5b',
   'DyDxWithdraw': '0x55AA33F42D79DbD3f1885b410e4796d641549bC3',
+  
+  // yearn
+  'YearnSupply': '0x5499ecfEba3B481DB52696122e84b7319AaF743A',
+  'YearnWithdraw': '0x97eA173b19aA2D1Bb34cDC12BE39388E6F65bDc7',
 };
 
 const otherAddresses = {
