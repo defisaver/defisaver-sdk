@@ -14,6 +14,11 @@ class YearnSupplyAction extends Action {
    */
   constructor(tokenAddr, amount, from, to) {
     super('YearnSupply', getAddr('YearnSupply'), [['address','uint256','address', 'address']], [[tokenAddr, amount, from, to]]);
+    this.mappableArgs = [
+      this.args[0][1],
+      this.args[0][2],
+      this.args[0][3],
+    ];
   }
 
   async getAssetsToApprove() {

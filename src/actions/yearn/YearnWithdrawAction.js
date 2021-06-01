@@ -14,8 +14,13 @@ class YearnWithdrawAction extends Action {
    */
   constructor(tokenAddr, amount, from, to) {
     super('YearnWithdraw', getAddr('YearnWithdraw'), [['address','uint256','address', 'address']], [[tokenAddr, amount, from, to]]);
+    this.mappableArgs = [
+      this.args[0][1],
+      this.args[0][2],
+      this.args[0][3],
+    ];
   }
-
+  
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[0][0]);
     if (asset.symbol !== 'ETH') return [{asset: this.args[0][0], owner: this.args[0][2]}];
