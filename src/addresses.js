@@ -64,6 +64,13 @@ const actionAddresses = {
   // yearn
   'YearnSupply': '0x5499ecfEba3B481DB52696122e84b7319AaF743A',
   'YearnWithdraw': '0x97eA173b19aA2D1Bb34cDC12BE39388E6F65bDc7',
+  
+  'LiquityClose': '0x4Eb6e5C7fbf7b6850912f893B85bB87109E86a1f',
+  'LiquityBorrow': '0x46e8fE6bbE3C08eCc250295583490be9ac97B969',
+  'LiquityOpen': '0x50D69350E2629987551C563E19D29dee6Faf3A78',
+  'LiquityPayback': '0x86eCa72dF81ae76AfF0dEeC01521154F33147e46',
+  'LiquityWithdraw': '0x8CDA51bB0D7E03252d554Ba5Bbb9254f3deB8441',
+  'LiquitySupply': '0x7d9157a022A263EFd34C867Fd261235D45B48453',
 };
 
 const otherAddresses = {
