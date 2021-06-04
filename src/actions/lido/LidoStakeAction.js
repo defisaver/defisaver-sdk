@@ -11,7 +11,7 @@ class LidoStakeAction extends Action {
    * @param to {ETHAddress} stETH will be sent to this address
    */
   constructor(ethAmount, to) {
-    super('LidoStake', getAddr('LidoStake'), ['uint256', 'address'], [ethAmount, to]);
+    super('LidoStake', getAddr('LidoStake'), [['uint256', 'address']], [[ethAmount, to]]);
     this.mappableArgs = [
       this.args[0][0],
       this.args[0][1],
