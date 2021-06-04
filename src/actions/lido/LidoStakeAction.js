@@ -7,12 +7,14 @@ const { getAddr } = require('../../addresses.js');
  */
 class LidoStakeAction extends Action {
   /**
+   * @param ethAmount {string} amount of ETH that will be staked to Lido contract
    * @param to {ETHAddress} stETH will be sent to this address
    */
-  constructor(to) {
-    super('LidoStake', getAddr('LidoStake'), ['address'], [to]);
+  constructor(ethAmount, to) {
+    super('LidoStake', getAddr('LidoStake'), ['uint256', 'address'], [ethAmount, to]);
     this.mappableArgs = [
       this.args[0][0],
+      this.args[0][1],
     ];
   }
   
