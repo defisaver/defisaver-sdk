@@ -1,5 +1,5 @@
 const Action = require("../../Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
+const {getAssetInfoByAddress, getAssetInfo} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
@@ -21,7 +21,7 @@ class LidoStakeAction extends Action {
   }
   
   async getAssetsToApprove() {
-    return [{asset: '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', owner: this.args[0][1]}];
+    return [{asset: getAssetInfo('WETH').address, owner: this.args[0][1]}];
   }
 }
 
