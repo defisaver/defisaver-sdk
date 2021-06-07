@@ -9,9 +9,9 @@ class LidoStakeAction extends Action {
   /**
    * @param amount {string} amount of WETH to pull and stake
    * @param from {EthAddress} WETH will be taken from this address
-   * @param to {ETHAddress} stETH will be sent to this address
+   * @param to {EthAddress} stETH will be sent to this address
    */
-  constructor(amount, from, to, toWrap) {
+  constructor(amount, from, to) {
     super('LidoStake', getAddr('LidoStake'), [['uint256','address', 'address']], [[amount, from, to]]);
     this.mappableArgs = [
       this.args[0][0],
