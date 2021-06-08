@@ -8,7 +8,7 @@ class GasFeeAction extends Action {
    * @param payNow {bool} If the action will pay gas cost from DSProxy now or later
    */
   constructor(gasStart, feeToken, payNow) {
-    super("GasFeeTaker", getAddr("GasFeeTaker"), ["uint256","address","bool"], [...arguments]);
+    super("GasFeeTaker", getAddr("GasFeeTaker"), [["uint256","address","bool"]], [[...arguments]]);
   }
 
 }
