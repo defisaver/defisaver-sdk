@@ -9,6 +9,11 @@ class GasFeeAction extends Action {
    */
   constructor(gasStart, feeToken, availableAmount) {
     super("GasFeeTaker", getAddr("GasFeeTaker"), [["uint256","address","uint256"]], [[...arguments]]);
+
+    this.mappableArgs = [
+      this.args[0][1],
+      this.args[0][2],
+    ];
   }
 
 }
