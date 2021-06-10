@@ -6,7 +6,7 @@ const actionAddresses = {
   // utils
   'WrapEth': '0x9E702937F42Db2cE58342Ca5F213Ef33D51AEF6b',
   'UnwrapEth': '0x925b0C0663aaef2C6F603aD8B992a15adA83f1Cc',
-  'PullToken': '0xa8C63267e09F1b4Efc9F934ad81c09e021fc8103',
+  'PullToken': '0x795a89f6D4E97A959fe81aa22772441323783479',
   'SendToken': '0xBbe0D7f2AF01aE678f8A873CB2d2EB73871C9b5A',
   'SumInputs': '0xCdef35425579fc566B6Ee0499A79256ac88d25cf',
 
@@ -48,8 +48,8 @@ const actionAddresses = {
   'FLDyDx': '0x505079b4E049B9e641deb7E04D55e9457B8ad8Bc',
 
   // uniswap
-  'UniSupply': '0xF7545C969FaB024B06EC4e3dE856E52389D7CE57',
-  'UniWithdraw': '0x5Abf6039fe574F82115742F7FADd0F7A21c2c4dc',
+  'UniSupply': '0xcAE220B5398AfAad75bfeb946164f6C23CF65A98',
+  'UniWithdraw': '0x847aF4eFDf64E4F54Af95D3b867DfC92f4Ea91B4',
   
   // uniswap V3
   'UniCollectV3': '0x4D49FB2Cc0DF856b936CCA1816A9e6DD0ADFa232',
