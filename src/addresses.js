@@ -50,27 +50,36 @@ const actionAddresses = {
   // uniswap
   'UniSupply': '0xF7545C969FaB024B06EC4e3dE856E52389D7CE57',
   'UniWithdraw': '0x5Abf6039fe574F82115742F7FADd0F7A21c2c4dc',
-  
+
   // uniswap V3
   'UniCollectV3': '0x4D49FB2Cc0DF856b936CCA1816A9e6DD0ADFa232',
   'UniMintV3': '0x6d61b5c47995DF6DB7e444240ceD3Ea898B2d408',
   'UniSupplyV3': '0x1398Ea6151e8360Ed0515460214c84FeFf687C6F',
   'UniWithdrawV3': '0xe5FAB89bdC01130c686B35540531EB1cBbaE8ff3',
-  
+
   // dydx
   'DyDxSupply': '0xA8D1C1eea86573cBcC919fbf28Db542bDfE7Ed5b',
   'DyDxWithdraw': '0x55AA33F42D79DbD3f1885b410e4796d641549bC3',
-  
+
   // yearn
   'YearnSupply': '0x5499ecfEba3B481DB52696122e84b7319AaF743A',
   'YearnWithdraw': '0x97eA173b19aA2D1Bb34cDC12BE39388E6F65bDc7',
-  
-  'LiquityClose': '0x4Eb6e5C7fbf7b6850912f893B85bB87109E86a1f',
+
+  // liquity
+  'LiquityClose': '0x9C563dc9F8e3FcCF996DAB4b6B6003fb7Bbca90f',
   'LiquityBorrow': '0x46e8fE6bbE3C08eCc250295583490be9ac97B969',
   'LiquityOpen': '0x50D69350E2629987551C563E19D29dee6Faf3A78',
   'LiquityPayback': '0x86eCa72dF81ae76AfF0dEeC01521154F33147e46',
   'LiquityWithdraw': '0x8CDA51bB0D7E03252d554Ba5Bbb9254f3deB8441',
   'LiquitySupply': '0x7d9157a022A263EFd34C867Fd261235D45B48453',
+  'LiquitySPDeposit': '0x63A485F32e355ddA2275d6C6211A0A20817CDbfe',
+  'LiquitySPWithdraw': '0xCD410b360639a546FE5535fe940c1F8bc62dE2c7',
+  'LiquityStake': '0xF0782DE9d734e54aa080B985d6a9235880C48Fe5',
+  'LiquityUnstake': '0xc39DdBa031D014BFC1E3b6158842Ffb43f8D47e9',
+  'LiquityEthGainToTrove': '0x7D237902cc9aEa19b1fA33f76f3C7Fc5A12CD0Af',
+
+  // lido
+  'LidoStake': '0x7ada5Af66c9b4b55a06A4B59A0DC41fcDca9353A',
 };
 
 const otherAddresses = {
