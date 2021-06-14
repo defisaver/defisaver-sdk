@@ -30,7 +30,7 @@ class Action {
    * @private
    */
   _getId() {
-    return Web3Utils.keccak256(this.name);
+    return Web3Utils.keccak256(this.name).substr(0, 8);
   }
 
   /**
