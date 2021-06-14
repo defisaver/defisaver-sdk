@@ -9,6 +9,7 @@ const dydx = require('./dydx');
 const uniswapV3 = require('./uniswapV3');
 const liquity = require('./liquity');
 const yearn = require('./yearn');
+const lido = require('./lido');
 
 module.exports = {
   maker,
@@ -22,4 +23,5 @@ module.exports = {
   dydx,
   liquity,
   yearn,
+  lido,
 };
