@@ -77,6 +77,8 @@ const actionAddresses = {
   'LiquityStake': '0xF0782DE9d734e54aa080B985d6a9235880C48Fe5',
   'LiquityUnstake': '0xc39DdBa031D014BFC1E3b6158842Ffb43f8D47e9',
   'LiquityEthGainToTrove': '0x7D237902cc9aEa19b1fA33f76f3C7Fc5A12CD0Af',
+  'LiquityClaim': '0x5a2E638DE65323c55f1245f920B84dB4603002eE',
+  'LiquityRedeem': '0x6C5Dd88D033c8857254Cc94098BF75Ac275B17c7',
 
   // lido
   'LidoStake': '0x7ada5Af66c9b4b55a06A4B59A0DC41fcDca9353A',
