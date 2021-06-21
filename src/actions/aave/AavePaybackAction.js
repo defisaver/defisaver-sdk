@@ -17,8 +17,8 @@ class AavePaybackAction extends Action {
   constructor(market, tokenAddr, amount, rateMode, from, onBehalf = getAddr('Empty')) {
     super('AavePayback',
       getAddr('AavePayback'),
-      ['address', 'address', 'uint256', 'uint256', 'address', 'address'],
-      [market, tokenAddr, amount, rateMode, from, onBehalf],
+      [['address', 'address', 'uint256', 'uint256', 'address', 'address']],
+      [[market, tokenAddr, amount, rateMode, from, onBehalf]],
     );
   }
 

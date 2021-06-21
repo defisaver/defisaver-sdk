@@ -19,8 +19,8 @@ class AaveBorrowAction extends Action {
     super(
       'AaveBorrow',
       getAddr('AaveBorrow'),
-      ['address', 'address', 'uint256', 'uint256', 'address', 'address'],
-      [market, tokenAddr, amount, rateMode, to, onBehalf],
+      [['address', 'address', 'uint256', 'uint256', 'address', 'address']],
+      [[market, tokenAddr, amount, rateMode, to, onBehalf]],
     );
   }
 }

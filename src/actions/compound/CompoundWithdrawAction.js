@@ -13,7 +13,7 @@ class CompoundWithdrawAction extends Action {
    */
   constructor(cTokenAddr, amount, to) {
     requireAddress(to);
-    super('CompWithdraw', getAddr('CompWithdraw'), ['address','uint256','address'], [...arguments]);
+    super('CompWithdraw', getAddr('CompWithdraw'), [['address','uint256','address']], [[...arguments]]);
   }
 }
 

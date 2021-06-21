@@ -9,11 +9,11 @@ class SubInputsAction extends Action {
     super(
       'SubInputs',
       getAddr('SubInputs'),
-      [
+      [[
         "uint",
         "uint",
-      ],
-      [...arguments]
+      ]],
+      [[...arguments]]
     );
   }
 }

@@ -14,7 +14,7 @@ class AaveWithdrawAction extends Action {
    */
   constructor(market, tokenAddr, amount, to) {
     requireAddress(to);
-    super('AaveWithdraw', getAddr('AaveWithdraw'), ['address','address','uint256','address'], [...arguments]);
+    super('AaveWithdraw', getAddr('AaveWithdraw'), [['address','address','uint256','address']], [[...arguments]]);
   }
 }
 

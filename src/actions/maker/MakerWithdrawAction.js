@@ -16,7 +16,7 @@ class MakerWithdrawAction extends Action {
    */
   constructor(vaultId, amount, joinAddr, to, mcdManager = getAddr('McdCdpManager')) {
     requireAddress(to);
-    super('McdWithdraw', getAddr('McdWithdraw'), ['uint256','uint256','address','address','address'], [vaultId, amount, joinAddr, to, mcdManager]);
+    super('McdWithdraw', getAddr('McdWithdraw'), [['uint256','uint256','address','address','address']], [[vaultId, amount, joinAddr, to, mcdManager]]);
   }
 }
 

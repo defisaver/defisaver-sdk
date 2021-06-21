@@ -13,8 +13,8 @@ class LiquityClaimAction extends Action {
         requireAddress(to);
         super('LiquityClaim',
             getAddr('LiquityClaim'),
-            ['address'],
-            [...arguments]);
+            [['address']],
+            [[...arguments]]);
     }
 }
 

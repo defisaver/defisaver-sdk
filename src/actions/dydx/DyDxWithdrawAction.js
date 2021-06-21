@@ -13,7 +13,7 @@ class DyDxWithdrawAction extends Action {
    */
   constructor(tokenAddr, amount, to) {
     requireAddress(to);
-    super('DyDxWithdraw', getAddr('DyDxWithdraw'), ['address','uint256','address'], [...arguments]);
+    super('DyDxWithdraw', getAddr('DyDxWithdraw'), [['address','uint256','address']], [[...arguments]]);
   }
 }
 

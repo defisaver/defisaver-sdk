@@ -17,12 +17,12 @@ class PullTokenAction extends Action {
     super(
       'PullToken',
       getAddr('PullToken'),
-      [
+      [[
         "address",
         "address",
         "uint",
-      ],
-      [...arguments]
+      ]],
+      [[...arguments]]
     );
   }
 

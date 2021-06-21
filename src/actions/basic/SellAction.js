@@ -19,12 +19,13 @@ class SellAction extends Action {
     super(
       'DFSSell',
       getAddr('DFSSell'),
-      [
+      [[
         ["address","address","uint256","uint256","uint256","uint256","address","address","bytes",["address","address","address","uint256","uint256","bytes"]],
         "address",
         "address",
+      ]
       ],
-      [exchangeOrder, from, to]
+      [[exchangeOrder, from, to]]
     );
 
     this.protocolFee = protocolFee;

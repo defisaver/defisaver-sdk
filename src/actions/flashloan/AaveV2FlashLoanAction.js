@@ -17,8 +17,8 @@ class AaveV2FlashLoanAction extends Action {
     super(
       'FLAaveV2',
       getAddr('FLAaveV2'),
-      ['uint256[]','address[]', 'uint256[]', 'address', 'address', 'bytes', 'uint256'],
-      [loanAmounts, tokens, modes, loanPayer, flParamGetterAddr, flParamGetterData, 0]
+      [['uint256[]','address[]', 'uint256[]', 'address', 'address', 'bytes', 'uint256']],
+      [[loanAmounts, tokens, modes, loanPayer, flParamGetterAddr, flParamGetterData, 0]]
     );
   }
 }

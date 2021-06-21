@@ -13,7 +13,7 @@ class CompoundSupplyAction extends Action {
    * @param enableAsColl {boolean} If we need to enable asset as collateral
    */
   constructor(cTokenAddr, amount, from, enableAsColl = true) {
-    super('CompSupply', getAddr('CompSupply'), ['address','uint256','address','bool'], [cTokenAddr, amount, from, enableAsColl]);
+    super('CompSupply', getAddr('CompSupply'), [['address','uint256','address','bool']], [[cTokenAddr, amount, from, enableAsColl]]);
   }
 
   async getAssetsToApprove() {

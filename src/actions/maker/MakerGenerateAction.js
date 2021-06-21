@@ -14,7 +14,7 @@ class MakerGenerateAction extends Action {
    */
   constructor(vaultId, amount, to, mcdManager = getAddr('McdCdpManager')) {
     requireAddress(to);
-    super('McdGenerate', getAddr('McdGenerate'), ['uint256','uint256','address','address'], [vaultId, amount, to, mcdManager]);
+    super('McdGenerate', getAddr('McdGenerate'), [['uint256','uint256','address','address']], [[vaultId, amount, to, mcdManager]]);
   }
 }
 

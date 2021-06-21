@@ -14,7 +14,7 @@ class ReflexerSupplyAction extends Action {
    * @param from {EthAddress} Tokens will be supplied from this address
    */
   constructor(safeId, amount, adapterAddr, from) {
-    super('ReflexerSupply', getAddr('ReflexerSupply'), ['uint256','uint256','address','address'], [safeId, amount, adapterAddr, from]);
+    super('ReflexerSupply', getAddr('ReflexerSupply'), [['uint256','uint256','address','address']], [[safeId, amount, adapterAddr, from]]);
   }
 
   async getAssetsToApprove() {

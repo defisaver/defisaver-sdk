@@ -13,7 +13,7 @@ class CompoundBorrowAction extends Action {
    */
   constructor(cTokenAddr, amount, to) {
     requireAddress(to);
-    super('CompBorrow', getAddr('CompBorrow'), ['address','uint256','address'], [...arguments]);
+    super('CompBorrow', getAddr('CompBorrow'), [['address','uint256','address']], [[...arguments]]);
   }
 }
 

@@ -17,12 +17,12 @@ class SendTokenAction extends Action {
     super(
       'SendToken',
       getAddr('SendToken'),
-      [
+      [[
         "address",
         "address",
         "uint",
-      ],
-      [...arguments]
+      ]],
+      [[...arguments]]
     );
   }
 }

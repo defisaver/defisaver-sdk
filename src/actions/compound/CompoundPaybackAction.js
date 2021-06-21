@@ -12,7 +12,7 @@ class CompoundPaybackAction extends Action {
    * @param from {EthAddress}
    */
   constructor(cTokenAddr, amount, from) {
-    super('CompPayback', getAddr('CompPayback'), ['address', 'uint256', 'address'], [...arguments]);
+    super('CompPayback', getAddr('CompPayback'), [['address', 'uint256', 'address']], [[...arguments]]);
   }
 
   async getAssetsToApprove() {

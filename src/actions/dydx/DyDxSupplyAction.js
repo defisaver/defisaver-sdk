@@ -12,7 +12,7 @@ class DyDxSupplyAction extends Action {
    * @param from {EthAddress} Tokens will be supplied from this address
    */
   constructor(tokenAddr, amount, from) {
-    super('DyDxSupply', getAddr('DyDxSupply'), ['address','uint256','address'], [tokenAddr, amount, from]);
+    super('DyDxSupply', getAddr('DyDxSupply'), [['address','uint256','address']], [[tokenAddr, amount, from]]);
   }
 
   async getAssetsToApprove() {

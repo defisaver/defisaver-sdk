@@ -14,7 +14,7 @@ class CompoundClaimAction extends Action {
    */
   constructor(cSupplyAddresses, cBorrowAddresses, from, to) {
     requireAddress(to);
-    super('CompClaim', getAddr('CompClaim'), ["address[]", "address[]", "address", "address"], [...arguments]);
+    super('CompClaim', getAddr('CompClaim'), [["address[]", "address[]", "address", "address"]], [[...arguments]]);
   }
 }
 

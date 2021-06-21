@@ -9,11 +9,11 @@ class SumInputsAction extends Action {
     super(
       'SumInputs',
       getAddr('SumInputs'),
-      [
+      [[
         "uint",
         "uint",
-      ],
-      [...arguments]
+      ]],
+      [[...arguments]]
     );
   }
 }

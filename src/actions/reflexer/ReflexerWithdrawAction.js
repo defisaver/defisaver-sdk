@@ -15,7 +15,7 @@ class ReflexerWithdrawAction extends Action {
    */
   constructor(safeId, amount, adapterAddr, to) {
     requireAddress(to);
-    super('ReflexerWithdraw', getAddr('ReflexerWithdraw'), ['uint256','uint256','address','address'], [safeId, amount, adapterAddr, to]);
+    super('ReflexerWithdraw', getAddr('ReflexerWithdraw'), [['uint256','uint256','address','address']], [[safeId, amount, adapterAddr, to]]);
   }
 }
 

@@ -15,7 +15,7 @@ class AaveSupplyAction extends Action {
    * @param enableAsColl {boolean} If we need to enable asset as collateral
    */
   constructor(market, tokenAddr, amount, from, onBehalf = getAddr('Empty'), enableAsColl) {
-    super('AaveSupply', getAddr('AaveSupply'), ['address','address','uint256','address','address','bool'], [market, tokenAddr, amount, from, onBehalf, enableAsColl]);
+    super('AaveSupply', getAddr('AaveSupply'), [['address','address','uint256','address','address','bool']], [[market, tokenAddr, amount, from, onBehalf, enableAsColl]]);
   }
 
   async getAssetsToApprove() {

@@ -13,7 +13,7 @@ class ReflexerGenerateAction extends Action {
    */
   constructor(vaultId, amount, to) {
     requireAddress(to);
-    super('ReflexerGenerate', getAddr('ReflexerGenerate'), ['uint256','uint256','address'], [vaultId, amount, to]);
+    super('ReflexerGenerate', getAddr('ReflexerGenerate'), [['uint256','uint256','address']], [[vaultId, amount, to]]);
   }
 }
 

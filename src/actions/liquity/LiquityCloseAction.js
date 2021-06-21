@@ -16,8 +16,8 @@ class LiquityCloseAction extends Action {
         requireAddress(to);
         super('LiquityClose',
             getAddr('LiquityClose'),
-            ['address', 'address'],
-            [from, to]);
+            [['address', 'address']],
+            [[from, to]]);
     }
 
     async getAssetsToApprove() {

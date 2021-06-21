@@ -20,12 +20,13 @@ class BuyAction extends Action {
     super(
       'DFSBuy',
       getAddr('DFSBuy'),
-      [
+      [[
         ["address","address","uint256","uint256","uint256","uint256","address","address","bytes",["address","address","address","uint256","uint256","bytes"]],
         "address",
         "address",
+      ]
       ],
-      [exchangeOrder, from, to]
+      [[exchangeOrder, from, to]]
     );
 
     this.protocolFee = protocolFee;

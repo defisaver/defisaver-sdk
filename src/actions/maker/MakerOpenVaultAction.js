@@ -10,7 +10,7 @@ class MakerOpenVaultAction extends Action {
    * @param mcdManager {EthAddress}
    */
   constructor(joinAddr, mcdManager = getAddr('McdCdpManager')) {
-    super('McdOpen', getAddr('McdOpen'), ['address','address'], [joinAddr, mcdManager]);
+    super('McdOpen', getAddr('McdOpen'), [['address','address']], [[joinAddr, mcdManager]]);
   }
 }
 

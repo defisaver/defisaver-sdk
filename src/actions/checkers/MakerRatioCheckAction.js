@@ -11,7 +11,7 @@ class MakerRatioCheckAction extends Action {
    * @param nextPrice {string} Next maker oracle price if needed
    */
   constructor(targetRatio, vaultId, nextPrice) {
-    super("McdRatioCheck", getAddr("McdRatioCheck"), [["uint256", "uint256", "uint256"]], [...arguments]);
+    super("McdRatioCheck", getAddr("McdRatioCheck"), [["uint256", "uint256", "uint256"]], [[...arguments]]);
 
     this.mappableArgs = [
       this.args[0][1],

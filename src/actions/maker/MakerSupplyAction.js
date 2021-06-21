@@ -15,7 +15,7 @@ class MakerSupplyAction extends Action {
    * @param mcdManager {EthAddress}
    */
   constructor(vaultId, amount, joinAddr, from, mcdManager = getAddr('McdCdpManager')) {
-    super('McdSupply', getAddr('McdSupply'), ['uint256','uint256','address','address','address'], [vaultId, amount, joinAddr, from, mcdManager]);
+    super('McdSupply', getAddr('McdSupply'), [['uint256','uint256','address','address','address']], [[vaultId, amount, joinAddr, from, mcdManager]]);
   }
 
   async getAssetsToApprove() {

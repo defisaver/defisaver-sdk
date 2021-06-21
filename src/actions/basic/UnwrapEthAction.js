@@ -15,11 +15,11 @@ class UnwrapEthAction extends Action {
     super(
       'UnwrapEth',
       getAddr('UnwrapEth'),
-      [
+      [[
         "uint256",
         "address"
-      ],
-      [...arguments]
+      ]],
+      [[...arguments]]
     );
   }
 }

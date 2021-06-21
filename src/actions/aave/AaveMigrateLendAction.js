@@ -11,7 +11,7 @@ class AaveMigrateLendAction extends Action {
    * @param to {EthAddress}
    */
   constructor(lendAmount, from, to) {
-    super('AaveMigrateLend', getAddr('AaveMigrateLend'), ["uint256", "address", "address"], [...arguments]);
+    super('AaveMigrateLend', getAddr('AaveMigrateLend'), [["uint256", "address", "address"]], [[...arguments]]);
   }
 }
 

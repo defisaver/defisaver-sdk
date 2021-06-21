@@ -14,7 +14,7 @@ class MakerPaybackAction extends Action {
    * @param mcdManager {EthAddress}
    */
   constructor(vaultId, amount, from, mcdManager = getAddr('McdCdpManager')) {
-    super('McdPayback', getAddr('McdPayback'), ['uint256','uint256','address','address'], [vaultId, amount, from, mcdManager]);
+    super('McdPayback', getAddr('McdPayback'), [['uint256','uint256','address','address']], [[vaultId, amount, from, mcdManager]]);
   }
 
   async getAssetsToApprove() {

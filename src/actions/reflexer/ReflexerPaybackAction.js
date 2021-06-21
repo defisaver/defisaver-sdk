@@ -13,7 +13,7 @@ class ReflexerPaybackAction extends Action {
    * @param from {EthAddress} RAI will be sent from this address
    */
   constructor(safeId, amount, from) {
-    super('ReflexerPayback', getAddr('ReflexerPayback'), ['uint256','uint256','address'], [safeId, amount, from]);
+    super('ReflexerPayback', getAddr('ReflexerPayback'), [['uint256','uint256','address']], [[safeId, amount, from]]);
   }
 
   async getAssetsToApprove() {
