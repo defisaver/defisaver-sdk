@@ -88,7 +88,7 @@ class Action {
       let _paramType = this._formatType(paramType);
       return AbiCoder.encodeParameter(_paramType, _arg);
     });
-    return [bytesEncodedArgs];
+    return bytesEncodedArgs;
   }
 
   /**

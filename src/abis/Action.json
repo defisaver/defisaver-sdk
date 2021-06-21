@@ -1,12 +1,115 @@
 [
   {
     "inputs": [],
+    "name": "NonContractCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ReturnIndexValueError",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SenderNotAdmin",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SenderNotOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SubIndexValueError",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ADMIN_VAULT_ADDR",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "NO_PARAM_MAPPING",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "REGISTRY_ADDR",
     "outputs": [
       {
         "internalType": "address",
         "name": "",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "RETURN_MAX_INDEX_VALUE",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "RETURN_MIN_INDEX_VALUE",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "SUB_MAX_INDEX_VALUE",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "SUB_MIN_INDEX_VALUE",
+    "outputs": [
+      {
+        "internalType": "uint8",
+        "name": "",
+        "type": "uint8"
       }
     ],
     "stateMutability": "view",
@@ -26,25 +129,38 @@
     "type": "function"
   },
   {
+    "inputs": [],
+    "name": "adminVault",
+    "outputs": [
+      {
+        "internalType": "contract AdminVault",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
-        "internalType": "bytes[]",
-        "name": "",
-        "type": "bytes[]"
+        "internalType": "bytes",
+        "name": "_callData",
+        "type": "bytes"
       },
       {
         "internalType": "bytes[]",
-        "name": "",
+        "name": "_subData",
         "type": "bytes[]"
       },
       {
         "internalType": "uint8[]",
-        "name": "",
+        "name": "_paramMapping",
         "type": "uint8[]"
       },
       {
         "internalType": "bytes32[]",
-        "name": "",
+        "name": "_returnValues",
         "type": "bytes32[]"
       }
     ],
@@ -62,14 +178,21 @@
   {
     "inputs": [
       {
-        "internalType": "bytes[]",
+        "internalType": "bytes",
         "name": "_callData",
-        "type": "bytes[]"
+        "type": "bytes"
       }
     ],
     "name": "executeActionDirect",
     "outputs": [],
     "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "kill",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -96,6 +219,29 @@
       }
     ],
     "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_receiver",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawStuckFunds",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   }
 ]
