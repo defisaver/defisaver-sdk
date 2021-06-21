@@ -8,6 +8,9 @@ const reflexer = require('./reflexer');
 const dydx = require('./dydx');
 const uniswapV3 = require('./uniswapV3');
 const checkers = require('./checkers');
+const liquity = require('./liquity');
+const yearn = require('./yearn');
+const lido = require('./lido');
 
 module.exports = {
   maker,
@@ -20,4 +23,7 @@ module.exports = {
   reflexer,
   dydx,
   checkers,
+  liquity,
+  yearn,
+  lido,
 };

@@ -1,10 +1,11 @@
 {
   "name": "@defisaver/sdk",
-  "version": "0.0.10",
+  "version": "0.0.16",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha --recursive",
+    "version-bump": "git commit -am \"Version bump to $(npm version patch | cut -c 2-)\"",
     "documentDev": "jsdoc2md -p list --files {src/**.js,src/utils/**.js} > DEV.md",
     "documentActions": "jsdoc2md -p list --files src/actions/**/**.js > ACTIONS.md"
   },
@@ -12,7 +13,7 @@
   "repository": "https://github.com/DecenterApps/defisaver-sdk",
   "license": "ISC",
   "dependencies": {
-    "@defisaver/tokens": "^1.3.31",
+    "@defisaver/tokens": "^1.3.44",
     "@ethersproject/address": "^5.0.10",
     "@ethersproject/solidity": "^5.0.9",
     "axios": "^0.21.1",
