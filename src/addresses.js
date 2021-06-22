@@ -53,8 +53,8 @@ const actionAddresses = {
 
   // uniswap V3
   'UniCollectV3': '0x4D49FB2Cc0DF856b936CCA1816A9e6DD0ADFa232',
-  'UniMintV3': '0x6d61b5c47995DF6DB7e444240ceD3Ea898B2d408',
-  'UniSupplyV3': '0x1398Ea6151e8360Ed0515460214c84FeFf687C6F',
+  'UniMintV3': '0x488794Aa06Ec668fDeC29375CB8B6629f4692B0B',
+  'UniSupplyV3': '0x1dc3C2c16195bD6e49f6ED05F1f482c3C7FD35Af',
   'UniWithdrawV3': '0xe5FAB89bdC01130c686B35540531EB1cBbaE8ff3',
 
   // dydx
@@ -62,8 +62,8 @@ const actionAddresses = {
   'DyDxWithdraw': '0x55AA33F42D79DbD3f1885b410e4796d641549bC3',
 
   // yearn
-  'YearnSupply': '0x5499ecfEba3B481DB52696122e84b7319AaF743A',
-  'YearnWithdraw': '0x97eA173b19aA2D1Bb34cDC12BE39388E6F65bDc7',
+  'YearnSupply': '0x3B8538B070a0890ef7E13FF60c9d19F893a93B8a',
+  'YearnWithdraw': '0x5BDf949c3a74E4F78328f6ad1F3697CC8edbe1A2',
 
   // liquity
   'LiquityClose': '0x4Eb6e5C7fbf7b6850912f893B85bB87109E86a1f',
@@ -81,7 +81,7 @@ const actionAddresses = {
   'LiquityRedeem': '0x6C5Dd88D033c8857254Cc94098BF75Ac275B17c7',
 
   // lido
-  'LidoStake': '0x7ada5Af66c9b4b55a06A4B59A0DC41fcDca9353A',
+  'LidoStake': '0x71D44c05B94438fe09a4A7F4dB75fb421dEC1067',
 };
 
 const otherAddresses = {
