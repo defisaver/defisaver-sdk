@@ -14,6 +14,12 @@ class DyDxWithdrawAction extends Action {
   constructor(tokenAddr, amount, to) {
     requireAddress(to);
     super('DyDxWithdraw', getAddr('DyDxWithdraw'), [['address','uint256','address']], [[...arguments]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+    ];
   }
 }
 

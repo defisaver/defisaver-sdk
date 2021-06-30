@@ -10,6 +10,10 @@ class WrapEthAction extends Action {
    */
   constructor(amount) {
     super("WrapEth", getAddr("WrapEth"), [["uint256"]], [[...arguments]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+    ];
   }
 
   async getEthValue() {

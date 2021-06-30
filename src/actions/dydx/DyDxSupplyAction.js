@@ -13,6 +13,12 @@ class DyDxSupplyAction extends Action {
    */
   constructor(tokenAddr, amount, from) {
     super('DyDxSupply', getAddr('DyDxSupply'), [['address','uint256','address']], [[tokenAddr, amount, from]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+    ];
   }
 
   async getAssetsToApprove() {

@@ -14,6 +14,12 @@ class CompoundSupplyAction extends Action {
    */
   constructor(cTokenAddr, amount, from, enableAsColl = true) {
     super('CompSupply', getAddr('CompSupply'), [['address','uint256','address','bool']], [[cTokenAddr, amount, from, enableAsColl]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+    ];
   }
 
   async getAssetsToApprove() {

@@ -14,6 +14,12 @@ class ReflexerPaybackAction extends Action {
    */
   constructor(safeId, amount, from) {
     super('ReflexerPayback', getAddr('ReflexerPayback'), [['uint256','uint256','address']], [[safeId, amount, from]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+    ];
   }
 
   async getAssetsToApprove() {

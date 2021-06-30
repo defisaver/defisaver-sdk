@@ -15,6 +15,13 @@ class ReflexerSupplyAction extends Action {
    */
   constructor(safeId, amount, adapterAddr, from) {
     super('ReflexerSupply', getAddr('ReflexerSupply'), [['uint256','uint256','address','address']], [[safeId, amount, adapterAddr, from]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+      this.args[0][3],
+    ];
   }
 
   async getAssetsToApprove() {

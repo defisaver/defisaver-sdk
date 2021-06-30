@@ -15,6 +15,11 @@ class SumInputsAction extends Action {
       ]],
       [[...arguments]]
     );
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+    ];
   }
 }
 

@@ -15,6 +15,10 @@ class LiquityClaimAction extends Action {
             getAddr('LiquityClaim'),
             [['address']],
             [[...arguments]]);
+
+            this.mappableArgs = [
+                this.args[0][0],
+              ];
     }
 }
 

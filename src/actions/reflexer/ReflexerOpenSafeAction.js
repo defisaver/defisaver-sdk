@@ -10,6 +10,10 @@ class ReflexerOpenSafeAction extends Action {
    */
   constructor(adapterAddr) {
     super('ReflexerOpen', getAddr('ReflexerOpen'), [['address']], [[adapterAddr]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+    ];
   }
 }
 

@@ -14,6 +14,12 @@ class CompoundWithdrawAction extends Action {
   constructor(cTokenAddr, amount, to) {
     requireAddress(to);
     super('CompWithdraw', getAddr('CompWithdraw'), [['address','uint256','address']], [[...arguments]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+    ];
   }
 }
 

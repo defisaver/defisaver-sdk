@@ -20,6 +20,15 @@ class AavePaybackAction extends Action {
       [['address', 'address', 'uint256', 'uint256', 'address', 'address']],
       [[market, tokenAddr, amount, rateMode, from, onBehalf]],
     );
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+      this.args[0][3],
+      this.args[0][4],
+      this.args[0][5],
+    ];
   }
 
   async getAssetsToApprove() {

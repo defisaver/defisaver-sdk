@@ -21,6 +21,10 @@ class UnwrapEthAction extends Action {
       ]],
       [[...arguments]]
     );
+
+    this.mappableArgs = [
+      this.args[0][0],
+    ];
   }
 }
 
