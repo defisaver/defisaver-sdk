@@ -16,6 +16,13 @@ class MakerSupplyAction extends Action {
    */
   constructor(vaultId, amount, joinAddr, from, mcdManager = getAddr('McdCdpManager')) {
     super('McdSupply', getAddr('McdSupply'), [['uint256','uint256','address','address','address']], [[vaultId, amount, joinAddr, from, mcdManager]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+      this.args[0][3],
+    ];
   }
 
   async getAssetsToApprove() {

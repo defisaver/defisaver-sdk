@@ -31,11 +31,11 @@ class SellAction extends Action {
     this.protocolFee = protocolFee;
 
     this.mappableArgs = [
-      this.args[0][0],
+      this.args[0][0][0],
+      this.args[0][0][1],
+      this.args[0][0][2],
       this.args[0][1],
       this.args[0][2],
-      this.args[1],
-      this.args[2],
     ];
   }
 

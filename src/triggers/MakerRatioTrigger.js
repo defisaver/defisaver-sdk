@@ -1,12 +1,10 @@
-const Action = require("../../Action");
-const {getAddr} = require("../../addresses.js");
+const Action = require("../Action");
+const {getAddr} = require("../addresses.js");
 
 class MakerRatioTrigger extends Action {
-  /**
-   * @param amount {string} Transfer amount
-   */
-  constructor(amount) {
-    super("McdRatioTrigger", getAddr("WrapEth"), [["uint256"]], [[...arguments]]);
+
+  constructor(vaultId, ratio, state) {
+    super("McdRatioTrigger", getAddr("McdRatioTrigger"), [["uint256", "uint256", "uint8"]], [[...arguments]]);
   }
 
   async getEthValue() {

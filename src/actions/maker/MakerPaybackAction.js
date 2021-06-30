@@ -15,6 +15,12 @@ class MakerPaybackAction extends Action {
    */
   constructor(vaultId, amount, from, mcdManager = getAddr('McdCdpManager')) {
     super('McdPayback', getAddr('McdPayback'), [['uint256','uint256','address','address']], [[vaultId, amount, from, mcdManager]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+    ];
   }
 
   async getAssetsToApprove() {

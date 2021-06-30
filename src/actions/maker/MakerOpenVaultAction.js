@@ -11,6 +11,10 @@ class MakerOpenVaultAction extends Action {
    */
   constructor(joinAddr, mcdManager = getAddr('McdCdpManager')) {
     super('McdOpen', getAddr('McdOpen'), [['address','address']], [[joinAddr, mcdManager]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+    ];
   }
 }
 

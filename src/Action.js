@@ -29,23 +29,43 @@ class Action {
    * @returns {string}
    * @private
    */
-  _getId() {
-    return Web3Utils.keccak256(this.name).substr(0, 8);
+  getId() {
+    return Web3Utils.keccak256(this.name).substr(0, 10);
   }
 
   /**
    * @returns {Array<number>}
    * @private
    */
-  _getArgumentMapping() {
+  _getArgumentMappingWithSlots(subSlots) {
     return this.mappableArgs.map(arg => {
       if (new RegExp(/\$\d+/).test(arg)) {
         if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
         return parseInt(arg.substr(1))
       }
+
+      // Handle SubSlots placeholder values in strategies
+      if (new RegExp(/\&\w+/).test(arg)) {
+        return parseInt(subSlots[arg].index);
+      }
+
       return 0;
     });
   }
+
+   /**
+   * @returns {Array<number>}
+   * @private
+   */
+    _getArgumentMapping() {
+      return this.mappableArgs.map(arg => {
+        if (new RegExp(/\$\d+/).test(arg)) {
+          if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
+          return parseInt(arg.substr(1))
+        }
+        return 0;
+      });
+    }
 
   /**
    * @param type {string}
@@ -65,6 +85,7 @@ class Action {
   _replaceWithPlaceholders(arg, paramType) {
     if (Array.isArray(arg)) return arg.map((_arg, i) => this._replaceWithPlaceholders(_arg, paramType[i]));
     if (new RegExp(/\$\d+/).test(arg)) return this._getPlaceholderForType(paramType);
+    if (new RegExp(/\&\w+/).test(arg)) return this._getPlaceholderForType(paramType);
     return arg;
   }
 
@@ -111,8 +132,15 @@ class Action {
     return [
       this._encodeForCall()[0],   // actionCallData
       [],                        // subData
-      this._getId(),              // actionIds
+      this.getId(),              // actionIds
       this._getArgumentMapping(), // paramMappings
+    ]
+  }
+
+  encodeForStrategy(subSlots) {
+    return [
+      this.getId(),
+      this._getArgumentMappingWithSlots(subSlots), // paramMappings
     ]
   }
 
