@@ -10,10 +10,9 @@ class ReflexerNativeUniV2SaviourDepositAction extends Action {
    * @param from {EthAddress}
    * @param safeId {SafeId}
    * @param lpTokenAmount {string}
-   * @param lpTokenAddress {string}
    */
   constructor(from, safeId, lpTokenAmount, lpTokenAddress) {
-    super('ReflexerNativeUniV2SaviourDeposit', getAddr('ReflexerNativeUniV2SaviourDeposit'), [['address','uint256','uint256', 'address']], [[from, safeId, lpTokenAmount, lpTokenAddress]]);
+    super('ReflexerNativeUniV2SaviourDeposit', getAddr('ReflexerNativeUniV2SaviourDeposit'), [['address','uint256','uint256']], [[from, safeId, lpTokenAmount]]);
     this.mappableArgs = [
         this.args[0][0],
         this.args[0][2],
@@ -21,7 +20,8 @@ class ReflexerNativeUniV2SaviourDepositAction extends Action {
 }
 
   async getAssetsToApprove() {
-    return [{asset: this.args[0][3], owner: this.args[0][0]}];
+    const RAI_WETH_UNI_V2_LP_TOKEN_ADDR = '0x8aE720a71622e824F576b4A8C03031066548A3B1';
+    return [{asset: RAI_WETH_UNI_V2_LP_TOKEN_ADDR, owner: this.args[0][0]}];
   }
 
 }
