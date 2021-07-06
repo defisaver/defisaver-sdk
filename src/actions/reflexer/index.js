@@ -5,6 +5,7 @@ const ReflexerPaybackAction = require('./ReflexerPaybackAction');
 const ReflexerWithdrawAction = require('./ReflexerWithdrawAction');
 const ReflexerNativeUniV2SaviourDepositAction = require('./ReflexerNativeUniV2SaviourDepositAction');
 const ReflexerNativeUniV2SaviourWithdrawAction = require('./ReflexerNativeUniV2SaviourWithdrawAction');
+const ReflexerNativeUniV2SaviourGetReservesAction = require('./ReflexerNativeUniV2SaviourGetReservesAction');
 
 module.exports = {
   ReflexerOpenSafeAction,
@@ -14,4 +15,5 @@ module.exports = {
   ReflexerWithdrawAction,
   ReflexerNativeUniV2SaviourDepositAction,
   ReflexerNativeUniV2SaviourWithdrawAction,
+  ReflexerNativeUniV2SaviourGetReservesAction,
 };
