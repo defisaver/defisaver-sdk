@@ -7,12 +7,12 @@ const { requireAddress } = require('../../utils/general');
 class LiquityClaimSPRewardsAction extends LiquitySPWithdrawAction {
     /**
      * @param wethTo Address that will receive ETH gains
-     * @param lusdTo Address that will receive LUSD gains
+     * @param lqtyTo Address that will receive LQTY gains
      */
-    constructor(wethTo, lusdTo) {
+    constructor(wethTo, lqtyTo) {
       requireAddress(wethTo);
-      requireAddress(lusdTo);
-      super("0", wethTo, wethTo, lusdTo);
+      requireAddress(lqtyTo);
+      super("0", wethTo, wethTo, lqtyTo);
     }
 }
 
