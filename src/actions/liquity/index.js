@@ -11,6 +11,8 @@ const LiquitySPWithdrawAction = require('./LiquitySPWithdrawAction');
 const LiquityStakeAction = require('./LiquityStakeAction');
 const LiquityUnstakeAction = require('./LiquityUnstakeAction');
 const LiquityEthGainToTroveAction = require('./LiquityEthGainToTroveAction');
+const LiquityClaimSPRewardsAction = require('./LiquityClaimSPRewardsAction');
+const LiquityClaimStakingRewardsAction = require('./LiquityClaimStakingRewardsAction');
 
 module.exports = {
     LiquityOpenAction,
@@ -26,4 +28,6 @@ module.exports = {
     LiquityStakeAction,
     LiquityUnstakeAction,
     LiquityEthGainToTroveAction,
+    LiquityClaimSPRewardsAction,
+    LiquityClaimStakingRewardsAction,
 };
