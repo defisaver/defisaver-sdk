@@ -1,5 +1,6 @@
 const Action = require("../../Action");
 const {getAddr} = require('../../addresses.js');
+const {getAssetInfoByAddress} = require("@defisaver/tokens");
 
 /**
  * Create a uniswap v3 pool
@@ -51,9 +52,14 @@ class UniswapV3CreatePoolAction extends Action {
   }
 
   async getAssetsToApprove() {
+    const assetA = getAssetInfoByAddress(this.args[0][0]);
+    const assetB = getAssetInfoByAddress(this.args[0][1]);
+
     const approveArr = [];
-    approveArr.push({asset: this.args[0][0], owner: this.args[0][11]});
-    approveArr.push({asset: this.args[0][1], owner: this.args[0][11]});
+
+    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[0][0], owner: this.args[0][11]});
+    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[0][1], owner: this.args[0][11]});
+    
     return approveArr;
   }
 }
