@@ -56,6 +56,7 @@ const actionAddresses = {
   'UniMintV3': '0x488794Aa06Ec668fDeC29375CB8B6629f4692B0B',
   'UniSupplyV3': '0x1dc3C2c16195bD6e49f6ED05F1f482c3C7FD35Af',
   'UniWithdrawV3': '0xe5FAB89bdC01130c686B35540531EB1cBbaE8ff3',
+  'UniCreatePoolV3': '0xAD599cA05C7295a0cbc5CD696BF3f7E633402C99',
 
   // dydx
   'DyDxSupply': '0xA8D1C1eea86573cBcC919fbf28Db542bDfE7Ed5b',
