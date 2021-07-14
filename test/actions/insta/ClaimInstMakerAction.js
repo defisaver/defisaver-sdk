@@ -26,6 +26,7 @@ describe('Action: ClaimInstMakerAction', () => {
     it('constructor', () => {
       action = new dfs.actions.insta.ClaimInstMakerAction(
         '3570',
+        '22178',
         '35152894943847522649',
         '5926144717204641000000',
         merkleProof,
