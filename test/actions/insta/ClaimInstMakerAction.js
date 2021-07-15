@@ -31,6 +31,7 @@ describe('Action: ClaimInstMakerAction', () => {
         '5926144717204641000000',
         merkleProof,
         testAcc,
+        testAcc,
       );
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
