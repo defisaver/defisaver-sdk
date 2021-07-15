@@ -83,6 +83,9 @@ const actionAddresses = {
 
   // lido
   'LidoStake': '0x71D44c05B94438fe09a4A7F4dB75fb421dEC1067',
+
+  // insta
+  'ClaimInstMaker': '0x15E22A8160F0bDb619C6846C982F8D208A5670D2',
 };
 
 const otherAddresses = {
