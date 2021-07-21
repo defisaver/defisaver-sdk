@@ -3,7 +3,7 @@ const Action = require("../../Action");
 const { getAddr } = require('../../addresses.js');
 
 /**
- * ReflexerNativeUniV2SaviourWithdrawAction - 
+ * ReflexerNativeUniV2SaviourWithdrawAction -  Withdraw lpToken from the contract and provide less cover for a SAFE
  */
 class ReflexerNativeUniV2SaviourWithdrawAction extends Action {
   /**

@@ -3,7 +3,7 @@ const Action = require("../../Action");
 const { getAddr } = require('../../addresses.js');
 
 /**
- * ReflexerNativeUniV2SaviourDepositAction - 
+ * ReflexerNativeUniV2SaviourDepositAction - Deposit lpToken in the contract in order to provide cover for a specific SAFE managed by the SAFE Manager
  */
 class ReflexerNativeUniV2SaviourDepositAction extends Action {
   /**
@@ -11,7 +11,7 @@ class ReflexerNativeUniV2SaviourDepositAction extends Action {
    * @param safeId {SafeId}
    * @param lpTokenAmount {string}
    */
-  constructor(from, safeId, lpTokenAmount, lpTokenAddress) {
+  constructor(from, safeId, lpTokenAmount) {
     super('ReflexerNativeUniV2SaviourDeposit', getAddr('ReflexerNativeUniV2SaviourDeposit'), [['address','uint256','uint256']], [[from, safeId, lpTokenAmount]]);
     this.mappableArgs = [
         this.args[0][0],
@@ -20,8 +20,8 @@ class ReflexerNativeUniV2SaviourDepositAction extends Action {
 }
 
   async getAssetsToApprove() {
-    const RAI_WETH_UNI_V2_LP_TOKEN_ADDR = '0x8aE720a71622e824F576b4A8C03031066548A3B1';
-    return [{asset: RAI_WETH_UNI_V2_LP_TOKEN_ADDR, owner: this.args[0][0]}];
+    const tokenAddress = getAddr('RaiWethUniV2LPToken');
+    return [{asset: tokenAddress, owner: this.args[0][0]}];
   }
 
 }
