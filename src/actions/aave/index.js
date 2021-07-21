@@ -3,6 +3,7 @@ const AaveSupplyAction = require('./AaveSupplyAction');
 const AavePaybackAction = require('./AavePaybackAction');
 const AaveWithdrawAction = require('./AaveWithdrawAction');
 const AaveMigrateLendAction = require('./AaveMigrateLendAction');
+const AaveClaimStkAaveAction = require('./AaveClaimStkAaveAction');
 
 module.exports = {
   AaveBorrowAction,
@@ -10,4 +11,5 @@ module.exports = {
   AavePaybackAction,
   AaveWithdrawAction,
   AaveMigrateLendAction,
+  AaveClaimStkAaveAction,
 };
