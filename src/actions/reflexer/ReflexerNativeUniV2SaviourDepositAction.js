@@ -15,6 +15,7 @@ class ReflexerNativeUniV2SaviourDepositAction extends Action {
     super('ReflexerNativeUniV2SaviourDeposit', getAddr('ReflexerNativeUniV2SaviourDeposit'), [['address','uint256','uint256']], [[from, safeId, lpTokenAmount]]);
     this.mappableArgs = [
         this.args[0][0],
+        this.args[0][1],
         this.args[0][2],
       ];
 }
