@@ -3,12 +3,12 @@ const { getAssetInfoByAddress, getAssetInfo } = require("@defisaver/tokens");
 const { getAddr } = require("../../addresses.js");
 
 class ClaimInstMakerAction extends Action {
-  constructor(index, vaultId, rewardAmount, networthAmount, merkleProof, owner, to) {
+  constructor(index, vaultId, rewardAmount, networthAmount, merkleProof, owner, to, mcdManagerAddress) {
     super(
       "ClaimInstMaker",
       getAddr("ClaimInstMaker"),
-      [["uint256", "uint256", "uint256", "uint256", "bytes32[]", "address", "address"]],
-      [[index, vaultId, rewardAmount, networthAmount, merkleProof,owner, to]]
+      [["uint256", "uint256", "uint256", "uint256", "bytes32[]", "address", "address", "address"]],
+      [[index, vaultId, rewardAmount, networthAmount, merkleProof,owner, to, mcdManagerAddress]]
     );
     this.mappableArgs = [];
   }
