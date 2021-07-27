@@ -47,6 +47,10 @@ class BalancerV2WithdrawAction extends Action {
       this.args[0][2],
       this.args[0][3],
     ];
+
+    for (let i = 0; i < this.args[0][5].length; i++){
+      this.mappableArgs.push(this.args[0][5][i]);
+    }
   }
 
   async getAssetsToApprove() {

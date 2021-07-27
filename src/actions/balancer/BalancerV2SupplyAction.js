@@ -36,6 +36,9 @@ class BalancerV2SupplyAction extends Action {
       this.args[0][1],
       this.args[0][2],
     ];
+    for (let i = 0; i < this.args[0][4].length; i++){
+      this.mappableArgs.push(this.args[0][4][i]);
+    }
   }
 
   async getAssetsToApprove() {
