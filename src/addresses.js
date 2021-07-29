@@ -89,6 +89,10 @@ const actionAddresses = {
 
   // insta
   'ClaimInstMaker': '0x15E22A8160F0bDb619C6846C982F8D208A5670D2',
+
+  // balancer
+  'BalancerV2Supply': '0xD78E5D95A28a67F7851b0a94505790813A92E405',
+  'BalancerV2Withdraw': '0xCcf4b96407BEF25D7df1c95045CCF64950e73E97',
 };
 
 const otherAddresses = {
