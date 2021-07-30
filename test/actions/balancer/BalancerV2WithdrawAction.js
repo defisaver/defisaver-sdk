@@ -3,10 +3,10 @@ const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {getAssetInfo, assetAmountInWei, assetAmountInEth} = require("@defisaver/tokens");
 const {assert} = require('chai');
 
-describe('Action: BalancerV2SupplyAction', () => {
+describe('Action: BalancerV2WitdhrawAction', () => {
   let action;
 
-  context('Supply ETH/DAI', () => {
+  context('Withdraw DAI/USDC/USDT Balancer LP tokens', () => {
     it('constructor', () => {
       action = new dfs.actions.balancer.BalancerV2WithdrawAction(
         '0x06df3b2bbb68adc8b0e302443692037ed9f91b42000000000000000000000063',
@@ -15,7 +15,7 @@ describe('Action: BalancerV2SupplyAction', () => {
         '1000',
         [getAssetInfo('DAI').address, getAssetInfo('USDC').address, getAssetInfo('USDT').address],
         ['1000','1000','1000'],
-        'placeholder'
+        '0x00'
       );
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));

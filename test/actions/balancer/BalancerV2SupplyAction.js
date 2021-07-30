@@ -6,7 +6,7 @@ const {assert} = require('chai');
 describe('Action: BalancerV2SupplyAction', () => {
   let action;
 
-  context('Supply ETH/DAI', () => {
+  context('Supply DAI/USDC/USDT', () => {
     it('constructor', () => {
       action = new dfs.actions.balancer.BalancerV2SupplyAction(
         '0x06df3b2bbb68adc8b0e302443692037ed9f91b42000000000000000000000063',
@@ -14,7 +14,7 @@ describe('Action: BalancerV2SupplyAction', () => {
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
         [getAssetInfo('DAI').address, getAssetInfo('USDC').address, getAssetInfo('USDT').address],
         ['1000','1000','1000'],
-        'placeholder'
+        '0x00'
       );
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
@@ -26,8 +26,8 @@ describe('Action: BalancerV2SupplyAction', () => {
       assert.equal(assetOwnerPairs[0].owner, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
       assert.equal(assetOwnerPairs[1].asset, getAssetInfo('USDC').address);
       assert.equal(assetOwnerPairs[1].owner, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
-      assert.equal(assetOwnerPairs[1].asset, getAssetInfo('USDT').address);
-      assert.equal(assetOwnerPairs[1].owner, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
+      assert.equal(assetOwnerPairs[2].asset, getAssetInfo('USDT').address);
+      assert.equal(assetOwnerPairs[2].owner, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
     })
     it('test mappable args', async () => {
         assert.lengthOf(action.mappableArgs, 5);
