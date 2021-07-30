@@ -1,17 +1,6 @@
 const Action = require("../../Action");
 const {getAddr} = require('../../addresses.js');
 
-/*
- * struct Params {
-        bytes32 poolId;
-        address from;
-        address to;
-        uint256 lpTokenAmount;
-        IAsset[] tokens;
-        uint256[] minAmountsOut;
-        bytes userData;
-    }
- */
 class BalancerV2WithdrawAction extends Action {
   /**
    * @param {bytes32} poolId
@@ -55,7 +44,7 @@ class BalancerV2WithdrawAction extends Action {
 
   async getAssetsToApprove() {
     const approveArr = [];
-    // token = _getPoolAddress(this.args[0][0]);
+    const token = this.args[0][0].slice(0,42);
     approveArr.push({asset: token, owner: this.args[0][1]});
     return approveArr;
   }
