@@ -30,7 +30,7 @@ class LiquitySPDepositAction extends Action {
     }
 
     async getAssetsToApprove() {
-        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[0][1] }];
+        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[0][1], protocol: 'liquity'}];
     }
 }
 

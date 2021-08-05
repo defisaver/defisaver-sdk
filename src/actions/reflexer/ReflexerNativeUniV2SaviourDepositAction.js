@@ -22,7 +22,7 @@ class ReflexerNativeUniV2SaviourDepositAction extends Action {
 
   async getAssetsToApprove() {
     const tokenAddress = getAddr('RaiWethUniV2LPToken');
-    return [{asset: tokenAddress, owner: this.args[0][0]}];
+    return [{asset: tokenAddress, owner: this.args[0][0], protocol: 'reflexer'}];
   }
 
 }

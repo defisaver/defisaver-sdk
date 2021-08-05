@@ -50,8 +50,8 @@ class UniswapV3SupplyAction extends Action {
 
     const approveArr = [];
 
-    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[0][7], owner: this.args[0][6]});
-    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[0][8], owner: this.args[0][6]});
+    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[0][7], owner: this.args[0][6], protocol: 'uniswap v3'});
+    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[0][8], owner: this.args[0][6], protocol: 'uniswap v3'});
 
     return approveArr;
   }

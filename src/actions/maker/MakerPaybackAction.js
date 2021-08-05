@@ -24,7 +24,7 @@ class MakerPaybackAction extends Action {
   }
 
   async getAssetsToApprove() {
-    return [{asset: getAssetInfo('DAI').address, owner: this.args[0][2]}];
+    return [{asset: getAssetInfo('DAI').address, owner: this.args[0][2], protocol: 'maker'}];
   }
 }
 

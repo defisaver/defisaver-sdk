@@ -46,7 +46,7 @@ class UniswapWithdrawAction extends Action {
 
   async getAssetsToApprove() {
     const lpAddress = getPoolAddressByAddresses(this.args[0][0], this.args[0][1])
-    return [{asset: lpAddress, owner: this.args[0][4]}];
+    return [{asset: lpAddress, owner: this.args[0][4], protocol: 'uniswap v2'}];
   }
 }
 

@@ -32,7 +32,7 @@ class LiquityOpenAction extends Action {
     }
 
     async getAssetsToApprove() {
-        return [{ asset: getAssetInfo('WETH').address, owner: this.args[0][3] }];
+        return [{ asset: getAssetInfo('WETH').address, owner: this.args[0][3], protocol: 'liquity'}];
     }
 }
 
