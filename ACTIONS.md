@@ -4,6 +4,9 @@
 <dt><a href="#AaveBorrowAction">AaveBorrowAction</a></dt>
 <dd><p>AaveBorrowAction - Borrow tokens from Aave</p>
 </dd>
+<dt><a href="#AaveClaimStkAaveAction">AaveClaimStkAaveAction</a></dt>
+<dd><p>AaveClaimStkAaveAction - Claims stkAave from incentives controller</p>
+</dd>
 <dt><a href="#AaveMigrateLendAction">AaveMigrateLendAction</a></dt>
 <dd><p>AaveMigrateLendAction - Migrates Lend to Aave</p>
 </dd>
@@ -16,8 +19,15 @@
 <dt><a href="#AaveWithdrawAction">AaveWithdrawAction</a></dt>
 <dd><p>AaveWithdrawAction - Withdraw token from an aave position</p>
 </dd>
+<dt><a href="#BalancerV2SupplyAction">BalancerV2SupplyAction</a></dt>
+<dd></dd>
+<dt><a href="#BalancerV2WithdrawAction">BalancerV2WithdrawAction</a></dt>
+<dd></dd>
 <dt><a href="#BuyAction">BuyAction</a></dt>
 <dd><p>Buys an exact amount of dest token on DeFi Saver exchange aggregator</p>
+</dd>
+<dt><a href="#ChangeProxyOwnerAction">ChangeProxyOwnerAction</a></dt>
+<dd><p>ChangeProxyOwnerAction - Changes EOA which owns the proxy that is being called</p>
 </dd>
 <dt><a href="#PullTokenAction">PullTokenAction</a></dt>
 <dd><p>Transfers specified token from a specified address to DSProxy (recipe)</p>
@@ -27,6 +37,9 @@
 </dd>
 <dt><a href="#SendTokenAction">SendTokenAction</a></dt>
 <dd><p>Transfers specified token from recipe (DsProxy) to specified address</p>
+</dd>
+<dt><a href="#SubInputsAction">SubInputsAction</a></dt>
+<dd><p>Subs 2 inputs/return values</p>
 </dd>
 <dt><a href="#SumInputsAction">SumInputsAction</a></dt>
 <dd><p>Sums up 2 inputs/return values</p>
@@ -70,6 +83,54 @@
 <dt><a href="#DyDxFlashLoanPaybackAction">DyDxFlashLoanPaybackAction</a></dt>
 <dd><p>Pays back a flashloan from DyDx</p>
 </dd>
+<dt><a href="#LidoStakeAction">LidoStakeAction</a></dt>
+<dd><p>LidoStakeAction - Receives WETH, transforms it to ETH then sends it to Lido staking contract receiving stETH in return</p>
+</dd>
+<dt><a href="#LiquityBorrowAction">LiquityBorrowAction</a></dt>
+<dd><p>LiquityBorrowAction - Borrows LUSD from the trove</p>
+</dd>
+<dt><a href="#LiquityClaimAction">LiquityClaimAction</a></dt>
+<dd><p>LiquityClaimAction - Claims collateral from the closed trove</p>
+</dd>
+<dt><a href="#LiquityClaimSPRewardsAction">LiquityClaimSPRewardsAction</a></dt>
+<dd><p>LiquityClaimSPRewardsAction - Claims rewards from LUSD Stability Pool</p>
+</dd>
+<dt><a href="#LiquityClaimStakingRewardsAction">LiquityClaimStakingRewardsAction</a></dt>
+<dd><p>LiquityClaimStakingRewardsAction - Claims rewards from LQTYStaking</p>
+</dd>
+<dt><a href="#LiquityCloseAction">LiquityCloseAction</a></dt>
+<dd><p>LiquityCloseAction - Closes trove</p>
+</dd>
+<dt><a href="#LiquityEthGainToTroveAction">LiquityEthGainToTroveAction</a></dt>
+<dd><p>LiquityEthGainToTroveAction - Withdraws earned ETH gains to the users Trove</p>
+</dd>
+<dt><a href="#LiquityOpenAction">LiquityOpenAction</a></dt>
+<dd><p>LiquityOpenAction - Opens up a trove</p>
+</dd>
+<dt><a href="#LiquityPaybackAction">LiquityPaybackAction</a></dt>
+<dd><p>LiquityPaybackAction - Repays LUSD to the trove</p>
+</dd>
+<dt><a href="#LiquityRedeemAction">LiquityRedeemAction</a></dt>
+<dd><p>LiquityRedeemAction - Redeems collateral from the liquity protocol</p>
+</dd>
+<dt><a href="#LiquitySPDepositAction">LiquitySPDepositAction</a></dt>
+<dd><p>LiquitySPDepositAction - Deposits LUSD to the stability pool</p>
+</dd>
+<dt><a href="#LiquitySPWithdrawAction">LiquitySPWithdrawAction</a></dt>
+<dd><p>LiquitySPWithdrawAction - Withdraws a portion of deposited LUSD from the stability pool</p>
+</dd>
+<dt><a href="#LiquityStakeAction">LiquityStakeAction</a></dt>
+<dd><p>LiquityStakeAction - Stakes LQTY tokens</p>
+</dd>
+<dt><a href="#LiquitySupplyAction">LiquitySupplyAction</a></dt>
+<dd><p>LiquitySupplyAction - Supplies collateral to the trove</p>
+</dd>
+<dt><a href="#LiquityUnstakeAction">LiquityUnstakeAction</a></dt>
+<dd><p>LiquityUnstakeAction - Unstakes LQTY tokens</p>
+</dd>
+<dt><a href="#LiquityWithdrawAction">LiquityWithdrawAction</a></dt>
+<dd><p>LiquityWithdrawAction - Withdraws collateral from the trove</p>
+</dd>
 <dt><a href="#MakerGenerateAction">MakerGenerateAction</a></dt>
 <dd><p>MakerGenerateAction - Generated Dai from a Vault</p>
 </dd>
@@ -94,6 +155,15 @@
 <dt><a href="#ReflexerGenerateAction">ReflexerGenerateAction</a></dt>
 <dd><p>ReflexerGenerateAction - Generated Dai from a Safe</p>
 </dd>
+<dt><a href="#ReflexerNativeUniV2SaviourDepositAction">ReflexerNativeUniV2SaviourDepositAction</a></dt>
+<dd><p>ReflexerNativeUniV2SaviourDepositAction - Deposit lpToken in the contract in order to provide cover for a specific SAFE managed by the SAFE Manager</p>
+</dd>
+<dt><a href="#ReflexerNativeUniV2SaviourGetReservesAction">ReflexerNativeUniV2SaviourGetReservesAction</a></dt>
+<dd><p>ReflexerNativeUniV2SaviourGetReservesAction - Get back system coins or collateral tokens that were withdrawn from Uniswap and not used to save a specific SAFE</p>
+</dd>
+<dt><a href="#ReflexerNativeUniV2SaviourWithdrawAction">ReflexerNativeUniV2SaviourWithdrawAction</a></dt>
+<dd><p>ReflexerNativeUniV2SaviourWithdrawAction -  Withdraw lpToken from the contract and provide less cover for a SAFE</p>
+</dd>
 <dt><a href="#ReflexerOpenSafeAction">ReflexerOpenSafeAction</a></dt>
 <dd><p>ReflexerOpenSafeAction</p>
 </dd>
@@ -111,6 +181,27 @@
 </dd>
 <dt><a href="#UniswapWithdrawAction">UniswapWithdrawAction</a></dt>
 <dd><p>Withdraws liquidity from uniswap pool</p>
+</dd>
+<dt><a href="#UniswapV3CollectAction">UniswapV3CollectAction</a></dt>
+<dd><p>Collects fees earned by user on position identified by tokenId</p>
+</dd>
+<dt><a href="#UniswapV3CreatePoolAction">UniswapV3CreatePoolAction</a></dt>
+<dd><p>Create a uniswap v3 pool</p>
+</dd>
+<dt><a href="#UniswapV3MintAction">UniswapV3MintAction</a></dt>
+<dd><p>Creates a new Uniswap v3 LP supply position</p>
+</dd>
+<dt><a href="#UniswapV3SupplyAction">UniswapV3SupplyAction</a></dt>
+<dd><p>Supplies a pair of tokens to an existing Uniswap v3 position identified by tokenId</p>
+</dd>
+<dt><a href="#UniswapV3WithdrawAction">UniswapV3WithdrawAction</a></dt>
+<dd><p>Burns liquidity, and returns underlying tokens to recipient</p>
+</dd>
+<dt><a href="#YearnSupplyAction">YearnSupplyAction</a></dt>
+<dd><p>YearnSupplyAction - Supply token to a Yearn vault</p>
+</dd>
+<dt><a href="#YearnWithdrawAction">YearnWithdrawAction</a></dt>
+<dd><p>YearnWithdrawAction - Burns yTokens and receive underlying tokens in return</p>
 </dd>
 </dl>
 
@@ -132,6 +223,12 @@ AaveBorrowAction - Borrow tokens from Aave
 - to <code>EthAddress</code> - Borrowed tokens will be sent to this address
 - onBehalf <code>EthAddress</code>
 
+<a name="AaveClaimStkAaveAction"></a>
+
+## AaveClaimStkAaveAction
+AaveClaimStkAaveAction - Claims stkAave from incentives controller
+
+**Kind**: global class  
 <a name="AaveMigrateLendAction"></a>
 
 ## AaveMigrateLendAction
@@ -199,6 +296,39 @@ AaveWithdrawAction - Withdraw token from an aave position
 - amount <code>string</code>
 - to <code>EthAddress</code> - Tokens will be withdrawn to this address
 
+<a name="BalancerV2SupplyAction"></a>
+
+## BalancerV2SupplyAction
+**Kind**: global class  
+<a name="new_BalancerV2SupplyAction_new"></a>
+
+### new BalancerV2SupplyAction(poolId, from, to, tokens, maxAmountsIn, userData)
+**Params**
+
+- poolId <code>bytes32</code>
+- from <code>EthAddress</code>
+- to <code>EthAddress</code>
+- tokens <code>Array.&lt;address&gt;</code>
+- maxAmountsIn <code>Array.&lt;uint256&gt;</code>
+- userData <code>bytes</code>
+
+<a name="BalancerV2WithdrawAction"></a>
+
+## BalancerV2WithdrawAction
+**Kind**: global class  
+<a name="new_BalancerV2WithdrawAction_new"></a>
+
+### new BalancerV2WithdrawAction(poolId, from, to, lpTokenAmount;, tokens, minAmountsOut, userData)
+**Params**
+
+- poolId <code>bytes32</code>
+- from <code>EthAddress</code>
+- to <code>EthAddress</code>
+- lpTokenAmount; <code>string</code>
+- tokens <code>Array.&lt;address&gt;</code>
+- minAmountsOut <code>Array.&lt;uint256&gt;</code>
+- userData <code>bytes</code>
+
 <a name="BuyAction"></a>
 
 ## BuyAction
@@ -214,6 +344,19 @@ Buys an exact amount of dest token on DeFi Saver exchange aggregator
 - from <code>string</code> - Order sender
 - to <code>string</code> - Order recipient
 - protocolFee <code>string</code> - 0x fee (amount of ETH in Wei)
+
+<a name="ChangeProxyOwnerAction"></a>
+
+## ChangeProxyOwnerAction
+ChangeProxyOwnerAction - Changes EOA which owns the proxy that is being called
+
+**Kind**: global class  
+<a name="new_ChangeProxyOwnerAction_new"></a>
+
+### new ChangeProxyOwnerAction(newOwner)
+**Params**
+
+- newOwner <code>Address</code> - Address of new owner
 
 <a name="PullTokenAction"></a>
 
@@ -261,6 +404,12 @@ Transfers specified token from recipe (DsProxy) to specified address
 - to <code>string</code> - Transfer recipient
 - amount <code>string</code> - Transfer amount (-1 for whole Recipe (DsProxy) balance)
 
+<a name="SubInputsAction"></a>
+
+## SubInputsAction
+Subs 2 inputs/return values
+
+**Kind**: global class  
 <a name="SumInputsAction"></a>
 
 ## SumInputsAction
@@ -463,6 +612,243 @@ Pays back a flashloan from DyDx
 - loanAmount <code>string</code>
 - tokenAddr <code>EthAddress</code>
 
+<a name="LidoStakeAction"></a>
+
+## LidoStakeAction
+LidoStakeAction - Receives WETH, transforms it to ETH then sends it to Lido staking contract receiving stETH in return
+
+**Kind**: global class  
+<a name="new_LidoStakeAction_new"></a>
+
+### new LidoStakeAction(amount, from, to)
+**Params**
+
+- amount <code>string</code> - amount of WETH to pull and stake
+- from <code>EthAddress</code> - WETH will be taken from this address
+- to <code>EthAddress</code> - stETH will be sent to this address
+
+<a name="LiquityBorrowAction"></a>
+
+## LiquityBorrowAction
+LiquityBorrowAction - Borrows LUSD from the trove
+
+**Kind**: global class  
+<a name="new_LiquityBorrowAction_new"></a>
+
+### new LiquityBorrowAction(maxFeePercentage, lusdAmount, to)
+**Params**
+
+- maxFeePercentage - Highest borrowing fee to accept
+- lusdAmount - Amount of LUSD tokens to borrow
+- to - Address that will receive the borrowed tokens
+
+<a name="LiquityClaimAction"></a>
+
+## LiquityClaimAction
+LiquityClaimAction - Claims collateral from the closed trove
+
+**Kind**: global class  
+<a name="new_LiquityClaimAction_new"></a>
+
+### new LiquityClaimAction(to)
+**Params**
+
+- to - Address that will receive the collateral
+
+<a name="LiquityClaimSPRewardsAction"></a>
+
+## LiquityClaimSPRewardsAction
+LiquityClaimSPRewardsAction - Claims rewards from LUSD Stability Pool
+
+**Kind**: global class  
+<a name="new_LiquityClaimSPRewardsAction_new"></a>
+
+### new LiquityClaimSPRewardsAction(wethTo, lqtyTo)
+**Params**
+
+- wethTo - Address that will receive ETH gains
+- lqtyTo - Address that will receive LQTY gains
+
+<a name="LiquityClaimStakingRewardsAction"></a>
+
+## LiquityClaimStakingRewardsAction
+LiquityClaimStakingRewardsAction - Claims rewards from LQTYStaking
+
+**Kind**: global class  
+<a name="new_LiquityClaimStakingRewardsAction_new"></a>
+
+### new LiquityClaimStakingRewardsAction(wethTo, lusdTo)
+**Params**
+
+- wethTo - Address that will receive ETH gains
+- lusdTo - Address that will receive LUSD gains
+
+<a name="LiquityCloseAction"></a>
+
+## LiquityCloseAction
+LiquityCloseAction - Closes trove
+
+**Kind**: global class  
+<a name="new_LiquityCloseAction_new"></a>
+
+### new LiquityCloseAction(from, to)
+**Params**
+
+- from - Address that will supply the LUSD needed to repay the debt
+- to - Address that will receive the freed collateral
+
+<a name="LiquityEthGainToTroveAction"></a>
+
+## LiquityEthGainToTroveAction
+LiquityEthGainToTroveAction - Withdraws earned ETH gains to the users Trove
+
+**Kind**: global class  
+<a name="new_LiquityEthGainToTroveAction_new"></a>
+
+### new LiquityEthGainToTroveAction(lqtyTo)
+**Params**
+
+- lqtyTo - Address that will receive LQTY gains
+
+<a name="LiquityOpenAction"></a>
+
+## LiquityOpenAction
+LiquityOpenAction - Opens up a trove
+
+**Kind**: global class  
+<a name="new_LiquityOpenAction_new"></a>
+
+### new LiquityOpenAction(maxFeePercentage, collAmount, lusdAmount, from, to)
+**Params**
+
+- maxFeePercentage - Highest borrowing fee to accept
+- collAmount - Amount of WETH tokens to deposit as collateral
+- lusdAmount - Amount of LUSD tokens to borrow
+- from - Address where the tokens are pulled from
+- to - Address that will receive borrowed tokens
+
+<a name="LiquityPaybackAction"></a>
+
+## LiquityPaybackAction
+LiquityPaybackAction - Repays LUSD to the trove
+
+**Kind**: global class  
+<a name="new_LiquityPaybackAction_new"></a>
+
+### new LiquityPaybackAction(lusdAmount, from)
+**Params**
+
+- lusdAmount - Amount of LUSD tokens to repay
+- from - Address where the tokens are pulled from
+
+<a name="LiquityRedeemAction"></a>
+
+## LiquityRedeemAction
+LiquityRedeemAction - Redeems collateral from the liquity protocol
+
+**Kind**: global class  
+<a name="new_LiquityRedeemAction_new"></a>
+
+### new LiquityRedeemAction(lusdAmount, from, to, maxFeePercentage)
+**Params**
+
+- lusdAmount - Amount of LUSD tokens to send
+- from - Address where the tokens are pulled from
+- to - Address that will receive redeemed collateral
+- maxFeePercentage - Highest redemption fee to accept
+
+<a name="LiquitySPDepositAction"></a>
+
+## LiquitySPDepositAction
+LiquitySPDepositAction - Deposits LUSD to the stability pool
+
+**Kind**: global class  
+<a name="new_LiquitySPDepositAction_new"></a>
+
+### new LiquitySPDepositAction(lusdAmount, from, wethTo, lqtyTo)
+**Params**
+
+- lusdAmount - Amount of LUSD tokens to deposit
+- from - Address where the tokens are being pulled from
+- wethTo - Address that will receive ETH gains
+- lqtyTo - Address that will receive LQTY gains
+
+<a name="LiquitySPWithdrawAction"></a>
+
+## LiquitySPWithdrawAction
+LiquitySPWithdrawAction - Withdraws a portion of deposited LUSD from the stability pool
+
+**Kind**: global class  
+<a name="new_LiquitySPWithdrawAction_new"></a>
+
+### new LiquitySPWithdrawAction(lusdAmount, to, wethTo, lqtyTo)
+**Params**
+
+- lusdAmount - Amount of LUSD tokens to withdraw
+- to - Address that will receive the LUSD tokens
+- wethTo - Address that will receive ETH gains
+- lqtyTo - Address that will receive LQTY gains
+
+<a name="LiquityStakeAction"></a>
+
+## LiquityStakeAction
+LiquityStakeAction - Stakes LQTY tokens
+
+**Kind**: global class  
+<a name="new_LiquityStakeAction_new"></a>
+
+### new LiquityStakeAction(lqtyAmount, from, wethTo, lusdTo)
+**Params**
+
+- lqtyAmount - Amount of LQTY tokens that will be staked
+- from - Address where the tokens are being pulled from
+- wethTo - Address that will receive ETH gains
+- lusdTo - Address that will receive LUSD gains
+
+<a name="LiquitySupplyAction"></a>
+
+## LiquitySupplyAction
+LiquitySupplyAction - Supplies collateral to the trove
+
+**Kind**: global class  
+<a name="new_LiquitySupplyAction_new"></a>
+
+### new LiquitySupplyAction(collAmount, from)
+**Params**
+
+- collAmount - Amount of WETH tokens to supply
+- from - Address where the tokens are pulled from
+
+<a name="LiquityUnstakeAction"></a>
+
+## LiquityUnstakeAction
+LiquityUnstakeAction - Unstakes LQTY tokens
+
+**Kind**: global class  
+<a name="new_LiquityUnstakeAction_new"></a>
+
+### new LiquityUnstakeAction(lqtyAmount, to, wethTo, lusdTo)
+**Params**
+
+- lqtyAmount - Amount of LQTY tokens that will be unstaked
+- to - Address that will receive the tokens
+- wethTo - Address that will receive ETH gains
+- lusdTo - Address that will receive LUSD gains
+
+<a name="LiquityWithdrawAction"></a>
+
+## LiquityWithdrawAction
+LiquityWithdrawAction - Withdraws collateral from the trove
+
+**Kind**: global class  
+<a name="new_LiquityWithdrawAction_new"></a>
+
+### new LiquityWithdrawAction(collAmount, to)
+**Params**
+
+- collAmount - Amount of WETH tokens to withdraw
+- to - Address that will receive the withdrawn tokens
+
 <a name="MakerGenerateAction"></a>
 
 ## MakerGenerateAction
@@ -589,6 +975,50 @@ ReflexerGenerateAction - Generated Dai from a Safe
 - amount <code>string</code> - Amount of Rai to generate in wei
 - to <code>EthAddress</code> - Generated Rai will be sent to this address
 
+<a name="ReflexerNativeUniV2SaviourDepositAction"></a>
+
+## ReflexerNativeUniV2SaviourDepositAction
+ReflexerNativeUniV2SaviourDepositAction - Deposit lpToken in the contract in order to provide cover for a specific SAFE managed by the SAFE Manager
+
+**Kind**: global class  
+<a name="new_ReflexerNativeUniV2SaviourDepositAction_new"></a>
+
+### new ReflexerNativeUniV2SaviourDepositAction(from, safeId, lpTokenAmount)
+**Params**
+
+- from <code>EthAddress</code>
+- safeId <code>SafeId</code>
+- lpTokenAmount <code>string</code>
+
+<a name="ReflexerNativeUniV2SaviourGetReservesAction"></a>
+
+## ReflexerNativeUniV2SaviourGetReservesAction
+ReflexerNativeUniV2SaviourGetReservesAction - Get back system coins or collateral tokens that were withdrawn from Uniswap and not used to save a specific SAFE
+
+**Kind**: global class  
+<a name="new_ReflexerNativeUniV2SaviourGetReservesAction_new"></a>
+
+### new ReflexerNativeUniV2SaviourGetReservesAction(to, safeId)
+**Params**
+
+- to <code>EthAddress</code>
+- safeId <code>SafeId</code>
+
+<a name="ReflexerNativeUniV2SaviourWithdrawAction"></a>
+
+## ReflexerNativeUniV2SaviourWithdrawAction
+ReflexerNativeUniV2SaviourWithdrawAction -  Withdraw lpToken from the contract and provide less cover for a SAFE
+
+**Kind**: global class  
+<a name="new_ReflexerNativeUniV2SaviourWithdrawAction_new"></a>
+
+### new ReflexerNativeUniV2SaviourWithdrawAction(to, safeId, lpTokenAmount)
+**Params**
+
+- to <code>EthAddress</code>
+- safeId <code>SafeId</code>
+- lpTokenAmount <code>string</code>
+
 <a name="ReflexerOpenSafeAction"></a>
 
 ## ReflexerOpenSafeAction
@@ -689,4 +1119,144 @@ Withdraws liquidity from uniswap pool
 - amountAMin <code>string</code>
 - amountBMin <code>string</code>
 - deadline <code>number</code>
+
+<a name="UniswapV3CollectAction"></a>
+
+## UniswapV3CollectAction
+Collects fees earned by user on position identified by tokenId
+
+**Kind**: global class  
+<a name="new_UniswapV3CollectAction_new"></a>
+
+### new UniswapV3CollectAction(tokenId, recipient, amount0Max, amount1Max, from)
+**Params**
+
+- tokenId <code>string</code>
+- recipient <code>EthAddress</code>
+- amount0Max <code>string</code>
+- amount1Max <code>string</code>
+- from <code>EthAddress</code>
+
+<a name="UniswapV3CreatePoolAction"></a>
+
+## UniswapV3CreatePoolAction
+Create a uniswap v3 pool
+
+**Kind**: global class  
+<a name="new_UniswapV3CreatePoolAction_new"></a>
+
+### new UniswapV3CreatePoolAction(token0, token1, fee, tickLower, tickUpper, amount0Desired, amount1Desired, amount0Min, amount1Min, recipient, deadline, from, sqrtPriceX96)
+**Params**
+
+- token0 <code>EthAddress</code>
+- token1 <code>EthAddress</code>
+- fee <code>number</code>
+- tickLower <code>number</code>
+- tickUpper <code>number</code>
+- amount0Desired <code>string</code>
+- amount1Desired <code>string</code>
+- amount0Min <code>string</code>
+- amount1Min <code>string</code>
+- recipient <code>EthAddress</code>
+- deadline <code>number</code>
+- from <code>EthAddress</code>
+- sqrtPriceX96 <code>string</code>
+
+<a name="UniswapV3MintAction"></a>
+
+## UniswapV3MintAction
+Creates a new Uniswap v3 LP supply position
+
+**Kind**: global class  
+<a name="new_UniswapV3MintAction_new"></a>
+
+### new UniswapV3MintAction(token0, token1, fee, tickLower, tickUpper, amount0Desired, amount1Desired, amount0Min, amount1Min, recipient, deadline, from)
+**Params**
+
+- token0 <code>EthAddress</code>
+- token1 <code>EthAddress</code>
+- fee <code>number</code>
+- tickLower <code>number</code>
+- tickUpper <code>number</code>
+- amount0Desired <code>string</code>
+- amount1Desired <code>string</code>
+- amount0Min <code>string</code>
+- amount1Min <code>string</code>
+- recipient <code>EthAddress</code>
+- deadline <code>number</code>
+- from <code>EthAddress</code>
+
+<a name="UniswapV3SupplyAction"></a>
+
+## UniswapV3SupplyAction
+Supplies a pair of tokens to an existing Uniswap v3 position identified by tokenId
+
+**Kind**: global class  
+<a name="new_UniswapV3SupplyAction_new"></a>
+
+### new UniswapV3SupplyAction(tokenId, amount0Desired, amount1Desired, amount0Min, amount1Min, deadline, from, token0, token1)
+**Params**
+
+- tokenId <code>string</code>
+- amount0Desired <code>string</code>
+- amount1Desired <code>string</code>
+- amount0Min <code>string</code>
+- amount1Min <code>string</code>
+- deadline <code>number</code>
+- from <code>EthAddress</code>
+- token0 <code>EthAddress</code>
+- token1 <code>EthAddress</code>
+
+<a name="UniswapV3WithdrawAction"></a>
+
+## UniswapV3WithdrawAction
+Burns liquidity, and returns underlying tokens to recipient
+
+**Kind**: global class  
+<a name="new_UniswapV3WithdrawAction_new"></a>
+
+### new UniswapV3WithdrawAction(tokenId, liquidity, amount0Min, amount1Min, deadline, recipient, amount0Max, amount1Max, from)
+**Params**
+
+- tokenId <code>string</code>
+- liquidity <code>string</code>
+- amount0Min <code>string</code>
+- amount1Min <code>string</code>
+- deadline <code>number</code>
+- recipient <code>EthAddress</code>
+- amount0Max <code>string</code>
+- amount1Max <code>string</code>
+- from <code>EthAddress</code>
+
+<a name="YearnSupplyAction"></a>
+
+## YearnSupplyAction
+YearnSupplyAction - Supply token to a Yearn vault
+
+**Kind**: global class  
+<a name="new_YearnSupplyAction_new"></a>
+
+### new YearnSupplyAction(tokenAddr, amount, from, to)
+**Params**
+
+- tokenAddr <code>EthAddress</code> - token address
+- amount <code>string</code> - amount of tokens to supply
+- from <code>EthAddress</code> - Tokens will be supplied from this address
+- to <code>ETHAddress</code> - yTokens will be sent to this address
+
+<a name="YearnWithdrawAction"></a>
+
+## YearnWithdrawAction
+YearnWithdrawAction - Burns yTokens and receive underlying tokens in return
+
+**Kind**: global class  
+<a name="new_YearnWithdrawAction_new"></a>
+
+### new YearnWithdrawAction(tokenAddr, amount, from, to)
+**Params**
+
+- tokenAddr <code>EthAddress</code> - yToken address
+- amount <code>string</code> - amount of yTokens to burn
+- from <code>EthAddress</code> - yTokens will be taken from this address
+- to <code>ETHAddress</code> - underlying tokens will be sent to this address
 

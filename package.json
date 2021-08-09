@@ -1,6 +1,6 @@
 {
   "name": "@defisaver/sdk",
-  "version": "0.0.25",
+  "version": "0.0.26",
   "description": "",
   "main": "index.js",
   "scripts": {
