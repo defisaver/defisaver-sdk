@@ -9,6 +9,7 @@ const actionAddresses = {
   'PullToken': '0x795a89f6D4E97A959fe81aa22772441323783479',
   'SendToken': '0xBbe0D7f2AF01aE678f8A873CB2d2EB73871C9b5A',
   'SumInputs': '0xCdef35425579fc566B6Ee0499A79256ac88d25cf',
+  'SubInputs': '0x3f71c5b806c2aCFA88bd7Ae5F7f8A14121E0FcA6',
   'ChangeProxyOwner': '0x32cEdFfF6e64f6cD1907Ae0b27b78c36320587E7',
 
   // exchange
