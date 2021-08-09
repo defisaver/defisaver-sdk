@@ -45,7 +45,7 @@ class BalancerV2WithdrawAction extends Action {
   async getAssetsToApprove() {
     const approveArr = [];
     const token = this.args[0][0].slice(0,42);
-    approveArr.push({asset: token, owner: this.args[0][1]});
+    approveArr.push({asset: token, owner: this.args[0][1], specialApproveLabel: 'balancer'});
     return approveArr;
   }
 }

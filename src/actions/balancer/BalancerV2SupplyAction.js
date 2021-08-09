@@ -44,7 +44,7 @@ class BalancerV2SupplyAction extends Action {
   async getAssetsToApprove() {
     const approveArr = [];
     const tokens = this.args[0][3];
-    tokens.forEach(token => approveArr.push({asset: token, owner: this.args[0][1]}));
+    tokens.forEach(token => approveArr.push({asset: token, owner: this.args[0][1], specialApproveLabel: 'balancer'}));
     
     return approveArr;
   }
