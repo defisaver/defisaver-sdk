@@ -5,6 +5,8 @@ const PullTokenAction = require('./PullTokenAction');
 const WrapEthAction = require('./WrapEthAction');
 const UnwrapEthAction = require('./UnwrapEthAction');
 const SumInputsAction = require('./SumInputsAction');
+const SubInputsAction = require('./SubInputsAction');
+const ChangeProxyOwnerAction = require('./ChangeProxyOwnerAction');
 
 module.exports = {
   SellAction,
@@ -14,4 +16,6 @@ module.exports = {
   WrapEthAction,
   UnwrapEthAction,
   SumInputsAction,
+  SubInputsAction,
+  ChangeProxyOwnerAction,
 };

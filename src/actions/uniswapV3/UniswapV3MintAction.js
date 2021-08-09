@@ -56,8 +56,8 @@ class UniswapV3MintAction extends Action {
 
     const approveArr = [];
 
-    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[0][0], owner: this.args[0][11]});
-    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[0][1], owner: this.args[0][11]});
+    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[0][0], owner: this.args[0][11], specialApproveLabel: 'uniswap v3'});
+    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[0][1], owner: this.args[0][11], specialApproveLabel: 'uniswap v3'});
 
     return approveArr;
   }
