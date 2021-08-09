@@ -20,7 +20,7 @@ class MakerSupplyAction extends Action {
 
   async getAssetsToApprove() {
     const asset = tokenFromJoin(this.args[2]).replace(/^ETH/, 'WETH');
-    if (asset !== 'ETH') return [{asset: getAssetInfo(asset).address, owner: this.args[3], protocol: 'maker'}];
+    if (asset !== 'ETH') return [{asset: getAssetInfo(asset).address, owner: this.args[3]}];
     return [];
   }
 }

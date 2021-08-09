@@ -17,7 +17,7 @@ class ReflexerPaybackAction extends Action {
   }
 
   async getAssetsToApprove() {
-    return [{asset: getAssetInfo('RAI').address, owner: this.args[2], protocol: 'reflexer'}];
+    return [{asset: getAssetInfo('RAI').address, owner: this.args[2]}];
   }
 }
 

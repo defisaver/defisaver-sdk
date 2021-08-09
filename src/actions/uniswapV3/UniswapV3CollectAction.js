@@ -39,7 +39,7 @@ class UniswapV3CollectAction extends Action {
       nft: getAddr('UniswapV3PositionManager'),
       tokenId: this.args[0][0],
       owner: this.from,
-      protocol: 'uniswap v3'
+      specialApproveLabel: 'uniswap v3'
     }];
   }
 }

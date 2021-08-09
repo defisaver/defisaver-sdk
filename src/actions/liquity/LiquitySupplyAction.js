@@ -25,7 +25,7 @@ class LiquitySupplyAction extends Action {
     }
 
     async getAssetsToApprove() {
-        return [{ asset: getAssetInfo('WETH').address, owner: this.args[0][1], protocol: 'liquity'}];
+        return [{ asset: getAssetInfo('WETH').address, owner: this.args[0][1]}];
     }
 }
 

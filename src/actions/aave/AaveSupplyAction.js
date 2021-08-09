@@ -20,7 +20,7 @@ class AaveSupplyAction extends Action {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[1]);
-    if (asset.symbol !== 'ETH') return [{asset: this.args[1], owner: this.args[3], protocol: 'aave'}];
+    if (asset.symbol !== 'ETH') return [{asset: this.args[1], owner: this.args[3]}];
     return [];
   }
 }

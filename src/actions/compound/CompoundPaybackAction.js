@@ -17,7 +17,7 @@ class CompoundPaybackAction extends Action {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[0]);
-    if (asset.symbol !== 'cETH') return [{asset: getAssetInfo(asset.symbol.substr(1)).address, owner: this.args[2], protocol: 'compound'}];
+    if (asset.symbol !== 'cETH') return [{asset: getAssetInfo(asset.symbol.substr(1)).address, owner: this.args[2]}];
     return [];
   }
 }

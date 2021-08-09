@@ -21,7 +21,7 @@ class LidoStakeAction extends Action {
   }
 
   async getAssetsToApprove() {
-    return [{asset: getAssetInfo('WETH').address, owner: this.args[0][1], protocol: 'lido'}];
+    return [{asset: getAssetInfo('WETH').address, owner: this.args[0][1]}];
   }
 }
 

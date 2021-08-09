@@ -23,7 +23,7 @@ class YearnWithdrawAction extends Action {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[0][0]);
-    if (asset.symbol !== 'ETH') return [{asset: this.args[0][0], owner: this.args[0][2], protocol: 'yearn'}];
+    if (asset.symbol !== 'ETH') return [{asset: this.args[0][0], owner: this.args[0][2], specialApproveLabel: 'yearn'}];
     return [];
   }
 }
