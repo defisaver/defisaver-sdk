@@ -1,5 +1,5 @@
-const Action = require("@defisaver/sdk/src/Action");
-const {requireAddress} = require("@defisaver/sdk/src/utils/general");
+const Action = require("../../Action");
+const {requireAddress} = require("../../utils/general.js");
 const { getAddr } = require('../../addresses.js');
 
 /**
