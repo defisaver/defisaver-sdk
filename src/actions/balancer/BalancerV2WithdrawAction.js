@@ -1,6 +1,9 @@
 const Action = require("../../Action");
 const {getAddr} = require('../../addresses.js');
 
+/**
+ * BalancerV2WithdrawAction - Withdraw tokens from Balancer pool
+ */
 class BalancerV2WithdrawAction extends Action {
   /**
    * @param {bytes32} poolId

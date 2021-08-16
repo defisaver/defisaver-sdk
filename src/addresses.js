@@ -95,6 +95,7 @@ const actionAddresses = {
   // balancer
   'BalancerV2Supply': '0xD78E5D95A28a67F7851b0a94505790813A92E405',
   'BalancerV2Withdraw': '0xCcf4b96407BEF25D7df1c95045CCF64950e73E97',
+  'BalancerV2Claim': '0x259Ae83567858B7960d2De0D00F3717a764aD73B',
 };
 
 const otherAddresses = {
@@ -106,6 +107,7 @@ const otherAddresses = {
   DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
   UniswapV3PositionManager : '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
   RaiWethUniV2LPToken : '0x8aE720a71622e824F576b4A8C03031066548A3B1',
+  BalancerToken : '0xba100000625a3754423978a60c9317c58a424e3D',
 }
 
 

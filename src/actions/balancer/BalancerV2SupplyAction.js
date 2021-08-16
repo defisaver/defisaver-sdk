@@ -2,7 +2,7 @@ const Action = require("../../Action");
 const {getAddr} = require('../../addresses.js');
 
 /*
- * 
+ * BalancerV2SupplyAction - Supply tokens to Balancer pool
  */
 class BalancerV2SupplyAction extends Action {
   /**
@@ -29,8 +29,6 @@ class BalancerV2SupplyAction extends Action {
       ],
       [[poolId, from, to, tokens, maxAmountsIn, userData]]
     );
-
-    this.from = from;
 
     this.mappableArgs = [
       this.args[0][1],
