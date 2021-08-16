@@ -2,13 +2,15 @@ const Action = require("../../Action");
 const {getAddr} = require('../../addresses.js');
 
 /*
- * 
+ * BalancerV2ClaimAction - Claim BAL governance tokens
  */
 class BalancerV2ClaimAction extends Action {
   /**
    * @param {EthAddress} liquidityProvider
    * @param {EthAddress} to
-   * @param {} claims
+   * @param {uint256[]} weeks
+   * @param {uint256} balances
+   * @param {bytes32[][]} merkleProofs
    */
   constructor(liquidityProvider, to, weeks, balances, merkleProofs) {
     super(
