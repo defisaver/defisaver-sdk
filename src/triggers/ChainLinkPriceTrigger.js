@@ -7,9 +7,6 @@ class ChainLinkPriceTrigger extends Action {
     super("ChainLinkPriceTrigger", getAddr("ChainLinkPriceTrigger"), [["address", "uint256", "uint8"]], [[...arguments]]);
   }
 
-  async getEthValue() {
-    return this.args[0];
-  }
 }
 
 module.exports = ChainLinkPriceTrigger;
