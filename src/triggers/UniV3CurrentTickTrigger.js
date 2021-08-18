@@ -12,4 +12,4 @@ class UniV3CurrentTickTrigger extends Action {
   }
 }
 
-module.exports = MakerRatioTrigger;
+module.exports = UniV3CurrentTickTrigger;
