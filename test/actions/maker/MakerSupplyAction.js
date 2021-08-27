@@ -21,7 +21,7 @@ describe('Action: MakerSupplyAction', () => {
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
       const assetOwnerPairs = await action.getAssetsToApprove();
-      assert.lengthOf(assetOwnerPairs, 0);
+      assert.lengthOf(assetOwnerPairs, 1);
     })
     it('getEthValue', async () => {
       const ethValue = await action.getEthValue();
@@ -44,7 +44,7 @@ describe('Action: MakerSupplyAction', () => {
     it('encodeForRecipe', () => encodeForRecipe(action));
     it('getAssetsToApprove', async () => {
       const assetOwnerPairs = await action.getAssetsToApprove();
-      assert.lengthOf(assetOwnerPairs, 0);
+      assert.lengthOf(assetOwnerPairs, 1);
 
     })
     it('getEthValue', async () => {
