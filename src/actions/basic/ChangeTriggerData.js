@@ -3,17 +3,18 @@ const {getAddr} = require("../../addresses.js");
 
 /**
  */
-class ChangeSubDataAction extends Action {
+class ChangeTriggerDataAction extends Action {
   /**
    */
   constructor(subStorageAddr, subId, triggerData) {
     super(
-      'ChangeSubData',
-      getAddr('ChangeSubData'),
+      'ChangeTriggerData',
+      getAddr('ChangeTriggerData'),
       [[
         "address",
         "uint256",
-        "bytes[]",
+        "bytes",
+        "uint256",
       ]],
       [[...arguments]]
     );
@@ -23,4 +24,4 @@ class ChangeSubDataAction extends Action {
   }
 }
 
-module.exports = ChangeSubDataAction;
+module.exports = ChangeTriggerDataAction;
