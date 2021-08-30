@@ -29,7 +29,7 @@ describe('DfsWeb3', () => {
         gas: '9000000',
       })
     }
-    const exec = await dfsWeb3.executeViaProxy(a);
+    const exec = await dfsWeb3.executeAction(a);
     // await exec.send({
     //   from: dfsWeb3.account,
     //   value: await a.getEthValue(),
@@ -55,7 +55,7 @@ describe('DfsWeb3', () => {
         gas: '9000000',
       })
     }
-    const exec = await dfsWeb3.executeViaProxy(r);
+    const exec = await dfsWeb3.executeRecipe(r);
     // await exec.send({
     //   from: dfsWeb3.account,
     //   value: await r.getEthValue(),
