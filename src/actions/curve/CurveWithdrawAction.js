@@ -20,7 +20,7 @@ class CurveWithdrawAction extends Action {
             this.args[0][3],
             this.args[0][4],
         ];
-        this.mappableArgs.concat(
+        this.mappableArgs = this.mappableArgs.concat(
             this.args[0][5],
             this.args[0][6],
         );
