@@ -7,6 +7,7 @@ const UnwrapEthAction = require('./UnwrapEthAction');
 const SumInputsAction = require('./SumInputsAction');
 const SubInputsAction = require('./SubInputsAction');
 const GasFeeAction = require('./GasFeeAction');
+const ChangeTriggerDataAction = require("./ChangeTriggerData");
 
 module.exports = {
   SellAction,
@@ -18,4 +19,5 @@ module.exports = {
   SumInputsAction,
   SubInputsAction,
   GasFeeAction,
+  ChangeTriggerDataAction,
 };
