@@ -29,11 +29,9 @@ class CurveWithdrawImbalanceAction extends Action {
             this.args[0][2],
             this.args[0][3],
             this.args[0][5],
+            ...this.args[0][6],
+            ...this.args[0][7],
         ];
-        this.mappableArgs = this.mappableArgs.concat(
-            this.args[0][6],
-            this.args[0][7],
-        );
     }
 
     async getAssetsToApprove() {
