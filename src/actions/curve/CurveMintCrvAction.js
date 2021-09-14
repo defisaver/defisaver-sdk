@@ -4,11 +4,11 @@ const { getAddr } = require('@defisaver/sdk/src/addresses');
 
 class CurveMintCrvAction extends Action {
     
-    constructor(gaugeAddr, receiver) {
+    constructor(gaugeAddrs, receiver) {
         requireAddress(receiver);
         super('CurveMintCrv',
             getAddr('CurveMintCrv'),
-            [['address', 'address']],
+            [['address[8]', 'address']],
             [[...arguments]],
         );
 

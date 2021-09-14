@@ -14,13 +14,14 @@ class CurveWithdrawAction extends Action {
         burnAmount,
         minAmounts = [],
         tokens = [],
+        withdrawExact,
         useUnderlying
     ) {
         requireAddress(sender);
         requireAddress(receiver);
         super('CurveWithdrawAction',
             getAddr('CurveWithdrawAction'),
-            [['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[], bool']],
+            [['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]', 'bool', 'bool']],
             [[...arguments]]);
 
         this.mappableArgs = [
