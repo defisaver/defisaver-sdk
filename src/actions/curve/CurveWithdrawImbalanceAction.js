@@ -5,12 +5,22 @@ const { getAddr } = require('@defisaver/sdk/src/addresses');
 
 class CurveWithdrawImbalanceAction extends Action {
     
-    constructor(sender, receiver, pool, lpTpken, maxBurnAmount, amounts = []) {
+    constructor(
+        sender,
+        receiver,
+        pool,
+        lpToken,
+        sig,
+        maxBurnAmount,
+        amounts = [],
+        tokens = [],
+        useUnderlying
+    ) {
         requireAddress(sender);
         requireAddress(receiver);
         super('CurveWithdrawImbalanceAction',
             getAddr('CurveWithdrawImbalanceAction'),
-            [['address', 'address', 'address', 'address', 'uint256', 'uint256[]']],
+            [['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]', 'bool']],
             [[...arguments]]);
 
         this.mappableArgs = [
@@ -18,10 +28,11 @@ class CurveWithdrawImbalanceAction extends Action {
             this.args[0][1],
             this.args[0][2],
             this.args[0][3],
-            this.args[0][4],
+            this.args[0][5],
         ];
         this.mappableArgs = this.mappableArgs.concat(
-            this.args[0][5],
+            this.args[0][6],
+            this.args[0][7],
         );
     }
 
