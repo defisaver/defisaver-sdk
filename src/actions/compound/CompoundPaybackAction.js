@@ -11,8 +11,8 @@ class CompoundPaybackAction extends Action {
    * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
    * @param from {EthAddress}
    */
-  constructor(cTokenAddr, amount, from) {
-    super('CompPayback', getAddr('CompPayback'), ['address', 'uint256', 'address'], [...arguments]);
+  constructor(cTokenAddr, amount, from, onBehalf = getAddr('Empty')) {
+    super('CompPayback', getAddr('CompPayback'), ['address', 'uint256', 'address', 'address'], [...arguments]);
   }
 
   async getAssetsToApprove() {
