@@ -14,8 +14,10 @@ class InstPullTokensAction extends Action {
   }
 
   async getAssetsToApprove() {
-    return [];
-    // TODO: dsa account needs to approve dsproxy
+    return [{
+      dsaAddress: this.args[0][0],
+      specialApproveLabel: 'Instadapp' 
+    }];
   }
 }
 
