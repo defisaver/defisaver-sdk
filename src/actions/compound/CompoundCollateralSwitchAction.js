@@ -3,10 +3,10 @@ const {requireAddress} = require("../../utils/general.js");
 const { getAddr } = require('../../addresses.js');
 
 /**
- *  CompoundCollateralSwitchAction - Claims stkAave from incentives controller
+ *  CompoundCollateralSwitchAction - Compound enable/disable cToken usage as collateral
  */
 class CompoundCollateralSwitchAction extends Action {
-  constructor(tokens, useAsCollateral) {
+  constructor(cTokens, useAsCollateral) {
     super(
       'CompCollateralSwitch',
       getAddr('CompCollateralSwitch'),

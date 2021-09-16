@@ -3,7 +3,7 @@ const {requireAddress} = require("../../utils/general.js");
 const { getAddr } = require('../../addresses.js');
 
 /**
- *  AaveCollateralSwitchAction - Claims stkAave from incentives controller
+ *  AaveCollateralSwitchAction - Aave enable/disable token usage as collateral
  */
 class AaveCollateralSwitchAction extends Action {
   constructor(market, tokens, useAsCollateral) {
