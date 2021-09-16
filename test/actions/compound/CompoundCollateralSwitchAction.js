@@ -4,16 +4,14 @@ const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
 const { getAddr } = require('../../../src/addresses.js');
 
-describe('Action: AaveClaimStkAaveAction', () => {
+describe('Action: CompoundCollateralSwitchAction', () => {
   let action;
-  const to = '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f';
 
-  context('Claims stkAave from incentives controller', () => {
+  context('Enable one token, disable other token with CompoundCollSwitch Action', () => {
     it('constructor', () => {
-      action = new dfs.actions.aave.AaveClaimStkAaveAction(
-        [getAddr('Empty')],
-        '1000',
-        to,
+      action = new dfs.actions.compound.CompoundCollateralSwitchAction(
+          [getAddr('RaiWethUniV2LPToken'), getAddr('BalancerToken')],
+          [true, false],
       )
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));

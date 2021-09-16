@@ -4,16 +4,15 @@ const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
 const { getAddr } = require('../../../src/addresses.js');
 
-describe('Action: AaveClaimStkAaveAction', () => {
+describe('Action: TokenBalanceAction', () => {
   let action;
-  const to = '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f';
+  const holder = '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f';
 
-  context('Claims stkAave from incentives controller', () => {
+  context('Checks token balance', () => {
     it('constructor', () => {
-      action = new dfs.actions.aave.AaveClaimStkAaveAction(
-        [getAddr('Empty')],
-        '1000',
-        to,
+      action = new dfs.actions.basic.TokenBalanceAction(
+        getAddr('BalancerToken'),
+        holder,
       )
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
