@@ -86,8 +86,6 @@ class Action {
       let paramType = this.paramTypes[i];
       let _arg = this._replaceWithPlaceholders(arg, paramType);
       let _paramType = this._formatType(paramType);
-      console.log(_paramType);
-      console.log(_arg);
       return AbiCoder.encodeParameter(_paramType, _arg);
     });
     return [bytesEncodedArgs];
