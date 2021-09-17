@@ -24,7 +24,6 @@ describe('Action: ClaimInstMakerAction', () => {
     it('getAssetsToApprove', async () => {
       const assetOwnerPairs = await action.getAssetsToApprove();
       assert.lengthOf(assetOwnerPairs, 1);
-      console.log(assetOwnerPairs);
     })
   })
 
