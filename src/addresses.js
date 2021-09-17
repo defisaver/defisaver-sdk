@@ -44,7 +44,7 @@ const actionAddresses = {
   // compound
   'CompBorrow': '0xde1b05266f2D05Bf9216B76500583c2b7785b7e9',
   'CompClaim': '0xAA165C03fF61301b79f35649157f6738263739A3',
-  'CompPayback': '0xcBb77bA65c5257673607FAb0E63FeFDE8a632dEC',
+  'CompPayback': '0x67D2CC825730cCb70FD4579E55cDb3cf3152fcb6',
   'CompSupply': '0x1F22890C166B30cE8769b7B55354064C254e063F',
   'CompWithdraw': '0xD326a003bcfDbad0E9A4Ccc37a76Ce264345F38a',
 

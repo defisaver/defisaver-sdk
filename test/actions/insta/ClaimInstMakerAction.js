@@ -22,7 +22,7 @@ describe('Action: ClaimInstMakerAction', () => {
     '0xbc145c0be2d3bf27857248519709740701a787a9c3f685534ac0cac578bfe90c',
 ];
 
-  context('Stake 1 ETH', () => {
+  context('Claim INST tokens for Maker vault', () => {
     it('constructor', () => {
       action = new dfs.actions.insta.ClaimInstMakerAction(
         '3570',
