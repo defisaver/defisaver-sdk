@@ -7,6 +7,9 @@
 <dt><a href="#AaveClaimStkAaveAction">AaveClaimStkAaveAction</a></dt>
 <dd><p>AaveClaimStkAaveAction - Claims stkAave from incentives controller</p>
 </dd>
+<dt><a href="#AaveCollateralSwitchAction">AaveCollateralSwitchAction</a></dt>
+<dd><p>AaveCollateralSwitchAction - Aave enable/disable token usage as collateral</p>
+</dd>
 <dt><a href="#AaveMigrateLendAction">AaveMigrateLendAction</a></dt>
 <dd><p>AaveMigrateLendAction - Migrates Lend to Aave</p>
 </dd>
@@ -19,10 +22,13 @@
 <dt><a href="#AaveWithdrawAction">AaveWithdrawAction</a></dt>
 <dd><p>AaveWithdrawAction - Withdraw token from an aave position</p>
 </dd>
+<dt><a href="#BalancerV2ClaimAction">BalancerV2ClaimAction</a></dt>
+<dd></dd>
 <dt><a href="#BalancerV2SupplyAction">BalancerV2SupplyAction</a></dt>
 <dd></dd>
 <dt><a href="#BalancerV2WithdrawAction">BalancerV2WithdrawAction</a></dt>
-<dd></dd>
+<dd><p>BalancerV2WithdrawAction - Withdraw tokens from Balancer pool</p>
+</dd>
 <dt><a href="#BuyAction">BuyAction</a></dt>
 <dd><p>Buys an exact amount of dest token on DeFi Saver exchange aggregator</p>
 </dd>
@@ -55,6 +61,9 @@
 </dd>
 <dt><a href="#CompoundClaimAction">CompoundClaimAction</a></dt>
 <dd><p>CompoundClaimAction - Claims Comp tokens for the specified address</p>
+</dd>
+<dt><a href="#CompoundCollateralSwitchAction">CompoundCollateralSwitchAction</a></dt>
+<dd><p>CompoundCollateralSwitchAction - Compound enable/disable cToken usage as collateral</p>
 </dd>
 <dt><a href="#CompoundPaybackAction">CompoundPaybackAction</a></dt>
 <dd><p>CompoundPaybackAction - Payback borrowed tokens from Compound</p>
@@ -229,6 +238,12 @@ AaveBorrowAction - Borrow tokens from Aave
 AaveClaimStkAaveAction - Claims stkAave from incentives controller
 
 **Kind**: global class  
+<a name="AaveCollateralSwitchAction"></a>
+
+## AaveCollateralSwitchAction
+AaveCollateralSwitchAction - Aave enable/disable token usage as collateral
+
+**Kind**: global class  
 <a name="AaveMigrateLendAction"></a>
 
 ## AaveMigrateLendAction
@@ -296,6 +311,21 @@ AaveWithdrawAction - Withdraw token from an aave position
 - amount <code>string</code>
 - to <code>EthAddress</code> - Tokens will be withdrawn to this address
 
+<a name="BalancerV2ClaimAction"></a>
+
+## BalancerV2ClaimAction
+**Kind**: global class  
+<a name="new_BalancerV2ClaimAction_new"></a>
+
+### new BalancerV2ClaimAction(liquidityProvider, to, weeks, balances, merkleProofs)
+**Params**
+
+- liquidityProvider <code>EthAddress</code>
+- to <code>EthAddress</code>
+- weeks <code>Array.&lt;uint256&gt;</code>
+- balances <code>uint256</code>
+- merkleProofs <code>Array.&lt;Array.&lt;bytes32&gt;&gt;</code>
+
 <a name="BalancerV2SupplyAction"></a>
 
 ## BalancerV2SupplyAction
@@ -315,6 +345,8 @@ AaveWithdrawAction - Withdraw token from an aave position
 <a name="BalancerV2WithdrawAction"></a>
 
 ## BalancerV2WithdrawAction
+BalancerV2WithdrawAction - Withdraw tokens from Balancer pool
+
 **Kind**: global class  
 <a name="new_BalancerV2WithdrawAction_new"></a>
 
@@ -474,6 +506,12 @@ CompoundClaimAction - Claims Comp tokens for the specified address
 - from <code>EthAddress</code>
 - to <code>EthAddress</code>
 
+<a name="CompoundCollateralSwitchAction"></a>
+
+## CompoundCollateralSwitchAction
+CompoundCollateralSwitchAction - Compound enable/disable cToken usage as collateral
+
+**Kind**: global class  
 <a name="CompoundPaybackAction"></a>
 
 ## CompoundPaybackAction
@@ -482,12 +520,13 @@ CompoundPaybackAction - Payback borrowed tokens from Compound
 **Kind**: global class  
 <a name="new_CompoundPaybackAction_new"></a>
 
-### new CompoundPaybackAction(cTokenAddr, amount, from)
+### new CompoundPaybackAction(cTokenAddr, amount, from, onBehalf)
 **Params**
 
 - cTokenAddr <code>EthAddress</code>
 - amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
 - from <code>EthAddress</code>
+- onBehalf <code>Array.&lt;EthAddress&gt;</code>
 
 <a name="CompoundSupplyAction"></a>
 
