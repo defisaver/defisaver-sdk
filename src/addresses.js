@@ -11,6 +11,7 @@ const actionAddresses = {
   'SumInputs': '0xCdef35425579fc566B6Ee0499A79256ac88d25cf',
   'SubInputs': '0x3f71c5b806c2aCFA88bd7Ae5F7f8A14121E0FcA6',
   'ChangeProxyOwner': '0x32cEdFfF6e64f6cD1907Ae0b27b78c36320587E7',
+  'TokenBalance': '0xFEb82445aEaA675D59A43CD5833f5A6807f97ea2',
 
   // exchange
   'DFSSell': '0x9A765623F9De2D7dB26afb5f7Bb85592DF094CDB',
@@ -37,16 +38,19 @@ const actionAddresses = {
 
   // aave
   'AaveBorrow': '0xEdBbF97C505309e5174E164fbec3cAE774d310Ea',
-  'AavePayback': '0xA04dd7BbdA2DF9307654d3F91a252F911790773e',
+  'AavePayback': '0xb583Bc7603E5E482F475Ec9Ea90129029D53fbc8',
   'AaveSupply': '0xC71113E9122465e8bCd42123f840Df99abaF29F1',
   'AaveWithdraw': '0xE06Fc1CBD78Eb0799d5B0ca62D51B065886e08FC',
+  'AaveCollateralSwitch': '0x27d77c80A88665342C98Ea31B687A5fc8ca9a445',
 
   // compound
   'CompBorrow': '0xde1b05266f2D05Bf9216B76500583c2b7785b7e9',
   'CompClaim': '0xAA165C03fF61301b79f35649157f6738263739A3',
-  'CompPayback': '0xaedCD157d570Edd1513c0dafaA8CD92198335AAC',
+  'CompPayback': '0x67D2CC825730cCb70FD4579E55cDb3cf3152fcb6',
   'CompSupply': '0x1F22890C166B30cE8769b7B55354064C254e063F',
   'CompWithdraw': '0xD326a003bcfDbad0E9A4Ccc37a76Ce264345F38a',
+  'CompGetDebt': '0x009109AB7b8CAFf748cdA2F272F36043528Bef2C',
+  'CompCollateralSwitch': '0x1c0BD1E4da2c3108f6caA64609E89a37531B0f86',
 
   // flashloan
   'FLAaveV2': '0x46aafdbc76a8b412909985d0a2c51073ff33c02e',
@@ -91,6 +95,7 @@ const actionAddresses = {
 
   // insta
   'ClaimInstMaker': '0x15E22A8160F0bDb619C6846C982F8D208A5670D2',
+  'InstPullTokens': '0x37FC940Be30e11d578243dEBea4f9B950E22aC99',
 
   // balancer
   'BalancerV2Supply': '0xD78E5D95A28a67F7851b0a94505790813A92E405',

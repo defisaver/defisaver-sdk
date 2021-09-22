@@ -25,7 +25,9 @@ class DfsWeb3 {
     this.account = accounts[0];
     const dfsRegistry = new this.web3.eth.Contract(DFSPRoxyRegistyAbi, getAddr('DFSProxyRegistry'));
     const proxies = await dfsRegistry.methods.getAllProxies(this.account).call();
-    this.proxy = proxies[0];
+    if (proxies[0] !== '0x0000000000000000000000000000000000000000') {
+      this.proxy = proxies[0];
+    }
     this.accountReady = true;
   }
 
@@ -46,7 +48,7 @@ class DfsWeb3 {
     const transactions = [];
     const approvals = await action.getAssetsToApprove();
     await Promise.all(approvals.map(async (a) => {
-      if (a.owner.toLowercase() === this.proxy.toLowercase()) {
+      if (a.owner.toLowerCase() === this.proxy.toLowerCase()) {
         const tokenContract = new this.web3.eth.Contract(Erc20Abi, a.asset);
         const allowance = await tokenContract.methods.allowance(this.account, this.proxy).call();
         if (parseFloat(allowance.toString()) === 0) {
@@ -56,14 +58,25 @@ class DfsWeb3 {
     }));
     return transactions;
   }
-  /**
-   * @param action {(Action|Recipe)}
-   */
-  async executeViaProxy(action) {
+
+  async execute(address, params) {
     if (!this.accountReady) await this.prepareAccount();
     if (!this.proxy) throw new Error('Account does not have a Smart Wallet. Run createSmartWallet first');
     const proxyContract = new this.web3.eth.Contract(DsProxyAbi, this.proxy);
-    return proxyContract.methods['execute(address,bytes)'](...action.encodeForDsProxyCall());
+    return proxyContract.methods['execute(address,bytes)'](address, params);
+  }
+
+  /**
+   * @param action {(Action)}
+   */
+  async executeAction(action) {
+    return this.execute(...action.encodeForDsProxyCall());
+  }
+  /**
+   * @param recipe {(Recipe)}
+   */
+  async executeRecipe(recipe) {
+    return this.execute(...recipe.encodeForDsProxyCall());
   }
 }
 
