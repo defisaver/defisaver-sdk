@@ -8,7 +8,7 @@ class CurveWithdrawAction extends Action {
     constructor(
         sender,
         receiver,
-        pool,
+        depositTarget,
         lpToken,
         sig,
         burnAmount,
@@ -27,11 +27,8 @@ class CurveWithdrawAction extends Action {
         this.mappableArgs = [
             this.args[0][0],
             this.args[0][1],
-            this.args[0][2],
-            this.args[0][3],
             this.args[0][5],
             ...this.args[0][6],
-            ...this.args[0][7],
         ];
     }
 

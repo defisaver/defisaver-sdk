@@ -5,7 +5,7 @@ const { getAddr } = require('../../addresses');
 
 class CurveSwapAction extends Action {
     
-    constructor(sender, receiver, pool, from, to, amount, expected) {
+    constructor(sender, receiver, pool, tokenA, tokenB, amount, expected) {
         requireAddress(sender);
         requireAddress(receiver);
         super('CurveSwap',
@@ -16,9 +16,6 @@ class CurveSwapAction extends Action {
         this.mappableArgs = [
             this.args[0][0],
             this.args[0][1],
-            this.args[0][2],
-            this.args[0][3],
-            this.args[0][4],
             this.args[0][5],
             this.args[0][6],
         ];

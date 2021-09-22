@@ -4,9 +4,9 @@ const { getAddr } = require('@defisaver/sdk/src/addresses');
 
 class CurveGaugeDepositAction extends Action {
     
-    constructor(gaugeAddr, lpToken, sender, receiver, amount) {
+    constructor(gaugeAddr, lpToken, sender, onBehalfOf, amount) {
         requireAddress(sender);
-        requireAddress(receiver);
+        requireAddress(onBehalfOf);
         super('CurveGaugeDeposit',
             getAddr('CurveGaugeDeposit'),
             [['address', 'address', 'address', 'address', 'uint256']],

@@ -13,7 +13,7 @@ class CurveMintCrvAction extends Action {
         );
 
         this.mappableArgs = [
-            this.args[0][1],
+            this.args[0][8],
         ];
     }
 }
