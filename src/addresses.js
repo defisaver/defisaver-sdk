@@ -49,8 +49,8 @@ const actionAddresses = {
   'CompWithdraw': '0xD326a003bcfDbad0E9A4Ccc37a76Ce264345F38a',
 
   // flashloan
-  'FLAaveV2': '0xa290BDae65638c083e860b05009f290140fc0379',
-  'FLDyDx': '0x505079b4E049B9e641deb7E04D55e9457B8ad8Bc',
+  'FLAaveV2': '0x46aafdbc76a8b412909985d0a2c51073ff33c02e',
+  'FLDyDx': '0x973065599BACa33FC9CAD2823710f1332D2B7805',
 
   // uniswap
   'UniSupply': '0xcAE220B5398AfAad75bfeb946164f6C23CF65A98',
