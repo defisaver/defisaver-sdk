@@ -81,9 +81,9 @@
             "type": "bytes[]"
           },
           {
-            "internalType": "bytes[]",
+            "internalType": "bytes32[]",
             "name": "subData",
-            "type": "bytes[]"
+            "type": "bytes32[]"
           },
           {
             "internalType": "bytes4[]",
@@ -96,7 +96,7 @@
             "type": "uint8[][]"
           }
         ],
-        "internalType": "struct StrategyData.Recipe",
+        "internalType": "struct StrategyModel.Recipe",
         "name": "_currRecipe",
         "type": "tuple"
       },
@@ -127,24 +127,6 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "_strategyId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes[]",
-        "name": "_actionCallData",
-        "type": "bytes[]"
-      }
-    ],
-    "name": "executeStrategyTask",
-    "outputs": [],
-    "stateMutability": "payable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
         "components": [
           {
             "internalType": "string",
@@ -157,9 +139,9 @@
             "type": "bytes[]"
           },
           {
-            "internalType": "bytes[]",
+            "internalType": "bytes32[]",
             "name": "subData",
-            "type": "bytes[]"
+            "type": "bytes32[]"
           },
           {
             "internalType": "bytes4[]",
@@ -172,12 +154,30 @@
             "type": "uint8[][]"
           }
         ],
-        "internalType": "struct StrategyData.Recipe",
+        "internalType": "struct StrategyModel.Recipe",
         "name": "_currRecipe",
         "type": "tuple"
       }
     ],
-    "name": "executeTask",
+    "name": "executeRecipe",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_subId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "_actionCallData",
+        "type": "bytes[]"
+      }
+    ],
+    "name": "executeRecipeFromStrategy",
     "outputs": [],
     "stateMutability": "payable",
     "type": "function"
