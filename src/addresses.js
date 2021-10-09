@@ -55,6 +55,7 @@ const actionAddresses = {
   // flashloan
   'FLAaveV2': '0x46aafdbc76a8b412909985d0a2c51073ff33c02e',
   'FLDyDx': '0x973065599BACa33FC9CAD2823710f1332D2B7805',
+  'FLMaker': '0xEA2C6B373Ea3e596995d2523a74592E22EE49BFF',
 
   // uniswap
   'UniSupply': '0xcAE220B5398AfAad75bfeb946164f6C23CF65A98',
