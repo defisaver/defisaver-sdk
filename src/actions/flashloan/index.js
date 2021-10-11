@@ -4,6 +4,7 @@ const AaveV2FlashLoanAction = require('./AaveV2FlashLoanAction');
 const AaveV2FlashLoanPaybackAction = require('./AaveV2FlashLoanPaybackAction');
 const MakerFlashLoanAction = require('./MakerFlashLoanAction');
 const MakerFlashLoanPaybackAction = require('./MakerFlashLoanPaybackAction');
+const BalancerFlashLoanAction = require('./BalancerFlashLoanAction');
 
 module.exports = {
   DyDxFlashLoanAction,
@@ -12,4 +13,5 @@ module.exports = {
   AaveV2FlashLoanPaybackAction,
   MakerFlashLoanAction,
   MakerFlashLoanPaybackAction,
+  BalancerFlashLoanAction,
 };
