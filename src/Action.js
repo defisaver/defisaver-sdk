@@ -46,6 +46,8 @@ class Action {
 
       // Handle SubSlots placeholder values in strategies
       if (new RegExp(/\&\w+/).test(arg)) {
+        if (arg === '&proxy') return 254;
+        if (arg === '&eoa') return 255;
         return parseInt(subSlots[arg].index);
       }
 
