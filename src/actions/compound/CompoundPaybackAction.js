@@ -10,14 +10,15 @@ class CompoundPaybackAction extends Action {
    * @param cTokenAddr {EthAddress}
    * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
    * @param from {EthAddress}
+   * @param onBehalf {EthAddress} Defaults to DsProxy address if 0x0
    */
-  constructor(cTokenAddr, amount, from) {
-    super('CompPayback', getAddr('CompPayback'), [['address', 'uint256', 'address']], [[...arguments]]);
-
+  constructor(cTokenAddr, amount, from, onBehalf = getAddr('Empty')) {
+    super('CompPayback', getAddr('CompPayback'), [['address', 'uint256', 'address', 'address']], [[cTokenAddr, amount, from, onBehalf]]);
     this.mappableArgs = [
       this.args[0][0],
       this.args[0][1],
       this.args[0][2],
+      this.args[0][3],
     ];
   }
 

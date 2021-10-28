@@ -28,31 +28,26 @@ describe('Exchange utils', () => {
       const token = getAssetInfoByAddress(address).symbol.replace('WETH', 'ETH');
       prices[token] = price;
     }
-    console.log(prices);
   });
 
   context('Get sell price via 0x', function() {
     it('Returns price for 18/18dec tokens', async () => {
       const price = await exchangeUtils.estimateSellPrice('1', 'ETH', 'DAI');
-      console.log(price);
       assert.closeTo(+price, +prices.ETH, prices.ETH * 0.05);
     }).timeout(10000);
 
     it('Returns price for 18/6dec tokens', async () => {
       const price = await exchangeUtils.estimateSellPrice('1', 'ETH', 'USDC');
-      console.log(price);
       assert.closeTo(+price, +prices.ETH, prices.ETH * 0.05);
     }).timeout(10000);
 
     it('Returns price for 8/18dec tokens', async () => {
       const price = await exchangeUtils.estimateSellPrice('1', 'WBTC', 'DAI');
-      console.log(price);
       assert.closeTo(+price, +prices.WBTC, prices.WBTC * 0.05);
     }).timeout(10000);
 
     it('Returns price for 8/6dec tokens', async () => {
       const price = await exchangeUtils.estimateSellPrice('1', 'WBTC', 'USDC');
-      console.log(price);
       assert.closeTo(+price, +prices.WBTC, prices.WBTC * 0.05);
     }).timeout(10000);
   })
@@ -60,25 +55,21 @@ describe('Exchange utils', () => {
   context('Get buy price via 0x', function() {
     it('Returns price for 18/18dec tokens', async () => {
       const price = await exchangeUtils.estimateBuyPrice('10000', 'DAI', 'ETH');
-      console.log(price);
       assert.closeTo(+price, +prices.ETH, prices.ETH * 0.05);
     }).timeout(10000);
 
     it('Returns price for 18/6dec tokens', async () => {
       const price = await exchangeUtils.estimateBuyPrice('10000', 'USDC', 'ETH');
-      console.log(price);
       assert.closeTo(+price, +prices.ETH, prices.ETH * 0.05);
     }).timeout(10000);
 
     it('Returns price for 8/18dec tokens', async () => {
       const price = await exchangeUtils.estimateBuyPrice('10000', 'DAI', 'WBTC');
-      console.log(price);
       assert.closeTo(+price, +prices.WBTC, prices.WBTC * 0.05);
     }).timeout(10000);
 
     it('Returns price for 8/6dec tokens', async () => {
       const price = await exchangeUtils.estimateBuyPrice('10000', 'USDC', 'WBTC');
-      console.log(price);
       assert.closeTo(+price, +prices.WBTC, prices.WBTC * 0.05);
     }).timeout(10000);
   })
@@ -89,7 +80,6 @@ describe('Exchange utils', () => {
       assert.instanceOf(action, dfs.actions.basic.SellAction);
       assert.equal(action.args[1], myAddr);
       assert.equal(action.args[2], myAddr);
-      console.log(action);
     }).timeout(10000);
   })
 
@@ -99,7 +89,6 @@ describe('Exchange utils', () => {
       assert.instanceOf(action, dfs.actions.basic.BuyAction);
       assert.equal(action.args[1], myAddr);
       assert.equal(action.args[2], myAddr);
-      console.log(action);
     }).timeout(10000);
   })
 })

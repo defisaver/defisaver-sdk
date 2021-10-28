@@ -3,6 +3,8 @@
 <dl>
 <dt><a href="#utils.module_uniswapLP">uniswapLP</a></dt>
 <dd></dd>
+<dt><a href="#utils.module_uniV3">uniV3</a></dt>
+<dd></dd>
 <dt><a href="#utils.module_zeroExExchange">zeroExExchange</a></dt>
 <dd></dd>
 </dl>
@@ -57,6 +59,18 @@ Source: https://uniswap.org/docs/v2/javascript-SDK/getting-pair-addresses/#types
 
 - symbolA <code>string</code>
 - symbolB <code>string</code>
+
+<a name="utils.module_uniV3"></a>
+
+## uniV3
+<a name="utils.module_uniV3.getAssetAddrByTokenId"></a>
+
+### uniV3.getAssetAddrByTokenId(web3, tokenId) ⇒ <code>Promise.&lt;Array.&lt;string&gt;&gt;</code>
+**Kind**: static method of [<code>uniV3</code>](#utils.module_uniV3)  
+**Params**
+
+- web3 <code>Object</code> - Web3 instance
+- tokenId <code>string</code>
 
 <a name="utils.module_zeroExExchange"></a>
 

@@ -23,7 +23,7 @@ class DyDxSupplyAction extends Action {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[0]);
-    if (asset.symbol !== 'ETH') return [{asset: this.args[0], owner: this.args[2]}];
+    if (asset.symbol !== 'ETH') return [{asset: this.args[0], owner: this.args[2], specialApproveLabel: 'dydx'}];
     return [];
   }
 }

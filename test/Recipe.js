@@ -24,7 +24,7 @@ describe('Recipe', () => {
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(recipe));
     it('getAssetsToApprove', async () => {
       const assetsToApprove = await recipe.getAssetsToApprove();
-      assert.lengthOf(assetsToApprove, 0);
+      assert.lengthOf(assetsToApprove, 1);
     });
     it('getEthValue', async () => {
       const ethValue = await recipe.getEthValue();

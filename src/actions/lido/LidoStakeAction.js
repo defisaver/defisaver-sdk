@@ -19,7 +19,7 @@ class LidoStakeAction extends Action {
       this.args[0][2],
     ];
   }
-  
+
   async getAssetsToApprove() {
     return [{asset: getAssetInfo('WETH').address, owner: this.args[0][1]}];
   }

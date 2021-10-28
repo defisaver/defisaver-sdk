@@ -11,6 +11,8 @@ const checkers = require('./checkers');
 const liquity = require('./liquity');
 const yearn = require('./yearn');
 const lido = require('./lido');
+const insta = require('./insta');
+const balancer = require('./balancer');
 
 module.exports = {
   maker,
@@ -26,4 +28,6 @@ module.exports = {
   liquity,
   yearn,
   lido,
+  insta,
+  balancer,
 };

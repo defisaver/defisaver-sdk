@@ -1,3 +1,4 @@
+require('dotenv').config();
 const {assert} = require('chai');
 const DfsWeb3 = require('../src/DfsWeb3');
 const Web3 = require('web3');
@@ -8,7 +9,11 @@ describe('DfsWeb3', () => {
   let dfsWeb3;
   before(async () => {
     const web3 = new Web3(process.env.RPC);
+
+    web3.eth.getAccounts = () => ['0x0a80C3C540eEF99811f4579fa7b1A0617294e06f'];
     dfsWeb3 = new DfsWeb3(web3);
+    dfsWeb3.account = '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f';
+
     await dfsWeb3.prepareAccount();
     assert.containsAllKeys(dfsWeb3, ['web3', 'account', 'proxy']);
   })
@@ -24,7 +29,7 @@ describe('DfsWeb3', () => {
         gas: '9000000',
       })
     }
-    const exec = await dfsWeb3.executeViaProxy(a);
+    const exec = await dfsWeb3.executeAction(a);
     // await exec.send({
     //   from: dfsWeb3.account,
     //   value: await a.getEthValue(),
@@ -50,7 +55,7 @@ describe('DfsWeb3', () => {
         gas: '9000000',
       })
     }
-    const exec = await dfsWeb3.executeViaProxy(r);
+    const exec = await dfsWeb3.executeRecipe(r);
     // await exec.send({
     //   from: dfsWeb3.account,
     //   value: await r.getEthValue(),

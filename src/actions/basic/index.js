@@ -8,6 +8,8 @@ const SumInputsAction = require('./SumInputsAction');
 const SubInputsAction = require('./SubInputsAction');
 const GasFeeAction = require('./GasFeeAction');
 const ChangeTriggerDataAction = require("./ChangeTriggerData");
+const ChangeProxyOwnerAction = require('./ChangeProxyOwnerAction');
+const TokenBalanceAction = require('./TokenBalanceAction');
 
 module.exports = {
   SellAction,
@@ -20,4 +22,6 @@ module.exports = {
   SubInputsAction,
   GasFeeAction,
   ChangeTriggerDataAction,
+  ChangeProxyOwnerAction,
+  TokenBalanceAction,
 };
