@@ -94,6 +94,8 @@ const actionAddresses = {
 
   // lido
   'LidoStake': '0x71D44c05B94438fe09a4A7F4dB75fb421dEC1067',
+  'LidoWrap': '0x752e08eB2882DA273Cb8b70151f6c6c33f34D62b',
+  'LidoUnwrap': '0x37800CF1Fe630efc5F2E15A2e182E5C5084861D9',
 
   // insta
   'ClaimInstMaker': '0x15E22A8160F0bDb619C6846C982F8D208A5670D2',
