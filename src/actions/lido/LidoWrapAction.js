@@ -1,7 +1,6 @@
 const Action = require("../../Action");
-const {getAssetInfoByAddress, getAssetInfo} = require("@defisaver/tokens");
+const { getAssetInfo } = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
-const { lidoWrap } = require("../../../../../../test/actions");
 
 /**
  * LidoWrapAction - Turns WETH or StEth into WStEth
@@ -11,7 +10,7 @@ class LidoWrapAction extends Action {
    * @param amount {string} amount to pull and stake
    * @param from {EthAddress} tokens will be taken from this address
    * @param to {EthAddress} WStEth will be sent to this address
-   * @param useEth {bool} true for using WETH, false for using stEth
+   * @param useEth {boolean} true for using WETH, false for using stEth
    */
   constructor(amount, from, to, useEth) {
     super('LidoWrap', getAddr('LidoWrap'), [['uint256','address', 'address', 'bool']], [[amount, from, to, useEth]]);
