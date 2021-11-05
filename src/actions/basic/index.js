@@ -9,7 +9,6 @@ const SubInputsAction = require('./SubInputsAction');
 const ChangeProxyOwnerAction = require('./ChangeProxyOwnerAction');
 const TokenBalanceAction = require('./TokenBalanceAction');
 const AutomationV2Unsub = require('./AutomationV2Unsub');
-const AutomationV2CompAaveUnsub = require('./AutomationV2CompAaveUnsub');
 
 module.exports = {
   SellAction,
