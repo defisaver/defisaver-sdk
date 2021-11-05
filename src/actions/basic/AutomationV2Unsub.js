@@ -1,15 +1,15 @@
 const Action = require("@defisaver/sdk/src/Action");
 const { getAddr } = require('@defisaver/sdk/src/addresses');
 
-class AutomationV2CompAaveUnsub extends Action {
-  constructor(protocol) {
+class AutomationV2Unsub extends Action {
+  constructor(protocol, cdpId = 0) {
     super(
-      'AutomationV2CompAaveUnsub',
+      'AutomationV2Unsub',
       getAddr('AutomationV2Unsub'),
       [["uint256", "uint256"]],
-      [['0', protocol]]
+      [[cdpId, protocol]]
     );
   }
 }
 
-module.exports = AutomationV2CompAaveUnsub;
+module.exports = AutomationV2Unsub;
