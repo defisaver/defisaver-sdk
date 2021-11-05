@@ -12,6 +12,7 @@ const actionAddresses = {
   'SubInputs': '0x3f71c5b806c2aCFA88bd7Ae5F7f8A14121E0FcA6',
   'ChangeProxyOwner': '0x32cEdFfF6e64f6cD1907Ae0b27b78c36320587E7',
   'TokenBalance': '0xFEb82445aEaA675D59A43CD5833f5A6807f97ea2',
+  'AutomationV2Unsub': '0xd3D70313d1E2ab6ae47674C88390Fd9865806201',
 
   // exchange
   'DFSSell': '0x9A765623F9De2D7dB26afb5f7Bb85592DF094CDB',
