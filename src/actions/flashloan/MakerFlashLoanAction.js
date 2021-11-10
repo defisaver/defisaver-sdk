@@ -15,7 +15,7 @@ class MakerFlashLoanAction extends Action {
       'FLMaker',
       getAddr('FLMaker'),
       [['uint256', 'address', 'bytes'], 'uint256'],
-      [[... arguments], 0]
+      [[amount, flParamGetterAddr, flParamGetterData], 0]
     );
   }
 }

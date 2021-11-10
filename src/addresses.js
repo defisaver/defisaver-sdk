@@ -12,6 +12,7 @@ const actionAddresses = {
   'SubInputs': '0x3f71c5b806c2aCFA88bd7Ae5F7f8A14121E0FcA6',
   'ChangeProxyOwner': '0x32cEdFfF6e64f6cD1907Ae0b27b78c36320587E7',
   'TokenBalance': '0xFEb82445aEaA675D59A43CD5833f5A6807f97ea2',
+  'AutomationV2Unsub': '0xd3D70313d1E2ab6ae47674C88390Fd9865806201',
 
   // exchange
   'DFSSell': '0x9A765623F9De2D7dB26afb5f7Bb85592DF094CDB',
@@ -94,6 +95,8 @@ const actionAddresses = {
 
   // lido
   'LidoStake': '0x71D44c05B94438fe09a4A7F4dB75fb421dEC1067',
+  'LidoWrap': '0x752e08eB2882DA273Cb8b70151f6c6c33f34D62b',
+  'LidoUnwrap': '0x37800CF1Fe630efc5F2E15A2e182E5C5084861D9',
 
   // insta
   'ClaimInstMaker': '0x15E22A8160F0bDb619C6846C982F8D208A5670D2',
