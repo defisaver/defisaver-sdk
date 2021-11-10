@@ -81,7 +81,8 @@ class Recipe {
     const assetOwnerPairs = await Promise.all(this.actions.map(a => a.getAssetsToApprove()));
     for (const pairsPerAction of assetOwnerPairs) {
       for (const pair of pairsPerAction) {
-        if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && _pair.asset === pair.asset)) {
+        const isNft = !pair.asset;
+        if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && (isNft ? _pair.tokenId === pair.tokenId : _pair.asset === pair.asset))) {
           uniqueAssetOwnerPairs.push(pair);
         }
       }
