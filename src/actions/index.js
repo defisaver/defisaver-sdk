@@ -12,6 +12,7 @@ const yearn = require('./yearn');
 const lido = require('./lido');
 const insta = require('./insta');
 const balancer = require('./balancer');
+const guni = require('./guni');
 
 module.exports = {
   maker,
@@ -28,4 +29,5 @@ module.exports = {
   lido,
   insta,
   balancer,
+  guni,
 };
