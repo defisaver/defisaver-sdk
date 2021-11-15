@@ -106,6 +106,10 @@ const actionAddresses = {
   'BalancerV2Supply': '0xD78E5D95A28a67F7851b0a94505790813A92E405',
   'BalancerV2Withdraw': '0xCcf4b96407BEF25D7df1c95045CCF64950e73E97',
   'BalancerV2Claim': '0x259Ae83567858B7960d2De0D00F3717a764aD73B',
+
+  // GUni
+   'GUniWithdraw': '0xa329263fFac25F86E03481Ec39307bbf5DbeDD83',
+   'GUniDeposit': '0x5272aD4e504EBD1ED7ca8141AbA0Cc05aDC59370',
 };
 
 const otherAddresses = {
