@@ -109,7 +109,7 @@ const actionAddresses = {
 
   // GUni
    'GUniWithdraw': '0xa329263fFac25F86E03481Ec39307bbf5DbeDD83',
-   'GUniDeposit': '0x5272aD4e504EBD1ED7ca8141AbA0Cc05aDC59370',
+   'GUniDeposit': '0xe943958f01630038c23f8471a2d0ea4378e58b0d',
 };
 
 const otherAddresses = {
