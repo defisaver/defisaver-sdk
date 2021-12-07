@@ -13,6 +13,7 @@ const lido = require('./lido');
 const insta = require('./insta');
 const balancer = require('./balancer');
 const guni = require('./guni');
+const mstable = require('./mstable');
 
 module.exports = {
   maker,
@@ -30,4 +31,5 @@ module.exports = {
   insta,
   balancer,
   guni,
+  mstable,
 };
