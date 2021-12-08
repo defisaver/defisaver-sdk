@@ -110,6 +110,10 @@ const actionAddresses = {
   // GUni
    'GUniWithdraw': '0xa329263fFac25F86E03481Ec39307bbf5DbeDD83',
    'GUniDeposit': '0xe943958f01630038c23f8471a2d0ea4378e58b0d',
+
+   // Rari
+   'RariDeposit': '0xC627A3F12c4f7236218a511DC10e3f5ead1a1D7c',
+   'RariWithdraw': '0x8408EeCcC2c2FC25F2cF720398DAAD0A05EfE487',
 };
 
 const otherAddresses = {
