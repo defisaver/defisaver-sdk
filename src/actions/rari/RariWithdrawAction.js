@@ -26,7 +26,7 @@ class RariWithdrawAction extends Action {
   }
 
   async getAssetsToApprove() {
-    
+    return [{asset: this.args[0][1], owner: this.args[0][3]}];
   }
 }
 
