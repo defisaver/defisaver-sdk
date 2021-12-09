@@ -56,7 +56,7 @@ class MStableDepositAction extends Action {
     }
 
     async getAssetsToApprove() {
-        return [{ asset: this.args[0], owner: this.args[0][4]}];
+        return [{ asset: this.args[0][0], owner: this.args[0][4]}];
     }
 }
 

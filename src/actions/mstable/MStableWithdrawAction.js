@@ -11,6 +11,7 @@ class MStableWithdrawAction extends Action {
      * @param mAsset
      * @param saveAddress
      * @param vaultAddress
+     * @param from
      * @param to
      * @param amount
      * @param minOut
@@ -21,21 +22,23 @@ class MStableWithdrawAction extends Action {
         mAsset,
         saveAddress,
         vaultAddress,
+        from,
         to,
         amount,
         minOut,
-        stake,
+        unstake,
     ) {
         requireAddress(bAsset);
         requireAddress(mAsset);
         requireAddress(saveAddress);
         requireAddress(vaultAddress);
+        requireAddress(from);
         requireAddress(to);
 
         super(
             'MStableWithdraw',
             getAddr('MStableWithdraw'),
-            [['address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'bool']],
+            [['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'bool']],
             [[...arguments]],
         );
 
@@ -48,8 +51,16 @@ class MStableWithdrawAction extends Action {
             this.args[0][5],
             this.args[0][6],
             this.args[0][7],
+            this.args[0][8],
         ];
     }
+
+    async getAssetsToApprove() {
+        const asset = this.args[2];
+        const from = this.args[4];
+        const unstake = this.args[8];
+        return unstake ? [] : [{asset: getAssetInfo(asset).address, owner: from}]
+      }
 }
 
 module.exports = MStableWithdrawAction;
