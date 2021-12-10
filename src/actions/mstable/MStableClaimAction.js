@@ -22,8 +22,8 @@ class MStableClaimAction extends Action {
         requireAddress(to);
 
         super(
-            'MStableSave',
-            getAddr('MStableSave'),
+            'MStableClaim',
+            getAddr('MStableClaim'),
             [['address', 'address', 'uint256', 'uint256']],
             [[...arguments]],
         );
