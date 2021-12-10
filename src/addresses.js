@@ -114,6 +114,11 @@ const actionAddresses = {
    // Rari
    'RariDeposit': '0xC627A3F12c4f7236218a511DC10e3f5ead1a1D7c',
    'RariWithdraw': '0x8408EeCcC2c2FC25F2cF720398DAAD0A05EfE487',
+  
+   // mStable
+   'MStableDeposit': '0x1887235CFE1927782a3e7eD15fb073586c949858',
+   'MStableWithdraw': '0xb164456190577fbBe8FB8bF5Fa48a106b328A579',
+   'MStableClaim': '0x28279A806aDeDedFD33e39C7375dc0c0ee943847',
 };
 
 const otherAddresses = {
