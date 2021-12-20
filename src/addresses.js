@@ -15,7 +15,7 @@ const actionAddresses = {
   'AutomationV2Unsub': '0xd3D70313d1E2ab6ae47674C88390Fd9865806201',
 
   // exchange
-  'DFSSell': '0x9A765623F9De2D7dB26afb5f7Bb85592DF094CDB',
+  'DFSSell': '0xf4adae649B2c3B2795608b2D222c852929944898',
   'DFSBuy': '0x939dCad6A3D1fEACccB60Af90876D904468CbF66',
 
   // maker
