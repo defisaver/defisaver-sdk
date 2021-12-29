@@ -25,6 +25,8 @@ const AaveAccessLists = {
 
     AaveClaimStkAave: [
         // missing contract address
+        ['0xd784927Ff2f95ba542BfC824c8a8a98F3495f6b5', []], // StakedTokenIncentivesController
+        ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
     ],
 };
 
