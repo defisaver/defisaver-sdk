@@ -3,6 +3,8 @@ const Web3Utils = require('web3-utils');
 
 const ActionAbi = require('./abis/Action.json');
 
+const { AccessLists } = require('../AccessLists');
+
 /**
  * Single action that can be executed directly, or combined into a set (ie. supply a vault)
  */
@@ -131,6 +133,14 @@ class Action {
    */
   async getEthValue() {
     return '0';
+  }
+
+  /**
+   * Access list for single action
+   * @returns {Promise<Array<*>>}
+   */
+  async getAccessList() {
+    return AccessLists[this.name];
   }
 }
 

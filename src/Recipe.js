@@ -99,6 +99,43 @@ class Recipe {
       .reduce((acc, val) => acc.add(new BN(val)), new BN(0))
       .toString();
   }
+
+  /**
+   * Generates an access list for the recipe
+   * @returns {Promise<Array<*>>}
+   */
+  async getAccessList() {
+    const accessListUnion = new Map();
+
+    await this.actions.forEach(async (action) => {
+      const singleActionAccessList = await action.getAccessList();
+
+      singleActionAccessList.forEach((entry) => {
+        const contractAddr = entry[0];
+        const storageAddrs = entry[1];
+
+        if (accessListUnion.has(contractAddr)) {
+          const contractStorage = accessListUnion.get(contractAddr);
+
+          storageAddrs.forEach(
+            (storageAddr) => contractStorage.add(storageAddr),
+          );
+        }
+        else {
+          accessListUnion.set(contractAddr, new Set(storageAddrs));
+        }
+      });
+    });
+
+    [...accessListUnion.keys()].forEach(
+      (k) => accessListUnion.set(
+        k,
+        [...accessListUnion.get(k)],
+      ),
+    );
+
+    return [...accessListUnion];
+  }
 }
 
 module.exports = Recipe;
