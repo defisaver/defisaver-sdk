@@ -1,5 +1,5 @@
-const Action = require("@defisaver/sdk/src/Action");
-const { getAddr } = require('@defisaver/sdk/src/addresses');
+const Action = require("../../Action");
+const {getAddr} = require("../../addresses.js");
 
 class AutomationV2Unsub extends Action {
   constructor(protocol, cdpId = 0) {
