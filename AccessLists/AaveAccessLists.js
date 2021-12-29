@@ -23,10 +23,6 @@ const AaveAccessLists = {
         ['0x27d77c80A88665342C98Ea31B687A5fc8ca9a445', []], // AaveCollateralSwitch
     ],
 
-    AaveMigrateLend: [
-        // TODO
-    ],
-
     AaveClaimStkAave: [
         // missing contract address
     ],
