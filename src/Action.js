@@ -137,9 +137,9 @@ class Action {
 
   /**
    * Access list for single action
-   * @returns {Promise<Array<*>>}
+   * @returns {Array<*>}
    */
-  async getAccessList() {
+  getAccessList() {
     return AccessLists[this.name];
   }
 }

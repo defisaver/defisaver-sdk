@@ -102,13 +102,13 @@ class Recipe {
 
   /**
    * Generates an access list for the recipe
-   * @returns {Promise<Array<*>>}
+   * @returns {Array<*>}
    */
-  async getAccessList() {
+  getAccessList() {
     const accessListUnion = new Map();
 
-    await this.actions.forEach(async (action) => {
-      const singleActionAccessList = await action.getAccessList();
+    this.actions.forEach(async (action) => {
+      const singleActionAccessList = action.getAccessList();
 
       singleActionAccessList.forEach((entry) => {
         const contractAddr = entry[0];
