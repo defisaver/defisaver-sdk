@@ -1,10 +1,10 @@
 const AbiCoder = require('web3-eth-abi');
 const { BN } = require('web3-utils');
 const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
-const Action = require('./Action');
-const {getAddr} = require('./addresses');
-const RecipeAbi = require('./abis/Recipe.json');
-const { AccessLists } = require('../AccessLists');
+const Action = require('../../src/Action');
+const {getAddr} = require('../../src/addresses');
+const RecipeAbi = require('../../src/abis/Recipe.json');
+const MockAccessLists = require('./MockAccessLists');
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
@@ -107,11 +107,11 @@ class Recipe {
    */
   getAccessList() {
     const addressMapping = {};
-    AccessLists['ExecuteTaskEntryPoint'].forEach((entry) => {
+    MockAccessLists['ExecuteTaskEntryPoint'].forEach((entry) => {
       addressMapping[entry[0]] = entry[1];
     });
     this.actions.forEach((action) => {
-      const accessList = action.getAccessList();
+      const accessList = MockAccessLists[action.name];
       accessList.forEach((entry) => {
         addressMapping[entry[0]] = new Set([...entry[1], ...(addressMapping[entry[0]] ? addressMapping[entry[0]] : [])]);
       })
