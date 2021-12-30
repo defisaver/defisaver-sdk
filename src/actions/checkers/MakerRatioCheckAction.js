@@ -10,10 +10,10 @@ class MakerRatioCheckAction extends Action {
    * @param checkTarget {}
    * @param targetRatio {string} The ratio user want to be at
    * @param vaultId {string} Id of the vault
-   * @param nextPrice {string} Next maker oracle price if needed
+   * @param startRatioIndex {uint256} Index in returnValues where ratio before actions is stored
    */
-  constructor(ratioState, checkTarget, targetRatio, vaultId, nextPrice) {
-    super("McdRatioCheck", getAddr("McdRatioCheck"), [["uint8","bool","uint256","uint256","uint256"]], [[...arguments]]);
+  constructor(ratioState, checkTarget, targetRatio, vaultId, startRatioIndex) {
+    super("McdRatioCheck", getAddr("McdRatioCheck"), [["uint8","bool","uint256","uint256","uint256"]], [[ratioState, checkTarget, targetRatio, vaultId, startRatioIndex]]);
 
     this.mappableArgs = [
       this.args[0][0],
