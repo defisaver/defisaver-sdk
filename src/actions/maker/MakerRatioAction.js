@@ -7,14 +7,12 @@ const { getAddr } = require('../../addresses.js');
 class MakerRatioAction extends Action {
   /**
    * @param vaultId {uint256}
-   * @param nextPrice {uint256}
    */
-  constructor(vaultId, nextPrice) {
-    super('McdRatio', getAddr('McdRatio'), [['uint256','uint256']], [[vaultId, nextPrice]]);
+  constructor(vaultId) {
+    super('McdRatio', getAddr('McdRatio'), [['uint256']], [[vaultId]]);
 
     this.mappableArgs = [
       this.args[0][0],
-      this.args[0][1],
     ];
   }
 }
