@@ -1,5 +1,5 @@
-const SendTokenAction = require("@defisaver/sdk/src/actions/basic/SendTokenAction");
-const { getAddr } = require('@defisaver/sdk/src/addresses');
+const SendTokenAction = require("../basic/SendTokenAction");
+const { getAddr } = require('../../addresses.js');
 
 /**
  * Pays back a flashloan from Maker

@@ -10,9 +10,6 @@
 <dt><a href="#AaveCollateralSwitchAction">AaveCollateralSwitchAction</a></dt>
 <dd><p>AaveCollateralSwitchAction - Aave enable/disable token usage as collateral</p>
 </dd>
-<dt><a href="#AaveMigrateLendAction">AaveMigrateLendAction</a></dt>
-<dd><p>AaveMigrateLendAction - Migrates Lend to Aave</p>
-</dd>
 <dt><a href="#AavePaybackAction">AavePaybackAction</a></dt>
 <dd><p>AavePaybackAction - Payback borrowed tokens from Aave</p>
 </dd>
@@ -86,14 +83,38 @@
 <dt><a href="#AaveV2FlashLoanPaybackAction">AaveV2FlashLoanPaybackAction</a></dt>
 <dd><p>Pays back a single flashloan from Aave v2</p>
 </dd>
+<dt><a href="#BalancerFlashLoanAction">BalancerFlashLoanAction</a></dt>
+<dd><p>Gets a flashloan from Balancer</p>
+</dd>
+<dt><a href="#BalancerFlashLoanPaybackAction">BalancerFlashLoanPaybackAction</a></dt>
+<dd><p>Pays back a flashloan from Balancer</p>
+</dd>
 <dt><a href="#DyDxFlashLoanAction">DyDxFlashLoanAction</a></dt>
 <dd><p>Gets a flashloan from DyDx</p>
 </dd>
 <dt><a href="#DyDxFlashLoanPaybackAction">DyDxFlashLoanPaybackAction</a></dt>
 <dd><p>Pays back a flashloan from DyDx</p>
 </dd>
+<dt><a href="#MakerFlashLoanAction">MakerFlashLoanAction</a></dt>
+<dd><p>Gets a flashloan from Maker</p>
+</dd>
+<dt><a href="#MakerFlashLoanPaybackAction">MakerFlashLoanPaybackAction</a></dt>
+<dd><p>Pays back a flashloan from Maker</p>
+</dd>
+<dt><a href="#GUniDeposit">GUniDeposit</a></dt>
+<dd><p>Action that adds liquidity to G-UNI pool of interest (mints G-UNI LP tokens)</p>
+</dd>
+<dt><a href="#GUniWithdraw">GUniWithdraw</a></dt>
+<dd><p>Action that removes liquidity from a G-UNI pool and burns G-UNI LP tokens</p>
+</dd>
 <dt><a href="#LidoStakeAction">LidoStakeAction</a></dt>
 <dd><p>LidoStakeAction - Receives WETH, transforms it to ETH then sends it to Lido staking contract receiving stETH in return</p>
+</dd>
+<dt><a href="#LidoUnwrapAction">LidoUnwrapAction</a></dt>
+<dd><p>LidoUnwrapAction - Unwraps WStEth into StEth</p>
+</dd>
+<dt><a href="#LidoWrapAction">LidoWrapAction</a></dt>
+<dd><p>LidoWrapAction - Turns WETH or StEth into WStEth</p>
 </dd>
 <dt><a href="#LiquityBorrowAction">LiquityBorrowAction</a></dt>
 <dd><p>LiquityBorrowAction - Borrows LUSD from the trove</p>
@@ -160,6 +181,21 @@
 </dd>
 <dt><a href="#MakerWithdrawAction">MakerWithdrawAction</a></dt>
 <dd><p>MakerWithdrawAction - Withdraw token from a Vault</p>
+</dd>
+<dt><a href="#MStableClaimAction">MStableClaimAction</a></dt>
+<dd><p>MStableClaimAction</p>
+</dd>
+<dt><a href="#MStableDepositAction">MStableDepositAction</a></dt>
+<dd><p>MStableDepositAction</p>
+</dd>
+<dt><a href="#MStableWithdrawAction">MStableWithdrawAction</a></dt>
+<dd><p>MStableWithdrawAction</p>
+</dd>
+<dt><a href="#RariDepositAction">RariDepositAction</a></dt>
+<dd><p>RariDepositAction - action that deposits one stablecoin (DAI, USDC, USDT, TUSD, BUSD, and sUSD) and receives RSPT back</p>
+</dd>
+<dt><a href="#RariWithdrawAction">RariWithdrawAction</a></dt>
+<dd><p>RariWithdrawAction - Send pool tokens to fund manager which burns them, receive underlying stablecoin back</p>
 </dd>
 <dt><a href="#ReflexerGenerateAction">ReflexerGenerateAction</a></dt>
 <dd><p>ReflexerGenerateAction - Generated Dai from a Safe</p>
@@ -244,21 +280,6 @@ AaveClaimStkAaveAction - Claims stkAave from incentives controller
 AaveCollateralSwitchAction - Aave enable/disable token usage as collateral
 
 **Kind**: global class  
-<a name="AaveMigrateLendAction"></a>
-
-## AaveMigrateLendAction
-AaveMigrateLendAction - Migrates Lend to Aave
-
-**Kind**: global class  
-<a name="new_AaveMigrateLendAction_new"></a>
-
-### new AaveMigrateLendAction(lendAmount, from, to)
-**Params**
-
-- lendAmount <code>string</code>
-- from <code>EthAddress</code>
-- to <code>EthAddress</code>
-
 <a name="AavePaybackAction"></a>
 
 ## AavePaybackAction
@@ -526,7 +547,7 @@ CompoundPaybackAction - Payback borrowed tokens from Compound
 - cTokenAddr <code>EthAddress</code>
 - amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
 - from <code>EthAddress</code>
-- onBehalf <code>Array.&lt;EthAddress&gt;</code>
+- onBehalf <code>EthAddress</code> - Defaults to DsProxy address if 0x0
 
 <a name="CompoundSupplyAction"></a>
 
@@ -621,6 +642,36 @@ Pays back a single flashloan from Aave v2
 - loanAmount <code>string</code>
 - tokenAddr <code>EthAddress</code>
 
+<a name="BalancerFlashLoanAction"></a>
+
+## BalancerFlashLoanAction
+Gets a flashloan from Balancer
+
+**Kind**: global class  
+<a name="new_BalancerFlashLoanAction_new"></a>
+
+### new BalancerFlashLoanAction(tokens, amounts, flParamGetterAddr, flParamGetterData)
+**Params**
+
+- tokens <code>Array.&lt;EthAddress&gt;</code>
+- amounts <code>Array.&lt;string&gt;</code>
+- flParamGetterAddr <code>EthAddress</code>
+- flParamGetterData <code>bytes</code>
+
+<a name="BalancerFlashLoanPaybackAction"></a>
+
+## BalancerFlashLoanPaybackAction
+Pays back a flashloan from Balancer
+
+**Kind**: global class  
+<a name="new_BalancerFlashLoanPaybackAction_new"></a>
+
+### new BalancerFlashLoanPaybackAction(loanAmount, tokenAddr)
+**Params**
+
+- loanAmount <code>string</code>
+- tokenAddr <code>EthAddress</code>
+
 <a name="DyDxFlashLoanAction"></a>
 
 ## DyDxFlashLoanAction
@@ -651,6 +702,46 @@ Pays back a flashloan from DyDx
 - loanAmount <code>string</code>
 - tokenAddr <code>EthAddress</code>
 
+<a name="MakerFlashLoanAction"></a>
+
+## MakerFlashLoanAction
+Gets a flashloan from Maker
+
+**Kind**: global class  
+<a name="new_MakerFlashLoanAction_new"></a>
+
+### new MakerFlashLoanAction(amount, flParamGetterAddr, flParamGetterData)
+**Params**
+
+- amount <code>string</code>
+- flParamGetterAddr <code>EthAddress</code>
+- flParamGetterData <code>bytes</code>
+
+<a name="MakerFlashLoanPaybackAction"></a>
+
+## MakerFlashLoanPaybackAction
+Pays back a flashloan from Maker
+
+**Kind**: global class  
+<a name="new_MakerFlashLoanPaybackAction_new"></a>
+
+### new MakerFlashLoanPaybackAction(loanAmount)
+**Params**
+
+- loanAmount <code>string</code>
+
+<a name="GUniDeposit"></a>
+
+## GUniDeposit
+Action that adds liquidity to G-UNI pool of interest (mints G-UNI LP tokens)
+
+**Kind**: global class  
+<a name="GUniWithdraw"></a>
+
+## GUniWithdraw
+Action that removes liquidity from a G-UNI pool and burns G-UNI LP tokens
+
+**Kind**: global class  
 <a name="LidoStakeAction"></a>
 
 ## LidoStakeAction
@@ -665,6 +756,37 @@ LidoStakeAction - Receives WETH, transforms it to ETH then sends it to Lido stak
 - amount <code>string</code> - amount of WETH to pull and stake
 - from <code>EthAddress</code> - WETH will be taken from this address
 - to <code>EthAddress</code> - stETH will be sent to this address
+
+<a name="LidoUnwrapAction"></a>
+
+## LidoUnwrapAction
+LidoUnwrapAction - Unwraps WStEth into StEth
+
+**Kind**: global class  
+<a name="new_LidoUnwrapAction_new"></a>
+
+### new LidoUnwrapAction(amount, from, to)
+**Params**
+
+- amount <code>string</code> - amount of WStEth to pull and Unwrap
+- from <code>EthAddress</code> - WstEth will be taken from this address
+- to <code>EthAddress</code> - stETH will be sent to this address
+
+<a name="LidoWrapAction"></a>
+
+## LidoWrapAction
+LidoWrapAction - Turns WETH or StEth into WStEth
+
+**Kind**: global class  
+<a name="new_LidoWrapAction_new"></a>
+
+### new LidoWrapAction(amount, from, to, useEth)
+**Params**
+
+- amount <code>string</code> - amount to pull and stake
+- from <code>EthAddress</code> - tokens will be taken from this address
+- to <code>EthAddress</code> - WStEth will be sent to this address
+- useEth <code>boolean</code> - true for using WETH, false for using stEth
 
 <a name="LiquityBorrowAction"></a>
 
@@ -998,6 +1120,101 @@ MakerWithdrawAction - Withdraw token from a Vault
 - joinAddr <code>EthAddress</code>
 - to <code>EthAddress</code>
 - mcdManager <code>EthAddress</code>
+
+<a name="MStableClaimAction"></a>
+
+## MStableClaimAction
+MStableClaimAction
+
+**Kind**: global class  
+<a name="new_MStableClaimAction_new"></a>
+
+### new MStableClaimAction(vaultAddress, to, first, last)
+**Params**
+
+- vaultAddress
+- to
+- first
+- last
+
+<a name="MStableDepositAction"></a>
+
+## MStableDepositAction
+MStableDepositAction
+
+**Kind**: global class  
+<a name="new_MStableDepositAction_new"></a>
+
+### new MStableDepositAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, stake)
+**Params**
+
+- bAsset
+- mAsset
+- saveAddress
+- vaultAddress
+- from
+- to
+- amount
+- minOut
+- stake
+
+<a name="MStableWithdrawAction"></a>
+
+## MStableWithdrawAction
+MStableWithdrawAction
+
+**Kind**: global class  
+<a name="new_MStableWithdrawAction_new"></a>
+
+### new MStableWithdrawAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, stake)
+**Params**
+
+- bAsset
+- mAsset
+- saveAddress
+- vaultAddress
+- from
+- to
+- amount
+- minOut
+- stake
+
+<a name="RariDepositAction"></a>
+
+## RariDepositAction
+RariDepositAction - action that deposits one stablecoin (DAI, USDC, USDT, TUSD, BUSD, and sUSD) and receives RSPT back
+
+**Kind**: global class  
+<a name="new_RariDepositAction_new"></a>
+
+### new RariDepositAction(fundManager, stablecoinAddress, poolTokenAddress, amount, from, to)
+**Params**
+
+- fundManager <code>EthAddress</code> - fundManager for the pool which we want to deposit into
+- stablecoinAddress <code>EthAddress</code> - stablecoin token address
+- poolTokenAddress <code>EthAddress</code> - poolTokenAddress
+- amount <code>string</code> - amount of stablecoin to pull and deposit
+- from <code>EthAddress</code> - stablecoins will be taken from this address
+- to <code>EthAddress</code> - RSPT will be sent to this address
+
+<a name="RariWithdrawAction"></a>
+
+## RariWithdrawAction
+RariWithdrawAction - Send pool tokens to fund manager which burns them, receive underlying stablecoin back
+
+**Kind**: global class  
+<a name="new_RariWithdrawAction_new"></a>
+
+### new RariWithdrawAction(fundManager, poolTokenAddress, poolTokensAmountToPull, from, stablecoinAddress, stablecoinAmountToWithdraw, to)
+**Params**
+
+- fundManager <code>EthAddress</code> - fundManager for the pool which we want to withdraw from
+- poolTokenAddress <code>EthAddress</code> - poolToken address
+- poolTokensAmountToPull <code>string</code> - amount of tokens to pull to proxy
+- from <code>EthAddress</code> - poolTokens will be taken from this address
+- stablecoinAddress <code>EthAddress</code> - stablecoin token address
+- stablecoinAmountToWithdraw <code>string</code> - amount of stablecoin to withdraw from Rari
+- to <code>EthAddress</code> - stablecoins withdrawn will be sent to this address
 
 <a name="ReflexerGenerateAction"></a>
 

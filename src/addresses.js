@@ -2,6 +2,7 @@
 
 const actionAddresses = {
   'TaskExecutor': '0xb3e5371d55e1e84bfFE7D0b57Bd9c6A4C6b3C635',
+  'DFSRegistry': '0xD6049E1F5F3EfF1F921f5532aF1A1632bA23929C',
 
   // utils
   'WrapEth': '0x9E702937F42Db2cE58342Ca5F213Ef33D51AEF6b',
@@ -79,7 +80,7 @@ const actionAddresses = {
   'YearnWithdraw': '0x5BDf949c3a74E4F78328f6ad1F3697CC8edbe1A2',
 
   // liquity
-  'LiquityClose': '0x4Eb6e5C7fbf7b6850912f893B85bB87109E86a1f',
+  'LiquityClose': '0x9C563dc9F8e3FcCF996DAB4b6B6003fb7Bbca90f',
   'LiquityBorrow': '0x46e8fE6bbE3C08eCc250295583490be9ac97B969',
   'LiquityOpen': '0x50D69350E2629987551C563E19D29dee6Faf3A78',
   'LiquityPayback': '0x86eCa72dF81ae76AfF0dEeC01521154F33147e46',
@@ -114,7 +115,7 @@ const actionAddresses = {
    // Rari
    'RariDeposit': '0xC627A3F12c4f7236218a511DC10e3f5ead1a1D7c',
    'RariWithdraw': '0x8408EeCcC2c2FC25F2cF720398DAAD0A05EfE487',
-  
+
    // mStable
    'MStableDeposit': '0x1887235CFE1927782a3e7eD15fb073586c949858',
    'MStableWithdraw': '0xb164456190577fbBe8FB8bF5Fa48a106b328A579',
