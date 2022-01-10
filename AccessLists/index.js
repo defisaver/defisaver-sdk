@@ -1,5 +1,3 @@
-const { RecipeSystemAccessLists } = require('./RecipeSystemAccessLists');
-
 const { MakerAccessLists } = require('./MakerAccessLists');
 const { AaveAccessLists } = require('./AaveAccessLists');
 const { BalancerAccessLists } = require('./BalancerAccessLists');
@@ -19,8 +17,6 @@ const { FlashLoanAccessLists } = require('./FlashLoanAccessLists');
 const { UtilsAccessLists } = require('./UtilsAccessLists');
 
 const AccessLists = {
-    ...RecipeSystemAccessLists,
-
     ...MakerAccessLists,
     ...AaveAccessLists,
     ...BalancerAccessLists,

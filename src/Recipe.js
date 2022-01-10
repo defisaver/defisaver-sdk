@@ -106,10 +106,10 @@ class Recipe {
    * @returns {Array<*>}
    */
   getAccessList() {
-    const addressMapping = {};
-    AccessLists['ExecuteTaskEntryPoint'].forEach(([address, memoryLocations]) => {
-      addressMapping[address] = memoryLocations;
-    });
+    const addressMapping = {
+      [getAddr('TaskExecutor')]: [],
+      [getAddr('DFSRegistry')]: [],
+    };
     this.actions.forEach((action) => {
       const accessList = action.getAccessList();
       accessList.forEach(([address, memoryLocations]) => {

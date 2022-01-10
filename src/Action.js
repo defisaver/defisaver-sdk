@@ -140,7 +140,10 @@ class Action {
    * @returns {Array<*>}
    */
   getAccessList() {
-    return AccessLists[this.name];
+    return [
+      [this.contractAddress, []],
+      ...(AccessLists[this.name] || []),
+    ]
   }
 }
 
