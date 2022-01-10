@@ -1,5 +1,5 @@
 const AbiCoder = require('web3-eth-abi');
-const { BN } = require('web3-utils');
+const { BN, padLeft, toHex } = require('web3-utils');
 const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
 const Action = require('../../src/Action');
 const {getAddr} = require('../../src/addresses');
@@ -103,7 +103,7 @@ class Recipe {
 
   /**
    * Generates an access list for the recipe
-   * @returns {Array<*>}
+   * @returns {AccessList}
    */
   getAccessList() {
     const addressMapping = {
@@ -111,12 +111,15 @@ class Recipe {
       [getAddr('DFSRegistry')]: [],
     };
     this.actions.forEach((action) => {
-      const accessList = MockAccessLists[action.name];
-      accessList.forEach(([address, memoryLocations]) => {
-        addressMapping[address] = new Set([...memoryLocations, ...(addressMapping[address] || [])]);
+      const accessList = MockAccessLists[action.name].map(([address, storageKeys]) => ({ address, storageKeys: storageKeys.map(num => padLeft(toHex(num), 64)) }));
+      accessList.forEach(({ address, storageKeys }) => {
+        addressMapping[address] = new Set([...storageKeys, ...(addressMapping[address] || [])]);
       })
     });
-    return Object.keys(addressMapping).map((addr) => [addr, [...addressMapping[addr]]]);
+    return Object.keys(addressMapping).map((address) => ({
+      address,
+      storageKeys: [...addressMapping[address]],
+    }));
   }
 }
 

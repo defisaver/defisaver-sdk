@@ -1,5 +1,5 @@
 const AbiCoder = require('web3-eth-abi');
-const Web3Utils = require('web3-utils');
+const { keccak256, padLeft, toHex } = require('web3-utils');
 
 const ActionAbi = require('./abis/Action.json');
 
@@ -32,7 +32,7 @@ class Action {
    * @private
    */
   _getId() {
-    return Web3Utils.keccak256(this.name);
+    return keccak256(this.name);
   }
 
   /**
@@ -137,13 +137,16 @@ class Action {
 
   /**
    * Access list for single action
-   * @returns {Array<*>}
+   * @returns {AccessList}
    */
   getAccessList() {
     return [
       [this.contractAddress, []],
       ...(AccessLists[this.name] || []),
-    ]
+    ].map(([address, storageKeys]) => ({
+      address: address,
+      storageKeys: storageKeys.map(num => padLeft(toHex(num), 64)),
+    }));
   }
 }
 

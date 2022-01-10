@@ -2,18 +2,19 @@ const { assert } = require("chai");
 const dfs = require("../../index.js");
 const Recipe = require("./Recipe");
 const MockAccessLists = require('./MockAccessLists');
+const { padLeft, toHex } = require('web3-utils');
 
 const testDuplicates = (accessList) => {
     const contractAddrs = accessList.map((entry) => {
         assert(
-            entry[1].length == [...new Set(entry[1])].length,
+            entry.storageKeys.length === [...new Set(entry.storageKeys)].length,
             'Duplicate storage address found',
         );
-        return entry[0];
+        return entry.address;
     })
 
     assert(
-        accessList.length == [...new Set(contractAddrs)].length,
+        accessList.length === [...new Set(contractAddrs)].length,
         'Duplicate contract address found',
     );
 
@@ -22,15 +23,20 @@ const testDuplicates = (accessList) => {
 
 const testInclusion = (recipe, accessList) => {
     const actions = recipe.actions;
-    const addressMapping = Object.fromEntries(accessList);
+    const addressMapping = accessList.reduce((list, current) => {
+      list[current.address] = current.storageKeys;
+      return list;
+    }, {});
     actions.forEach((action) => {
-        MockAccessLists[action.name].forEach((entry) => {
-            const storageAddrs = new Set(addressMapping[entry[0]]);
+        MockAccessLists[action.name]
+          .map(([address, storageKeys]) => ({ address, storageKeys: storageKeys.map(num => padLeft(toHex(num), 64)) }))
+          .forEach((entry) => {
+            const storageAddrs = new Set(addressMapping[entry.address]);
             assert(
                 storageAddrs,
                 'Access list missing a contract address',
             );
-            entry[1].forEach((addr) => {
+            entry.storageKeys.forEach((addr) => {
                 assert(
                     storageAddrs.has(addr),
                     'Access list missing a storage address',
@@ -79,7 +85,8 @@ describe('Access-Lists', () => {
     sampleRecipes.forEach((recipe) => {
         it(`... should make an access list for recipe ${recipe.name}`, () => {
             const recipeAccessList = recipe.getAccessList();
-            testDuplicates(recipeAccessList);
+          console.log(recipeAccessList);
+          testDuplicates(recipeAccessList);
             testInclusion(recipe, recipeAccessList);
         });
     });

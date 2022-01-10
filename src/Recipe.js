@@ -103,7 +103,7 @@ class Recipe {
 
   /**
    * Generates an access list for the recipe
-   * @returns {Array<*>}
+   * @returns {AccessList}
    */
   getAccessList() {
     const addressMapping = {
@@ -112,11 +112,14 @@ class Recipe {
     };
     this.actions.forEach((action) => {
       const accessList = action.getAccessList();
-      accessList.forEach(([address, memoryLocations]) => {
-        addressMapping[address] = new Set([...memoryLocations, ...(addressMapping[address] || [])]);
+      accessList.forEach(({ address, storageKeys }) => {
+        addressMapping[address] = new Set([...storageKeys, ...(addressMapping[address] || [])]);
       })
     });
-    return Object.keys(addressMapping).map((addr) => [addr, [...addressMapping[addr]]]);
+    return Object.keys(addressMapping).map((address) => ({
+      address,
+      storageKeys: [...addressMapping[address]],
+    }));
   }
 }
 
