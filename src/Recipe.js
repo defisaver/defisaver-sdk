@@ -107,13 +107,13 @@ class Recipe {
    */
   getAccessList() {
     const addressMapping = {};
-    AccessLists['ExecuteTaskEntryPoint'].forEach((entry) => {
-      addressMapping[entry[0]] = entry[1];
+    AccessLists['ExecuteTaskEntryPoint'].forEach(([address, memoryLocations]) => {
+      addressMapping[address] = memoryLocations;
     });
     this.actions.forEach((action) => {
       const accessList = action.getAccessList();
-      accessList.forEach((entry) => {
-        addressMapping[entry[0]] = new Set([...entry[1], ...(addressMapping[entry[0]] ? addressMapping[entry[0]] : [])]);
+      accessList.forEach(([address, memoryLocations]) => {
+        addressMapping[address] = new Set([...memoryLocations, ...(addressMapping[address] || [])]);
       })
     });
     return Object.keys(addressMapping).map((addr) => [addr, [...addressMapping[addr]]]);

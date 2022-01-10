@@ -93,7 +93,7 @@ describe('Access-Lists', () => {
             new dfs.actions.compound.CompoundSupplyAction(deadbeef, '$1', deadbeef, true),
             new dfs.actions.compound.CompoundWithdrawAction(deadbeef, 0, deadbeef),
         ]);
-    
+
         const recipeAccessList = recipe.getAccessList();
         testDuplicates(recipeAccessList);
         testInclusion(recipe, recipeAccessList);
