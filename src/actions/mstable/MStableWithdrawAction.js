@@ -1,6 +1,7 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const { getAddr } = require('../../addresses.js');
+const Action = require('../../Action');
+const { requireAddress } = require('../../utils/general');
+const { getAddr } = require('../../addresses');
+const mstableAssetPairs = require('../../utils/mstableAssetPairs');
 
 /**
  * MStableWithdrawAction
@@ -15,7 +16,7 @@ class MStableWithdrawAction extends Action {
      * @param to
      * @param amount
      * @param minOut
-     * @param stake
+     * @param assetPair
      */
     constructor(
         bAsset,
@@ -26,7 +27,7 @@ class MStableWithdrawAction extends Action {
         to,
         amount,
         minOut,
-        unstake,
+        assetPair,
     ) {
         requireAddress(bAsset);
         requireAddress(mAsset);
@@ -38,7 +39,7 @@ class MStableWithdrawAction extends Action {
         super(
             'MStableWithdraw',
             getAddr('MStableWithdraw'),
-            [['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'bool']],
+            [['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256']],
             [[...arguments]],
         );
 
@@ -56,11 +57,26 @@ class MStableWithdrawAction extends Action {
     }
 
     async getAssetsToApprove() {
-        const asset = this.args[2];
-        const from = this.args[4];
-        const unstake = this.args[8];
-        return unstake ? [] : [{asset: getAssetInfo(asset).address, owner: from}]
-      }
+        const assetPair = this.args[0][8];
+        const owner = this.args[0][4];
+        let asset;
+        switch (assetPair) {
+        case mstableAssetPairs.BASSET_IMASSETVAULT:
+        case mstableAssetPairs.MASSET_IMASSETVAULT:
+        case mstableAssetPairs.IMASSET_IMASSETVAULT:
+            return [];
+        case mstableAssetPairs.MASSET_IMASSET:
+        case mstableAssetPairs.BASSET_IMASSET:
+            asset = this.args[0][2];
+            break;
+        case mstableAssetPairs.BASSET_MASSET:
+            asset = this.args[0][1];
+            break;
+        default:
+            return [];
+        }
+        return [{ asset, owner }];
+    }
 }
 
 module.exports = MStableWithdrawAction;
