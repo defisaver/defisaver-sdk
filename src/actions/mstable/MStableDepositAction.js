@@ -37,8 +37,8 @@ class MStableDepositAction extends Action {
         requireAddress(to);
 
         super(
-            'MStableDeposit',
-            getAddr('MStableDeposit'),
+            'MStableDepositNew',
+            getAddr('MStableDepositNew'),
             [['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256']],
             [[...arguments]],
         );

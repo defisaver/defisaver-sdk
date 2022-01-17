@@ -37,8 +37,8 @@ class MStableWithdrawAction extends Action {
         requireAddress(to);
 
         super(
-            'MStableWithdraw',
-            getAddr('MStableWithdraw'),
+            'MStableWithdrawNew',
+            getAddr('MStableWithdrawNew'),
             [['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256']],
             [[...arguments]],
         );
