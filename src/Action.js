@@ -1,7 +1,9 @@
 const AbiCoder = require('web3-eth-abi');
-const Web3Utils = require('web3-utils');
+const { keccak256, padLeft, toHex } = require('web3-utils');
 
 const ActionAbi = require('./abis/Action.json');
+
+const { AccessLists } = require('../AccessLists');
 
 /**
  * Single action that can be executed directly, or combined into a set (ie. supply a vault)
@@ -161,6 +163,20 @@ class Action {
    */
   async getEthValue() {
     return '0';
+  }
+
+  /**
+   * Access list for single action
+   * @returns {AccessList}
+   */
+  getAccessList() {
+    return [
+      [this.contractAddress, []],
+      ...(AccessLists[this.name] || []),
+    ].map(([address, storageKeys]) => ({
+      address: address,
+      storageKeys: storageKeys.map(num => padLeft(toHex(num), 64)),
+    }));
   }
 }
 

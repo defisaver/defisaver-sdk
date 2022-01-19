@@ -86,6 +86,12 @@
 <dt><a href="#AaveV2FlashLoanPaybackAction">AaveV2FlashLoanPaybackAction</a></dt>
 <dd><p>Pays back a single flashloan from Aave v2</p>
 </dd>
+<dt><a href="#BalancerFlashLoanAction">BalancerFlashLoanAction</a></dt>
+<dd><p>Gets a flashloan from Balancer</p>
+</dd>
+<dt><a href="#BalancerFlashLoanPaybackAction">BalancerFlashLoanPaybackAction</a></dt>
+<dd><p>Pays back a flashloan from Balancer</p>
+</dd>
 <dt><a href="#DyDxFlashLoanAction">DyDxFlashLoanAction</a></dt>
 <dd><p>Gets a flashloan from DyDx</p>
 </dd>
@@ -160,6 +166,21 @@
 </dd>
 <dt><a href="#MakerWithdrawAction">MakerWithdrawAction</a></dt>
 <dd><p>MakerWithdrawAction - Withdraw token from a Vault</p>
+</dd>
+<dt><a href="#MStableClaimAction">MStableClaimAction</a></dt>
+<dd><p>MStableClaimAction</p>
+</dd>
+<dt><a href="#MStableDepositAction">MStableDepositAction</a></dt>
+<dd><p>MStableDepositAction</p>
+</dd>
+<dt><a href="#MStableWithdrawAction">MStableWithdrawAction</a></dt>
+<dd><p>MStableWithdrawAction</p>
+</dd>
+<dt><a href="#RariDepositAction">RariDepositAction</a></dt>
+<dd><p>RariDepositAction - action that deposits one stablecoin (DAI, USDC, USDT, TUSD, BUSD, and sUSD) and receives RSPT back</p>
+</dd>
+<dt><a href="#RariWithdrawAction">RariWithdrawAction</a></dt>
+<dd><p>RariWithdrawAction - Send pool tokens to fund manager which burns them, receive underlying stablecoin back</p>
 </dd>
 <dt><a href="#ReflexerGenerateAction">ReflexerGenerateAction</a></dt>
 <dd><p>ReflexerGenerateAction - Generated Dai from a Safe</p>
@@ -246,19 +267,16 @@ AaveCollateralSwitchAction - Aave enable/disable token usage as collateral
 **Kind**: global class  
 <a name="AaveMigrateLendAction"></a>
 
-## AaveMigrateLendAction
-AaveMigrateLendAction - Migrates Lend to Aave
+## AaveClaimStkAaveAction
+AaveClaimStkAaveAction - Claims stkAave from incentives controller
 
 **Kind**: global class  
-<a name="new_AaveMigrateLendAction_new"></a>
+<a name="AaveCollateralSwitchAction"></a>
 
-### new AaveMigrateLendAction(lendAmount, from, to)
-**Params**
+## AaveCollateralSwitchAction
+AaveCollateralSwitchAction - Aave enable/disable token usage as collateral
 
-- lendAmount <code>string</code>
-- from <code>EthAddress</code>
-- to <code>EthAddress</code>
-
+**Kind**: global class  
 <a name="AavePaybackAction"></a>
 
 ## AavePaybackAction
@@ -616,6 +634,36 @@ Pays back a single flashloan from Aave v2
 <a name="new_AaveV2FlashLoanPaybackAction_new"></a>
 
 ### new AaveV2FlashLoanPaybackAction(loanAmount, tokenAddr)
+**Params**
+
+- loanAmount <code>string</code>
+- tokenAddr <code>EthAddress</code>
+
+<a name="BalancerFlashLoanAction"></a>
+
+## BalancerFlashLoanAction
+Gets a flashloan from Balancer
+
+**Kind**: global class  
+<a name="new_BalancerFlashLoanAction_new"></a>
+
+### new BalancerFlashLoanAction(tokens, amounts, flParamGetterAddr, flParamGetterData)
+**Params**
+
+- tokens <code>Array.&lt;EthAddress&gt;</code>
+- amounts <code>Array.&lt;string&gt;</code>
+- flParamGetterAddr <code>EthAddress</code>
+- flParamGetterData <code>bytes</code>
+
+<a name="BalancerFlashLoanPaybackAction"></a>
+
+## BalancerFlashLoanPaybackAction
+Pays back a flashloan from Balancer
+
+**Kind**: global class  
+<a name="new_BalancerFlashLoanPaybackAction_new"></a>
+
+### new BalancerFlashLoanPaybackAction(loanAmount, tokenAddr)
 **Params**
 
 - loanAmount <code>string</code>
@@ -998,6 +1046,101 @@ MakerWithdrawAction - Withdraw token from a Vault
 - joinAddr <code>EthAddress</code>
 - to <code>EthAddress</code>
 - mcdManager <code>EthAddress</code>
+
+<a name="MStableClaimAction"></a>
+
+## MStableClaimAction
+MStableClaimAction
+
+**Kind**: global class  
+<a name="new_MStableClaimAction_new"></a>
+
+### new MStableClaimAction(vaultAddress, to, first, last)
+**Params**
+
+- vaultAddress
+- to
+- first
+- last
+
+<a name="MStableDepositAction"></a>
+
+## MStableDepositAction
+MStableDepositAction
+
+**Kind**: global class  
+<a name="new_MStableDepositAction_new"></a>
+
+### new MStableDepositAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, stake)
+**Params**
+
+- bAsset
+- mAsset
+- saveAddress
+- vaultAddress
+- from
+- to
+- amount
+- minOut
+- stake
+
+<a name="MStableWithdrawAction"></a>
+
+## MStableWithdrawAction
+MStableWithdrawAction
+
+**Kind**: global class  
+<a name="new_MStableWithdrawAction_new"></a>
+
+### new MStableWithdrawAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, stake)
+**Params**
+
+- bAsset
+- mAsset
+- saveAddress
+- vaultAddress
+- from
+- to
+- amount
+- minOut
+- stake
+
+<a name="RariDepositAction"></a>
+
+## RariDepositAction
+RariDepositAction - action that deposits one stablecoin (DAI, USDC, USDT, TUSD, BUSD, and sUSD) and receives RSPT back
+
+**Kind**: global class  
+<a name="new_RariDepositAction_new"></a>
+
+### new RariDepositAction(fundManager, stablecoinAddress, poolTokenAddress, amount, from, to)
+**Params**
+
+- fundManager <code>EthAddress</code> - fundManager for the pool which we want to deposit into
+- stablecoinAddress <code>EthAddress</code> - stablecoin token address
+- poolTokenAddress <code>EthAddress</code> - poolTokenAddress
+- amount <code>string</code> - amount of stablecoin to pull and deposit
+- from <code>EthAddress</code> - stablecoins will be taken from this address
+- to <code>EthAddress</code> - RSPT will be sent to this address
+
+<a name="RariWithdrawAction"></a>
+
+## RariWithdrawAction
+RariWithdrawAction - Send pool tokens to fund manager which burns them, receive underlying stablecoin back
+
+**Kind**: global class  
+<a name="new_RariWithdrawAction_new"></a>
+
+### new RariWithdrawAction(fundManager, poolTokenAddress, poolTokensAmountToPull, from, stablecoinAddress, stablecoinAmountToWithdraw, to)
+**Params**
+
+- fundManager <code>EthAddress</code> - fundManager for the pool which we want to withdraw from
+- poolTokenAddress <code>EthAddress</code> - poolToken address
+- poolTokensAmountToPull <code>string</code> - amount of tokens to pull to proxy
+- from <code>EthAddress</code> - poolTokens will be taken from this address
+- stablecoinAddress <code>EthAddress</code> - stablecoin token address
+- stablecoinAmountToWithdraw <code>string</code> - amount of stablecoin to withdraw from Rari
+- to <code>EthAddress</code> - stablecoins withdrawn will be sent to this address
 
 <a name="ReflexerGenerateAction"></a>
 

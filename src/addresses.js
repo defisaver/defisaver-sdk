@@ -2,6 +2,7 @@
 
 const actionAddresses = {
   'TaskExecutor': '0xb3e5371d55e1e84bfFE7D0b57Bd9c6A4C6b3C635',
+  'DFSRegistry': '0xD6049E1F5F3EfF1F921f5532aF1A1632bA23929C',
 
   // utils
   'WrapEth': '0x9E702937F42Db2cE58342Ca5F213Ef33D51AEF6b',
@@ -12,9 +13,10 @@ const actionAddresses = {
   'SubInputs': '0x3f71c5b806c2aCFA88bd7Ae5F7f8A14121E0FcA6',
   'ChangeProxyOwner': '0x32cEdFfF6e64f6cD1907Ae0b27b78c36320587E7',
   'TokenBalance': '0xFEb82445aEaA675D59A43CD5833f5A6807f97ea2',
+  'AutomationV2Unsub': '0xd3D70313d1E2ab6ae47674C88390Fd9865806201',
 
   // exchange
-  'DFSSell': '0x9A765623F9De2D7dB26afb5f7Bb85592DF094CDB',
+  'DFSSell': '0xf4adae649B2c3B2795608b2D222c852929944898',
   'DFSBuy': '0x939dCad6A3D1fEACccB60Af90876D904468CbF66',
 
   // maker
@@ -78,7 +80,7 @@ const actionAddresses = {
   'YearnWithdraw': '0x5BDf949c3a74E4F78328f6ad1F3697CC8edbe1A2',
 
   // liquity
-  'LiquityClose': '0x4Eb6e5C7fbf7b6850912f893B85bB87109E86a1f',
+  'LiquityClose': '0x9C563dc9F8e3FcCF996DAB4b6B6003fb7Bbca90f',
   'LiquityBorrow': '0x46e8fE6bbE3C08eCc250295583490be9ac97B969',
   'LiquityOpen': '0x50D69350E2629987551C563E19D29dee6Faf3A78',
   'LiquityPayback': '0x86eCa72dF81ae76AfF0dEeC01521154F33147e46',
@@ -94,6 +96,8 @@ const actionAddresses = {
 
   // lido
   'LidoStake': '0x71D44c05B94438fe09a4A7F4dB75fb421dEC1067',
+  'LidoWrap': '0x752e08eB2882DA273Cb8b70151f6c6c33f34D62b',
+  'LidoUnwrap': '0x37800CF1Fe630efc5F2E15A2e182E5C5084861D9',
 
   // insta
   'ClaimInstMaker': '0x15E22A8160F0bDb619C6846C982F8D208A5670D2',
@@ -103,6 +107,19 @@ const actionAddresses = {
   'BalancerV2Supply': '0xD78E5D95A28a67F7851b0a94505790813A92E405',
   'BalancerV2Withdraw': '0xCcf4b96407BEF25D7df1c95045CCF64950e73E97',
   'BalancerV2Claim': '0x259Ae83567858B7960d2De0D00F3717a764aD73B',
+
+  // GUni
+   'GUniWithdraw': '0xa329263fFac25F86E03481Ec39307bbf5DbeDD83',
+   'GUniDeposit': '0xe943958f01630038c23f8471a2d0ea4378e58b0d',
+
+   // Rari
+   'RariDeposit': '0xC627A3F12c4f7236218a511DC10e3f5ead1a1D7c',
+   'RariWithdraw': '0x8408EeCcC2c2FC25F2cF720398DAAD0A05EfE487',
+
+   // mStable
+   'MStableDeposit': '0x1887235CFE1927782a3e7eD15fb073586c949858',
+   'MStableWithdraw': '0xb164456190577fbBe8FB8bF5Fa48a106b328A579',
+   'MStableClaim': '0x28279A806aDeDedFD33e39C7375dc0c0ee943847',
 };
 
 const otherAddresses = {

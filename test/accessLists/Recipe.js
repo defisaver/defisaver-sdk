@@ -1,10 +1,10 @@
 const AbiCoder = require('web3-eth-abi');
-const { BN } = require('web3-utils');
+const { BN, padLeft, toHex } = require('web3-utils');
 const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
-const Action = require('./Action');
-const {getAddr} = require('./addresses');
-const RecipeAbi = require('./abis/Recipe.json');
-const { AccessLists } = require('../AccessLists');
+const Action = require('../../src/Action');
+const {getAddr} = require('../../src/addresses');
+const RecipeAbi = require('../../src/abis/Recipe.json');
+const MockAccessLists = require('./MockAccessLists');
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
@@ -21,8 +21,6 @@ class Recipe {
 
     this.name = name;
     this.actions = actions;
-
-    // TODO : Deploy and put RecipeExecutor in addresses
     this.taskExecutorAddress = getAddr('TaskExecutor');
   }
 
@@ -56,7 +54,7 @@ class Recipe {
    * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
-    const executeTaskAbi = RecipeAbi.find(({name}) => name === 'executeRecipe');
+    const executeTaskAbi = RecipeAbi.find(({name}) => name === 'executeTask');
     return [
       this.taskExecutorAddress,
       AbiCoder.encodeFunctionCall(executeTaskAbi, this._encodeForCall()),
@@ -113,7 +111,7 @@ class Recipe {
       [getAddr('DFSRegistry')]: [],
     };
     this.actions.forEach((action) => {
-      const accessList = action.getAccessList();
+      const accessList = MockAccessLists[action.name].map(([address, storageKeys]) => ({ address, storageKeys: storageKeys.map(num => padLeft(toHex(num), 64)) }));
       accessList.forEach(({ address, storageKeys }) => {
         addressMapping[address] = new Set([...storageKeys, ...(addressMapping[address] || [])]);
       })
