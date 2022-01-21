@@ -1,6 +1,7 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const { getAddr } = require('../../addresses.js');
+const Action = require('../../Action');
+const { requireAddress } = require('../../utils/general');
+const { getAddr } = require('../../addresses');
+const mstableAssetPairs = require('../../utils/mstableAssetPairs');
 
 /**
  * MStableDepositAction
@@ -15,7 +16,7 @@ class MStableDepositAction extends Action {
      * @param to
      * @param amount
      * @param minOut
-     * @param stake
+     * @param assetPair
      */
     constructor(
         bAsset,
@@ -26,7 +27,7 @@ class MStableDepositAction extends Action {
         to,
         amount,
         minOut,
-        stake,
+        assetPair,
     ) {
         requireAddress(bAsset);
         requireAddress(mAsset);
@@ -36,9 +37,9 @@ class MStableDepositAction extends Action {
         requireAddress(to);
 
         super(
-            'MStableDeposit',
-            getAddr('MStableDeposit'),
-            [['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'bool']],
+            'MStableDepositNew',
+            getAddr('MStableDepositNew'),
+            [['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256']],
             [[...arguments]],
         );
 
@@ -56,7 +57,26 @@ class MStableDepositAction extends Action {
     }
 
     async getAssetsToApprove() {
-        return [{ asset: this.args[0][0], owner: this.args[0][4]}];
+        const assetPair = this.args[0][8];
+        const owner = this.args[0][4];
+        let asset;
+        switch (assetPair) {
+        case mstableAssetPairs.BASSET_MASSET:
+        case mstableAssetPairs.BASSET_IMASSET:
+        case mstableAssetPairs.BASSET_IMASSETVAULT:
+            asset = this.args[0][0];
+            break;
+        case mstableAssetPairs.MASSET_IMASSET:
+        case mstableAssetPairs.MASSET_IMASSETVAULT:
+            asset = this.args[0][1];
+            break;
+        case mstableAssetPairs.IMASSET_IMASSETVAULT:
+            asset = this.args[0][2];
+            break;
+        default:
+            return [];
+        }
+        return [{ asset, owner }];
     }
 }
 

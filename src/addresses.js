@@ -119,6 +119,10 @@ const actionAddresses = {
    // mStable
    'MStableDeposit': '0x1887235CFE1927782a3e7eD15fb073586c949858',
    'MStableWithdraw': '0xb164456190577fbBe8FB8bF5Fa48a106b328A579',
+
+   'MStableDepositNew': '0x2AFfE3899d985212aD8ee99e1269D7Dd17576f1d',
+   'MStableWithdrawNew': '0x6468215Bf4811244Ab78599e1df9206716A35aB7',
+
    'MStableClaim': '0x28279A806aDeDedFD33e39C7375dc0c0ee943847',
 };
 
