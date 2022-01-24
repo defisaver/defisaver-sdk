@@ -32,7 +32,7 @@ class Action {
    * @private
    */
   getId() {
-    return Web3Utils.keccak256(this.name).substr(0, 10);
+    return keccak256(this.name).substr(0, 10);
   }
 
   /**
