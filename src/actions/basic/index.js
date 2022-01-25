@@ -9,6 +9,7 @@ const SubInputsAction = require('./SubInputsAction');
 const ChangeProxyOwnerAction = require('./ChangeProxyOwnerAction');
 const TokenBalanceAction = require('./TokenBalanceAction');
 const AutomationV2Unsub = require('./AutomationV2Unsub');
+const PermitPullTokenAction = require('./PermitPullTokenAction');
 
 module.exports = {
   SellAction,
@@ -22,4 +23,5 @@ module.exports = {
   ChangeProxyOwnerAction,
   TokenBalanceAction,
   AutomationV2Unsub,
+  PermitPullTokenAction
 };
