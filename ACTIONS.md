@@ -1145,7 +1145,7 @@ MStableDepositAction
 **Kind**: global class  
 <a name="new_MStableDepositAction_new"></a>
 
-### new MStableDepositAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, stake)
+### new MStableDepositAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, assetPair)
 **Params**
 
 - bAsset
@@ -1156,7 +1156,7 @@ MStableDepositAction
 - to
 - amount
 - minOut
-- stake
+- assetPair
 
 <a name="MStableWithdrawAction"></a>
 
@@ -1166,7 +1166,7 @@ MStableWithdrawAction
 **Kind**: global class  
 <a name="new_MStableWithdrawAction_new"></a>
 
-### new MStableWithdrawAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, stake)
+### new MStableWithdrawAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, assetPair)
 **Params**
 
 - bAsset
@@ -1177,7 +1177,7 @@ MStableWithdrawAction
 - to
 - amount
 - minOut
-- stake
+- assetPair
 
 <a name="RariDepositAction"></a>
 
