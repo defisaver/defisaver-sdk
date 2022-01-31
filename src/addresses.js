@@ -77,7 +77,7 @@ const actionAddresses = {
 
   // yearn
   'YearnSupply': '0x3B8538B070a0890ef7E13FF60c9d19F893a93B8a',
-  'YearnWithdraw': '0x5BDf949c3a74E4F78328f6ad1F3697CC8edbe1A2',
+  'YearnWithdraw': '0x03CC90F24C23C9F766902917c32411417c28Db92',
 
   // liquity
   'LiquityClose': '0x9C563dc9F8e3FcCF996DAB4b6B6003fb7Bbca90f',
