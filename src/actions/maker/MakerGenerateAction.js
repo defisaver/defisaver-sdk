@@ -20,6 +20,7 @@ class MakerGenerateAction extends Action {
       this.args[0][0],
       this.args[0][1],
       this.args[0][2],
+      this.args[0][3],
     ];
   }
 }

@@ -17,6 +17,7 @@ class MakerMergeAction extends Action {
     this.mappableArgs = [
       this.args[0][0],
       this.args[0][1],
+      this.args[0][2],
     ];
   }
 }
