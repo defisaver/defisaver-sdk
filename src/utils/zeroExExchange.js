@@ -54,7 +54,6 @@ const get0xPrice = async (_sellToken, _buyToken, _amount, convertAmountToWei = t
   if (res.status !== 200) throw new Error(JSON.stringify(res.data));
 
   const data = res.data;
-  console.log(data);
 
   // convert price to be able to compare with other prices onchain
   if (!shouldSell) {
@@ -180,7 +179,6 @@ const createExchangeAction = async (
     '0x', // wrapperData,
     offchainDataArray,
   ];
-  console.log(orderData);
   return shouldSell
     ? new SellAction(orderData, fromAccount, toAccount, protocolFee)
     : new BuyAction(orderData, fromAccount, toAccount, protocolFee)

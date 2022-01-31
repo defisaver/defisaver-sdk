@@ -4,6 +4,7 @@ const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
 const Action = require('./Action');
 const {getAddr} = require('./addresses');
 const RecipeAbi = require('./abis/Recipe.json');
+const { AccessLists } = require('../AccessLists');
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
@@ -81,7 +82,8 @@ class Recipe {
     const assetOwnerPairs = await Promise.all(this.actions.map(a => a.getAssetsToApprove()));
     for (const pairsPerAction of assetOwnerPairs) {
       for (const pair of pairsPerAction) {
-        if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && _pair.asset === pair.asset)) {
+        const isNft = !pair.asset;
+        if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && (isNft ? _pair.tokenId === pair.tokenId : _pair.asset === pair.asset))) {
           uniqueAssetOwnerPairs.push(pair);
         }
       }
@@ -97,6 +99,27 @@ class Recipe {
     return (await Promise.all(this.actions.map(a => a.getEthValue())))
       .reduce((acc, val) => acc.add(new BN(val)), new BN(0))
       .toString();
+  }
+
+  /**
+   * Generates an access list for the recipe
+   * @returns {AccessList}
+   */
+  getAccessList() {
+    const addressMapping = {
+      [getAddr('TaskExecutor')]: [],
+      [getAddr('DFSRegistry')]: [],
+    };
+    this.actions.forEach((action) => {
+      const accessList = action.getAccessList();
+      accessList.forEach(({ address, storageKeys }) => {
+        addressMapping[address] = new Set([...storageKeys, ...(addressMapping[address] || [])]);
+      })
+    });
+    return Object.keys(addressMapping).map((address) => ({
+      address,
+      storageKeys: [...addressMapping[address]],
+    }));
   }
 }
 

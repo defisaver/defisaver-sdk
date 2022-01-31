@@ -7,6 +7,8 @@ const UnwrapEthAction = require('./UnwrapEthAction');
 const SumInputsAction = require('./SumInputsAction');
 const SubInputsAction = require('./SubInputsAction');
 const ChangeProxyOwnerAction = require('./ChangeProxyOwnerAction');
+const TokenBalanceAction = require('./TokenBalanceAction');
+const AutomationV2Unsub = require('./AutomationV2Unsub');
 
 module.exports = {
   SellAction,
@@ -18,4 +20,6 @@ module.exports = {
   SumInputsAction,
   SubInputsAction,
   ChangeProxyOwnerAction,
+  TokenBalanceAction,
+  AutomationV2Unsub,
 };

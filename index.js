@@ -1,5 +1,6 @@
 const Action = require('./src/Action');
 const Recipe = require('./src/Recipe');
+const DfsWeb3 = require('./src/DfsWeb3');
 
 const actions = require('./src/actions/');
 const utils = require('./src/utils/');
@@ -11,4 +12,5 @@ module.exports = {
   actions,
   actionAddresses,
   utils,
+  DfsWeb3,
 }

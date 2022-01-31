@@ -3,6 +3,8 @@
 <dl>
 <dt><a href="#utils.module_uniswapLP">uniswapLP</a></dt>
 <dd></dd>
+<dt><a href="#utils.module_uniV3">uniV3</a></dt>
+<dd></dd>
 <dt><a href="#utils.module_zeroExExchange">zeroExExchange</a></dt>
 <dd></dd>
 </dl>
@@ -27,6 +29,11 @@
 <dt><a href="#VaultId">VaultId</a> : <code>string</code> | <code>number</code></dt>
 <dd><p>Maker vault ID</p>
 </dd>
+<dt><a href="#AccessListItem">AccessListItem</a> : <code>Object</code></dt>
+<dd><p>Access list item</p>
+</dd>
+<dt><a href="#AccessList">AccessList</a> : <code><a href="#AccessListItem">Array.&lt;AccessListItem&gt;</a></code></dt>
+<dd></dd>
 </dl>
 
 <a name="utils.module_uniswapLP"></a>
@@ -57,6 +64,18 @@ Source: https://uniswap.org/docs/v2/javascript-SDK/getting-pair-addresses/#types
 
 - symbolA <code>string</code>
 - symbolB <code>string</code>
+
+<a name="utils.module_uniV3"></a>
+
+## uniV3
+<a name="utils.module_uniV3.getAssetAddrByTokenId"></a>
+
+### uniV3.getAssetAddrByTokenId(web3, tokenId) ⇒ <code>Promise.&lt;Array.&lt;string&gt;&gt;</code>
+**Kind**: static method of [<code>uniV3</code>](#utils.module_uniV3)  
+**Params**
+
+- web3 <code>Object</code> - Web3 instance
+- tokenId <code>string</code>
 
 <a name="utils.module_zeroExExchange"></a>
 
@@ -145,6 +164,7 @@ Single action that can be executed directly, or combined into a set (ie. supply 
     * [.encodeForRecipe()](#Action+encodeForRecipe) ⇒ <code>Array.&lt;string&gt;</code>
     * [.getAssetsToApprove()](#Action+getAssetsToApprove) ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
     * [.getEthValue()](#Action+getEthValue) ⇒ <code>Promise.&lt;string&gt;</code>
+    * [.getAccessList()](#Action+getAccessList) ⇒ [<code>AccessList</code>](#AccessList)
 
 <a name="new_Action_new"></a>
 
@@ -183,6 +203,12 @@ ETH value to be sent with transaction
 
 **Kind**: instance method of [<code>Action</code>](#Action)  
 **Returns**: <code>Promise.&lt;string&gt;</code> - ETH value in wei  
+<a name="Action+getAccessList"></a>
+
+### action.getAccessList() ⇒ [<code>AccessList</code>](#AccessList)
+Access list for single action
+
+**Kind**: instance method of [<code>Action</code>](#Action)  
 <a name="Recipe"></a>
 
 ## Recipe
@@ -197,6 +223,7 @@ Set of Actions to be performed sequentially in a single transaction
     * [._validateParamMappings()](#Recipe+_validateParamMappings)
     * [.getAssetsToApprove()](#Recipe+getAssetsToApprove) ⇒ <code>Promise.&lt;Array.&lt;{owner: string, asset: string}&gt;&gt;</code>
     * [.getEthValue()](#Recipe+getEthValue) ⇒ <code>Promise.&lt;string&gt;</code>
+    * [.getAccessList()](#Recipe+getAccessList) ⇒ [<code>AccessList</code>](#AccessList)
 
 <a name="new_Recipe_new"></a>
 
@@ -241,6 +268,12 @@ ETH value to be sent with transaction
 
 **Kind**: instance method of [<code>Recipe</code>](#Recipe)  
 **Returns**: <code>Promise.&lt;string&gt;</code> - ETH value in wei  
+<a name="Recipe+getAccessList"></a>
+
+### recipe.getAccessList() ⇒ [<code>AccessList</code>](#AccessList)
+Generates an access list for the recipe
+
+**Kind**: instance method of [<code>Recipe</code>](#Recipe)  
 <a name="EthAddress"></a>
 
 ## EthAddress : <code>string</code>
@@ -252,4 +285,21 @@ Ethereum address
 ## VaultId : <code>string</code> \| <code>number</code>
 Maker vault ID
 
+**Kind**: global typedef  
+<a name="AccessListItem"></a>
+
+## AccessListItem : <code>Object</code>
+Access list item
+
+**Kind**: global typedef  
+**Properties**
+
+| Name | Type |
+| --- | --- |
+| address | <code>string</code> | 
+| storageKeys | <code>Array.&lt;string&gt;</code> | 
+
+<a name="AccessList"></a>
+
+## AccessList : [<code>Array.&lt;AccessListItem&gt;</code>](#AccessListItem)
 **Kind**: global typedef  
