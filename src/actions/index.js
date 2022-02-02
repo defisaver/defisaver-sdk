@@ -12,6 +12,7 @@ const yearn = require('./yearn');
 const lido = require('./lido');
 const insta = require('./insta');
 const balancer = require('./balancer');
+const curve = require('./curve');
 const guni = require('./guni');
 const mstable = require('./mstable');
 const rari = require('./rari');
@@ -31,6 +32,7 @@ module.exports = {
   lido,
   insta,
   balancer,
+  curve,
   guni,
   mstable,
   rari,
