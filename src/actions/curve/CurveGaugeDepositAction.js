@@ -3,7 +3,15 @@ const { requireAddress } = require('@defisaver/sdk/src/utils/general');
 const { getAddr } = require('@defisaver/sdk/src/addresses');
 
 class CurveGaugeDepositAction extends Action {
-    
+
+    /**
+     * 
+     * @param {EthAddress} gaugeAddr 
+     * @param {EthAddress} lpToken 
+     * @param {EthAddress} sender 
+     * @param {EthAddress} onBehalfOf 
+     * @param {string} amount 
+     */
     constructor(gaugeAddr, lpToken, sender, onBehalfOf, amount) {
         requireAddress(sender);
         requireAddress(onBehalfOf);

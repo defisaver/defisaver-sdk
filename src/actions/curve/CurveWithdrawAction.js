@@ -4,7 +4,20 @@ const { requireAddress } = require('@defisaver/sdk/src/utils/general');
 const { getAddr } = require('@defisaver/sdk/src/addresses');
 
 class CurveWithdrawAction extends Action {
-    
+
+    /**
+     * 
+     * @param {EthAddress} sender 
+     * @param {EthAddress} receiver 
+     * @param {EthAddress} depositTarget 
+     * @param {EthAddress} lpToken 
+     * @param {bytes4} sig 
+     * @param {string} burnAmount 
+     * @param {Array<string>} minAmounts 
+     * @param {Array<EthAddress>} tokens 
+     * @param {boolean} withdrawExact 
+     * @param {boolean} useUnderlying 
+     */
     constructor(
         sender,
         receiver,

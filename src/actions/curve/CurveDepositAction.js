@@ -4,7 +4,18 @@ const { requireAddress } = require('@defisaver/sdk/src/utils/general');
 const { getAddr } = require('@defisaver/sdk/src/addresses');
 
 class CurveDepositAction extends Action {
-    
+
+    /**
+     * @param {EthAddress} sender 
+     * @param {EthAddress} receiver 
+     * @param {EthAddress} depositTarget 
+     * @param {EthAddress} lpToken 
+     * @param {bytes4} sig 
+     * @param {string} minMintAmount 
+     * @param {Array<string>} amounts 
+     * @param {Array<EthAddress>} tokens 
+     * @param {boolean} useUnderlying 
+     */
     constructor(
         sender,
         receiver,
@@ -20,7 +31,7 @@ class CurveDepositAction extends Action {
         requireAddress(receiver);
         super('CurveDeposit',
             getAddr('CurveDeposit'),
-            [['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]','bool']],
+            [['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]', 'bool']],
             [[...arguments]]);
 
         this.mappableArgs = [
@@ -32,7 +43,7 @@ class CurveDepositAction extends Action {
     }
 
     async getAssetsToApprove() {
-        return this.args[0][7].map( _asset => Object({ asset: _asset, owner: this.args[0][0] }));
+        return this.args[0][7].map(_asset => Object({ asset: _asset, owner: this.args[0][0] }));
     }
 }
 

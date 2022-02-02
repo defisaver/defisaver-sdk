@@ -4,7 +4,12 @@ const { requireAddress } = require('@defisaver/sdk/src/utils/general');
 const { getAddr } = require('@defisaver/sdk/src/addresses');
 
 class CurveClaimFeesAction extends Action {
-    
+
+    /**
+     * 
+     * @param {EthAddress} claimFor 
+     * @param {EthAddress} receiver 
+     */
     constructor(
         claimFor,
         receiver,
@@ -14,7 +19,7 @@ class CurveClaimFeesAction extends Action {
         super('CurveClaimFeesAction',
             getAddr('CurveClaimFeesAction'),
             [['address', 'address']],
-            [[... arguments]]);
+            [[...arguments]]);
 
         this.mappableArgs = [
             this.args[0][0],

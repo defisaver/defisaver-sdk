@@ -4,7 +4,17 @@ const { requireAddress } = require('../../utils/general');
 const { getAddr } = require('../../addresses');
 
 class CurveSwapAction extends Action {
-    
+
+    /**
+     * 
+     * @param {EthAddress} sender 
+     * @param {EthAddress} receiver 
+     * @param {EthAddress} pool 
+     * @param {EthAddress} tokenA 
+     * @param {EthAddress} tokenB 
+     * @param {string} amount 
+     * @param {string} expected 
+     */
     constructor(sender, receiver, pool, tokenA, tokenB, amount, expected) {
         requireAddress(sender);
         requireAddress(receiver);

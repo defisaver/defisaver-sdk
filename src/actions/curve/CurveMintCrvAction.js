@@ -3,7 +3,11 @@ const { requireAddress } = require('@defisaver/sdk/src/utils/general');
 const { getAddr } = require('@defisaver/sdk/src/addresses');
 
 class CurveMintCrvAction extends Action {
-    
+
+    /**
+     * @param {Array<EthAddress>]} gaugeAddrs 
+     * @param {EthAddress} receiver 
+     */
     constructor(gaugeAddrs, receiver) {
         requireAddress(receiver);
         super('CurveMintCrv',
