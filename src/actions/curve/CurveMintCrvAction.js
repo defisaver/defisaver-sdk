@@ -5,7 +5,7 @@ const { getAddr } = require('../../addresses');
 class CurveMintCrvAction extends Action {
 
     /**
-     * @param {Array<EthAddress>]} gaugeAddrs
+     * @param {Array<EthAddress>} gaugeAddrs
      * @param {EthAddress} receiver
      */
     constructor(gaugeAddrs, receiver) {

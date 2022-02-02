@@ -71,6 +71,20 @@
 <dt><a href="#CompoundWithdrawAction">CompoundWithdrawAction</a></dt>
 <dd><p>CompoundWithdrawAction - Withdraw token from an Compound position</p>
 </dd>
+<dt><a href="#CurveClaimFeesAction">CurveClaimFeesAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveDepositAction">CurveDepositAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveGaugeDepositAction">CurveGaugeDepositAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveGaugeWithdrawAction">CurveGaugeWithdrawAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveMintCrvAction">CurveMintCrvAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveSwapAction">CurveSwapAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveWithdrawAction">CurveWithdrawAction</a></dt>
+<dd></dd>
 <dt><a href="#DyDxSupplyAction">DyDxSupplyAction</a></dt>
 <dd><p>DyDxSupplyAction - Supply token to an DyDx position</p>
 </dd>
@@ -579,6 +593,115 @@ CompoundWithdrawAction - Withdraw token from an Compound position
 - cTokenAddr <code>EthAddress</code>
 - amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
 - to <code>EthAddress</code>
+
+<a name="CurveClaimFeesAction"></a>
+
+## CurveClaimFeesAction
+**Kind**: global class  
+<a name="new_CurveClaimFeesAction_new"></a>
+
+### new CurveClaimFeesAction(claimFor, receiver)
+**Params**
+
+- claimFor <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+
+<a name="CurveDepositAction"></a>
+
+## CurveDepositAction
+**Kind**: global class  
+<a name="new_CurveDepositAction_new"></a>
+
+### new CurveDepositAction(sender, receiver, depositTarget, lpToken, sig, minMintAmount, amounts, tokens, useUnderlying)
+**Params**
+
+- sender <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+- depositTarget <code>EthAddress</code>
+- lpToken <code>EthAddress</code>
+- sig <code>bytes4</code>
+- minMintAmount <code>string</code>
+- amounts <code>Array.&lt;string&gt;</code>
+- tokens <code>Array.&lt;EthAddress&gt;</code>
+- useUnderlying <code>boolean</code>
+
+<a name="CurveGaugeDepositAction"></a>
+
+## CurveGaugeDepositAction
+**Kind**: global class  
+<a name="new_CurveGaugeDepositAction_new"></a>
+
+### new CurveGaugeDepositAction(gaugeAddr, lpToken, sender, onBehalfOf, amount)
+**Params**
+
+- gaugeAddr <code>EthAddress</code>
+- lpToken <code>EthAddress</code>
+- sender <code>EthAddress</code>
+- onBehalfOf <code>EthAddress</code>
+- amount <code>string</code>
+
+<a name="CurveGaugeWithdrawAction"></a>
+
+## CurveGaugeWithdrawAction
+**Kind**: global class  
+<a name="new_CurveGaugeWithdrawAction_new"></a>
+
+### new CurveGaugeWithdrawAction(gaugeAddr, lpToken, receiver, amount)
+**Params**
+
+- gaugeAddr <code>EthAddress</code>
+- lpToken <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+- amount <code>string</code>
+
+<a name="CurveMintCrvAction"></a>
+
+## CurveMintCrvAction
+**Kind**: global class  
+<a name="new_CurveMintCrvAction_new"></a>
+
+### new CurveMintCrvAction(gaugeAddrs, receiver)
+**Params**
+
+- gaugeAddrs <code>Array.&lt;EthAddress&gt;</code>
+- receiver <code>EthAddress</code>
+
+<a name="CurveSwapAction"></a>
+
+## CurveSwapAction
+**Kind**: global class  
+<a name="new_CurveSwapAction_new"></a>
+
+### new CurveSwapAction(sender, receiver, pool, tokenA, tokenB, amount, expected)
+**Params**
+
+- sender <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+- pool <code>EthAddress</code>
+- tokenA <code>EthAddress</code>
+- tokenB <code>EthAddress</code>
+- amount <code>string</code>
+- expected <code>string</code>
+
+<a name="CurveWithdrawAction"></a>
+
+## CurveWithdrawAction
+**Kind**: global class  
+<a name="new_CurveWithdrawAction_new"></a>
+
+### new CurveWithdrawAction(sender, receiver, depositTarget, lpToken, sig, burnAmount, minAmounts, tokens, withdrawExact, useUnderlying)
+**Params**
+
+- sender <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+- depositTarget <code>EthAddress</code>
+- lpToken <code>EthAddress</code>
+- sig <code>bytes4</code>
+- burnAmount <code>string</code>
+- minAmounts <code>Array.&lt;string&gt;</code>
+- tokens <code>Array.&lt;EthAddress&gt;</code>
+- withdrawExact <code>boolean</code>
+- useUnderlying <code>boolean</code>
 
 <a name="DyDxSupplyAction"></a>
 
