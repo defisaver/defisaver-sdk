@@ -4,17 +4,17 @@ const { getAddr } = require('@defisaver/sdk/src/addresses');
 
 class CurveGaugeWithdrawAction extends Action {
     
-    constructor(gaugeAddr, receiver, amount) {
+    constructor(gaugeAddr, lpToken, receiver, amount) {
         requireAddress(receiver);
         super('CurveGaugeWithdraw',
             getAddr('CurveGaugeWithdraw'),
-            [['address', 'address', 'uint256']],
+            [['address', 'address', 'address', 'uint256']],
             [[...arguments]],
         );
 
         this.mappableArgs = [
-            this.args[0][1],
             this.args[0][2],
+            this.args[0][3],
         ];
     }
 }
