@@ -1,12 +1,12 @@
-const Action = require('@defisaver/sdk/src/Action');
-const { requireAddress } = require('@defisaver/sdk/src/utils/general');
-const { getAddr } = require('@defisaver/sdk/src/addresses');
+const Action = require('../../Action');
+const { requireAddress } = require('../../utils/general');
+const { getAddr } = require('../../addresses');
 
 class CurveMintCrvAction extends Action {
 
     /**
-     * @param {Array<EthAddress>]} gaugeAddrs 
-     * @param {EthAddress} receiver 
+     * @param {Array<EthAddress>]} gaugeAddrs
+     * @param {EthAddress} receiver
      */
     constructor(gaugeAddrs, receiver) {
         requireAddress(receiver);

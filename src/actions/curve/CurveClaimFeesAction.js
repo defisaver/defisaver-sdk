@@ -1,14 +1,14 @@
 const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('@defisaver/sdk/src/Action');
-const { requireAddress } = require('@defisaver/sdk/src/utils/general');
-const { getAddr } = require('@defisaver/sdk/src/addresses');
+const Action = require('../../Action');
+const { requireAddress } = require('../../utils/general');
+const { getAddr } = require('../../addresses');
 
 class CurveClaimFeesAction extends Action {
 
     /**
-     * 
-     * @param {EthAddress} claimFor 
-     * @param {EthAddress} receiver 
+     *
+     * @param {EthAddress} claimFor
+     * @param {EthAddress} receiver
      */
     constructor(
         claimFor,

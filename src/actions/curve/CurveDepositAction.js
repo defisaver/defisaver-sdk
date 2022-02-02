@@ -1,20 +1,20 @@
 const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('@defisaver/sdk/src/Action');
-const { requireAddress } = require('@defisaver/sdk/src/utils/general');
-const { getAddr } = require('@defisaver/sdk/src/addresses');
+const Action = require('../../Action');
+const { requireAddress } = require('../../utils/general');
+const { getAddr } = require('../../addresses');
 
 class CurveDepositAction extends Action {
 
     /**
-     * @param {EthAddress} sender 
-     * @param {EthAddress} receiver 
-     * @param {EthAddress} depositTarget 
-     * @param {EthAddress} lpToken 
-     * @param {bytes4} sig 
-     * @param {string} minMintAmount 
-     * @param {Array<string>} amounts 
-     * @param {Array<EthAddress>} tokens 
-     * @param {boolean} useUnderlying 
+     * @param {EthAddress} sender
+     * @param {EthAddress} receiver
+     * @param {EthAddress} depositTarget
+     * @param {EthAddress} lpToken
+     * @param {bytes4} sig
+     * @param {string} minMintAmount
+     * @param {Array<string>} amounts
+     * @param {Array<EthAddress>} tokens
+     * @param {boolean} useUnderlying
      */
     constructor(
         sender,
