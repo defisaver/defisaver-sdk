@@ -22,8 +22,7 @@ class Recipe {
     this.name = name;
     this.actions = actions;
 
-    // TODO : Deploy and put RecipeExecutor in addresses
-    this.taskExecutorAddress = getAddr('TaskExecutor');
+    this.recipeExecutorAddress = getAddr('RecipeExecutor');
   }
 
   /**
@@ -58,7 +57,7 @@ class Recipe {
   encodeForDsProxyCall() {
     const executeTaskAbi = RecipeAbi.find(({name}) => name === 'executeRecipe');
     return [
-      this.taskExecutorAddress,
+      this.recipeExecutorAddress,
       AbiCoder.encodeFunctionCall(executeTaskAbi, this._encodeForCall()),
     ];
   }
@@ -109,7 +108,7 @@ class Recipe {
    */
   getAccessList() {
     const addressMapping = {
-      [getAddr('TaskExecutor')]: [],
+      [getAddr('RecipeExecutor')]: [],
       [getAddr('DFSRegistry')]: [],
     };
     this.actions.forEach((action) => {

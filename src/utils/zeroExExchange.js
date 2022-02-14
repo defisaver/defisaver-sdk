@@ -7,7 +7,6 @@ const axios = require('axios');
 const {assetAmountInWei, getAssetInfo} = require('@defisaver/tokens');
 
 const SellAction = require('../actions/basic/SellAction');
-const BuyAction = require('../actions/basic/BuyAction');
 const {parsePriceFromContract, formatPriceForContract} = require('./general');
 const API_URL = 'https://api.0x.org/swap/v1/';
 const ZEROX_WRAPPER = '0x0c4e16899f2059F4e41ddB164317414a5c0d2988';
@@ -124,7 +123,7 @@ module.exports.estimateBuyPrice = async (buyAmount, buyToken, sellToken) => esti
  * @param shouldSell {Boolean} look for price to sell or to buy (if false sellToken becomes becomes buyToken and vice-versa)
  * @param fromAccount {EthAddress} Withdraw funds from this addr
  * @param toAccount {EthAddress} Send funds to this addr
- * @return {Promise<(SellAction|BuyAction)>} SellAction or BuyAction
+ * @return {Promise<(SellAction>} SellAction
  *
  * @private
  */
@@ -179,9 +178,7 @@ const createExchangeAction = async (
     '0x', // wrapperData,
     offchainDataArray,
   ];
-  return shouldSell
-    ? new SellAction(orderData, fromAccount, toAccount, protocolFee)
-    : new BuyAction(orderData, fromAccount, toAccount, protocolFee)
+  return new SellAction(orderData, fromAccount, toAccount, protocolFee)
 };
 
 /**
@@ -214,41 +211,6 @@ module.exports.createSellAction = async (
   expectedPrice,
   acceptedSlippagePercent,
   true,
-  fromAccount,
-  toAccount,
-);
-
-
-/**
- * Fetches prices and creates order ready to be passed to transaction.
- * This should only be called when before sending tx, not to be used for just querying the price.
- * For that purpose, the estimateBuyPrice method can be used.
- *
- * @param buyAmount {string} Amount of asset being bought ('1500.123')
- * @param buyToken {string} Symbol for asset being bought ('DAI')
- * @param sellToken {string} Symbol for asset being sold ('ETH')
- * @param expectedPrice {string} Price received from estimatePrice (so minPrice can be calculated based on what user saw)
- * @param acceptedSlippagePercent {string|Number} Slippage percentage tolerated [0-100]
- * @param fromAccount {EthAddress} Withdraw funds from this addr
- * @param toAccount {EthAddress} Send funds to this addr
- * @return {Promise<BuyAction>}
- */
-module.exports.createBuyAction = async (
-  buyAmount,
-  buyToken,
-  sellToken,
-  expectedPrice,
-  acceptedSlippagePercent,
-  fromAccount,
-  toAccount,
-) => createExchangeAction(
-  sellToken,
-  buyToken,
-  '0',
-  buyAmount,
-  expectedPrice,
-  acceptedSlippagePercent,
-  false,
   fromAccount,
   toAccount,
 );

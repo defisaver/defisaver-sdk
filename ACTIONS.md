@@ -29,9 +29,6 @@
 <dt><a href="#BalancerV2WithdrawAction">BalancerV2WithdrawAction</a></dt>
 <dd><p>BalancerV2WithdrawAction - Withdraw tokens from Balancer pool</p>
 </dd>
-<dt><a href="#BuyAction">BuyAction</a></dt>
-<dd><p>Buys an exact amount of dest token on DeFi Saver exchange aggregator</p>
-</dd>
 <dt><a href="#ChangeProxyOwnerAction">ChangeProxyOwnerAction</a></dt>
 <dd><p>ChangeProxyOwnerAction - Changes EOA which owns the proxy that is being called</p>
 </dd>
@@ -73,9 +70,6 @@
 </dd>
 <dt><a href="#CompoundWithdrawAction">CompoundWithdrawAction</a></dt>
 <dd><p>CompoundWithdrawAction - Withdraw token from an Compound position</p>
-</dd>
-<dt><a href="#DyDxSupplyAction">DyDxSupplyAction</a></dt>
-<dd><p>DyDxSupplyAction - Supply token to an DyDx position</p>
 </dd>
 <dt><a href="#DyDxWithdrawAction">DyDxWithdrawAction</a></dt>
 <dd><p>DyDxWithdrawAction - Withdraw token from an DyDx position</p>
@@ -379,22 +373,6 @@ BalancerV2WithdrawAction - Withdraw tokens from Balancer pool
 - minAmountsOut <code>Array.&lt;uint256&gt;</code>
 - userData <code>bytes</code>
 
-<a name="BuyAction"></a>
-
-## BuyAction
-Buys an exact amount of dest token on DeFi Saver exchange aggregator
-
-**Kind**: global class  
-<a name="new_BuyAction_new"></a>
-
-### new BuyAction(exchangeOrder, from, to, protocolFee)
-**Params**
-
-- exchangeOrder <code>Array</code> - Standard DFS Exchange data
-- from <code>string</code> - Order sender
-- to <code>string</code> - Order recipient
-- protocolFee <code>string</code> - 0x fee (amount of ETH in Wei)
-
 <a name="ChangeProxyOwnerAction"></a>
 
 ## ChangeProxyOwnerAction
@@ -576,21 +554,6 @@ CompoundWithdrawAction - Withdraw token from an Compound position
 - cTokenAddr <code>EthAddress</code>
 - amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
 - to <code>EthAddress</code>
-
-<a name="DyDxSupplyAction"></a>
-
-## DyDxSupplyAction
-DyDxSupplyAction - Supply token to an DyDx position
-
-**Kind**: global class  
-<a name="new_DyDxSupplyAction_new"></a>
-
-### new DyDxSupplyAction(tokenAddr, amount, from)
-**Params**
-
-- tokenAddr <code>EthAddress</code>
-- amount <code>string</code>
-- from <code>EthAddress</code> - Tokens will be supplied from this address
 
 <a name="DyDxWithdrawAction"></a>
 
