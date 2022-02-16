@@ -2,7 +2,8 @@ const Dec = require('decimal.js');
 const {getAssetInfo} = require('@defisaver/tokens');
 
 module.exports.requireAddress = (address) => {
-  if (address === '&proxy' || address === '&eoa') return;
+  if (address.startsWith('%') || address.startsWith('&')) return;
+
   if (typeof address !== 'string') throw new Error('Address is not a string');
   if (address === '') throw new Error('Address is empty string');
   if (address.length < 42) throw new Error(`Address too short (${address.length} instead of 42)`);
