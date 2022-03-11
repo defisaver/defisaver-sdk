@@ -7,6 +7,9 @@ const CurveGaugeWithdrawAction = require('./CurveGaugeWithdrawAction');
 const CurveMintCrvAction = require('./CurveMintCrvAction');
 const CurveClaimFeesAction = require('./CurveClaimFeesAction');
 
+const CurveStethPoolDepositAction = require('./CurveStethPoolDepositAction');
+const CurveStethPoolWithdrawAction = require('./CurveStethPoolWithdrawAction');
+
 module.exports = {
     CurveSwapAction,
     CurveDepositAction,
@@ -16,4 +19,7 @@ module.exports = {
     CurveGaugeWithdrawAction,
     CurveMintCrvAction,
     CurveClaimFeesAction,
+
+    CurveStethPoolDepositAction,
+    CurveStethPoolWithdrawAction,
 };
