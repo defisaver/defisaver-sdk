@@ -93,6 +93,11 @@ class Action {
     return [bytesEncodedArgs];
   }
 
+  // TODO handle rollup l2 chains (optimism, arbitrum, ZKroll..)
+  // every action will override this probably
+  // _encodeForRollupCall() {}
+
+  // TODO handle different chains
   /**
    * Encode arguments for calling the action via DsProxy
    * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
