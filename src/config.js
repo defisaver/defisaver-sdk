@@ -1,22 +1,20 @@
 const NETWORKS = {
   ethereum: {
-    mainnet: {
-      chainId: 1,
-      name: 'Ethereum',
-    },
-    optimism: {
-      chainId: 10,
-      name: 'Optimism',
-    },
-    arbitrum: {
-      chainId: 42161,
-      name: 'Arbitrum',
-    },
+    chainId: 1,
+    name: 'Ethereum',
+  },
+  optimism: {
+    chainId: 10,
+    name: 'Optimism',
+  },
+  arbitrum: {
+    chainId: 42161,
+    name: 'Arbitrum',
   },
 };
 
 const CONFIG = {
-  chainId: NETWORKS.ethereum.mainnet.chainId,
+  chainId: NETWORKS.ethereum.chainId,
 };
 
 const configure = (newConfig) => {

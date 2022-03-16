@@ -5,7 +5,7 @@ const { configure, CONFIG, NETWORKS } = require('./src/config');
 
 const actions = require('./src/actions/');
 const utils = require('./src/utils/');
-const { actionAddresses, getAddr } = require('./src/addresses');
+const { actionAddresses } = require('./src/addresses');
 
 module.exports = {
   Action,
@@ -14,7 +14,7 @@ module.exports = {
   actions,
   utils,
   configure,
-  getAddr,
   networks: NETWORKS,
+  actionAddressesAllChains: actionAddresses,
   actionAddresses: actionAddresses[CONFIG.chainId],
 }

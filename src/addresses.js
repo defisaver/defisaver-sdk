@@ -1,7 +1,7 @@
 const { CONFIG, NETWORKS } = require('./config');
 
 const actionAddresses = {
-  [NETWORKS.ethereum.mainnet.chainId]: {
+  [NETWORKS.ethereum.chainId]: {
     // utils
     WrapEth: '0x9E702937F42Db2cE58342Ca5F213Ef33D51AEF6b',
     UnwrapEth: '0x5cD02A169CfE5B0596B352547879Dd60B7033488',
@@ -130,7 +130,7 @@ const actionAddresses = {
 };
 
 const otherAddresses = {
-  [NETWORKS.ethereum.mainnet.chainId]: {
+  [NETWORKS.ethereum.chainId]: {
     TaskExecutor: '0xb3e5371d55e1e84bfFE7D0b57Bd9c6A4C6b3C635',
     DFSRegistry: '0xD6049E1F5F3EfF1F921f5532aF1A1632bA23929C',
     Empty: '0x0000000000000000000000000000000000000000',
@@ -145,7 +145,7 @@ const otherAddresses = {
     CrvToken: '0xD533a949740bb3306d119CC777fa900bA034cd52',
     DAI: '0x6b175474e89094c44da98b954eedeac495271d0f',
   },
-  [NETWORKS.ethereum.optimism.chainId]: {
+  [NETWORKS.ethereum.chainId]: {
     Empty: '0x0000000000000000000000000000000000000000',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
     DFSRegistry: '0xA1A445d1d8F97cBf380E98759230FcC0f2E23fc1',
@@ -163,7 +163,7 @@ const getAddr = (name, chainId) => {
   const other = otherAddresses[_chainId];
 
   if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
-  if (!actions[name] && !other[name]) throw new Error(`Cannot find address for name: ${name}.`);
+  if (!actions[name] && !other[name]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
 
   return actions[name] || other[name];
 };
