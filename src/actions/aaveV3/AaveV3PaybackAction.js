@@ -3,23 +3,17 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
- * AaveSupplyAction - Supply token to an aave position
+ * AaveV3PaybackAction - Payback debt on Aave using underlying token
  */
 class AaveV3PaybackAction extends Action {
   /**
-   *    address market;
-        uint256 amount;
-        address from;
-        uint8 rateMode;
-        uint16 assetId;
-        bool useOnBehalf;
-        address onBehalf;
    * @param market {EthAddress}
-   * @param tokenAddr {EthAddress}
    * @param amount {string}
    * @param from {EthAddress} Tokens will be supplied from this address
+   * @param rateMode 
+   * @param assetId 
+   * @param useOnBehalf {boolean} 
    * @param onBehalf {EthAddress} Tokens will be supplied to this address' position (defaults to sender's proxy)
-   * @param enableAsColl {boolean} If we need to enable asset as collateral
    */
   constructor(market, amount, from, rateMode, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
     super('AaveV3Payback', getAddr('AaveV3Payback'), 
@@ -28,7 +22,10 @@ class AaveV3PaybackAction extends Action {
     );
 
     this.mappableArgs = [
-      //TODO
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+      this.args[0][6],
     ];
   }
 
