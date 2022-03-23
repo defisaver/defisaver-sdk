@@ -127,6 +127,9 @@ const actionAddresses = {
     CurveStethPoolDeposit: '0x0f042a5CC97C4cd8D8136c28F966839f195D08B9',
     CurveStethPoolWithdraw: '0x2F4ad71Bd8045d0633B304BD2d94ef349eB09105',
   },
+  [NETWORKS.optimism.chainId]: {
+    DFSSell: '0xf6814226b87303ad32567c1f02ea9fbc6b9c0288',
+  }
 };
 
 const otherAddresses = {
@@ -145,7 +148,7 @@ const otherAddresses = {
     CrvToken: '0xD533a949740bb3306d119CC777fa900bA034cd52',
     DAI: '0x6b175474e89094c44da98b954eedeac495271d0f',
   },
-  [NETWORKS.ethereum.chainId]: {
+  [NETWORKS.optimism.chainId]: {
     Empty: '0x0000000000000000000000000000000000000000',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
     DFSRegistry: '0xA1A445d1d8F97cBf380E98759230FcC0f2E23fc1',
@@ -156,6 +159,12 @@ const otherAddresses = {
   },
 };
 
+/**
+ *
+ * @param {string} name
+ * @param {chainId} chainId
+ * @returns {EthAddress}
+ */
 const getAddr = (name, chainId) => {
   const _chainId = typeof chainId === 'undefined' ? CONFIG.chainId : chainId;
 
