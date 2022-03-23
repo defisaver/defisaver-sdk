@@ -3,7 +3,7 @@ const AaveV3BorrowAction = require('./AaveV3BorrowAction');
 const AaveV3PaybackAction = require('./AaveV3PaybackAction');
 const AaveV3WithdrawAction = require('./AaveV3WithdrawAction');
 const AaveV3SetEModeAction = require('./AaveV3SetEModeAction');
-const AaveV3ATokenAPaybackAction = require('./AaveV3ATokenPaybackAction');
+const AaveV3ATokenPaybackAction = require('./AaveV3ATokenPaybackAction');
 const AaveV3CollateralSwitchAction = require('./AaveV3CollateralSwitchAction');
 
 module.exports = {
@@ -12,6 +12,6 @@ module.exports = {
     AaveV3PaybackAction,
     AaveV3WithdrawAction,
     AaveV3SetEModeAction,
-    AaveV3ATokenAPaybackAction,
+    AaveV3ATokenPaybackAction,
     AaveV3CollateralSwitchAction,
 }
