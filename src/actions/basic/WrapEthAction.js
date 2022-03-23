@@ -9,7 +9,11 @@ class WrapEthAction extends Action {
    * @param amount {string} Transfer amount
    */
   constructor(amount) {
-    super("WrapEth", getAddr("WrapEth"), ["uint256"], [...arguments]);
+    super("WrapEth", getAddr("WrapEth"), [["uint256"]], [[...arguments]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+    ];
   }
 
   async getEthValue() {

@@ -21,7 +21,8 @@ class Recipe {
 
     this.name = name;
     this.actions = actions;
-    this.taskExecutorAddress = getAddr('TaskExecutor');
+
+    this.recipeExecutorAddress = getAddr('RecipeExecutor');
   }
 
   /**
@@ -54,9 +55,9 @@ class Recipe {
    * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
-    const executeTaskAbi = RecipeAbi.find(({name}) => name === 'executeTask');
+    const executeTaskAbi = RecipeAbi.find(({name}) => name === 'executeRecipe');
     return [
-      this.taskExecutorAddress,
+      this.recipeExecutorAddress,
       AbiCoder.encodeFunctionCall(executeTaskAbi, this._encodeForCall()),
     ];
   }
@@ -107,7 +108,7 @@ class Recipe {
    */
   getAccessList() {
     const addressMapping = {
-      [getAddr('TaskExecutor')]: [],
+      [getAddr('RecipeExecutor')]: [],
       [getAddr('DFSRegistry')]: [],
     };
     this.actions.forEach((action) => {

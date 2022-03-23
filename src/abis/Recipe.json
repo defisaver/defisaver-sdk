@@ -1,6 +1,34 @@
 [
   {
     "inputs": [],
+    "name": "NonContractCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SenderNotAdmin",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SenderNotOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ADMIN_VAULT_ADDR",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
     "name": "DEFISAVER_LOGGER",
     "outputs": [
       {
@@ -48,19 +76,19 @@
             "type": "string"
           },
           {
-            "internalType": "bytes[][]",
+            "internalType": "bytes[]",
             "name": "callData",
-            "type": "bytes[][]"
-          },
-          {
-            "internalType": "bytes[][]",
-            "name": "subData",
-            "type": "bytes[][]"
+            "type": "bytes[]"
           },
           {
             "internalType": "bytes32[]",
-            "name": "ids",
+            "name": "subData",
             "type": "bytes32[]"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "actionIds",
+            "type": "bytes4[]"
           },
           {
             "internalType": "uint8[][]",
@@ -68,8 +96,8 @@
             "type": "uint8[][]"
           }
         ],
-        "internalType": "struct StrategyData.Task",
-        "name": "_currTask",
+        "internalType": "struct StrategyModel.Recipe",
+        "name": "_currRecipe",
         "type": "tuple"
       },
       {
@@ -85,33 +113,15 @@
   },
   {
     "inputs": [],
-    "name": "chiToken",
+    "name": "adminVault",
     "outputs": [
       {
-        "internalType": "contract IGasToken",
+        "internalType": "contract AdminVault",
         "name": "",
         "type": "address"
       }
     ],
     "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_strategyId",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bytes[][]",
-        "name": "_actionCallData",
-        "type": "bytes[][]"
-      }
-    ],
-    "name": "executeStrategyTask",
-    "outputs": [],
-    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -124,19 +134,19 @@
             "type": "string"
           },
           {
-            "internalType": "bytes[][]",
+            "internalType": "bytes[]",
             "name": "callData",
-            "type": "bytes[][]"
-          },
-          {
-            "internalType": "bytes[][]",
-            "name": "subData",
-            "type": "bytes[][]"
+            "type": "bytes[]"
           },
           {
             "internalType": "bytes32[]",
-            "name": "ids",
+            "name": "subData",
             "type": "bytes32[]"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "actionIds",
+            "type": "bytes4[]"
           },
           {
             "internalType": "uint8[][]",
@@ -144,27 +154,32 @@
             "type": "uint8[][]"
           }
         ],
-        "internalType": "struct StrategyData.Task",
-        "name": "currTask",
+        "internalType": "struct StrategyModel.Recipe",
+        "name": "_currRecipe",
         "type": "tuple"
       }
     ],
-    "name": "executeTask",
+    "name": "executeRecipe",
     "outputs": [],
     "stateMutability": "payable",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "gasToken",
-    "outputs": [
+    "inputs": [
       {
-        "internalType": "contract IGasToken",
-        "name": "",
-        "type": "address"
+        "internalType": "uint256",
+        "name": "_subId",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "_actionCallData",
+        "type": "bytes[]"
       }
     ],
-    "stateMutability": "view",
+    "name": "executeRecipeFromStrategy",
+    "outputs": [],
+    "stateMutability": "payable",
     "type": "function"
   },
   {
@@ -176,6 +191,13 @@
       }
     ],
     "name": "givePermission",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "kill",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -202,6 +224,29 @@
       }
     ],
     "name": "removePermission",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_token",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_receiver",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
+      }
+    ],
+    "name": "withdrawStuckFunds",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

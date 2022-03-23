@@ -85,7 +85,6 @@ Source: https://uniswap.org/docs/v2/javascript-SDK/getting-pair-addresses/#types
     * [.estimateSellPrice(sellAmount, sellToken, buyToken)](#utils.module_zeroExExchange.estimateSellPrice) ⇒ <code>Promise.&lt;string&gt;</code>
     * [.estimateBuyPrice(buyAmount, buyToken, sellToken)](#utils.module_zeroExExchange.estimateBuyPrice) ⇒ <code>Promise.&lt;string&gt;</code>
     * [.createSellAction(sellAmount, sellToken, buyToken, expectedPrice, acceptedSlippagePercent, fromAccount, toAccount)](#utils.module_zeroExExchange.createSellAction) ⇒ <code>Promise.&lt;SellAction&gt;</code>
-    * [.createBuyAction(buyAmount, buyToken, sellToken, expectedPrice, acceptedSlippagePercent, fromAccount, toAccount)](#utils.module_zeroExExchange.createBuyAction) ⇒ <code>Promise.&lt;BuyAction&gt;</code>
 
 <a name="utils.module_zeroExExchange.estimateSellPrice"></a>
 
@@ -133,12 +132,6 @@ For that purpose, the estimateSellPrice method can be used.
 - fromAccount [<code>EthAddress</code>](#EthAddress) - Withdraw funds from this addr
 - toAccount [<code>EthAddress</code>](#EthAddress) - Send funds to this addr
 
-<a name="utils.module_zeroExExchange.createBuyAction"></a>
-
-### zeroExExchange.createBuyAction(buyAmount, buyToken, sellToken, expectedPrice, acceptedSlippagePercent, fromAccount, toAccount) ⇒ <code>Promise.&lt;BuyAction&gt;</code>
-Fetches prices and creates order ready to be passed to transaction.
-This should only be called when before sending tx, not to be used for just querying the price.
-For that purpose, the estimateBuyPrice method can be used.
 
 **Kind**: static method of [<code>zeroExExchange</code>](#utils.module_zeroExExchange)  
 **Params**

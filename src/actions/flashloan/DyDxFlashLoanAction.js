@@ -12,7 +12,7 @@ class DyDxFlashLoanAction extends Action {
    * @param flParamGetterData {bytes}
    */
   constructor(loanAmount, tokenAddr, flParamGetterAddr = getAddr('Empty'), flParamGetterData= []) {
-    super('FLDyDx', getAddr('FLDyDx'),['uint256','address', 'address', 'bytes','uint256'], [loanAmount, tokenAddr, flParamGetterAddr, flParamGetterData, 0]);
+    super('FLDyDx', getAddr('FLDyDx'),[['address[]','uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes']], [[[tokenAddr], [loanAmount], [], getAddr('Empty'),flParamGetterAddr, flParamGetterData, []]]);
   }
 }
 

@@ -13,7 +13,13 @@ class CompoundPaybackAction extends Action {
    * @param onBehalf {EthAddress} Defaults to DsProxy address if 0x0
    */
   constructor(cTokenAddr, amount, from, onBehalf = getAddr('Empty')) {
-    super('CompPayback', getAddr('CompPayback'), ['address', 'uint256', 'address', 'address'], [cTokenAddr, amount, from, onBehalf]);
+    super('CompPayback', getAddr('CompPayback'), [['address', 'uint256', 'address', 'address']], [[cTokenAddr, amount, from, onBehalf]]);
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+      this.args[0][3],
+    ];
   }
 
   async getAssetsToApprove() {

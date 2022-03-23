@@ -15,7 +15,14 @@ class ReflexerWithdrawAction extends Action {
    */
   constructor(safeId, amount, adapterAddr, to) {
     requireAddress(to);
-    super('ReflexerWithdraw', getAddr('ReflexerWithdraw'), ['uint256','uint256','address','address'], [safeId, amount, adapterAddr, to]);
+    super('ReflexerWithdraw', getAddr('ReflexerWithdraw'), [['uint256','uint256','address','address']], [[safeId, amount, adapterAddr, to]]);
+
+    this.mappableArgs = [
+      this.args[0][0],
+      this.args[0][1],
+      this.args[0][2],
+      this.args[0][3],
+    ];
   }
 }
 
