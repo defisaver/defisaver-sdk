@@ -9,15 +9,15 @@ class AaveV3CollateralSwitchAction extends Action {
     /**
    * @param market {EthAddress}
    * @param arrayLength
-   * @param tokens
+   * @param assetIds
    * @param useAsCollateral
    */
-  constructor(market, arrayLength, tokens, useAsCollateral) {
+  constructor(market, arrayLength, assetIds, useAsCollateral) {
     super(
       'AaveV3CollateralSwitch',
       getAddr('AaveV3CollateralSwitch'),
-      [['address', 'uint8', 'address[]', 'bool[]']],
-      [[market, arrayLength, tokens, useAsCollateral]],
+      [['address', 'uint8', 'uint16[]', 'bool[]']],
+      [[market, arrayLength, assetIds, useAsCollateral]],
     );
   }
 }
