@@ -1,7 +1,9 @@
 const Action = require('./src/Action');
 const Recipe = require('./src/Recipe');
 const DfsWeb3 = require('./src/DfsWeb3');
-const { configure, CONFIG, NETWORKS } = require('./src/config');
+const {
+  configure, getNetworkData, CONFIG, NETWORKS,
+} = require('./src/config');
 
 const actions = require('./src/actions/');
 const utils = require('./src/utils/');
@@ -14,6 +16,7 @@ module.exports = {
   actions,
   utils,
   configure,
+  getNetworkData,
   networks: NETWORKS,
   actionAddressesAllChains: actionAddresses,
   actionAddresses: actionAddresses[CONFIG.chainId],
