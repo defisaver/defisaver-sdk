@@ -127,7 +127,7 @@ const actionAddresses = {
    'MStableClaim': '0x28279A806aDeDedFD33e39C7375dc0c0ee943847',
   
    'CurveStethPoolDeposit': '0x0f042a5CC97C4cd8D8136c28F966839f195D08B9',
-   'CurveStethPoolWithdraw': '0x2F4ad71Bd8045d0633B304BD2d94ef349eB09105',
+   'CurveStethPoolWithdraw': '0x8029828e2184DA070C370dCCbAf7A55599AeBe51',
 };
 
 const otherAddresses = {
