@@ -7,10 +7,10 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV3WithdrawAction extends L2Action {
   /**
-   * @param market {EthAddress}
-   * @param assetId 
-   * @param amount {string}
-   * @param to {EthAddress} 
+   * @param market {EthAddress} Address provider for specific market
+   * @param assetId {number} The id of the token to be deposited
+   * @param amount {string} Amount of tokens to be withdrawn -> send type(uint).max for whole amount
+   * @param to {EthAddress} Where the withdrawn tokens will be sent
    */
   constructor(market, assetId, amount, to) {
     super('AaveV3Withdraw', getAddr('AaveV3Withdraw'), 

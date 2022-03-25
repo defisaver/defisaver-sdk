@@ -7,8 +7,8 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV3SetEModeAction extends L2Action {
   /**
-   * @param market {EthAddress}
-   * @param categoryId {EthAddress}
+   * @param market {EthAddress} Address provider for specific market
+   * @param categoryId {EthAddress} ID of the category emode
    */
   constructor(market, categoryId) {
     super('AaveV3SetEMode', getAddr('AaveV3SetEMode'), 

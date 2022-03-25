@@ -7,13 +7,13 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV3PaybackAction extends L2Action {
   /**
-   * @param market {EthAddress}
-   * @param amount {string}
+   * @param market {EthAddress} Address provider for specific market
+   * @param amount {string} Amount of tokens to be payed back
    * @param from {EthAddress} Tokens will be supplied from this address
-   * @param rateMode 
-   * @param assetId 
-   * @param useOnBehalf {boolean} 
-   * @param onBehalf {EthAddress} Tokens will be supplied to this address' position (defaults to sender's proxy)
+   * @param rateMode {number} Type of borrow debt [Stable: 1, Variable: 2]
+   * @param assetId {number} The id of the underlying asset to be repaid
+   * @param useOnBehalf {boolean} use on behalf param or default to proxy
+   * @param onBehalf {EthAddress} For what user we are paying back the debt, defaults to proxy
    */
   constructor(market, amount, from, rateMode, tokenAddr, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
     super('AaveV3Payback', getAddr('AaveV3Payback'), 

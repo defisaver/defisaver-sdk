@@ -28,12 +28,12 @@ class L2Action extends Action {
   }
 
   numberToBytes2(number){
-      const hexNumber = number.toString().toString(16);
+      const hexNumber = number.toString(16);
       return hexNumber.padStart(4, '0');
   }
 
   numberToBytes1(number){
-      const hexNumber = number.toString().toString(16);
+      const hexNumber = number.toString(16);
       return hexNumber.padStart(2, '0');
   }
 

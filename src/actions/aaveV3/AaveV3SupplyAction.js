@@ -8,14 +8,14 @@ const { getAddr } = require('../../addresses.js');
 class AaveV3SupplyAction extends L2Action {
   
   /**
-   * @param market {EthAddress}
-   * @param amount {string}
+   * @param market {EthAddress} Address provider for specific market
+   * @param amount {string} Amount of tokens to be deposited
    * @param from {EthAddress} Tokens will be supplied from this address
-   * @param tokenAddress
-   * @param assetId
+   * @param tokenAddress {EthAddress} Address of the token 
+   * @param assetId {number} The id of the token to be deposited
    * @param enableAsColl {boolean} If we need to enable asset as collateral
    * @param useOnBehalf {boolean} 
-   * @param onBehalf {EthAddress} Tokens will be supplied to this address' position (defaults to sender's proxy)
+   * @param onBehalf {EthAddress} For what user we are supplying the tokens, defaults to proxy
    */
   constructor(market, amount, from, tokenAddress, assetId, enableAsColl, useOnBehalf , onBehalf = getAddr('Empty')) {
     super('AaveV3Supply', getAddr('AaveV3Supply'), 

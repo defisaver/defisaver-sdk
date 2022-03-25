@@ -7,10 +7,10 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV3CollateralSwitchAction extends L2Action {
     /**
-   * @param market {EthAddress}
-   * @param arrayLength
-   * @param assetIds
-   * @param useAsCollateral
+   * @param market {EthAddress} Address provider for specific market
+   * @param arrayLength {number} length of two arrays
+   * @param assetIds {array of numbers}
+   * @param useAsCollateral {array of bool}
    */
   constructor(market, arrayLength, assetIds, useAsCollateral) {
     super(

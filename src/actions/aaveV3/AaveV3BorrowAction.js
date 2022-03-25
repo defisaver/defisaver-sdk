@@ -7,13 +7,13 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV3BorrowAction extends L2Action {
    /**
-   * @param market {EthAddress}
-   * @param amount {string}
-   * @param to {EthAddress}
-   * @param rateMode
-   * @param assetId {EthAddress} 
-   * @param useOnBehalf {boolean} 
-   * @param onBehalf {EthAddress} 
+   * @param market {EthAddress} Address provider for specific market
+   * @param amount {string} Amount of tokens to be borrowed
+   * @param to {EthAddress} The address we are sending the borrowed tokens to
+   * @param rateMode {number} Type of borrow debt [Stable: 1, Variable: 2]
+   * @param assetId {number} The id of the token to be borrowed
+   * @param useOnBehalf {boolean} use on behalf or default to proxy
+   * @param onBehalf {EthAddress} On whose behalf we borrow the tokens, defaults to proxy
    */
   constructor(market, amount, to, rateMode, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
     super('AaveV3Borrow', getAddr('AaveV3Borrow'), 
