@@ -2,19 +2,16 @@ const Action = require('./Action');
 class L2Action extends Action {
     /**
    * Encode arguments for calling the action via DsProxy
-   * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
+   * @returns {string}
    */
   encodeForL2DsProxyCall() {
-    return [
-      this.contractAddress,
-      this.encodeInputs(),
-    ];
+    return this.encodeInputs();
   }
 
   encodeInputs(){
-      console.log("HEHE");
+    throw new Error('Use implementation from specific L2Action');
   }
-  
+
   addressToBytes20(address){
       return address.slice(2);
   }

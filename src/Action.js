@@ -1,5 +1,6 @@
 const AbiCoder = require('web3-eth-abi');
 const { keccak256, padLeft, toHex } = require('web3-utils');
+const { CONFIG } = require('./config');
 
 const ActionAbi = require('./abis/Action.json');
 
@@ -107,38 +108,31 @@ class Action {
    * @private
    */
   _encodeForCall() {
-    const bytesEncodedArgs = this.args.map((arg, i) => {
+    return this.args.map((arg, i) => {
       let paramType = this.paramTypes[i];
       let _arg = this._replaceWithPlaceholders(arg, paramType);
       let _paramType = this._formatType(paramType);
       return AbiCoder.encodeParameter(_paramType, _arg);
     });
-    return bytesEncodedArgs;
   }
 
-  // TODO handle rollup l2 chains (optimism, arbitrum, ZKroll..)
-  // every action will override this probably
-  // _encodeForRollupCall() {}
+  encodeForL2DsProxyCall() {
+    throw new Error('Use implementation from L2Action.');
+  }
 
-  // TODO handle different chains
   /**
    * Encode arguments for calling the action via DsProxy
    * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
-    let chainId = 1;
-    if (chainId === 1){
-        const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
-        return [
-          this.contractAddress,
-          AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall()),
-        ];
+    if (CONFIG.chainId === 1) {
+      const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
+      return [
+        this.contractAddress,
+        AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall()),
+      ];
     } else {
-        // TODO: set this for different chain ids
-        return [
-          this.contractAddress,
-          this.encodeForL2DsProxyCall(),
-        ]
+      return [this.contractAddress, this.encodeForL2DsProxyCall()];
     }
   }
 
