@@ -126,11 +126,20 @@ class Action {
    * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
-    const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
-    return [
-      this.contractAddress,
-      AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall()),
-    ];
+    let chainId = 1;
+    if (chainId === 1){
+        const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
+        return [
+          this.contractAddress,
+          AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall()),
+        ];
+    } else {
+        // TODO: set this for different chain ids
+        return [
+          this.contractAddress,
+          this.encodeForL2DsProxyCall(),
+        ]
+    }
   }
 
   /**
