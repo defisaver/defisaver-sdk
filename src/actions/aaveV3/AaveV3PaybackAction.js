@@ -11,12 +11,13 @@ class AaveV3PaybackAction extends L2Action {
    * @param amount {string} Amount of tokens to be payed back
    * @param from {EthAddress} Tokens will be supplied from this address
    * @param rateMode {number} Type of borrow debt [Stable: 1, Variable: 2]
+   * @param tokenAddr {EthAddress} Address of underlying asset
    * @param assetId {number} The id of the underlying asset to be repaid
    * @param useOnBehalf {boolean} use on behalf param or default to proxy
    * @param onBehalf {EthAddress} For what user we are paying back the debt, defaults to proxy
    */
   constructor(market, amount, from, rateMode, tokenAddr, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
-    super('AaveV3Payback', getAddr('AaveV3Payback'), 
+    super('AaveV3Payback', getAddr('AaveV3Payback'),
     [['address','uint256','address','uint8','uint16','bool', 'address']],
     [[market, amount, from, rateMode, assetId, useOnBehalf, onBehalf]]
     );
@@ -35,7 +36,7 @@ class AaveV3PaybackAction extends L2Action {
     if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[3]}];
     return [];
   }
-  
+
   encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";

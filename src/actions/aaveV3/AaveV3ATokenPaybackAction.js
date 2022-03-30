@@ -12,10 +12,10 @@ class AaveV3ATokenPaybackAction extends L2Action {
    * @param from {EthAddress} Where are we pulling the payback aTokens from
    * @param rateMode {number} Type of borrow debt [Stable: 1, Variable: 2]
    * @param aTokenAddr {EthAddress} address of the aToken to be pulled
-   * @param assetId {number}The id of the underlying asset to be repaid
+   * @param assetId {number} The id of the underlying asset to be repaid
    */
   constructor(market, amount, from, rateMode, aTokenAddr, assetId) {
-    super('AaveV3Payback', getAddr('AaveV3Payback'), 
+    super('AaveV3Payback', getAddr('AaveV3Payback'),
     [['address','uint256','address','uint8','uint16']],
     [[market, amount, from, rateMode, assetId]]
     );

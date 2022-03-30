@@ -1,5 +1,4 @@
 const L2Action = require("../../L2Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
@@ -13,7 +12,7 @@ class AaveV3WithdrawAction extends L2Action {
    * @param to {EthAddress} Where the withdrawn tokens will be sent
    */
   constructor(market, assetId, amount, to) {
-    super('AaveV3Withdraw', getAddr('AaveV3Withdraw'), 
+    super('AaveV3Withdraw', getAddr('AaveV3Withdraw'),
     [['address','uint16','uint256','address']],
     [[market, assetId, amount, to]]
     );

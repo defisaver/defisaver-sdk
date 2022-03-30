@@ -1,5 +1,4 @@
 const L2Action = require("../../L2Action");
-const {requireAddress} = require("../../utils/general.js");
 const { getAddr } = require('../../addresses.js');
 
 /**
@@ -9,8 +8,8 @@ class AaveV3CollateralSwitchAction extends L2Action {
     /**
    * @param market {EthAddress} Address provider for specific market
    * @param arrayLength {number} length of two arrays
-   * @param assetIds {array of numbers}
-   * @param useAsCollateral {array of bool}
+   * @param assetIds {Array<number>}
+   * @param useAsCollateral {Array<boolean>}
    */
   constructor(market, arrayLength, assetIds, useAsCollateral) {
     super(
@@ -34,7 +33,7 @@ class AaveV3CollateralSwitchAction extends L2Action {
       // useAsCollateral[i]
       encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][3][i]));
     }
-    
+
     return encodedInput;
   }
 }
