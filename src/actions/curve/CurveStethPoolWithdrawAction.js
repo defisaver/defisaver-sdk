@@ -9,9 +9,9 @@ class CurveStethPoolWithdrawAction extends Action {
     /**
      * @param from {address}
      * @param to {address}
-     * @param amounts {uint256[2]}
-     * @param maxBurnAmount {uint256}
-     * @param returnValue {uint256}
+     * @param amounts {string[]}
+     * @param maxBurnAmount {string}
+     * @param returnValue {string}
      */
     constructor(
         from,

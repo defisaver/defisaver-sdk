@@ -81,6 +81,12 @@
 <dd></dd>
 <dt><a href="#CurveMintCrvAction">CurveMintCrvAction</a></dt>
 <dd></dd>
+<dt><a href="#CurveStethPoolDepositAction">CurveStethPoolDepositAction</a></dt>
+<dd><p>CurveStethPoolDepositAction - Deposits tokens into curve steth pool</p>
+</dd>
+<dt><a href="#CurveStethPoolWithdrawAction">CurveStethPoolWithdrawAction</a></dt>
+<dd><p>CurveStethPoolWithdrawAction - Withdraws tokens from curve steth pool</p>
+</dd>
 <dt><a href="#CurveSwapAction">CurveSwapAction</a></dt>
 <dd></dd>
 <dt><a href="#CurveWithdrawAction">CurveWithdrawAction</a></dt>
@@ -174,6 +180,9 @@
 </dd>
 <dt><a href="#LiquityWithdrawAction">LiquityWithdrawAction</a></dt>
 <dd><p>LiquityWithdrawAction - Withdraws collateral from the trove</p>
+</dd>
+<dt><a href="#MakerClaimAction">MakerClaimAction</a></dt>
+<dd><p>MakerClaimAction - Claim bonus tokens in CropJoin types</p>
 </dd>
 <dt><a href="#MakerGenerateAction">MakerGenerateAction</a></dt>
 <dd><p>MakerGenerateAction - Generated Dai from a Vault</p>
@@ -666,6 +675,39 @@ CompoundWithdrawAction - Withdraw token from an Compound position
 - gaugeAddrs <code>Array.&lt;EthAddress&gt;</code>
 - receiver <code>EthAddress</code>
 
+<a name="CurveStethPoolDepositAction"></a>
+
+## CurveStethPoolDepositAction
+CurveStethPoolDepositAction - Deposits tokens into curve steth pool
+
+**Kind**: global class  
+<a name="new_CurveStethPoolDepositAction_new"></a>
+
+### new CurveStethPoolDepositAction(from, to, amounts, minMintAmount)
+**Params**
+
+- from <code>address</code>
+- to <code>address</code>
+- amounts <code>Array.&lt;string&gt;</code>
+- minMintAmount <code>string</code>
+
+<a name="CurveStethPoolWithdrawAction"></a>
+
+## CurveStethPoolWithdrawAction
+CurveStethPoolWithdrawAction - Withdraws tokens from curve steth pool
+
+**Kind**: global class  
+<a name="new_CurveStethPoolWithdrawAction_new"></a>
+
+### new CurveStethPoolWithdrawAction(from, to, amounts, maxBurnAmount, returnValue)
+**Params**
+
+- from <code>address</code>
+- to <code>address</code>
+- amounts <code>Array.&lt;string&gt;</code>
+- maxBurnAmount <code>string</code>
+- returnValue <code>string</code>
+
 <a name="CurveSwapAction"></a>
 
 ## CurveSwapAction
@@ -1132,6 +1174,21 @@ LiquityWithdrawAction - Withdraws collateral from the trove
 
 - collAmount - Amount of WETH tokens to withdraw
 - to - Address that will receive the withdrawn tokens
+
+<a name="MakerClaimAction"></a>
+
+## MakerClaimAction
+MakerClaimAction - Claim bonus tokens in CropJoin types
+
+**Kind**: global class  
+<a name="new_MakerClaimAction_new"></a>
+
+### new MakerClaimAction(vaultId, joinAddr, to)
+**Params**
+
+- vaultId <code>VaultId</code>
+- joinAddr <code>EthAddress</code>
+- to <code>EthAddress</code> - Tokens will be sent to this address
 
 <a name="MakerGenerateAction"></a>
 
