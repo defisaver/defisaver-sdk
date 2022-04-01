@@ -117,7 +117,9 @@ class Action {
   }
 
   encodeForL2DsProxyCall() {
-    throw new Error('Use implementation from L2Action.');
+    // TODO fix this mess
+    const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
+    return AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall());
   }
 
   /**
