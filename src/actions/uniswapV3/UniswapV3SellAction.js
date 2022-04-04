@@ -9,10 +9,11 @@ class UniswapV3SellAction extends L2Action {
      * @param {address} to
      * @param {uint256} amount
      * @param {uint256} minOut
+     * @param {address} inputAsset
      * @param {bool} isCompressedPath
      * @param {bytes} path
      */
-    constructor(from, to, amount, minOut, isCompressedPath, path) {
+    constructor(from, to, amount, minOut, inputAsset, isCompressedPath, path) {
         super(
             'UniSellV3',
             '0x',
@@ -26,8 +27,16 @@ class UniswapV3SellAction extends L2Action {
                     'bytes',
                 ],
             ],
-            [[...arguments]]
+            [[
+                from,
+                to,
+                amount,
+                minOut,
+                isCompressedPath,
+                path,
+            ]],
         );
+        this.tokenForApproval = inputAsset;
 
         this.mappableArgs = [
             this.args[0][0],
@@ -53,6 +62,10 @@ class UniswapV3SellAction extends L2Action {
         // path
         encodedInput = encodedInput.concat(this.args[0][5].slice(2));
         return encodedInput;
+    }
+
+    async getAssetsToApprove() {
+        return { asset: this.tokenForApproval, owner: this.args[0][0] };
     }
 }
 
