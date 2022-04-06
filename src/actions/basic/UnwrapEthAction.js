@@ -1,11 +1,11 @@
-const Action = require("../../Action");
+const Action = require("../../L2Action");
 const {requireAddress} = require("../../utils/general");
 const {getAddr} = require('../../addresses.js');
 
 /**
  * Unwraps a specified amount of WETH from the proxy
  */
-class UnwrapEthAction extends Action {
+class UnwrapEthAction extends L2Action {
   /**
    * @param amount {string} Token address
    * @param to {string} Transfer recipient
@@ -26,6 +26,14 @@ class UnwrapEthAction extends Action {
       this.args[0][0],
       this.args[0][1],
     ];
+  }
+  encodeInputs(){
+    // executeActionDirectL2
+    let encodedInput = "0x2895f3aa";
+    // amount
+    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][0]));
+    // to
+    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][1]));
   }
 }
 
