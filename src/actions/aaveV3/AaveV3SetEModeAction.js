@@ -7,27 +7,32 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV3SetEModeAction extends L2Action {
   /**
-   * @param market {EthAddress} Address provider for specific market
    * @param categoryId {EthAddress} ID of the category emode
+   * @param useOnDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
+   * @param market {EthAddress} Address provider for specific market
    */
-  constructor(market, categoryId) {
+  constructor(categoryId, useOnDefaultMarket, market) {
     super('AaveV3SetEMode', getAddr('AaveV3SetEMode'), 
-    [['address','uint8']],
-    [[market, categoryId]]
+    [['uint8', 'bool', 'address']],
+    [[categoryId, useOnDefaultMarket, market]]
     );
 
     this.mappableArgs = [
-      this.args[0][0],
+      this.args[0][2],
     ];
   }
   encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
-    // market
-    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][0]));
-    // assetId
-    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0][1]));
-    // amount
+    // categoryId
+    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0][0]));
+    // useOnDefaultMarket
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][1]));
+    if (!this.args[0][1]){
+      // market
+      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][2]));
+    }
+
     return encodedInput;
   }
 

@@ -11,7 +11,7 @@ class AaveV3ClaimRewardsAction extends L2Action {
    * @param amount {string} length of two arrays
    * @param to {EthAddress}
    * @param reward {EthAddress}
-   * @param assets {<EthAddress>}
+   * @param assets {Array<EthAddress>}
    */
   constructor(assetsLength, amount, to, rewards, assets) {
     super(
