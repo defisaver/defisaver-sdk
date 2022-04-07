@@ -6,6 +6,7 @@ const AaveV3SetEModeAction = require('./AaveV3SetEModeAction');
 const AaveV3ATokenPaybackAction = require('./AaveV3ATokenPaybackAction');
 const AaveV3CollateralSwitchAction = require('./AaveV3CollateralSwitchAction');
 const AaveV3ClaimRewardsAction = require('./AaveV3ClaimRewardsAction');
+const AaveV3SwapBorrowRateModeAction = require('./AaveV3SwapBorrowRateModeAction');
 
 module.exports = {
     AaveV3SupplyAction,
@@ -16,4 +17,5 @@ module.exports = {
     AaveV3ATokenPaybackAction,
     AaveV3CollateralSwitchAction,
     AaveV3ClaimRewardsAction,
+    AaveV3SwapBorrowRateModeAction,
 }
