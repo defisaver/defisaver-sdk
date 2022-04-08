@@ -128,7 +128,21 @@ const actionAddresses = {
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xf6814226b87303ad32567c1f02ea9fbc6b9c0288',
-  }
+
+    // basic
+    WrapEth: '0xf5617aE21d837FdA141fae979C02D98E00FCF776',
+    UnwrapEth: '0x1643233EB2B30DeE380618C4737A339C75acDb00',
+
+    // aave v3
+    AaveV3ATokenPayback: '0x09253083d36bba932f6104a91107028F0eb689Da',
+    AaveV3Borrow: '0x975b3110443fD803E1720AAfE73596cA78a30f6c',
+    AaveV3CollateralSwitch: '0x77b0F048274CE89769E1e689b1fdf448C4683120',
+    AaveV3Payback: '0x50b69e4c019Ca6498a412D668D1F249145979b06',
+    AaveV3SetEMode: '0xca44924e4A80d03eF4Bcb5aCA6d34307d9465192',
+    AaveV3Supply: '0x50Cbbb8B1C09E59e05Ea94BB3583e5649D5fc3E1',
+    AaveV3SwapBorrowRateMode: '0xC5CFc61d565D8586979474bab55Fd5b18a105F50',
+    AaveV3Withdraw: '0x29b00207CcA815B16A4AD8F6ad259ac644492C5e',
+  },
 };
 
 const otherAddresses = {
