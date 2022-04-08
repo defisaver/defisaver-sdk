@@ -1,4 +1,13 @@
+const Dec = require("decimal.js");
 const dfsTokensSetConfig = require("@defisaver/tokens").set;
+
+Dec.set({
+  rounding: Dec.ROUND_DOWN,
+  toExpPos: 9e15,
+  toExpNeg: -9e15,
+  precision: 100,
+});
+
 /**
  *
  * @type {Networks}
