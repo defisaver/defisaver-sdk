@@ -17,7 +17,7 @@ class WrapEthAction extends L2Action {
   }
 
   async getEthValue() {
-    return this.args[0];
+    return this.args[0][0];
   }
   encodeInputs(){
     // executeActionDirectL2
