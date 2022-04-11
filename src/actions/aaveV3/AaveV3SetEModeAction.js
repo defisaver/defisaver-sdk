@@ -1,5 +1,4 @@
 const L2Action = require("../../L2Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
@@ -12,7 +11,7 @@ class AaveV3SetEModeAction extends L2Action {
    * @param market {EthAddress} Address provider for specific market
    */
   constructor(categoryId, useOnDefaultMarket, market) {
-    super('AaveV3SetEMode', getAddr('AaveV3SetEMode'), 
+    super('AaveV3SetEMode', getAddr('AaveV3SetEMode'),
     [['uint8', 'bool', 'address']],
     [[categoryId, useOnDefaultMarket, market]]
     );

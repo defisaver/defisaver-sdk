@@ -1,5 +1,4 @@
 const L2Action = require("../../L2Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
@@ -17,7 +16,7 @@ class AaveV3BorrowAction extends L2Action {
    * @param onBehalf {EthAddress} On whose behalf we borrow the tokens, defaults to proxy
    */
   constructor(useDefaultMarket, market, amount, to, rateMode, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
-    super('AaveV3Borrow', getAddr('AaveV3Borrow'), 
+    super('AaveV3Borrow', getAddr('AaveV3Borrow'),
     [['uint256','address','uint8','uint16','bool','bool','address','address']],
     [[amount, to, rateMode, assetId, useDefaultMarket, useOnBehalf, market, onBehalf]]
     );

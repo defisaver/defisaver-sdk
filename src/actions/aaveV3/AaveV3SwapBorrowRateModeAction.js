@@ -1,5 +1,4 @@
 const L2Action = require("../../L2Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
@@ -11,10 +10,10 @@ class AaveV3SwapBorrowRateModeAction extends L2Action {
    * @param rateMode {string} rate mode the user is swapping from.[Stable: 1, Variable: 2]
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market
-   * 
+   *
    */
   constructor(asset, rateMode, useDefaultMarket, market) {
-    super('AaveV3SwapBorrowRateMode', getAddr('AaveV3SwapBorrowRateMode'), 
+    super('AaveV3SwapBorrowRateMode', getAddr('AaveV3SwapBorrowRateMode'),
     [['address','uint256','bool','address']],
     [[asset, rateMode, useDefaultMarket, market]]
     );
