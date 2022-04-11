@@ -1,10 +1,10 @@
-const L2Action = require("../../L2Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const { getAddr } = require('../../addresses.js');
 
 /**
  *  AaveV3ClaimRewardsAction
  */
-class AaveV3ClaimRewardsAction extends L2Action {
+class AaveV3ClaimRewardsAction extends ActionWithL2 {
     /**
    * @param assetsLength {number} Address provider for specific market
    * @param amount {string} length of two arrays

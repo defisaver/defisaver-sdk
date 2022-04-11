@@ -1,10 +1,10 @@
-const L2Action = require("../../L2Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveV3SwapBorrowRateModeAction - Swaps proxy positions borrow rate mode between stable and variable.
  */
-class AaveV3SwapBorrowRateModeAction extends L2Action {
+class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
   /**
    * @param asset {EthAddress} address of the underlying asset
    * @param rateMode {string} rate mode the user is swapping from.[Stable: 1, Variable: 2]

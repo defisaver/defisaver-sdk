@@ -1,11 +1,11 @@
-const L2Action = require("../../L2Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const {requireAddress} = require("../../utils/general");
 const {getAddr} = require('../../addresses.js');
 
 /**
  * Unwraps a specified amount of WETH from the proxy
  */
-class UnwrapEthAction extends L2Action {
+class UnwrapEthAction extends ActionWithL2 {
   /**
    * @param amount {string} Token address
    * @param to {string} Transfer recipient

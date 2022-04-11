@@ -1,10 +1,10 @@
-const L2Action = require("../../L2Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveV3SetEModeAction - Set EMode for the proxy AaveV3 position
  */
-class AaveV3SetEModeAction extends L2Action {
+class AaveV3SetEModeAction extends ActionWithL2 {
   /**
    * @param categoryId {EthAddress} ID of the category emode
    * @param useOnDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract

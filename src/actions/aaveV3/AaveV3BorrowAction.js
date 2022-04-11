@@ -1,10 +1,10 @@
-const L2Action = require("../../L2Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveV3BorrowAction - Borrow a token from AaveV3
  */
-class AaveV3BorrowAction extends L2Action {
+class AaveV3BorrowAction extends ActionWithL2 {
    /**
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market

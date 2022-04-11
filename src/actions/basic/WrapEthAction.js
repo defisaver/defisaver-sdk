@@ -1,10 +1,10 @@
-const L2Action = require("../../L2Action");
-const {getAddr} = require("../../addresses.js");
+const ActionWithL2 = require("../../ActionWithL2");
+const { getAddr } = require("../../addresses.js");
 
 /**
  * Wraps a specified amount of ETH from the wallet to WETH on the recipe
  */
-class WrapEthAction extends L2Action {
+class WrapEthAction extends ActionWithL2 {
   /**
    * @param amount {string} Transfer amount
    */

@@ -1,10 +1,10 @@
-const L2Action = require("../../L2Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveV3WithdrawAction - Withdraw a previously supplied token from a position in AaveV3
  */
-class AaveV3WithdrawAction extends L2Action {
+class AaveV3WithdrawAction extends ActionWithL2 {
   /**
    * @param assetId {number} The id of the token to be deposited
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract

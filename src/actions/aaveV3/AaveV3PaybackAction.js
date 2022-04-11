@@ -1,11 +1,11 @@
-const L2Action = require("../../L2Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const { getAssetInfoByAddress } = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveV3PaybackAction - Payback debt on Aave using underlying token
  */
-class AaveV3PaybackAction extends L2Action {
+class AaveV3PaybackAction extends ActionWithL2 {
   /**
    * @param useOnDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market
@@ -43,23 +43,31 @@ class AaveV3PaybackAction extends L2Action {
     let encodedInput = "0x2895f3aa";
     // amount
     encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][0]));
+    console.log(encodedInput);
     // from
     encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][1]));
+    console.log(encodedInput);
     // rateMode
     encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0][2]));
+    console.log(encodedInput);
     // assetId
     encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0][3]));
+    console.log(encodedInput);
     // useDefaultMarket
-    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][4]))
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][4]));
+    console.log(encodedInput);
     // useOnBehalf
     encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][5]));
+    console.log(encodedInput);
     if (!this.args[0][4]) {
       // market
       encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][6]));
+      console.log(encodedInput);
     }
     if (this.args[0][5]) {
       // onBehalf
       encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][7]));
+      console.log(encodedInput);
     }
     return encodedInput;
   }

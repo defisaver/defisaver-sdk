@@ -1,11 +1,11 @@
-const L2Action = require("../../L2Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const { getAssetInfoByAddress } = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveV3SupplyAction - Supply token to an aave position on Aave V3
  */
-class AaveV3SupplyAction extends L2Action {
+class AaveV3SupplyAction extends ActionWithL2 {
 
   /**
    * @param amount {string} Amount of tokens to be deposited

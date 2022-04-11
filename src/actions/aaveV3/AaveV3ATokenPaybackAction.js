@@ -1,11 +1,11 @@
-const L2Action = require("../../L2Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const { getAssetInfoByAddress } = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
 
 /**
  * AaveV3ATokenPaybackAction - Repay Aave V3 debt using aTokens
  */
-class AaveV3ATokenPaybackAction extends L2Action {
+class AaveV3ATokenPaybackAction extends ActionWithL2 {
   /**
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market
