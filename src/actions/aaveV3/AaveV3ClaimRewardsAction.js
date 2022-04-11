@@ -1,9 +1,8 @@
 const L2Action = require("../../L2Action");
-const {requireAddress} = require("../../utils/general.js");
 const { getAddr } = require('../../addresses.js');
 
 /**
- *  AaveV3ClaimRewardsAction - 
+ *  AaveV3ClaimRewardsAction
  */
 class AaveV3ClaimRewardsAction extends L2Action {
     /**
@@ -13,12 +12,12 @@ class AaveV3ClaimRewardsAction extends L2Action {
    * @param reward {EthAddress}
    * @param assets {Array<EthAddress>}
    */
-  constructor(assetsLength, amount, to, rewards, assets) {
+  constructor(assetsLength, amount, to, reward, assets) {
     super(
       'AaveV3ClaimRewards',
       getAddr('AaveV3ClaimRewards'),
       [['uint8', 'uint256', 'address', 'address', 'address[]']],
-      [[assetsLength, amount, to, rewards, assets]],
+      [[assetsLength, amount, to, reward, assets]],
     );
   }
   encodeInputs() {
@@ -38,7 +37,7 @@ class AaveV3ClaimRewardsAction extends L2Action {
       // assets[i]
       encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][4][i]))
     }
-    
+
     return encodedInput;
   }
 }

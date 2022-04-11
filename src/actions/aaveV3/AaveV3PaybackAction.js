@@ -7,17 +7,18 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV3PaybackAction extends L2Action {
   /**
+   * @param useOnDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
+   * @param market {EthAddress} Address provider for specific market
    * @param amount {string} Amount of tokens to be payed back
    * @param from {EthAddress} Tokens will be supplied from this address
    * @param rateMode {number} Type of borrow debt [Stable: 1, Variable: 2]
+   * @param tokenAddr {EthAddress}
    * @param assetId {number} The id of the underlying asset to be repaid
-   * @param useOnDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param useOnBehalf {boolean} use on behalf param or default to proxy
-   * @param market {EthAddress} Address provider for specific market
    * @param onBehalf {EthAddress} For what user we are paying back the debt, defaults to proxy
    */
   constructor(useOnDefaultMarket, market, amount, from, rateMode, tokenAddr, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
-    super('AaveV3Payback', getAddr('AaveV3Payback'), 
+    super('AaveV3Payback', getAddr('AaveV3Payback'),
     [['uint256','address','uint8','uint16', 'bool', 'bool','address','address']],
     [[amount, from, rateMode, assetId, useOnDefaultMarket, useOnBehalf, market, onBehalf]]
     );
@@ -36,7 +37,7 @@ class AaveV3PaybackAction extends L2Action {
     if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[3]}];
     return [];
   }
-  
+
   encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
