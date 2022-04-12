@@ -14,6 +14,8 @@ const actionAddresses = {
   'ChangeProxyOwner': '0x81cA52CfE66421d0ceF82d5F33230e43b5F23D2B',
   'TokenBalance': '0xa92B177950F1460119940436515FD857C24494BC',
   'AutomationV2Unsub': '0xe35Fb12fE9796847751076aCf5ee7d124108612C',
+  'SendTokenAndUnwrap': '0xeecd376026335261c89faD40D89625391b1eFF6a',
+
 
   // exchange
   'DFSSell': '0x1abDDCae131ce200e66140d9fBd0C37F7a40e642',
