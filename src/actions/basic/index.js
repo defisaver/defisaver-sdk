@@ -1,5 +1,6 @@
 const SellAction = require('./SellAction');
 const SendTokenAction = require('./SendTokenAction');
+const SendTokenAndUnwrapAction = require('./SendTokenAndUnwrapAction');
 const PullTokenAction = require('./PullTokenAction');
 const WrapEthAction = require('./WrapEthAction');
 const UnwrapEthAction = require('./UnwrapEthAction');
@@ -22,4 +23,5 @@ module.exports = {
   TokenBalanceAction,
   AutomationV2Unsub,
   GasFeeAction,
+  SendTokenAndUnwrapAction,
 };
