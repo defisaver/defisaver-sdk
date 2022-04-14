@@ -27,7 +27,7 @@ class AaveV3CollateralSwitchAction extends ActionWithL2 {
     encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0][0]));
     // useDefaultMarket
     encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][1]));
-    const arrayLength = this.args[0][1];
+    const arrayLength = this.args[0][0];
     for (let i = 0; i < arrayLength; i++){
       // assetIds[i]
       encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0][2][i]));
