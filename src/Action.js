@@ -140,7 +140,7 @@ class Action {
   encodeForStrategy(subSlots) {
     return [
       this.getId(),
-      [this._getArgumentMappingWithSlots(subSlots)], // paramMappings
+      this._getArgumentMappingWithSlots(subSlots), // paramMappings
     ]
   }
 
