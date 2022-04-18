@@ -1,5 +1,4 @@
-const Action = require("@defisaver/sdk/src/Action");
-const {getAddr} = require("@defisaver/sdk/src/addresses");
+const Action = require("../Action");
 
 class ReflexerRatioTrigger extends Action {
 
