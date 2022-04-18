@@ -4,7 +4,7 @@ const {getAddr} = require("../addresses.js");
 class CompoundRatioTrigger extends Action {
 
   constructor(user, ratio, state) {
-    super("CompoundRatioTrigger", getAddr("CompoundRatioTrigger"), [["address", "uint256", "uint8"]], [[...arguments]]);
+    super("CompoundRatioTrigger", getAddr("CompoundRatioTrigger"), ["address", "uint256", "uint8"], [...arguments]);
   }
 }
 

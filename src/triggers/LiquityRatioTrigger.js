@@ -1,4 +1,5 @@
 const Action = require("../Action");
+const {getAddr} = require("../addresses");
 
 class LiquityRatioTrigger extends Action {
 
@@ -6,8 +7,8 @@ class LiquityRatioTrigger extends Action {
     super(
       "LiquityRatioTrigger",
       getAddr("LiquityRatioTrigger"),
-      [["addresss", "uint256", "uint8"]],
-      [[...arguments]]
+      ["addresss", "uint256", "uint8"],
+      [...arguments]
     );
   }
 }

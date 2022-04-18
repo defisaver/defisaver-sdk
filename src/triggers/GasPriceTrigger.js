@@ -4,7 +4,7 @@ const {getAddr} = require("../addresses.js");
 class GasPriceTrigger extends Action {
 
   constructor(maxGasPrice) {
-    super("GasPriceTrigger", getAddr("GasPriceTrigger"), [["uint256"]], [[...arguments]]);
+    super("GasPriceTrigger", getAddr("GasPriceTrigger"), ["uint256"], [...arguments]);
   }
 }
 
