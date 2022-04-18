@@ -16,7 +16,7 @@ describe('Action: AavePaybackAction', () => {
         1,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
       );
-      assert.equal(action.args[5], getAddr('Empty'));
+      assert.equal(action.args[0][5], getAddr('Empty'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -42,7 +42,7 @@ describe('Action: AavePaybackAction', () => {
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
         '0xdeafbeefdeadbeefdeafbeefdeadbeefdeafbeef',
       );
-      assert.equal(action.args[5], '0xdeafbeefdeadbeefdeafbeefdeadbeefdeafbeef');
+      assert.equal(action.args[0][5], '0xdeafbeefdeadbeefdeafbeefdeadbeefdeafbeef');
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));

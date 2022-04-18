@@ -26,7 +26,7 @@ class LiquityCloseAction extends Action {
     }
 
     async getAssetsToApprove() {
-        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[0]}];
+        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[0][0]}];
     }
 }
 

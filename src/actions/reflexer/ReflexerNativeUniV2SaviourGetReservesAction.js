@@ -15,12 +15,7 @@ class ReflexerNativeUniV2SaviourGetReservesAction extends Action {
     this.mappableArgs = [
         this.args[0][0],
       ];
-}
-
-  async getAssetsToApprove() {
-    return [];
   }
-
 }
 
 module.exports = ReflexerNativeUniV2SaviourGetReservesAction;

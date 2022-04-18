@@ -25,14 +25,14 @@ class ReflexerSupplyAction extends Action {
   }
 
   async getAssetsToApprove() {
-    const asset = tokenFromJoin(this.args[2]);
-    if (asset !== 'ETH') return [{asset: getAssetInfo(asset).address, owner: this.args[3]}];
+    const asset = tokenFromJoin(this.args[0][2]);
+    if (asset !== 'ETH') return [{asset: getAssetInfo(asset).address, owner: this.args[0][3]}];
     return [];
   }
 
   async getEthValue() {
-    const asset = tokenFromJoin(this.args[2]);
-    if (asset === 'ETH') return this.args[1];
+    const asset = tokenFromJoin(this.args[0][2]);
+    if (asset === 'ETH') return this.args[0][1];
     return '0';
   }
 }

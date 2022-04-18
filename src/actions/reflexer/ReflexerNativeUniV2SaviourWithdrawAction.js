@@ -17,12 +17,7 @@ class ReflexerNativeUniV2SaviourWithdrawAction extends Action {
         this.args[0][0],
         this.args[0][2],
       ];
-}
-
-  async getAssetsToApprove() {
-    return [];
   }
-
 }
 
 module.exports = ReflexerNativeUniV2SaviourWithdrawAction;

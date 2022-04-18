@@ -40,8 +40,8 @@ class SellAction extends Action {
   }
 
   async getAssetsToApprove() {
-    const asset = getAssetInfoByAddress(this.args[0][0]);
-    if (asset.symbol !== 'ETH') return [{asset: this.args[0][0], owner: this.args[1]}];
+    const asset = getAssetInfoByAddress(this.args[0][0][0]);
+    if (asset.symbol !== 'ETH') return [{asset: this.args[0][0][0], owner: this.args[0][1]}];
     return [];
   }
 
