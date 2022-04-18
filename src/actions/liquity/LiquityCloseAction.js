@@ -16,17 +16,17 @@ class LiquityCloseAction extends Action {
         requireAddress(to);
         super('LiquityClose',
             getAddr('LiquityClose'),
-            [['address', 'address']],
-            [[from, to]]);
+            ['address', 'address'],
+            [from, to]);
 
             this.mappableArgs = [
-                this.args[0][0],
-                this.args[0][1],
+                this.args[0],
+                this.args[1],
               ];
     }
 
     async getAssetsToApprove() {
-        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[0][0]}];
+        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[0]}];
     }
 }
 

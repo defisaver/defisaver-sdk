@@ -14,7 +14,7 @@ describe('Action: CompoundPaybackAction', () => {
         assetAmountInWei(1, 'DAI'),
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
       );
-      assert.equal(action.args[0][2], '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
+      assert.equal(action.args[2], '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -37,7 +37,7 @@ describe('Action: CompoundPaybackAction', () => {
         assetAmountInWei(1, 'ETH'),
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
       );
-      assert.equal(action.args[0][2], '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
+      assert.equal(action.args[2], '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));

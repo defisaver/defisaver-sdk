@@ -9,10 +9,8 @@ class ChangeProxyOwnerAction extends Action {
    * @param newOwner {Address} Address of new owner
    */
   constructor(newOwner) {
-    super("ChangeProxyOwner", getAddr("ChangeProxyOwner"), [["address"]], [[...arguments]]);
-
-    this.mappableArgs = [this.args[0][0]];
-    }
+    super("ChangeProxyOwner", getAddr("ChangeProxyOwner"), ["address"], [...arguments]);
+  }
 }
 
 module.exports = ChangeProxyOwnerAction;

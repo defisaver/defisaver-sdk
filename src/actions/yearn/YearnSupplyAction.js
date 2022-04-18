@@ -13,17 +13,17 @@ class YearnSupplyAction extends Action {
    * @param to {ETHAddress} yTokens will be sent to this address
    */
   constructor(tokenAddr, amount, from, to) {
-    super('YearnSupply', getAddr('YearnSupply'), [['address','uint256','address', 'address']], [[tokenAddr, amount, from, to]]);
+    super('YearnSupply', getAddr('YearnSupply'), ['address','uint256','address', 'address'], [tokenAddr, amount, from, to]);
     this.mappableArgs = [
-      this.args[0][1],
-      this.args[0][2],
-      this.args[0][3],
+      this.args[1],
+      this.args[2],
+      this.args[3],
     ];
   }
 
   async getAssetsToApprove() {
-    const asset = getAssetInfoByAddress(this.args[0][0]);
-    if (asset.symbol !== 'ETH') return [{asset: this.args[0][0], owner: this.args[0][2], specialApproveLabel: 'yearn'}];
+    const asset = getAssetInfoByAddress(this.args[0]);
+    if (asset.symbol !== 'ETH') return [{asset: this.args[0], owner: this.args[2], specialApproveLabel: 'yearn'}];
     return [];
   }
 }

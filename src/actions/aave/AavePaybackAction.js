@@ -17,23 +17,14 @@ class AavePaybackAction extends Action {
   constructor(market, tokenAddr, amount, rateMode, from, onBehalf = getAddr('Empty')) {
     super('AavePayback',
       getAddr('AavePayback'),
-      [['address', 'address', 'uint256', 'uint256', 'address', 'address']],
-      [[market, tokenAddr, amount, rateMode, from, onBehalf]],
+      ['address', 'address', 'uint256', 'uint256', 'address', 'address'],
+      [market, tokenAddr, amount, rateMode, from, onBehalf],
     );
-
-    this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
-      this.args[0][3],
-      this.args[0][4],
-      this.args[0][5],
-    ];
   }
 
   async getAssetsToApprove() {
-    const asset = getAssetInfoByAddress(this.args[0][1]);
-    if (asset.symbol !== 'ETH') return [{asset: this.args[0][1], owner: this.args[0][4]}];
+    const asset = getAssetInfoByAddress(this.args[1]);
+    if (asset.symbol !== 'ETH') return [{asset: this.args[1], owner: this.args[4]}];
     return [];
   }
 }

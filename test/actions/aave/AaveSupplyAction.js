@@ -39,7 +39,7 @@ describe('Action: AaveSupplyAction', () => {
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
         '0xdeafbeefdeadbeefdeafbeefdeadbeefdeafbeef',
       );
-      assert.equal(action.args[0][4], '0xdeafbeefdeadbeefdeafbeefdeadbeefdeafbeef');
+      assert.equal(action.args[4], '0xdeafbeefdeadbeefdeafbeefdeadbeefdeafbeef');
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));

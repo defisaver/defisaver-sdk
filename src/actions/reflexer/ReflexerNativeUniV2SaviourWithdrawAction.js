@@ -12,10 +12,10 @@ class ReflexerNativeUniV2SaviourWithdrawAction extends Action {
    * @param lpTokenAmount {string}
    */
   constructor(to, safeId, lpTokenAmount) {
-    super('ReflexerNativeUniV2SaviourWithdraw', getAddr('ReflexerNativeUniV2SaviourWithdraw'), [['address','uint256','uint256', ]], [[to, safeId, lpTokenAmount]]);
+    super('ReflexerNativeUniV2SaviourWithdraw', getAddr('ReflexerNativeUniV2SaviourWithdraw'), ['address','uint256','uint256', ], [to, safeId, lpTokenAmount]);
     this.mappableArgs = [
-        this.args[0][0],
-        this.args[0][2],
+        this.args[0],
+        this.args[2],
       ];
   }
 }

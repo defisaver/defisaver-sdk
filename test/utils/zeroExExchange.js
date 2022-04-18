@@ -78,8 +78,8 @@ describe('Exchange utils', () => {
     it('Creates action', async () => {
       const action = await exchangeUtils.createSellAction('10', 'ETH', 'DAI', '0', 0, myAddr, myAddr);
       assert.instanceOf(action, dfs.actions.basic.SellAction);
-      assert.equal(action.args[0][1], myAddr);
-      assert.equal(action.args[0][2], myAddr);
+      assert.equal(action.args[1], myAddr);
+      assert.equal(action.args[2], myAddr);
     }).timeout(10000);
   })
 

@@ -14,25 +14,18 @@ class ReflexerSupplyAction extends Action {
    * @param from {EthAddress} Tokens will be supplied from this address
    */
   constructor(safeId, amount, adapterAddr, from) {
-    super('ReflexerSupply', getAddr('ReflexerSupply'), [['uint256','uint256','address','address']], [[safeId, amount, adapterAddr, from]]);
-
-    this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
-      this.args[0][3],
-    ];
+    super('ReflexerSupply', getAddr('ReflexerSupply'), ['uint256','uint256','address','address'], [safeId, amount, adapterAddr, from]);
   }
 
   async getAssetsToApprove() {
-    const asset = tokenFromJoin(this.args[0][2]);
-    if (asset !== 'ETH') return [{asset: getAssetInfo(asset).address, owner: this.args[0][3]}];
+    const asset = tokenFromJoin(this.args[2]);
+    if (asset !== 'ETH') return [{asset: getAssetInfo(asset).address, owner: this.args[3]}];
     return [];
   }
 
   async getEthValue() {
-    const asset = tokenFromJoin(this.args[0][2]);
-    if (asset === 'ETH') return this.args[0][1];
+    const asset = tokenFromJoin(this.args[2]);
+    if (asset === 'ETH') return this.args[1];
     return '0';
   }
 }

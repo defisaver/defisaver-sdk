@@ -17,27 +17,25 @@ class UniswapV3CollectAction extends Action {
       'UniCollectV3',
       getAddr('UniCollectV3'),
       [
-        [
-          "uint256",
-          "address",
-          "uint128",
-          "uint128",
-        ],
+        "uint256",
+        "address",
+        "uint128",
+        "uint128",
       ],
-      [[tokenId, recipient, amount0Max, amount1Max]]
+      [tokenId, recipient, amount0Max, amount1Max]
     );
 
     this.from = from;
 
     this.mappableArgs = [
-      this.args[0][0],
+      this.args[0],
     ];
   }
 
   async getAssetsToApprove() {
     return [{
       nft: getAddr('UniswapV3PositionManager'),
-      tokenId: this.args[0][0],
+      tokenId: this.args[0],
       owner: this.from,
       specialApproveLabel: 'uniswap v3'
     }];

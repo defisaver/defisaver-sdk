@@ -13,19 +13,19 @@ class CompoundSupplyAction extends Action {
    * @param enableAsColl {boolean} If we need to enable asset as collateral
    */
   constructor(cTokenAddr, amount, from, enableAsColl = true) {
-    super('CompSupply', getAddr('CompSupply'), [['address','uint256','address','bool']], [[cTokenAddr, amount, from, enableAsColl]]);
+    super('CompSupply', getAddr('CompSupply'), ['address','uint256','address','bool'], [cTokenAddr, amount, from, enableAsColl]);
 
     this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
+      this.args[0],
+      this.args[1],
+      this.args[2],
     ];
   }
 
   async getAssetsToApprove() {
-    const asset = getAssetInfoByAddress(this.args[0][0]);
-    if (asset.symbol !== 'cETH') return [{asset: getAssetInfo(asset.symbol.substr(1)).address, owner: this.args[0][2]}];
-    else return [{asset: getAssetInfo('WETH').address, owner: this.args[0][2]}]
+    const asset = getAssetInfoByAddress(this.args[0]);
+    if (asset.symbol !== 'cETH') return [{asset: getAssetInfo(asset.symbol.substr(1)).address, owner: this.args[2]}];
+    else return [{asset: getAssetInfo('WETH').address, owner: this.args[2]}]
     return [];
   }
 }

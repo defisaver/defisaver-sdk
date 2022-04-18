@@ -6,11 +6,11 @@ class CompoundGetDebtAction extends Action {
     super(
       'CompGetDebt',
       getAddr('CompGetDebt'),
-      [[
+      [
         "address",
         "address",
-      ]],
-      [[...arguments]]
+      ],
+      [...arguments]
     );
   }
 }

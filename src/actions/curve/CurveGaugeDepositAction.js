@@ -17,19 +17,19 @@ class CurveGaugeDepositAction extends Action {
         requireAddress(onBehalfOf);
         super('CurveGaugeDeposit',
             getAddr('CurveGaugeDeposit'),
-            [['address', 'address', 'address', 'address', 'uint256']],
-            [[...arguments]],
+            ['address', 'address', 'address', 'address', 'uint256'],
+            [...arguments],
         );
 
         this.mappableArgs = [
-            this.args[0][2],
-            this.args[0][3],
-            this.args[0][4],
+            this.args[2],
+            this.args[3],
+            this.args[4],
         ];
     }
 
     async getAssetsToApprove() {
-        return { asset: this.args[0][1], owner: this.args[0][2] };
+        return { asset: this.args[1], owner: this.args[2] };
     }
 }
 

@@ -15,8 +15,8 @@ class BalancerFlashLoanAction extends Action {
     super(
       'FLBalancer',
       getAddr('FLBalancer'),
-      [['address[]','uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes']],
-      [[tokens, amounts, [], getAddr('Empty'), flParamGetterAddr, flParamGetterData, []]]
+      ['address[]','uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
+      [tokens, amounts, [], getAddr('Empty'), flParamGetterAddr, flParamGetterData, []]
     );
   }
 }

@@ -13,7 +13,7 @@ describe('Action: MakerMergeAction', () => {
         '1234',
         '1235',
       );
-      assert.equal(action.args[0][2], getAddr('McdCdpManager'));
+      assert.equal(action.args[2], getAddr('McdCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -34,7 +34,7 @@ describe('Action: MakerMergeAction', () => {
         '1235',
         getAddr('BCdpManager'),
       );
-      assert.equal(action.args[0][2], getAddr('BCdpManager'));
+      assert.equal(action.args[2], getAddr('BCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));

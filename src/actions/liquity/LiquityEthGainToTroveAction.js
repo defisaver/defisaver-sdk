@@ -12,11 +12,11 @@ class LiquityEthGainToTroveAction extends Action {
         requireAddress(lqtyTo);
         super('LiquityEthGainToTrove',
             getAddr('LiquityEthGainToTrove'),
-            [['address', 'address', 'address']],
-            [[...arguments]]);
+            ['address', 'address', 'address'],
+            [...arguments]);
 
         this.mappableArgs = [
-            this.args[0][0],
+            this.args[0],
         ];
     }
 }

@@ -10,11 +10,9 @@ class CompoundCollateralSwitchAction extends Action {
     super(
       'CompCollateralSwitch',
       getAddr('CompCollateralSwitch'),
-      [['address[]', 'bool[]']],
-      [[...arguments]],
+      ['address[]', 'bool[]'],
+      [...arguments],
     );
-    this.mappableArgs = [
-  ];
   }
 }
 

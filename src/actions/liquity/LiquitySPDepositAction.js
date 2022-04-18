@@ -18,19 +18,19 @@ class LiquitySPDepositAction extends Action {
         requireAddress(lqtyTo);
         super('LiquitySPDeposit',
             getAddr('LiquitySPDeposit'),
-            [['uint256', 'address', 'address', 'address']],
-            [[...arguments]]);
+            ['uint256', 'address', 'address', 'address'],
+            [...arguments]);
 
         this.mappableArgs = [
-            this.args[0][0],
-            this.args[0][1],
-            this.args[0][2],
-            this.args[0][3],
+            this.args[0],
+            this.args[1],
+            this.args[2],
+            this.args[3],
         ];
     }
 
     async getAssetsToApprove() {
-        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[0][1]}];
+        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[1]}];
     }
 }
 

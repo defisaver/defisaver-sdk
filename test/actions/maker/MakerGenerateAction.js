@@ -14,7 +14,7 @@ describe('Action: MakerGenerateAction', () => {
         assetAmountInWei(1, 'DAI'),
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f'
       );
-      assert.equal(action.args[0][3], getAddr('McdCdpManager'));
+      assert.equal(action.args[3], getAddr('McdCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -36,7 +36,7 @@ describe('Action: MakerGenerateAction', () => {
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
         getAddr('BCdpManager'),
       );
-      assert.equal(action.args[0][3], getAddr('BCdpManager'));
+      assert.equal(action.args[3], getAddr('BCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));

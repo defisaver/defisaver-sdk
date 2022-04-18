@@ -9,11 +9,7 @@ class MakerRatioAction extends Action {
    * @param vaultId {uint256}
    */
   constructor(vaultId) {
-    super('McdRatio', getAddr('McdRatio'), [['uint256']], [[vaultId]]);
-
-    this.mappableArgs = [
-      this.args[0][0],
-    ];
+    super('McdRatio', getAddr('McdRatio'), ['uint256'], [vaultId]);
   }
 }
 

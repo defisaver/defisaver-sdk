@@ -107,13 +107,9 @@ class Action {
    * @private
    */
   _encodeForCall() {
-    const bytesEncodedArgs = this.args.map((arg, i) => {
-      let paramType = this.paramTypes[i];
-      let _arg = this._replaceWithPlaceholders(arg, paramType);
-      let _paramType = this._formatType(paramType);
-      return AbiCoder.encodeParameter(_paramType, _arg);
-    });
-    return bytesEncodedArgs;
+    let _arg = this._replaceWithPlaceholders(this.args, this.paramTypes);
+    let _paramType = this._formatType(this.paramTypes);
+    return [AbiCoder.encodeParameter(_paramType, _arg)];
   }
 
   /**
@@ -144,7 +140,7 @@ class Action {
   encodeForStrategy(subSlots) {
     return [
       this.getId(),
-      this._getArgumentMappingWithSlots(subSlots), // paramMappings
+      [this._getArgumentMappingWithSlots(subSlots)], // paramMappings
     ]
   }
 

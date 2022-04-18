@@ -19,29 +19,28 @@ class SellAction extends Action {
     super(
       'DFSSell',
       getAddr('DFSSell'),
-      [[
+      [
         ["address","address","uint256","uint256","uint256","uint256","address","address","bytes",["address","address","address","uint256","uint256","bytes"]],
         "address",
         "address",
-      ]
       ],
-      [[exchangeOrder, from, to]]
+      [exchangeOrder, from, to]
     );
 
     this.protocolFee = protocolFee;
 
     this.mappableArgs = [
-      this.args[0][0][0],
-      this.args[0][0][1],
-      this.args[0][0][2],
+      this.args[0][0],
       this.args[0][1],
       this.args[0][2],
+      this.args[1],
+      this.args[2],
     ];
   }
 
   async getAssetsToApprove() {
-    const asset = getAssetInfoByAddress(this.args[0][0][0]);
-    if (asset.symbol !== 'ETH') return [{asset: this.args[0][0][0], owner: this.args[0][1]}];
+    const asset = getAssetInfoByAddress(this.args[0][0]);
+    if (asset.symbol !== 'ETH') return [{asset: this.args[0][0], owner: this.args[1]}];
     return [];
   }
 

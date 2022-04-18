@@ -34,19 +34,19 @@ class CurveWithdrawAction extends Action {
         requireAddress(receiver);
         super('CurveWithdrawAction',
             getAddr('CurveWithdrawAction'),
-            [['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]', 'bool', 'bool']],
-            [[...arguments]]);
+            ['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]', 'bool', 'bool'],
+            [...arguments]);
 
         this.mappableArgs = [
-            this.args[0][0],
-            this.args[0][1],
-            this.args[0][5],
-            ...this.args[0][6],
+            this.args[0],
+            this.args[1],
+            this.args[5],
+            ...this.args[6],
         ];
     }
 
     async getAssetsToApprove() {
-        return { asset: this.args[0][3], owner: this.args[0][0] };
+        return { asset: this.args[3], owner: this.args[0] };
     }
 }
 
