@@ -16,6 +16,7 @@ const curve = require('./curve');
 const guni = require('./guni');
 const mstable = require('./mstable');
 const rari = require('./rari');
+const convex = require('./convex');
 
 module.exports = {
   maker,
@@ -36,4 +37,5 @@ module.exports = {
   guni,
   mstable,
   rari,
+  convex,
 };
