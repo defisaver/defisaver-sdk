@@ -11,6 +11,7 @@ const TokenBalanceAction = require('./TokenBalanceAction');
 const AutomationV2Unsub = require('./AutomationV2Unsub');
 const GasFeeAction = require('./GasFeeAction');
 const UpdateSubAction = require('./UpdateSubAction');
+const ToggleSubAction = require('./ToggleSubAction');
 
 module.exports = {
   SellAction,
@@ -26,4 +27,5 @@ module.exports = {
   GasFeeAction,
   UpdateSubAction,
   SendTokenAndUnwrapAction,
+  ToggleSubAction,
 };
