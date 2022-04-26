@@ -10,7 +10,7 @@ class UpdateSubAction extends Action {
    * @param sub object that contains new sub information
    */
   constructor(subId, sub) {
-    super("UpdateSub", getAddr("UpdateSub"), [["uint256", "(uint64,bool,bytes[],bytes32[])"]], [...arguments]);
+    super("UpdateSub", getAddr("UpdateSub"), ["uint256", "(uint64,bool,bytes[],bytes32[])"], [...arguments]);
 
   }
 
