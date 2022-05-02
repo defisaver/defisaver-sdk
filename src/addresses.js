@@ -142,6 +142,9 @@ const actionAddresses = {
     AaveV3Supply: '0x50Cbbb8B1C09E59e05Ea94BB3583e5649D5fc3E1',
     AaveV3SwapBorrowRateMode: '0xC5CFc61d565D8586979474bab55Fd5b18a105F50',
     AaveV3Withdraw: '0x29b00207CcA815B16A4AD8F6ad259ac644492C5e',
+
+    // qidao 
+    // TODO : when adding qidao addresses change constructor in all qidao actions
   },
 };
 
@@ -171,6 +174,8 @@ const otherAddresses = {
     AdminVault: '0xB64dB2153861ddDE62c8038C6A3c6199FCfBD094',
     DefisaverLogger: '0xC0986E9803a41542c5422dbe336F9B68C55E0a49',
     Empty: '0x0000000000000000000000000000000000000000',
+
+    MAI: '0xdFA46478F9e5EA86d57387849598dbFB2e964b02',
   },
 };
 
