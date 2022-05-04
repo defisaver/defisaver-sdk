@@ -50,15 +50,7 @@ class ConvexWithdrawAction extends Action {
             return [{asset: pool.token, owner}];
         }
 
-        return [
-            getAddr('CrvToken'),
-            getAddr('CvxToken'),
-        ].concat(
-            pool.extraRewards.map((e) => e.token),
-        ).reduce((acc, e) => {
-            if (!acc.includes(e.toLowerCase())) acc.push(e.toLowerCase());
-            return acc;
-        }, []).map((e) => Object({asset: e, owner}));
+        return [];
     }
 }
 
