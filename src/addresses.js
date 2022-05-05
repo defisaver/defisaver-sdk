@@ -130,6 +130,11 @@ const actionAddresses = {
 
   'CurveStethPoolDeposit': '0x5Ae5870dC0C780e9eb68bE7a223eCd7F3BDad12B',
   'CurveStethPoolWithdraw': '0x4089731d843Ce52699Fe64F68556aBbD95D70D00',
+
+  // Convex
+  'ConvexDeposit': '0x3Ecc4F1FD5aA09D2E13Ec9ebFdF102063d66F458',
+  'ConvexWithdraw': '0x2B2c235F9e27A121947c34A39d447bD4C585aA15',
+  'ConvexClaim': '0xA012afAA97B48894b8FCB2ECC007045Be7a8E8B6',
 };
 
 const otherAddresses = {

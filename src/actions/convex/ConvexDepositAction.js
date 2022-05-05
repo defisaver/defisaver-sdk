@@ -1,4 +1,5 @@
 const Action = require('../../Action');
+const { getAddr } = require('../../addresses');
 const { DepositOption, getConvexPool } = require('../../utils/convex-utils');
 const { requireAddress } = require('../../utils/general');
 /**
@@ -23,22 +24,30 @@ class ConvexDepositAction extends Action {
         const { pid } = getConvexPool(curveLp);
         super(
             'ConvexDeposit',
-            '0x',
-            [[
+            getAddr('ConvexDeposit'),
+            [
                 'address',
                 'address',
                 'uint256',
                 'uint256',
                 'uint8',
-            ]],
-            [[
+            ],
+            [
                 from,
                 to,
                 pid,
                 amount,
                 option,
-            ]],
+            ],
         ).curveLp = curveLp;
+
+        this.mappableArgs = [
+            this.args[0],
+            this.args[1],
+            this.args[2],
+            this.args[3],
+            this.args[4],
+        ];
     }
 
     async getAssetsToApprove() {
@@ -50,7 +59,7 @@ class ConvexDepositAction extends Action {
         }
 
         return [{
-            asset: assetToPull[this.args[0][4]], owner: this.args[0][0],
+            asset: assetToPull[this.args[4]], owner: this.args[0],
         }];
     }
 }

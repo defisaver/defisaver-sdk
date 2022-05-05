@@ -21,23 +21,29 @@ class ConvexClaimAction extends Action {
         const { crvRewards } = getConvexPool(curveLp);
         super(
             'ConvexClaim',
-            '0x',
-            [[
+            getAddr('ConvexClaim'),
+            [
                 'address',
                 'address',
                 'address',
-            ]],
-            [[
+            ],
+            [
                 from,
                 to,
                 crvRewards,
-            ]],
+            ],
         ).curveLp = curveLp;
+
+        this.mappableArgs = [
+            this.args[0],
+            this.args[1],
+            this.args[2],
+        ];
     }
 
     async getAssetsToApprove() {
         const pool = getConvexPool(this.curveLp);
-        const owner = this.args[0][0];
+        const owner = this.args[0];
 
         return [
             getAddr('CrvToken'),

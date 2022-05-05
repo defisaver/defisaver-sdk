@@ -24,29 +24,37 @@ class ConvexWithdrawAction extends Action {
         const { pid } = getConvexPool(curveLp);
         super(
             'ConvexWithdraw',
-            '0x',
-            [[
+            getAddr('ConvexWithdraw'),
+            [
                 'address',
                 'address',
                 'uint256',
                 'uint256',
                 'uint8',
-            ]],
-            [[
+            ],
+            [
                 from,
                 to,
                 pid,
                 amount,
                 option,
-            ]],
+            ],
         ).curveLp = curveLp;
+
+        this.mappableArgs = [
+            this.args[0],
+            this.args[1],
+            this.args[2],
+            this.args[3],
+            this.args[4],
+        ];
     }
 
     async getAssetsToApprove() {
         const pool = getConvexPool(this.curveLp);
-        const owner = this.args[0][0];
+        const owner = this.args[0];
 
-        if (this.args[0][4] === WithdrawOption.UNWRAP) {
+        if (this.args[4] === WithdrawOption.UNWRAP) {
             return [{asset: pool.token, owner}];
         }
 
