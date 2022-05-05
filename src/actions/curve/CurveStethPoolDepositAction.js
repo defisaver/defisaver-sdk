@@ -9,8 +9,8 @@ class CurveStethPoolDepositAction extends Action {
     /**
      * @param from {address}
      * @param to {address}
-     * @param amounts {uint256[2]}
-     * @param minMintAmount {uint256}
+     * @param amounts {string[]}
+     * @param minMintAmount {string}
      */
     constructor(
         from,

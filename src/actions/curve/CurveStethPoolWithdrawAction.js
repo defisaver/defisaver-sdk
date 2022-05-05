@@ -9,21 +9,23 @@ class CurveStethPoolWithdrawAction extends Action {
     /**
      * @param from {address}
      * @param to {address}
-     * @param amounts {uint256[2]}
-     * @param maxBurnAmount {uint256}
+     * @param amounts {string[]}
+     * @param maxBurnAmount {string}
+     * @param returnValue {string}
      */
     constructor(
         from,
         to,
         amounts,
         maxBurnAmount,
+        returnValue,
     ) {
         requireAddress(to);
 
         super(
             'CurveStethPoolWithdraw',
             getAddr('CurveStethPoolWithdraw'),
-            ['address', 'address', 'uint256[2]', 'uint256'],
+            ['address', 'address', 'uint256[2]', 'uint256', 'uint256'],
             [...arguments],
         );
 
