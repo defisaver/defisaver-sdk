@@ -12,16 +12,11 @@ class LidoStakeAction extends Action {
    * @param to {EthAddress} stETH will be sent to this address
    */
   constructor(amount, from, to) {
-    super('LidoStake', getAddr('LidoStake'), [['uint256','address', 'address']], [[amount, from, to]]);
-    this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
-    ];
+    super('LidoStake', getAddr('LidoStake'), ['uint256','address', 'address'], [amount, from, to]);
   }
 
   async getAssetsToApprove() {
-    return [{asset: getAssetInfo('WETH').address, owner: this.args[0][1]}];
+    return [{asset: getAssetInfo('WETH').address, owner: this.args[1]}];
   }
 }
 

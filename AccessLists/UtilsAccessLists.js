@@ -12,11 +12,6 @@ const UtilsAccessLists = {
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
     ],
 
-    DFSBuy: [
-        ['0x25dd3F51e0C3c3Ff164DDC02A8E4D65Bb9cBB12D', []], // SaverExchangeRegistry
-        ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
-    ],
-
     SendToken: [],
 
     PullToken: [],

@@ -39,6 +39,7 @@ describe('Action', () => {
     let action;
     it('Constructor', () => {
       action = new dfs.Action('MockSwap', '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f', ['uint256', 'address'], ['$1', '0x6b175474e89094c44da98b954eedeac495271d0f']);
+      action.mappableArgs = [action.args[0][0], action.args[0][1]];
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -54,7 +55,7 @@ describe('Action', () => {
       assert.throws(() => encodeForRecipe(action));
     });
     it('encodeForRecipe with custom mappableArgs', () => {
-      action.mappableArgs = [action.args[0][0], action.args[1]];
+      action.mappableArgs = [action.args[0][0][0], action.args[0][1]];
       encodeForRecipe(action)
     });
   })

@@ -83,12 +83,4 @@ describe('Exchange utils', () => {
     }).timeout(10000);
   })
 
-  context('Get BuyAction via 0x', function() {
-    it('Creates action', async () => {
-      const action = await exchangeUtils.createBuyAction('10000', 'DAI', 'ETH', '0', 0, myAddr, myAddr);
-      assert.instanceOf(action, dfs.actions.basic.BuyAction);
-      assert.equal(action.args[1], myAddr);
-      assert.equal(action.args[2], myAddr);
-    }).timeout(10000);
-  })
 })

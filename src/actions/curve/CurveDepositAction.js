@@ -31,19 +31,19 @@ class CurveDepositAction extends Action {
         requireAddress(receiver);
         super('CurveDeposit',
             getAddr('CurveDeposit'),
-            [['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]', 'bool']],
-            [[...arguments]]);
+            ['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]', 'bool'],
+            [...arguments]);
 
         this.mappableArgs = [
-            this.args[0][0],
-            this.args[0][1],
-            this.args[0][5],
-            ...this.args[0][6],
+            this.args[0],
+            this.args[1],
+            this.args[5],
+            ...this.args[6],
         ];
     }
 
     async getAssetsToApprove() {
-        return this.args[0][7].map(_asset => Object({ asset: _asset, owner: this.args[0][0] }));
+        return this.args[7].map(_asset => Object({ asset: _asset, owner: this.args[0] }));
     }
 }
 

@@ -18,6 +18,11 @@ class LiquityCloseAction extends Action {
             getAddr('LiquityClose'),
             ['address', 'address'],
             [from, to]);
+
+            this.mappableArgs = [
+                this.args[0],
+                this.args[1],
+              ];
     }
 
     async getAssetsToApprove() {

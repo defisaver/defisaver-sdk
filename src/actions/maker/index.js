@@ -5,6 +5,7 @@ const MakerPaybackAction = require('./MakerPaybackAction');
 const MakerWithdrawAction = require('./MakerWithdrawAction');
 const MakerGiveAction = require('./MakerGiveAction');
 const MakerMergeAction = require('./MakerMergeAction');
+const MakerRatioAction = require('./MakerRatioAction');
 const MakerClaimAction = require('./MakerClaimAction');
 
 module.exports = {
@@ -15,5 +16,6 @@ module.exports = {
   MakerWithdrawAction,
   MakerGiveAction,
   MakerMergeAction,
+  MakerRatioAction,
   MakerClaimAction,
 };

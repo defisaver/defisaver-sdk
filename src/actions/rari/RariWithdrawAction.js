@@ -16,17 +16,17 @@ class RariWithdrawAction extends Action {
    * @param to {EthAddress} stablecoins withdrawn will be sent to this address
    */
   constructor(fundManager, poolTokenAddress, poolTokensAmountToPull, from, stablecoinAddress, stablecoinAmountToWithdraw, to) {
-    super('RariWithdraw', getAddr('RariWithdraw'), [['address', 'address', 'uint256', 'address', 'address', 'uint256', 'address']], [[fundManager, poolTokenAddress, poolTokensAmountToPull, from, stablecoinAddress, stablecoinAmountToWithdraw, to]]);
+    super('RariWithdraw', getAddr('RariWithdraw'), ['address', 'address', 'uint256', 'address', 'address', 'uint256', 'address'], [fundManager, poolTokenAddress, poolTokensAmountToPull, from, stablecoinAddress, stablecoinAmountToWithdraw, to]);
     this.mappableArgs = [
-      this.args[0][2],
-      this.args[0][3],
-      this.args[0][5],
-      this.args[0][6],
+      this.args[2],
+      this.args[3],
+      this.args[5],
+      this.args[6],
     ];
   }
 
   async getAssetsToApprove() {
-    return [{asset: this.args[0][1], owner: this.args[0][3]}];
+    return [{asset: this.args[1], owner: this.args[3]}];
   }
 }
 

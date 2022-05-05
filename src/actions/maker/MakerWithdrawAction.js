@@ -11,7 +11,7 @@ class MakerWithdrawAction extends Action {
    * @param vaultId {VaultId}
    * @param amount {string}
    * @param joinAddr {EthAddress}
-   * @param to {EthAddress}
+   * @param to {string}
    * @param mcdManager {EthAddress}
    */
   constructor(vaultId, amount, joinAddr, to, mcdManager = getAddr('McdCdpManager')) {

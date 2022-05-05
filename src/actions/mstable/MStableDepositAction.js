@@ -37,41 +37,41 @@ class MStableDepositAction extends Action {
         requireAddress(to);
 
         super(
-            'MStableDepositNew',
-            getAddr('MStableDepositNew'),
-            [['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256']],
-            [[...arguments]],
+            'MStableDeposit',
+            getAddr('MStableDeposit'),
+            ['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256'],
+            [...arguments],
         );
 
         this.mappableArgs = [
-            this.args[0][0],
-            this.args[0][1],
-            this.args[0][2],
-            this.args[0][3],
-            this.args[0][4],
-            this.args[0][5],
-            this.args[0][6],
-            this.args[0][7],
-            this.args[0][8],
+            this.args[0],
+            this.args[1],
+            this.args[2],
+            this.args[3],
+            this.args[4],
+            this.args[5],
+            this.args[6],
+            this.args[7],
+            this.args[8],
         ];
     }
 
     async getAssetsToApprove() {
-        const assetPair = this.args[0][8];
-        const owner = this.args[0][4];
+        const assetPair = this.args[8];
+        const owner = this.args[4];
         let asset;
         switch (assetPair) {
         case mstableAssetPairs.BASSET_MASSET:
         case mstableAssetPairs.BASSET_IMASSET:
         case mstableAssetPairs.BASSET_IMASSETVAULT:
-            asset = this.args[0][0];
+            asset = this.args[0];
             break;
         case mstableAssetPairs.MASSET_IMASSET:
         case mstableAssetPairs.MASSET_IMASSETVAULT:
-            asset = this.args[0][1];
+            asset = this.args[1];
             break;
         case mstableAssetPairs.IMASSET_IMASSETVAULT:
-            asset = this.args[0][2];
+            asset = this.args[2];
             break;
         default:
             return [];

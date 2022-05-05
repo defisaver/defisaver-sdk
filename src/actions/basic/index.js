@@ -1,6 +1,6 @@
 const SellAction = require('./SellAction');
-const BuyAction = require('./BuyAction');
 const SendTokenAction = require('./SendTokenAction');
+const SendTokenAndUnwrapAction = require('./SendTokenAndUnwrapAction');
 const PullTokenAction = require('./PullTokenAction');
 const WrapEthAction = require('./WrapEthAction');
 const UnwrapEthAction = require('./UnwrapEthAction');
@@ -9,10 +9,12 @@ const SubInputsAction = require('./SubInputsAction');
 const ChangeProxyOwnerAction = require('./ChangeProxyOwnerAction');
 const TokenBalanceAction = require('./TokenBalanceAction');
 const AutomationV2Unsub = require('./AutomationV2Unsub');
+const GasFeeAction = require('./GasFeeAction');
+const UpdateSubAction = require('./UpdateSubAction');
+const ToggleSubAction = require('./ToggleSubAction');
 
 module.exports = {
   SellAction,
-  BuyAction,
   SendTokenAction,
   PullTokenAction,
   WrapEthAction,
@@ -22,4 +24,8 @@ module.exports = {
   ChangeProxyOwnerAction,
   TokenBalanceAction,
   AutomationV2Unsub,
+  GasFeeAction,
+  UpdateSubAction,
+  SendTokenAndUnwrapAction,
+  ToggleSubAction,
 };

@@ -15,13 +15,13 @@ class LiquityBorrowAction extends Action {
         requireAddress(to);
         super('LiquityBorrow',
             getAddr('LiquityBorrow'),
-            [['uint256', 'uint256', 'address', 'address', 'address']],
-            [[...arguments]]);
+            ['uint256', 'uint256', 'address', 'address', 'address'],
+            [...arguments]);
 
         this.mappableArgs = [
-            this.args[0][0],
-            this.args[0][1],
-            this.args[0][2],
+            this.args[0],
+            this.args[1],
+            this.args[2],
         ];
     }
 }

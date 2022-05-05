@@ -26,12 +26,11 @@
 <dt><a href="#BalancerV2WithdrawAction">BalancerV2WithdrawAction</a></dt>
 <dd><p>BalancerV2WithdrawAction - Withdraw tokens from Balancer pool</p>
 </dd>
-<dt><a href="#BuyAction">BuyAction</a></dt>
-<dd><p>Buys an exact amount of dest token on DeFi Saver exchange aggregator</p>
-</dd>
 <dt><a href="#ChangeProxyOwnerAction">ChangeProxyOwnerAction</a></dt>
 <dd><p>ChangeProxyOwnerAction - Changes EOA which owns the proxy that is being called</p>
 </dd>
+<dt><a href="#GasFeeAction">GasFeeAction</a></dt>
+<dd></dd>
 <dt><a href="#PullTokenAction">PullTokenAction</a></dt>
 <dd><p>Transfers specified token from a specified address to DSProxy (recipe)</p>
 </dd>
@@ -41,17 +40,29 @@
 <dt><a href="#SendTokenAction">SendTokenAction</a></dt>
 <dd><p>Transfers specified token from recipe (DsProxy) to specified address</p>
 </dd>
+<dt><a href="#SendTokenAndUnwrapAction">SendTokenAndUnwrapAction</a></dt>
+<dd><p>Transfers specified token from recipe (DsProxy) to specified address unwraps if Weth address</p>
+</dd>
 <dt><a href="#SubInputsAction">SubInputsAction</a></dt>
 <dd><p>Subs 2 inputs/return values</p>
 </dd>
 <dt><a href="#SumInputsAction">SumInputsAction</a></dt>
 <dd><p>Sums up 2 inputs/return values</p>
 </dd>
+<dt><a href="#ToggleSubAction">ToggleSubAction</a></dt>
+<dd><p>Sets the state of the sub to active or deactivated</p>
+</dd>
 <dt><a href="#UnwrapEthAction">UnwrapEthAction</a></dt>
 <dd><p>Unwraps a specified amount of WETH from the proxy</p>
 </dd>
+<dt><a href="#UpdateSubAction">UpdateSubAction</a></dt>
+<dd><p>Action for updating sub data</p>
+</dd>
 <dt><a href="#WrapEthAction">WrapEthAction</a></dt>
 <dd><p>Wraps a specified amount of ETH from the wallet to WETH on the recipe</p>
+</dd>
+<dt><a href="#MakerRatioCheckAction">MakerRatioCheckAction</a></dt>
+<dd><p>MakerRatioCheckAction - Checks mcd ratio at end of all actions</p>
 </dd>
 <dt><a href="#CompoundBorrowAction">CompoundBorrowAction</a></dt>
 <dd><p>CompoundBorrowAction - Borrow tokens from Compound</p>
@@ -91,9 +102,6 @@
 <dd></dd>
 <dt><a href="#CurveWithdrawAction">CurveWithdrawAction</a></dt>
 <dd></dd>
-<dt><a href="#DyDxSupplyAction">DyDxSupplyAction</a></dt>
-<dd><p>DyDxSupplyAction - Supply token to an DyDx position</p>
-</dd>
 <dt><a href="#DyDxWithdrawAction">DyDxWithdrawAction</a></dt>
 <dd><p>DyDxWithdrawAction - Withdraw token from an DyDx position</p>
 </dd>
@@ -198,6 +206,9 @@
 </dd>
 <dt><a href="#MakerPaybackAction">MakerPaybackAction</a></dt>
 <dd><p>MakerPaybackAction - Payback dai to a Vault</p>
+</dd>
+<dt><a href="#MakerRatioAction">MakerRatioAction</a></dt>
+<dd><p>MakerRatioAction</p>
 </dd>
 <dt><a href="#MakerSupplyAction">MakerSupplyAction</a></dt>
 <dd><p>MakerSupplyAction - Supply token to a Vault</p>
@@ -405,22 +416,6 @@ BalancerV2WithdrawAction - Withdraw tokens from Balancer pool
 - minAmountsOut <code>Array.&lt;uint256&gt;</code>
 - userData <code>bytes</code>
 
-<a name="BuyAction"></a>
-
-## BuyAction
-Buys an exact amount of dest token on DeFi Saver exchange aggregator
-
-**Kind**: global class  
-<a name="new_BuyAction_new"></a>
-
-### new BuyAction(exchangeOrder, from, to, protocolFee)
-**Params**
-
-- exchangeOrder <code>Array</code> - Standard DFS Exchange data
-- from <code>string</code> - Order sender
-- to <code>string</code> - Order recipient
-- protocolFee <code>string</code> - 0x fee (amount of ETH in Wei)
-
 <a name="ChangeProxyOwnerAction"></a>
 
 ## ChangeProxyOwnerAction
@@ -433,6 +428,20 @@ ChangeProxyOwnerAction - Changes EOA which owns the proxy that is being called
 **Params**
 
 - newOwner <code>Address</code> - Address of new owner
+
+<a name="GasFeeAction"></a>
+
+## GasFeeAction
+**Kind**: global class  
+<a name="new_GasFeeAction_new"></a>
+
+### new GasFeeAction(gasStart, feeToken, availableAmount, dfsFeeDivider)
+**Params**
+
+- gasStart <code>string</code> - Always 0 will be inject value
+- feeToken <code>string</code> - Address of the token we are taken the fee in
+- availableAmount - Amount we have available to pay the gas fee
+- dfsFeeDivider <code> = 2000</code> - Additional fee for DFS, default is 5bps
 
 <a name="PullTokenAction"></a>
 
@@ -480,6 +489,21 @@ Transfers specified token from recipe (DsProxy) to specified address
 - to <code>string</code> - Transfer recipient
 - amount <code>string</code> - Transfer amount (-1 for whole Recipe (DsProxy) balance)
 
+<a name="SendTokenAndUnwrapAction"></a>
+
+## SendTokenAndUnwrapAction
+Transfers specified token from recipe (DsProxy) to specified address unwraps if Weth address
+
+**Kind**: global class  
+<a name="new_SendTokenAndUnwrapAction_new"></a>
+
+### new SendTokenAndUnwrapAction(token, to, amount)
+**Params**
+
+- token <code>string</code> - Token address
+- to <code>string</code> - Transfer recipient
+- amount <code>string</code> - Transfer amount (-1 for whole Recipe (DsProxy) balance)
+
 <a name="SubInputsAction"></a>
 
 ## SubInputsAction
@@ -492,6 +516,20 @@ Subs 2 inputs/return values
 Sums up 2 inputs/return values
 
 **Kind**: global class  
+<a name="ToggleSubAction"></a>
+
+## ToggleSubAction
+Sets the state of the sub to active or deactivated
+
+**Kind**: global class  
+<a name="new_ToggleSubAction_new"></a>
+
+### new ToggleSubAction(subId, active)
+**Params**
+
+- subId - Id of the subscription in the SubStorage contract
+- active - Set to true to activate action, to false to deactivate
+
 <a name="UnwrapEthAction"></a>
 
 ## UnwrapEthAction
@@ -506,6 +544,20 @@ Unwraps a specified amount of WETH from the proxy
 - amount <code>string</code> - Token address
 - to <code>string</code> - Transfer recipient
 
+<a name="UpdateSubAction"></a>
+
+## UpdateSubAction
+Action for updating sub data
+
+**Kind**: global class  
+<a name="new_UpdateSubAction_new"></a>
+
+### new UpdateSubAction(subId, sub)
+**Params**
+
+- subId - id of the subscription in the SubStorage contract
+- sub - object that contains new sub information
+
 <a name="WrapEthAction"></a>
 
 ## WrapEthAction
@@ -518,6 +570,23 @@ Wraps a specified amount of ETH from the wallet to WETH on the recipe
 **Params**
 
 - amount <code>string</code> - Transfer amount
+
+<a name="MakerRatioCheckAction"></a>
+
+## MakerRatioCheckAction
+MakerRatioCheckAction - Checks mcd ratio at end of all actions
+
+**Kind**: global class  
+<a name="new_MakerRatioCheckAction_new"></a>
+
+### new MakerRatioCheckAction(ratioState, checkTarget, targetRatio, vaultId, startRatioIndex)
+**Params**
+
+- ratioState <code>uint8</code> - If it should lower/higher
+- checkTarget
+- targetRatio <code>string</code> - The ratio user want to be at
+- vaultId <code>string</code> - Id of the vault
+- startRatioIndex <code>uint256</code> - Index in returnValues where ratio before actions is stored
 
 <a name="CompoundBorrowAction"></a>
 
@@ -744,21 +813,6 @@ CurveStethPoolWithdrawAction - Withdraws tokens from curve steth pool
 - tokens <code>Array.&lt;EthAddress&gt;</code>
 - withdrawExact <code>boolean</code>
 - useUnderlying <code>boolean</code>
-
-<a name="DyDxSupplyAction"></a>
-
-## DyDxSupplyAction
-DyDxSupplyAction - Supply token to an DyDx position
-
-**Kind**: global class  
-<a name="new_DyDxSupplyAction_new"></a>
-
-### new DyDxSupplyAction(tokenAddr, amount, from)
-**Params**
-
-- tokenAddr <code>EthAddress</code>
-- amount <code>string</code>
-- from <code>EthAddress</code> - Tokens will be supplied from this address
 
 <a name="DyDxWithdrawAction"></a>
 
@@ -1267,6 +1321,19 @@ MakerPaybackAction - Payback dai to a Vault
 - from <code>EthAddress</code> - DAI will be sent from this address
 - mcdManager <code>EthAddress</code>
 
+<a name="MakerRatioAction"></a>
+
+## MakerRatioAction
+MakerRatioAction
+
+**Kind**: global class  
+<a name="new_MakerRatioAction_new"></a>
+
+### new MakerRatioAction(vaultId)
+**Params**
+
+- vaultId <code>uint256</code>
+
 <a name="MakerSupplyAction"></a>
 
 ## MakerSupplyAction
@@ -1298,7 +1365,7 @@ MakerWithdrawAction - Withdraw token from a Vault
 - vaultId <code>VaultId</code>
 - amount <code>string</code>
 - joinAddr <code>EthAddress</code>
-- to <code>EthAddress</code>
+- to <code>string</code>
 - mcdManager <code>EthAddress</code>
 
 <a name="MStableClaimAction"></a>

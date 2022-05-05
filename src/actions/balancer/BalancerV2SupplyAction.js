@@ -18,32 +18,30 @@ class BalancerV2SupplyAction extends Action {
       'BalancerV2Supply',
       getAddr('BalancerV2Supply'),
       [
-        [
-          "bytes32",
-          "address",
-          "address",
-          "address[]",
-          "uint256[]",
-          "bytes",
-        ],
+        "bytes32",
+        "address",
+        "address",
+        "address[]",
+        "uint256[]",
+        "bytes",
       ],
-      [[poolId, from, to, tokens, maxAmountsIn, userData]]
+      [poolId, from, to, tokens, maxAmountsIn, userData]
     );
 
     this.mappableArgs = [
-      this.args[0][1],
-      this.args[0][2],
+      this.args[1],
+      this.args[2],
     ];
-    for (let i = 0; i < this.args[0][4].length; i++){
-      this.mappableArgs.push(this.args[0][4][i]);
+    for (let i = 0; i < this.args[4].length; i++){
+      this.mappableArgs.push(this.args[4][i]);
     }
   }
 
   async getAssetsToApprove() {
     const approveArr = [];
-    const tokens = this.args[0][3];
-    tokens.forEach(token => approveArr.push({asset: token, owner: this.args[0][1], specialApproveLabel: 'balancer'}));
-    
+    const tokens = this.args[3];
+    tokens.forEach(token => approveArr.push({asset: token, owner: this.args[1], specialApproveLabel: 'balancer'}));
+
     return approveArr;
   }
 }

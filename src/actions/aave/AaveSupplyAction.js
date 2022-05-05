@@ -16,6 +16,14 @@ class AaveSupplyAction extends Action {
    */
   constructor(market, tokenAddr, amount, from, onBehalf = getAddr('Empty'), enableAsColl) {
     super('AaveSupply', getAddr('AaveSupply'), ['address','address','uint256','address','address','bool'], [market, tokenAddr, amount, from, onBehalf, enableAsColl]);
+
+    this.mappableArgs = [
+      this.args[0],
+      this.args[1],
+      this.args[2],
+      this.args[3],
+      this.args[4],
+    ];
   }
 
   async getAssetsToApprove() {
