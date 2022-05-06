@@ -22,6 +22,7 @@ class QiDaoSupplyAction extends ActionWithL2 {
     this.tokenForApproval = tokenAddress;
 
     this.mappableArgs = [
+      this.args[0][0],
       this.args[0][1],
       this.args[0][2],
       this.args[0][3],
