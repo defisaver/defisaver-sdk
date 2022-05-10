@@ -14,7 +14,7 @@ class QiDaoGenerateAction extends ActionWithL2 {
   constructor(vaultId, userVaultId, amount, to) {
     super('QiDaoGenerate',
     '0', //TODO :  getAddr('QiDaoGenerate')
-    [['uint16','uint256','uint256','address']],
+    [['uint16','uint32','uint128','address']],
     [[vaultId, userVaultId, amount, to]]
     );
 
@@ -32,9 +32,9 @@ class QiDaoGenerateAction extends ActionWithL2 {
     // vaultId
     encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0][0]));
     // userVaultId
-    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][1]));
+    encodedInput = encodedInput.concat(this.numberToBytes4(this.args[0][1]));
     // amount
-    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][2]));
+    encodedInput = encodedInput.concat(this.numberToBytes16(this.args[0][2]));
     // to
     encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][3]));
     return encodedInput;

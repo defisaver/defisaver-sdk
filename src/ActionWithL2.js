@@ -32,5 +32,17 @@ class ActionWithL2 extends Action {
 
     return hexNumber.padStart(64, '0');
   }
+
+  numberToBytes16(number){
+    let hexNumber = new Dec(number).toHex();
+    hexNumber = hexNumber.slice(2);
+
+    return hexNumber.padStart(32, '0');
+  }
+
+  numberToBytes4(number){
+    const hexNumber = number.toString(16);
+    return hexNumber.padStart(8, '0');
+  }
 }
 module.exports = ActionWithL2;
