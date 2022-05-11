@@ -41,7 +41,8 @@ class ActionWithL2 extends Action {
   }
 
   numberToBytes4(number){
-    const hexNumber = number.toString(16);
+    let hexNumber = new Dec(number).toHex();
+    hexNumber = hexNumber.slice(2);
     return hexNumber.padStart(8, '0');
   }
 }
