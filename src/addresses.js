@@ -55,7 +55,7 @@ const actionAddresses = {
     CompCollateralSwitch: '0xC3d89139508A3883775D3d1E62E2A0fea363b448',
 
     // flashloan
-    FLAaveV2: '0x6fE6B0eeeeC7B05d663A99C0805E1A18FbdC6E59', // CHECK IF REDEPLOY
+    FLAaveV2: '0xa4d52ED15018a5be4adE5796899e5d75cc8759C1',
     FLDyDx: '0x08AC78B418fCB0DDF1096533856A757C28d430d7',
     FLMaker: '0xd393582bE148A45585aB202Fa7Cc789Fa5127223',
     FLBalancer: '0x5C7a9f4635AE4F95da2e45317311AAe255FB71B3',
@@ -132,6 +132,7 @@ const actionAddresses = {
     // basic
     WrapEth: '0xf5617aE21d837FdA141fae979C02D98E00FCF776',
     UnwrapEth: '0x1643233EB2B30DeE380618C4737A339C75acDb00',
+    SendToken: '0x3aAaD64B4942be926c3B9D3792B01D517D2F03a4',
 
     // aave v3
     AaveV3ATokenPayback: '0x09253083d36bba932f6104a91107028F0eb689Da',
@@ -142,6 +143,8 @@ const actionAddresses = {
     AaveV3Supply: '0x50Cbbb8B1C09E59e05Ea94BB3583e5649D5fc3E1',
     AaveV3SwapBorrowRateMode: '0xC5CFc61d565D8586979474bab55Fd5b18a105F50',
     AaveV3Withdraw: '0x29b00207CcA815B16A4AD8F6ad259ac644492C5e',
+
+    FLAaveV3: '0x90931Ea5DAD74855689Da9Fe0269E6C1f9c71Da6',
   },
 };
 
@@ -177,7 +180,7 @@ const otherAddresses = {
 /**
  *
  * @param {string} name
- * @param {chainId} chainId
+ * @param {chainId} [chainId]
  * @returns {EthAddress}
  */
 const getAddr = (name, chainId) => {
