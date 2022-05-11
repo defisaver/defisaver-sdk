@@ -117,9 +117,7 @@ class Action {
   }
 
   encodeForL2DsProxyCall() {
-    // TODO fix this mess
-    const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
-    return AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall());
+    throw new Error('Not L2'); // TODO improve this
   }
 
   /**

@@ -13,7 +13,7 @@ class AaveV3BorrowAction extends ActionWithL2 {
    * @param rateMode {number} Type of borrow debt [Stable: 1, Variable: 2]
    * @param assetId {number} The id of the token to be borrowed
    * @param useOnBehalf {boolean} use on behalf or default to proxy
-   * @param onBehalf {EthAddress} On whose behalf we borrow the tokens, defaults to proxy
+   * @param [onBehalf] {EthAddress} On whose behalf we borrow the tokens, defaults to proxy
    */
   constructor(useDefaultMarket, market, amount, to, rateMode, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
     super('AaveV3Borrow', getAddr('AaveV3Borrow'),

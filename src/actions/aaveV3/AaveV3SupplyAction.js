@@ -16,7 +16,7 @@ class AaveV3SupplyAction extends ActionWithL2 {
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param useOnBehalf {boolean} use on behalf param or default to proxy
    * @param market {EthAddress} Address provider for specific market
-   * @param onBehalf {EthAddress} For what user we are supplying the tokens, defaults to proxy
+   * @param [onBehalf] {EthAddress} For what user we are supplying the tokens, defaults to proxy
    */
   constructor(amount, from, tokenAddress, assetId, enableAsColl, useDefaultMarket, useOnBehalf ,market, onBehalf = getAddr('Empty')) {
     super('AaveV3Supply', getAddr('AaveV3Supply'),
