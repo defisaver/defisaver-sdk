@@ -130,6 +130,11 @@ const actionAddresses = {
 
   'CurveStethPoolDeposit': '0x5Ae5870dC0C780e9eb68bE7a223eCd7F3BDad12B',
   'CurveStethPoolWithdraw': '0x4089731d843Ce52699Fe64F68556aBbD95D70D00',
+
+  // Convex
+  'ConvexDeposit': '0x3Ecc4F1FD5aA09D2E13Ec9ebFdF102063d66F458',
+  'ConvexWithdraw': '0x2B2c235F9e27A121947c34A39d447bD4C585aA15',
+  'ConvexClaim': '0xA012afAA97B48894b8FCB2ECC007045Be7a8E8B6',
 };
 
 const otherAddresses = {
@@ -143,6 +148,7 @@ const otherAddresses = {
   RaiWethUniV2LPToken : '0x8aE720a71622e824F576b4A8C03031066548A3B1',
   BalancerToken : '0xba100000625a3754423978a60c9317c58a424e3D',
   CrvToken: '0xD533a949740bb3306d119CC777fa900bA034cd52',
+  CvxToken: '0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B',
   DAI: '0x6b175474e89094c44da98b954eedeac495271d0f',
 }
 
