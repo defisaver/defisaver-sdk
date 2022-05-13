@@ -1,4 +1,4 @@
-const poolInfo = require('./convexPoolInfo');
+const poolInfo = require('./convexPoolInfo.json');
 
 const DepositOption = {
     WRAP: 0,
