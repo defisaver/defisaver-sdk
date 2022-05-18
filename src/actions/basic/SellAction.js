@@ -1,13 +1,12 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
+const ActionWithL2 = require("../../ActionWithL2");
+const { requireAddress } = require("../../utils/general");
+const { getAssetInfoByAddress } = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
-const Dec = require('decimal.js');
 
 /**
  * Sells token on DeFi Saver exchange aggregator
  */
-class SellAction extends Action {
+class SellAction extends ActionWithL2 {
   /**
    * @param exchangeOrder {Array} Standard DFS Exchange data
    * @param from {string} Order sender
