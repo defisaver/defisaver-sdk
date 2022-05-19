@@ -1,3 +1,5 @@
+const ActionAbi = require('../../abis/Action.json');
+const AbiCoder = require('web3-eth-abi');
 const ActionWithL2 = require("../../ActionWithL2");
 const { requireAddress } = require("../../utils/general");
 const { getAssetInfoByAddress } = require("@defisaver/tokens");
@@ -36,6 +38,11 @@ class SellAction extends ActionWithL2 {
       this.args[0][1],
       this.args[0][2],
     ];
+  }
+
+  encodeInputs() {
+    const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
+    return AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall());
   }
 
   async getAssetsToApprove() {
