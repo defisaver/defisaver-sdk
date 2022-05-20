@@ -19,7 +19,7 @@ const actionAddresses = {
   'UpdateSub': '0x94D707f411B852082a5ce49C3f47c49c7757761f',
 
   // exchange
-  'DFSSell': '0x1abDDCae131ce200e66140d9fBd0C37F7a40e642',
+  'DFSSell': '0xB744474Bdd7226736ACa4Ba87593e32d8315e5c9',
 
   // maker
   'McdGenerate': '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
