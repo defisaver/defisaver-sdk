@@ -6,16 +6,16 @@ const { getAddr } = require('../../addresses.js');
  */
 class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
   /**
-   * @param asset {EthAddress} address of the underlying asset
    * @param rateMode {string} rate mode the user is swapping from.[Stable: 1, Variable: 2]
+   * @param assetId {number} id of the underlying asset in the market
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market
    *
    */
-  constructor(asset, rateMode, useDefaultMarket, market) {
+  constructor(rateMode, assetId, useDefaultMarket, market) {
     super('AaveV3SwapBorrowRateMode', getAddr('AaveV3SwapBorrowRateMode'),
-    [['address','uint256','bool','address']],
-    [[asset, rateMode, useDefaultMarket, market]]
+    [['uint256','uint16','bool','address']],
+    [[rateMode, assetId, useDefaultMarket, market]]
     );
 
     this.mappableArgs = [
@@ -26,10 +26,10 @@ class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
   encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
-    // asset
-    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][0]));
     // rateMode
-    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][1]));
+    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][0]));
+    // assetId
+    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0][1]))
     // useOnDefaultMarket
     encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][2]))
     if (!this.args[0][2]){
