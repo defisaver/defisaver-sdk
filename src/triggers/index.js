@@ -6,6 +6,7 @@ const GasPriceTrigger = require('./GasPriceTrigger');
 const CompoundRatioTrigger = require('./CompoundRatioTrigger');
 const ReflexerRatioTrigger = require('./ReflexerRatioTrigger');
 const LiquityRatioTrigger = require('./LiquityRatioTrigger');
+const AaveV3RatioTrigger = require('./AaveV3RatioTrigger');
 
 module.exports = {
     MakerRatioTrigger,
@@ -16,4 +17,5 @@ module.exports = {
     CompoundRatioTrigger,
     ReflexerRatioTrigger,
     LiquityRatioTrigger,
+    AaveV3RatioTrigger,
 }
