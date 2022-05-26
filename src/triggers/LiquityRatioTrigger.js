@@ -7,8 +7,8 @@ class LiquityRatioTrigger extends Action {
     super(
       "LiquityRatioTrigger",
       getAddr("LiquityRatioTrigger"),
-      [["addresss", "uint256", "uint8"]],
-      [[...arguments]]
+      ["addresss", "uint256", "uint8"],
+      [...arguments]
     );
   }
 }

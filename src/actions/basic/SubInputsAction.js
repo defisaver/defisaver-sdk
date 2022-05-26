@@ -9,17 +9,12 @@ class SubInputsAction extends Action {
     super(
       'SubInputs',
       getAddr('SubInputs'),
-      [[
+      [
         "uint",
         "uint",
-      ]],
-      [[...arguments]]
+      ],
+      [...arguments]
     );
-
-    this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-    ];
   }
 }
 

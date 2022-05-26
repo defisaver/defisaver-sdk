@@ -10,9 +10,6 @@
 <dt><a href="#AaveCollateralSwitchAction">AaveCollateralSwitchAction</a></dt>
 <dd><p>AaveCollateralSwitchAction - Aave enable/disable token usage as collateral</p>
 </dd>
-<dt><a href="#AaveMigrateLendAction">AaveMigrateLendAction</a></dt>
-<dd><p>AaveMigrateLendAction - Migrates Lend to Aave</p>
-</dd>
 <dt><a href="#AavePaybackAction">AavePaybackAction</a></dt>
 <dd><p>AavePaybackAction - Payback borrowed tokens from Aave</p>
 </dd>
@@ -32,6 +29,8 @@
 <dt><a href="#ChangeProxyOwnerAction">ChangeProxyOwnerAction</a></dt>
 <dd><p>ChangeProxyOwnerAction - Changes EOA which owns the proxy that is being called</p>
 </dd>
+<dt><a href="#GasFeeAction">GasFeeAction</a></dt>
+<dd></dd>
 <dt><a href="#PullTokenAction">PullTokenAction</a></dt>
 <dd><p>Transfers specified token from a specified address to DSProxy (recipe)</p>
 </dd>
@@ -41,17 +40,29 @@
 <dt><a href="#SendTokenAction">SendTokenAction</a></dt>
 <dd><p>Transfers specified token from recipe (DsProxy) to specified address</p>
 </dd>
+<dt><a href="#SendTokenAndUnwrapAction">SendTokenAndUnwrapAction</a></dt>
+<dd><p>Transfers specified token from recipe (DsProxy) to specified address unwraps if Weth address</p>
+</dd>
 <dt><a href="#SubInputsAction">SubInputsAction</a></dt>
 <dd><p>Subs 2 inputs/return values</p>
 </dd>
 <dt><a href="#SumInputsAction">SumInputsAction</a></dt>
 <dd><p>Sums up 2 inputs/return values</p>
 </dd>
+<dt><a href="#ToggleSubAction">ToggleSubAction</a></dt>
+<dd><p>Sets the state of the sub to active or deactivated</p>
+</dd>
 <dt><a href="#UnwrapEthAction">UnwrapEthAction</a></dt>
 <dd><p>Unwraps a specified amount of WETH from the proxy</p>
 </dd>
+<dt><a href="#UpdateSubAction">UpdateSubAction</a></dt>
+<dd><p>Action for updating sub data</p>
+</dd>
 <dt><a href="#WrapEthAction">WrapEthAction</a></dt>
 <dd><p>Wraps a specified amount of ETH from the wallet to WETH on the recipe</p>
+</dd>
+<dt><a href="#MakerRatioCheckAction">MakerRatioCheckAction</a></dt>
+<dd><p>MakerRatioCheckAction - Checks mcd ratio at end of all actions</p>
 </dd>
 <dt><a href="#CompoundBorrowAction">CompoundBorrowAction</a></dt>
 <dd><p>CompoundBorrowAction - Borrow tokens from Compound</p>
@@ -71,6 +82,26 @@
 <dt><a href="#CompoundWithdrawAction">CompoundWithdrawAction</a></dt>
 <dd><p>CompoundWithdrawAction - Withdraw token from an Compound position</p>
 </dd>
+<dt><a href="#CurveClaimFeesAction">CurveClaimFeesAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveDepositAction">CurveDepositAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveGaugeDepositAction">CurveGaugeDepositAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveGaugeWithdrawAction">CurveGaugeWithdrawAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveMintCrvAction">CurveMintCrvAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveStethPoolDepositAction">CurveStethPoolDepositAction</a></dt>
+<dd><p>CurveStethPoolDepositAction - Deposits tokens into curve steth pool</p>
+</dd>
+<dt><a href="#CurveStethPoolWithdrawAction">CurveStethPoolWithdrawAction</a></dt>
+<dd><p>CurveStethPoolWithdrawAction - Withdraws tokens from curve steth pool</p>
+</dd>
+<dt><a href="#CurveSwapAction">CurveSwapAction</a></dt>
+<dd></dd>
+<dt><a href="#CurveWithdrawAction">CurveWithdrawAction</a></dt>
+<dd></dd>
 <dt><a href="#DyDxWithdrawAction">DyDxWithdrawAction</a></dt>
 <dd><p>DyDxWithdrawAction - Withdraw token from an DyDx position</p>
 </dd>
@@ -92,8 +123,26 @@
 <dt><a href="#DyDxFlashLoanPaybackAction">DyDxFlashLoanPaybackAction</a></dt>
 <dd><p>Pays back a flashloan from DyDx</p>
 </dd>
+<dt><a href="#MakerFlashLoanAction">MakerFlashLoanAction</a></dt>
+<dd><p>Gets a flashloan from Maker</p>
+</dd>
+<dt><a href="#MakerFlashLoanPaybackAction">MakerFlashLoanPaybackAction</a></dt>
+<dd><p>Pays back a flashloan from Maker</p>
+</dd>
+<dt><a href="#GUniDeposit">GUniDeposit</a></dt>
+<dd><p>Action that adds liquidity to G-UNI pool of interest (mints G-UNI LP tokens)</p>
+</dd>
+<dt><a href="#GUniWithdraw">GUniWithdraw</a></dt>
+<dd><p>Action that removes liquidity from a G-UNI pool and burns G-UNI LP tokens</p>
+</dd>
 <dt><a href="#LidoStakeAction">LidoStakeAction</a></dt>
 <dd><p>LidoStakeAction - Receives WETH, transforms it to ETH then sends it to Lido staking contract receiving stETH in return</p>
+</dd>
+<dt><a href="#LidoUnwrapAction">LidoUnwrapAction</a></dt>
+<dd><p>LidoUnwrapAction - Unwraps WStEth into StEth</p>
+</dd>
+<dt><a href="#LidoWrapAction">LidoWrapAction</a></dt>
+<dd><p>LidoWrapAction - Turns WETH or StEth into WStEth</p>
 </dd>
 <dt><a href="#LiquityBorrowAction">LiquityBorrowAction</a></dt>
 <dd><p>LiquityBorrowAction - Borrows LUSD from the trove</p>
@@ -140,6 +189,9 @@
 <dt><a href="#LiquityWithdrawAction">LiquityWithdrawAction</a></dt>
 <dd><p>LiquityWithdrawAction - Withdraws collateral from the trove</p>
 </dd>
+<dt><a href="#MakerClaimAction">MakerClaimAction</a></dt>
+<dd><p>MakerClaimAction - Claim bonus tokens in CropJoin types</p>
+</dd>
 <dt><a href="#MakerGenerateAction">MakerGenerateAction</a></dt>
 <dd><p>MakerGenerateAction - Generated Dai from a Vault</p>
 </dd>
@@ -154,6 +206,9 @@
 </dd>
 <dt><a href="#MakerPaybackAction">MakerPaybackAction</a></dt>
 <dd><p>MakerPaybackAction - Payback dai to a Vault</p>
+</dd>
+<dt><a href="#MakerRatioAction">MakerRatioAction</a></dt>
+<dd><p>MakerRatioAction</p>
 </dd>
 <dt><a href="#MakerSupplyAction">MakerSupplyAction</a></dt>
 <dd><p>MakerSupplyAction - Supply token to a Vault</p>
@@ -248,18 +303,6 @@ AaveBorrowAction - Borrow tokens from Aave
 - onBehalf <code>EthAddress</code>
 
 <a name="AaveClaimStkAaveAction"></a>
-
-## AaveClaimStkAaveAction
-AaveClaimStkAaveAction - Claims stkAave from incentives controller
-
-**Kind**: global class  
-<a name="AaveCollateralSwitchAction"></a>
-
-## AaveCollateralSwitchAction
-AaveCollateralSwitchAction - Aave enable/disable token usage as collateral
-
-**Kind**: global class  
-<a name="AaveMigrateLendAction"></a>
 
 ## AaveClaimStkAaveAction
 AaveClaimStkAaveAction - Claims stkAave from incentives controller
@@ -386,6 +429,20 @@ ChangeProxyOwnerAction - Changes EOA which owns the proxy that is being called
 
 - newOwner <code>Address</code> - Address of new owner
 
+<a name="GasFeeAction"></a>
+
+## GasFeeAction
+**Kind**: global class  
+<a name="new_GasFeeAction_new"></a>
+
+### new GasFeeAction(gasStart, feeToken, availableAmount, dfsFeeDivider)
+**Params**
+
+- gasStart <code>string</code> - Always 0 will be inject value
+- feeToken <code>string</code> - Address of the token we are taken the fee in
+- availableAmount - Amount we have available to pay the gas fee
+- dfsFeeDivider <code> = 2000</code> - Additional fee for DFS, default is 5bps
+
 <a name="PullTokenAction"></a>
 
 ## PullTokenAction
@@ -432,6 +489,21 @@ Transfers specified token from recipe (DsProxy) to specified address
 - to <code>string</code> - Transfer recipient
 - amount <code>string</code> - Transfer amount (-1 for whole Recipe (DsProxy) balance)
 
+<a name="SendTokenAndUnwrapAction"></a>
+
+## SendTokenAndUnwrapAction
+Transfers specified token from recipe (DsProxy) to specified address unwraps if Weth address
+
+**Kind**: global class  
+<a name="new_SendTokenAndUnwrapAction_new"></a>
+
+### new SendTokenAndUnwrapAction(token, to, amount)
+**Params**
+
+- token <code>string</code> - Token address
+- to <code>string</code> - Transfer recipient
+- amount <code>string</code> - Transfer amount (-1 for whole Recipe (DsProxy) balance)
+
 <a name="SubInputsAction"></a>
 
 ## SubInputsAction
@@ -444,6 +516,20 @@ Subs 2 inputs/return values
 Sums up 2 inputs/return values
 
 **Kind**: global class  
+<a name="ToggleSubAction"></a>
+
+## ToggleSubAction
+Sets the state of the sub to active or deactivated
+
+**Kind**: global class  
+<a name="new_ToggleSubAction_new"></a>
+
+### new ToggleSubAction(subId, active)
+**Params**
+
+- subId - Id of the subscription in the SubStorage contract
+- active - Set to true to activate action, to false to deactivate
+
 <a name="UnwrapEthAction"></a>
 
 ## UnwrapEthAction
@@ -458,6 +544,20 @@ Unwraps a specified amount of WETH from the proxy
 - amount <code>string</code> - Token address
 - to <code>string</code> - Transfer recipient
 
+<a name="UpdateSubAction"></a>
+
+## UpdateSubAction
+Action for updating sub data
+
+**Kind**: global class  
+<a name="new_UpdateSubAction_new"></a>
+
+### new UpdateSubAction(subId, sub)
+**Params**
+
+- subId - id of the subscription in the SubStorage contract
+- sub - object that contains new sub information
+
 <a name="WrapEthAction"></a>
 
 ## WrapEthAction
@@ -470,6 +570,23 @@ Wraps a specified amount of ETH from the wallet to WETH on the recipe
 **Params**
 
 - amount <code>string</code> - Transfer amount
+
+<a name="MakerRatioCheckAction"></a>
+
+## MakerRatioCheckAction
+MakerRatioCheckAction - Checks mcd ratio at end of all actions
+
+**Kind**: global class  
+<a name="new_MakerRatioCheckAction_new"></a>
+
+### new MakerRatioCheckAction(ratioState, checkTarget, targetRatio, vaultId, startRatioIndex)
+**Params**
+
+- ratioState <code>uint8</code> - If it should lower/higher
+- checkTarget
+- targetRatio <code>string</code> - The ratio user want to be at
+- vaultId <code>string</code> - Id of the vault
+- startRatioIndex <code>uint256</code> - Index in returnValues where ratio before actions is stored
 
 <a name="CompoundBorrowAction"></a>
 
@@ -522,7 +639,7 @@ CompoundPaybackAction - Payback borrowed tokens from Compound
 - cTokenAddr <code>EthAddress</code>
 - amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
 - from <code>EthAddress</code>
-- onBehalf <code>Array.&lt;EthAddress&gt;</code>
+- onBehalf <code>EthAddress</code> - Defaults to DsProxy address if 0x0
 
 <a name="CompoundSupplyAction"></a>
 
@@ -554,6 +671,148 @@ CompoundWithdrawAction - Withdraw token from an Compound position
 - cTokenAddr <code>EthAddress</code>
 - amount <code>string</code> - Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
 - to <code>EthAddress</code>
+
+<a name="CurveClaimFeesAction"></a>
+
+## CurveClaimFeesAction
+**Kind**: global class  
+<a name="new_CurveClaimFeesAction_new"></a>
+
+### new CurveClaimFeesAction(claimFor, receiver)
+**Params**
+
+- claimFor <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+
+<a name="CurveDepositAction"></a>
+
+## CurveDepositAction
+**Kind**: global class  
+<a name="new_CurveDepositAction_new"></a>
+
+### new CurveDepositAction(sender, receiver, depositTarget, lpToken, sig, minMintAmount, amounts, tokens, useUnderlying)
+**Params**
+
+- sender <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+- depositTarget <code>EthAddress</code>
+- lpToken <code>EthAddress</code>
+- sig <code>bytes4</code>
+- minMintAmount <code>string</code>
+- amounts <code>Array.&lt;string&gt;</code>
+- tokens <code>Array.&lt;EthAddress&gt;</code>
+- useUnderlying <code>boolean</code>
+
+<a name="CurveGaugeDepositAction"></a>
+
+## CurveGaugeDepositAction
+**Kind**: global class  
+<a name="new_CurveGaugeDepositAction_new"></a>
+
+### new CurveGaugeDepositAction(gaugeAddr, lpToken, sender, onBehalfOf, amount)
+**Params**
+
+- gaugeAddr <code>EthAddress</code>
+- lpToken <code>EthAddress</code>
+- sender <code>EthAddress</code>
+- onBehalfOf <code>EthAddress</code>
+- amount <code>string</code>
+
+<a name="CurveGaugeWithdrawAction"></a>
+
+## CurveGaugeWithdrawAction
+**Kind**: global class  
+<a name="new_CurveGaugeWithdrawAction_new"></a>
+
+### new CurveGaugeWithdrawAction(gaugeAddr, lpToken, receiver, amount)
+**Params**
+
+- gaugeAddr <code>EthAddress</code>
+- lpToken <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+- amount <code>string</code>
+
+<a name="CurveMintCrvAction"></a>
+
+## CurveMintCrvAction
+**Kind**: global class  
+<a name="new_CurveMintCrvAction_new"></a>
+
+### new CurveMintCrvAction(gaugeAddrs, receiver)
+**Params**
+
+- gaugeAddrs <code>Array.&lt;EthAddress&gt;</code>
+- receiver <code>EthAddress</code>
+
+<a name="CurveStethPoolDepositAction"></a>
+
+## CurveStethPoolDepositAction
+CurveStethPoolDepositAction - Deposits tokens into curve steth pool
+
+**Kind**: global class  
+<a name="new_CurveStethPoolDepositAction_new"></a>
+
+### new CurveStethPoolDepositAction(from, to, amounts, minMintAmount)
+**Params**
+
+- from <code>address</code>
+- to <code>address</code>
+- amounts <code>Array.&lt;string&gt;</code>
+- minMintAmount <code>string</code>
+
+<a name="CurveStethPoolWithdrawAction"></a>
+
+## CurveStethPoolWithdrawAction
+CurveStethPoolWithdrawAction - Withdraws tokens from curve steth pool
+
+**Kind**: global class  
+<a name="new_CurveStethPoolWithdrawAction_new"></a>
+
+### new CurveStethPoolWithdrawAction(from, to, amounts, maxBurnAmount, returnValue)
+**Params**
+
+- from <code>address</code>
+- to <code>address</code>
+- amounts <code>Array.&lt;string&gt;</code>
+- maxBurnAmount <code>string</code>
+- returnValue <code>string</code>
+
+<a name="CurveSwapAction"></a>
+
+## CurveSwapAction
+**Kind**: global class  
+<a name="new_CurveSwapAction_new"></a>
+
+### new CurveSwapAction(sender, receiver, pool, tokenA, tokenB, amount, expected)
+**Params**
+
+- sender <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+- pool <code>EthAddress</code>
+- tokenA <code>EthAddress</code>
+- tokenB <code>EthAddress</code>
+- amount <code>string</code>
+- expected <code>string</code>
+
+<a name="CurveWithdrawAction"></a>
+
+## CurveWithdrawAction
+**Kind**: global class  
+<a name="new_CurveWithdrawAction_new"></a>
+
+### new CurveWithdrawAction(sender, receiver, depositTarget, lpToken, sig, burnAmount, minAmounts, tokens, withdrawExact, useUnderlying)
+**Params**
+
+- sender <code>EthAddress</code>
+- receiver <code>EthAddress</code>
+- depositTarget <code>EthAddress</code>
+- lpToken <code>EthAddress</code>
+- sig <code>bytes4</code>
+- burnAmount <code>string</code>
+- minAmounts <code>Array.&lt;string&gt;</code>
+- tokens <code>Array.&lt;EthAddress&gt;</code>
+- withdrawExact <code>boolean</code>
+- useUnderlying <code>boolean</code>
 
 <a name="DyDxWithdrawAction"></a>
 
@@ -662,6 +921,46 @@ Pays back a flashloan from DyDx
 - loanAmount <code>string</code>
 - tokenAddr <code>EthAddress</code>
 
+<a name="MakerFlashLoanAction"></a>
+
+## MakerFlashLoanAction
+Gets a flashloan from Maker
+
+**Kind**: global class  
+<a name="new_MakerFlashLoanAction_new"></a>
+
+### new MakerFlashLoanAction(amount, flParamGetterAddr, flParamGetterData)
+**Params**
+
+- amount <code>string</code>
+- flParamGetterAddr <code>EthAddress</code>
+- flParamGetterData <code>bytes</code>
+
+<a name="MakerFlashLoanPaybackAction"></a>
+
+## MakerFlashLoanPaybackAction
+Pays back a flashloan from Maker
+
+**Kind**: global class  
+<a name="new_MakerFlashLoanPaybackAction_new"></a>
+
+### new MakerFlashLoanPaybackAction(loanAmount)
+**Params**
+
+- loanAmount <code>string</code>
+
+<a name="GUniDeposit"></a>
+
+## GUniDeposit
+Action that adds liquidity to G-UNI pool of interest (mints G-UNI LP tokens)
+
+**Kind**: global class  
+<a name="GUniWithdraw"></a>
+
+## GUniWithdraw
+Action that removes liquidity from a G-UNI pool and burns G-UNI LP tokens
+
+**Kind**: global class  
 <a name="LidoStakeAction"></a>
 
 ## LidoStakeAction
@@ -676,6 +975,37 @@ LidoStakeAction - Receives WETH, transforms it to ETH then sends it to Lido stak
 - amount <code>string</code> - amount of WETH to pull and stake
 - from <code>EthAddress</code> - WETH will be taken from this address
 - to <code>EthAddress</code> - stETH will be sent to this address
+
+<a name="LidoUnwrapAction"></a>
+
+## LidoUnwrapAction
+LidoUnwrapAction - Unwraps WStEth into StEth
+
+**Kind**: global class  
+<a name="new_LidoUnwrapAction_new"></a>
+
+### new LidoUnwrapAction(amount, from, to)
+**Params**
+
+- amount <code>string</code> - amount of WStEth to pull and Unwrap
+- from <code>EthAddress</code> - WstEth will be taken from this address
+- to <code>EthAddress</code> - stETH will be sent to this address
+
+<a name="LidoWrapAction"></a>
+
+## LidoWrapAction
+LidoWrapAction - Turns WETH or StEth into WStEth
+
+**Kind**: global class  
+<a name="new_LidoWrapAction_new"></a>
+
+### new LidoWrapAction(amount, from, to, useEth)
+**Params**
+
+- amount <code>string</code> - amount to pull and stake
+- from <code>EthAddress</code> - tokens will be taken from this address
+- to <code>EthAddress</code> - WStEth will be sent to this address
+- useEth <code>boolean</code> - true for using WETH, false for using stEth
 
 <a name="LiquityBorrowAction"></a>
 
@@ -899,6 +1229,21 @@ LiquityWithdrawAction - Withdraws collateral from the trove
 - collAmount - Amount of WETH tokens to withdraw
 - to - Address that will receive the withdrawn tokens
 
+<a name="MakerClaimAction"></a>
+
+## MakerClaimAction
+MakerClaimAction - Claim bonus tokens in CropJoin types
+
+**Kind**: global class  
+<a name="new_MakerClaimAction_new"></a>
+
+### new MakerClaimAction(vaultId, joinAddr, to)
+**Params**
+
+- vaultId <code>VaultId</code>
+- joinAddr <code>EthAddress</code>
+- to <code>EthAddress</code> - Tokens will be sent to this address
+
 <a name="MakerGenerateAction"></a>
 
 ## MakerGenerateAction
@@ -976,6 +1321,19 @@ MakerPaybackAction - Payback dai to a Vault
 - from <code>EthAddress</code> - DAI will be sent from this address
 - mcdManager <code>EthAddress</code>
 
+<a name="MakerRatioAction"></a>
+
+## MakerRatioAction
+MakerRatioAction
+
+**Kind**: global class  
+<a name="new_MakerRatioAction_new"></a>
+
+### new MakerRatioAction(vaultId)
+**Params**
+
+- vaultId <code>uint256</code>
+
 <a name="MakerSupplyAction"></a>
 
 ## MakerSupplyAction
@@ -1007,7 +1365,7 @@ MakerWithdrawAction - Withdraw token from a Vault
 - vaultId <code>VaultId</code>
 - amount <code>string</code>
 - joinAddr <code>EthAddress</code>
-- to <code>EthAddress</code>
+- to <code>string</code>
 - mcdManager <code>EthAddress</code>
 
 <a name="MStableClaimAction"></a>
@@ -1034,7 +1392,7 @@ MStableDepositAction
 **Kind**: global class  
 <a name="new_MStableDepositAction_new"></a>
 
-### new MStableDepositAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, stake)
+### new MStableDepositAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, assetPair)
 **Params**
 
 - bAsset
@@ -1045,7 +1403,7 @@ MStableDepositAction
 - to
 - amount
 - minOut
-- stake
+- assetPair
 
 <a name="MStableWithdrawAction"></a>
 
@@ -1055,7 +1413,7 @@ MStableWithdrawAction
 **Kind**: global class  
 <a name="new_MStableWithdrawAction_new"></a>
 
-### new MStableWithdrawAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, stake)
+### new MStableWithdrawAction(bAsset, mAsset, saveAddress, vaultAddress, from, to, amount, minOut, assetPair)
 **Params**
 
 - bAsset
@@ -1066,7 +1424,7 @@ MStableWithdrawAction
 - to
 - amount
 - minOut
-- stake
+- assetPair
 
 <a name="RariDepositAction"></a>
 

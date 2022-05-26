@@ -6,8 +6,8 @@ class AutomationV2Unsub extends Action {
     super(
       'AutomationV2Unsub',
       getAddr('AutomationV2Unsub'),
-      [["uint256", "uint256"]],
-      [[cdpId, protocol]]
+      ["uint256", "uint256"],
+      [cdpId, protocol]
     );
   }
 }

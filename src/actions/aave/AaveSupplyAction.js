@@ -15,14 +15,14 @@ class AaveSupplyAction extends Action {
    * @param enableAsColl {boolean} If we need to enable asset as collateral
    */
   constructor(market, tokenAddr, amount, from, onBehalf = getAddr('Empty'), enableAsColl) {
-    super('AaveSupply', getAddr('AaveSupply'), [['address','address','uint256','address','address','bool']], [[market, tokenAddr, amount, from, onBehalf, enableAsColl]]);
+    super('AaveSupply', getAddr('AaveSupply'), ['address','address','uint256','address','address','bool'], [market, tokenAddr, amount, from, onBehalf, enableAsColl]);
 
     this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
-      this.args[0][3],
-      this.args[0][4],
+      this.args[0],
+      this.args[1],
+      this.args[2],
+      this.args[3],
+      this.args[4],
     ];
   }
 

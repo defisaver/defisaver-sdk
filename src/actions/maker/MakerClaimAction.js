@@ -13,12 +13,12 @@ class MakerClaimAction extends Action {
    * @param to {EthAddress} Tokens will be sent to this address
    */
   constructor(vaultId, joinAddr, to) {
-    super('McdClaim', getAddr('McdClaim'), [['uint256','address','address']], [[vaultId, joinAddr, to]]);
+    super('McdClaim', getAddr('McdClaim'), ['uint256','address','address'], [vaultId, joinAddr, to]);
 
     this.mappableArgs = [
-        this.args[0][0],
-        this.args[0][1],
-        this.args[0][2],
+        this.args[0],
+        this.args[1],
+        this.args[2],
       ];
   }
 }

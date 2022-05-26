@@ -18,12 +18,12 @@ class CurveClaimFeesAction extends Action {
         requireAddress(receiver);
         super('CurveClaimFeesAction',
             getAddr('CurveClaimFeesAction'),
-            [['address', 'address']],
-            [[...arguments]]);
+            ['address', 'address'],
+            [...arguments]);
 
         this.mappableArgs = [
-            this.args[0][0],
-            this.args[0][1],
+            this.args[0],
+            this.args[1],
         ];
     }
 }

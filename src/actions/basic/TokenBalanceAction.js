@@ -6,11 +6,11 @@ class TokenBalanceAction extends Action {
     super(
       'TokenBalance',
       getAddr('TokenBalance'),
-      [[
+      [
         "address",
         "address",
-      ]],
-      [[...arguments]]
+      ],
+      [...arguments]
     );
   }
 }

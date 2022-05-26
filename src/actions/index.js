@@ -18,6 +18,7 @@ const guni = require('./guni');
 const mstable = require('./mstable');
 const rari = require('./rari');
 const aaveV3 = require('./aaveV3');
+const convex = require('./convex');
 
 module.exports = {
   maker,
@@ -40,4 +41,5 @@ module.exports = {
   mstable,
   rari,
   aaveV3,
+  convex,
 };

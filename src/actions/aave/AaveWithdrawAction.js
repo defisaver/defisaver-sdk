@@ -14,14 +14,7 @@ class AaveWithdrawAction extends Action {
    */
   constructor(market, tokenAddr, amount, to) {
     requireAddress(to);
-    super('AaveWithdraw', getAddr('AaveWithdraw'), [['address','address','uint256','address']], [[...arguments]]);
-
-    this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
-      this.args[0][3],
-    ];
+    super('AaveWithdraw', getAddr('AaveWithdraw'), ['address','address','uint256','address'], [...arguments]);
   }
 }
 

@@ -22,36 +22,34 @@ class UniswapV3SupplyAction extends Action {
       'UniSupplyV3',
       getAddr('UniSupplyV3'),
       [
-        [
-          "uint256",
-          "uint256",
-          "uint256",
-          "uint256",
-          "uint256",
-          "uint256",
-          "address",
-          "address",
-          "address",
-        ],
+        "uint256",
+        "uint256",
+        "uint256",
+        "uint256",
+        "uint256",
+        "uint256",
+        "address",
+        "address",
+        "address",
       ],
-      [[...arguments]]
+      [...arguments]
     );
 
     this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
+      this.args[0],
+      this.args[1],
+      this.args[2],
     ];
   }
 
   async getAssetsToApprove() {
-    const assetA = getAssetInfoByAddress(this.args[0][7]);
-    const assetB = getAssetInfoByAddress(this.args[0][8]);
+    const assetA = getAssetInfoByAddress(this.args[7]);
+    const assetB = getAssetInfoByAddress(this.args[8]);
 
     const approveArr = [];
 
-    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[0][7], owner: this.args[0][6], specialApproveLabel: 'uniswap v3'});
-    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[0][8], owner: this.args[0][6], specialApproveLabel: 'uniswap v3'});
+    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[7], owner: this.args[6], specialApproveLabel: 'uniswap v3'});
+    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[8], owner: this.args[6], specialApproveLabel: 'uniswap v3'});
 
     return approveArr;
   }

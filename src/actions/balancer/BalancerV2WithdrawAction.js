@@ -19,36 +19,34 @@ class BalancerV2WithdrawAction extends Action {
       'BalancerV2Withdraw',
       getAddr('BalancerV2Withdraw'),
       [
-        [
-          "bytes32",
-          "address",
-          "address",
-          "uint256",
-          "address[]",
-          "uint256[]",
-          "bytes",
-        ],
+        "bytes32",
+        "address",
+        "address",
+        "uint256",
+        "address[]",
+        "uint256[]",
+        "bytes",
       ],
-      [[poolId, from, to, lpTokenAmount, tokens, minAmountsOut, userData]]
+      [poolId, from, to, lpTokenAmount, tokens, minAmountsOut, userData]
     );
 
     this.from = from;
 
     this.mappableArgs = [
-      this.args[0][1],
-      this.args[0][2],
-      this.args[0][3],
+      this.args[1],
+      this.args[2],
+      this.args[3],
     ];
 
-    for (let i = 0; i < this.args[0][5].length; i++){
-      this.mappableArgs.push(this.args[0][5][i]);
+    for (let i = 0; i < this.args[5].length; i++){
+      this.mappableArgs.push(this.args[5][i]);
     }
   }
 
   async getAssetsToApprove() {
     const approveArr = [];
-    const token = this.args[0][0].slice(0,42);
-    approveArr.push({asset: token, owner: this.args[0][1], specialApproveLabel: 'balancer'});
+    const token = this.args[0].slice(0,42);
+    approveArr.push({asset: token, owner: this.args[1], specialApproveLabel: 'balancer'});
     return approveArr;
   }
 }

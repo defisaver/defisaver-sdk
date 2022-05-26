@@ -7,16 +7,16 @@ class InstPullTokensAction extends Action {
     super(
       "InstPullTokens",
       getAddr("InstPullTokens"),
-      [["address", "address[]", "uint256[]", "address"]],
-      [[dsaAddress, tokens, amounts, to]]
+      ["address", "address[]", "uint256[]", "address"],
+      [dsaAddress, tokens, amounts, to]
     );
     this.mappableArgs = [];
   }
 
   async getAssetsToApprove() {
     return [{
-      dsaAddress: this.args[0][0],
-      specialApproveLabel: 'Instadapp' 
+      dsaAddress: this.args[0],
+      specialApproveLabel: 'Instadapp'
     }];
   }
 }

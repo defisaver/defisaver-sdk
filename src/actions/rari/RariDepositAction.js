@@ -15,16 +15,16 @@ class RariDepositAction extends Action {
    * @param to {EthAddress} RSPT will be sent to this address
    */
   constructor(fundManager, stablecoinAddress, poolTokenAddress, amount, from, to) {
-    super('RariDeposit', getAddr('RariDeposit'), [['address', 'address', 'address', 'uint256', 'address', 'address']], [[fundManager, stablecoinAddress, poolTokenAddress, amount, from, to]]);
+    super('RariDeposit', getAddr('RariDeposit'), ['address', 'address', 'address', 'uint256', 'address', 'address'], [fundManager, stablecoinAddress, poolTokenAddress, amount, from, to]);
     this.mappableArgs = [
-      this.args[0][3],
-      this.args[0][4],
-      this.args[0][5],
+      this.args[3],
+      this.args[4],
+      this.args[5],
     ];
   }
 
   async getAssetsToApprove() {
-    return [{asset: this.args[0][1], owner: this.args[0][4]}];
+    return [{asset: this.args[1], owner: this.args[4]}];
   }
 }
 

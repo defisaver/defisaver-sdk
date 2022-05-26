@@ -16,16 +16,16 @@ class GUniWithdraw extends Action {
     super(
         'GUniWithdraw',
         getAddr('GUniWithdraw'),
-        [['address', 'uint256', 'uint256', 'uint256', 'address', 'address']],
-        [[pool, burnAmount, amount0Min, amount1Min, to, from]]
+        ['address', 'uint256', 'uint256', 'uint256', 'address', 'address'],
+        [pool, burnAmount, amount0Min, amount1Min, to, from]
     );
     this.mappableArgs = [
-        this.args[0][1],
+        this.args[1],
     ];
   }
 
   async getAssetsToApprove() {
-    return [{asset: this.args[0][0], owner: this.args[0][5]}];
+    return [{asset: this.args[0], owner: this.args[5]}];
   }
 }
 

@@ -24,13 +24,13 @@ class MStableClaimAction extends Action {
         super(
             'MStableClaim',
             getAddr('MStableClaim'),
-            [['address', 'address', 'uint256', 'uint256']],
-            [[...arguments]],
+            ['address', 'address', 'uint256', 'uint256'],
+            [...arguments],
         );
 
         this.mappableArgs = [
-            this.args[0][0],
-            this.args[0][1],
+            this.args[0],
+            this.args[1],
         ];
     }
 }
