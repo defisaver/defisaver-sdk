@@ -16,26 +16,26 @@ class AaveV3ClaimRewardsAction extends ActionWithL2 {
     super(
       'AaveV3ClaimRewards',
       getAddr('AaveV3ClaimRewards'),
-      [['uint8', 'uint256', 'address', 'address', 'address[]']],
-      [[assetsLength, amount, to, reward, assets]],
+      ['uint8', 'uint256', 'address', 'address', 'address[]'],
+      [assetsLength, amount, to, reward, assets],
     );
   }
   encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
     // assetsLength
-    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0][0]));
+    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0]));
     // amount
-    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][1]));
+    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[1]));
     // to
-    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][2]));
+    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[2]));
     // reward
-    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][3]));
+    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[3]));
     // assets
-    const arrayLength = this.args[0][0];
+    const arrayLength = this.args[0];
     for (let i = 0; i < arrayLength; i++){
       // assets[i]
-      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][4][i]))
+      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[4][i]))
     }
 
     return encodedInput;

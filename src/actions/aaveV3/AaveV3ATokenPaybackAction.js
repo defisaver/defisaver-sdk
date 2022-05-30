@@ -17,39 +17,39 @@ class AaveV3ATokenPaybackAction extends ActionWithL2 {
    */
   constructor(useDefaultMarket, market, amount, from, rateMode, aTokenAddr, assetId) {
     super('AaveV3ATokenPayback', getAddr('AaveV3ATokenPayback'),
-    [['uint256','address','uint8','uint16', 'bool', 'address']],
-    [[amount, from, rateMode, assetId, useDefaultMarket, market]]
+    ['uint256','address','uint8','uint16', 'bool', 'address'],
+    [amount, from, rateMode, assetId, useDefaultMarket, market]
     );
 
     this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][5],
+      this.args[0],
+      this.args[1],
+      this.args[5],
     ];
     this.addressForApproval = aTokenAddr;
   }
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.addressForApproval);
-    if (asset.symbol !== 'ETH') return [{asset: this.addressForApproval, owner: this.args[0][2]}];
+    if (asset.symbol !== 'ETH') return [{asset: this.addressForApproval, owner: this.args[2]}];
     return [];
   }
   encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
     // amount
-    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][0]));
+    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0]));
     // from
-    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][1]));
+    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[1]));
     // rateMode
-    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0][2]));
+    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[2]));
     // assetId
-    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0][3]));
+    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[3]));
     // useDefaultMarket
-    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][4]))
-    if (!this.args[0][4]){
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[4]))
+    if (!this.args[4]){
       // market
-      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][5]));
+      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[5]));
     }
     return encodedInput;
   }
