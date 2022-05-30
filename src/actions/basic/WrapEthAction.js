@@ -13,13 +13,14 @@ class WrapEthAction extends ActionWithL2 {
   }
 
   async getEthValue() {
-    return this.args[0][0];
+    return this.args[0];
   }
-  encodeInputs(){
+
+  encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
     // amount
-    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][0]));
+    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0]));
   }
 }
 
