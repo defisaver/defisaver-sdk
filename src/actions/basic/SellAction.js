@@ -1,13 +1,14 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
+const ActionAbi = require('../../abis/Action.json');
+const AbiCoder = require('web3-eth-abi');
+const ActionWithL2 = require("../../ActionWithL2");
+const { requireAddress } = require("../../utils/general");
+const { getAssetInfoByAddress } = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
-const Dec = require('decimal.js');
 
 /**
  * Sells token on DeFi Saver exchange aggregator
  */
-class SellAction extends Action {
+class SellAction extends ActionWithL2 {
   /**
    * @param exchangeOrder {Array} Standard DFS Exchange data
    * @param from {string} Order sender
@@ -36,6 +37,11 @@ class SellAction extends Action {
       this.args[1],
       this.args[2],
     ];
+  }
+
+  encodeInputs() {
+    const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
+    return AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall());
   }
 
   async getAssetsToApprove() {

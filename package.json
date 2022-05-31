@@ -1,6 +1,6 @@
 {
   "name": "@defisaver/sdk",
-  "version": "0.2.9",
+  "version": "0.3.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,7 @@
   "repository": "https://github.com/DecenterApps/defisaver-sdk",
   "license": "ISC",
   "dependencies": {
-    "@defisaver/tokens": "^1.4.12",
+    "@defisaver/tokens": "^1.4.18",
     "@ethersproject/address": "^5.0.10",
     "@ethersproject/solidity": "^5.0.9",
     "axios": "^0.21.1",

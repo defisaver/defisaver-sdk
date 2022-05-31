@@ -1,5 +1,6 @@
 const AbiCoder = require('web3-eth-abi');
 const { keccak256, padLeft, toHex } = require('web3-utils');
+const { CONFIG } = require('./config');
 
 const ActionAbi = require('./abis/Action.json');
 
@@ -112,16 +113,24 @@ class Action {
     return [AbiCoder.encodeParameter(_paramType, _arg)];
   }
 
+  encodeForL2DsProxyCall() {
+    throw new Error('Not L2'); // TODO improve this
+  }
+
   /**
    * Encode arguments for calling the action via DsProxy
    * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() {
-    const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
-    return [
-      this.contractAddress,
-      AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall()),
-    ];
+    if (CONFIG.chainId === 1) {
+      const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
+      return [
+        this.contractAddress,
+        AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall()),
+      ];
+    } else {
+      return [this.contractAddress, this.encodeForL2DsProxyCall()];
+    }
   }
 
   /**

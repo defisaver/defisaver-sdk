@@ -17,6 +17,7 @@ const curve = require('./curve');
 const guni = require('./guni');
 const mstable = require('./mstable');
 const rari = require('./rari');
+const aaveV3 = require('./aaveV3');
 const convex = require('./convex');
 
 module.exports = {
@@ -39,5 +40,6 @@ module.exports = {
   guni,
   mstable,
   rari,
+  aaveV3,
   convex,
 };
