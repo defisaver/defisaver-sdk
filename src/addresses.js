@@ -130,7 +130,7 @@ const actionAddresses = {
     CurveStethPoolWithdraw: '0x4089731d843Ce52699Fe64F68556aBbD95D70D00', // REDEPLOY
   },
   [NETWORKS.optimism.chainId]: {
-    DFSSell: '0xfA015aD97E25247c2144F1C89AeD449cc3Fd1FCB',
+    DFSSell: '0xBA0f6039b95CC0A02B5fc983eCf0FC4437BaacC7',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -152,7 +152,7 @@ const actionAddresses = {
     FLAaveV3: '0x352D4a1622f2DC34c738F542934372855f219F05',
   },
   [NETWORKS.arbitrum.chainId]: {
-    DFSSell: '0x49E1574Ba6b8134c29B1EbC010784A01D91b794F',
+    DFSSell: '0x77c02Bb7CbBb2F896c5Ea14e1b60D65f81e552db',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
