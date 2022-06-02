@@ -45,6 +45,7 @@ const NETWORKS = {
  */
 const CONFIG = {
   chainId: NETWORKS.ethereum.chainId,
+  testingMode: false
 };
 
 /**

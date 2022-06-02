@@ -225,9 +225,12 @@ const getAddr = (name, chainId) => {
 
   const actions = actionAddresses[_chainId];
   const other = otherAddresses[_chainId];
-
-  if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
-  if (!actions[name] && !other[name]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
+  
+  // skip this check if we're in testing mode
+  if (!CONFIG.testingMode) {
+    if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
+    if (!actions[name] && !other[name]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
+  }
 
   return actions[name] || other[name];
 };
