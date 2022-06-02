@@ -45,8 +45,8 @@ class CurveWithdrawAction extends Action {
             depositTarget = pool.swapAddr;
         }
 
-        super('CurveWithdrawAction',
-            getAddr('CurveWithdrawAction'),
+        super('CurveWithdraw',
+            getAddr('CurveWithdraw'),
             ['address', 'address', 'address', 'uint256', 'uint8', 'uint256[]'],
             [
                 sender,
