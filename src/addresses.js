@@ -126,8 +126,11 @@ const actionAddresses = {
     McdRatioCheck: '0x3f09773e5e945C6Aa1bc8a8B3492f507620DE1e1',
     GasFeeTaker: '0x431F1E1A9859EF99953801dbdeB31d2846ADcc0d',
 
-    CurveStethPoolDeposit: '0x5Ae5870dC0C780e9eb68bE7a223eCd7F3BDad12B', // REDEPLOY
-    CurveStethPoolWithdraw: '0x4089731d843Ce52699Fe64F68556aBbD95D70D00', // REDEPLOY
+    CurveStethPoolDeposit: '0x5Ae5870dC0C780e9eb68bE7a223eCd7F3BDad12B',
+    CurveStethPoolWithdraw: '0x4089731d843Ce52699Fe64F68556aBbD95D70D00',
+
+    CurveDeposit: '0x160225c24300bD9fAA03Bc007D5e72bDbbcA9257',
+    CurveWithdraw: '0xA2A6D75417807ebAf8364613018D697f88021771',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xBA0f6039b95CC0A02B5fc983eCf0FC4437BaacC7',
@@ -225,7 +228,7 @@ const getAddr = (name, chainId) => {
 
   const actions = actionAddresses[_chainId];
   const other = otherAddresses[_chainId];
-  
+
   // skip this check if we're in testing mode
   if (!CONFIG.testingMode) {
     if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
