@@ -15,17 +15,12 @@ class UnwrapEthAction extends ActionWithL2 {
     super(
       'UnwrapEth',
       getAddr('UnwrapEth'),
-      [[
+      [
         "uint256",
         "address"
-      ]],
-      [[...arguments]]
+      ],
+      [...arguments]
     );
-
-    this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-    ];
   }
   encodeInputs(){
     // executeActionDirectL2

@@ -19,15 +19,15 @@ class AaveV3PaybackAction extends ActionWithL2 {
    */
   constructor(useOnDefaultMarket, market, amount, from, rateMode, tokenAddr, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
     super('AaveV3Payback', getAddr('AaveV3Payback'),
-    [['uint256','address','uint8','uint16', 'bool', 'bool','address','address']],
-    [[amount, from, rateMode, assetId, useOnDefaultMarket, useOnBehalf, market, onBehalf]]
+    ['uint256','address','uint8','uint16', 'bool', 'bool','address','address'],
+    [amount, from, rateMode, assetId, useOnDefaultMarket, useOnBehalf, market, onBehalf]
     );
 
     this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][6],
-      this.args[0][7],
+      this.args[0],
+      this.args[1],
+      this.args[6],
+      this.args[7],
     ];
     this.tokenForApproval = tokenAddr;
   }
@@ -42,24 +42,24 @@ class AaveV3PaybackAction extends ActionWithL2 {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
     // amount
-    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][0]));
+    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0]));
     // from
-    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][1]));
+    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[1]));
     // rateMode
-    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0][2]));
+    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[2]));
     // assetId
-    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0][3]));
+    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[3]));
     // useDefaultMarket
-    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][4]));
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[4]));
     // useOnBehalf
-    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][5]));
-    if (!this.args[0][4]) {
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[5]));
+    if (!this.args[4]) {
       // market
-      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][6]));
+      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[6]));
     }
-    if (this.args[0][5]) {
+    if (this.args[5]) {
       // onBehalf
-      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][7]));
+      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[7]));
     }
     return encodedInput;
   }

@@ -13,13 +13,13 @@ class MakerRatioCheckAction extends Action {
    * @param startRatioIndex {uint256} Index in returnValues where ratio before actions is stored
    */
   constructor(ratioState, checkTarget, targetRatio, vaultId, startRatioIndex) {
-    super("McdRatioCheck", getAddr("McdRatioCheck"), [["uint8","bool","uint256","uint256","uint256"]], [[ratioState, checkTarget, targetRatio, vaultId, startRatioIndex]]);
+    super("McdRatioCheck", getAddr("McdRatioCheck"), ["uint8","bool","uint256","uint256","uint256"], [ratioState, checkTarget, targetRatio, vaultId, startRatioIndex]);
 
     this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][2],
-      this.args[0][3],
-      this.args[0][4],
+      this.args[0],
+      this.args[2],
+      this.args[3],
+      this.args[4],
     ];
   }
 

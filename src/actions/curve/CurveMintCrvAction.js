@@ -12,12 +12,12 @@ class CurveMintCrvAction extends Action {
         requireAddress(receiver);
         super('CurveMintCrv',
             getAddr('CurveMintCrv'),
-            [['address[8]', 'address']],
-            [[...arguments]],
+            ['address[8]', 'address'],
+            [...arguments],
         );
 
         this.mappableArgs = [
-            this.args[0][8],
+            this.args[8],
         ];
     }
 }

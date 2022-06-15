@@ -11,14 +11,14 @@ class GasFeeAction extends Action {
   constructor(gasStart, feeToken, availableAmount, dfsFeeDivider = 2000) {
     super("GasFeeTaker",
       getAddr("GasFeeTaker"),
-      [["uint256", "address", "uint256", "uint256"]],
-      [[gasStart, feeToken, availableAmount, dfsFeeDivider]],
+      ["uint256", "address", "uint256", "uint256"],
+      [gasStart, feeToken, availableAmount, dfsFeeDivider],
     );
 
     this.mappableArgs = [
-      this.args[0][1],
-      this.args[0][2],
-      this.args[0][3],
+      this.args[1],
+      this.args[2],
+      this.args[3],
     ];
   }
 

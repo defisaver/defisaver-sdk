@@ -20,23 +20,22 @@ class SellAction extends ActionWithL2 {
     super(
       'DFSSell',
       getAddr('DFSSell'),
-      [[
+      [
         ["address","address","uint256","uint256","uint256","uint256","address","address","bytes",["address","address","address","uint256","uint256","bytes"]],
         "address",
         "address",
-      ]
       ],
-      [[exchangeOrder, from, to]]
+      [exchangeOrder, from, to]
     );
 
     this.protocolFee = protocolFee;
 
     this.mappableArgs = [
-      this.args[0][0][0],
-      this.args[0][0][1],
-      this.args[0][0][2],
+      this.args[0][0],
       this.args[0][1],
       this.args[0][2],
+      this.args[1],
+      this.args[2],
     ];
   }
 

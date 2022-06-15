@@ -14,30 +14,30 @@ class AaveV3WithdrawAction extends ActionWithL2 {
    */
   constructor(assetId, useDefaultMarket, amount, to, market) {
     super('AaveV3Withdraw', getAddr('AaveV3Withdraw'),
-    [['uint16','bool','uint256','address','address']],
-    [[assetId, useDefaultMarket, amount, to, market]]
+    ['uint16','bool','uint256','address','address'],
+    [assetId, useDefaultMarket, amount, to, market]
     );
 
     this.mappableArgs = [
-      this.args[0][2],
-      this.args[0][3],
-      this.args[0][4],
+      this.args[2],
+      this.args[3],
+      this.args[4],
     ];
   }
   encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
     // assetId
-    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0][0]));
+    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0]));
     // useOnDefaultMarket
-    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][1]))
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[1]))
     // amount
-    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][2]));
+    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[2]));
     // from
-    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][3]));
-    if (!this.args[0][1]){
+    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[3]));
+    if (!this.args[1]){
       // market
-      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][4]));
+      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[4]));
     }
     return encodedInput;
   }

@@ -12,19 +12,22 @@ const actionAddresses = {
     ChangeProxyOwner: '0x81cA52CfE66421d0ceF82d5F33230e43b5F23D2B',
     TokenBalance: '0xa92B177950F1460119940436515FD857C24494BC',
     AutomationV2Unsub: '0xe35Fb12fE9796847751076aCf5ee7d124108612C',
+    SendTokenAndUnwrap: '0xeecd376026335261c89faD40D89625391b1eFF6a',
+    ToggleSub: '0x9A78E9d6538cfDbA0242Ca5eC46771E6132E8085',
+    UpdateSub: '0x94D707f411B852082a5ce49C3f47c49c7757761f',
 
     // exchange
-    DFSSell: '0x1abDDCae131ce200e66140d9fBd0C37F7a40e642',
+    DFSSell: '0xB744474Bdd7226736ACa4Ba87593e32d8315e5c9',
 
     // maker
-    McdGenerate: '0x2bF4586636329Ae930cFe085a1e57BAb4a8f741b',
-    McdGive: '0xD2dc5DA4172a3901C9f26c7cd29eFE656Fc20332',
-    McdMerge: '0x66c7f4C7e59b6e780142aaD5c9f427FA5F8dfFc6',
-    McdOpen: '0x72AFC60B90c976397C37B5c64DDc067Ea521D388',
-    McdPayback: '0xb7C2c78846493Bed18fa07B51fcc5EAFAc9d629C',
-    McdSupply: '0x91c3167aC51F92c2f720C6A8418FDF46060698A1',
-    McdWithdraw: '0x3c232F0ae183C3e2eb421e8e317318Dfe85a7b10',
-    McdClaim: '0xd78783b50227A84d43604843065494e2666182Ab',
+    McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
+    McdGive: '0xf9556A87BF424834FDe7De0547b58E36Cb42EF01',
+    McdMerge: '0x6D06C6c2BCeaEC31b0F8Cd68C594120dDCcCC427',
+    McdOpen: '0x1b54e8b6073ac7382c42830BE715466aDA11Cf37',
+    McdPayback: '0xE68AeD979Af6f85516fF485D098804c0f9eD9A5b',
+    McdSupply: '0x84372e73e1A2E95510869D2D81A3ef1AEC9e0Da8',
+    McdWithdraw: '0xa704FBBe2f7ea8eF45a8280f6Bf96939eBC73252',
+    McdClaim: '0xc0FC0f5Ba156E16217F8C7f400AEc0a658419C13',
 
     // reflexer
     ReflexerSupply: '0xd7a36CD4ce7CCc2F1376Dc5C48BaC84380A4f698',
@@ -48,7 +51,7 @@ const actionAddresses = {
     // compound
     CompBorrow: '0x8495579BF6Ae848f7E59686536F834f1d2CCd79C',
     CompClaim: '0x81F488cF7A0128A9DB5e7207042cCAB1CB0ac902',
-    CompPayback: '0x2881590d5FfBd1e88BFc0Dc292f10e5377977f87',
+    CompPayback: '0xa2Fa682f44BE40a11d69Eb738CBB91148f0D9742',
     CompSupply: '0xB4CEDe40b249b756Ce0EAa3e14F6af89f25f9a3d',
     CompWithdraw: '0x3792F83D6A82091cb53052458038CC86e206463F',
     CompGetDebt: '0xc2B8f8423bc8Fe2e9A44cA9d364d835D1751b725',
@@ -123,18 +126,22 @@ const actionAddresses = {
     McdRatioCheck: '0x3f09773e5e945C6Aa1bc8a8B3492f507620DE1e1',
     GasFeeTaker: '0x431F1E1A9859EF99953801dbdeB31d2846ADcc0d',
 
-    CurveStethPoolDeposit: '0x0f042a5CC97C4cd8D8136c28F966839f195D08B9', // REDEPLOY
-    CurveStethPoolWithdraw: '0x2F4ad71Bd8045d0633B304BD2d94ef349eB09105', // REDEPLOY
+    GasFeeTaker: '0x431F1E1A9859EF99953801dbdeB31d2846ADcc0d',
+    CurveStethPoolDeposit: '0x5Ae5870dC0C780e9eb68bE7a223eCd7F3BDad12B',
+    CurveStethPoolWithdraw: '0x4089731d843Ce52699Fe64F68556aBbD95D70D00',
 
-    GasFeeTaker: '0x431F1E1A9859EF99953801dbdeB31d2846ADcc0d'
+    CurveDeposit: '0x160225c24300bD9fAA03Bc007D5e72bDbbcA9257',
+    CurveWithdraw: '0xA2A6D75417807ebAf8364613018D697f88021771',
   },
   [NETWORKS.optimism.chainId]: {
-    DFSSell: '0xfA015aD97E25247c2144F1C89AeD449cc3Fd1FCB',
+    DFSSell: '0xBA0f6039b95CC0A02B5fc983eCf0FC4437BaacC7',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
     UnwrapEth: '0x1Fa75B00A05C2EbBd0EDF253a63c209966337A0d',
     SendToken: '0xEbA499702856f1EFda2546e9fEFC1319A3b40538',
+    PullToken: '0x392579E020a688068422A925c85f28bFD12a7EBB',
+    SendTokenAndUnwrap: '0x8000174366066923D554cb466e190258A6FF3b1f',
 
     // aave v3
     AaveV3ATokenPayback: '0x71B27114D1777298bD46c3770C42F9f807C49847',
@@ -152,12 +159,14 @@ const actionAddresses = {
     GasFeeTaker: '0x0000000000000000000000000000000000000000'
   },
   [NETWORKS.arbitrum.chainId]: {
-    DFSSell: '0x49E1574Ba6b8134c29B1EbC010784A01D91b794F',
+    DFSSell: '0x77c02Bb7CbBb2F896c5Ea14e1b60D65f81e552db',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
     UnwrapEth: '0x2B69d494536098700910D167902D1d397dcA2B61',
     SendToken: '0xb022BaFfcEdc0ceA15aF6B2B744795A12D21F2a9',
+    PullToken: '0xD8B3769f74bd9F196C3416a42a91E786948898e6',
+    SendTokenAndUnwrap: '0x0fb867A5Ee1CA9426D3dAb95e613Be166218b977',
 
     // aave v3
     AaveV3ATokenPayback: '0x261906e5E0D0D38D9cBb5c10dB9c4031aabdf8C1',
@@ -187,6 +196,7 @@ const otherAddresses = {
     RaiWethUniV2LPToken : '0x8aE720a71622e824F576b4A8C03031066548A3B1',
     BalancerToken : '0xba100000625a3754423978a60c9317c58a424e3D',
     CrvToken: '0xD533a949740bb3306d119CC777fa900bA034cd52',
+    CvxToken: '0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B',
     DAI: '0x6b175474e89094c44da98b954eedeac495271d0f',
     Empty: '0x0000000000000000000000000000000000000000',
   },
@@ -224,8 +234,11 @@ const getAddr = (name, chainId) => {
   const actions = actionAddresses[_chainId];
   const other = otherAddresses[_chainId];
 
-  if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
-  if (!actions[name] && !other[name]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
+  // skip this check if we're in testing mode
+  if (!CONFIG.testingMode) {
+    if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
+    if (!actions[name] && !other[name]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
+  }
 
   return actions[name] || other[name];
 };

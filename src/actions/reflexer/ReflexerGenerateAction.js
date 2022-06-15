@@ -13,13 +13,7 @@ class ReflexerGenerateAction extends Action {
    */
   constructor(vaultId, amount, to) {
     requireAddress(to);
-    super('ReflexerGenerate', getAddr('ReflexerGenerate'), [['uint256','uint256','address']], [[vaultId, amount, to]]);
-
-    this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
-    ];
+    super('ReflexerGenerate', getAddr('ReflexerGenerate'), ['uint256','uint256','address'], [vaultId, amount, to]);
   }
 }
 

@@ -16,27 +16,27 @@ class AaveV3CollateralSwitchAction extends ActionWithL2 {
     super(
       'AaveV3CollateralSwitch',
       getAddr('AaveV3CollateralSwitch'),
-      [['uint8','bool', 'uint16[]', 'bool[]','address']],
-      [[arrayLength, useDefaultMarket, assetIds, useAsCollateral, market]],
+      ['uint8','bool', 'uint16[]', 'bool[]','address'],
+      [arrayLength, useDefaultMarket, assetIds, useAsCollateral, market],
     );
   }
   encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
     // arrayLength
-    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0][0]));
+    encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0]));
     // useDefaultMarket
-    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][1]));
-    const arrayLength = this.args[0][0];
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[1]));
+    const arrayLength = this.args[0];
     for (let i = 0; i < arrayLength; i++){
       // assetIds[i]
-      encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0][2][i]));
+      encodedInput = encodedInput.concat(this.numberToBytes2(this.args[2][i]));
       // useAsCollateral[i]
-      encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][3][i]));
+      encodedInput = encodedInput.concat(this.boolToBytes1(this.args[3][i]));
     }
-    if (!this.args[0][1]){
+    if (!this.args[1]){
       // market
-      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][4]));
+      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[4]));
     }
     return encodedInput;
   }

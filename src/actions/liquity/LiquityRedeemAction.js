@@ -28,19 +28,19 @@ class LiquityRedeemAction extends Action {
         requireAddress(to);
         super('LiquityRedeem',
             getAddr('LiquityRedeem'),
-            [['uint256', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256']],
-            [[...arguments]]);
+            ['uint256', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256'],
+            [...arguments]);
 
         this.mappableArgs = [
-            this.args[0][0],
-            this.args[0][1],
-            this.args[0][2],
-            this.args[0][8],
+            this.args[0],
+            this.args[1],
+            this.args[2],
+            this.args[8],
         ];
     }
 
     async getAssetsToApprove() {
-        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[0][1]}];
+        return [{ asset: getAssetInfo('LUSD').address, owner: this.args[1]}];
     }
 }
 

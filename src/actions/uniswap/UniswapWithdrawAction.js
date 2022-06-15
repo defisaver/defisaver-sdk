@@ -21,32 +21,30 @@ class UniswapWithdrawAction extends Action {
       'UniWithdraw',
       getAddr('UniWithdraw'),
       [
-        [
-          "address",
-          "address",
-          "uint256",
-          "address",
-          "address",
-          "uint256",
-          "uint256",
-          "uint256",
-        ],
+        "address",
+        "address",
+        "uint256",
+        "address",
+        "address",
+        "uint256",
+        "uint256",
+        "uint256",
       ],
-      [[...arguments]]
+      [...arguments]
     );
 
     this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
-      this.args[0][3],
-      this.args[0][4],
+      this.args[0],
+      this.args[1],
+      this.args[2],
+      this.args[3],
+      this.args[4],
     ];
   }
 
   async getAssetsToApprove() {
-    const lpAddress = getPoolAddressByAddresses(this.args[0][0], this.args[0][1])
-    return [{asset: lpAddress, owner: this.args[0][4], specialApproveLabel: 'uniswap v2'}];
+    const lpAddress = getPoolAddressByAddresses(this.args[0], this.args[1])
+    return [{asset: lpAddress, owner: this.args[4], specialApproveLabel: 'uniswap v2'}];
   }
 }
 

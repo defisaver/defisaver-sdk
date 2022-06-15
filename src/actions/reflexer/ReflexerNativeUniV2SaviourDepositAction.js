@@ -12,17 +12,17 @@ class ReflexerNativeUniV2SaviourDepositAction extends Action {
    * @param lpTokenAmount {string}
    */
   constructor(from, safeId, lpTokenAmount) {
-    super('ReflexerNativeUniV2SaviourDeposit', getAddr('ReflexerNativeUniV2SaviourDeposit'), [['address','uint256','uint256']], [[from, safeId, lpTokenAmount]]);
+    super('ReflexerNativeUniV2SaviourDeposit', getAddr('ReflexerNativeUniV2SaviourDeposit'), ['address','uint256','uint256'], [from, safeId, lpTokenAmount]);
     this.mappableArgs = [
-        this.args[0][0],
-        this.args[0][1],
-        this.args[0][2],
+        this.args[0],
+        this.args[1],
+        this.args[2],
       ];
 }
 
   async getAssetsToApprove() {
     const tokenAddress = getAddr('RaiWethUniV2LPToken');
-    return [{asset: tokenAddress, owner: this.args[0][0]}];
+    return [{asset: tokenAddress, owner: this.args[0]}];
   }
 
 }

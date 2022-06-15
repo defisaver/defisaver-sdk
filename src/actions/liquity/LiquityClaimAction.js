@@ -13,11 +13,11 @@ class LiquityClaimAction extends Action {
         requireAddress(to);
         super('LiquityClaim',
             getAddr('LiquityClaim'),
-            [['address']],
-            [[...arguments]]);
+            ['address'],
+            [...arguments]);
 
             this.mappableArgs = [
-                this.args[0][0],
+                this.args[0],
               ];
     }
 }

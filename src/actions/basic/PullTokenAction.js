@@ -17,19 +17,13 @@ class PullTokenAction extends Action {
     super(
       'PullToken',
       getAddr('PullToken'),
-      [[
+      [
         "address",
         "address",
         "uint",
-      ]],
-      [[...arguments]]
+      ],
+      [...arguments]
     );
-
-    this.mappableArgs = [
-      this.args[0][0],
-      this.args[0][1],
-      this.args[0][2],
-    ];
   }
 
   async getAssetsToApprove() {

@@ -85,8 +85,7 @@ describe('Access-Lists', () => {
     sampleRecipes.forEach((recipe) => {
         it(`... should make an access list for recipe ${recipe.name}`, () => {
             const recipeAccessList = recipe.getAccessList();
-          console.log(recipeAccessList);
-          testDuplicates(recipeAccessList);
+            testDuplicates(recipeAccessList);
             testInclusion(recipe, recipeAccessList);
         });
     });

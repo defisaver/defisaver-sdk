@@ -2,48 +2,78 @@ const { getAssetInfo } = require('@defisaver/tokens');
 const Action = require('../../Action');
 const { requireAddress } = require('../../utils/general');
 const { getAddr } = require('../../addresses');
+const { poolInfo, makeFlags } = require('../../utils/curve-utils');
 
 class CurveDepositAction extends Action {
 
     /**
      * @param {EthAddress} sender
      * @param {EthAddress} receiver
-     * @param {EthAddress} depositTarget
-     * @param {EthAddress} lpToken
-     * @param {bytes4} sig
+     * @param {EthAddress} poolAddr
      * @param {string} minMintAmount
+     * @param {bool} useUnderlying
      * @param {Array<string>} amounts
-     * @param {Array<EthAddress>} tokens
-     * @param {boolean} useUnderlying
      */
     constructor(
         sender,
         receiver,
-        depositTarget,
-        lpToken,
-        sig,
+        poolAddr,
         minMintAmount,
+        useUnderlying,
         amounts = [],
-        tokens = [],
-        useUnderlying
     ) {
         requireAddress(sender);
         requireAddress(receiver);
+
+        let depositTarget;
+        let depositTargetType = 0;
+        let explicitUnderlying = false;
+        let tokensForApproval;
+
+        const pool = poolInfo.find((e) => e.swapAddr.toLowerCase() === poolAddr.toLowerCase());
+        if (useUnderlying) {
+            if (pool.depositContract) {
+                depositTarget = pool.depositContract;
+                depositTargetType = pool.zapType + 1;
+            } else {
+                depositTarget = pool.swapAddr;
+                explicitUnderlying = pool.underlyingFlag;
+                if (!explicitUnderlying) throw error('pool has no underlying deposit mechanism');
+            }
+            tokensForApproval = pool.underlyingCoins;
+        } else {
+            depositTarget = pool.swapAddr;
+            tokensForApproval = pool.coins;
+        }
+
         super('CurveDeposit',
             getAddr('CurveDeposit'),
-            [['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]', 'bool']],
-            [[...arguments]]);
+            ['address', 'address', 'address', 'uint256', 'uint8', 'uint256[]'],
+            [
+                sender,
+                receiver,
+                depositTarget,
+                minMintAmount,
+                makeFlags(depositTargetType, explicitUnderlying, 0),
+                amounts,
+            ],
+        ).tokensForApproval = tokensForApproval;
 
         this.mappableArgs = [
-            this.args[0][0],
-            this.args[0][1],
-            this.args[0][5],
-            ...this.args[0][6],
+            this.args[0],
+            this.args[1],
+            this.args[2],
+            this.args[3],
+            this.args[4],
+            ...this.args[5],
         ];
     }
 
     async getAssetsToApprove() {
-        return this.args[0][7].map(_asset => Object({ asset: _asset, owner: this.args[0][0] }));
+        return this.tokensForApproval.map((e) => Object({
+            asset: e.toLowerCase() !== getAssetInfo('ETH').address.toLowerCase() ? e : getAssetInfo('WETH').address,
+            owner: this.args[0],
+        }));
     }
 }
 

@@ -14,13 +14,13 @@ class CurveGaugeWithdrawAction extends Action {
         requireAddress(receiver);
         super('CurveGaugeWithdraw',
             getAddr('CurveGaugeWithdraw'),
-            [['address', 'address', 'address', 'uint256']],
-            [[...arguments]],
+            ['address', 'address', 'address', 'uint256'],
+            [...arguments],
         );
 
         this.mappableArgs = [
-            this.args[0][2],
-            this.args[0][3],
+            this.args[2],
+            this.args[3],
         ];
     }
 }

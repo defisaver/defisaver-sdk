@@ -11,13 +11,13 @@ class AaveClaimStkAaveAction extends Action {
     super(
       'AaveClaimStkAave',
       getAddr('AaveClaimStkAave'),
-      [['address[]', 'uint256', 'address']],
-      [[...arguments]],
+      ['address[]', 'uint256', 'address'],
+      [...arguments],
     );
     this.mappableArgs = [
-      this.args[0][1],
-      this.args[0][2],
-  ];
+      this.args[1],
+      this.args[2],
+    ];
   }
 }
 

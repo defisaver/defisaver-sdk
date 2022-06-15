@@ -14,27 +14,27 @@ class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
    */
   constructor(rateMode, assetId, useDefaultMarket, market) {
     super('AaveV3SwapBorrowRateMode', getAddr('AaveV3SwapBorrowRateMode'),
-    [['uint256','uint16','bool','address']],
-    [[rateMode, assetId, useDefaultMarket, market]]
+    ['uint256','uint16','bool','address'],
+    [rateMode, assetId, useDefaultMarket, market]
     );
 
     this.mappableArgs = [
       this.args[0][0],
-      this.args[0][3],
+      this.args[3],
     ];
   }
   encodeInputs() {
     // executeActionDirectL2
     let encodedInput = "0x2895f3aa";
     // rateMode
-    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][0]));
+    encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0]));
     // assetId
-    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0][1]))
+    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[1]))
     // useOnDefaultMarket
-    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[0][2]))
-    if (!this.args[0][2]){
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[2]))
+    if (!this.args[2]){
       // market
-      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][3]));
+      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[3]));
     }
     return encodedInput;
   }

@@ -19,22 +19,22 @@ class GUniDeposit extends Action {
     super(
         'GUniDeposit',
         getAddr('GUniDeposit'),
-        [['address', 'address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address']],
-        [[pool, token0, token1, amount0Max, amount1max, amount0Min, amount1Min, to, from]]
+        ['address', 'address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address'],
+        [pool, token0, token1, amount0Max, amount1max, amount0Min, amount1Min, to, from]
     );
     this.mappableArgs = [
-        this.args[0][3],
-        this.args[0][4],
-        this.args[0][5],
-        this.args[0][6],
+        this.args[3],
+        this.args[4],
+        this.args[5],
+        this.args[6],
     ];
   }
 
   async getAssetsToApprove() {
     const approveArr = [];
 
-    approveArr.push({asset: this.args[0][1], owner: this.args[0][8]});
-    approveArr.push({asset: this.args[0][2], owner: this.args[0][8]});
+    approveArr.push({asset: this.args[1], owner: this.args[8]});
+    approveArr.push({asset: this.args[2], owner: this.args[8]});
 
     return approveArr;
   }
