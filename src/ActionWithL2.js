@@ -8,6 +8,8 @@ class ActionWithL2 extends Action {
    */
   encodeForL2DsProxyCall() { return this.encodeInputs(); }
 
+  encodeForL2Recipe() { return `0x${this.encodeInputs().slice(10)}`; } // cut the method id
+
   encodeInputs() { throw new Error('Use implementation from specific ActionWithL2'); }
 
   addressToBytes20(address) { return address.slice(2); }
