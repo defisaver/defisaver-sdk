@@ -151,7 +151,7 @@ class Action {
       ]
     } else {
       return [
-        this.encodeForL2Recipe(),   // actionCallData
+        this._encodeForCall()[0],  // actionCallData
         "0x0000000000000000000000000000000000000000000000000000000000000000", // subData
         this.getId(),              // actionIds
         this._getArgumentMapping(), // paramMappings
