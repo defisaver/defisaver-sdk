@@ -19,6 +19,8 @@ class AaveV3WithdrawAction extends ActionWithL2 {
     );
 
     this.mappableArgs = [
+      this.args[0],
+      this.args[1],
       this.args[2],
       this.args[3],
       this.args[4],
