@@ -142,21 +142,12 @@ class Action {
    * @returns {Array<string>}
    */
   encodeForRecipe() {
-    if (CONFIG.chainId === 1) {
-      return [
-        this._encodeForCall()[0],   // actionCallData
-        "0x0000000000000000000000000000000000000000000000000000000000000000", // subData
-        this.getId(),              // actionIds
-        this._getArgumentMapping(), // paramMappings
-      ]
-    } else {
       return [
         this._encodeForCall()[0],  // actionCallData
         "0x0000000000000000000000000000000000000000000000000000000000000000", // subData
         this.getId(),              // actionIds
         this._getArgumentMapping(), // paramMappings
       ]
-    }
   }
 
   encodeForStrategy(subSlots) {
