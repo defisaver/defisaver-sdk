@@ -1,6 +1,6 @@
 const ActionAbi = require('../../abis/Action.json');
 const AbiCoder = require('web3-eth-abi');
-const Action = require("../../Action");
+const ActionWithL2 = require("../../ActionWithL2");
 const { requireAddress } = require("../../utils/general");
 const { getAssetInfoByAddress } = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
@@ -8,7 +8,7 @@ const { getAddr } = require('../../addresses.js');
 /**
  * Sells token on DeFi Saver exchange aggregator
  */
-class SellAction extends Action {
+class SellAction extends ActionWithL2 {
   /**
    * @param exchangeOrder {Array} Standard DFS Exchange data
    * @param from {string} Order sender
