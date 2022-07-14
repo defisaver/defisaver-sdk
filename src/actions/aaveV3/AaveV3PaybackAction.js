@@ -26,6 +26,10 @@ class AaveV3PaybackAction extends ActionWithL2 {
     this.mappableArgs = [
       this.args[0],
       this.args[1],
+      this.args[2],
+      this.args[3],
+      this.args[4],
+      this.args[5],
       this.args[6],
       this.args[7],
     ];
