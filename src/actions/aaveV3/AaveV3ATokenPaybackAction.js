@@ -31,7 +31,7 @@ class AaveV3ATokenPaybackAction extends ActionWithL2 {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.addressForApproval);
-    if (asset.symbol !== 'ETH') return [{asset: this.addressForApproval, owner: this.args[2]}];
+    if (asset.symbol !== 'ETH') return [{asset: this.addressForApproval, owner: this.args[1]}];
     return [];
   }
   encodeInputs() {

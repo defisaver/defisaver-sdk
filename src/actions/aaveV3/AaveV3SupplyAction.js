@@ -39,7 +39,7 @@ class AaveV3SupplyAction extends ActionWithL2 {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.tokenForApproval);
-    if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[2]}];
+    if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[1]}];
     return [];
   }
 
