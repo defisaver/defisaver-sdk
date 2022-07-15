@@ -1,5 +1,6 @@
 const ActionWithL2 = require("../../ActionWithL2");
 const { getAddr } = require('../../addresses.js');
+const { CONFIG } = require('../../config');
 
 /**
  * AaveV3WithdrawAction - Withdraw a previously supplied token from a position in AaveV3
@@ -18,13 +19,21 @@ class AaveV3WithdrawAction extends ActionWithL2 {
     [assetId, useDefaultMarket, amount, to, market]
     );
 
-    this.mappableArgs = [
-      this.args[0],
-      this.args[1],
-      this.args[2],
-      this.args[3],
-      this.args[4],
-    ];
+    if (CONFIG.chainId === 10) {
+      this.mappableArgs = [
+        this.args[0],
+        this.args[1],
+        this.args[2],
+        this.args[3],
+        this.args[4],
+      ];
+    } else {
+      this.mappableArgs = [
+        this.args[2],
+        this.args[3],
+        this.args[4],
+      ];
+    }
   }
   encodeInputs() {
     // executeActionDirectL2
