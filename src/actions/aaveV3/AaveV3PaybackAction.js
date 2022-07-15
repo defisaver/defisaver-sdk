@@ -1,6 +1,7 @@
 const ActionWithL2 = require("../../ActionWithL2");
 const { getAssetInfoByAddress } = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
+const { CONFIG } = require('../../config');
 
 /**
  * AaveV3PaybackAction - Payback debt on Aave using underlying token
@@ -23,22 +24,35 @@ class AaveV3PaybackAction extends ActionWithL2 {
     [amount, from, rateMode, assetId, useOnDefaultMarket, useOnBehalf, market, onBehalf]
     );
 
-    this.mappableArgs = [
-      this.args[0],
-      this.args[1],
-      this.args[2],
-      this.args[3],
-      this.args[4],
-      this.args[5],
-      this.args[6],
-      this.args[7],
-    ];
+    if (CONFIG.chainId === 10) {
+      this.mappableArgs = [
+        this.args[0],
+        this.args[1],
+        this.args[2],
+        this.args[3],
+        this.args[4],
+        this.args[5],
+        this.args[6],
+        this.args[7],
+      ];
+    } else {
+      this.mappableArgs = [
+        this.args[0],
+        this.args[1],
+        this.args[6],
+        this.args[7],
+      ];
+    }
     this.tokenForApproval = tokenAddr;
   }
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.tokenForApproval);
-    if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[1]}];
+    if (CONFIG.chainId === 10) {
+      if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[1]}];
+    } else {
+      if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[3]}];
+    }
     return [];
   }
 
