@@ -25,5 +25,5 @@ module.exports = {
   getNetworkData,
   networks: NETWORKS,
   actionAddressesAllChains: actionAddresses,
-  actionAddresses: () => actionAddresses[CONFIG.chainId],
+  actionAddresses: (chainId = null) => actionAddresses[chainId || CONFIG.chainId],
 }
