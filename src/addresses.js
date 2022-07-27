@@ -60,7 +60,7 @@ const actionAddresses = {
     // flashloan
     FLAaveV2: '0xa4d52ED15018a5be4adE5796899e5d75cc8759C1',
     FLDyDx: '0x08AC78B418fCB0DDF1096533856A757C28d430d7',
-    FLMaker: '0xd393582bE148A45585aB202Fa7Cc789Fa5127223',
+    FLMaker: '0x5DCf600C35ae2752A8a11eB7C489EF3D93126fB4',
     FLBalancer: '0x5C7a9f4635AE4F95da2e45317311AAe255FB71B3',
 
     // uniswap
@@ -126,11 +126,19 @@ const actionAddresses = {
     McdRatioCheck: '0x3f09773e5e945C6Aa1bc8a8B3492f507620DE1e1',
     GasFeeTaker: '0x431F1E1A9859EF99953801dbdeB31d2846ADcc0d',
 
-    CurveStethPoolDeposit: '0x5Ae5870dC0C780e9eb68bE7a223eCd7F3BDad12B', // REDEPLOY
-    CurveStethPoolWithdraw: '0x4089731d843Ce52699Fe64F68556aBbD95D70D00', // REDEPLOY
+    CurveStethPoolDeposit: '0x5Ae5870dC0C780e9eb68bE7a223eCd7F3BDad12B',
+    CurveStethPoolWithdraw: '0x4089731d843Ce52699Fe64F68556aBbD95D70D00',
+
+    CurveDeposit: '0x160225c24300bD9fAA03Bc007D5e72bDbbcA9257',
+    CurveWithdraw: '0xA2A6D75417807ebAf8364613018D697f88021771',
+
+    // Convex
+    ConvexDeposit: '0x3Ecc4F1FD5aA09D2E13Ec9ebFdF102063d66F458',
+    ConvexWithdraw: '0x2B2c235F9e27A121947c34A39d447bD4C585aA15',
+    ConvexClaim: '0xA012afAA97B48894b8FCB2ECC007045Be7a8E8B6',
   },
   [NETWORKS.optimism.chainId]: {
-    DFSSell: '0xfA015aD97E25247c2144F1C89AeD449cc3Fd1FCB',
+    DFSSell: '0xBA0f6039b95CC0A02B5fc983eCf0FC4437BaacC7',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -141,18 +149,22 @@ const actionAddresses = {
 
     // aave v3
     AaveV3ATokenPayback: '0x71B27114D1777298bD46c3770C42F9f807C49847',
-    AaveV3Borrow: '0x4d3F58460aE2bC71fFaeb33838BFA3b5610083Db',
+    AaveV3Borrow: '0x8CaDc8A911D19B9e4D36c9bAdE47d970f362BcEa',
     AaveV3CollateralSwitch: '0x20D1388Ffa0A2D6ff6328AD014C67051542ca3a8',
-    AaveV3Payback: '0x09DC201A6380882752bCdC7bC721D384f716A5a4',
+    AaveV3Payback: '0x88eb4050e89FecE4DF940109B0e58daF9B59e551',
     AaveV3SetEMode: '0x7F264737066b9b7D9729Fe9715abB97423D8b35B',
-    AaveV3Supply: '0xe431c1C673Be123045c8635b0196d51a5bFE55c1',
+    AaveV3Supply: '0x4Ad0cf94e82b58C414266b84ACB061b41bf1bdF7',
     AaveV3SwapBorrowRateMode: '0xB8f0243b492f0e80feF5315Ba8692e7635481845',
-    AaveV3Withdraw: '0xD0130ecB810C6F8d58e60DC417357F6048Ea32e7',
+    AaveV3Withdraw: '0xf19d045f6cFc04A5Ee5E0e8837b565b9f276e3F7',
 
     FLAaveV3: '0x352D4a1622f2DC34c738F542934372855f219F05',
+
+    AaveV3RatioTrigger: '0xB76e3f7694589D0f34ba43b17AD0D15350Ab5f85',
+    GasFeeTakerL2: '0xB3dB299622A9DB0E944ccda2Ef899d6fF365B082',
+    AaveV3RatioCheck: '0x7A36779a7b5F1128B28932604057d5b63361297c',
   },
   [NETWORKS.arbitrum.chainId]: {
-    DFSSell: '0x49E1574Ba6b8134c29B1EbC010784A01D91b794F',
+    DFSSell: '0x77c02Bb7CbBb2F896c5Ea14e1b60D65f81e552db',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
@@ -172,6 +184,8 @@ const actionAddresses = {
     AaveV3Withdraw: '0x204ae0d3f7cB0db44A297DC4aD433298ed2042F3',
 
     FLAaveV3: '0x3Cc0d5DAE1B94e294152C3150aA732b97af603E1',
+    GasFeeTakerL2: '0x0000000000000000000000000000000000000000',
+    AaveV3RatioCheck: '0x0000000000000000000000000000000000000000',
   }
 };
 
@@ -189,11 +203,12 @@ const otherAddresses = {
     RaiWethUniV2LPToken : '0x8aE720a71622e824F576b4A8C03031066548A3B1',
     BalancerToken : '0xba100000625a3754423978a60c9317c58a424e3D',
     CrvToken: '0xD533a949740bb3306d119CC777fa900bA034cd52',
+    CvxToken: '0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B',
     DAI: '0x6b175474e89094c44da98b954eedeac495271d0f',
     Empty: '0x0000000000000000000000000000000000000000',
   },
   [NETWORKS.optimism.chainId]: {
-    RecipeExecutor: '0xe91ff198bA6DFA97A7B4Fa43e5a606c915B0471f',
+    RecipeExecutor: '0x44FDe16DDCd7c02bE28de52CEc08997336051735',
     DFSRegistry: '0xAf707Ee480204Ed6e2640B53cE86F680D28Afcbd',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
 
@@ -226,8 +241,11 @@ const getAddr = (name, chainId) => {
   const actions = actionAddresses[_chainId];
   const other = otherAddresses[_chainId];
 
-  if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
-  if (!actions[name] && !other[name]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
+  // skip this check if we're in testing mode
+  if (!CONFIG.testingMode) {
+    if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
+    if (!actions[name] && !other[name]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
+  }
 
   return actions[name] || other[name];
 };

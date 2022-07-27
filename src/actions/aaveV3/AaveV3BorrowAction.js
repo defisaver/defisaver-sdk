@@ -1,5 +1,6 @@
 const ActionWithL2 = require("../../ActionWithL2");
 const { getAddr } = require('../../addresses.js');
+const { CONFIG } = require('../../config');
 
 /**
  * AaveV3BorrowAction - Borrow a token from AaveV3
@@ -21,12 +22,25 @@ class AaveV3BorrowAction extends ActionWithL2 {
     [amount, to, rateMode, assetId, useDefaultMarket, useOnBehalf, market, onBehalf]
     );
 
-    this.mappableArgs = [
-      this.args[0],
-      this.args[1],
-      this.args[6],
-      this.args[7],
-    ];
+    if (CONFIG.chainId === 10) {
+      this.mappableArgs = [
+        this.args[0],
+        this.args[1],
+        this.args[2],
+        this.args[3],
+        this.args[4],
+        this.args[5],
+        this.args[6],
+        this.args[7],
+      ];
+    } else {
+      this.mappableArgs = [
+        this.args[0],
+        this.args[1],
+        this.args[6],
+        this.args[7],
+      ];
+    }
   }
 
   encodeInputs() {

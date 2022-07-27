@@ -1,7 +1,4 @@
 const Action = require('./Action');
-
-// TODO: Code is a prototype should be cleaned up before use in prod.
-
 class Strategy {
 
   constructor(name) {
@@ -35,7 +32,6 @@ class Strategy {
     return this.subSlots;
   }
 
-  // TODO: Probably should be tied into Recipe obj. not directly with actions
   encodeForDsProxyCall() {
     const triggerIds = this.triggers.map((trigger) => trigger.getId());
 

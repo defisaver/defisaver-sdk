@@ -2,51 +2,74 @@ const { getAssetInfo } = require('@defisaver/tokens');
 const Action = require('../../Action');
 const { requireAddress } = require('../../utils/general');
 const { getAddr } = require('../../addresses');
+const { poolInfo, makeFlags } = require('../../utils/curve-utils');
 
 class CurveWithdrawAction extends Action {
 
     /**
-     *
      * @param {EthAddress} sender
      * @param {EthAddress} receiver
-     * @param {EthAddress} depositTarget
-     * @param {EthAddress} lpToken
-     * @param {bytes4} sig
+     * @param {EthAddress} poolAddr
      * @param {string} burnAmount
-     * @param {Array<string>} minAmounts
-     * @param {Array<EthAddress>} tokens
-     * @param {boolean} withdrawExact
      * @param {boolean} useUnderlying
+     * @param {boolean} withdrawExact
+     * @param {Array<string>} minAmounts
      */
     constructor(
         sender,
         receiver,
-        depositTarget,
-        lpToken,
-        sig,
+        poolAddr,
         burnAmount,
-        minAmounts = [],
-        tokens = [],
+        useUnderlying,
         withdrawExact,
-        useUnderlying
+        minAmounts = [],
     ) {
         requireAddress(sender);
         requireAddress(receiver);
-        super('CurveWithdrawAction',
-            getAddr('CurveWithdrawAction'),
-            ['address', 'address', 'address', 'address', 'bytes4', 'uint256', 'uint256[]', 'address[]', 'bool', 'bool'],
-            [...arguments]);
+
+        let depositTarget;
+        let depositTargetType = 0;
+        let explicitUnderlying = false;
+
+        const pool = poolInfo.find((e) => e.swapAddr.toLowerCase() === poolAddr.toLowerCase());
+        if (useUnderlying) {
+            if (pool.depositContract) {
+                depositTarget = pool.depositContract;
+                depositTargetType = pool.zapType + 1;
+            } else {
+                depositTarget = pool.swapAddr;
+                explicitUnderlying = pool.underlyingFlag;
+                if (!explicitUnderlying) throw error('pool has no underlying deposit mechanism');
+            }
+        } else {
+            depositTarget = pool.swapAddr;
+        }
+
+        super('CurveWithdraw',
+            getAddr('CurveWithdraw'),
+            ['address', 'address', 'address', 'uint256', 'uint8', 'uint256[]'],
+            [
+                sender,
+                receiver,
+                depositTarget,
+                burnAmount,
+                makeFlags(depositTargetType, explicitUnderlying, withdrawExact),
+                minAmounts,
+            ],
+        ).lpToken = pool.lpToken;
 
         this.mappableArgs = [
             this.args[0],
             this.args[1],
-            this.args[5],
-            ...this.args[6],
+            this.args[2],
+            this.args[3],
+            this.args[4],
+            ...this.args[5],
         ];
     }
 
     async getAssetsToApprove() {
-        return { asset: this.args[3], owner: this.args[0] };
+        return [{ asset: this.lpToken, owner: this.args[0] }];
     }
 }
 
