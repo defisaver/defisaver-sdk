@@ -20,7 +20,7 @@ class MakerRepayCompositeAction extends Action {
         exchangeParams,
     ) {
         super(
-            'MakerRepayComposite',
+            'McdRepayComposite',
             getAddr('McdRepayComposite'),
             [
                 'uint256',

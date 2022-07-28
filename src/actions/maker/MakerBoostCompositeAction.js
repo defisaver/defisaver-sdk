@@ -20,8 +20,8 @@ class MakerBoostCompositeAction extends Action {
         exchangeParams,
     ) {
         super(
-            'MakerBoostComposite',
-            getAddr('MakerBoostComposite'),
+            'McdBoostComposite',
+            getAddr('McdBoostComposite'),
             [
                 'uint256',
                 'uint256',
