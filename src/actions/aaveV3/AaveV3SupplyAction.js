@@ -1,7 +1,6 @@
 const ActionWithL2 = require("../../ActionWithL2");
 const { getAssetInfoByAddress } = require("@defisaver/tokens");
 const { getAddr } = require('../../addresses.js');
-const { CONFIG } = require('../../config');
 
 /**
  * AaveV3SupplyAction - Supply token to an aave position on Aave V3
@@ -25,8 +24,7 @@ class AaveV3SupplyAction extends ActionWithL2 {
     [amount, from, assetId, enableAsColl, useDefaultMarket, useOnBehalf, market, onBehalf]
     );
 
-    if (CONFIG.chainId === 10) {
-      this.mappableArgs = [
+    this.mappableArgs = [
         this.args[0],
         this.args[1],
         this.args[2],
@@ -36,14 +34,6 @@ class AaveV3SupplyAction extends ActionWithL2 {
         this.args[6],
         this.args[7],
       ];
-    } else {
-      this.mappableArgs = [
-        this.args[0],
-        this.args[1],
-        this.args[6],
-        this.args[7],
-      ];
-    }
     this.tokenForApproval = tokenAddress;
   }
 
