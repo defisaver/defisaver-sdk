@@ -132,6 +132,8 @@ const actionAddresses = {
     CurveDeposit: '0x160225c24300bD9fAA03Bc007D5e72bDbbcA9257',
     CurveWithdraw: '0xA2A6D75417807ebAf8364613018D697f88021771',
 
+    TrailingStopTrigger: '0x0000000000000000000000000000000000000000',
+
     // Convex
     ConvexDeposit: '0x3Ecc4F1FD5aA09D2E13Ec9ebFdF102063d66F458',
     ConvexWithdraw: '0x2B2c235F9e27A121947c34A39d447bD4C585aA15',
