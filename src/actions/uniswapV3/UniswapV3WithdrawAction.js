@@ -1,10 +1,10 @@
-const Action = require("../../Action");
-const {getAddr} = require('../../addresses.js');
+const ActionWithL2 = require('../../ActionWithL2');
+const { getAddr } = require('../../addresses.js');
 
 /**
  * Burns liquidity, and returns underlying tokens to recipient
  */
-class UniswapV3WithdrawAction extends Action {
+class UniswapV3WithdrawAction extends ActionWithL2 {
   /**
    * @param {string} tokenId
    * @param {string} liquidity

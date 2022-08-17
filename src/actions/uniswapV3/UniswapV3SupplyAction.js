@@ -1,11 +1,12 @@
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const Action = require("../../Action");
-const {getAddr} = require('../../addresses.js');
+const { getAssetInfoByAddress } = require('@defisaver/tokens');
+
+const ActionWithL2 = require('../../ActionWithL2');
+const { getAddr } = require('../../addresses.js');
 
 /**
  * Supplies a pair of tokens to an existing Uniswap v3 position identified by tokenId
  */
-class UniswapV3SupplyAction extends Action {
+class UniswapV3SupplyAction extends ActionWithL2 {
   /**
    * @param {string} tokenId
    * @param {string} amount0Desired

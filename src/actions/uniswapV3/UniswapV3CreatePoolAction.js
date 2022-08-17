@@ -1,11 +1,12 @@
-const Action = require("../../Action");
-const {getAddr} = require('../../addresses.js');
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
+const { getAssetInfoByAddress } = require('@defisaver/tokens');
+
+const ActionWithL2 = require('../../ActionWithL2');
+const { getAddr } = require('../../addresses.js');
 
 /**
  * Create a uniswap v3 pool
  */
-class UniswapV3CreatePoolAction extends Action {
+class UniswapV3CreatePoolAction extends ActionWithL2 {
   /**
    * @param {EthAddress} token0
    * @param {EthAddress} token1
