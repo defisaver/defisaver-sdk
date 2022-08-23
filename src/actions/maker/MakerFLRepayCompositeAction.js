@@ -2,9 +2,9 @@ const Action = require("../../Action");
 const { getAddr } = require('../../addresses.js');
 
 /**
- * MakerBoostCompositeAction - executes a boost in a single action
+ * MakerFLRepayCompositeAction - executes a fl repay in a single action
  */
-class MakerBoostCompositeAction extends Action {
+ class MakerFLRepayCompositeAction extends Action {
     /**
      * @param vaultId {VaultId}
      * @param joinAddr {EthAddress}
@@ -18,8 +18,8 @@ class MakerBoostCompositeAction extends Action {
         exchangeParams,
     ) {
         super(
-            'McdBoostComposite',
-            getAddr('McdBoostComposite'),
+            'McdFLRepayComposite',
+            getAddr('McdFLRepayComposite'),
             [
                 'uint256',
                 'address',
@@ -44,4 +44,4 @@ class MakerBoostCompositeAction extends Action {
     }
 }
 
-module.exports = MakerBoostCompositeAction;
+module.exports = MakerFLRepayCompositeAction;
