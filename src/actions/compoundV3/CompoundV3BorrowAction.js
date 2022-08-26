@@ -12,7 +12,7 @@ const { getAddr } = require('../../addresses.js');
      */
     constructor(amount, to) {
       requireAddress(to);
-      super('CompBorrow', getAddr('CompBorrow'), ['uint256','address'], [...arguments]);
+      super('CompV3Borrow', getAddr('CompV3Borrow'), ['uint256','address'], [...arguments]);
     }
   }
   
