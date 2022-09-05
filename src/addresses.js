@@ -147,6 +147,7 @@ const actionAddresses = {
     PullToken: '0x392579E020a688068422A925c85f28bFD12a7EBB',
     SendTokenAndUnwrap: '0x8000174366066923D554cb466e190258A6FF3b1f',
     ToggleSub: '0x988C5C24AE6348404196267e19962f36961CAc29',
+    TokenBalance: '0xC6FF5b01f7c7b35b6e093fF70D2332B361C5Be5A',
 
 
     // aave v3
@@ -182,6 +183,7 @@ const actionAddresses = {
     PullToken: '0xD8B3769f74bd9F196C3416a42a91E786948898e6',
     SendTokenAndUnwrap: '0x0fb867A5Ee1CA9426D3dAb95e613Be166218b977',
     ToggleSub: '0x71015226EADFd4aC887fB56556F64338e352439b',
+    TokenBalance: '0x607345481F6A06FDEFf49D4Ef37d591c76137211',
 
     // aave v3
     AaveV3ATokenPayback: '0x261906e5E0D0D38D9cBb5c10dB9c4031aabdf8C1',
