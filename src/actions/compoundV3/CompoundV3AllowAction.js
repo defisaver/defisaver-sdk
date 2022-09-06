@@ -7,12 +7,19 @@ const { getAddr } = require('../../addresses.js');
  */
  class CompoundV3AllowAction extends Action {
     /**
+     * @param market {EthAddress} Comet proxy address of the market
      * @param manager {EthAddress} address of manager
      * @param isAllowed {bool}
      */
-    constructor(manager, isAllowed) {
+    constructor(market, manager, isAllowed) {
       requireAddress(manager);
-      super('CompV3Allow', getAddr('CompV3Allow'), ['address','bool'], [...arguments]);
+      super('CompV3Allow', getAddr('CompV3Allow'), ['address', 'address','bool'], [...arguments]);
+
+      this.mappableArgs = [
+        this.args[0],
+        this.args[1],
+        this.args[2],
+      ];
     }
   }
   

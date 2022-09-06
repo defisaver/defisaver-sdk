@@ -7,19 +7,26 @@ const { getAddr } = require('../../addresses.js');
  */
  class CompoundV3PaybackAction extends Action {
     /**
+     * @param market {EthAddress} Comet proxy address of the market
      * @param amount {uint256} amount of base token to be paid back
      * @param from {EthAddress} address from which funds are paid
      * @param onBehalf {EthAddress} address for which the funds are paid back
      */
-    constructor(amount, from, onBehalf) {
+    constructor(market, amount, from, onBehalf) {
       requireAddress(from);
       requireAddress(onBehalf);
       super(
         'CompV3Payback', 
         getAddr('CompV3Payback'), 
-        ['uint256','address','address'], 
+        ['address','uint256','address','address'], 
         [...arguments]
       );
+      this.mappableArgs = [
+        this.args[0],
+        this.args[1],
+        this.args[2],
+        this.args[3],
+      ];
     }
   }
   
