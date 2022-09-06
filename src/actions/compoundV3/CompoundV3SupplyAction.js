@@ -21,7 +21,7 @@ const { getAddr } = require('../../addresses.js');
           this.args[2],
           this.args[3]
         ];
-        this.tokenForApproval = tokenAddress;
+        this.tokenForApproval = tokenAddr;
       }
 
       async getAssetsToApprove() {
