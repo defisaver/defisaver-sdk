@@ -7,6 +7,7 @@ const CompoundRatioTrigger = require('./CompoundRatioTrigger');
 const ReflexerRatioTrigger = require('./ReflexerRatioTrigger');
 const LiquityRatioTrigger = require('./LiquityRatioTrigger');
 const AaveV3RatioTrigger = require('./AaveV3RatioTrigger');
+const CompV3RatioTrigger = require('./AaveV3RatioTrigger');
 
 module.exports = {
     MakerRatioTrigger,
@@ -18,4 +19,5 @@ module.exports = {
     ReflexerRatioTrigger,
     LiquityRatioTrigger,
     AaveV3RatioTrigger,
+    CompV3RatioTrigger,
 }
