@@ -79,7 +79,7 @@ const actionAddresses = {
 
     // yearn
     YearnSupply: '0x837D6E7F469b3cC820B0a6Da25415D5aE0A861c4',
-    YearnWithdraw: '0x563eF9b1075628E62aDc657702517dEA72ca08d6', // CHECK IF REDEPLOY
+    YearnWithdraw: '0x563eF9b1075628E62aDc657702517dEA72ca08d6',
 
     // liquity
     LiquityClose: '0x4B2d174129789a88e92D46342201F207132144b7',
@@ -136,6 +136,15 @@ const actionAddresses = {
     ConvexDeposit: '0x3Ecc4F1FD5aA09D2E13Ec9ebFdF102063d66F458',
     ConvexWithdraw: '0x2B2c235F9e27A121947c34A39d447bD4C585aA15',
     ConvexClaim: '0xA012afAA97B48894b8FCB2ECC007045Be7a8E8B6',
+
+    // CompV3
+    CompV3Allow: '0xC4a80f22bf56E0dFa2CB378561B934F41E14bc9f',
+    CompV3Borrow: '0xAb01C815063178C3021a516ecaf56915fD0E6534',
+    CompV3Claim: '0x6a4A6d7f98c11fe9bB8636AB0059C18980548596',
+    CompV3Payback: '0x6d14b9d69aADcb0d31a3e5d89fba75AB053fc9f0',
+    CompV3Supply: '0xAB53342d922Cc52b33486B92dC5dc361b7E4B436',
+    CompV3Transfer: '0x0fB2390AEDB2dBeE08cec363c0eD72e9D8e64535',
+    CompV3Withdraw: '0xa803783B5270230dF64df16a1c5aEe73e27b3078',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xBA0f6039b95CC0A02B5fc983eCf0FC4437BaacC7',
