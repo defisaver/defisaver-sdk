@@ -9,6 +9,9 @@ const MakerFlashLoanPaybackAction = require('./MakerFlashLoanPaybackAction');
 const BalancerFlashLoanAction = require('./BalancerFlashLoanAction');
 const BalancerFlashLoanPaybackAction = require('./BalancerFlashLoanPaybackAction');
 
+const EulerFlashLoanAction = require('./EulerFlashLoanAction');
+const EulerFlashLoanPaybackAction = require('./EulerFlashLoanPaybackAction')
+
 module.exports = {
   DyDxFlashLoanAction,
   DyDxFlashLoanPaybackAction,
@@ -20,4 +23,6 @@ module.exports = {
   MakerFlashLoanPaybackAction,
   BalancerFlashLoanAction,
   BalancerFlashLoanPaybackAction,
+  EulerFlashLoanPaybackAction,
+  EulerFlashLoanAction,
 };
