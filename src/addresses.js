@@ -132,6 +132,9 @@ const actionAddresses = {
     CurveDeposit: '0x160225c24300bD9fAA03Bc007D5e72bDbbcA9257',
     CurveWithdraw: '0xA2A6D75417807ebAf8364613018D697f88021771',
 
+    // Euler
+    FLEuler: '0xaf591afeCbAa4026Be377AA3cF02dA366f18DE07',
+
     TrailingStopTrigger: '0x0000000000000000000000000000000000000000',
 
     // Convex
