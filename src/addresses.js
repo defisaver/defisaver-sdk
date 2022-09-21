@@ -144,7 +144,7 @@ const actionAddresses = {
     CompV3Payback: '0x6d14b9d69aADcb0d31a3e5d89fba75AB053fc9f0',
     CompV3Supply: '0xAB53342d922Cc52b33486B92dC5dc361b7E4B436',
     CompV3Transfer: '0x0fB2390AEDB2dBeE08cec363c0eD72e9D8e64535',
-    CompV3Withdraw: '0xa803783B5270230dF64df16a1c5aEe73e27b3078',
+    CompV3Withdraw: '0x59fED9975cd3bb07bB75490e86751D6025ce0bC2',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xBA0f6039b95CC0A02B5fc983eCf0FC4437BaacC7',
