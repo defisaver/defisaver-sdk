@@ -1,9 +1,10 @@
 const Action = require("../../Action");
 const {requireAddress} = require("../../utils/general");
 const { getAddr } = require('../../addresses.js');
+const {getAssetInfoByAddress} = require("@defisaver/tokens");
 
 /**
- * CompoundV3SupplyAction - Supply specified amount of token (base or collateral) 
+ * CompoundV3SupplyAction - Supply specified amount of token (base or collateral)
  */
  class CompoundV3SupplyAction extends Action {
     /**
@@ -14,7 +15,7 @@ const { getAddr } = require('../../addresses.js');
      */
      constructor(market, tokenAddr, amount, from,) {
         super('CompV3Supply', getAddr('CompV3Supply'), ['address','address','uint256','address'], [market, tokenAddr, amount, from]);
-    
+
         this.mappableArgs = [
           this.args[0],
           this.args[1],
@@ -31,5 +32,5 @@ const { getAddr } = require('../../addresses.js');
         return [];
       }
   }
-  
+
   module.exports = CompoundV3SupplyAction;
