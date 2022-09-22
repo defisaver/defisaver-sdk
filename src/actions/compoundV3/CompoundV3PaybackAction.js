@@ -12,8 +12,9 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
      * @param amount {uint256} amount of base token to be paid back
      * @param from {EthAddress} address from which funds are paid
      * @param onBehalf {EthAddress} address for which the funds are paid back
+     * @param asset {EthAddress} address for which the funds are paid back
      */
-    constructor(market, amount, from, onBehalf) {
+    constructor(market, amount, from, onBehalf,asset) {
       requireAddress(from);
       requireAddress(onBehalf);
       super(
@@ -28,7 +29,7 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
         this.args[2],
         this.args[3],
       ];
-      this.tokenForApproval = 'USDC';
+      this.tokenForApproval = asset;
     }
 
     async getAssetsToApprove() {
