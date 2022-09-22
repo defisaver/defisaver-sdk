@@ -1,9 +1,10 @@
 const Action = require("../../Action");
 const {requireAddress} = require("../../utils/general");
 const { getAddr } = require('../../addresses.js');
+const {getAssetInfoByAddress} = require("@defisaver/tokens");
 
 /**
- * CompoundV3PaybackAction - Repays specified amount of base token 
+ * CompoundV3PaybackAction - Repays specified amount of base token
  */
  class CompoundV3PaybackAction extends Action {
     /**
@@ -16,9 +17,9 @@ const { getAddr } = require('../../addresses.js');
       requireAddress(from);
       requireAddress(onBehalf);
       super(
-        'CompV3Payback', 
-        getAddr('CompV3Payback'), 
-        ['address','uint256','address','address'], 
+        'CompV3Payback',
+        getAddr('CompV3Payback'),
+        ['address','uint256','address','address'],
         [...arguments]
       );
       this.mappableArgs = [
@@ -27,7 +28,15 @@ const { getAddr } = require('../../addresses.js');
         this.args[2],
         this.args[3],
       ];
+      this.tokenForApproval = 'USDC';
+    }
+
+    async getAssetsToApprove() {
+      const asset = getAssetInfoByAddress(this.tokenForApproval);
+
+      if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[1]}];
+      return [];
     }
   }
-  
+
   module.exports = CompoundV3PaybackAction;
