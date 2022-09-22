@@ -17,11 +17,12 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
     constructor(market, amount, from, onBehalf,asset) {
       requireAddress(from);
       requireAddress(onBehalf);
+      requireAddress(asset)
       super(
         'CompV3Payback',
         getAddr('CompV3Payback'),
         ['address','uint256','address','address'],
-        [...arguments]
+        [...arguments].slice(0,4)
       );
       this.mappableArgs = [
         this.args[0],
