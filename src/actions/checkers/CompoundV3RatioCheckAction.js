@@ -2,7 +2,7 @@ const Action = require("../../Action");
 const {getAddr} = require("../../addresses.js");
 
 /**
- * CompoundV3RatioCheckAction - Checks aave V3 ratio for users proxy position and reverts if faulty
+ * CompoundV3RatioCheckAction - Checks comp V3 ratio for users proxy position and reverts if faulty
  */
 class CompoundV3RatioCheckAction extends Action {
   /**
