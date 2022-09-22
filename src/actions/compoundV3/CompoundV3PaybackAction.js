@@ -34,7 +34,7 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
     async getAssetsToApprove() {
       const asset = getAssetInfoByAddress(this.tokenForApproval);
 
-      if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[1]}];
+      if (asset.symbol !== 'ETH') return [{asset: this.tokenForApproval, owner: this.args[2]}];
       return [];
     }
   }
