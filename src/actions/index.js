@@ -19,7 +19,11 @@ const mstable = require('./mstable');
 const rari = require('./rari');
 const aaveV3 = require('./aaveV3');
 const convex = require('./convex');
+<<<<<<< HEAD
 const chickenBonds = require('./chickenBonds');
+=======
+const compoundV3 = require('./compoundV3');
+>>>>>>> master
 
 module.exports = {
   maker,
@@ -43,5 +47,9 @@ module.exports = {
   rari,
   aaveV3,
   convex,
+<<<<<<< HEAD
   chickenBonds,
+=======
+  compoundV3,
+>>>>>>> master
 };
