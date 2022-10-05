@@ -1,11 +1,11 @@
 const Action = require("../../Action");
 const { getAddr } = require('../../addresses.js');
 
-class SendNFTAction extends Action {
+class TransferNFTAction extends Action {
   constructor(nftAddr, from, to, nftId) {
     super(
-      'SendNFT',
-      getAddr('SendNFT'),
+      'TransferNFT',
+      getAddr('TransferNFT'),
       [
         "address",
         "address",
@@ -17,4 +17,4 @@ class SendNFTAction extends Action {
   }
 }
 
-module.exports = SendNFTAction;
+module.exports = TransferNFTAction;
