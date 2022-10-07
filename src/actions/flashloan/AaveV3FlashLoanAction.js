@@ -2,7 +2,7 @@ const ActionWithL2 = require("../../ActionWithL2");
 const { getAddr } = require('../../addresses.js');
 
 /**
- * Gets a flashloan from Aave v2
+ * Gets a flashloan from Aave v3
  */
 class AaveV3FlashLoanAction extends ActionWithL2 {
   /**
