@@ -19,6 +19,7 @@ const mstable = require('./mstable');
 const rari = require('./rari');
 const aaveV3 = require('./aaveV3');
 const convex = require('./convex');
+const chickenBonds = require('./chickenBonds');
 const compoundV3 = require('./compoundV3');
 
 module.exports = {
@@ -43,5 +44,6 @@ module.exports = {
   rari,
   aaveV3,
   convex,
+  chickenBonds,
   compoundV3,
 };
