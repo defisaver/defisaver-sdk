@@ -13,6 +13,7 @@ const GasFeeAction = require('./GasFeeAction');
 const UpdateSubAction = require('./UpdateSubAction');
 const ToggleSubAction = require('./ToggleSubAction');
 const GasFeeActionL2 = require('./GasFeeActionL2');
+const TransferNFTAction = require('./TransferNFTAction');
 
 module.exports = {
   SellAction,
@@ -30,4 +31,5 @@ module.exports = {
   SendTokenAndUnwrapAction,
   ToggleSubAction,
   GasFeeActionL2,
+  TransferNFTAction,
 };
