@@ -12,10 +12,10 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
      * @param tokenAddr {EthAddress}
      * @param amount {uint256} wei amount of asset to supply
      * @param from {EthAddress} Address from where we're pulling the tokens
-     * @param to {EthAddress} Address of the account we are supplying the tokens
+     * @param onBehalf {EthAddress} Address of the account we are supplying the tokens
      */
-     constructor(market, tokenAddr, amount, from, to) {
-        super('CompV3Supply', getAddr('CompV3Supply'), ['address','address','uint256','address', 'address'], [market, tokenAddr, amount, from, to]);
+     constructor(market, tokenAddr, amount, from, onBehalf) {
+        super('CompV3Supply', getAddr('CompV3Supply'), ['address','address','uint256','address', 'address'], [market, tokenAddr, amount, from, onBehalf]);
 
         this.mappableArgs = [
           this.args[0],

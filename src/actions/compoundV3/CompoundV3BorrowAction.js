@@ -9,10 +9,10 @@ const { getAddr } = require('../../addresses.js');
     /**
      * @param market {EthAddress} Comet proxy address of the market
      * @param amount {string} Wei amount in underlying asset decimals
-     * @param from {EthAddress} Address from which we are borrowing the tokens
      * @param to {EthAddress} Address where we send the borrowed tokens
+     * @param onBehalf {EthAddress} Address from which we are borrowing the tokens
      */
-    constructor(market, amount, from, to) {
+    constructor(market, amount, to, onBehalf) {
       requireAddress(to);
       super('CompV3Borrow', getAddr('CompV3Borrow'), ['address','uint256','address','address'], [...arguments]);
 
