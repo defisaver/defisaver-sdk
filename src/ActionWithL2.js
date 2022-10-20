@@ -1,5 +1,7 @@
 const Action = require('./Action');
 const Dec = require('decimal.js');
+const AbiCoder = require('web3-eth-abi');
+const ActionAbi = require('./abis/Action.json');
 
 class ActionWithL2 extends Action {
   /**
@@ -10,7 +12,12 @@ class ActionWithL2 extends Action {
 
   encodeForL2Recipe() { return `0x${this.encodeInputs().slice(10)}`; } // cut the method id
 
-  encodeInputs() { throw new Error('Use implementation from specific ActionWithL2'); }
+  encodeInputs() {
+    let _arg = this._replaceWithPlaceholders(this.args, this.paramTypes);
+    let _paramType = this._formatType(this.paramTypes);
+    const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
+    return AbiCoder.encodeFunctionCall(executeActionDirectAbi, [AbiCoder.encodeParameter(_paramType, _arg)]);
+  }
 
   addressToBytes20(address) { return address.slice(2); }
 

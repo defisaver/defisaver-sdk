@@ -1,12 +1,13 @@
-const Action = require("../../Action");
-const {getAddr} = require('../../addresses.js');
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
+const { getAssetInfoByAddress } = require('@defisaver/tokens');
+
+const ActionWithL2 = require('../../ActionWithL2');
+const { getAddr } = require('../../addresses.js');
 
 
 /**
  * Creates a new Uniswap v3 LP supply position
  */
-class UniswapV3MintAction extends Action {
+class UniswapV3MintAction extends ActionWithL2 {
   /**
    * @param {EthAddress} token0
    * @param {EthAddress} token1

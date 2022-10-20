@@ -1,10 +1,10 @@
-const Action = require("../../Action");
-const {getAddr} = require('../../addresses.js');
+const ActionWithL2 = require('../../ActionWithL2');
+const { getAddr } = require('../../addresses.js');
 
 /**
  * Collects fees earned by user on position identified by tokenId
  */
-class UniswapV3CollectAction extends Action {
+class UniswapV3CollectAction extends ActionWithL2 {
   /**
    * @param {string} tokenId
    * @param {EthAddress} recipient
