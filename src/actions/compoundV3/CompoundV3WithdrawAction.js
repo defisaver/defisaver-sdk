@@ -19,7 +19,7 @@ class CompoundV3WithdrawAction extends Action {
     super(
       "CompV3Withdraw",
       getAddr("CompV3Withdraw"),
-      ["address","address", "uint256", "address","address"],
+      ["address","address", "address","uint256","address"],
       [...arguments]
     );
 
