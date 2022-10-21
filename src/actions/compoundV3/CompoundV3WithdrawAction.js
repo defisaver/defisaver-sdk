@@ -15,7 +15,7 @@ class CompoundV3WithdrawAction extends Action {
    */
   constructor(market, to, asset, amount, onBehalf) {
     requireAddress(to);
-    requireAddress(tokenAddr);
+    requireAddress(asset);
     super(
       "CompV3Withdraw",
       getAddr("CompV3Withdraw"),
