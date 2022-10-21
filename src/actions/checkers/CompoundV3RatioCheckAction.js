@@ -11,7 +11,7 @@ class CompoundV3RatioCheckAction extends Action {
    * @param market {address} Address of compV3 market
    * @param user {address} Address of the user we are checking the ratio for (default to proxy)
    */
-  constructor(ratioState, targetRatio, market) {
+  constructor(ratioState, targetRatio, market, user) {
     super("CompV3RatioCheck", getAddr("CompV3RatioCheck"), ["uint8","uint256","address","address"], [ratioState, targetRatio, market, user]);
 
     this.mappableArgs = [
