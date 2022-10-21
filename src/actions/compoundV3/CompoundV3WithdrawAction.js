@@ -8,12 +8,12 @@ const { getAddr } = require("../../addresses.js");
 class CompoundV3WithdrawAction extends Action {
   /**
    * @param market {EthAddress} Comet proxy address of the market
-   * @param tokenAddr {EthAddress} Address of asset to withdraw
-   * @param amount {string} Wei amount in specified asset
    * @param to {EthAddress} Address where we are sending the tokens
+   * @param asset {EthAddress} Address of asset to withdraw
+   * @param amount {string} Wei amount in specified asset
    * @param onBehalf {EthAddress} Address from where we are withdrawing the tokens
    */
-  constructor(market, tokenAddr, amount, to, onBehalf) {
+  constructor(market, to, asset, amount, onBehalf) {
     requireAddress(to);
     requireAddress(tokenAddr);
     super(
