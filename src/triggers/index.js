@@ -8,7 +8,7 @@ const ReflexerRatioTrigger = require('./ReflexerRatioTrigger');
 const LiquityRatioTrigger = require('./LiquityRatioTrigger');
 const AaveV3RatioTrigger = require('./AaveV3RatioTrigger');
 const TrailingStopTrigger = require('./TrailingStopTrigger');
-const AaveQuotePriceTrigger = require('./AaveQuotePriceTrigger');
+const AaveV3QuotePriceTrigger = require('./AaveV3QuotePriceTrigger');
 
 module.exports = {
     MakerRatioTrigger,
@@ -21,5 +21,5 @@ module.exports = {
     LiquityRatioTrigger,
     AaveV3RatioTrigger,
     TrailingStopTrigger,
-    AaveQuotePriceTrigger,
+    AaveV3QuotePriceTrigger,
 }
