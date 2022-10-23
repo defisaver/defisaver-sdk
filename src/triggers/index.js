@@ -9,7 +9,7 @@ const LiquityRatioTrigger = require('./LiquityRatioTrigger');
 const AaveV3RatioTrigger = require('./AaveV3RatioTrigger');
 const CompV3RatioTrigger = require('./CompV3RatioTrigger');
 const TrailingStopTrigger = require('./TrailingStopTrigger');
-
+const CBRebondTrigger = require('./CBRebondTrigger');
 
 module.exports = {
     MakerRatioTrigger,
@@ -23,4 +23,5 @@ module.exports = {
     AaveV3RatioTrigger,
     CompV3RatioTrigger,
     TrailingStopTrigger,
+    CBRebondTrigger,
 }
