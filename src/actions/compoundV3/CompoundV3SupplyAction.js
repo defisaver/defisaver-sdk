@@ -11,16 +11,18 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
      * @param market {EthAddress} Comet proxy address of the market
      * @param tokenAddr {EthAddress}
      * @param amount {uint256} wei amount of asset to supply
-     * @param from {EthAddress}
+     * @param from {EthAddress} Address from where we're pulling the tokens
+     * @param onBehalf {EthAddress} Address of the account we are supplying the tokens
      */
-     constructor(market, tokenAddr, amount, from,) {
-        super('CompV3Supply', getAddr('CompV3Supply'), ['address','address','uint256','address'], [market, tokenAddr, amount, from]);
+     constructor(market, tokenAddr, amount, from, onBehalf) {
+        super('CompV3Supply', getAddr('CompV3Supply'), ['address','address','uint256','address', 'address'], [market, tokenAddr, amount, from, onBehalf]);
 
         this.mappableArgs = [
           this.args[0],
           this.args[1],
           this.args[2],
-          this.args[3]
+          this.args[3],
+          this.args[4]
         ];
         this.tokenForApproval = tokenAddr;
       }
