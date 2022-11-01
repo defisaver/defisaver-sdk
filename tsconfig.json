@@ -71,6 +71,7 @@
   },
   "include": [
     "./src/*.ts",
-    "./src/utils/*.ts"
+    "./src/utils/*.ts",
+    "./src/actions/*/*.ts"
   ]
 }

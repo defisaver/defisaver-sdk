@@ -287,7 +287,7 @@ const otherAddresses = {
  * @param {chainId} [chainId]
  * @returns {EthAddress}
  */
-export const getAddr = (name: string, chainId:number) : EthAddress => {
+export const getAddr = (name: string, chainId:number = CONFIG.chainId) : EthAddress => {
   const _chainId : number = (typeof chainId) === 'undefined' ? CONFIG.chainId : chainId;
 
   const actions = actionAddresses[_chainId];

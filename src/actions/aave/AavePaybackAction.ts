@@ -1,11 +1,12 @@
-const Action = require("../../Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const {getAddr} = require('../../addresses.js');
+import {Action} from "../../Action";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
+import { getAssetInfoByAddress } from "@defisaver/tokens";
 
 /**
  * AavePaybackAction - Payback borrowed tokens from Aave
  */
-class AavePaybackAction extends Action {
+export default class AavePaybackAction extends Action {
   /**
    * @param market {EthAddress}
    * @param tokenAddr {EthAddress}
@@ -14,7 +15,7 @@ class AavePaybackAction extends Action {
    * @param from {EthAddress} Tokens will be sent from this address
    * @param onBehalf {EthAddress}
    */
-  constructor(market, tokenAddr, amount, rateMode, from, onBehalf = getAddr('Empty')) {
+  constructor(market:EthAddress, tokenAddr:EthAddress, amount:string, rateMode:number, from:EthAddress, onBehalf:EthAddress = getAddr('Empty')) {
     super('AavePayback',
       getAddr('AavePayback'),
       ['address', 'address', 'uint256', 'uint256', 'address', 'address'],
@@ -28,5 +29,3 @@ class AavePaybackAction extends Action {
     return [];
   }
 }
-
-module.exports = AavePaybackAction;

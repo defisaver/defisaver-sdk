@@ -1,12 +1,13 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general.js");
-const { getAddr } = require('../../addresses.js');
+import {Action} from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
 
 /**
  *  AaveClaimStkAaveAction - Claims stkAave from incentives controller
  */
-class AaveClaimStkAaveAction extends Action {
-  constructor(assets, amount, to) {
+export default class AaveClaimStkAaveAction extends Action {
+  constructor(assets : Array<EthAddress>, amount: string, to: EthAddress) {
     requireAddress(to);
     super(
       'AaveClaimStkAave',
@@ -20,5 +21,3 @@ class AaveClaimStkAaveAction extends Action {
     ];
   }
 }
-
-module.exports = AaveClaimStkAaveAction;
