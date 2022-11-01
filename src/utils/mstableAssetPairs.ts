@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     BASSET_MASSET: 0,
     BASSET_IMASSET: 1,
     BASSET_IMASSETVAULT: 2,

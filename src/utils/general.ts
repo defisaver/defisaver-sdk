@@ -1,7 +1,7 @@
-const Dec = require('decimal.js');
+import Dec from 'decimal.js';
 const {getAssetInfo} = require('@defisaver/tokens');
 
-module.exports.requireAddress = (address) => {
+export const requireAddress = (address:string) => {
   if (address.startsWith('%') || address.startsWith('&')) return;
 
   if (typeof address !== 'string') throw new Error('Address is not a string');
@@ -20,7 +20,7 @@ module.exports.requireAddress = (address) => {
  *
  * @private
  */
-module.exports.parsePriceFromContract = (price, from, to) => new Dec(price)
+export const parsePriceFromContract = (price : string, from : string, to : string) : string=> new Dec(price)
   .div(10 ** getAssetInfo(to).decimals)
   .div(10 ** (18 - getAssetInfo(from).decimals))
   .toString();
@@ -33,7 +33,7 @@ module.exports.parsePriceFromContract = (price, from, to) => new Dec(price)
  *
  * @private
  */
-module.exports.formatPriceForContract = (price, from, to) => new Dec(price)
+export const formatPriceForContract = (price : string, from : string, to : string) : string=> new Dec(price)
   .mul(10 ** getAssetInfo(to).decimals)
   .mul(10 ** (18 - getAssetInfo(from).decimals))
   .floor()

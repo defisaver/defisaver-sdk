@@ -1,4 +1,4 @@
-const poolInfo = require('./convexPoolInfo.json');
+import poolInfo from './convexPoolInfo.json';
 
 const DepositOption = {
     WRAP: 0,
@@ -11,10 +11,11 @@ const WithdrawOption = {
     UNSTAKE: 1,
     UNSTAKE_AND_UNWRAP: 2,
 }
+const getConvexPool = (curveLpToken: string) => poolInfo.find((e) => e.lpToken === curveLpToken);
 
-module.exports = {
+export default{
+    getConvexPool,
     DepositOption,
     WithdrawOption,
     poolInfo,
-    getConvexPool: (curveLpToken) => poolInfo.find((e) => e.lpToken === curveLpToken),
 }

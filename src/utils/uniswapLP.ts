@@ -2,10 +2,11 @@
  * @module utils.uniswapLP
  */
 
-const { pack, keccak256 } = require('@ethersproject/solidity');
-const { getCreate2Address } = require('@ethersproject/address');
-const {getAssetInfo} = require("@defisaver/tokens");
-const { requireAddress } = require('./general');
+import { pack, keccak256 } from '@ethersproject/solidity';
+import { getCreate2Address } from '@ethersproject/address';
+import { getAssetInfo } from "@defisaver/tokens";
+import { requireAddress } from './general';
+import {EthAddress} from '../types';
 
 const FACTORY_ADDRESS = '0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f'
 const INIT_CODE_HASH = '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e7da348845f'
@@ -18,7 +19,7 @@ const INIT_CODE_HASH = '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e
  * @param tokenB {EthAddress} Use WETH for ETH
  * @returns {EthAddress}
  */
-module.exports.getPoolAddressByAddresses = (tokenA, tokenB) => {
+const getPoolAddressByAddresses = (tokenA: EthAddress, tokenB: EthAddress): EthAddress => {
   requireAddress(tokenA)
   requireAddress(tokenB)
   const tokens = [tokenA, tokenB].sort();
@@ -36,10 +37,15 @@ module.exports.getPoolAddressByAddresses = (tokenA, tokenB) => {
  * @param symbolB {string}
  * @returns {EthAddress}
  */
-module.exports.getPoolAddressBySymbols = (symbolA, symbolB) => {
+const getPoolAddressBySymbols = (symbolA: string, symbolB: string):EthAddress => {
   return module.exports.getPoolAddressByAddresses(
     getAssetInfo(symbolA.replace(/^ETH$/, 'WETH')).address,
     getAssetInfo(symbolB.replace(/^ETH$/, 'WETH')).address,
   )
+}
+
+export default {
+  getPoolAddressByAddresses,
+  getPoolAddressBySymbols
 }
 

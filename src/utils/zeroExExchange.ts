@@ -2,12 +2,13 @@
  * @module utils.zeroExExchange
  */
 
-const Dec = require('decimal.js');
-const axios = require('axios');
-const {assetAmountInWei, getAssetInfo} = require('@defisaver/tokens');
+import Dec from 'decimal.js';
+import axios from 'axios';
+import { assetAmountInWei, getAssetInfo } from '@defisaver/tokens';
+import {EthAddress} from '../types';
 
 const SellAction = require('../actions/basic/SellAction');
-const {parsePriceFromContract, formatPriceForContract} = require('./general');
+import { parsePriceFromContract, formatPriceForContract } from './general';
 const API_URL = 'https://api.0x.org/swap/v1/';
 const ZEROX_WRAPPER = '0x0c4e16899f2059F4e41ddB164317414a5c0d2988';
 
@@ -25,7 +26,7 @@ const ZEROX_WRAPPER = '0x0c4e16899f2059F4e41ddB164317414a5c0d2988';
  *
  * @private
  */
-const get0xPrice = async (_sellToken, _buyToken, _amount, convertAmountToWei = true, infoOnly = false, acceptedSlippagePercent = 3, shouldSell = true) => {
+const get0xPrice = async (_sellToken: string, _buyToken: string, _amount: string, convertAmountToWei: boolean = true, infoOnly: boolean = false, acceptedSlippagePercent: number = 3, shouldSell: boolean = true): Promise<{ data: string; price: string; guaranteedPrice: string; protocolFee: string; to: EthAddress; value: string; wrapper: EthAddress; allowanceTarget: EthAddress; estimatedGas: string; }> => {
   // 0x API expects WETH symbol
   const buyToken = _buyToken.replace(/^ETH$/, 'WETH');
   const sellToken = _sellToken.replace(/^ETH$/, 'WETH');
@@ -84,7 +85,7 @@ const get0xPrice = async (_sellToken, _buyToken, _amount, convertAmountToWei = t
  *
  * @private
  */
-const estimatePrice = async (amount, sellToken, buyToken, shouldSell = true) => {
+const estimatePrice = async (amount: string, sellToken: string, buyToken: string, shouldSell: boolean = true): Promise<string> => {
   if (!amount || !parseFloat(amount)) return '0';
   if (sellToken === buyToken) return '1';
   const zeroxData = await get0xPrice(sellToken, buyToken, amount, true, true, 0, shouldSell);
@@ -100,7 +101,7 @@ const estimatePrice = async (amount, sellToken, buyToken, shouldSell = true) => 
  * @param buyToken {String} Symbol for asset being bought
  * @returns {Promise<string>} price of sellToken in buyToken
  */
-module.exports.estimateSellPrice = async (sellAmount, sellToken, buyToken) => estimatePrice(sellAmount, sellToken, buyToken, true);
+const estimateSellPrice = async (sellAmount: string, sellToken: string, buyToken: string): Promise<string> => estimatePrice(sellAmount, sellToken, buyToken, true);
 
 /**
  * Gets price estimate for buying a specific amount.
@@ -111,7 +112,7 @@ module.exports.estimateSellPrice = async (sellAmount, sellToken, buyToken) => es
  * @param sellToken {String} Symbol for asset being sold
  * @returns {Promise<string>} price of sellToken in buyToken
  */
-module.exports.estimateBuyPrice = async (buyAmount, buyToken, sellToken) => estimatePrice(buyAmount, sellToken, buyToken, false);
+const estimateBuyPrice = async (buyAmount: string, buyToken: string, sellToken: string): Promise<string> => estimatePrice(buyAmount, sellToken, buyToken, false);
 
 /**
  * @param sellToken {string} Symbol for asset being sold ('ETH')
@@ -119,7 +120,7 @@ module.exports.estimateBuyPrice = async (buyAmount, buyToken, sellToken) => esti
  * @param sellAmount {string} Amount of asset being sold ('1.5') - '0' if buying
  * @param buyAmount {string} Amount of asset being bought ('1500.123') - '0' if selling
  * @param expectedPrice {string} Price received from estimatePrice (so minPrice can be calculated based on what user saw)
- * @param acceptedSlippagePercent {string|Number} Slippage percentage tolerated [0-100]
+ * @param acceptedSlippagePercent {Number} Slippage percentage tolerated [0-100]
  * @param shouldSell {Boolean} look for price to sell or to buy (if false sellToken becomes becomes buyToken and vice-versa)
  * @param fromAccount {EthAddress} Withdraw funds from this addr
  * @param toAccount {EthAddress} Send funds to this addr
@@ -128,16 +129,16 @@ module.exports.estimateBuyPrice = async (buyAmount, buyToken, sellToken) => esti
  * @private
  */
 const createExchangeAction = async (
-  sellToken,
-  buyToken,
-  sellAmount,
-  buyAmount,
-  expectedPrice,
-  acceptedSlippagePercent,
-  shouldSell = true,
-  fromAccount,
-  toAccount,
-) => {
+  sellToken: string,
+  buyToken: string,
+  sellAmount: string,
+  buyAmount: string,
+  expectedPrice: string,
+  acceptedSlippagePercent: number,
+  shouldSell: boolean = true,
+  fromAccount: EthAddress,
+  toAccount: EthAddress,
+): Promise<(typeof SellAction)> => {
   const sellTokenData = getAssetInfo(sellToken);
   const buyTokenData = getAssetInfo(buyToken);
 
@@ -195,22 +196,28 @@ const createExchangeAction = async (
  * @param toAccount {EthAddress} Send funds to this addr
  * @return {Promise<SellAction>}
  */
-module.exports.createSellAction = async (
-  sellAmount,
-  sellToken,
-  buyToken,
-  expectedPrice,
-  acceptedSlippagePercent,
-  fromAccount,
-  toAccount,
-) => createExchangeAction(
+const createSellAction = async (
+  sellAmount: string,
+  sellToken: string,
+  buyToken: string,
+  expectedPrice: string,
+  acceptedSlippagePercent: string | number,
+  fromAccount: EthAddress,
+  toAccount: EthAddress,
+): Promise<typeof SellAction> => createExchangeAction(
   sellToken,
   buyToken,
   sellAmount,
   '0',
   expectedPrice,
-  acceptedSlippagePercent,
+  typeof(acceptedSlippagePercent) === 'string' ? parseFloat(acceptedSlippagePercent) : acceptedSlippagePercent,
   true,
   fromAccount,
   toAccount,
 );
+
+export default {
+  createSellAction,
+  estimateBuyPrice,
+  estimateSellPrice,
+}
