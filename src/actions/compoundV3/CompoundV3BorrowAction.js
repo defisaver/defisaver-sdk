@@ -8,17 +8,19 @@ const { getAddr } = require('../../addresses.js');
  class CompoundV3BorrowAction extends Action {
     /**
      * @param market {EthAddress} Comet proxy address of the market
-     * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
-     * @param to {EthAddress}
+     * @param amount {string} Wei amount in underlying asset decimals
+     * @param to {EthAddress} Address where we send the borrowed tokens
+     * @param onBehalf {EthAddress} Address from which we are borrowing the tokens
      */
-    constructor(market, amount, to) {
+    constructor(market, amount, to, onBehalf) {
       requireAddress(to);
-      super('CompV3Borrow', getAddr('CompV3Borrow'), ['address','uint256','address'], [...arguments]);
+      super('CompV3Borrow', getAddr('CompV3Borrow'), ['address','uint256','address','address'], [...arguments]);
 
       this.mappableArgs = [
         this.args[0],
         this.args[1],
         this.args[2],
+        this.args[3],
       ];
     }
   }
