@@ -1,5 +1,4 @@
 const Action = require("../../Action");
-const { requireAddress } = require("../../utils/general");
 const { getAddr } = require('../../addresses.js');
 
 /**
