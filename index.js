@@ -1,4 +1,4 @@
-const Action = require('./src/Action');
+const Action = require('./src/Action.ts');
 const Recipe = require('./src/Recipe');
 const Strategy = require('./src/Strategy');
 const DfsWeb3 = require('./src/DfsWeb3');
@@ -6,9 +6,9 @@ const {
   configure, getNetworkData, CONFIG, NETWORKS,
 } = require('./src/config');
 
-const actions = require('./src/actions/');
-const triggers = require('./src/triggers/');
-const utils = require('./src/utils/');
+const actions = require('./src/actions');
+const triggers = require('./src/triggers');
+const utils = require('./src/utils');
 const { actionAddresses } = require('./src/addresses');
 
 module.exports = {

@@ -1,5 +1,6 @@
 const Dec = require("decimal.js");
 const dfsTokensSetConfig = require("@defisaver/tokens").set;
+import {Config,Network,Networks} from './types';
 
 Dec.set({
   rounding: Dec.ROUND_DOWN,
@@ -12,7 +13,7 @@ Dec.set({
  *
  * @type {Networks}
  */
-const NETWORKS = {
+export const NETWORKS : Networks = {
   ethereum: {
     chainId: 1,
     chainName: 'Ethereum Mainnet',
@@ -43,7 +44,7 @@ const NETWORKS = {
  *
  * @type {Config}
  */
-const CONFIG = {
+export const CONFIG : Config = {
   chainId: NETWORKS.ethereum.chainId,
   testingMode: false
 };
@@ -53,8 +54,8 @@ const CONFIG = {
  * @param {chainId} chainId
  * @returns {Network}
  */
-const getNetworkData = (chainId) => {
-  const networkData = Object.values(NETWORKS).find((network) => network.chainId === +chainId);
+export const getNetworkData = (chainId:number) : Network => {
+  const networkData : Network | undefined = Object.values(NETWORKS).find((network) => network.chainId === +chainId);
 
   if (!networkData) throw new Error(`Cannot find network data for chainId: ${chainId}`);
 
@@ -65,20 +66,13 @@ const getNetworkData = (chainId) => {
  *
  * @param {Config} config
  */
-const configure = (config) => {
+export const configure = (config : Config) => {
   if (!config || typeof config !== 'object') throw new Error('Object expected');
 
-  const newKeys = Object.keys(config);
+  const newKeys : Array<string> = Object.keys(config);
 
   newKeys.forEach((key) => {
-    CONFIG[key] = config[key]
+    CONFIG[key as keyof Config] = config[key as keyof Config]
     if (key === 'chainId') dfsTokensSetConfig('network', config[key]);
   });
 };
-
-module.exports = {
-  configure,
-  CONFIG,
-  NETWORKS,
-  getNetworkData,
-}

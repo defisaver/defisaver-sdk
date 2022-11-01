@@ -1,4 +1,6 @@
-const UtilsAccessLists = {
+import { AccessLists } from "../src/types";
+
+export const UtilsAccessLists : AccessLists = {
     WrapEth: [
         ['0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', []], // WETH
     ],
@@ -29,8 +31,4 @@ const UtilsAccessLists = {
     AutomationV2Unsub: [
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
     ],
-};
-
-module.exports = {
-    UtilsAccessLists,
 };

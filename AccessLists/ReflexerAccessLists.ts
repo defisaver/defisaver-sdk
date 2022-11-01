@@ -1,4 +1,6 @@
-const ReflexerAccessLists = {
+import { AccessLists } from "../src/types";
+
+export const ReflexerAccessLists : AccessLists= {
     ReflexerOpen: [
         ['0xEfe0B4cA532769a3AE758fD82E1426a03A94F185', []], // GebSafeManager
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
@@ -46,8 +48,4 @@ const ReflexerAccessLists = {
         ['0xA9402De5ce3F1E03Be28871b914F77A4dd5e4364', []], // NativeUnderlyingUniswapV2SafeSaviour
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
     ],
-};
-
-module.exports = {
-    ReflexerAccessLists,
 };

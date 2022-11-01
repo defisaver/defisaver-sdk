@@ -1,4 +1,6 @@
-const CompoundAccessLists = {
+import { AccessLists } from "../src/types";
+
+export const CompoundAccessLists : AccessLists= {
     CompSupply: [
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
     ],
@@ -26,8 +28,4 @@ const CompoundAccessLists = {
         ['0xc00e94Cb662C3520282E6f5717214004A7f26888', []], // Comp
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
     ],
-};
-
-module.exports = {
-    CompoundAccessLists,
 };

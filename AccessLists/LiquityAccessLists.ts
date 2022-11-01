@@ -1,4 +1,6 @@
-const LiquityAccessLists = {
+import { AccessLists } from "../src/types";
+
+export const LiquityAccessLists : AccessLists = {
     LiquityOpen: [
         ['0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2', []], // Weth
         ['0x24179CD81c9e782A4096035f7eC97fB8B783e007', []], // BorrowerOperations
@@ -74,8 +76,4 @@ const LiquityAccessLists = {
         ['0x6DEA81C8171D0bA574754EF6F8b412F2Ed88c54D', []], // Lqty
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
     ],
-};
-
-module.exports = {
-    LiquityAccessLists,
 };

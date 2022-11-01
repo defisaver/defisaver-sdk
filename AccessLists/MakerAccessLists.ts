@@ -1,4 +1,6 @@
-const MakerAccessLists = {
+import { AccessLists } from "../src/types";
+
+export const MakerAccessLists : AccessLists = {
     McdOpen: [
         ['0x5ef30b9986345249bc32d8928B7ee64DE9435E39', []], // DssCdpManager
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
@@ -37,8 +39,4 @@ const MakerAccessLists = {
     McdMerge: [
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
     ],
-};
-
-module.exports = {
-    MakerAccessLists,
 };

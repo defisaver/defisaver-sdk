@@ -1,4 +1,6 @@
-const FlashLoanAccessLists = {
+import { AccessLists } from "../src/types";
+
+export const FlashLoanAccessLists : AccessLists = {
     FLDyDx: [
         ['0x1E0447b19BB6EcFdAe1e4AE1694b0C3659614e4e', []], // SoloMargin
         ['0x47f159C90850D5cE09E21F931d504536840f34b4', []], // FLFeeFaucet
@@ -22,6 +24,3 @@ const FlashLoanAccessLists = {
     ],
 };
 
-module.exports = {
-    FlashLoanAccessLists,
-};

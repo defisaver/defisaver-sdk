@@ -1,4 +1,6 @@
-const UniswapAccessLists = {
+import { AccessLists } from "../src/types";
+
+export const UniswapAccessLists:AccessLists = {
     UniSupply: [
         ['0x7a250d5630B4cF539739dF2C5dAcb4c659F2488D', []], // UniV2Router02
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
@@ -34,8 +36,4 @@ const UniswapAccessLists = {
         ['0xC36442b4a4522E871399CD717aBDD847Ab11FE88', []], // NonfungiblePositionManager
         ['0x5c55B921f590a89C1Ebe84dF170E655a82b62126', []], // DefisaverLogger
     ],
-};
-
-module.exports = {
-    UniswapAccessLists,
 };
