@@ -12,7 +12,9 @@ const BalancerFlashLoanPaybackAction = require('./BalancerFlashLoanPaybackAction
 const EulerFlashLoanAction = require('./EulerFlashLoanAction');
 const EulerFlashLoanPaybackAction = require('./EulerFlashLoanPaybackAction')
 
+const FLAction = require('./FLAction');
 module.exports = {
+  FLAction,
   DyDxFlashLoanAction,
   DyDxFlashLoanPaybackAction,
   AaveV2FlashLoanAction,
