@@ -2,7 +2,7 @@ import AbiCoder from 'web3-eth-abi';
 import { keccak256, padLeft, toHex } from 'web3-utils';
 import { CONFIG } from './config';
 import ActionAbi from './abis/Action.json';
-import { AccessLists as _AccessLists} from './types';
+import { AccessLists as _AccessLists,AccessListItem} from './types';
 import { AccessLists } from '../AccessLists';
 
 /**
@@ -168,9 +168,9 @@ export class Action {
   /**
    * Assets requiring approval to be used by DsProxy
    * Approval is done from owner to DsProxy
-   * @returns {Promise<Array<{owner: string, asset: string}>>}
+   * @returns {Promise<Array<{owner: string, asset: string,[key: string]:any}>>}
    */
-  async getAssetsToApprove(): Promise<Array<{owner: string, asset: string}>> {
+  async getAssetsToApprove(): Promise<Array<{owner: string, asset: string,[key: string]:any}>> {
     return [];
   }
 
@@ -186,7 +186,7 @@ export class Action {
    * Access list for single action
    * @returns {AccessList}
    */
-  getAccessList() : any {
+  getAccessList() : Array<AccessListItem> {
     return [
       [this.contractAddress, []],
       ...(AccessLists[this.name as keyof _AccessLists] || []),

@@ -1,6 +1,7 @@
-const { CONFIG, NETWORKS } = require('./config');
+import { CONFIG, NETWORKS } from './config';
+import { EthAddress } from './types';
 
-const actionAddresses = {
+export const actionAddresses = {
   [NETWORKS.ethereum.chainId]: {
     // utils
     WrapEth: '0x8EbBd35f84D7f0DFCBEf08fD30CD09176133251A',
@@ -286,8 +287,8 @@ const otherAddresses = {
  * @param {chainId} [chainId]
  * @returns {EthAddress}
  */
-const getAddr = (name, chainId) => {
-  const _chainId = typeof chainId === 'undefined' ? CONFIG.chainId : chainId;
+export const getAddr = (name: string, chainId:number) : EthAddress => {
+  const _chainId : number = (typeof chainId) === 'undefined' ? CONFIG.chainId : chainId;
 
   const actions = actionAddresses[_chainId];
   const other = otherAddresses[_chainId];
@@ -295,13 +296,10 @@ const getAddr = (name, chainId) => {
   // skip this check if we're in testing mode
   if (!CONFIG.testingMode) {
     if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
-    if (!actions[name] && !other[name]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
+    if (!actions[name as keyof typeof actions] && !other[name as keyof typeof other]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
   }
 
-  return actions[name] || other[name];
+  if(actions[name as keyof typeof actions])
+    return actions[name as keyof typeof actions]!
+  return other[name as keyof typeof other]!;
 };
-
-module.exports = {
-  getAddr,
-  actionAddresses,
-}

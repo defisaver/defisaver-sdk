@@ -1,14 +1,21 @@
-const DFSPRoxyRegistyAbi = require('./abis/DFSProxyRegistry.json');
-const ProxyRegistryAbi = require('./abis/ProxyRegistry.json');
-const ActionAbi = require('./abis/Action.json');
-const DsProxyAbi = require('./abis/DsProxy.json');
-const Erc20Abi = require('./abis/Erc20.json');
-const {getAddr} = require('./addresses');
-const Action = require("./Action");
-const Recipe = require("./Recipe");
+import DFSPRoxyRegistyAbi from './abis/DFSProxyRegistry.json';
+import ProxyRegistryAbi from './abis/ProxyRegistry.json';
+import ActionAbi from './abis/Action.json';
+import DsProxyAbi from './abis/DsProxy.json';
+import Erc20Abi from './abis/Erc20.json';
+import { getAddr } from './addresses';
+import {Action} from "./Action";
+import {Recipe} from "./Recipe";
+import { CONFIG } from './config';
 
-class DfsWeb3 {
-  constructor(web3) {
+export class DfsWeb3 {
+
+  web3: any;
+  accountReady: boolean;
+  account?: any;
+  proxy?: any;
+
+  constructor(web3: any) {
     // const networkId = await web3.eth.net.getId();
     // if (networkId !== 1) throw new Error('Supplied web3 is not on Mainnet');
     this.web3 = web3;
@@ -19,11 +26,15 @@ class DfsWeb3 {
     }
   }
 
+  onAccountsChanged(arg0: string, onAccountsChanged: any) {
+    throw new Error('Method not implemented.');
+  }
+
   async prepareAccount() {
     const accounts = await this.web3.eth.getAccounts();
     if (!accounts || !accounts.length) throw new Error('Supplied web3 has no account');
     this.account = accounts[0];
-    const dfsRegistry = new this.web3.eth.Contract(DFSPRoxyRegistyAbi, getAddr('DFSProxyRegistry'));
+    const dfsRegistry = new this.web3.eth.Contract(DFSPRoxyRegistyAbi, getAddr('DFSProxyRegistry',CONFIG.chainId));
     const proxies = await dfsRegistry.methods.getAllProxies(this.account).call();
     if (proxies[0] !== '0x0000000000000000000000000000000000000000') {
       this.proxy = proxies[0];
@@ -35,17 +46,17 @@ class DfsWeb3 {
     if (!this.accountReady) await this.prepareAccount();
     if (!this.account) throw new Error('DfsWeb3 has not been instantiated properly');
     if (this.proxy) throw new Error('Account already has DsProxy');
-    const makerRegistry = new this.web3.eth.Contract(ProxyRegistryAbi, getAddr('ProxyRegistry'));
+    const makerRegistry = new this.web3.eth.Contract(ProxyRegistryAbi, getAddr('ProxyRegistry',CONFIG.chainId));
     return makerRegistry.methods.build();
   }
 
   /**
    * @param action {(Action|Recipe)}
    */
-  async prepareBeforeExecute(action) {
+  async prepareBeforeExecute(action : Action) : Promise<any> {
     if (!this.accountReady) await this.prepareAccount();
     if (!this.proxy) throw new Error('Account does not have a Smart Wallet');
-    const transactions = [];
+    const transactions : any = [];
     const approvals = await action.getAssetsToApprove();
     await Promise.all(approvals.map(async (a) => {
       if (a.owner.toLowerCase() === this.proxy.toLowerCase()) {
@@ -59,7 +70,7 @@ class DfsWeb3 {
     return transactions;
   }
 
-  async execute(address, params) {
+  async execute(address: string, params: Array<any>) {
     if (!this.accountReady) await this.prepareAccount();
     if (!this.proxy) throw new Error('Account does not have a Smart Wallet. Run createSmartWallet first');
     const proxyContract = new this.web3.eth.Contract(DsProxyAbi, this.proxy);
@@ -69,15 +80,15 @@ class DfsWeb3 {
   /**
    * @param action {(Action)}
    */
-  async executeAction(action) {
-    return this.execute(...action.encodeForDsProxyCall());
+  async executeAction(action: Action) : Promise<Action> {
+    const encoded =action.encodeForDsProxyCall();
+    return this.execute(encoded[0] as string,encoded[1] as string[]);
   }
   /**
    * @param recipe {(Recipe)}
    */
-  async executeRecipe(recipe) {
-    return this.execute(...recipe.encodeForDsProxyCall());
+  async executeRecipe(recipe: Recipe) : Promise<Recipe> {
+    const encoded =recipe.encodeForDsProxyCall();
+    return this.execute(encoded[0] as string,encoded[1] as unknown as string[]);
   }
 }
-
-module.exports = DfsWeb3;

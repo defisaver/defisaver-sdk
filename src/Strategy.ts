@@ -1,7 +1,14 @@
-const Action = require('./Action');
-class Strategy {
+import {Action} from './Action';
 
-  constructor(name) {
+export class Strategy {
+
+  name: string;
+  subSlots: any;
+  actions: Array<Action>;
+  triggers: Array<Action>;
+  numSubSlots: number;
+
+  constructor(name: string) {
     this.name = name;
     this.subSlots = {};
     this.actions = [];
@@ -9,16 +16,16 @@ class Strategy {
     this.numSubSlots = 0;
   }
 
-  addSubSlot(name, type) {
+  addSubSlot(name: string, type: string) {
     this.subSlots[name] = { type, index:  this.numSubSlots + 128 };
     this.numSubSlots++;
   }
 
-  addTrigger(newTrigger) {
+  addTrigger(newTrigger: Action) {
     this.triggers.push(newTrigger);
   }
 
-  addAction(newAction) {
+  addAction(newAction: Action) {
     this.actions.push(newAction);
   }
 
@@ -35,14 +42,14 @@ class Strategy {
   encodeForDsProxyCall() {
     const triggerIds = this.triggers.map((trigger) => trigger.getId());
 
-    const paramMappings = [];
-    const actionIds = [];
+    const paramMappings : Array<number[]> = [];
+    const actionIds : Array<string> = [];
 
     this.actions.forEach(action => {
       const actionEncoded = action.encodeForStrategy(this.subSlots);
 
-      actionIds.push(actionEncoded[0]);
-      paramMappings.push(actionEncoded[1]);
+      actionIds.push(actionEncoded[0] as string);
+      paramMappings.push(actionEncoded[1] as number[]);
     });
 
     return [
@@ -54,6 +61,3 @@ class Strategy {
   }
 
 }
-
-module.exports = Strategy;
-

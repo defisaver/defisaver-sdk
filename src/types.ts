@@ -1,3 +1,9 @@
+type AccessListItem = {
+  address: string,
+  storageKeys: Array<any>,
+}
+
+// type AccessList = Array<AccessListItem>;
 type AccessList = Array<Array<any>>;
 
 type AccessLists = {
@@ -5,7 +11,9 @@ type AccessLists = {
 };
 
 type Config = {
-  [key: string]: boolean | number,
+  chainId: number,
+  testingMode: boolean,
+  [key: string]: any,
 };
 
 type Network = {
@@ -21,6 +29,8 @@ type Networks = {
     ethereum:Network,
     optimism:Network,
     arbitrum:Network,
-  };
+};
 
-export { AccessList, AccessLists, Config, Network,Networks };
+type EthAddress = string;
+
+export { AccessList,AccessListItem, AccessLists, Config, Network,Networks, EthAddress };
