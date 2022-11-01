@@ -13,6 +13,7 @@ class CurveWithdrawAction extends Action {
      * @param {string} burnAmount
      * @param {boolean} useUnderlying
      * @param {boolean} withdrawExact
+     * @param {boolean} removeOneCoin
      * @param {Array<string>} minAmounts
      */
     constructor(
@@ -22,6 +23,7 @@ class CurveWithdrawAction extends Action {
         burnAmount,
         useUnderlying,
         withdrawExact,
+        removeOneCoin,
         minAmounts = [],
     ) {
         requireAddress(sender);
@@ -53,7 +55,7 @@ class CurveWithdrawAction extends Action {
                 receiver,
                 depositTarget,
                 burnAmount,
-                makeFlags(depositTargetType, explicitUnderlying, withdrawExact),
+                makeFlags(depositTargetType, explicitUnderlying, withdrawExact,removeOneCoin),
                 minAmounts,
             ],
         ).lpToken = pool.lpToken;
