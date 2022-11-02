@@ -1,8 +1,9 @@
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
-class CurveGaugeWithdrawAction extends Action {
+export default class CurveGaugeWithdrawAction extends Action {
 
     /**
      * @param {EthAddress} gaugeAddr
@@ -10,7 +11,7 @@ class CurveGaugeWithdrawAction extends Action {
      * @param {EthAddress} receiver
      * @param {string} amount
      */
-    constructor(gaugeAddr, lpToken, receiver, amount) {
+    constructor(gaugeAddr:EthAddress, lpToken:EthAddress, receiver:EthAddress, amount:uint256) {
         requireAddress(receiver);
         super('CurveGaugeWithdraw',
             getAddr('CurveGaugeWithdraw'),
@@ -24,5 +25,3 @@ class CurveGaugeWithdrawAction extends Action {
         ];
     }
 }
-
-module.exports = CurveGaugeWithdrawAction;

@@ -1,11 +1,12 @@
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses.js');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * CurveStethPoolDepositAction - Deposits tokens into curve steth pool
  */
-class CurveStethPoolDepositAction extends Action {
+export default class CurveStethPoolDepositAction extends Action {
     /**
      * @param from {address}
      * @param to {address}
@@ -13,10 +14,10 @@ class CurveStethPoolDepositAction extends Action {
      * @param minMintAmount {string}
      */
     constructor(
-        from,
-        to,
-        amounts,
-        minMintAmount,
+        from:EthAddress,
+        to:EthAddress,
+        amounts:uint256[2],
+        minMintAmount:uint256,
     ) {
         requireAddress(to);
 
@@ -36,5 +37,3 @@ class CurveStethPoolDepositAction extends Action {
         ];
     }
 }
-
-module.exports = CurveStethPoolDepositAction;

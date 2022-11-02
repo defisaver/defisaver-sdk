@@ -1,8 +1,9 @@
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
-class CurveGaugeDepositAction extends Action {
+export default class CurveGaugeDepositAction extends Action {
 
     /**
      *
@@ -12,7 +13,7 @@ class CurveGaugeDepositAction extends Action {
      * @param {EthAddress} onBehalfOf
      * @param {string} amount
      */
-    constructor(gaugeAddr, lpToken, sender, onBehalfOf, amount) {
+    constructor(gaugeAddr:EthAddress, lpToken:EthAddress, sender:EthAddress, onBehalfOf:EthAddress, amount:uint256) {
         requireAddress(sender);
         requireAddress(onBehalfOf);
         super('CurveGaugeDeposit',
@@ -29,8 +30,6 @@ class CurveGaugeDepositAction extends Action {
     }
 
     async getAssetsToApprove() {
-        return { asset: this.args[1], owner: this.args[2] };
+        return [{ asset: this.args[1], owner: this.args[2] }];
     }
 }
-
-module.exports = CurveGaugeDepositAction;

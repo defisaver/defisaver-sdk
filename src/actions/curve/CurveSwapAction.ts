@@ -1,9 +1,9 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
-class CurveSwapAction extends Action {
+export default class CurveSwapAction extends Action {
 
     /**
      *
@@ -15,7 +15,7 @@ class CurveSwapAction extends Action {
      * @param {string} amount
      * @param {string} expected
      */
-    constructor(sender, receiver, pool, tokenA, tokenB, amount, expected) {
+    constructor(sender:EthAddress, receiver:EthAddress, pool:EthAddress, tokenA:EthAddress, tokenB:EthAddress, amount:uint256, expected:uint256) {
         requireAddress(sender);
         requireAddress(receiver);
         super('CurveSwap',
@@ -35,5 +35,3 @@ class CurveSwapAction extends Action {
         return [{ asset: this.args[3], owner: this.args[0] }];
     }
 }
-
-module.exports = CurveSwapAction;

@@ -1,10 +1,13 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
-const { poolInfo, makeFlags } = require('../../utils/curve-utils');
+import { getAssetInfo } from '@defisaver/tokens';
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import { poolInfo, makeFlags } from '../../utils/curve-utils';
+import {EthAddress,uint256} from '../../types';
 
-class CurveDepositAction extends Action {
+export default class CurveDepositAction extends Action {
+
+    tokensForApproval:Array<EthAddress>;
 
     /**
      * @param {EthAddress} sender
@@ -15,12 +18,12 @@ class CurveDepositAction extends Action {
      * @param {Array<string>} amounts
      */
     constructor(
-        sender,
-        receiver,
-        poolAddr,
-        minMintAmount,
-        useUnderlying,
-        amounts = [],
+        sender:EthAddress,
+        receiver:EthAddress,
+        poolAddr:EthAddress,
+        minMintAmount:uint256,
+        useUnderlying:boolean,
+        amounts:Array<uint256> = [],
     ) {
         requireAddress(sender);
         requireAddress(receiver);
@@ -30,15 +33,15 @@ class CurveDepositAction extends Action {
         let explicitUnderlying = false;
         let tokensForApproval;
 
-        const pool = poolInfo.find((e) => e.swapAddr.toLowerCase() === poolAddr.toLowerCase());
+        const pool = poolInfo.find((e) => e.swapAddr.toLowerCase() === poolAddr.toLowerCase())!;
         if (useUnderlying) {
             if (pool.depositContract) {
                 depositTarget = pool.depositContract;
                 depositTargetType = pool.zapType + 1;
             } else {
                 depositTarget = pool.swapAddr;
-                explicitUnderlying = pool.underlyingFlag;
-                if (!explicitUnderlying) throw error('pool has no underlying deposit mechanism');
+                explicitUnderlying = pool.underlyingFlag!;
+                if (!explicitUnderlying) throw Error('pool has no underlying deposit mechanism');
             }
             tokensForApproval = pool.underlyingCoins;
         } else {
@@ -57,7 +60,8 @@ class CurveDepositAction extends Action {
                 makeFlags(depositTargetType, explicitUnderlying, 0),
                 amounts,
             ],
-        ).tokensForApproval = tokensForApproval;
+        );
+        this.tokensForApproval = tokensForApproval;
 
         this.mappableArgs = [
             this.args[0],
@@ -76,5 +80,3 @@ class CurveDepositAction extends Action {
         }));
     }
 }
-
-module.exports = CurveDepositAction;

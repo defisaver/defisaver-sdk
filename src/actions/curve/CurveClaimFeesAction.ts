@@ -1,9 +1,10 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import { getAssetInfo } from '@defisaver/tokens';
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress} from '../../types';
 
-class CurveClaimFeesAction extends Action {
+export default class CurveClaimFeesAction extends Action {
 
     /**
      *
@@ -11,8 +12,8 @@ class CurveClaimFeesAction extends Action {
      * @param {EthAddress} receiver
      */
     constructor(
-        claimFor,
-        receiver,
+        claimFor:EthAddress,
+        receiver:EthAddress,
     ) {
         requireAddress(claimFor);
         requireAddress(receiver);
@@ -27,5 +28,3 @@ class CurveClaimFeesAction extends Action {
         ];
     }
 }
-
-module.exports = CurveClaimFeesAction;

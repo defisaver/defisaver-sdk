@@ -1,14 +1,15 @@
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress} from '../../types';
 
-class CurveMintCrvAction extends Action {
+export default class CurveMintCrvAction extends Action {
 
     /**
      * @param {Array<EthAddress>} gaugeAddrs
      * @param {EthAddress} receiver
      */
-    constructor(gaugeAddrs, receiver) {
+    constructor(gaugeAddrs:EthAddress[8], receiver:EthAddress) {
         requireAddress(receiver);
         super('CurveMintCrv',
             getAddr('CurveMintCrv'),
@@ -21,5 +22,3 @@ class CurveMintCrvAction extends Action {
         ];
     }
 }
-
-module.exports = CurveMintCrvAction;
