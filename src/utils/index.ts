@@ -1,5 +1,8 @@
 import zeroExExchange from "./zeroExExchange";
-import uniswapLP from "./uniswapLP";
+import {
+  getPoolAddressByAddresses,
+  getPoolAddressBySymbols,
+} from "./uniswapLP";
 import mstableAssetPairs from "./mstableAssetPairs";
 import {
   poolInfo,
@@ -10,7 +13,8 @@ import {
 
 export default {
   zeroExExchange,
-  uniswapLP,
+  getPoolAddressByAddresses,
+  getPoolAddressBySymbols,
   mstableAssetPairs,
   poolInfo,
   DepositOption,

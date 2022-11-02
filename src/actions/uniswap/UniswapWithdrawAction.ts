@@ -1,11 +1,13 @@
-const Action = require("../../Action");
-const {getPoolAddressByAddresses} = require("../../utils/uniswapLP");
-const {getAddr} = require('../../addresses.js');
+import Action from "../../Action";
+import { getPoolAddressByAddresses } from "../../utils/uniswapLP";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
+import { requireAddress } from "../../utils/general";
 
 /**
  * Withdraws liquidity from uniswap pool
  */
-class UniswapWithdrawAction extends Action {
+export default class UniswapWithdrawAction extends Action {
   /**
    * @param {EthAddress} tokenA
    * @param {EthAddress} tokenB
@@ -16,7 +18,8 @@ class UniswapWithdrawAction extends Action {
    * @param {string} amountBMin
    * @param {number} deadline
    */
-  constructor(tokenA, tokenB, liquidity, to, from, amountAMin, amountBMin, deadline) {
+  constructor(tokenA:EthAddress, tokenB:EthAddress, liquidity:uint256, to:EthAddress, from:EthAddress, amountAMin:uint256, amountBMin:uint256, deadline:uint256) {
+    requireAddress(to);
     super(
       'UniWithdraw',
       getAddr('UniWithdraw'),
@@ -47,5 +50,3 @@ class UniswapWithdrawAction extends Action {
     return [{asset: lpAddress, owner: this.args[4], specialApproveLabel: 'uniswap v2'}];
   }
 }
-
-module.exports = UniswapWithdrawAction;

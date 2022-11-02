@@ -1,11 +1,13 @@
-const Action = require("../../Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const {getAddr} = require('../../addresses.js');
+import Action from "../../Action";
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
+import { requireAddress } from "../../utils/general";
 
 /**
  * Supplies a pair tokens to uniswap pool
  */
-class UniswapSupplyAction extends Action {
+export default class UniswapSupplyAction extends Action {
   /**
    * @param {EthAddress} tokenA
    * @param {EthAddress} tokenB
@@ -17,7 +19,8 @@ class UniswapSupplyAction extends Action {
    * @param {string} amountBMin
    * @param {number} deadline
    */
-  constructor(tokenA, tokenB, from, to, amountADesired, amountBDesired, amountAMin, amountBMin, deadline) {
+  constructor(tokenA:EthAddress, tokenB:EthAddress, from:EthAddress, to:EthAddress, amountADesired:uint256, amountBDesired:uint256, amountAMin:uint256, amountBMin:uint256, deadline:uint256) {
+    requireAddress(to);
     super(
       'UniSupply',
       getAddr('UniSupply'),
@@ -57,5 +60,3 @@ class UniswapSupplyAction extends Action {
     return approveArr;
   }
 }
-
-module.exports = UniswapSupplyAction;

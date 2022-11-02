@@ -19,7 +19,7 @@ const INIT_CODE_HASH = '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e
  * @param tokenB {EthAddress} Use WETH for ETH
  * @returns {EthAddress}
  */
-const getPoolAddressByAddresses = (tokenA: EthAddress, tokenB: EthAddress): EthAddress => {
+ export const getPoolAddressByAddresses = (tokenA: EthAddress, tokenB: EthAddress): EthAddress => {
   requireAddress(tokenA)
   requireAddress(tokenB)
   const tokens = [tokenA, tokenB].sort();
@@ -37,15 +37,10 @@ const getPoolAddressByAddresses = (tokenA: EthAddress, tokenB: EthAddress): EthA
  * @param symbolB {string}
  * @returns {EthAddress}
  */
-const getPoolAddressBySymbols = (symbolA: string, symbolB: string):EthAddress => {
+ export const getPoolAddressBySymbols = (symbolA: string, symbolB: string):EthAddress => {
   return module.exports.getPoolAddressByAddresses(
     getAssetInfo(symbolA.replace(/^ETH$/, 'WETH')).address,
     getAssetInfo(symbolB.replace(/^ETH$/, 'WETH')).address,
   )
-}
-
-export default {
-  getPoolAddressByAddresses,
-  getPoolAddressBySymbols
 }
 
