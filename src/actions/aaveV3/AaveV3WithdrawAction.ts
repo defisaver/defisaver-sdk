@@ -1,6 +1,6 @@
 import ActionWithL2 from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 import { requireAddress } from "../../utils/general";
 
 
@@ -15,7 +15,7 @@ export default class AaveV3WithdrawAction extends ActionWithL2 {
    * @param to {EthAddress} Where the withdrawn tokens will be sent
    * @param market {EthAddress} Address provider for specific market
    */
-  constructor(useDefaultMarket:boolean, market:EthAddress, amount:string, to:EthAddress,assetId:number) {
+  constructor(useDefaultMarket:boolean, market:EthAddress, amount:uint256, to:EthAddress,assetId:uint16) {
     requireAddress(to);
     super('AaveV3Withdraw', getAddr('AaveV3Withdraw'),
     ['uint16','bool','uint256','address','address'],

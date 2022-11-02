@@ -1,6 +1,6 @@
 import Action from "../../Action";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 import { getAssetInfoByAddress } from "@defisaver/tokens";
 
 /**
@@ -15,7 +15,7 @@ export default class AavePaybackAction extends Action {
    * @param from {EthAddress} Tokens will be sent from this address
    * @param onBehalf {EthAddress}
    */
-  constructor(market:EthAddress, tokenAddr:EthAddress, amount:string, rateMode:number, from:EthAddress, onBehalf:EthAddress = getAddr('Empty')) {
+  constructor(market:EthAddress, tokenAddr:EthAddress, amount:uint256, rateMode:uint256, from:EthAddress, onBehalf:EthAddress = getAddr('Empty')) {
     super('AavePayback',
       getAddr('AavePayback'),
       ['address', 'address', 'uint256', 'uint256', 'address', 'address'],

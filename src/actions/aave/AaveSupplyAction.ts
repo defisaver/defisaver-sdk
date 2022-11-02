@@ -1,6 +1,6 @@
 import Action from "../../Action";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 import { getAssetInfoByAddress } from "@defisaver/tokens";
 
 /**
@@ -15,7 +15,7 @@ export default class AaveSupplyAction extends Action {
    * @param onBehalf {EthAddress} Tokens will be supplied to this address' position (defaults to sender's proxy)
    * @param enableAsColl {boolean} If we need to enable asset as collateral
    */
-  constructor(market: EthAddress, tokenAddr:EthAddress, amount:string, from:EthAddress, onBehalf:EthAddress = getAddr('Empty'), enableAsColl:boolean) {
+  constructor(market: EthAddress, tokenAddr:EthAddress, amount:uint256, from:EthAddress, onBehalf:EthAddress = getAddr('Empty'), enableAsColl:boolean) {
     super('AaveSupply', getAddr('AaveSupply'), ['address','address','uint256','address','address','bool'], [market, tokenAddr, amount, from, onBehalf, enableAsColl]);
 
     this.mappableArgs = [

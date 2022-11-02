@@ -1,6 +1,6 @@
 import ActionWithL2 from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 import { requireAddress } from "../../utils/general";
 
 
@@ -15,7 +15,7 @@ export default class AaveV3ClaimRewardsAction extends ActionWithL2 {
    * @param reward {EthAddress}
    * @param assets {Array<EthAddress>}
    */
-  constructor(assetsLength:number, amount:string, to:EthAddress, reward:EthAddress, assets:Array<EthAddress>) {
+  constructor(assetsLength:uint8, amount:uint256, to:EthAddress, reward:EthAddress, assets:Array<EthAddress>) {
     requireAddress(to);
     super(
       'AaveV3ClaimRewards',

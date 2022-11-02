@@ -1,7 +1,7 @@
 import ActionWithL2 from "../../ActionWithL2";
 import { getAssetInfoByAddress } from "@defisaver/tokens";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256} from '../../types';
 
 /**
  * AaveV3ATokenPaybackAction - Repay Aave V3 debt using aTokens
@@ -19,7 +19,7 @@ export default class AaveV3ATokenPaybackAction extends ActionWithL2 {
 
    addressForApproval: EthAddress;
 
-  constructor( aTokenAddr:EthAddress,useDefaultMarket:boolean,market:EthAddress,amount:string, from:EthAddress, rateMode:number, assetId:number) {
+  constructor( aTokenAddr:EthAddress,useDefaultMarket:boolean,market:EthAddress,amount:uint256, from:EthAddress, rateMode:uint8, assetId:uint16) {
     super('AaveV3ATokenPayback', getAddr('AaveV3ATokenPayback'),
     ['uint256','address','uint8','uint16', 'bool', 'address'],
     [amount, from, rateMode, assetId, useDefaultMarket, market]

@@ -1,7 +1,7 @@
 import { getAssetInfoByAddress } from "@defisaver/tokens";
 import ActionWithL2 from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  * AaveV3SupplyAction - Supply token to an aave position on Aave V3
@@ -21,7 +21,7 @@ export default class AaveV3SupplyAction extends ActionWithL2 {
    * @param market {EthAddress} Address provider for specific market
    * @param [onBehalf] {EthAddress} For what user we are supplying the tokens, defaults to proxy
    */
-  constructor(useDefaultMarket:boolean,market:EthAddress,amount:string, from:EthAddress, tokenAddress:EthAddress, assetId:number, enableAsColl:boolean,  useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {
+  constructor(useDefaultMarket:boolean,market:EthAddress,amount:uint256, from:EthAddress, tokenAddress:EthAddress, assetId:uint16, enableAsColl:boolean,  useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {
     super('AaveV3Supply', getAddr('AaveV3Supply'),
     ['uint256','address','uint16','bool','bool','bool','address','address'],
     [amount, from, assetId, enableAsColl, useDefaultMarket, useOnBehalf, market, onBehalf]

@@ -1,6 +1,6 @@
 import ActionWithL2 from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 import { requireAddress } from "../../utils/general";
 
 /**
@@ -17,7 +17,7 @@ export default class AaveV3BorrowAction extends ActionWithL2 {
    * @param useOnBehalf {boolean} use on behalf or default to proxy
    * @param [onBehalf] {EthAddress} On whose behalf we borrow the tokens, defaults to proxy
    */
-  constructor( useDefaultMarket:boolean,market:EthAddress, amount:string, to:EthAddress, rateMode:number, assetId:number, useOnBehalf:boolean , onBehalf: EthAddress = getAddr('Empty')) {
+  constructor( useDefaultMarket:boolean,market:EthAddress, amount:uint256, to:EthAddress, rateMode:uint8, assetId:uint16, useOnBehalf:boolean , onBehalf: EthAddress = getAddr('Empty')) {
     requireAddress(to);
     super('AaveV3Borrow', getAddr('AaveV3Borrow'),
     ['uint256','address','uint8','uint16','bool','bool','address','address'],

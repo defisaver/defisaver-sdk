@@ -1,6 +1,6 @@
 import ActionWithL2 from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 
 /**
@@ -14,7 +14,7 @@ export default class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
    * @param market {EthAddress} Address provider for specific market
    *
    */
-  constructor(useDefaultMarket:boolean, market:EthAddress,rateMode:number, assetId:number) {
+  constructor(useDefaultMarket:boolean, market:EthAddress,rateMode:uint256, assetId:uint16) {
     super('AaveV3SwapBorrowRateMode', getAddr('AaveV3SwapBorrowRateMode'),
     ['uint256','uint16','bool','address'],
     [rateMode, assetId, useDefaultMarket, market]

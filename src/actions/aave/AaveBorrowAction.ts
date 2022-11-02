@@ -1,7 +1,7 @@
 import Action from "../../Action";
 import { requireAddress } from "../../utils/general";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  * AaveBorrowAction - Borrow tokens from Aave
@@ -15,7 +15,7 @@ export default class AaveBorrowAction extends Action {
    * @param to {EthAddress} Borrowed tokens will be sent to this address
    * @param onBehalf {EthAddress}
    */
-  constructor(market:EthAddress, tokenAddr:EthAddress, amount:string, rateMode:number, to:EthAddress, onBehalf:EthAddress = getAddr('Empty')) {
+  constructor(market:EthAddress, tokenAddr:EthAddress, amount:uint256, rateMode:uint256, to:EthAddress, onBehalf:EthAddress = getAddr('Empty')) {
     requireAddress(to);
     super(
       'AaveBorrow',

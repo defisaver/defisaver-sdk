@@ -1,7 +1,7 @@
 import { getAssetInfoByAddress } from "@defisaver/tokens";
 import ActionWithL2 from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  * AaveV3PaybackAction - Payback debt on Aave using underlying token
@@ -22,7 +22,7 @@ export default class AaveV3PaybackAction extends ActionWithL2 {
    * @param useOnBehalf {boolean} use on behalf param or default to proxy
    * @param onBehalf {EthAddress} For what user we are paying back the debt, defaults to proxy
    */
-  constructor(useOnDefaultMarket: boolean, market:EthAddress, amount:string, from:EthAddress, rateMode:number, tokenAddr:EthAddress, assetId:number, useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {
+  constructor(useOnDefaultMarket: boolean, market:EthAddress, amount:uint256, from:EthAddress, rateMode:uint8, tokenAddr:EthAddress, assetId:uint16, useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {
     super('AaveV3Payback', getAddr('AaveV3Payback'),
     ['uint256','address','uint8','uint16', 'bool', 'bool','address','address'],
     [amount, from, rateMode, assetId, useOnDefaultMarket, useOnBehalf, market, onBehalf]

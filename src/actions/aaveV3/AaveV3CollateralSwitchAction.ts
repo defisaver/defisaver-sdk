@@ -1,6 +1,6 @@
 import ActionWithL2 from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
-import {EthAddress} from '../../types';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  *  AaveV3CollateralSwitchAction - Aave enable/disable token usage as collateral for AaveV3 position
@@ -13,7 +13,7 @@ export default class AaveV3CollateralSwitchAction extends ActionWithL2 {
    * @param assetIds {Array<number>}
    * @param useAsCollateral {Array<boolean>}
    */
-  constructor(useDefaultMarket:boolean, market:EthAddress, arrayLength:number, assetIds:Array<number>, useAsCollateral:Array<boolean>) {
+  constructor(useDefaultMarket:boolean, market:EthAddress, arrayLength:uint8, assetIds:Array<uint16>, useAsCollateral:Array<boolean>) {
     super(
       'AaveV3CollateralSwitch',
       getAddr('AaveV3CollateralSwitch'),
