@@ -1,10 +1,11 @@
-const Action = require("../../Action");
-const {getAddr} = require("../../addresses.js");
+import Action from "../../Action";
+import { getAddr } from "../../addresses.js";
+import {uint8,uint256} from '../../types';
 
 /**
  * MakerRatioCheckAction - Checks mcd ratio at end of all actions
  */
-class MakerRatioCheckAction extends Action {
+export default class MakerRatioCheckAction extends Action {
   /**
    * @param ratioState {uint8} If it should lower/higher
    * @param checkTarget {}
@@ -12,7 +13,7 @@ class MakerRatioCheckAction extends Action {
    * @param vaultId {string} Id of the vault
    * @param startRatioIndex {uint256} Index in returnValues where ratio before actions is stored
    */
-  constructor(ratioState, checkTarget, targetRatio, vaultId, startRatioIndex) {
+  constructor(ratioState:uint8, checkTarget:boolean, targetRatio:uint256, vaultId:uint256, startRatioIndex:uint256) {
     super("McdRatioCheck", getAddr("McdRatioCheck"), ["uint8","bool","uint256","uint256","uint256"], [ratioState, checkTarget, targetRatio, vaultId, startRatioIndex]);
 
     this.mappableArgs = [
@@ -22,8 +23,4 @@ class MakerRatioCheckAction extends Action {
       this.args[4],
     ];
   }
-
 }
-
-module.exports = MakerRatioCheckAction;
-
