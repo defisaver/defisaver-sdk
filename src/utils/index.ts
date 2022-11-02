@@ -1,11 +1,19 @@
-import zeroExExchange from './zeroExExchange';
-import uniswapLP from './uniswapLP';
-import mstableAssetPairs from './mstableAssetPairs';
-import convexUtils from './convex-utils';
+import zeroExExchange from "./zeroExExchange";
+import uniswapLP from "./uniswapLP";
+import mstableAssetPairs from "./mstableAssetPairs";
+import {
+  poolInfo,
+  DepositOption,
+  WithdrawOption,
+  getConvexPool,
+} from "./convex-utils";
 
 export default {
   zeroExExchange,
   uniswapLP,
   mstableAssetPairs,
-  convexUtils
-}
+  poolInfo,
+  DepositOption,
+  WithdrawOption,
+  getConvexPool,
+};

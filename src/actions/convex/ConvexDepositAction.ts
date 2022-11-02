@@ -1,11 +1,15 @@
-const Action = require('../../Action');
-const { getAddr } = require('../../addresses');
-const { DepositOption, getConvexPool } = require('../../utils/convex-utils');
-const { requireAddress } = require('../../utils/general');
+import Action from '../../Action';
+import { getAddr } from '../../addresses';
+import { DepositOption, getConvexPool } from '../../utils/convex-utils';
+import { requireAddress } from '../../utils/general';
+import {EthAddress,uint256,uint8} from '../../types';
 /**
  * ConvexDepositAction - Deposits (wraps) Curve LP into convex, stakes wrapped LP, or does both
  */
-class ConvexDepositAction extends Action {
+export default class ConvexDepositAction extends Action {
+
+    curveLp:EthAddress;
+
     /**
      * @param {address} from 
      * @param {address} to 
@@ -14,14 +18,15 @@ class ConvexDepositAction extends Action {
      * @param {uint8} option 
      */
     constructor(
-        from,
-        to,
-        curveLp,
-        amount,
-        option,
+        from:EthAddress,
+        to:EthAddress,
+        curveLp:EthAddress,
+        amount:uint256,
+        option:uint8,
     ) {
         requireAddress(to);
-        const { pid } = getConvexPool(curveLp);
+        const convexPool = getConvexPool(curveLp)!;
+        const pid:number = convexPool.pid;
         super(
             'ConvexDeposit',
             getAddr('ConvexDeposit'),
@@ -39,7 +44,8 @@ class ConvexDepositAction extends Action {
                 amount,
                 option,
             ],
-        ).curveLp = curveLp;
+        );
+        this.curveLp = curveLp;
 
         this.mappableArgs = [
             this.args[0],
@@ -51,7 +57,7 @@ class ConvexDepositAction extends Action {
     }
 
     async getAssetsToApprove() {
-        const pool = getConvexPool(this.curveLp);
+        const pool = getConvexPool(this.curveLp)!;
         const assetToPull = {
             [DepositOption.WRAP]: pool.lpToken,
             [DepositOption.STAKE]: pool.token,
@@ -63,5 +69,3 @@ class ConvexDepositAction extends Action {
         }];
     }
 }
-
-module.exports = ConvexDepositAction;

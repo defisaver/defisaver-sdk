@@ -1,11 +1,15 @@
-const Action = require('../../Action');
-const { getAddr } = require('../../addresses');
-const { getConvexPool, WithdrawOption } = require('../../utils/convex-utils');
-const { requireAddress } = require('../../utils/general');
+import Action from '../../Action';
+import { getAddr } from '../../addresses';
+import { getConvexPool, WithdrawOption } from '../../utils/convex-utils';
+import { requireAddress } from '../../utils/general';
+import {EthAddress,uint256,uint8} from '../../types';
 /**
  * ConvexWithdrawAction - Withdraws (unwraps) Curve LP from convex, unstakes wrapped LP, or does both
  */
-class ConvexWithdrawAction extends Action {
+export default class ConvexWithdrawAction extends Action {
+
+    curveLp:EthAddress;
+
     /**
      * @param {address} from 
      * @param {address} to 
@@ -14,14 +18,15 @@ class ConvexWithdrawAction extends Action {
      * @param {uint8} option 
      */
     constructor(
-        from,
-        to,
-        curveLp,
-        amount,
-        option,
+        from:EthAddress,
+        to:EthAddress,
+        curveLp:EthAddress,
+        amount:uint256,
+        option:uint8,
     ) {
         requireAddress(to);
-        const { pid } = getConvexPool(curveLp);
+        const convexPool = getConvexPool(curveLp)!;
+        const pid:number = convexPool.pid;
         super(
             'ConvexWithdraw',
             getAddr('ConvexWithdraw'),
@@ -39,7 +44,8 @@ class ConvexWithdrawAction extends Action {
                 amount,
                 option,
             ],
-        ).curveLp = curveLp;
+        );
+        this.curveLp = curveLp;
 
         this.mappableArgs = [
             this.args[0],
@@ -51,7 +57,7 @@ class ConvexWithdrawAction extends Action {
     }
 
     async getAssetsToApprove() {
-        const pool = getConvexPool(this.curveLp);
+        const pool = getConvexPool(this.curveLp)!;
         const owner = this.args[0];
 
         if (this.args[4] === WithdrawOption.UNWRAP) {

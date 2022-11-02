@@ -1,24 +1,29 @@
-const Action = require('../../Action');
-const { getAddr } = require('../../addresses');
-const { getConvexPool } = require('../../utils/convex-utils');
-const { requireAddress } = require('../../utils/general');
+import Action from '../../Action';
+import { getAddr } from '../../addresses';
+import { getConvexPool } from '../../utils/convex-utils';
+import { requireAddress } from '../../utils/general';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * ConvexClaimAction - Claims convex rewards
  */
-class ConvexClaimAction extends Action {
+export default class ConvexClaimAction extends Action {
+
+    curveLp:EthAddress;
+
     /**
      * @param {address} from 
      * @param {address} to 
      * @param {address} curveLp 
      */
     constructor(
-        from,
-        to,
-        curveLp,
+        from:EthAddress,
+        to:EthAddress,
+        curveLp:EthAddress,
     ) {
         requireAddress(to);
-        const { crvRewards } = getConvexPool(curveLp);
+        const convexPool = getConvexPool(curveLp)!;
+        const crvRewards  :string = convexPool.crvRewards;
         super(
             'ConvexClaim',
             getAddr('ConvexClaim'),
@@ -32,7 +37,9 @@ class ConvexClaimAction extends Action {
                 to,
                 crvRewards,
             ],
-        ).curveLp = curveLp;
+        )
+        
+        this.curveLp = curveLp;
 
         this.mappableArgs = [
             this.args[0],
@@ -42,19 +49,17 @@ class ConvexClaimAction extends Action {
     }
 
     async getAssetsToApprove() {
-        const pool = getConvexPool(this.curveLp);
+        const pool = getConvexPool(this.curveLp)!;
         const owner = this.args[0];
 
         return [
             getAddr('CrvToken'),
             getAddr('CvxToken'),
         ].concat(
-            pool.extraRewards.map((e) => e.token),
-        ).reduce((acc, e) => {
+            pool.extraRewards.map((e:any) => e.token),
+        ).reduce((acc: any, e:string) => {
             if (!acc.includes(e.toLowerCase())) acc.push(e.toLowerCase());
             return acc;
-        }, []).map((e) => Object({asset: e, owner}));
+        }, []).map((e:any) => Object({asset: e, owner}));
     }
 }
-
-module.exports = ConvexClaimAction;
