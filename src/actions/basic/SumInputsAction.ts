@@ -1,0 +1,20 @@
+import Action from "../../Action";
+import { getAddr } from '../../addresses.js';
+import {uint256} from '../../types';
+
+/**
+ * Sums up 2 inputs/return values
+ */
+export default class SumInputsAction extends Action {
+  constructor(a:uint256, b:uint256) {
+    super(
+      'SumInputs',
+      getAddr('SumInputs'),
+      [
+        "uint",
+        "uint",
+      ],
+      [...arguments]
+    );
+  }
+}

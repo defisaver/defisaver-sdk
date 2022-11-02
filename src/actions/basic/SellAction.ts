@@ -1,21 +1,25 @@
-const ActionAbi = require('../../abis/Action.json');
-const AbiCoder = require('web3-eth-abi');
-const ActionWithL2 = require("../../ActionWithL2");
-const { requireAddress } = require("../../utils/general");
-const { getAssetInfoByAddress } = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import ActionAbi from '../../abis/Action.json';
+import AbiCoder from 'web3-eth-abi';
+import ActionWithL2 from "../../ActionWithL2";
+import { requireAddress } from "../../utils/general";
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
 
 /**
  * Sells token on DeFi Saver exchange aggregator
  */
-class SellAction extends ActionWithL2 {
+export default class SellAction extends ActionWithL2 {
+
+  protocolFee:string;
+
   /**
    * @param exchangeOrder {Array} Standard DFS Exchange data
    * @param from {string} Order sender
    * @param to {string} Order recipient
    * @param protocolFee {string} 0x fee (amount of ETH in Wei)
    */
-  constructor(exchangeOrder, from, to, protocolFee = '0') {
+  constructor(exchangeOrder:Array<any>, from:EthAddress, to:EthAddress, protocolFee: string = '0') {
     requireAddress(to);
     super(
       'DFSSell',
@@ -40,7 +44,7 @@ class SellAction extends ActionWithL2 {
   }
 
   encodeInputs() {
-    const executeActionDirectAbi = ActionAbi.find(({ name }) => name === 'executeActionDirect');
+    const executeActionDirectAbi: any = (ActionAbi.find(({ name }) => name === 'executeActionDirect'))!;
     return AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall());
   }
 
@@ -54,5 +58,3 @@ class SellAction extends ActionWithL2 {
     return this.protocolFee || '0';
   }
 }
-
-module.exports = SellAction;

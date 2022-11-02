@@ -11,7 +11,7 @@ import { AccessLists } from '../AccessLists';
 export default class Action {
 
   contractAddress : string;
-  paramTypes: Array<string>;
+  paramTypes: Array<string | Array<any>>;
   name: string;
   args: Array<any>;
   mappableArgs: Array<any>;
@@ -22,7 +22,7 @@ export default class Action {
    * @param paramTypes {Array<string>}
    * @param args {Array<*>}
    */
-  constructor(name: string, contractAddress: string, paramTypes : Array<string>, args : Array<any>) {
+  constructor(name: string, contractAddress: string, paramTypes : Array<string | Array<any>>, args : Array<any>) {
     // if (new.target === Action) throw new TypeError("Actions are instantiated using derived classes");
 
     if (paramTypes.length !== args.length) throw new Error('Parameters/arguments length mismatch')
@@ -93,7 +93,7 @@ export default class Action {
   /**
    * @private
    */
-  _replaceWithPlaceholders(arg: any, paramType: string | string[]) : any {
+  _replaceWithPlaceholders(arg: any, paramType: string | Array<any>) : any {
     if (Array.isArray(arg)) return arg.map((_arg, i) => this._replaceWithPlaceholders(_arg, paramType[i]));
     if(typeof(paramType) === 'string'){
         if (new RegExp(/\$\d+/).test(arg)) return this._getPlaceholderForType(paramType);
@@ -105,7 +105,7 @@ export default class Action {
   /**
    * @private
    */
-  _formatType(paramType: string | string[]) : string {
+  _formatType(paramType: string | Array<any>) : string {
     if (Array.isArray(paramType)) return `(${paramType.map((_paramType) => this._formatType(_paramType))})`;
     return paramType;
   }

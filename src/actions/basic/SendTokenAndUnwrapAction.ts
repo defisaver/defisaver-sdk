@@ -1,18 +1,18 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * Transfers specified token from recipe (DsProxy) to specified address unwraps if Weth address
  */
-class SendTokenAndUnwrapAction extends Action {
+export default class SendTokenAndUnwrapAction extends Action {
   /**
    * @param token {string} Token address
    * @param to {string} Transfer recipient
    * @param amount {string} Transfer amount (-1 for whole Recipe (DsProxy) balance)
    */
-  constructor(token, to, amount) {
+  constructor(token:EthAddress, to:EthAddress, amount:uint256) {
     requireAddress(to);
     super(
       'SendTokenAndUnwrap',
@@ -26,5 +26,3 @@ class SendTokenAndUnwrapAction extends Action {
     );
   }
 }
-
-module.exports = SendTokenAndUnwrapAction;

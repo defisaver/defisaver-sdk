@@ -1,16 +1,17 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const {requireAddress} = require("../../utils/general");
-const {getAddr} = require('../../addresses.js');
+import ActionWithL2 from "../../ActionWithL2";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * Unwraps a specified amount of WETH from the proxy
  */
-class UnwrapEthAction extends ActionWithL2 {
+export default class UnwrapEthAction extends ActionWithL2 {
   /**
    * @param amount {string} Token address
    * @param to {string} Transfer recipient
    */
-  constructor(amount, to) {
+  constructor(amount:uint256, to:EthAddress) {
     requireAddress(to);
     super(
       'UnwrapEth',
@@ -29,7 +30,7 @@ class UnwrapEthAction extends ActionWithL2 {
     encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][0]));
     // to
     encodedInput = encodedInput.concat(this.addressToBytes20(this.args[0][1]));
+
+    return encodedInput;
   }
 }
-
-module.exports = UnwrapEthAction;

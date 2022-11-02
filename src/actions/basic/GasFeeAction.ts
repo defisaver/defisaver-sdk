@@ -1,14 +1,15 @@
-const Action = require("../../Action");
-const {getAddr} = require("../../addresses.js");
+import Action from "../../Action";
+import { getAddr } from "../../addresses.js";
+import {EthAddress,uint256} from '../../types';
 
-class GasFeeAction extends Action {
+export default class GasFeeAction extends Action {
   /**
    * @param gasStart {string} Always 0 will be inject value
    * @param feeToken {string} Address of the token we are taken the fee in
    * @param availableAmount Amount we have available to pay the gas fee
    * @param dfsFeeDivider Additional fee for DFS, default is 5bps
    */
-  constructor(gasStart, feeToken, availableAmount, dfsFeeDivider = 2000) {
+  constructor(gasStart:uint256, feeToken:EthAddress, availableAmount:uint256, dfsFeeDivider:uint256 = '2000') {
     super("GasFeeTaker",
       getAddr("GasFeeTaker"),
       ["uint256", "address", "uint256", "uint256"],
@@ -23,5 +24,3 @@ class GasFeeAction extends Action {
   }
 
 }
-
-module.exports = GasFeeAction;

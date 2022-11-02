@@ -1,18 +1,19 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const { getAddr } = require('../../addresses.js');
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
+import { requireAddress } from "../../utils/general";
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import Action from "../../Action";
+import { getAddr } from "../../addresses.js";
+import {EthAddress,uint256} from '../../types';
 
 /**
  * Transfers specified token from a specified address to DSProxy (recipe)
  */
-class PullTokenAction extends Action {
+export default class PullTokenAction extends Action {
   /**
    * @param token {string} Token address
    * @param from {string} Transfer sender
    * @param amount {string} Transfer amount (-1 for whole sender balance)
    */
-  constructor(token, from, amount) {
+  constructor(token:EthAddress, from:EthAddress, amount:uint256) {
     requireAddress(from);
     super(
       'PullToken',
@@ -32,5 +33,3 @@ class PullTokenAction extends Action {
     return [];
   }
 }
-
-module.exports = PullTokenAction;
