@@ -1,16 +1,17 @@
-const Action = require("../../Action");
-const { requireAddress } = require("../../utils/general");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * CBCreateAction - Create a chicken bond nft
  */
-class CBCreateAction extends Action {
+export default class CBCreateAction extends Action {
   /**
    * @param amount {string} Wei amount in LUSD
    * @param from {EthAddress}
    */
-  constructor(amount, from) {
+  constructor(amount:uint256, from:EthAddress) {
     requireAddress(from);
     super('CBCreate', getAddr('CBCreate'), ['uint256','address'], [...arguments]);
   }
@@ -19,5 +20,3 @@ class CBCreateAction extends Action {
     return [{asset: getAddr('LUSD'), owner: this.args[1]}]
   }
 }
-
-module.exports = CBCreateAction;
