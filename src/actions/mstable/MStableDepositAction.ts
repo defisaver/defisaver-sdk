@@ -1,12 +1,13 @@
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
-const mstableAssetPairs = require('../../utils/mstableAssetPairs');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import mstableAssetPairs from '../../utils/mstableAssetPairs';
+import {EthAddress,uint256} from '../../types';
 
 /**
- * MStableWithdrawAction
+ * MStableDepositAction
  */
-class MStableWithdrawAction extends Action {
+export default class MStableDepositAction extends Action {
     /**
      * @param bAsset
      * @param mAsset
@@ -19,15 +20,15 @@ class MStableWithdrawAction extends Action {
      * @param assetPair
      */
     constructor(
-        bAsset,
-        mAsset,
-        saveAddress,
-        vaultAddress,
-        from,
-        to,
-        amount,
-        minOut,
-        assetPair,
+        bAsset:EthAddress,
+        mAsset:EthAddress,
+        saveAddress:EthAddress,
+        vaultAddress:EthAddress,
+        from:EthAddress,
+        to:EthAddress,
+        amount:uint256,
+        minOut:uint256,
+        assetPair:uint256,
     ) {
         requireAddress(bAsset);
         requireAddress(mAsset);
@@ -37,8 +38,8 @@ class MStableWithdrawAction extends Action {
         requireAddress(to);
 
         super(
-            'MStableWithdraw',
-            getAddr('MStableWithdraw'),
+            'MStableDeposit',
+            getAddr('MStableDeposit'),
             ['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256'],
             [...arguments],
         );
@@ -61,16 +62,17 @@ class MStableWithdrawAction extends Action {
         const owner = this.args[4];
         let asset;
         switch (assetPair) {
-        case mstableAssetPairs.BASSET_IMASSETVAULT:
-        case mstableAssetPairs.MASSET_IMASSETVAULT:
-        case mstableAssetPairs.IMASSET_IMASSETVAULT:
-            return [];
-        case mstableAssetPairs.MASSET_IMASSET:
-        case mstableAssetPairs.BASSET_IMASSET:
-            asset = this.args[2];
-            break;
         case mstableAssetPairs.BASSET_MASSET:
+        case mstableAssetPairs.BASSET_IMASSET:
+        case mstableAssetPairs.BASSET_IMASSETVAULT:
+            asset = this.args[0];
+            break;
+        case mstableAssetPairs.MASSET_IMASSET:
+        case mstableAssetPairs.MASSET_IMASSETVAULT:
             asset = this.args[1];
+            break;
+        case mstableAssetPairs.IMASSET_IMASSETVAULT:
+            asset = this.args[2];
             break;
         default:
             return [];
@@ -78,5 +80,3 @@ class MStableWithdrawAction extends Action {
         return [{ asset, owner }];
     }
 }
-
-module.exports = MStableWithdrawAction;

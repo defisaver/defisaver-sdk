@@ -1,11 +1,12 @@
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses.js');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * MStableClaimAction
  */
-class MStableClaimAction extends Action {
+export default class MStableClaimAction extends Action {
     /**
      * @param vaultAddress
      * @param to
@@ -13,10 +14,10 @@ class MStableClaimAction extends Action {
      * @param last
      */
     constructor(
-        vaultAddress,
-        to,
-        first,
-        last,
+        vaultAddress:EthAddress,
+        to:EthAddress,
+        first:uint256,
+        last:uint256,
     ) {
         requireAddress(vaultAddress);
         requireAddress(to);
@@ -34,5 +35,3 @@ class MStableClaimAction extends Action {
         ];
     }
 }
-
-module.exports = MStableClaimAction;
