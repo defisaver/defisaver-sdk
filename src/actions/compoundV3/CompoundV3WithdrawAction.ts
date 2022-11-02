@@ -1,11 +1,12 @@
-const Action = require("../../Action");
-const { requireAddress } = require("../../utils/general");
-const { getAddr } = require("../../addresses.js");
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from "../../addresses.js";
+import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3WithdrawAction - Withdraw token from an Compound position
  */
-class CompoundV3WithdrawAction extends Action {
+export default class CompoundV3WithdrawAction extends Action {
   /**
    * @param market {EthAddress} Comet proxy address of the market
    * @param to {EthAddress} Address where we are sending the tokens
@@ -13,7 +14,7 @@ class CompoundV3WithdrawAction extends Action {
    * @param amount {string} Wei amount in specified asset
    * @param onBehalf {EthAddress} Address from where we are withdrawing the tokens
    */
-  constructor(market, to, asset, amount, onBehalf) {
+  constructor(market:EthAddress, to:EthAddress, asset:EthAddress, amount:uint256, onBehalf:EthAddress) {
     requireAddress(to);
     requireAddress(asset);
     super(
@@ -32,5 +33,3 @@ class CompoundV3WithdrawAction extends Action {
     ];
   }
 }
-
-module.exports = CompoundV3WithdrawAction;

@@ -1,12 +1,16 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const { getAddr } = require('../../addresses.js');
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3SupplyAction - Supply specified amount of token (base or collateral)
  */
- class CompoundV3SupplyAction extends Action {
+ export default class CompoundV3SupplyAction extends Action {
+
+    tokenForApproval:EthAddress;
+
     /**
      * @param market {EthAddress} Comet proxy address of the market
      * @param tokenAddr {EthAddress}
@@ -14,7 +18,7 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
      * @param from {EthAddress} Address from where we're pulling the tokens
      * @param onBehalf {EthAddress} Address of the account we are supplying the tokens
      */
-     constructor(market, tokenAddr, amount, from, onBehalf) {
+     constructor(market:EthAddress, tokenAddr:EthAddress, amount:uint256, from:EthAddress, onBehalf:EthAddress) {
         super('CompV3Supply', getAddr('CompV3Supply'), ['address','address','uint256','address', 'address'], [market, tokenAddr, amount, from, onBehalf]);
 
         this.mappableArgs = [
@@ -34,5 +38,3 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
         return [];
       }
   }
-
-  module.exports = CompoundV3SupplyAction;

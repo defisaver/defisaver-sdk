@@ -1,18 +1,19 @@
-const Action = require("../../Action");
-const { requireAddress } = require("../../utils/general");
-const { getAddr } = require("../../addresses.js");
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from "../../addresses.js";
+import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3ClaimAction - Claims Comp tokens to, and for, a specified address
  */
-class CompoundV3ClaimAction extends Action {
+export default class CompoundV3ClaimAction extends Action {
   /**
    * @param market {EthAddress} Comet proxy address of the market
    * @param onBehalfOf {EthAddress} The owner to claim for
    * @param to {EthAddress} The address to receive the rewards
    * @param shouldAccrue {bool} If true, the protocol will account for the rewards owed to the account as of the current block before transferring
    */
-  constructor(market, onBehalfOf, to, shouldAccrue) {
+  constructor(market:EthAddress, onBehalfOf:EthAddress, to:EthAddress, shouldAccrue:boolean) {
     requireAddress(onBehalfOf);
     requireAddress(to);
     super(
@@ -30,5 +31,3 @@ class CompoundV3ClaimAction extends Action {
     ];
   }
 }
-
-module.exports = CompoundV3ClaimAction;

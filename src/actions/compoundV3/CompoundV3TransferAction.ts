@@ -1,11 +1,12 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3TransferAction - Transfer specified amount of assets from src address to dst
  */
- class CompoundV3TransferAction extends Action {
+ export default class CompoundV3TransferAction extends Action {
     /**
      * @param market {EthAddress} Comet proxy address of the market
      * @param from {EthAddress} address of src
@@ -13,7 +14,7 @@ const { getAddr } = require('../../addresses.js');
      * @param asset {EthAddress} address of ERC20 token
      * @param amount {uint256} amount of assets to be transferred
      */
-    constructor(market, from, to, asset, amount) {
+    constructor(market:EthAddress, from:EthAddress, to:EthAddress, asset:EthAddress, amount:uint256) {
       requireAddress(from);
       requireAddress(to);
       requireAddress(asset);
@@ -33,5 +34,3 @@ const { getAddr } = require('../../addresses.js');
       ];
     }
   }
-  
-  module.exports = CompoundV3TransferAction;

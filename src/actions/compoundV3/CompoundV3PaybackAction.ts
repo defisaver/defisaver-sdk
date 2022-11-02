@@ -1,12 +1,16 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const { getAddr } = require('../../addresses.js');
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3PaybackAction - Repays specified amount of base token
  */
- class CompoundV3PaybackAction extends Action {
+ export default class CompoundV3PaybackAction extends Action {
+
+    tokenForApproval:EthAddress;
+
     /**
      * @param market {EthAddress} Comet proxy address of the market
      * @param amount {uint256} amount of base token to be paid back
@@ -14,7 +18,7 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
      * @param onBehalf {EthAddress} address for which the funds are paid back
      * @param asset {EthAddress} address for which the funds are paid back
      */
-    constructor(market, amount, from, onBehalf,asset) {
+    constructor(market:EthAddress, amount:uint256, from:EthAddress, onBehalf:EthAddress,asset:EthAddress) {
       requireAddress(from);
       requireAddress(onBehalf);
       requireAddress(asset)
@@ -40,5 +44,3 @@ const {getAssetInfoByAddress} = require("@defisaver/tokens");
       return [];
     }
   }
-
-  module.exports = CompoundV3PaybackAction;
