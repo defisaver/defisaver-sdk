@@ -70,9 +70,14 @@
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
   },
   "include": [
+    "index.ts",
     "./src/*.ts",
     "./src/utils/*.ts",
     "./src/actions/*/*.ts",
     "./src/triggers/*.ts"
-  ]
+  ],
+  "typedocOptions": {
+    "entryPoints": ["./src/actions/aave"],
+    "out": "docs",
+}
 }

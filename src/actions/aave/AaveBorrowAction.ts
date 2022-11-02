@@ -5,10 +5,12 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  * AaveBorrowAction - Borrow tokens from Aave
+ * 
+ * @category Model
  */
 export default class AaveBorrowAction extends Action {
   /**
-   * @param market {EthAddress}
+   * @param market - market Address
    * @param tokenAddr {EthAddress}
    * @param amount {string}
    * @param rateMode {number} Borrow rate mode: Stable: 1, Variable: 2

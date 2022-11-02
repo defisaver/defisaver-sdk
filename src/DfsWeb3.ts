@@ -8,7 +8,7 @@ import Action from "./Action";
 import Recipe from "./Recipe";
 import { CONFIG } from './config';
 
-export class DfsWeb3 {
+export default class DfsWeb3 {
 
   web3: any;
   accountReady: boolean;
