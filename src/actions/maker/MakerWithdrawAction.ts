@@ -1,12 +1,12 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import {uint256, EthAddress} from '../../types';
+import { getAddr } from '../../addresses.js';
 
 /**
  * MakerWithdrawAction - Withdraw token from a Vault
  */
-class MakerWithdrawAction extends Action {
+export default class MakerWithdrawAction extends Action {
   /**
    * @param vaultId {VaultId}
    * @param amount {string}
@@ -14,10 +14,8 @@ class MakerWithdrawAction extends Action {
    * @param to {string}
    * @param mcdManager {EthAddress}
    */
-  constructor(vaultId, amount, joinAddr, to, mcdManager = getAddr('McdCdpManager')) {
+  constructor(vaultId:uint256, amount:uint256, joinAddr:EthAddress, to:EthAddress, mcdManager:EthAddress = getAddr('McdCdpManager')) {
     requireAddress(to);
     super('McdWithdraw', getAddr('McdWithdraw'), ['uint256','uint256','address','address','address'], [vaultId, amount, joinAddr, to, mcdManager]);
   }
 }
-
-module.exports = MakerWithdrawAction;

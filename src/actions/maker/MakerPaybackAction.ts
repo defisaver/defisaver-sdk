@@ -1,19 +1,19 @@
-const Action = require("../../Action");
-const { getAssetInfo } = require("@defisaver/tokens");
-
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { getAssetInfo } from "@defisaver/tokens";
+import {EthAddress,uint256} from '../../types';
+import { getAddr } from '../../addresses.js';
 
 /**
  * MakerPaybackAction - Payback dai to a Vault
  */
-class MakerPaybackAction extends Action {
+export default class MakerPaybackAction extends Action {
   /**
    * @param vaultId {VaultId}
    * @param amount {string}
    * @param from {EthAddress} DAI will be sent from this address
    * @param mcdManager {EthAddress}
    */
-  constructor(vaultId, amount, from, mcdManager = getAddr('McdCdpManager')) {
+  constructor(vaultId:uint256, amount:uint256, from:EthAddress, mcdManager:EthAddress = getAddr('McdCdpManager')) {
     super('McdPayback', getAddr('McdPayback'), ['uint256','uint256','address','address'], [vaultId, amount, from, mcdManager]);
   }
 
@@ -21,5 +21,3 @@ class MakerPaybackAction extends Action {
     return [{asset: getAssetInfo('DAI').address, owner: this.args[2]}];
   }
 }
-
-module.exports = MakerPaybackAction;
