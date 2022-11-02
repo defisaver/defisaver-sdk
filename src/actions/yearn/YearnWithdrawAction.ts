@@ -1,18 +1,21 @@
-const Action = require("../../Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
+import { requireAddress } from "../../utils/general";
 
 /**
  * YearnWithdrawAction - Burns yTokens and receive underlying tokens in return
  */
-class YearnWithdrawAction extends Action {
+export default class YearnWithdrawAction extends Action {
   /**
    * @param tokenAddr {EthAddress} yToken address
    * @param amount {string} amount of yTokens to burn
    * @param from {EthAddress} yTokens will be taken from this address
    * @param to {ETHAddress} underlying tokens will be sent to this address
    */
-  constructor(tokenAddr, amount, from, to) {
+  constructor(tokenAddr:EthAddress, amount:uint256, from:EthAddress, to:EthAddress) {
+    requireAddress(to);
     super('YearnWithdraw', getAddr('YearnWithdraw'), ['address','uint256','address', 'address'], [tokenAddr, amount, from, to]);
     this.mappableArgs = [
       this.args[1],
@@ -27,5 +30,3 @@ class YearnWithdrawAction extends Action {
     return [];
   }
 }
-
-module.exports = YearnWithdrawAction;

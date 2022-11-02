@@ -1,18 +1,21 @@
-const Action = require("../../Action");
-const {getAssetInfoByAddress} = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
+import { requireAddress } from "../../utils/general";
 
 /**
  * YearnSupplyAction - Supply token to a Yearn vault
  */
-class YearnSupplyAction extends Action {
+export default class YearnSupplyAction extends Action {
   /**
    * @param tokenAddr {EthAddress} token address
    * @param amount {string} amount of tokens to supply
    * @param from {EthAddress} Tokens will be supplied from this address
    * @param to {ETHAddress} yTokens will be sent to this address
    */
-  constructor(tokenAddr, amount, from, to) {
+  constructor(tokenAddr:EthAddress, amount:uint256, from:EthAddress, to:EthAddress) {
+    requireAddress(to);
     super('YearnSupply', getAddr('YearnSupply'), ['address','uint256','address', 'address'], [tokenAddr, amount, from, to]);
     this.mappableArgs = [
       this.args[1],
@@ -27,5 +30,3 @@ class YearnSupplyAction extends Action {
     return [];
   }
 }
-
-module.exports = YearnSupplyAction;
