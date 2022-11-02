@@ -1,21 +1,9 @@
-import MakerOpenVaultAction from './MakerOpenVaultAction';
-import MakerGenerateAction from './MakerGenerateAction';
-import MakerSupplyAction from './MakerSupplyAction';
-import MakerPaybackAction from './MakerPaybackAction';
-import MakerWithdrawAction from './MakerWithdrawAction';
-import MakerGiveAction from './MakerGiveAction';
-import MakerMergeAction from './MakerMergeAction';
-import MakerRatioAction from './MakerRatioAction';
-import MakerClaimAction from './MakerClaimAction';
-
-export default {
-  MakerOpenVaultAction,
-  MakerGenerateAction,
-  MakerSupplyAction,
-  MakerPaybackAction,
-  MakerWithdrawAction,
-  MakerGiveAction,
-  MakerMergeAction,
-  MakerRatioAction,
-  MakerClaimAction,
-};
+export * from './MakerOpenVaultAction';
+export * from './MakerGenerateAction';
+export * from './MakerSupplyAction';
+export * from './MakerPaybackAction';
+export * from './MakerWithdrawAction';
+export * from './MakerGiveAction';
+export * from './MakerMergeAction';
+export * from './MakerRatioAction';
+export * from './MakerClaimAction';

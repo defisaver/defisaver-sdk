@@ -6,8 +6,9 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  * BalancerV2WithdrawAction - Withdraw tokens from Balancer pool
+ * @category BalancerV2
  */
-export default class BalancerV2WithdrawAction extends Action {
+export class BalancerV2WithdrawAction extends Action {
   from:EthAddress;
 
   /**

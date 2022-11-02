@@ -4,8 +4,10 @@ import {EthAddress,uint256,bytes} from '../../types';
 
 /**
  * Gets a flashloan from DyDx
+ * 
+ * @category Flashloans
  */
-export default class DyDxFlashLoanAction extends Action {
+export class DyDxFlashLoanAction extends Action {
   /**
    * @param loanAmount {string}
    * @param tokenAddr {EthAddress}

@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * Transfers specified token from a specified address to DSProxy (recipe)
+ * 
+ * @category BasicActions
  */
-export default class PullTokenAction extends Action {
+export class PullTokenAction extends Action {
   /**
    * @param token {string} Token address
    * @param from {string} Transfer sender

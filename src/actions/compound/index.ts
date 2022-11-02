@@ -1,17 +1,7 @@
-import CompoundBorrowAction from './CompoundBorrowAction';
-import CompoundSupplyAction from './CompoundSupplyAction';
-import CompoundPaybackAction from './CompoundPaybackAction';
-import CompoundWithdrawAction from './CompoundWithdrawAction';
-import CompoundClaimAction from './CompoundClaimAction';
-import CompoundCollateralSwitchAction from './CompoundCollateralSwitchAction';
-import CompoundGetDebtAction from './CompoundGetDebtAction';
-
-export default  {
-  CompoundBorrowAction,
-  CompoundSupplyAction,
-  CompoundPaybackAction,
-  CompoundWithdrawAction,
-  CompoundClaimAction,
-  CompoundCollateralSwitchAction,
-  CompoundGetDebtAction,
-};
+export * from './CompoundBorrowAction';
+export * from './CompoundSupplyAction';
+export * from './CompoundPaybackAction';
+export * from './CompoundWithdrawAction';
+export * from './CompoundClaimAction';
+export * from './CompoundCollateralSwitchAction';
+export * from './CompoundGetDebtAction';

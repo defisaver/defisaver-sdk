@@ -3,7 +3,11 @@ import { getAddr } from "../../addresses.js";
 import {EthAddress,uint256} from '../../types';
 import { requireAddress } from "../../utils/general";
 
-export default class InstPullTokensAction extends Action {
+
+/**
+ * @category Insta
+ */
+export class InstPullTokensAction extends Action {
   constructor(dsaAddress:EthAddress, tokens:Array<EthAddress>, amounts:Array<uint256>, to:EthAddress) {
     requireAddress(to);
     super(

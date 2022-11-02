@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityOpenAction - Opens up a trove
+ * 
+ * @category Liquity
  */
-export default class LiquityOpenAction extends Action {
+export class LiquityOpenAction extends Action {
     /**
    * @param maxFeePercentage Highest borrowing fee to accept
    * @param collAmount Amount of WETH tokens to deposit as collateral

@@ -5,7 +5,10 @@ import { getAddr } from '../../addresses';
 import { poolInfo, makeFlags } from '../../utils/curve-utils';
 import {EthAddress,uint256} from '../../types';
 
-export default class CurveDepositAction extends Action {
+/**
+ * @category Curve
+ */
+export class CurveDepositAction extends Action {
 
     tokensForApproval:Array<EthAddress>;
 

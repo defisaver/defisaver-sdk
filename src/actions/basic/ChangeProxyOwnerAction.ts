@@ -4,8 +4,10 @@ import {EthAddress} from '../../types';
 
 /**
  * ChangeProxyOwnerAction - Changes EOA which owns the proxy that is being called
+ * 
+ * @category BasicActions
  */
-export default class ChangeProxyOwnerAction extends Action {
+export class ChangeProxyOwnerAction extends Action {
   /**
    * @param newOwner {Address} Address of new owner
    */

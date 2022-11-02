@@ -6,8 +6,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * Supplies a pair tokens to uniswap pool
+ * 
+ * @category Uniswap
  */
-export default class UniswapSupplyAction extends Action {
+export class UniswapSupplyAction extends Action {
   /**
    * @param {EthAddress} tokenA
    * @param {EthAddress} tokenB

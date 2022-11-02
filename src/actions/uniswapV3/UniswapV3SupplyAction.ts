@@ -5,8 +5,10 @@ const { getAddr } = require('../../addresses.js');
 
 /**
  * Supplies a pair of tokens to an existing Uniswap v3 position identified by tokenId
+ * 
+ * @category UniswapV3
  */
-export default class UniswapV3SupplyAction extends ActionWithL2 {
+export class UniswapV3SupplyAction extends ActionWithL2 {
   /**
    * @param {string} tokenId
    * @param {string} amount0Desired

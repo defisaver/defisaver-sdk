@@ -5,8 +5,10 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  * AaveV3SupplyAction - Supply token to an aave position on Aave V3
+ * 
+ * @category AaveV3
  */
-export default class AaveV3SupplyAction extends ActionWithL2 {
+export class AaveV3SupplyAction extends ActionWithL2 {
 
   tokenForApproval: EthAddress;
 

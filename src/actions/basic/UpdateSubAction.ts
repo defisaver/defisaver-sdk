@@ -4,8 +4,10 @@ import {EthAddress,uint256,bytes,bytes32,uint64} from '../../types';
 
 /**
  * Action for updating sub data
+ * 
+ * @category BasicActions
  */
-export default class UpdateSubAction extends Action {
+export class UpdateSubAction extends Action {
   /**
    * @param subId id of the subscription in the SubStorage contract
    * @param sub object that contains new sub information

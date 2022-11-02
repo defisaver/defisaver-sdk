@@ -1,11 +1,13 @@
-import SendTokenAction from "../basic/SendTokenAction";
+import {SendTokenAction} from "../basic/SendTokenAction";
 import { getAddr } from '../../addresses.js';
 import {EthAddress,uint256} from '../../types';
 
 /**
  * Pays back a flashloan from Maker
+ * 
+ * @category Flashloans
  */
-export default class MakerFlashLoanPaybackAction extends SendTokenAction {
+export class MakerFlashLoanPaybackAction extends SendTokenAction {
   /**
    * @param loanAmount {string}
    */

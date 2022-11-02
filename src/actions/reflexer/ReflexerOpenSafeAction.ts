@@ -4,8 +4,10 @@ import {EthAddress} from '../../types';
 
 /**
  * ReflexerOpenSafeAction
+ * 
+ * @category Reflexer
  */
-export default class ReflexerOpenSafeAction extends Action {
+export class ReflexerOpenSafeAction extends Action {
   /**
    * @param adapterAddr {EthAddress}
    */

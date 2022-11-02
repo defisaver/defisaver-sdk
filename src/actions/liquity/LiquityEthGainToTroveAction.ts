@@ -4,8 +4,10 @@ import { getAddr } from '../../addresses';
 import {EthAddress} from '../../types';
 /**
  * LiquityEthGainToTroveAction - Withdraws earned ETH gains to the users Trove
+ * 
+ * @category Liquity
  */
-export default class LiquityEthGainToTroveAction extends Action {
+export class LiquityEthGainToTroveAction extends Action {
     /**
      * @param lqtyTo Address that will receive LQTY gains
      */

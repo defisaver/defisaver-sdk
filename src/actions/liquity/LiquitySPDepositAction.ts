@@ -5,8 +5,10 @@ import { getAddr } from '../../addresses';
 import {EthAddress,uint256} from '../../types';
 /**
  * LiquitySPDepositAction - Deposits LUSD to the stability pool
+ * 
+ * @category Liquity
  */
-export default class LiquitySPDepositAction extends Action {
+export class LiquitySPDepositAction extends Action {
     /**
      * @param lusdAmount Amount of LUSD tokens to deposit
      * @param from Address where the tokens are being pulled from

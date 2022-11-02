@@ -1,11 +1,13 @@
-import SendTokenAction from "../basic/SendTokenAction";
+import {SendTokenAction} from "../basic/SendTokenAction";
 import { getAddr } from '../../addresses.js';
 import {EthAddress,uint256} from '../../types';
 
 /**
  * Pays back a flashloan from DyDx
+ * 
+ * @category Flashloans
  */
-export default class DyDxFlashLoanPaybackAction extends SendTokenAction {
+export class DyDxFlashLoanPaybackAction extends SendTokenAction {
   /**
    * @param loanAmount {string}
    * @param tokenAddr {EthAddress}

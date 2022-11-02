@@ -8,8 +8,10 @@ import {EthAddress} from '../../types';
 
 /**
  * Sells token on DeFi Saver exchange aggregator
+ * 
+ * @category BasicActions
  */
-export default class SellAction extends ActionWithL2 {
+export class SellAction extends ActionWithL2 {
 
   protocolFee:string;
 

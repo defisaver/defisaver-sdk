@@ -7,8 +7,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * Creates a new Uniswap v3 LP supply position
+ * 
+ * @category UniswapV3
  */
-export default class UniswapV3MintAction extends ActionWithL2 {
+export class UniswapV3MintAction extends ActionWithL2 {
   /**
    * @param {EthAddress} token0
    * @param {EthAddress} token1

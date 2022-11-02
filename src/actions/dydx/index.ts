@@ -1,5 +1,1 @@
-import DyDxWithdrawAction from './DyDxWithdrawAction';
-
-export default {
-  DyDxWithdrawAction,
-};
+export * from './DyDxWithdrawAction';

@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3TransferAction - Transfer specified amount of assets from src address to dst
+ * 
+ * @category CompundV3
  */
- export default class CompoundV3TransferAction extends Action {
+ export class CompoundV3TransferAction extends Action {
     /**
      * @param market {EthAddress} Comet proxy address of the market
      * @param from {EthAddress} address of src

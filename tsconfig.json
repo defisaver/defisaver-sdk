@@ -77,7 +77,7 @@
     "./src/triggers/*.ts"
   ],
   "typedocOptions": {
-    "entryPoints": ["./src/actions/aave"],
+    "entryPoints": ["index.ts"],
     "out": "docs",
 }
 }

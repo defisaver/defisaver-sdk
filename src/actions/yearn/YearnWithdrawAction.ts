@@ -6,8 +6,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * YearnWithdrawAction - Burns yTokens and receive underlying tokens in return
+ * 
+ * @category Yearn
  */
-export default class YearnWithdrawAction extends Action {
+export class YearnWithdrawAction extends Action {
   /**
    * @param tokenAddr {EthAddress} yToken address
    * @param amount {string} amount of yTokens to burn

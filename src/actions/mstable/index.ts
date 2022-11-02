@@ -1,9 +1,3 @@
-import MStableDepositAction from './MStableDepositAction';
-import MStableWithdrawAction from './MStableWithdrawAction';
-import MStableClaimAction from './MStableClaimAction';
-
-export default {
-    MStableDepositAction,
-    MStableWithdrawAction,
-    MStableClaimAction,
-}
+export * from './MStableDepositAction';
+export * from './MStableWithdrawAction';
+export * from './MStableClaimAction';

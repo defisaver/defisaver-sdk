@@ -4,8 +4,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * Collects fees earned by user on position identified by tokenId
+ * 
+ * @category UniswapV3
  */
-export default class UniswapV3CollectAction extends ActionWithL2 {
+export class UniswapV3CollectAction extends ActionWithL2 {
 
   from: EthAddress;
 

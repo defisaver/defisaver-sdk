@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * RariWithdrawAction - Send pool tokens to fund manager which burns them, receive underlying stablecoin back
+ * 
+ * @category Rari
  */
-export default class RariWithdrawAction extends Action {
+export class RariWithdrawAction extends Action {
   /**
    * @param fundManager {EthAddress} fundManager for the pool which we want to withdraw from
    * @param poolTokenAddress {EthAddress} poolToken address

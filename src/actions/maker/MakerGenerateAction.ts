@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * MakerGenerateAction - Generated Dai from a Vault
+ * 
+ * @category Maker
  */
-export default class MakerGenerateAction extends Action {
+export class MakerGenerateAction extends Action {
   /**
    * @param vaultId {VaultId}
    * @param amount {string} Amount of DAI to generate in wei

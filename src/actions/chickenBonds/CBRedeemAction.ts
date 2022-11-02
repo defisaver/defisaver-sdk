@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CBRedeemAction - Redeems bLUSD for Lusd (might also get yTokens)
+ * 
+ * @category ChickenBonds
  */
-export default class CBRedeemAction extends Action {
+export class CBRedeemAction extends Action {
   /**
    * @param bLUSDAmount {string} Amount of bLUSD
    * @param minLUSDFromSP {string} Min amount of lusd to receive

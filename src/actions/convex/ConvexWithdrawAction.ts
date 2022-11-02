@@ -5,8 +5,10 @@ import { requireAddress } from '../../utils/general';
 import {EthAddress,uint256,uint8} from '../../types';
 /**
  * ConvexWithdrawAction - Withdraws (unwraps) Curve LP from convex, unstakes wrapped LP, or does both
+ * 
+ * @category Convex
  */
-export default class ConvexWithdrawAction extends Action {
+export class ConvexWithdrawAction extends Action {
 
     curveLp:EthAddress;
 

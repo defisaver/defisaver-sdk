@@ -5,8 +5,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * Action that adds liquidity to G-UNI pool of interest (mints G-UNI LP tokens)
+ * 
+ * @category GUni
 */
-export default class GUniDeposit extends Action {
+export class GUniDeposit extends Action {
     /// @param pool address of G-UNI pool to add liquidity to
     /// @param token0 address of token0
     /// @param token1 address of token1

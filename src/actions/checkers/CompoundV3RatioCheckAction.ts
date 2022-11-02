@@ -4,8 +4,10 @@ import {uint8,uint256,EthAddress} from '../../types';
 
 /**
  * CompoundV3RatioCheckAction - Checks comp V3 ratio for user position and reverts if faulty
+ * 
+ * @category Checkers
  */
-export default class CompoundV3RatioCheckAction extends Action {
+export class CompoundV3RatioCheckAction extends Action {
   /**
    * @param ratioState {uint8} If it should lower/higher
    * @param targetRatio {string} The ratio user want to be at

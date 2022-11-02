@@ -4,8 +4,10 @@ import {uint256} from '../../types';
 
 /**
  * Subs 2 inputs/return values
+ * 
+ * @category BasicActions
  */
-export default class SubInputsAction extends Action {
+export class SubInputsAction extends Action {
   constructor(a:uint256, b:uint256) {
     super(
       'SubInputs',

@@ -4,8 +4,10 @@ import {uint8,uint256} from '../../types';
 
 /**
  * MakerRatioCheckAction - Checks mcd ratio at end of all actions
+ * 
+ * @category Checkers
  */
-export default class MakerRatioCheckAction extends Action {
+export class MakerRatioCheckAction extends Action {
   /**
    * @param ratioState {uint8} If it should lower/higher
    * @param checkTarget {}

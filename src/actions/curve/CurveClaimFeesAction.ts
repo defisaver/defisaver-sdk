@@ -4,7 +4,10 @@ import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
 import {EthAddress} from '../../types';
 
-export default class CurveClaimFeesAction extends Action {
+/**
+ * @category Curve
+ */
+export class CurveClaimFeesAction extends Action {
 
     /**
      *

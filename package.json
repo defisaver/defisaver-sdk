@@ -9,7 +9,8 @@
     "documentDev": "jsdoc2md -p list --files {src/**.js,src/utils/**.js} > DEV.md",
     "documentActions": "jsdoc2md -p list --files src/actions/**/**.js > ACTIONS.md",
     "build:esm": "rm -rf esm && tsc -b",
-    "build": "npm run build:esm"
+    "build": "npm run build:esm",
+    "documentTS":"npx typedoc"
   },
   "author": "DeFi Saver",
   "repository": "https://github.com/DecenterApps/defisaver-sdk",

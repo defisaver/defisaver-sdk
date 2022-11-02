@@ -4,8 +4,10 @@ import { getAddr } from '../../addresses.js';
 
 /**
  * MakerMergeAction - merged two vaults of the same type
+ * 
+ * @category Maker
  */
-export default class MakerMergeAction extends Action {
+export class MakerMergeAction extends Action {
   /**
    * @param srcVaultId {VaultId}
    * @param destVaultId {VaultId}

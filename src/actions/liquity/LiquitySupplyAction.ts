@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquitySupplyAction - Supplies collateral to the trove
+ * 
+ * @category Liquity
  */
-export default class LiquitySupplyAction extends Action {
+export class LiquitySupplyAction extends Action {
     /**
    * @param collAmount Amount of WETH tokens to supply
    * @param from Address where the tokens are pulled from

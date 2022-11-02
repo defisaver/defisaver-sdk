@@ -5,8 +5,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * ReflexerNativeUniV2SaviourGetReservesAction - Get back system coins or collateral tokens that were withdrawn from Uniswap and not used to save a specific SAFE
+ * 
+ * @category Reflexer
  */
-export default class ReflexerNativeUniV2SaviourGetReservesAction extends Action {
+export class ReflexerNativeUniV2SaviourGetReservesAction extends Action {
   /**
    * @param to {EthAddress}
    * @param safeId {SafeId}

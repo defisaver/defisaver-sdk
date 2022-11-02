@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundSupplyAction - Supply token to an Compound position
+ * 
+ * @category CompundV2
  */
-export default class CompoundSupplyAction extends Action {
+export class CompoundSupplyAction extends Action {
   /**
    * @param cTokenAddr {EthAddress}
    * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8

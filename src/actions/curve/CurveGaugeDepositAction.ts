@@ -3,7 +3,10 @@ import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
 import {EthAddress,uint256} from '../../types';
 
-export default class CurveGaugeDepositAction extends Action {
+/**
+ * @category Curve
+ */
+export class CurveGaugeDepositAction extends Action {
 
     /**
      *

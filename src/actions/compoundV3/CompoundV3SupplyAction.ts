@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3SupplyAction - Supply specified amount of token (base or collateral)
+ * 
+ * @category CompundV3
  */
- export default class CompoundV3SupplyAction extends Action {
+ export class CompoundV3SupplyAction extends Action {
 
     tokenForApproval:EthAddress;
 

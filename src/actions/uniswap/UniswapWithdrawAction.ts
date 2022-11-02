@@ -6,8 +6,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * Withdraws liquidity from uniswap pool
+ * 
+ * @category Uniswap
  */
-export default class UniswapWithdrawAction extends Action {
+export class UniswapWithdrawAction extends Action {
   /**
    * @param {EthAddress} tokenA
    * @param {EthAddress} tokenB

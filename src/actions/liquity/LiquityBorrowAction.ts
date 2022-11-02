@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityBorrowAction - Borrows LUSD from the trove
+ * 
+ * @category Liquity
  */
-export default class LiquityBorrowAction extends Action {
+export class LiquityBorrowAction extends Action {
     /**
    * @param maxFeePercentage Highest borrowing fee to accept
    * @param lusdAmount Amount of LUSD tokens to borrow

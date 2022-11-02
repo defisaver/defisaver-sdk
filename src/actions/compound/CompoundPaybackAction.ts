@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundPaybackAction - Payback borrowed tokens from Compound
+ * 
+ * @category CompundV2
  */
-export default class CompoundPaybackAction extends Action {
+export class CompoundPaybackAction extends Action {
   /**
    * @param cTokenAddr {EthAddress}
    * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8

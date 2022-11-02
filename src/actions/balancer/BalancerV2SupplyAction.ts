@@ -3,10 +3,11 @@ import { requireAddress } from "../../utils/general";
 import { getAddr } from '../../addresses.js';
 import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
-/*
+/** 
  * BalancerV2SupplyAction - Supply tokens to Balancer pool
+ * @category BalancerV2
  */
-export default class BalancerV2SupplyAction extends Action {
+export class BalancerV2SupplyAction extends Action {
   /**
    * @param {bytes32} poolId
    * @param {EthAddress} from

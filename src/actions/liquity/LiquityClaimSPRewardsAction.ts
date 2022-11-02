@@ -1,11 +1,13 @@
-import LiquitySPWithdrawAction from './LiquitySPWithdrawAction';
+import {LiquitySPWithdrawAction} from './LiquitySPWithdrawAction';
 import { requireAddress } from '../../utils/general';
 import {EthAddress} from '../../types';
 
 /**
  * LiquityClaimSPRewardsAction - Claims rewards from LUSD Stability Pool
+ * 
+ * @category Liquity
  */
-export default class LiquityClaimSPRewardsAction extends LiquitySPWithdrawAction {
+export class LiquityClaimSPRewardsAction extends LiquitySPWithdrawAction {
     /**
      * @param wethTo Address that will receive ETH gains
      * @param lqtyTo Address that will receive LQTY gains

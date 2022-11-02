@@ -6,8 +6,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * LidoWrapAction - Turns WETH or StEth into WStEth
+ * 
+ * @category Lido
  */
-export default class LidoWrapAction extends Action {
+export class LidoWrapAction extends Action {
   /**
    * @param amount {string} amount to pull and stake
    * @param from {EthAddress} tokens will be taken from this address

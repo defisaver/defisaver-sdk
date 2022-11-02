@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityWithdrawAction - Withdraws collateral from the trove
+ * 
+ * @category Liquity
  */
-export default class LiquityWithdrawAction extends Action {
+export class LiquityWithdrawAction extends Action {
     /**
    * @param collAmount Amount of WETH tokens to withdraw
    * @param to Address that will receive the withdrawn tokens

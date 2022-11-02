@@ -5,8 +5,10 @@ import {EthAddress,uint8,uint16,uint256} from '../../types';
 
 /**
  * AaveV3ATokenPaybackAction - Repay Aave V3 debt using aTokens
+ * 
+ * @category AaveV3
  */
-export default class AaveV3ATokenPaybackAction extends ActionWithL2 {
+export class AaveV3ATokenPaybackAction extends ActionWithL2 {
   /**
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market

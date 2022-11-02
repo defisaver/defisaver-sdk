@@ -5,8 +5,10 @@ import {EthAddress} from '../../types';
 
 /**
  * LiquityClaimAction - Claims collateral from the closed trove
+ * 
+ * @category Liquity
  */
-export default class LiquityClaimAction extends Action {
+export class LiquityClaimAction extends Action {
     /**
    * @param to Address that will receive the collateral
    */

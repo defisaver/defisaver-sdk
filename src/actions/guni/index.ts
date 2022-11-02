@@ -1,6 +1,2 @@
-import GUniDeposit from './GUniDeposit';
-import GUniWithdraw from './GUniWithdraw.js';
-export default {
-    GUniDeposit,
-    GUniWithdraw,
-}
+export * from './GUniDeposit';
+export * from './GUniWithdraw.js';

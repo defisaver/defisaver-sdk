@@ -5,8 +5,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * Burns liquidity, and returns underlying tokens to recipient
+ * 
+ * @category UniswapV3
  */
-export default class UniswapV3WithdrawAction extends ActionWithL2 {
+export class UniswapV3WithdrawAction extends ActionWithL2 {
 
   from: EthAddress;
 

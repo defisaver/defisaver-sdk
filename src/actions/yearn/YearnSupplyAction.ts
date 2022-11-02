@@ -6,8 +6,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * YearnSupplyAction - Supply token to a Yearn vault
+ * 
+ * @category Yearn
  */
-export default class YearnSupplyAction extends Action {
+export class YearnSupplyAction extends Action {
   /**
    * @param tokenAddr {EthAddress} token address
    * @param amount {string} amount of tokens to supply

@@ -4,8 +4,10 @@ import {uint256} from '../../types';
 
 /**
  * Wraps a specified amount of ETH from the wallet to WETH on the recipe
+ * 
+ * @category BasicActions
  */
-export default class WrapEthAction extends ActionWithL2 {
+export class WrapEthAction extends ActionWithL2 {
   /**
    * @param amount {string} Transfer amount
    */

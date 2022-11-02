@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * Unwraps a specified amount of WETH from the proxy
+ * 
+ * @category BasicActions
  */
-export default class UnwrapEthAction extends ActionWithL2 {
+export  class UnwrapEthAction extends ActionWithL2 {
   /**
    * @param amount {string} Token address
    * @param to {string} Transfer recipient

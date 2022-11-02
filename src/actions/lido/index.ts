@@ -1,8 +1,3 @@
-import LidoStakeAction from './LidoStakeAction';
-import LidoWrapAction from './LidoWrapAction';
-import LidoUnwrapAction from './LidoUnwrapAction';
-export default {
-    LidoStakeAction,
-    LidoWrapAction,
-    LidoUnwrapAction,
-}
+export * from './LidoStakeAction';
+export * from './LidoWrapAction';
+export * from './LidoUnwrapAction';

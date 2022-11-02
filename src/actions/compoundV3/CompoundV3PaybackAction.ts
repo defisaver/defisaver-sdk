@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3PaybackAction - Repays specified amount of base token
+ * 
+ * @category CompundV3
  */
- export default class CompoundV3PaybackAction extends Action {
+ export class CompoundV3PaybackAction extends Action {
 
     tokenForApproval:EthAddress;
 

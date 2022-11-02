@@ -5,8 +5,10 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  * AaveV3PaybackAction - Payback debt on Aave using underlying token
+ * 
+ * @category AaveV3
  */
-export default class AaveV3PaybackAction extends ActionWithL2 {
+export class AaveV3PaybackAction extends ActionWithL2 {
 
 
   tokenForApproval:EthAddress;

@@ -5,8 +5,10 @@ import { getAddr } from '../../addresses.js';
 
 /**
  * MakerWithdrawAction - Withdraw token from a Vault
+ * 
+ * @category Maker
  */
-export default class MakerWithdrawAction extends Action {
+export class MakerWithdrawAction extends Action {
   /**
    * @param vaultId {VaultId}
    * @param amount {string}

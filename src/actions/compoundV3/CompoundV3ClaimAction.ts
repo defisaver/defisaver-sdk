@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3ClaimAction - Claims Comp tokens to, and for, a specified address
+ * 
+ * @category CompundV3
  */
-export default class CompoundV3ClaimAction extends Action {
+export class CompoundV3ClaimAction extends Action {
   /**
    * @param market {EthAddress} Comet proxy address of the market
    * @param onBehalfOf {EthAddress} The owner to claim for

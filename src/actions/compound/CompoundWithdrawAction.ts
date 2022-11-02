@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundWithdrawAction - Withdraw token from an Compound position
+ * 
+ * @category CompundV2
  */
-export default class CompoundWithdrawAction extends Action {
+export class CompoundWithdrawAction extends Action {
   /**
    * @param cTokenAddr {EthAddress}
    * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8

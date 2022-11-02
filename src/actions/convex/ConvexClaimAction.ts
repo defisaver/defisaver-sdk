@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * ConvexClaimAction - Claims convex rewards
+ * 
+ * @category Convex
  */
-export default class ConvexClaimAction extends Action {
+export class ConvexClaimAction extends Action {
 
     curveLp:EthAddress;
 

@@ -1,7 +1,2 @@
-import UniswapSupplyAction from './UniswapSupplyAction';
-import UniswapWithdrawAction from './UniswapWithdrawAction';
-
-export default {
-  UniswapSupplyAction,
-  UniswapWithdrawAction,
-};
+export * from './UniswapSupplyAction';
+export * from './UniswapWithdrawAction';

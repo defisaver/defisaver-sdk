@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * MStableClaimAction
+ * 
+ * @category MStable
  */
-export default class MStableClaimAction extends Action {
+export class MStableClaimAction extends Action {
     /**
      * @param vaultAddress
      * @param to

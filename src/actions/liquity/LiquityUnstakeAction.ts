@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityUnstakeAction - Unstakes LQTY tokens
+ * 
+ * @category Liquity
  */
-export default class LiquityUnstakeAction extends Action {
+export class LiquityUnstakeAction extends Action {
     /**
      * @param lqtyAmount Amount of LQTY tokens that will be unstaked
      * @param to Address that will receive the tokens

@@ -5,8 +5,10 @@ import { getAddr } from '../../addresses.js';
 
 /**
  * ReflexerPaybackAction - Payback RAI to a Safe
+ * 
+ * @category Reflexer
  */
-export default class ReflexerPaybackAction extends Action {
+export class ReflexerPaybackAction extends Action {
   /**
    * @param safeId {SafeId}
    * @param amount {string} Amount of RAI to be payed back in wei

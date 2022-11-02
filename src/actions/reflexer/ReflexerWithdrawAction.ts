@@ -5,8 +5,10 @@ import { getAddr } from '../../addresses.js';
 
 /**
  * ReflexerWithdrawAction - Withdraw token from a Safe
+ * 
+ * @category Reflexer
  */
-export default class ReflexerWithdrawAction extends Action {
+export class ReflexerWithdrawAction extends Action {
   /**
    * @param vaultId {SafeId}
    * @param amount {string}

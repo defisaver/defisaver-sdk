@@ -4,8 +4,10 @@ import {EthAddress} from '../../types';
 
 /**
  * MakerOpenVaultAction
+ * 
+ * @category Maker
  */
-export default class MakerOpenVaultAction extends Action {
+export class MakerOpenVaultAction extends Action {
   /**
    * @param joinAddr {EthAddress}
    * @param mcdManager {EthAddress}

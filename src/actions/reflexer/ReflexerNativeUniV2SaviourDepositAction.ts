@@ -4,8 +4,10 @@ import { getAddr } from '../../addresses.js';
 
 /**
  * ReflexerNativeUniV2SaviourDepositAction - Deposit lpToken in the contract in order to provide cover for a specific SAFE managed by the SAFE Manager
+ * 
+ * @category Reflexer
  */
-export default class ReflexerNativeUniV2SaviourDepositAction extends Action {
+export class ReflexerNativeUniV2SaviourDepositAction extends Action {
   /**
    * @param from {EthAddress}
    * @param safeId {SafeId}

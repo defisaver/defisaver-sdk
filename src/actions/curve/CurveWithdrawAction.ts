@@ -5,7 +5,11 @@ import { getAddr } from '../../addresses';
 import { poolInfo, makeFlags } from '../../utils/curve-utils';
 import {EthAddress,uint256} from '../../types';
 
-export default class CurveWithdrawAction extends Action {
+
+/**
+ * @category Curve
+ */
+export class CurveWithdrawAction extends Action {
 
     lpToken:EthAddress;
 

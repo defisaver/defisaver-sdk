@@ -4,8 +4,10 @@ import {uint8,uint256} from '../../types';
 
 /**
  * AaveV3RatioCheckAction - Checks aave V3 ratio for users proxy position and reverts if faulty
+ * 
+ * @category Checkers
  */
-export default class AaveV3RatioCheckAction extends Action {
+export class AaveV3RatioCheckAction extends Action {
   /**
    * @param ratioState {uint8} If it should lower/higher
    * @param targetRatio {string} The ratio user want to be at

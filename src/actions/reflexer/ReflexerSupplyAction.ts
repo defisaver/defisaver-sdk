@@ -5,8 +5,10 @@ import { getAddr } from '../../addresses.js';
 
 /**
  * ReflexerSupplyAction - Supply token to a Safe
+ * 
+ * @category Reflexer
  */
-export default class ReflexerSupplyAction extends Action {
+export class ReflexerSupplyAction extends Action {
   /**
    * @param safeId {SafeId}
    * @param amount {string}

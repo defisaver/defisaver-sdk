@@ -5,8 +5,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * LidoUnwrapAction - Unwraps WStEth into StEth
+ * 
+ * @category Lido
  */
-export default class LidoUnwrapAction extends Action {
+export class LidoUnwrapAction extends Action {
   /**
    * @param amount {string} amount of WStEth to pull and Unwrap
    * @param from {EthAddress} WstEth will be taken from this address

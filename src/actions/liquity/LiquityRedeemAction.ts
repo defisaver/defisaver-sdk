@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityRedeemAction - Redeems collateral from the liquity protocol
+ * 
+ * @category Liquity
  */
-export default class LiquityRedeemAction extends Action {
+export class LiquityRedeemAction extends Action {
     /**
      * @param lusdAmount Amount of LUSD tokens to send
      * @param from Address where the tokens are pulled from

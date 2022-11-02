@@ -5,8 +5,10 @@ import {EthAddress} from '../../types';
 
 /**
  * CompoundClaimAction - Claims Comp tokens for the specified address
+ * 
+ * @category CompundV2
  */
-export default class CompoundClaimAction extends Action {
+export class CompoundClaimAction extends Action {
   /**
    * @param cSupplyAddresses {EthAddress[]}
    * @param cBorrowAddresses {EthAddress[]}

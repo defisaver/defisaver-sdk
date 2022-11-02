@@ -5,8 +5,10 @@ import { requireAddress } from '../../utils/general';
 import {EthAddress,uint256,uint8} from '../../types';
 /**
  * ConvexDepositAction - Deposits (wraps) Curve LP into convex, stakes wrapped LP, or does both
+ * 
+ * @category Convex
  */
-export default class ConvexDepositAction extends Action {
+export class ConvexDepositAction extends Action {
 
     curveLp:EthAddress;
 

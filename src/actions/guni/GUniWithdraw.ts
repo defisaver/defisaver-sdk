@@ -5,8 +5,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * Action that removes liquidity from a G-UNI pool and burns G-UNI LP tokens
+ * 
+ * @category GUni
 */
-export default class GUniWithdraw extends Action {
+export class GUniWithdraw extends Action {
     /// @param pool address of G-UNI pool to remove liquidity from
     /// @param burnAmount The number of G-UNI tokens to burn
     /// @param amount0Min Minimum amount of token0 received after burn (slippage protection)

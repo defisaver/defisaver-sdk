@@ -4,8 +4,10 @@ import {EthAddress,uint256,bytes} from '../../types';
 
 /**
  * Gets a flashloan from Balancer
+ * 
+ * @category Flashloans
  */
-export default class BalancerFlashLoanAction extends Action {
+export class BalancerFlashLoanAction extends Action {
   /**
    * @param tokens {EthAddress[]}
    * @param amounts {string[]}

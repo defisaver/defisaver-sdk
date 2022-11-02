@@ -3,7 +3,10 @@ import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
 import {EthAddress} from '../../types';
 
-export default class CurveMintCrvAction extends Action {
+/**
+ * @category Curve
+ */
+export class CurveMintCrvAction extends Action {
 
     /**
      * @param {Array<EthAddress>} gaugeAddrs

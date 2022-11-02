@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * RariDepositAction - action that deposits one stablecoin (DAI, USDC, USDT, TUSD, BUSD, and sUSD) and receives RSPT back
+ * 
+ * @category Rari
  */
-export default class RariDepositAction extends Action {
+export class RariDepositAction extends Action {
   /**
    * @param fundManager {EthAddress} fundManager for the pool which we want to deposit into
    * @param stablecoinAddress {EthAddress} stablecoin token address

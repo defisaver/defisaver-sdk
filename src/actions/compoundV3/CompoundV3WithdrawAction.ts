@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3WithdrawAction - Withdraw token from an Compound position
+ * 
+ * @category CompundV3
  */
-export default class CompoundV3WithdrawAction extends Action {
+export class CompoundV3WithdrawAction extends Action {
   /**
    * @param market {EthAddress} Comet proxy address of the market
    * @param to {EthAddress} Address where we are sending the tokens

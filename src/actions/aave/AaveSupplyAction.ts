@@ -5,15 +5,17 @@ import { getAssetInfoByAddress } from "@defisaver/tokens";
 
 /**
  * AaveSupplyAction - Supply token to an aave position
+ * 
+ * @category Aave
  */
-export default class AaveSupplyAction extends Action {
+export class AaveSupplyAction extends Action {
   /**
-   * @param market {EthAddress}
-   * @param tokenAddr {EthAddress}
-   * @param amount {string}
-   * @param from {EthAddress} Tokens will be supplied from this address
-   * @param onBehalf {EthAddress} Tokens will be supplied to this address' position (defaults to sender's proxy)
-   * @param enableAsColl {boolean} If we need to enable asset as collateral
+   * @param market - Address of market
+   * @param tokenAddr - Address of Token
+   * @param amount - Token amount 
+   * @param from - Tokens will be sent from this address
+   * @param onBehalf - Tokens will be supplied to this address' position (defaults to sender's proxy)
+   * @param enableAsColl - If we need to enable asset as collateral
    */
   constructor(market: EthAddress, tokenAddr:EthAddress, amount:uint256, from:EthAddress, onBehalf:EthAddress = getAddr('Empty'), enableAsColl:boolean) {
     super('AaveSupply', getAddr('AaveSupply'), ['address','address','uint256','address','address','bool'], [market, tokenAddr, amount, from, onBehalf, enableAsColl]);

@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundV3BorrowAction - Borrow base tokens from CompoundV3
+ * 
+ * @category CompundV3
  */
- export default class CompoundV3BorrowAction extends Action {
+ export class CompoundV3BorrowAction extends Action {
     /**
      * @param market {EthAddress} Comet proxy address of the market
      * @param amount {string} Wei amount in underlying asset decimals

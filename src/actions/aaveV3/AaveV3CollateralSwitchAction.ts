@@ -4,8 +4,10 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  *  AaveV3CollateralSwitchAction - Aave enable/disable token usage as collateral for AaveV3 position
+ * 
+ * @category AaveV3
  */
-export default class AaveV3CollateralSwitchAction extends ActionWithL2 {
+export class AaveV3CollateralSwitchAction extends ActionWithL2 {
   /**
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market

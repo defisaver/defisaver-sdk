@@ -5,8 +5,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * AaveV3BorrowAction - Borrow a token from AaveV3
+ * 
+ * @category AaveV3
  */
-export default class AaveV3BorrowAction extends ActionWithL2 {
+export class AaveV3BorrowAction extends ActionWithL2 {
    /**
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market

@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * ReflexerNativeUniV2SaviourWithdrawAction -  Withdraw lpToken from the contract and provide less cover for a SAFE
+ * 
+ * @category Reflexer
  */
-export default class ReflexerNativeUniV2SaviourWithdrawAction extends Action {
+export class ReflexerNativeUniV2SaviourWithdrawAction extends Action {
   /**
    * @param to {EthAddress}
    * @param safeId {SafeId}

@@ -1,4 +1,1 @@
-import InstPullTokensAction from './InstPullTokensAction.js';
-export default {
-    InstPullTokensAction,
-}
+export * from './InstPullTokensAction.js';

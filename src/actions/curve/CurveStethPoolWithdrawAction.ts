@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CurveStethPoolWithdrawAction - Withdraws tokens from curve steth pool
+ * 
+ * @category Curve
  */
-export default class CurveStethPoolWithdrawAction extends Action {
+export class CurveStethPoolWithdrawAction extends Action {
     /**
      * @param from {address}
      * @param to {address}

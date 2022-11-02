@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CBChickenOutAction - Chickens out the pending bond
+ * 
+ * @category ChickenBonds
  */
-export default class CBChickenOutAction extends Action {
+export class CBChickenOutAction extends Action {
   /**
    * @param bondID {string} Nft id of the bond
    * @param minLUSD {string} Min amount of lusd to receive

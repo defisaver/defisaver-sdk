@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * MStableWithdrawAction
+ * 
+ * @category MStable
  */
-export default class MStableWithdrawAction extends Action {
+export class MStableWithdrawAction extends Action {
     /**
      * @param bAsset
      * @param mAsset

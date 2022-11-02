@@ -6,8 +6,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * Create a uniswap v3 pool
+ * 
+ * @category UniswapV3
  */
-export default class UniswapV3CreatePoolAction extends ActionWithL2 {
+export class UniswapV3CreatePoolAction extends ActionWithL2 {
   /**
    * @param {EthAddress} token0
    * @param {EthAddress} token1

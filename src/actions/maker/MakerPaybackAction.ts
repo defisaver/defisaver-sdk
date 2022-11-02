@@ -5,8 +5,10 @@ import { getAddr } from '../../addresses.js';
 
 /**
  * MakerPaybackAction - Payback dai to a Vault
+ * 
+ * @category Maker
  */
-export default class MakerPaybackAction extends Action {
+export class MakerPaybackAction extends Action {
   /**
    * @param vaultId {VaultId}
    * @param amount {string}

@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * MakerClaimAction - Claim bonus tokens in CropJoin types
+ * 
+ * @category Maker
  */
-export default class MakerClaimAction extends Action {
+export class MakerClaimAction extends Action {
   /**
    * @param vaultId {VaultId}
    * @param joinAddr {EthAddress}

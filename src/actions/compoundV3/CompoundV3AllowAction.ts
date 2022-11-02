@@ -5,8 +5,10 @@ import {EthAddress} from '../../types';
 
 /**
  * CompoundV3AllowAction - Change if manager has authority over owner based on isAllowed from CompoundV3
+ * 
+ * @category CompundV3
  */
- export default class CompoundV3AllowAction extends Action {
+ export class CompoundV3AllowAction extends Action {
     /**
      * @param market {EthAddress} Comet proxy address of the market
      * @param manager {EthAddress} address of manager

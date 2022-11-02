@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * Transfers specified token from recipe (DsProxy) to specified address
+ * 
+ * @category BasicActions
  */
-export default class SendTokenAction extends Action {
+export class SendTokenAction extends Action {
   /**
    * @param token {string} Token address
    * @param to {string} Transfer recipient

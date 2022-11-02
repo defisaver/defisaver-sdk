@@ -5,13 +5,15 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  * AaveWithdrawAction - Withdraw token from an aave position
+ * 
+ * @category Aave
  */
-export default class AaveWithdrawAction extends Action {
+export class AaveWithdrawAction extends Action {
   /**
-   * @param market {EthAddress}
-   * @param tokenAddr {EthAddress}
-   * @param amount {string}
-   * @param to {EthAddress} Tokens will be withdrawn to this address
+   * @param market - Address of market
+   * @param tokenAddr - Address of Token
+   * @param amount - Token amount 
+   * @param to - Tokens will be withdrawn to this address
    */
   constructor(market: EthAddress, tokenAddr: EthAddress, amount: uint256, to:EthAddress) {
     requireAddress(to);

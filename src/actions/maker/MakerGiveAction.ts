@@ -5,8 +5,10 @@ import { getAddr } from '../../addresses.js';
 
 /**
  * MakerGiveAction - gives a vault to a selected address
+ * 
+ * @category Maker
  */
-export default class MakerGiveAction extends Action {
+export class MakerGiveAction extends Action {
   /**
    * @param vaultId {VaultId}
    * @param newOwner {EthAddress}

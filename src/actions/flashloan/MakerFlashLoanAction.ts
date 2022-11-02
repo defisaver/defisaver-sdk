@@ -4,8 +4,10 @@ import {EthAddress,uint256,bytes} from '../../types';
 
 /**
  * Gets a flashloan from Maker
+ * 
+ * @category Flashloans
  */
-export default class MakerFlashLoanAction extends Action {
+export class MakerFlashLoanAction extends Action {
   /**
    * @param amount {string}
    * @param flParamGetterAddr {EthAddress}

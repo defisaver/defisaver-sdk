@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquitySPWithdrawAction - Withdraws a portion of deposited LUSD from the stability pool
+ * 
+ * @category Liquity
  */
-export default class LiquitySPWithdrawAction extends Action {
+export class LiquitySPWithdrawAction extends Action {
     /**
      * @param lusdAmount Amount of LUSD tokens to withdraw
      * @param to Address that will receive the LUSD tokens

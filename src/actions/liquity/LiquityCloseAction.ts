@@ -6,8 +6,10 @@ import {EthAddress} from '../../types';
 
 /**
  * LiquityCloseAction - Closes trove
+ * 
+ * @category Liquity
  */
-export default class LiquityCloseAction extends Action {
+export class LiquityCloseAction extends Action {
     /**
    * @param from Address that will supply the LUSD needed to repay the debt
    * @param to Address that will receive the freed collateral

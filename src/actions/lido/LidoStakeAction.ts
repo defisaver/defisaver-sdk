@@ -6,8 +6,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * LidoStakeAction - Receives WETH, transforms it to ETH then sends it to Lido staking contract receiving stETH in return
+ * 
+ * @category Lido
  */
-export default class LidoStakeAction extends Action {
+export class LidoStakeAction extends Action {
   /**
    * @param amount {string} amount of WETH to pull and stake
    * @param from {EthAddress} WETH will be taken from this address

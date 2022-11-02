@@ -6,8 +6,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  *  AaveV3ClaimRewardsAction
+ * 
+ * @category AaveV3
  */
-export default class AaveV3ClaimRewardsAction extends ActionWithL2 {
+export class AaveV3ClaimRewardsAction extends ActionWithL2 {
     /**
    * @param assetsLength {number} Address provider for specific market
    * @param amount {string} length of two arrays

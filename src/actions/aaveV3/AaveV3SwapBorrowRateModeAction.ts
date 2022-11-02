@@ -5,8 +5,10 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /**
  * AaveV3SwapBorrowRateModeAction - Swaps proxy positions borrow rate mode between stable and variable.
+ * 
+ * @category AaveV3
  */
-export default class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
+export class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
   /**
    * @param rateMode {string} rate mode the user is swapping from.[Stable: 1, Variable: 2]
    * @param assetId {number} id of the underlying asset in the market

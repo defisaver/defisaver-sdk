@@ -6,8 +6,10 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * AaveV3WithdrawAction - Withdraw a previously supplied token from a position in AaveV3
+ * 
+ * @category AaveV3
  */
-export default class AaveV3WithdrawAction extends ActionWithL2 {
+export class AaveV3WithdrawAction extends ActionWithL2 {
   /**
    * @param assetId {number} The id of the token to be deposited
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract

@@ -3,10 +3,11 @@ import { requireAddress } from "../../utils/general";
 import { getAddr } from '../../addresses.js';
 import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
-/*
+/** 
  * BalancerV2ClaimAction - Claim BAL governance tokens
+ * @category BalancerV2
  */
-export default class BalancerV2ClaimAction extends Action {
+export class BalancerV2ClaimAction extends Action {
   /**
    * @param {EthAddress} liquidityProvider
    * @param {EthAddress} to

@@ -4,8 +4,10 @@ import {EthAddress,uint256,bytes} from '../../types';
 
 /**
  * Gets a flashloan from Aave v3
+ * 
+ * @category Flashloans
  */
-export default class AaveV3FlashLoanAction extends ActionWithL2 {
+export class AaveV3FlashLoanAction extends ActionWithL2 {
   /**
    * @param loanAmounts {Array<string>}
    * @param tokens {Array<EthAddress>}

@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * DyDxWithdrawAction - Withdraw token from an DyDx position
+ * 
+ * @category DyDx
  */
-export default class DyDxWithdrawAction extends Action {
+export class DyDxWithdrawAction extends Action {
   /**
    * @param tokenAddr {EthAddress}
    * @param amount {string}

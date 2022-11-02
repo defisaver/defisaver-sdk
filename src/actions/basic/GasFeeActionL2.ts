@@ -2,7 +2,10 @@ import Action from "../../Action";
 import { getAddr } from "../../addresses.js";
 import {EthAddress,uint256} from '../../types';
 
-export default class GasFeeActionL2 extends Action {
+/**
+ * @category BasicActions
+ */
+export class GasFeeActionL2 extends Action {
   /**
    * @param gasStart {string} Always 0 will be inject value
    * @param feeToken {string} Address of the token we are taken the fee in

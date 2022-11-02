@@ -4,8 +4,15 @@ import {EthAddress} from '../../types';
 
 /**
  *  AaveCollateralSwitchAction - Aave enable/disable token usage as collateral
+ * 
+ * @category Aave
  */
-export default class AaveCollateralSwitchAction extends Action {
+export class AaveCollateralSwitchAction extends Action {
+   /**
+   * @param market - Address of market
+   * @param tokens - List of Token Addresses
+   * @param to - Address where tokens will end up
+   */
   constructor(market : EthAddress, tokens: Array<EthAddress>, useAsCollateral:Array<boolean>) {
     super(
       'AaveCollateralSwitch',

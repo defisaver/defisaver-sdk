@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityStakeAction - Stakes LQTY tokens
+ * 
+ * @category Liquity
  */
-export default class LiquityStakeAction extends Action {
+export class LiquityStakeAction extends Action {
     /**
      * @param lqtyAmount Amount of LQTY tokens that will be staked
      * @param from Address where the tokens are being pulled from

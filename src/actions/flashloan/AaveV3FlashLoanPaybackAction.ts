@@ -1,11 +1,13 @@
-import SendTokenAction from "../basic/SendTokenAction";
+import {SendTokenAction} from "../basic/SendTokenAction";
 import { getAddr } from '../../addresses.js';
 import {EthAddress,uint256} from '../../types';
 
 /**
  * Pays back a single flashloan from Aave v3
+ * 
+ * @category Flashloans
  */
-export default class AaveV3FlashLoanPaybackAction extends SendTokenAction {
+export class AaveV3FlashLoanPaybackAction extends SendTokenAction {
   /**
    * @param loanAmount {string}
    * @param tokenAddr {EthAddress}

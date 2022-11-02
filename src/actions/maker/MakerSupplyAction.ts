@@ -5,8 +5,10 @@ import { getAddr } from '../../addresses.js';
 
 /**
  * MakerSupplyAction - Supply token to a Vault
+ * 
+ * @category Maker
  */
-export default class MakerSupplyAction extends Action {
+export class MakerSupplyAction extends Action {
   /**
    * @param vaultId {VaultId}
    * @param amount {string}

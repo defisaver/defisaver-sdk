@@ -6,8 +6,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityPaybackAction - Repays LUSD to the trove
+ * 
+ * @category Liquity
  */
-export default class LiquityPaybackAction extends Action {
+export class LiquityPaybackAction extends Action {
     /**
    * @param lusdAmount Amount of LUSD tokens to repay
    * @param from Address where the tokens are pulled from

@@ -4,8 +4,10 @@ import {uint256} from '../../types';
 
 /**
  * MakerRatioAction
+ * 
+ * @category Maker
  */
-export default class MakerRatioAction extends Action {
+export class MakerRatioAction extends Action {
   /**
    * @param vaultId {uint256}
    */

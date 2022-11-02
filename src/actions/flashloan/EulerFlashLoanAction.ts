@@ -4,8 +4,10 @@ import {EthAddress,uint256,bytes} from '../../types';
 
 /**
  * Gets a flashloan from Euler using their low-level one token only flashloan option
+ * 
+ * @category Flashloans
  */
-export default class EulerFlashLoanAction extends Action {
+export class EulerFlashLoanAction extends Action {
   /**
    * @param tokenAddr {EthAddress}
    * @param amount {string}

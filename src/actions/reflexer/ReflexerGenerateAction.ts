@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * ReflexerGenerateAction - Generated Dai from a Safe
+ * 
+ * @category Reflexer
  */
-export default class ReflexerGenerateAction extends Action {
+export class ReflexerGenerateAction extends Action {
   /**
    * @param safeId {SafeId}
    * @param amount {string} Amount of Rai to generate in wei

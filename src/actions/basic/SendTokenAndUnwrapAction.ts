@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * Transfers specified token from recipe (DsProxy) to specified address unwraps if Weth address
+ * 
+ * @category BasicActions
  */
-export default class SendTokenAndUnwrapAction extends Action {
+export class SendTokenAndUnwrapAction extends Action {
   /**
    * @param token {string} Token address
    * @param to {string} Transfer recipient

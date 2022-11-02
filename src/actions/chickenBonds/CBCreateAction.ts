@@ -5,8 +5,10 @@ import {EthAddress,uint256} from '../../types';
 
 /**
  * CBCreateAction - Create a chicken bond nft
+ * 
+ * @category ChickenBonds
  */
-export default class CBCreateAction extends Action {
+export class CBCreateAction extends Action {
   /**
    * @param amount {string} Wei amount in LUSD
    * @param from {EthAddress}
