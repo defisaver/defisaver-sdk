@@ -1,19 +1,19 @@
-const Action = require("../../Action");
-const { tokenFromJoin, getAssetInfo } = require("@defisaver/tokens");
-
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { tokenFromJoin, getAssetInfo } from "@defisaver/tokens";
+import {EthAddress,uint256} from '../../types';
+import { getAddr } from '../../addresses.js';
 
 /**
  * ReflexerSupplyAction - Supply token to a Safe
  */
-class ReflexerSupplyAction extends Action {
+export default class ReflexerSupplyAction extends Action {
   /**
    * @param safeId {SafeId}
    * @param amount {string}
    * @param adapterAddr {EthAddress}
    * @param from {EthAddress} Tokens will be supplied from this address
    */
-  constructor(safeId, amount, adapterAddr, from) {
+  constructor(safeId:uint256, amount:uint256, adapterAddr:EthAddress, from:EthAddress) {
     super('ReflexerSupply', getAddr('ReflexerSupply'), ['uint256','uint256','address','address'], [safeId, amount, adapterAddr, from]);
   }
 
@@ -29,5 +29,3 @@ class ReflexerSupplyAction extends Action {
     return '0';
   }
 }
-
-module.exports = ReflexerSupplyAction;

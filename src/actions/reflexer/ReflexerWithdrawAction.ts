@@ -1,22 +1,20 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import {EthAddress,uint256} from '../../types';
+import { getAddr } from '../../addresses.js';
 
 /**
  * ReflexerWithdrawAction - Withdraw token from a Safe
  */
-class ReflexerWithdrawAction extends Action {
+export default class ReflexerWithdrawAction extends Action {
   /**
    * @param vaultId {SafeId}
    * @param amount {string}
    * @param adapterAddr {EthAddress}
    * @param to {EthAddress}
    */
-  constructor(safeId, amount, adapterAddr, to) {
+  constructor(safeId:uint256, amount:uint256, adapterAddr:EthAddress, to:EthAddress) {
     requireAddress(to);
     super('ReflexerWithdraw', getAddr('ReflexerWithdraw'), ['uint256','uint256','address','address'], [safeId, amount, adapterAddr, to]);
   }
 }
-
-module.exports = ReflexerWithdrawAction;
