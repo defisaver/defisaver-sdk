@@ -33,7 +33,7 @@ type Networks = {
 
 type EthAddress = string;
 type bytes32= string;
-type bytes= string;
+type bytes= string | Array<any>;
 type uint256 = string;
 type uint64 = string;
 type uint16 = string;

@@ -1,17 +1,18 @@
-const Action = require("../../Action");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256,bytes} from '../../types';
 
 /**
  * Gets a flashloan from DyDx
  */
-class DyDxFlashLoanAction extends Action {
+export default class DyDxFlashLoanAction extends Action {
   /**
    * @param loanAmount {string}
    * @param tokenAddr {EthAddress}
    * @param flParamGetterAddr {EthAddress}
    * @param flParamGetterData {bytes}
    */
-  constructor(loanAmount, tokenAddr, flParamGetterAddr = getAddr('Empty'), flParamGetterData= []) {
+  constructor(loanAmount:uint256, tokenAddr:EthAddress, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes= []) {
     super('FLDyDx',
       getAddr('FLDyDx'),
       ['address[]','uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
@@ -19,5 +20,3 @@ class DyDxFlashLoanAction extends Action {
       );
   }
 }
-
-module.exports = DyDxFlashLoanAction;

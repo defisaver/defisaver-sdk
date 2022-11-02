@@ -1,10 +1,11 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const { getAddr } = require('../../addresses.js');
+import ActionWithL2 from "../../ActionWithL2";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256,bytes} from '../../types';
 
 /**
  * Gets a flashloan from Aave v3
  */
-class AaveV3FlashLoanAction extends ActionWithL2 {
+export default class AaveV3FlashLoanAction extends ActionWithL2 {
   /**
    * @param loanAmounts {Array<string>}
    * @param tokens {Array<EthAddress>}
@@ -13,7 +14,7 @@ class AaveV3FlashLoanAction extends ActionWithL2 {
    * @param flParamGetterAddr {EthAddress}
    * @param flParamGetterData {bytes}
    */
-  constructor(loanAmounts, tokens, modes, loanPayer, flParamGetterAddr = getAddr('Empty'), flParamGetterData= []) {
+  constructor(tokens:Array<EthAddress>,loanAmounts:Array<uint256>, modes:Array<uint256>, loanPayer:EthAddress, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes= []) {
     super(
       'FLAaveV3',
       getAddr('FLAaveV3'),
@@ -22,5 +23,3 @@ class AaveV3FlashLoanAction extends ActionWithL2 {
     );
   }
 }
-
-module.exports = AaveV3FlashLoanAction;

@@ -1,16 +1,17 @@
-const Action = require("../../Action");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256,bytes} from '../../types';
 
 /**
  * Gets a flashloan from Maker
  */
-class MakerFlashLoanAction extends Action {
+export default class MakerFlashLoanAction extends Action {
   /**
    * @param amount {string}
    * @param flParamGetterAddr {EthAddress}
    * @param flParamGetterData {bytes}
    */
-  constructor(amount, flParamGetterAddr = getAddr('Empty'), flParamGetterData= []) {
+  constructor(amount:uint256, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes= []) {
     super(
       'FLMaker',
       getAddr('FLMaker'),
@@ -19,5 +20,3 @@ class MakerFlashLoanAction extends Action {
     );
   }
 }
-
-module.exports = MakerFlashLoanAction;
