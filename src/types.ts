@@ -37,10 +37,11 @@ type bytes= string | Array<any>;
 type uint256 = string;
 type uint160 = string;
 type uint128 = string;
+type uint80 = string;
 type uint64 = string;
 type uint24 = string;
 type uint16 = string;
 type uint8 = string;
 type int24 = string;
 
-export { AccessList,AccessListItem, AccessLists, Config, Network,Networks, EthAddress, bytes32,bytes,uint256,uint160,uint128,uint64,uint24,uint16,uint8,int24 };
+export { AccessList,AccessListItem, AccessLists, Config, Network,Networks, EthAddress, bytes32,bytes,uint256,uint160,uint128,uint80,uint64,uint24,uint16,uint8,int24 };

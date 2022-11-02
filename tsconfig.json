@@ -72,6 +72,7 @@
   "include": [
     "./src/*.ts",
     "./src/utils/*.ts",
-    "./src/actions/*/*.ts"
+    "./src/actions/*/*.ts",
+    "./src/triggers/*.ts"
   ]
 }
