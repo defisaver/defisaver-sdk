@@ -1,18 +1,21 @@
-const Action = require("../../Action");
-const { getAssetInfo } = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { getAssetInfo } from "@defisaver/tokens";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
+import { requireAddress } from "../../utils/general";
 
 /**
  * LidoWrapAction - Turns WETH or StEth into WStEth
  */
-class LidoWrapAction extends Action {
+export default class LidoWrapAction extends Action {
   /**
    * @param amount {string} amount to pull and stake
    * @param from {EthAddress} tokens will be taken from this address
    * @param to {EthAddress} WStEth will be sent to this address
    * @param useEth {boolean} true for using WETH, false for using stEth
    */
-  constructor(amount, from, to, useEth) {
+  constructor(amount:uint256, from:EthAddress, to:EthAddress, useEth:boolean) {
+    requireAddress(to);
     super('LidoWrap', getAddr('LidoWrap'), ['uint256','address', 'address', 'bool'], [amount, from, to, useEth]);
     this.mappableArgs = [
       this.args[0],
@@ -29,5 +32,3 @@ class LidoWrapAction extends Action {
     }
   }
 }
-
-module.exports = LidoWrapAction;
