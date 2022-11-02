@@ -1,11 +1,12 @@
-const Action = require("../../Action");
-const { getAssetInfo } = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
+import { requireAddress } from "../../utils/general";
 
 /**
  * Action that adds liquidity to G-UNI pool of interest (mints G-UNI LP tokens)
 */
-class GUniDeposit extends Action {
+export default class GUniDeposit extends Action {
     /// @param pool address of G-UNI pool to add liquidity to
     /// @param token0 address of token0
     /// @param token1 address of token1
@@ -15,7 +16,8 @@ class GUniDeposit extends Action {
     /// @param amount1Min the minimum amount of token1 actually input (slippage protection)
     /// @param to account to receive minted G-UNI tokens
     /// @param from account from which to pull underlying tokens from
-  constructor(pool, token0, token1, amount0Max, amount1max, amount0Min, amount1Min, to, from) {
+  constructor(pool:EthAddress, token0:EthAddress, token1:EthAddress, amount0Max:uint256, amount1max:uint256, amount0Min:uint256, amount1Min:uint256, to:EthAddress, from:EthAddress) {
+    requireAddress(to);
     super(
         'GUniDeposit',
         getAddr('GUniDeposit'),
@@ -39,5 +41,3 @@ class GUniDeposit extends Action {
     return approveArr;
   }
 }
-
-module.exports = GUniDeposit;
