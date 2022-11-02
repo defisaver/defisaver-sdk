@@ -93,7 +93,7 @@ export default class Recipe {
       for (const pair of pairsPerAction) {
         const isNft = !pair.asset;
         if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && (isNft ? _pair.tokenId === pair.tokenId : _pair.asset === pair.asset))) {
-          uniqueAssetOwnerPairs.push(pair);
+          uniqueAssetOwnerPairs.push({owner:pair.owner!,asset:pair.asset!});
         }
       }
     }

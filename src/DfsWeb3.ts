@@ -59,7 +59,7 @@ export class DfsWeb3 {
     const transactions : any = [];
     const approvals = await action.getAssetsToApprove();
     await Promise.all(approvals.map(async (a) => {
-      if (a.owner.toLowerCase() === this.proxy.toLowerCase()) {
+      if (a.owner!.toLowerCase() === this.proxy.toLowerCase()) {
         const tokenContract = new this.web3.eth.Contract(Erc20Abi, a.asset);
         const allowance = await tokenContract.methods.allowance(this.account, this.proxy).call();
         if (parseFloat(allowance.toString()) === 0) {

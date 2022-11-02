@@ -170,7 +170,7 @@ export default class Action {
    * Approval is done from owner to DsProxy
    * @returns {Promise<Array<{owner: string, asset: string,[key: string]:any}>>}
    */
-  async getAssetsToApprove(): Promise<Array<{owner: string, asset: string,[key: string]:any}>> {
+  async getAssetsToApprove(): Promise<Array<{owner?: string, asset?: string,[key: string]:any}>> {
     return [];
   }
 
