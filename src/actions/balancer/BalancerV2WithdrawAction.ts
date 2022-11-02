@@ -1,10 +1,15 @@
-const Action = require("../../Action");
-const {getAddr} = require('../../addresses.js');
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
+
 
 /**
  * BalancerV2WithdrawAction - Withdraw tokens from Balancer pool
  */
-class BalancerV2WithdrawAction extends Action {
+export default class BalancerV2WithdrawAction extends Action {
+  from:EthAddress;
+
   /**
    * @param {bytes32} poolId
    * @param {EthAddress} from
@@ -14,7 +19,8 @@ class BalancerV2WithdrawAction extends Action {
    * @param {uint256[]} minAmountsOut
    * @param {bytes} userData
    */
-  constructor(poolId, from, to, lpTokenAmount, tokens, minAmountsOut, userData) {
+  constructor(poolId:bytes32, from:EthAddress, to:EthAddress, lpTokenAmount:uint256, tokens:Array<EthAddress>, minAmountsOut:Array<uint256>, userData:bytes) {
+    requireAddress(to);
     super(
       'BalancerV2Withdraw',
       getAddr('BalancerV2Withdraw'),
@@ -50,5 +56,3 @@ class BalancerV2WithdrawAction extends Action {
     return approveArr;
   }
 }
-
-module.exports = BalancerV2WithdrawAction;

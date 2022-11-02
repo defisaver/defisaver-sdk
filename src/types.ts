@@ -32,5 +32,10 @@ type Networks = {
 };
 
 type EthAddress = string;
+type bytes32= string;
+type bytes= string;
+type uint256 = string;
+type uint16 = string;
+type uint8 = string;
 
-export { AccessList,AccessListItem, AccessLists, Config, Network,Networks, EthAddress };
+export { AccessList,AccessListItem, AccessLists, Config, Network,Networks, EthAddress, bytes32,bytes,uint256,uint16,uint8 };

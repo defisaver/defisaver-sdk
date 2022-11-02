@@ -1,10 +1,12 @@
-const Action = require("../../Action");
-const {getAddr} = require('../../addresses.js');
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
 
 /*
  * BalancerV2SupplyAction - Supply tokens to Balancer pool
  */
-class BalancerV2SupplyAction extends Action {
+export default class BalancerV2SupplyAction extends Action {
   /**
    * @param {bytes32} poolId
    * @param {EthAddress} from
@@ -13,7 +15,8 @@ class BalancerV2SupplyAction extends Action {
    * @param {uint256[]} maxAmountsIn
    * @param {bytes} userData
    */
-  constructor(poolId, from, to, tokens, maxAmountsIn, userData) {
+  constructor(poolId:bytes32, from:EthAddress, to:EthAddress, tokens:Array<EthAddress>, maxAmountsIn:Array<uint256>, userData: bytes) {
+    requireAddress(to);
     super(
       'BalancerV2Supply',
       getAddr('BalancerV2Supply'),
@@ -38,12 +41,10 @@ class BalancerV2SupplyAction extends Action {
   }
 
   async getAssetsToApprove() {
-    const approveArr = [];
-    const tokens = this.args[3];
+    const approveArr :Array<{asset: EthAddress,owner:EthAddress,specialApproveLabel:string}> = [];
+    const tokens:Array<EthAddress> = this.args[3];
     tokens.forEach(token => approveArr.push({asset: token, owner: this.args[1], specialApproveLabel: 'balancer'}));
 
     return approveArr;
   }
 }
-
-module.exports = BalancerV2SupplyAction;
