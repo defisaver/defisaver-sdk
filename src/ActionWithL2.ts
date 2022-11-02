@@ -3,7 +3,7 @@ import Dec from 'decimal.js';
 import AbiCoder from 'web3-eth-abi';
 import ActionAbi from './abis/Action.json';
 
-export class ActionWithL2 extends Action {
+export default class ActionWithL2 extends Action {
   /**
    * Encode arguments for calling the action via DsProxy
    * @returns {string}

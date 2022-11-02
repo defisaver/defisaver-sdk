@@ -1,11 +1,16 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const { getAssetInfoByAddress } = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import ActionWithL2 from "../../ActionWithL2";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
 
 /**
  * AaveV3PaybackAction - Payback debt on Aave using underlying token
  */
-class AaveV3PaybackAction extends ActionWithL2 {
+export default class AaveV3PaybackAction extends ActionWithL2 {
+
+
+  tokenForApproval:EthAddress;
+
   /**
    * @param useOnDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market
@@ -17,7 +22,7 @@ class AaveV3PaybackAction extends ActionWithL2 {
    * @param useOnBehalf {boolean} use on behalf param or default to proxy
    * @param onBehalf {EthAddress} For what user we are paying back the debt, defaults to proxy
    */
-  constructor(useOnDefaultMarket, market, amount, from, rateMode, tokenAddr, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
+  constructor(useOnDefaultMarket: boolean, market:EthAddress, amount:string, from:EthAddress, rateMode:number, tokenAddr:EthAddress, assetId:number, useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {
     super('AaveV3Payback', getAddr('AaveV3Payback'),
     ['uint256','address','uint8','uint16', 'bool', 'bool','address','address'],
     [amount, from, rateMode, assetId, useOnDefaultMarket, useOnBehalf, market, onBehalf]
@@ -68,5 +73,3 @@ class AaveV3PaybackAction extends ActionWithL2 {
     return encodedInput;
   }
 }
-
-module.exports = AaveV3PaybackAction;

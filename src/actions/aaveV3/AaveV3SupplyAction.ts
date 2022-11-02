@@ -1,11 +1,14 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const { getAssetInfoByAddress } = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import ActionWithL2 from "../../ActionWithL2";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
 
 /**
  * AaveV3SupplyAction - Supply token to an aave position on Aave V3
  */
-class AaveV3SupplyAction extends ActionWithL2 {
+export default class AaveV3SupplyAction extends ActionWithL2 {
+
+  tokenForApproval: EthAddress;
 
   /**
    * @param amount {string} Amount of tokens to be deposited
@@ -18,7 +21,7 @@ class AaveV3SupplyAction extends ActionWithL2 {
    * @param market {EthAddress} Address provider for specific market
    * @param [onBehalf] {EthAddress} For what user we are supplying the tokens, defaults to proxy
    */
-  constructor(amount, from, tokenAddress, assetId, enableAsColl, useDefaultMarket, useOnBehalf ,market, onBehalf = getAddr('Empty')) {
+  constructor(useDefaultMarket:boolean,market:EthAddress,amount:string, from:EthAddress, tokenAddress:EthAddress, assetId:number, enableAsColl:boolean,  useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {
     super('AaveV3Supply', getAddr('AaveV3Supply'),
     ['uint256','address','uint16','bool','bool','bool','address','address'],
     [amount, from, assetId, enableAsColl, useDefaultMarket, useOnBehalf, market, onBehalf]
@@ -69,5 +72,3 @@ class AaveV3SupplyAction extends ActionWithL2 {
     return encodedInput;
   }
 }
-
-module.exports = AaveV3SupplyAction;

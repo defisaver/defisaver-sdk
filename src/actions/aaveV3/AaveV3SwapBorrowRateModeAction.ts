@@ -1,10 +1,12 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const { getAddr } = require('../../addresses.js');
+import ActionWithL2 from "../../ActionWithL2";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
+
 
 /**
  * AaveV3SwapBorrowRateModeAction - Swaps proxy positions borrow rate mode between stable and variable.
  */
-class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
+export default class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
   /**
    * @param rateMode {string} rate mode the user is swapping from.[Stable: 1, Variable: 2]
    * @param assetId {number} id of the underlying asset in the market
@@ -12,7 +14,7 @@ class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
    * @param market {EthAddress} Address provider for specific market
    *
    */
-  constructor(rateMode, assetId, useDefaultMarket, market) {
+  constructor(useDefaultMarket:boolean, market:EthAddress,rateMode:number, assetId:number) {
     super('AaveV3SwapBorrowRateMode', getAddr('AaveV3SwapBorrowRateMode'),
     ['uint256','uint16','bool','address'],
     [rateMode, assetId, useDefaultMarket, market]
@@ -39,5 +41,3 @@ class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
     return encodedInput;
   }
 }
-
-module.exports = AaveV3SwapBorrowRateModeAction;

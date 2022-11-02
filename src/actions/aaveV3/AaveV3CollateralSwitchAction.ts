@@ -1,10 +1,11 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const { getAddr } = require('../../addresses.js');
+import ActionWithL2 from "../../ActionWithL2";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
 
 /**
  *  AaveV3CollateralSwitchAction - Aave enable/disable token usage as collateral for AaveV3 position
  */
-class AaveV3CollateralSwitchAction extends ActionWithL2 {
+export default class AaveV3CollateralSwitchAction extends ActionWithL2 {
   /**
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market
@@ -12,7 +13,7 @@ class AaveV3CollateralSwitchAction extends ActionWithL2 {
    * @param assetIds {Array<number>}
    * @param useAsCollateral {Array<boolean>}
    */
-  constructor(useDefaultMarket, market, arrayLength, assetIds, useAsCollateral) {
+  constructor(useDefaultMarket:boolean, market:EthAddress, arrayLength:number, assetIds:Array<number>, useAsCollateral:Array<boolean>) {
     super(
       'AaveV3CollateralSwitch',
       getAddr('AaveV3CollateralSwitch'),
@@ -41,5 +42,3 @@ class AaveV3CollateralSwitchAction extends ActionWithL2 {
     return encodedInput;
   }
 }
-
-module.exports = AaveV3CollateralSwitchAction;

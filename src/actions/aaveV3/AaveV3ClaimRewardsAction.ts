@@ -1,10 +1,13 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const { getAddr } = require('../../addresses.js');
+import ActionWithL2 from "../../ActionWithL2";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
+import { requireAddress } from "../../utils/general";
+
 
 /**
  *  AaveV3ClaimRewardsAction
  */
-class AaveV3ClaimRewardsAction extends ActionWithL2 {
+export default class AaveV3ClaimRewardsAction extends ActionWithL2 {
     /**
    * @param assetsLength {number} Address provider for specific market
    * @param amount {string} length of two arrays
@@ -12,7 +15,8 @@ class AaveV3ClaimRewardsAction extends ActionWithL2 {
    * @param reward {EthAddress}
    * @param assets {Array<EthAddress>}
    */
-  constructor(assetsLength, amount, to, reward, assets) {
+  constructor(assetsLength:number, amount:string, to:EthAddress, reward:EthAddress, assets:Array<EthAddress>) {
+    requireAddress(to);
     super(
       'AaveV3ClaimRewards',
       getAddr('AaveV3ClaimRewards'),
@@ -41,5 +45,3 @@ class AaveV3ClaimRewardsAction extends ActionWithL2 {
     return encodedInput;
   }
 }
-
-module.exports = AaveV3ClaimRewardsAction;

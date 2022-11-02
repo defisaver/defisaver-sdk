@@ -1,10 +1,12 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const { getAddr } = require('../../addresses.js');
+import ActionWithL2 from "../../ActionWithL2";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
+import { requireAddress } from "../../utils/general";
 
 /**
  * AaveV3BorrowAction - Borrow a token from AaveV3
  */
-class AaveV3BorrowAction extends ActionWithL2 {
+export default class AaveV3BorrowAction extends ActionWithL2 {
    /**
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market
@@ -15,7 +17,8 @@ class AaveV3BorrowAction extends ActionWithL2 {
    * @param useOnBehalf {boolean} use on behalf or default to proxy
    * @param [onBehalf] {EthAddress} On whose behalf we borrow the tokens, defaults to proxy
    */
-  constructor(useDefaultMarket, market, amount, to, rateMode, assetId, useOnBehalf , onBehalf = getAddr('Empty')) {
+  constructor( useDefaultMarket:boolean,market:EthAddress, amount:string, to:EthAddress, rateMode:number, assetId:number, useOnBehalf:boolean , onBehalf: EthAddress = getAddr('Empty')) {
+    requireAddress(to);
     super('AaveV3Borrow', getAddr('AaveV3Borrow'),
     ['uint256','address','uint8','uint16','bool','bool','address','address'],
     [amount, to, rateMode, assetId, useDefaultMarket, useOnBehalf, market, onBehalf]
@@ -59,5 +62,3 @@ class AaveV3BorrowAction extends ActionWithL2 {
     return encodedInput;
   }
 }
-
-module.exports = AaveV3BorrowAction;

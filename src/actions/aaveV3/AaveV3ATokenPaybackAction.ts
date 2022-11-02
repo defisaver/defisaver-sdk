@@ -1,11 +1,12 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const { getAssetInfoByAddress } = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import ActionWithL2 from "../../ActionWithL2";
+import { getAssetInfoByAddress } from "@defisaver/tokens";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
 
 /**
  * AaveV3ATokenPaybackAction - Repay Aave V3 debt using aTokens
  */
-class AaveV3ATokenPaybackAction extends ActionWithL2 {
+export default class AaveV3ATokenPaybackAction extends ActionWithL2 {
   /**
    * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market
@@ -15,7 +16,10 @@ class AaveV3ATokenPaybackAction extends ActionWithL2 {
    * @param aTokenAddr {EthAddress} address of the aToken to be pulled
    * @param assetId {number} The id of the underlying asset to be repaid
    */
-  constructor(useDefaultMarket, market, amount, from, rateMode, aTokenAddr, assetId) {
+
+   addressForApproval: EthAddress;
+
+  constructor( aTokenAddr:EthAddress,useDefaultMarket:boolean,market:EthAddress,amount:string, from:EthAddress, rateMode:number, assetId:number) {
     super('AaveV3ATokenPayback', getAddr('AaveV3ATokenPayback'),
     ['uint256','address','uint8','uint16', 'bool', 'address'],
     [amount, from, rateMode, assetId, useDefaultMarket, market]
@@ -54,5 +58,3 @@ class AaveV3ATokenPaybackAction extends ActionWithL2 {
     return encodedInput;
   }
 }
-
-module.exports = AaveV3ATokenPaybackAction;

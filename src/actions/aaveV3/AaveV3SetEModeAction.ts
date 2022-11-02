@@ -1,16 +1,16 @@
-const ActionWithL2 = require("../../ActionWithL2");
-const { getAddr } = require('../../addresses.js');
-
+import ActionWithL2 from "../../ActionWithL2";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
 /**
  * AaveV3SetEModeAction - Set EMode for the proxy AaveV3 position
  */
-class AaveV3SetEModeAction extends ActionWithL2 {
+export default class AaveV3SetEModeAction extends ActionWithL2 {
   /**
    * @param categoryId {EthAddress} ID of the category emode
    * @param useOnDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
    * @param market {EthAddress} Address provider for specific market
    */
-  constructor(categoryId, useOnDefaultMarket, market) {
+  constructor(useOnDefaultMarket:boolean, market:EthAddress,categoryId: EthAddress) {
     super('AaveV3SetEMode', getAddr('AaveV3SetEMode'),
     ['uint8', 'bool', 'address'],
     [categoryId, useOnDefaultMarket, market]
@@ -36,5 +36,3 @@ class AaveV3SetEModeAction extends ActionWithL2 {
   }
 
 }
-
-module.exports = AaveV3SetEModeAction;
