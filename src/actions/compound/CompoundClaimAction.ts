@@ -1,18 +1,19 @@
-const Action = require("../../Action");
-const {requireAddress} = require("../../utils/general");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { requireAddress } from "../../utils/general";
+import { getAddr } from '../../addresses.js';
+import {EthAddress} from '../../types';
 
 /**
  * CompoundClaimAction - Claims Comp tokens for the specified address
  */
-class CompoundClaimAction extends Action {
+export default class CompoundClaimAction extends Action {
   /**
    * @param cSupplyAddresses {EthAddress[]}
    * @param cBorrowAddresses {EthAddress[]}
    * @param from {EthAddress}
    * @param to {EthAddress}
    */
-  constructor(cSupplyAddresses, cBorrowAddresses, from, to) {
+  constructor(cSupplyAddresses:Array<EthAddress>, cBorrowAddresses:Array<EthAddress>, from:EthAddress, to:EthAddress) {
     requireAddress(to);
     super('CompClaim', getAddr('CompClaim'), ["address[]", "address[]", "address", "address"], [...arguments]);
 
@@ -22,5 +23,3 @@ class CompoundClaimAction extends Action {
     ];
   }
 }
-
-module.exports = CompoundClaimAction;

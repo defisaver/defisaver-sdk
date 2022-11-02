@@ -1,18 +1,19 @@
-const Action = require("../../Action");
-const {getAssetInfoByAddress, getAssetInfo} = require("@defisaver/tokens");
-const { getAddr } = require('../../addresses.js');
+import Action from "../../Action";
+import { getAssetInfoByAddress, getAssetInfo } from "@defisaver/tokens";
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * CompoundSupplyAction - Supply token to an Compound position
  */
-class CompoundSupplyAction extends Action {
+export default class CompoundSupplyAction extends Action {
   /**
    * @param cTokenAddr {EthAddress}
    * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
    * @param from {EthAddress}
    * @param enableAsColl {boolean} If we need to enable asset as collateral
    */
-  constructor(cTokenAddr, amount, from, enableAsColl = true) {
+  constructor(cTokenAddr:EthAddress, amount:uint256, from:EthAddress, enableAsColl:boolean = true) {
     super('CompSupply', getAddr('CompSupply'), ['address','uint256','address','bool'], [cTokenAddr, amount, from, enableAsColl]);
 
     this.mappableArgs = [
@@ -29,5 +30,3 @@ class CompoundSupplyAction extends Action {
     return [];
   }
 }
-
-module.exports = CompoundSupplyAction;
