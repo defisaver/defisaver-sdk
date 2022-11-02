@@ -1,12 +1,12 @@
 const { getAssetInfoByAddress } = require('@defisaver/tokens');
-
+import {EthAddress,uint256} from '../../types';
 const ActionWithL2 = require('../../ActionWithL2');
 const { getAddr } = require('../../addresses.js');
 
 /**
  * Supplies a pair of tokens to an existing Uniswap v3 position identified by tokenId
  */
-class UniswapV3SupplyAction extends ActionWithL2 {
+export default class UniswapV3SupplyAction extends ActionWithL2 {
   /**
    * @param {string} tokenId
    * @param {string} amount0Desired
@@ -18,7 +18,7 @@ class UniswapV3SupplyAction extends ActionWithL2 {
    * @param {EthAddress} token0
    * @param {EthAddress} token1
    */
-  constructor(tokenId, amount0Desired, amount1Desired, amount0Min, amount1Min, deadline, from, token0, token1) {
+  constructor(tokenId:uint256, amount0Desired:uint256, amount1Desired:uint256, amount0Min:uint256, amount1Min:uint256, deadline:uint256, from:EthAddress, token0:EthAddress, token1:EthAddress) {
     super(
       'UniSupplyV3',
       getAddr('UniSupplyV3'),
@@ -55,5 +55,3 @@ class UniswapV3SupplyAction extends ActionWithL2 {
     return approveArr;
   }
 }
-
-module.exports = UniswapV3SupplyAction;

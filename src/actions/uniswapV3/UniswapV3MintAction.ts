@@ -1,13 +1,14 @@
-const { getAssetInfoByAddress } = require('@defisaver/tokens');
-
-const ActionWithL2 = require('../../ActionWithL2');
-const { getAddr } = require('../../addresses.js');
+import { getAssetInfoByAddress } from '@defisaver/tokens';
+import {EthAddress,uint256,uint24,int24,uint160} from '../../types';
+import ActionWithL2 from '../../ActionWithL2';
+import { getAddr } from '../../addresses.js';
+import { requireAddress } from "../../utils/general";
 
 
 /**
  * Creates a new Uniswap v3 LP supply position
  */
-class UniswapV3MintAction extends ActionWithL2 {
+export default class UniswapV3MintAction extends ActionWithL2 {
   /**
    * @param {EthAddress} token0
    * @param {EthAddress} token1
@@ -22,7 +23,8 @@ class UniswapV3MintAction extends ActionWithL2 {
    * @param {number} deadline
    * @param {EthAddress} from
    */
-  constructor(token0, token1, fee, tickLower, tickUpper, amount0Desired, amount1Desired, amount0Min, amount1Min, recipient, deadline, from) {
+  constructor(token0:EthAddress, token1:EthAddress, fee:uint24, tickLower:int24, tickUpper:int24, amount0Desired:uint256, amount1Desired:uint256, amount0Min:uint256, amount1Min:uint256, recipient:EthAddress, deadline:uint256, from:EthAddress) {
+    requireAddress(recipient);
     super(
       'UniMintV3',
       getAddr('UniMintV3'),
@@ -61,5 +63,3 @@ class UniswapV3MintAction extends ActionWithL2 {
     return approveArr;
   }
 }
-
-module.exports = UniswapV3MintAction;

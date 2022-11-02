@@ -1,10 +1,15 @@
-const ActionWithL2 = require('../../ActionWithL2');
-const { getAddr } = require('../../addresses.js');
+import ActionWithL2 from '../../ActionWithL2';
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256,uint128} from '../../types';
+import { requireAddress } from "../../utils/general";
 
 /**
  * Burns liquidity, and returns underlying tokens to recipient
  */
-class UniswapV3WithdrawAction extends ActionWithL2 {
+export default class UniswapV3WithdrawAction extends ActionWithL2 {
+
+  from: EthAddress;
+
   /**
    * @param {string} tokenId
    * @param {string} liquidity
@@ -16,7 +21,8 @@ class UniswapV3WithdrawAction extends ActionWithL2 {
    * @param {string} amount1Max
    * @param {EthAddress} from
    */
-  constructor(tokenId, liquidity, amount0Min, amount1Min, deadline, recipient, amount0Max, amount1Max, from) {
+  constructor(tokenId:uint256, liquidity:uint128, amount0Min:uint256, amount1Min:uint256, deadline:uint256, recipient:EthAddress, amount0Max:uint128, amount1Max:uint128, from:EthAddress) {
+    requireAddress(recipient);
     super(
       'UniWithdrawV3',
       getAddr('UniWithdrawV3'),
@@ -50,5 +56,3 @@ class UniswapV3WithdrawAction extends ActionWithL2 {
     }];
   }
 }
-
-module.exports = UniswapV3WithdrawAction;

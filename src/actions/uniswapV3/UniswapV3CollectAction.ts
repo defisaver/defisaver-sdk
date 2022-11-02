@@ -1,10 +1,14 @@
-const ActionWithL2 = require('../../ActionWithL2');
-const { getAddr } = require('../../addresses.js');
+import ActionWithL2 from '../../ActionWithL2';
+import { getAddr } from '../../addresses.js';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * Collects fees earned by user on position identified by tokenId
  */
-class UniswapV3CollectAction extends ActionWithL2 {
+export default class UniswapV3CollectAction extends ActionWithL2 {
+
+  from: EthAddress;
+
   /**
    * @param {string} tokenId
    * @param {EthAddress} recipient
@@ -12,7 +16,7 @@ class UniswapV3CollectAction extends ActionWithL2 {
    * @param {string} amount1Max
    * @param {EthAddress} from
    */
-  constructor(tokenId, recipient, amount0Max, amount1Max, from) {
+  constructor(tokenId:uint256, recipient:EthAddress, amount0Max:uint256, amount1Max:uint256, from:EthAddress) {
     super(
       'UniCollectV3',
       getAddr('UniCollectV3'),
@@ -41,5 +45,3 @@ class UniswapV3CollectAction extends ActionWithL2 {
     }];
   }
 }
-
-module.exports = UniswapV3CollectAction;
