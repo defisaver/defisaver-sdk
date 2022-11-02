@@ -1,18 +1,19 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import { getAssetInfo } from '@defisaver/tokens';
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 /**
  * LiquitySPDepositAction - Deposits LUSD to the stability pool
  */
-class LiquitySPDepositAction extends Action {
+export default class LiquitySPDepositAction extends Action {
     /**
      * @param lusdAmount Amount of LUSD tokens to deposit
      * @param from Address where the tokens are being pulled from
      * @param wethTo Address that will receive ETH gains
      * @param lqtyTo Address that will receive LQTY gains
      */
-    constructor(lusdAmount, from, wethTo, lqtyTo) {
+    constructor(lusdAmount:uint256, from:EthAddress, wethTo:EthAddress, lqtyTo:EthAddress) {
         requireAddress(from);
         requireAddress(wethTo);
         requireAddress(lqtyTo);
@@ -33,5 +34,3 @@ class LiquitySPDepositAction extends Action {
         return [{ asset: getAssetInfo('LUSD').address, owner: this.args[1]}];
     }
 }
-
-module.exports = LiquitySPDepositAction;

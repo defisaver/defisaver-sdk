@@ -1,17 +1,18 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import { getAssetInfo } from '@defisaver/tokens';
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress} from '../../types';
 
 /**
  * LiquityCloseAction - Closes trove
  */
-class LiquityCloseAction extends Action {
+export default class LiquityCloseAction extends Action {
     /**
    * @param from Address that will supply the LUSD needed to repay the debt
    * @param to Address that will receive the freed collateral
    */
-    constructor(from, to) {
+    constructor(from:EthAddress, to:EthAddress) {
         requireAddress(from);
         requireAddress(to);
         super('LiquityClose',
@@ -29,5 +30,3 @@ class LiquityCloseAction extends Action {
         return [{ asset: getAssetInfo('LUSD').address, owner: this.args[0]}];
     }
 }
-
-module.exports = LiquityCloseAction;

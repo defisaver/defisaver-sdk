@@ -1,19 +1,20 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import { getAssetInfo } from '@defisaver/tokens';
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityStakeAction - Stakes LQTY tokens
  */
-class LiquityStakeAction extends Action {
+export default class LiquityStakeAction extends Action {
     /**
      * @param lqtyAmount Amount of LQTY tokens that will be staked
      * @param from Address where the tokens are being pulled from
      * @param wethTo Address that will receive ETH gains
      * @param lusdTo Address that will receive LUSD gains
      */
-    constructor(lqtyAmount, from, wethTo, lusdTo) {
+    constructor(lqtyAmount:uint256, from:EthAddress, wethTo:EthAddress, lusdTo:EthAddress) {
         requireAddress(from);
         requireAddress(wethTo);
         requireAddress(lusdTo);
@@ -34,5 +35,3 @@ class LiquityStakeAction extends Action {
         return [{ asset: getAssetInfo('LQTY').address, owner: this.args[1]}];
     }
 }
-
-module.exports = LiquityStakeAction;

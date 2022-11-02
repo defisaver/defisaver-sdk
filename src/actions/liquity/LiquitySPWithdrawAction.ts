@@ -1,18 +1,19 @@
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquitySPWithdrawAction - Withdraws a portion of deposited LUSD from the stability pool
  */
-class LiquitySPWithdrawAction extends Action {
+export default class LiquitySPWithdrawAction extends Action {
     /**
      * @param lusdAmount Amount of LUSD tokens to withdraw
      * @param to Address that will receive the LUSD tokens
      * @param wethTo Address that will receive ETH gains
      * @param lqtyTo Address that will receive LQTY gains
      */
-    constructor(lusdAmount, to, wethTo, lqtyTo) {
+    constructor(lusdAmount:uint256, to:EthAddress, wethTo:EthAddress, lqtyTo:EthAddress) {
         requireAddress(to);
         requireAddress(wethTo);
         requireAddress(lqtyTo);
@@ -29,5 +30,3 @@ class LiquitySPWithdrawAction extends Action {
         ];
     }
 }
-
-module.exports = LiquitySPWithdrawAction;

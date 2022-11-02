@@ -1,19 +1,18 @@
-const LiquityUnstakeAction = require('./LiquityUnstakeAction');
-const { requireAddress } = require('../../utils/general');
+import LiquityUnstakeAction from './LiquityUnstakeAction';
+import { requireAddress } from '../../utils/general';
+import {EthAddress} from '../../types';
 
 /**
  * LiquityClaimStakingRewardsAction - Claims rewards from LQTYStaking
  */
-class LiquityClaimStakingRewardsAction extends LiquityUnstakeAction {
+export default class LiquityClaimStakingRewardsAction extends LiquityUnstakeAction {
     /**
      * @param wethTo Address that will receive ETH gains
      * @param lusdTo Address that will receive LUSD gains
      */
-    constructor(wethTo, lusdTo) {
+    constructor(wethTo:EthAddress, lusdTo:EthAddress) {
       requireAddress(wethTo);
       requireAddress(lusdTo);
       super("0", wethTo, wethTo, lusdTo);
     }
 }
-
-module.exports = LiquityClaimStakingRewardsAction;

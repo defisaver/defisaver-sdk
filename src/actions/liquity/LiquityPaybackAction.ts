@@ -1,17 +1,18 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import { getAssetInfo } from '@defisaver/tokens';
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityPaybackAction - Repays LUSD to the trove
  */
-class LiquityPaybackAction extends Action {
+export default class LiquityPaybackAction extends Action {
     /**
    * @param lusdAmount Amount of LUSD tokens to repay
    * @param from Address where the tokens are pulled from
    */
-    constructor(lusdAmount, from, upperHint, lowerHint) {
+    constructor(lusdAmount:uint256, from:EthAddress, upperHint:EthAddress, lowerHint:EthAddress) {
         requireAddress(from);
         super('LiquityPayback',
             getAddr('LiquityPayback'),
@@ -28,5 +29,3 @@ class LiquityPaybackAction extends Action {
         return [{ asset: getAssetInfo('LUSD').address, owner: this.args[1]}];
     }
 }
-
-module.exports = LiquityPaybackAction;

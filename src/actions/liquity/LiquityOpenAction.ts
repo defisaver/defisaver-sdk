@@ -1,12 +1,13 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import { getAssetInfo } from '@defisaver/tokens';
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityOpenAction - Opens up a trove
  */
-class LiquityOpenAction extends Action {
+export default class LiquityOpenAction extends Action {
     /**
    * @param maxFeePercentage Highest borrowing fee to accept
    * @param collAmount Amount of WETH tokens to deposit as collateral
@@ -14,7 +15,7 @@ class LiquityOpenAction extends Action {
    * @param from Address where the tokens are pulled from
    * @param to Address that will receive borrowed tokens
    */
-    constructor(maxFeePercentage, collAmount, lusdAmount, from, to, upperHint, lowerHint) {
+    constructor(maxFeePercentage:uint256, collAmount:uint256, lusdAmount:uint256, from:EthAddress, to:EthAddress, upperHint:EthAddress, lowerHint:EthAddress) {
         requireAddress(from);
         requireAddress(to);
         super('LiquityOpen',
@@ -35,5 +36,3 @@ class LiquityOpenAction extends Action {
         return [{ asset: getAssetInfo('WETH').address, owner: this.args[3]}];
     }
 }
-
-module.exports = LiquityOpenAction;

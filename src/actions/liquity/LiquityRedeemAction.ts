@@ -1,12 +1,13 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import { getAssetInfo } from '@defisaver/tokens';
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityRedeemAction - Redeems collateral from the liquity protocol
  */
-class LiquityRedeemAction extends Action {
+export default class LiquityRedeemAction extends Action {
     /**
      * @param lusdAmount Amount of LUSD tokens to send
      * @param from Address where the tokens are pulled from
@@ -14,15 +15,15 @@ class LiquityRedeemAction extends Action {
      * @param maxFeePercentage Highest redemption fee to accept
       */
     constructor(
-        lusdAmount,
-        from,
-        to,
-        firstRedemptionHint,
-        upperPartialRedemptionHint,
-        lowerPartialRedemptionHint,
-        partialRedemptionHintNICR,
-        maxIterations,
-        maxFeePercentage,
+        lusdAmount:uint256,
+        from:EthAddress,
+        to:EthAddress,
+        firstRedemptionHint:EthAddress,
+        upperPartialRedemptionHint:EthAddress,
+        lowerPartialRedemptionHint:EthAddress,
+        partialRedemptionHintNICR:uint256,
+        maxIterations:uint256,
+        maxFeePercentage:uint256,
     ) {
         requireAddress(from);
         requireAddress(to);
@@ -43,5 +44,3 @@ class LiquityRedeemAction extends Action {
         return [{ asset: getAssetInfo('LUSD').address, owner: this.args[1]}];
     }
 }
-
-module.exports = LiquityRedeemAction;

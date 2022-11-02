@@ -1,14 +1,15 @@
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress} from '../../types';
 /**
  * LiquityEthGainToTroveAction - Withdraws earned ETH gains to the users Trove
  */
-class LiquityEthGainToTroveAction extends Action {
+export default class LiquityEthGainToTroveAction extends Action {
     /**
      * @param lqtyTo Address that will receive LQTY gains
      */
-    constructor(lqtyTo, upperHint, lowerHint) {
+    constructor(lqtyTo:EthAddress, upperHint:EthAddress, lowerHint:EthAddress) {
         requireAddress(lqtyTo);
         super('LiquityEthGainToTrove',
             getAddr('LiquityEthGainToTrove'),
@@ -20,5 +21,3 @@ class LiquityEthGainToTroveAction extends Action {
         ];
     }
 }
-
-module.exports = LiquityEthGainToTroveAction;

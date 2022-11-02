@@ -1,18 +1,19 @@
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquityUnstakeAction - Unstakes LQTY tokens
  */
-class LiquityUnstakeAction extends Action {
+export default class LiquityUnstakeAction extends Action {
     /**
      * @param lqtyAmount Amount of LQTY tokens that will be unstaked
      * @param to Address that will receive the tokens
      * @param wethTo Address that will receive ETH gains
      * @param lusdTo Address that will receive LUSD gains
      */
-    constructor(lqtyAmount, to, wethTo, lusdTo) {
+    constructor(lqtyAmount:uint256, to:EthAddress, wethTo:EthAddress, lusdTo:EthAddress) {
         requireAddress(to);
         requireAddress(wethTo);
         requireAddress(lusdTo);
@@ -29,5 +30,3 @@ class LiquityUnstakeAction extends Action {
         ];
     }
 }
-
-module.exports = LiquityUnstakeAction;

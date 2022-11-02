@@ -1,17 +1,18 @@
-const { getAssetInfo } = require('@defisaver/tokens');
-const Action = require('../../Action');
-const { requireAddress } = require('../../utils/general');
-const { getAddr } = require('../../addresses');
+import { getAssetInfo } from '@defisaver/tokens';
+import Action from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * LiquitySupplyAction - Supplies collateral to the trove
  */
-class LiquitySupplyAction extends Action {
+export default class LiquitySupplyAction extends Action {
     /**
    * @param collAmount Amount of WETH tokens to supply
    * @param from Address where the tokens are pulled from
    */
-    constructor(collAmount, from, upperHint, lowerHint) {
+    constructor(collAmount:uint256, from:EthAddress, upperHint:EthAddress, lowerHint:EthAddress) {
         requireAddress(from);
         super('LiquitySupply',
             getAddr('LiquitySupply'),
@@ -28,5 +29,3 @@ class LiquitySupplyAction extends Action {
         return [{ asset: getAssetInfo('WETH').address, owner: this.args[1]}];
     }
 }
-
-module.exports = LiquitySupplyAction;
