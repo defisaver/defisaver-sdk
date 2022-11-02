@@ -4,8 +4,8 @@ import ActionAbi from './abis/Action.json';
 import DsProxyAbi from './abis/DsProxy.json';
 import Erc20Abi from './abis/Erc20.json';
 import { getAddr } from './addresses';
-import {Action} from "./Action";
-import {Recipe} from "./Recipe";
+import Action from "./Action";
+import Recipe from "./Recipe";
 import { CONFIG } from './config';
 
 export class DfsWeb3 {

@@ -1,7 +1,7 @@
 import AbiCoder from 'web3-eth-abi';
 const { BN } = require('web3-utils');
 const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
-import {Action} from './Action';
+import Action from './Action';
 import { getAddr } from './addresses';
 import RecipeAbi from './abis/Recipe.json';
 import { AccessLists,AccessListItem  } from './types';
@@ -10,7 +10,7 @@ import { CONFIG } from './config';
 /**
  * Set of Actions to be performed sequentially in a single transaction
  */
-export class Recipe {
+export default class Recipe {
   
   name: string;
   actions: Array<Action>;

@@ -1,4 +1,4 @@
-import {Action} from './Action';
+import Action from './Action';
 import Dec from 'decimal.js';
 import AbiCoder from 'web3-eth-abi';
 import ActionAbi from './abis/Action.json';
