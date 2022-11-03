@@ -34,14 +34,14 @@ Set of Actions to be performed sequentially in a single transaction
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` | {string} |
-| `actions` | [`Action`](Action.md)[] | `[]` | {Array<Action>} |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `name` | `string` | `undefined` |
+| `actions` | [`Action`](Action.md)[] | `[]` |
 
 #### Defined in
 
-[src/Recipe.ts:25](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L25)
+[src/Recipe.ts:25](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L25)
 
 ## Properties
 
@@ -51,7 +51,7 @@ Set of Actions to be performed sequentially in a single transaction
 
 #### Defined in
 
-[src/Recipe.ts:18](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L18)
+[src/Recipe.ts:18](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L18)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/Recipe.ts:17](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L17)
+[src/Recipe.ts:17](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L17)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[src/Recipe.ts:19](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L19)
+[src/Recipe.ts:19](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L19)
 
 ## Methods
 
@@ -87,7 +87,7 @@ Encode arguments for calling the action set directly
 
 #### Defined in
 
-[src/Recipe.ts:51](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L51)
+[src/Recipe.ts:49](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L49)
 
 ___
 
@@ -103,7 +103,7 @@ Logs parameter mapping in verbose format for validation. Used for testing in dev
 
 #### Defined in
 
-[src/Recipe.ts:78](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L78)
+[src/Recipe.ts:76](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L76)
 
 ___
 
@@ -113,9 +113,9 @@ ___
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `action` | [`Action`](Action.md) | {Action} |
+| Name | Type |
+| :------ | :------ |
+| `action` | [`Action`](Action.md) |
 
 #### Returns
 
@@ -123,7 +123,7 @@ ___
 
 #### Defined in
 
-[src/Recipe.ts:40](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L40)
+[src/Recipe.ts:39](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L39)
 
 ___
 
@@ -141,23 +141,23 @@ Encode arguments for calling the action set via DsProxy
 
 #### Defined in
 
-[src/Recipe.ts:65](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L65)
+[src/Recipe.ts:63](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L63)
 
 ___
 
 ### getAccessList
 
-▸ **getAccessList**(): `AccessListItem`[]
+▸ **getAccessList**(): [`AccessListItem`](../modules.md#accesslistitem)[]
 
 Generates an access list for the recipe
 
 #### Returns
 
-`AccessListItem`[]
+[`AccessListItem`](../modules.md#accesslistitem)[]
 
 #### Defined in
 
-[src/Recipe.ts:119](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L119)
+[src/Recipe.ts:115](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L115)
 
 ___
 
@@ -174,7 +174,7 @@ Approval is done from owner to DsProxy
 
 #### Defined in
 
-[src/Recipe.ts:91](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L91)
+[src/Recipe.ts:88](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L88)
 
 ___
 
@@ -192,4 +192,4 @@ ETH value in wei
 
 #### Defined in
 
-[src/Recipe.ts:109](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Recipe.ts#L109)
+[src/Recipe.ts:106](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Recipe.ts#L106)

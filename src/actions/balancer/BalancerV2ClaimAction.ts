@@ -9,11 +9,11 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
  */
 export class BalancerV2ClaimAction extends Action {
   /**
-   * @param {EthAddress} liquidityProvider
-   * @param {EthAddress} to
-   * @param {uint256[]} weeks
-   * @param {uint256} balances
-   * @param {bytes32[][]} merkleProofs
+   * @param liquidityProvider
+   * @param to
+   * @param weeks
+   * @param balances
+   * @param merkleProofs
    */
   constructor(liquidityProvider: EthAddress, to: EthAddress, weeks: Array<uint256>, balances:uint256, merkleProofs:Array<Array<bytes32>>) {
     requireAddress(to);

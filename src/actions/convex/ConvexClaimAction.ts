@@ -14,9 +14,9 @@ export class ConvexClaimAction extends Action {
     curveLp:EthAddress;
 
     /**
-     * @param {address} from 
-     * @param {address} to 
-     * @param {address} curveLp 
+     * @param from 
+     * @param to 
+     * @param curveLp 
      */
     constructor(
         from:EthAddress,

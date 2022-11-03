@@ -42,7 +42,6 @@ export const NETWORKS : Networks = {
 
 /**
  *
- * @type {Config}
  */
 export const CONFIG : Config = {
   chainId: NETWORKS.ethereum.chainId,
@@ -51,8 +50,7 @@ export const CONFIG : Config = {
 
 /**
  *
- * @param {chainId} chainId
- * @returns {Network}
+ * @param chainId
  */
 export const getNetworkData = (chainId:number) : Network => {
   const networkData : Network | undefined = Object.values(NETWORKS).find((network) => network.chainId === +chainId);
@@ -64,7 +62,7 @@ export const getNetworkData = (chainId:number) : Network => {
 
 /**
  *
- * @param {Config} config
+ * @param config
  */
 export const configure = (config : Config) => {
   if (!config || typeof config !== 'object') throw new Error('Object expected');

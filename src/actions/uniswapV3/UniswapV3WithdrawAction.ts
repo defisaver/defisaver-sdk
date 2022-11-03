@@ -13,15 +13,15 @@ export class UniswapV3WithdrawAction extends ActionWithL2 {
   from: EthAddress;
 
   /**
-   * @param {string} tokenId
-   * @param {string} liquidity
-   * @param {string} amount0Min
-   * @param {string} amount1Min
-   * @param {number} deadline
-   * @param {EthAddress} recipient
-   * @param {string} amount0Max
-   * @param {string} amount1Max
-   * @param {EthAddress} from
+   * @param tokenId
+   * @param liquidity
+   * @param amount0Min
+   * @param amount1Min
+   * @param deadline
+   * @param recipient
+   * @param amount0Max
+   * @param amount1Max
+   * @param from
    */
   constructor(tokenId:uint256, liquidity:uint128, amount0Min:uint256, amount1Min:uint256, deadline:uint256, recipient:EthAddress, amount0Max:uint128, amount1Max:uint128, from:EthAddress) {
     requireAddress(recipient);

@@ -16,10 +16,10 @@ export class SellAction extends ActionWithL2 {
   protocolFee:string;
 
   /**
-   * @param exchangeOrder {Array} Standard DFS Exchange data
-   * @param from {string} Order sender
-   * @param to {string} Order recipient
-   * @param protocolFee {string} 0x fee (amount of ETH in Wei)
+   * @param exchangeOrder Standard DFS Exchange data
+   * @param from Order sender
+   * @param to Order recipient
+   * @param protocolFee 0x fee (amount of ETH in Wei)
    */
   constructor(exchangeOrder:Array<any>, from:EthAddress, to:EthAddress, protocolFee: string = '0') {
     requireAddress(to);

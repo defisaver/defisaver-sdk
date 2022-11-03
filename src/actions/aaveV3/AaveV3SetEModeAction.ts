@@ -8,9 +8,9 @@ import {EthAddress} from '../../types';
  */
 export class AaveV3SetEModeAction extends ActionWithL2 {
   /**
-   * @param categoryId {EthAddress} ID of the category emode
-   * @param useOnDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
-   * @param market {EthAddress} Address provider for specific market
+   * @param categoryId ID of the category emode
+   * @param useOnDefaultMarket If this is true it defaults to the hardcoded market in contract
+   * @param market Address provider for specific market
    */
   constructor(useOnDefaultMarket:boolean, market:EthAddress,categoryId: EthAddress) {
     super('AaveV3SetEMode', getAddr('AaveV3SetEMode'),

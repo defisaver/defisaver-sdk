@@ -10,9 +10,9 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CBChickenOutAction extends Action {
   /**
-   * @param bondID {string} Nft id of the bond
-   * @param minLUSD {string} Min amount of lusd to receive
-   * @param to {EthAddress}
+   * @param bondID Nft id of the bond
+   * @param minLUSD Min amount of lusd to receive
+   * @param to
    */
   constructor(bondId:uint256, minLUSD:uint256, to:EthAddress) {
     requireAddress(to);

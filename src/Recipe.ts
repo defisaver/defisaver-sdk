@@ -19,8 +19,8 @@ export class Recipe {
   recipeExecutorAddress: string;
 
   /**
-   * @param name {string}
-   * @param actions {Array<Action>}
+   * @param name
+   * @param actions
    */
   constructor(name: string, actions: Array<Action> = []) {
     actions.forEach((action: Action) => {
@@ -34,8 +34,7 @@ export class Recipe {
   }
 
   /**
-   * @param action {Action}
-   * @returns {Recipe}
+   * @param action
    */
   addAction(action: Action) : Recipe {
     if (!(action instanceof Action)) throw new TypeError('Supplied action does not inherit Action');
@@ -45,7 +44,6 @@ export class Recipe {
 
   /**
    * Encode arguments for calling the action set directly
-   * @returns {Array<string|Array<*>>}
    * @private
    */
   _encodeForCall(): Array<string|Array<any>> {
@@ -60,7 +58,7 @@ export class Recipe {
 
   /**
    * Encode arguments for calling the action set via DsProxy
-   * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
+   * @returns `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() : Array<string> {
     const executeTaskAbi : any = RecipeAbi.find(({name}:{name: string}) => name === 'executeRecipe');
@@ -86,7 +84,6 @@ export class Recipe {
   /**
    * Assets requiring approval to be used by DsProxy
    * Approval is done from owner to DsProxy
-   * @returns {Promise<Array<{owner: string, asset: string}>>}
    */
   async getAssetsToApprove() : Promise<Array<{owner: string, asset: string}>> {
     const uniqueAssetOwnerPairs : Array<{owner: string, asset: string,[key: string]:any}> = [];
@@ -104,7 +101,7 @@ export class Recipe {
 
   /**
    * ETH value to be sent with transaction
-   * @returns {Promise<string>} ETH value in wei
+   * @returns ETH value in wei
    */
   async getEthValue():Promise<string> {
     return (await Promise.all(this.actions.map(a => a.getEthValue())))
@@ -114,7 +111,6 @@ export class Recipe {
 
   /**
    * Generates an access list for the recipe
-   * @returns {AccessList}
    */
   getAccessList(): Array<AccessListItem> {
     const addressMapping : any = {

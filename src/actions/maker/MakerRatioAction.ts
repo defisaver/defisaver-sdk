@@ -9,7 +9,7 @@ import {uint256} from '../../types';
  */
 export class MakerRatioAction extends Action {
   /**
-   * @param vaultId {uint256}
+   * @param vaultId
    */
   constructor(vaultId:uint256) {
     super('McdRatio', getAddr('McdRatio'), ['uint256'], [vaultId]);

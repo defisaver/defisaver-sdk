@@ -39,7 +39,7 @@
 
 #### Defined in
 
-[src/Strategy.ts:15](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L15)
+[src/Strategy.ts:15](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L15)
 
 ## Properties
 
@@ -49,7 +49,7 @@
 
 #### Defined in
 
-[src/Strategy.ts:11](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L11)
+[src/Strategy.ts:11](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L11)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:9](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L9)
+[src/Strategy.ts:9](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L9)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:13](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L13)
+[src/Strategy.ts:13](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L13)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:10](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L10)
+[src/Strategy.ts:10](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L10)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:12](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L12)
+[src/Strategy.ts:12](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L12)
 
 ## Methods
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:32](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L32)
+[src/Strategy.ts:32](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L32)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:23](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L23)
+[src/Strategy.ts:23](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L23)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:28](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L28)
+[src/Strategy.ts:28](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L28)
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:46](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L46)
+[src/Strategy.ts:46](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L46)
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:42](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L42)
+[src/Strategy.ts:42](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L42)
 
 ___
 
@@ -192,4 +192,4 @@ ___
 
 #### Defined in
 
-[src/Strategy.ts:36](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Strategy.ts#L36)
+[src/Strategy.ts:36](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Strategy.ts#L36)

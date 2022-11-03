@@ -10,10 +10,10 @@ import { getAddr } from '../../addresses.js';
  */
 export class MakerPaybackAction extends Action {
   /**
-   * @param vaultId {VaultId}
-   * @param amount {string}
-   * @param from {EthAddress} DAI will be sent from this address
-   * @param mcdManager {EthAddress}
+   * @param vaultId
+   * @param amount
+   * @param from DAI will be sent from this address
+   * @param mcdManager
    */
   constructor(vaultId:uint256, amount:uint256, from:EthAddress, mcdManager:EthAddress = getAddr('McdCdpManager')) {
     super('McdPayback', getAddr('McdPayback'), ['uint256','uint256','address','address'], [vaultId, amount, from, mcdManager]);

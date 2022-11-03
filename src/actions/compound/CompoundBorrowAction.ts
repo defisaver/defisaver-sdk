@@ -10,9 +10,9 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CompoundBorrowAction extends Action {
   /**
-   * @param cTokenAddr {EthAddress}
-   * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
-   * @param to {EthAddress}
+   * @param cTokenAddr
+   * @param amount Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
+   * @param to
    */
   constructor(cTokenAddr:EthAddress, amount:uint256, to:EthAddress) {
     requireAddress(to);

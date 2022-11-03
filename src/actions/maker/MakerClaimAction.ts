@@ -10,9 +10,9 @@ import {EthAddress,uint256} from '../../types';
  */
 export class MakerClaimAction extends Action {
   /**
-   * @param vaultId {VaultId}
-   * @param joinAddr {EthAddress}
-   * @param to {EthAddress} Tokens will be sent to this address
+   * @param vaultId
+   * @param joinAddr
+   * @param to Tokens will be sent to this address
    */
   constructor(vaultId:uint256, joinAddr:EthAddress, to:EthAddress) {
     requireAddress(to);

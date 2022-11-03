@@ -9,10 +9,10 @@ import {uint8,uint256,EthAddress} from '../../types';
  */
 export class CompoundV3RatioCheckAction extends Action {
   /**
-   * @param ratioState {uint8} If it should lower/higher
-   * @param targetRatio {string} The ratio user want to be at
-   * @param market {address} Address of compV3 market
-   * @param user {address} Address of the user we are checking the ratio for (default to proxy)
+   * @param ratioState If it should lower/higher
+   * @param targetRatio The ratio user want to be at
+   * @param market Address of compV3 market
+   * @param user Address of the user we are checking the ratio for (default to proxy)
    */
   constructor(ratioState:uint8, targetRatio:uint256, market:EthAddress, user:EthAddress) {
     super("CompV3RatioCheck", getAddr("CompV3RatioCheck"), ["uint8","uint256","address","address"], [ratioState, targetRatio, market, user]);

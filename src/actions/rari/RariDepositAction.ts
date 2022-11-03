@@ -10,12 +10,12 @@ import {EthAddress,uint256} from '../../types';
  */
 export class RariDepositAction extends Action {
   /**
-   * @param fundManager {EthAddress} fundManager for the pool which we want to deposit into
-   * @param stablecoinAddress {EthAddress} stablecoin token address
-   * @param poolTokenAddress {EthAddress} poolTokenAddress
-   * @param amount {string} amount of stablecoin to pull and deposit
-   * @param from {EthAddress} stablecoins will be taken from this address
-   * @param to {EthAddress} RSPT will be sent to this address
+   * @param fundManager fundManager for the pool which we want to deposit into
+   * @param stablecoinAddress stablecoin token address
+   * @param poolTokenAddress poolTokenAddress
+   * @param amount amount of stablecoin to pull and deposit
+   * @param from stablecoins will be taken from this address
+   * @param to RSPT will be sent to this address
    */
   constructor(fundManager:EthAddress, stablecoinAddress:EthAddress, poolTokenAddress:EthAddress, amount:uint256, from:EthAddress, to:EthAddress) {
     requireAddress(to);

@@ -10,13 +10,13 @@ import {EthAddress,uint256} from '../../types';
  */
 export class RariWithdrawAction extends Action {
   /**
-   * @param fundManager {EthAddress} fundManager for the pool which we want to withdraw from
-   * @param poolTokenAddress {EthAddress} poolToken address
-   * @param poolTokensAmountToPull {string} amount of tokens to pull to proxy
-   * @param from {EthAddress} poolTokens will be taken from this address
-   * @param stablecoinAddress {EthAddress} stablecoin token address
-   * @param stablecoinAmountToWithdraw {string} amount of stablecoin to withdraw from Rari
-   * @param to {EthAddress} stablecoins withdrawn will be sent to this address
+   * @param fundManager fundManager for the pool which we want to withdraw from
+   * @param poolTokenAddress poolToken address
+   * @param poolTokensAmountToPull amount of tokens to pull to proxy
+   * @param from poolTokens will be taken from this address
+   * @param stablecoinAddress stablecoin token address
+   * @param stablecoinAmountToWithdraw amount of stablecoin to withdraw from Rari
+   * @param to stablecoins withdrawn will be sent to this address
    */
   constructor(fundManager:EthAddress, poolTokenAddress:EthAddress, poolTokensAmountToPull:uint256, from:EthAddress, stablecoinAddress:EthAddress, stablecoinAmountToWithdraw:uint256, to:EthAddress) {
     requireAddress(to);

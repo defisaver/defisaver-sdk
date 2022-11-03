@@ -11,10 +11,10 @@ import { requireAddress } from "../../utils/general";
  */
 export class YearnWithdrawAction extends Action {
   /**
-   * @param tokenAddr {EthAddress} yToken address
-   * @param amount {string} amount of yTokens to burn
-   * @param from {EthAddress} yTokens will be taken from this address
-   * @param to {ETHAddress} underlying tokens will be sent to this address
+   * @param tokenAddr yToken address
+   * @param amount amount of yTokens to burn
+   * @param from yTokens will be taken from this address
+   * @param to underlying tokens will be sent to this address
    */
   constructor(tokenAddr:EthAddress, amount:uint256, from:EthAddress, to:EthAddress) {
     requireAddress(to);

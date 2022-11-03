@@ -10,11 +10,11 @@ export class CurveGaugeDepositAction extends Action {
 
     /**
      *
-     * @param {EthAddress} gaugeAddr
-     * @param {EthAddress} lpToken
-     * @param {EthAddress} sender
-     * @param {EthAddress} onBehalfOf
-     * @param {string} amount
+     * @param gaugeAddr
+     * @param lpToken
+     * @param sender
+     * @param onBehalfOf
+     * @param amount
      */
     constructor(gaugeAddr:EthAddress, lpToken:EthAddress, sender:EthAddress, onBehalfOf:EthAddress, amount:uint256) {
         requireAddress(sender);

@@ -10,10 +10,10 @@ import { getAddr } from '../../addresses.js';
  */
 export class ReflexerWithdrawAction extends Action {
   /**
-   * @param vaultId {SafeId}
-   * @param amount {string}
-   * @param adapterAddr {EthAddress}
-   * @param to {EthAddress}
+   * @param safeId
+   * @param amount
+   * @param adapterAddr
+   * @param to
    */
   constructor(safeId:uint256, amount:uint256, adapterAddr:EthAddress, to:EthAddress) {
     requireAddress(to);

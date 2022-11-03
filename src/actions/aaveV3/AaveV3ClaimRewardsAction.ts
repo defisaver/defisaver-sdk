@@ -11,11 +11,11 @@ import { requireAddress } from "../../utils/general";
  */
 export class AaveV3ClaimRewardsAction extends ActionWithL2 {
     /**
-   * @param assetsLength {number} Address provider for specific market
-   * @param amount {string} length of two arrays
-   * @param to {EthAddress}
-   * @param reward {EthAddress}
-   * @param assets {Array<EthAddress>}
+   * @param assetsLength Address provider for specific market
+   * @param amount length of two arrays
+   * @param to Address where claimed tokens will end up on .
+   * @param reward
+   * @param assets
    */
   constructor(assetsLength:uint8, amount:uint256, to:EthAddress, reward:EthAddress, assets:Array<EthAddress>) {
     requireAddress(to);

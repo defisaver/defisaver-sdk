@@ -10,14 +10,14 @@ import { requireAddress } from "../../utils/general";
  */
 export class AaveV3BorrowAction extends ActionWithL2 {
    /**
-   * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
-   * @param market {EthAddress} Address provider for specific market
-   * @param amount {string} Amount of tokens to be borrowed
-   * @param to {EthAddress} The address we are sending the borrowed tokens to
-   * @param rateMode {number} Type of borrow debt [Stable: 1, Variable: 2]
-   * @param assetId {number} The id of the token to be borrowed
-   * @param useOnBehalf {boolean} use on behalf or default to proxy
-   * @param [onBehalf] {EthAddress} On whose behalf we borrow the tokens, defaults to proxy
+   * @param useDefaultMarket If this is true it defaults to the hardcoded market in contract
+   * @param market Address provider for specific market
+   * @param amount Amount of tokens to be borrowed
+   * @param to The address we are sending the borrowed tokens to
+   * @param rateMode Type of borrow debt [Stable: 1, Variable: 2]
+   * @param assetId The id of the token to be borrowed
+   * @param useOnBehalf use on behalf or default to proxy
+   * @param onBehalf On whose behalf we borrow the tokens, defaults to proxy
    */
   constructor( useDefaultMarket:boolean,market:EthAddress, amount:uint256, to:EthAddress, rateMode:uint8, assetId:uint16, useOnBehalf:boolean , onBehalf: EthAddress = getAddr('Empty')) {
     requireAddress(to);

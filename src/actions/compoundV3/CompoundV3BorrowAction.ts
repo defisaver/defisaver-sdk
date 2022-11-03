@@ -10,10 +10,10 @@ import {EthAddress,uint256} from '../../types';
  */
  export class CompoundV3BorrowAction extends Action {
     /**
-     * @param market {EthAddress} Comet proxy address of the market
-     * @param amount {string} Wei amount in underlying asset decimals
-     * @param to {EthAddress} Address where we send the borrowed tokens
-     * @param onBehalf {EthAddress} Address from which we are borrowing the tokens
+     * @param market Comet proxy address of the market
+     * @param amount Wei amount in underlying asset decimals
+     * @param to Address where we send the borrowed tokens
+     * @param onBehalf Address from which we are borrowing the tokens
      */
     constructor(market:EthAddress, amount:uint256, to:EthAddress, onBehalf:EthAddress) {
       requireAddress(to);

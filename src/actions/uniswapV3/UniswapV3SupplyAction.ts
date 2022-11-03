@@ -10,15 +10,15 @@ const { getAddr } = require('../../addresses.js');
  */
 export class UniswapV3SupplyAction extends ActionWithL2 {
   /**
-   * @param {string} tokenId
-   * @param {string} amount0Desired
-   * @param {string} amount1Desired
-   * @param {string} amount0Min
-   * @param {string} amount1Min
-   * @param {number} deadline
-   * @param {EthAddress} from
-   * @param {EthAddress} token0
-   * @param {EthAddress} token1
+   * @param tokenId
+   * @param amount0Desired
+   * @param amount1Desired
+   * @param amount0Min
+   * @param amount1Min
+   * @param deadline
+   * @param from
+   * @param token0
+   * @param token1
    */
   constructor(tokenId:uint256, amount0Desired:uint256, amount1Desired:uint256, amount0Min:uint256, amount1Min:uint256, deadline:uint256, from:EthAddress, token0:EthAddress, token1:EthAddress) {
     super(

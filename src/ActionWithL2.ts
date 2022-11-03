@@ -11,7 +11,6 @@ import ActionAbi from './abis/Action.json';
 export class ActionWithL2 extends Action {
   /**
    * Encode arguments for calling the action via DsProxy
-   * @returns {string}
    */
   encodeForL2DsProxyCall(): string { return this.encodeInputs(); }
 

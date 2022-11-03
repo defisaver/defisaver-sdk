@@ -5,9 +5,8 @@ import uniV3PositionManagerAbi from '../abis/UniV3PositionManager.json';
 const uniV3PositionManagerAddress = '0xC36442b4a4522E871399CD717aBDD847Ab11FE88';
 
 /**
- * @param web3 {Object} Web3 instance
- * @param tokenId {string}
- * @returns {Promise<string[]>}
+ * @param web3 Web3 instance
+ * @param tokenId
  */
 export const getAssetAddrByTokenId = async (web3 : any, tokenId: string): Promise<string[]> => {
     const positionManager = new web3.eth.Contract(uniV3PositionManagerAbi, uniV3PositionManagerAddress);

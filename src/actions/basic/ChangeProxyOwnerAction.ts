@@ -9,7 +9,7 @@ import {EthAddress} from '../../types';
  */
 export class ChangeProxyOwnerAction extends Action {
   /**
-   * @param newOwner {Address} Address of new owner
+   * @param newOwner Address of new owner
    */
   constructor(newOwner:EthAddress) {
     super("ChangeProxyOwner", getAddr("ChangeProxyOwner"), ["address"], [...arguments]);

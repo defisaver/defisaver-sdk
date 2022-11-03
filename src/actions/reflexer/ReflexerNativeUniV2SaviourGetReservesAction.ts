@@ -10,8 +10,8 @@ import { requireAddress } from "../../utils/general";
  */
 export class ReflexerNativeUniV2SaviourGetReservesAction extends Action {
   /**
-   * @param to {EthAddress}
-   * @param safeId {SafeId}
+   * @param to
+   * @param safeId
    */
   constructor(to:EthAddress, safeId:uint256) {
     requireAddress(to);

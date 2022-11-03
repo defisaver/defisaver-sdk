@@ -10,10 +10,10 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CBRedeemAction extends Action {
   /**
-   * @param bLUSDAmount {string} Amount of bLUSD
-   * @param minLUSDFromSP {string} Min amount of lusd to receive
-   * @param from {EthAddress}
-   * @param to {EthAddress}
+   * @param bLUSDAmount Amount of bLUSD
+   * @param minLUSDFromSP Min amount of lusd to receive
+   * @param from
+   * @param to
    */
   constructor(bLUSDAmount:uint256, minLUSDFromSP:uint256, from:EthAddress, to:EthAddress) {
     requireAddress(from);

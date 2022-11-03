@@ -11,14 +11,14 @@ import { requireAddress } from "../../utils/general";
  */
 export class UniswapWithdrawAction extends Action {
   /**
-   * @param {EthAddress} tokenA
-   * @param {EthAddress} tokenB
-   * @param {string} liquidity
-   * @param {EthAddress} to
-   * @param {EthAddress} from
-   * @param {string} amountAMin
-   * @param {string} amountBMin
-   * @param {number} deadline
+   * @param tokenA
+   * @param tokenB
+   * @param liquidity
+   * @param to
+   * @param from
+   * @param amountAMin
+   * @param amountBMin
+   * @param deadline
    */
   constructor(tokenA:EthAddress, tokenB:EthAddress, liquidity:uint256, to:EthAddress, from:EthAddress, amountAMin:uint256, amountBMin:uint256, deadline:uint256) {
     requireAddress(to);

@@ -11,10 +11,10 @@ import { requireAddress } from "../../utils/general";
  */
 export class LidoWrapAction extends Action {
   /**
-   * @param amount {string} amount to pull and stake
-   * @param from {EthAddress} tokens will be taken from this address
-   * @param to {EthAddress} WStEth will be sent to this address
-   * @param useEth {boolean} true for using WETH, false for using stEth
+   * @param amount amount to pull and stake
+   * @param from tokens will be taken from this address
+   * @param to WStEth will be sent to this address
+   * @param useEth true for using WETH, false for using stEth
    */
   constructor(amount:uint256, from:EthAddress, to:EthAddress, useEth:boolean) {
     requireAddress(to);

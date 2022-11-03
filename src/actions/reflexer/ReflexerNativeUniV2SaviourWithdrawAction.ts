@@ -10,9 +10,9 @@ import {EthAddress,uint256} from '../../types';
  */
 export class ReflexerNativeUniV2SaviourWithdrawAction extends Action {
   /**
-   * @param to {EthAddress}
-   * @param safeId {SafeId}
-   * @param lpTokenAmount {string}
+   * @param to
+   * @param safeId
+   * @param lpTokenAmount
    */
   constructor(to:EthAddress, safeId:uint256, lpTokenAmount:uint256) {
     requireAddress(to);

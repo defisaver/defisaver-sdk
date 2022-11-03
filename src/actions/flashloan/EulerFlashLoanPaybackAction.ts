@@ -9,7 +9,7 @@ import {EthAddress,uint256} from '../../types';
  */
 export class EulerFlashLoanPaybackAction extends SendTokenAction {
   /**
-   * @param loanAmount {string}
+   * @param loanAmount
    */
   constructor(loanAmount:uint256, tokenAddr:EthAddress) {
     super(tokenAddr, getAddr('FLEuler'), loanAmount);

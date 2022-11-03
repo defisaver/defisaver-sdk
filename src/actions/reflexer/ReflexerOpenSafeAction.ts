@@ -9,7 +9,7 @@ import {EthAddress} from '../../types';
  */
 export class ReflexerOpenSafeAction extends Action {
   /**
-   * @param adapterAddr {EthAddress}
+   * @param adapterAddr
    */
   constructor(adapterAddr:EthAddress) {
     super('ReflexerOpen', getAddr('ReflexerOpen'), ['address'], [adapterAddr]);

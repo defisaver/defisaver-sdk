@@ -8,6 +8,12 @@ import { requireAddress } from "../../utils/general";
  * @category Insta
  */
 export class InstPullTokensAction extends Action {
+  /**
+   * @param dsaAddress
+   * @param tokens
+   * @param amounts
+   * @param to
+   */
   constructor(dsaAddress:EthAddress, tokens:Array<EthAddress>, amounts:Array<uint256>, to:EthAddress) {
     requireAddress(to);
     super(

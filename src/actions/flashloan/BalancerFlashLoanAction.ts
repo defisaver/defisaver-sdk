@@ -9,10 +9,10 @@ import {EthAddress,uint256,bytes} from '../../types';
  */
 export class BalancerFlashLoanAction extends Action {
   /**
-   * @param tokens {EthAddress[]}
-   * @param amounts {string[]}
-   * @param flParamGetterAddr {EthAddress}
-   * @param flParamGetterData {bytes}
+   * @param tokens
+   * @param amounts
+   * @param flParamGetterAddr
+   * @param flParamGetterData
    */
   constructor(tokens:Array<EthAddress>, amounts:Array<uint256>, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes= []) {
     super(

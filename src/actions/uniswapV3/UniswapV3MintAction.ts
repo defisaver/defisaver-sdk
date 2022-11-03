@@ -12,18 +12,18 @@ import { requireAddress } from "../../utils/general";
  */
 export class UniswapV3MintAction extends ActionWithL2 {
   /**
-   * @param {EthAddress} token0
-   * @param {EthAddress} token1
-   * @param {number} fee
-   * @param {number} tickLower
-   * @param {number} tickUpper
-   * @param {string} amount0Desired
-   * @param {string} amount1Desired
-   * @param {string} amount0Min
-   * @param {string} amount1Min
-   * @param {EthAddress} recipient
-   * @param {number} deadline
-   * @param {EthAddress} from
+   * @param token0
+   * @param token1
+   * @param fee
+   * @param tickLower
+   * @param tickUpper
+   * @param amount0Desired
+   * @param amount1Desired
+   * @param amount0Min
+   * @param amount1Min
+   * @param recipient
+   * @param deadline
+   * @param from
    */
   constructor(token0:EthAddress, token1:EthAddress, fee:uint24, tickLower:int24, tickUpper:int24, amount0Desired:uint256, amount1Desired:uint256, amount0Min:uint256, amount1Min:uint256, recipient:EthAddress, deadline:uint256, from:EthAddress) {
     requireAddress(recipient);

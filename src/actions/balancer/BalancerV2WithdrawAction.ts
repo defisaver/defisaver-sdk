@@ -12,13 +12,13 @@ export class BalancerV2WithdrawAction extends Action {
   from:EthAddress;
 
   /**
-   * @param {bytes32} poolId
-   * @param {EthAddress} from
-   * @param {EthAddress} to
-   * @param {string} lpTokenAmount;
-   * @param {address[]} tokens
-   * @param {uint256[]} minAmountsOut
-   * @param {bytes} userData
+   * @param poolId
+   * @param from
+   * @param to
+   * @param lpTokenAmount;
+   * @param tokens
+   * @param minAmountsOut
+   * @param userData
    */
   constructor(poolId:bytes32, from:EthAddress, to:EthAddress, lpTokenAmount:uint256, tokens:Array<EthAddress>, minAmountsOut:Array<uint256>, userData:bytes) {
     requireAddress(to);

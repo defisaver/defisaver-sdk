@@ -55,7 +55,7 @@ export class DfsWeb3 {
   }
 
   /**
-   * @param action {(Action|Recipe)}
+   * @param action
    */
   async prepareBeforeExecute(action : Action) : Promise<any> {
     if (!this.accountReady) await this.prepareAccount();
@@ -82,14 +82,14 @@ export class DfsWeb3 {
   }
 
   /**
-   * @param action {(Action)}
+   * @param action
    */
   async executeAction(action: Action) : Promise<Action> {
     const encoded =action.encodeForDsProxyCall();
     return this.execute(encoded[0] as string,encoded[1] as string[]);
   }
   /**
-   * @param recipe {(Recipe)}
+   * @param recipe
    */
   async executeRecipe(recipe: Recipe) : Promise<Recipe> {
     const encoded =recipe.encodeForDsProxyCall();

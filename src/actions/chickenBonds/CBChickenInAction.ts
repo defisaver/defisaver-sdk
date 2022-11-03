@@ -10,8 +10,8 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CBChickenInAction extends Action {
   /**
-   * @param bondID {string} Nft id of the bond
-   * @param to {EthAddress}
+   * @param bondID Nft id of the bond
+   * @param to 
    */
   constructor(bondId:uint256, to:EthAddress) {
     requireAddress(to);

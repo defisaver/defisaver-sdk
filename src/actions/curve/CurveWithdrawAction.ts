@@ -14,13 +14,13 @@ export class CurveWithdrawAction extends Action {
     lpToken:EthAddress;
 
     /**
-     * @param {EthAddress} sender
-     * @param {EthAddress} receiver
-     * @param {EthAddress} poolAddr
-     * @param {string} burnAmount
-     * @param {boolean} useUnderlying
-     * @param {boolean} withdrawExact
-     * @param {Array<string>} minAmounts
+     * @param sender
+     * @param receiver
+     * @param poolAddr
+     * @param burnAmount
+     * @param useUnderlying
+     * @param withdrawExact
+     * @param minAmounts
      */
     constructor(
         sender:EthAddress,

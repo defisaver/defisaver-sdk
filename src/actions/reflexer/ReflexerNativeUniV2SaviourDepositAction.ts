@@ -9,9 +9,9 @@ import { getAddr } from '../../addresses.js';
  */
 export class ReflexerNativeUniV2SaviourDepositAction extends Action {
   /**
-   * @param from {EthAddress}
-   * @param safeId {SafeId}
-   * @param lpTokenAmount {string}
+   * @param from
+   * @param safeId
+   * @param lpTokenAmount
    */
   constructor(from:EthAddress, safeId:uint256, lpTokenAmount:uint256) {
     super('ReflexerNativeUniV2SaviourDeposit', getAddr('ReflexerNativeUniV2SaviourDeposit'), ['address','uint256','uint256'], [from, safeId, lpTokenAmount]);

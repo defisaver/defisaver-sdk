@@ -9,9 +9,9 @@ import { getAddr } from '../../addresses.js';
  */
 export class MakerMergeAction extends Action {
   /**
-   * @param srcVaultId {VaultId}
-   * @param destVaultId {VaultId}
-   * @param mcdManager {EthAddress}
+   * @param srcVaultId
+   * @param destVaultId
+   * @param mcdManager
    */
   constructor(srcVaultId:uint256, destVaultId:uint256, mcdManager:EthAddress = getAddr('McdCdpManager')) {
     super('McdMerge', getAddr('McdMerge'), ['uint256','uint256','address'], [srcVaultId, destVaultId, mcdManager]);

@@ -11,9 +11,9 @@ import { requireAddress } from "../../utils/general";
  */
 export class LidoStakeAction extends Action {
   /**
-   * @param amount {string} amount of WETH to pull and stake
-   * @param from {EthAddress} WETH will be taken from this address
-   * @param to {EthAddress} stETH will be sent to this address
+   * @param amount amount of WETH to pull and stake
+   * @param from WETH will be taken from this address
+   * @param to stETH will be sent to this address
    */
   constructor(amount:uint256, from:EthAddress, to:EthAddress) {
     requireAddress(to);

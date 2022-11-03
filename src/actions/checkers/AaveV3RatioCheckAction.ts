@@ -9,8 +9,8 @@ import {uint8,uint256} from '../../types';
  */
 export class AaveV3RatioCheckAction extends Action {
   /**
-   * @param ratioState {uint8} If it should lower/higher
-   * @param targetRatio {string} The ratio user want to be at
+   * @param ratioState If it should lower/higher
+   * @param targetRatio The ratio user want to be at
    */
   constructor(ratioState:uint8, targetRatio:uint256) {
     super("AaveV3RatioCheck", getAddr("AaveV3RatioCheck"), ["uint8","uint256"], [ratioState, targetRatio]);

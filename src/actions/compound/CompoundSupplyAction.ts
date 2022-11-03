@@ -10,10 +10,10 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CompoundSupplyAction extends Action {
   /**
-   * @param cTokenAddr {EthAddress}
-   * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
-   * @param from {EthAddress}
-   * @param enableAsColl {boolean} If we need to enable asset as collateral
+   * @param cTokenAddr
+   * @param amount Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
+   * @param from
+   * @param enableAsColl If we need to enable asset as collateral
    */
   constructor(cTokenAddr:EthAddress, amount:uint256, from:EthAddress, enableAsColl:boolean = true) {
     super('CompSupply', getAddr('CompSupply'), ['address','uint256','address','bool'], [cTokenAddr, amount, from, enableAsColl]);

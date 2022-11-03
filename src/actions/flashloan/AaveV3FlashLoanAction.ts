@@ -9,12 +9,12 @@ import {EthAddress,uint256,bytes} from '../../types';
  */
 export class AaveV3FlashLoanAction extends ActionWithL2 {
   /**
-   * @param loanAmounts {Array<string>}
-   * @param tokens {Array<EthAddress>}
-   * @param modes {Array<number>}
-   * @param loanPayer {EthAddress}
-   * @param flParamGetterAddr {EthAddress}
-   * @param flParamGetterData {bytes}
+   * @param loanAmounts
+   * @param tokens
+   * @param modes
+   * @param loanPayer
+   * @param flParamGetterAddr
+   * @param flParamGetterData
    */
   constructor(tokens:Array<EthAddress>,loanAmounts:Array<uint256>, modes:Array<uint256>, loanPayer:EthAddress, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes= []) {
     super(

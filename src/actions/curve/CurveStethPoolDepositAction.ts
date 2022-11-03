@@ -10,10 +10,10 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CurveStethPoolDepositAction extends Action {
     /**
-     * @param from {address}
-     * @param to {address}
-     * @param amounts {string[]}
-     * @param minMintAmount {string}
+     * @param from 
+     * @param to 
+     * @param amounts
+     * @param minMintAmount
      */
     constructor(
         from:EthAddress,

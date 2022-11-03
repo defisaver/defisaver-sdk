@@ -10,9 +10,9 @@ import {EthAddress} from '../../types';
  */
  export class CompoundV3AllowAction extends Action {
     /**
-     * @param market {EthAddress} Comet proxy address of the market
-     * @param manager {EthAddress} address of manager
-     * @param isAllowed {bool}
+     * @param market Comet proxy address of the market
+     * @param manager address of manager
+     * @param isAllowed
      */
     constructor(market:EthAddress, manager:EthAddress, isAllowed:boolean) {
       requireAddress(manager);

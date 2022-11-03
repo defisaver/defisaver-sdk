@@ -12,11 +12,11 @@ export class UniswapV3CollectAction extends ActionWithL2 {
   from: EthAddress;
 
   /**
-   * @param {string} tokenId
-   * @param {EthAddress} recipient
-   * @param {string} amount0Max
-   * @param {string} amount1Max
-   * @param {EthAddress} from
+   * @param tokenId
+   * @param recipient
+   * @param amount0Max
+   * @param amount1Max
+   * @param from
    */
   constructor(tokenId:uint256, recipient:EthAddress, amount0Max:uint256, amount1Max:uint256, from:EthAddress) {
     super(

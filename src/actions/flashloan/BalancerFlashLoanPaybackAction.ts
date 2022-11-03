@@ -9,8 +9,8 @@ import {EthAddress,uint256} from '../../types';
  */
 export class BalancerFlashLoanPaybackAction extends SendTokenAction {
    /**
-   * @param loanAmount {string}
-   * @param tokenAddr {EthAddress}
+   * @param loanAmount
+   * @param tokenAddr
    */
     constructor(loanAmount:uint256, tokenAddr:EthAddress) {
       super(tokenAddr, getAddr('FLBalancer'), loanAmount);

@@ -9,10 +9,10 @@ import {EthAddress,uint256,bytes} from '../../types';
  */
 export class EulerFlashLoanAction extends Action {
   /**
-   * @param tokenAddr {EthAddress}
-   * @param amount {string}
-   * @param flParamGetterAddr {EthAddress}
-   * @param flParamGetterData {bytes}
+   * @param tokenAddr
+   * @param amount
+   * @param flParamGetterAddr
+   * @param flParamGetterData
    */
   constructor(tokenAddr:EthAddress, amount:uint256, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes= []) {
     super(

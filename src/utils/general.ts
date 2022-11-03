@@ -13,10 +13,10 @@ export const requireAddress = (address:string) => {
 
 
 /**
- * @param price {String} Price returned by contract or getOffchainPrice
- * @param from {String} Symbol for asset being sold
- * @param to {String} Symbol for asset being bought
- * @returns {String} Price in expected format (11000.00 for WBTC->USDT, 0.98 for USDc->DAI, etc)
+ * @param price Price returned by contract or getOffchainPrice
+ * @param from Symbol for asset being sold
+ * @param to Symbol for asset being bought
+ * @returns Price in expected format (11000.00 for WBTC->USDT, 0.98 for USDc->DAI, etc)
  *
  * @private
  */
@@ -26,10 +26,10 @@ export const parsePriceFromContract = (price : string, from : string, to : strin
   .toString();
 
 /**
- * @param price {String} Price returned by parsePriceFromContract
- * @param from {String} Symbol for asset being sold
- * @param to {String} Symbol for asset being bought
- * @returns {String} Price formatted like contract output (can be used for contract input for exchange v2)
+ * @param price Price returned by parsePriceFromContract
+ * @param from Symbol for asset being sold
+ * @param to Symbol for asset being bought
+ * @returns Price formatted like contract output (can be used for contract input for exchange v2)
  *
  * @private
  */

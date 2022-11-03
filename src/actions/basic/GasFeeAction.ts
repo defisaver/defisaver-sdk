@@ -7,8 +7,8 @@ import {EthAddress,uint256} from '../../types';
  */
 export class GasFeeAction extends Action {
   /**
-   * @param gasStart {string} Always 0 will be inject value
-   * @param feeToken {string} Address of the token we are taken the fee in
+   * @param gasStart Always 0 will be inject value
+   * @param feeToken Address of the token we are taken the fee in
    * @param availableAmount Amount we have available to pay the gas fee
    * @param dfsFeeDivider Additional fee for DFS, default is 5bps
    */

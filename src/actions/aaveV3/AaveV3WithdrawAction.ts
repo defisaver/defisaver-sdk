@@ -11,11 +11,11 @@ import { requireAddress } from "../../utils/general";
  */
 export class AaveV3WithdrawAction extends ActionWithL2 {
   /**
-   * @param assetId {number} The id of the token to be deposited
-   * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
-   * @param amount {string} Amount of tokens to be withdrawn -> send type(uint).max for whole amount
-   * @param to {EthAddress} Where the withdrawn tokens will be sent
-   * @param market {EthAddress} Address provider for specific market
+   * @param assetId The id of the token to be deposited
+   * @param useDefaultMarket If this is true it defaults to the hardcoded market in contract
+   * @param amount Amount of tokens to be withdrawn -> send type(uint).max for whole amount
+   * @param to Where the withdrawn tokens will be sent
+   * @param market Address provider for specific market
    */
   constructor(useDefaultMarket:boolean, market:EthAddress, amount:uint256, to:EthAddress,assetId:uint16) {
     requireAddress(to);

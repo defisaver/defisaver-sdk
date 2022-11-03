@@ -9,7 +9,7 @@ import {EthAddress,uint256} from '../../types';
  */
 export class MakerFlashLoanPaybackAction extends SendTokenAction {
   /**
-   * @param loanAmount {string}
+   * @param loanAmount
    */
   constructor(loanAmount:uint256, tokenAddr:EthAddress) {
     super(getAddr('DAI'), getAddr('FLMaker'), loanAmount);

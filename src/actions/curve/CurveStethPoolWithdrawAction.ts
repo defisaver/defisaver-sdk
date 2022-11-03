@@ -10,11 +10,11 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CurveStethPoolWithdrawAction extends Action {
     /**
-     * @param from {address}
-     * @param to {address}
-     * @param amounts {string[]}
-     * @param maxBurnAmount {string}
-     * @param returnValue {string}
+     * @param from
+     * @param to
+     * @param amounts
+     * @param maxBurnAmount
+     * @param returnValue
      */
     constructor(
         from:EthAddress,

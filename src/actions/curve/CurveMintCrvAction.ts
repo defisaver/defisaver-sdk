@@ -9,8 +9,8 @@ import {EthAddress} from '../../types';
 export class CurveMintCrvAction extends Action {
 
     /**
-     * @param {Array<EthAddress>} gaugeAddrs
-     * @param {EthAddress} receiver
+     * @param gaugeAddrs
+     * @param receiver
      */
     constructor(gaugeAddrs:EthAddress[8], receiver:EthAddress) {
         requireAddress(receiver);

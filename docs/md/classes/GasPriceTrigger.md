@@ -32,4 +32,4 @@ Action.constructor
 
 #### Defined in
 
-[src/triggers/GasPriceTrigger.ts:12](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/triggers/GasPriceTrigger.ts#L12)
+[src/triggers/GasPriceTrigger.ts:12](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/triggers/GasPriceTrigger.ts#L12)

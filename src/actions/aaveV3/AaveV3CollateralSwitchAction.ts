@@ -9,11 +9,11 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
  */
 export class AaveV3CollateralSwitchAction extends ActionWithL2 {
   /**
-   * @param useDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
-   * @param market {EthAddress} Address provider for specific market
-   * @param arrayLength {number} length of two arrays
-   * @param assetIds {Array<number>}
-   * @param useAsCollateral {Array<boolean>}
+   * @param useDefaultMarket If this is true it defaults to the hardcoded market in contract
+   * @param market Address provider for specific market
+   * @param arrayLength length of two arrays
+   * @param assetIds
+   * @param useAsCollateral
    */
   constructor(useDefaultMarket:boolean, market:EthAddress, arrayLength:uint8, assetIds:Array<uint16>, useAsCollateral:Array<boolean>) {
     super(

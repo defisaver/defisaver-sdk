@@ -10,12 +10,12 @@ import {EthAddress,uint256} from '../../types';
  */
 export class ReflexerGenerateAction extends Action {
   /**
-   * @param safeId {SafeId}
-   * @param amount {string} Amount of Rai to generate in wei
-   * @param to {EthAddress} Generated Rai will be sent to this address
+   * @param safeId 
+   * @param amount Amount of Rai to generate in wei
+   * @param to Generated Rai will be sent to this address
    */
-  constructor(vaultId:uint256, amount:uint256, to:EthAddress) {
+  constructor(safeId:uint256, amount:uint256, to:EthAddress) {
     requireAddress(to);
-    super('ReflexerGenerate', getAddr('ReflexerGenerate'), ['uint256','uint256','address'], [vaultId, amount, to]);
+    super('ReflexerGenerate', getAddr('ReflexerGenerate'), ['uint256','uint256','address'], [safeId, amount, to]);
   }
 }

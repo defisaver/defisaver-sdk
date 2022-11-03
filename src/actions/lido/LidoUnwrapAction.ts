@@ -10,9 +10,9 @@ import { requireAddress } from "../../utils/general";
  */
 export class LidoUnwrapAction extends Action {
   /**
-   * @param amount {string} amount of WStEth to pull and Unwrap
-   * @param from {EthAddress} WstEth will be taken from this address
-   * @param to {EthAddress} stETH will be sent to this address
+   * @param amount amount of WStEth to pull and Unwrap
+   * @param from WstEth will be taken from this address
+   * @param to stETH will be sent to this address
    */
   constructor(amount:uint256, from:EthAddress, to:EthAddress) {
     requireAddress(to);

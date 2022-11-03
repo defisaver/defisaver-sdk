@@ -10,10 +10,10 @@ import { getAddr } from '../../addresses.js';
  */
 export class ReflexerSupplyAction extends Action {
   /**
-   * @param safeId {SafeId}
-   * @param amount {string}
-   * @param adapterAddr {EthAddress}
-   * @param from {EthAddress} Tokens will be supplied from this address
+   * @param safeId
+   * @param amount
+   * @param adapterAddr
+   * @param from Tokens will be supplied from this address
    */
   constructor(safeId:uint256, amount:uint256, adapterAddr:EthAddress, from:EthAddress) {
     super('ReflexerSupply', getAddr('ReflexerSupply'), ['uint256','uint256','address','address'], [safeId, amount, adapterAddr, from]);

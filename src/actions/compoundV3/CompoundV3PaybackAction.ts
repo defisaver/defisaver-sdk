@@ -14,11 +14,11 @@ import {EthAddress,uint256} from '../../types';
     tokenForApproval:EthAddress;
 
     /**
-     * @param market {EthAddress} Comet proxy address of the market
-     * @param amount {uint256} amount of base token to be paid back
-     * @param from {EthAddress} address from which funds are paid
-     * @param onBehalf {EthAddress} address for which the funds are paid back
-     * @param asset {EthAddress} address for which the funds are paid back
+     * @param market Comet proxy address of the market
+     * @param amount amount of base token to be paid back
+     * @param from address from which funds are paid
+     * @param onBehalf address for which the funds are paid back
+     * @param asset address for which the funds are paid back
      */
     constructor(market:EthAddress, amount:uint256, from:EthAddress, onBehalf:EthAddress,asset:EthAddress) {
       requireAddress(from);

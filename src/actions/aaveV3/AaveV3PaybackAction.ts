@@ -14,15 +14,15 @@ export class AaveV3PaybackAction extends ActionWithL2 {
   tokenForApproval:EthAddress;
 
   /**
-   * @param useOnDefaultMarket {boolean} If this is true it defaults to the hardcoded market in contract
-   * @param market {EthAddress} Address provider for specific market
-   * @param amount {string} Amount of tokens to be payed back
-   * @param from {EthAddress} Tokens will be supplied from this address
-   * @param rateMode {number} Type of borrow debt [Stable: 1, Variable: 2]
-   * @param tokenAddr {EthAddress}
-   * @param assetId {number} The id of the underlying asset to be repaid
-   * @param useOnBehalf {boolean} use on behalf param or default to proxy
-   * @param onBehalf {EthAddress} For what user we are paying back the debt, defaults to proxy
+   * @param useOnDefaultMarket If this is true it defaults to the hardcoded market in contract
+   * @param market Address provider for specific market
+   * @param amount Amount of tokens to be payed back
+   * @param from Tokens will be supplied from this address
+   * @param rateMode Type of borrow debt [Stable: 1, Variable: 2]
+   * @param tokenAddr Address of token to pay back.
+   * @param assetId The id of the underlying asset to be repaid
+   * @param useOnBehalf  use on behalf param or default to proxy
+   * @param onBehalf For what user we are paying back the debt, defaults to proxy
    */
   constructor(useOnDefaultMarket: boolean, market:EthAddress, amount:uint256, from:EthAddress, rateMode:uint8, tokenAddr:EthAddress, assetId:uint16, useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {
     super('AaveV3Payback', getAddr('AaveV3Payback'),

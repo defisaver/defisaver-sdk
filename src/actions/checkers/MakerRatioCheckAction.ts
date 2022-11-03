@@ -9,11 +9,11 @@ import {uint8,uint256} from '../../types';
  */
 export class MakerRatioCheckAction extends Action {
   /**
-   * @param ratioState {uint8} If it should lower/higher
-   * @param checkTarget {}
-   * @param targetRatio {string} The ratio user want to be at
-   * @param vaultId {string} Id of the vault
-   * @param startRatioIndex {uint256} Index in returnValues where ratio before actions is stored
+   * @param ratioState If it should lower/higher
+   * @param checkTarget
+   * @param targetRatio The ratio user want to be at
+   * @param vaultId Id of the vault
+   * @param startRatioIndex Index in returnValues where ratio before actions is stored
    */
   constructor(ratioState:uint8, checkTarget:boolean, targetRatio:uint256, vaultId:uint256, startRatioIndex:uint256) {
     super("McdRatioCheck", getAddr("McdRatioCheck"), ["uint8","bool","uint256","uint256","uint256"], [ratioState, checkTarget, targetRatio, vaultId, startRatioIndex]);

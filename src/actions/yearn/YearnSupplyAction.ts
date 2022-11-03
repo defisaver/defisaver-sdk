@@ -11,10 +11,10 @@ import { requireAddress } from "../../utils/general";
  */
 export class YearnSupplyAction extends Action {
   /**
-   * @param tokenAddr {EthAddress} token address
-   * @param amount {string} amount of tokens to supply
-   * @param from {EthAddress} Tokens will be supplied from this address
-   * @param to {ETHAddress} yTokens will be sent to this address
+   * @param tokenAddr token address
+   * @param amount amount of tokens to supply
+   * @param from Tokens will be supplied from this address
+   * @param to yTokens will be sent to this address
    */
   constructor(tokenAddr:EthAddress, amount:uint256, from:EthAddress, to:EthAddress) {
     requireAddress(to);

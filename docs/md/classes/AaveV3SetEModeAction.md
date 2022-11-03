@@ -58,9 +58,9 @@ AaveV3SetEModeAction - Set EMode for the proxy AaveV3 position
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `useOnDefaultMarket` | `boolean` | {boolean} If this is true it defaults to the hardcoded market in contract |
-| `market` | `string` | {EthAddress} Address provider for specific market |
-| `categoryId` | `string` | {EthAddress} ID of the category emode |
+| `useOnDefaultMarket` | `boolean` | If this is true it defaults to the hardcoded market in contract |
+| `market` | `string` | Address provider for specific market |
+| `categoryId` | `string` | ID of the category emode |
 
 #### Overrides
 
@@ -68,7 +68,7 @@ AaveV3SetEModeAction - Set EMode for the proxy AaveV3 position
 
 #### Defined in
 
-[src/actions/aaveV3/AaveV3SetEModeAction.ts:15](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/actions/aaveV3/AaveV3SetEModeAction.ts#L15)
+[src/actions/aaveV3/AaveV3SetEModeAction.ts:15](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/actions/aaveV3/AaveV3SetEModeAction.ts#L15)
 
 ## Properties
 
@@ -82,7 +82,7 @@ AaveV3SetEModeAction - Set EMode for the proxy AaveV3 position
 
 #### Defined in
 
-[src/Action.ts:18](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L18)
+[src/Action.ts:18](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L18)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:15](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L15)
+[src/Action.ts:15](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L15)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:19](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L19)
+[src/Action.ts:19](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L19)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:17](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L17)
+[src/Action.ts:17](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L17)
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:16](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L16)
+[src/Action.ts:16](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L16)
 
 ## Methods
 
@@ -160,7 +160,7 @@ bytes-encoded args
 
 #### Defined in
 
-[src/Action.ts:120](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L120)
+[src/Action.ts:117](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L117)
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:110](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L110)
+[src/Action.ts:107](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L107)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:73](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L73)
+[src/Action.ts:70](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L70)
 
 ___
 
@@ -226,7 +226,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:51](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L51)
+[src/Action.ts:49](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L49)
 
 ___
 
@@ -236,9 +236,9 @@ ___
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `type` | `string` | {string} |
+| Name | Type |
+| :------ | :------ |
+| `type` | `string` |
 
 #### Returns
 
@@ -250,7 +250,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:87](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L87)
+[src/Action.ts:84](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L84)
 
 ___
 
@@ -275,7 +275,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:98](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L98)
+[src/Action.ts:95](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L95)
 
 ___
 
@@ -299,7 +299,7 @@ ___
 
 #### Defined in
 
-[src/ActionWithL2.ts:27](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/ActionWithL2.ts#L27)
+[src/ActionWithL2.ts:26](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/ActionWithL2.ts#L26)
 
 ___
 
@@ -323,7 +323,7 @@ ___
 
 #### Defined in
 
-[src/ActionWithL2.ts:29](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/ActionWithL2.ts#L29)
+[src/ActionWithL2.ts:28](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/ActionWithL2.ts#L28)
 
 ___
 
@@ -345,7 +345,7 @@ Encode arguments for calling the action via DsProxy
 
 #### Defined in
 
-[src/Action.ts:138](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L138)
+[src/Action.ts:135](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L135)
 
 ___
 
@@ -365,7 +365,7 @@ Encode arguments for calling the action via DsProxy
 
 #### Defined in
 
-[src/ActionWithL2.ts:16](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/ActionWithL2.ts#L16)
+[src/ActionWithL2.ts:15](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/ActionWithL2.ts#L15)
 
 ___
 
@@ -383,7 +383,7 @@ ___
 
 #### Defined in
 
-[src/ActionWithL2.ts:18](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/ActionWithL2.ts#L18)
+[src/ActionWithL2.ts:17](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/ActionWithL2.ts#L17)
 
 ___
 
@@ -403,7 +403,7 @@ Encodes action for Recipe call
 
 #### Defined in
 
-[src/Action.ts:154](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L154)
+[src/Action.ts:150](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L150)
 
 ___
 
@@ -427,7 +427,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:163](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L163)
+[src/Action.ts:159](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L159)
 
 ___
 
@@ -445,19 +445,19 @@ ___
 
 #### Defined in
 
-[src/actions/aaveV3/AaveV3SetEModeAction.ts:25](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/actions/aaveV3/AaveV3SetEModeAction.ts#L25)
+[src/actions/aaveV3/AaveV3SetEModeAction.ts:25](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/actions/aaveV3/AaveV3SetEModeAction.ts#L25)
 
 ___
 
 ### getAccessList
 
-▸ **getAccessList**(): `AccessListItem`[]
+▸ **getAccessList**(): [`AccessListItem`](../modules.md#accesslistitem)[]
 
 Access list for single action
 
 #### Returns
 
-`AccessListItem`[]
+[`AccessListItem`](../modules.md#accesslistitem)[]
 
 #### Inherited from
 
@@ -465,7 +465,7 @@ Access list for single action
 
 #### Defined in
 
-[src/Action.ts:191](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L191)
+[src/Action.ts:185](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L185)
 
 ___
 
@@ -486,7 +486,7 @@ Approval is done from owner to DsProxy
 
 #### Defined in
 
-[src/Action.ts:175](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L175)
+[src/Action.ts:170](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L170)
 
 ___
 
@@ -508,7 +508,7 @@ ETH value in wei
 
 #### Defined in
 
-[src/ActionWithL2.ts:31](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/ActionWithL2.ts#L31)
+[src/ActionWithL2.ts:30](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/ActionWithL2.ts#L30)
 
 ___
 
@@ -526,7 +526,7 @@ ___
 
 #### Defined in
 
-[src/Action.ts:43](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/Action.ts#L43)
+[src/Action.ts:42](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/Action.ts#L42)
 
 ___
 
@@ -550,7 +550,7 @@ ___
 
 #### Defined in
 
-[src/ActionWithL2.ts:38](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/ActionWithL2.ts#L38)
+[src/ActionWithL2.ts:37](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/ActionWithL2.ts#L37)
 
 ___
 
@@ -574,7 +574,7 @@ ___
 
 #### Defined in
 
-[src/ActionWithL2.ts:33](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/ActionWithL2.ts#L33)
+[src/ActionWithL2.ts:32](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/ActionWithL2.ts#L32)
 
 ___
 
@@ -598,4 +598,4 @@ ___
 
 #### Defined in
 
-[src/ActionWithL2.ts:43](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/ActionWithL2.ts#L43)
+[src/ActionWithL2.ts:42](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/ActionWithL2.ts#L42)

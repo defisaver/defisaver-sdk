@@ -10,9 +10,9 @@ import {EthAddress,uint256} from '../../types';
  */
 export class DyDxWithdrawAction extends Action {
   /**
-   * @param tokenAddr {EthAddress}
-   * @param amount {string}
-   * @param to {EthAddress} Tokens will be withdrawn to this address
+   * @param tokenAddr
+   * @param amount 
+   * @param to Tokens will be withdrawn to this address
    */
   constructor(tokenAddr:EthAddress, amount:uint256, to:EthAddress) {
     requireAddress(to);

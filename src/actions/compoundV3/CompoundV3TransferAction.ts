@@ -10,11 +10,11 @@ import {EthAddress,uint256} from '../../types';
  */
  export class CompoundV3TransferAction extends Action {
     /**
-     * @param market {EthAddress} Comet proxy address of the market
-     * @param from {EthAddress} address of src
-     * @param to {EthAddress} address of dst
-     * @param asset {EthAddress} address of ERC20 token
-     * @param amount {uint256} amount of assets to be transferred
+     * @param market Comet proxy address of the market
+     * @param from address of src
+     * @param to address of dst
+     * @param asset address of ERC20 token
+     * @param amount amount of assets to be transferred
      */
     constructor(market:EthAddress, from:EthAddress, to:EthAddress, asset:EthAddress, amount:uint256) {
       requireAddress(from);

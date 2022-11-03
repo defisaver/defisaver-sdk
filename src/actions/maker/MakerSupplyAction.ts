@@ -10,11 +10,11 @@ import { getAddr } from '../../addresses.js';
  */
 export class MakerSupplyAction extends Action {
   /**
-   * @param vaultId {VaultId}
-   * @param amount {string}
-   * @param joinAddr {EthAddress}
-   * @param from {EthAddress} Tokens will be supplied from this address
-   * @param mcdManager {EthAddress}
+   * @param vaultId
+   * @param amount
+   * @param joinAddr
+   * @param from Tokens will be supplied from this address
+   * @param mcdManager
    */
   constructor(vaultId:uint256, amount:uint256, joinAddr:EthAddress, from:EthAddress, mcdManager:EthAddress = getAddr('McdCdpManager')) {
     super('McdSupply', getAddr('McdSupply'), ['uint256','uint256','address','address','address'], [vaultId, amount, joinAddr, from, mcdManager]);

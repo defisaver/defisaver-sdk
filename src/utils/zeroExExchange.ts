@@ -15,14 +15,13 @@ const ZEROX_WRAPPER = '0x0c4e16899f2059F4e41ddB164317414a5c0d2988';
 /**
  * Gets price estimate from 0x API.
  *
- * @param _sellToken {String}
- * @param _buyToken {String}
- * @param _amount {String}
- * @param convertAmountToWei {Boolean} should amount be converted to wei
- * @param infoOnly {Boolean} should be true if just for showing price
- * @param acceptedSlippagePercent {Number} Slippage percentage tolerated [0-100]
- * @param shouldSell {Boolean} look for price to sell or to buy
- * @returns {Promise<{data: string, price: string, guaranteedPrice: string, protocolFee: string, to: EthAddress, value: string, wrapper: EthAddress, allowanceTarget: EthAddress, estimatedGas: string}>}
+ * @param _sellToken
+ * @param _buyToken
+ * @param _amount
+ * @param convertAmountToWei should amount be converted to wei
+ * @param infoOnly should be true if just for showing price
+ * @param acceptedSlippagePercent Slippage percentage tolerated [0-100]
+ * @param shouldSell look for price to sell or to buy
  *
  * @private
  */
@@ -77,11 +76,10 @@ const get0xPrice = async (_sellToken: string, _buyToken: string, _amount: string
  * Example: getBestExchangePrice('1', 'ETH', 'DAI') for selling 1 ETH for DAI
  * Example: getBestExchangePrice('1000', 'ETH', 'DAI', false) for buying 1000 DAI while selling ETH
  *
- * @param amount {String} sellAmount or buyAmount, depending on `shouldSell` (not in wei)
- * @param sellToken {String} Symbol for asset being sold
- * @param buyToken {String} Symbol for asset being bought
- * @param [shouldSell=true] {Boolean} Look for price to sell or to buy
- * @returns {Promise<string>}
+ * @param amount sellAmount or buyAmount, depending on `shouldSell` (not in wei)
+ * @param sellToken Symbol for asset being sold
+ * @param buyToken Symbol for asset being bought
+ * @param shouldSell=true Look for price to sell or to buy
  *
  * @private
  */
@@ -96,10 +94,10 @@ const estimatePrice = async (amount: string, sellToken: string, buyToken: string
  * Gets price estimate for selling a specific amount.
  * Example: getBestExchangePrice('1', 'ETH', 'DAI') - swapping 1 ETH for some DAI
  *
- * @param sellAmount {String} amount of sellToken (not in wei)
- * @param sellToken {String} Symbol for asset being sold
- * @param buyToken {String} Symbol for asset being bought
- * @returns {Promise<string>} price of sellToken in buyToken
+ * @param sellAmount amount of sellToken (not in wei)
+ * @param sellToken Symbol for asset being sold
+ * @param buyToken Symbol for asset being bought
+ * @returns price of sellToken in buyToken
  */
  export const estimateSellPrice = async (sellAmount: string, sellToken: string, buyToken: string): Promise<string> => estimatePrice(sellAmount, sellToken, buyToken, true);
 
@@ -107,24 +105,24 @@ const estimatePrice = async (amount: string, sellToken: string, buyToken: string
  * Gets price estimate for buying a specific amount.
  * Example: estimateBuyPrice('1000', 'DAI', 'ETH') - swapping 1000 DAI for some ETH
  *
- * @param buyAmount {String} amount of buyToken (not in wei)
- * @param buyToken {String} Symbol for asset being bought
- * @param sellToken {String} Symbol for asset being sold
- * @returns {Promise<string>} price of sellToken in buyToken
+ * @param buyAmount amount of buyToken (not in wei)
+ * @param buyToken Symbol for asset being bought
+ * @param sellToken Symbol for asset being sold
+ * @returns price of sellToken in buyToken
  */
  export const estimateBuyPrice = async (buyAmount: string, buyToken: string, sellToken: string): Promise<string> => estimatePrice(buyAmount, sellToken, buyToken, false);
 
 /**
- * @param sellToken {string} Symbol for asset being sold ('ETH')
- * @param buyToken {string} Symbol for asset being bought ('DAI')
- * @param sellAmount {string} Amount of asset being sold ('1.5') - '0' if buying
- * @param buyAmount {string} Amount of asset being bought ('1500.123') - '0' if selling
- * @param expectedPrice {string} Price received from estimatePrice (so minPrice can be calculated based on what user saw)
- * @param acceptedSlippagePercent {Number} Slippage percentage tolerated [0-100]
- * @param shouldSell {Boolean} look for price to sell or to buy (if false sellToken becomes becomes buyToken and vice-versa)
- * @param fromAccount {EthAddress} Withdraw funds from this addr
- * @param toAccount {EthAddress} Send funds to this addr
- * @return {Promise<(SellAction>} SellAction
+ * @param sellToken Symbol for asset being sold ('ETH')
+ * @param buyToken Symbol for asset being bought ('DAI')
+ * @param sellAmount Amount of asset being sold ('1.5') - '0' if buying
+ * @param buyAmount Amount of asset being bought ('1500.123') - '0' if selling
+ * @param expectedPrice Price received from estimatePrice (so minPrice can be calculated based on what user saw)
+ * @param acceptedSlippagePercent Slippage percentage tolerated [0-100]
+ * @param shouldSell look for price to sell or to buy (if false sellToken becomes becomes buyToken and vice-versa)
+ * @param fromAccount Withdraw funds from this addr
+ * @param toAccount Send funds to this addr
+ * @return SellAction
  *
  * @private
  */
@@ -187,14 +185,13 @@ const createExchangeAction = async (
  * This should only be called when before sending tx, not to be used for just querying the price.
  * For that purpose, the estimateSellPrice method can be used.
  *
- * @param sellAmount {string} Amount of asset being sold ('1.5')
- * @param sellToken {string} Symbol for asset being sold ('ETH')
- * @param buyToken {string} Symbol for asset being bought ('DAI')
- * @param expectedPrice {string} Price received from estimatePrice (so minPrice can be calculated based on what user saw)
- * @param acceptedSlippagePercent {string|Number} Slippage percentage tolerated [0-100]
- * @param fromAccount {EthAddress} Withdraw funds from this addr
- * @param toAccount {EthAddress} Send funds to this addr
- * @return {Promise<SellAction>}
+ * @param sellAmount Amount of asset being sold ('1.5')
+ * @param sellToken Symbol for asset being sold ('ETH')
+ * @param buyToken Symbol for asset being bought ('DAI')
+ * @param expectedPrice Price received from estimatePrice (so minPrice can be calculated based on what user saw)
+ * @param acceptedSlippagePercent Slippage percentage tolerated [0-100]
+ * @param fromAccount Withdraw funds from this addr
+ * @param toAccount Send funds to this addr
  */
  export const createSellAction = async (
   sellAmount: string,

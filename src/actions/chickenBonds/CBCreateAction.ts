@@ -10,8 +10,8 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CBCreateAction extends Action {
   /**
-   * @param amount {string} Wei amount in LUSD
-   * @param from {EthAddress}
+   * @param amount Wei amount in LUSD
+   * @param from
    */
   constructor(amount:uint256, from:EthAddress) {
     requireAddress(from);

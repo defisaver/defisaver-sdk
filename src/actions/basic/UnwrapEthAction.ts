@@ -10,8 +10,8 @@ import {EthAddress,uint256} from '../../types';
  */
 export  class UnwrapEthAction extends ActionWithL2 {
   /**
-   * @param amount {string} Token address
-   * @param to {string} Transfer recipient
+   * @param amount Amount to unwrap
+   * @param to Transfer recipient
    */
   constructor(amount:uint256, to:EthAddress) {
     requireAddress(to);

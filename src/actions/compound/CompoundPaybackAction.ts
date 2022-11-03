@@ -10,10 +10,10 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CompoundPaybackAction extends Action {
   /**
-   * @param cTokenAddr {EthAddress}
-   * @param amount {string} Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
-   * @param from {EthAddress}
-   * @param onBehalf {EthAddress} Defaults to DsProxy address if 0x0
+   * @param cTokenAddr
+   * @param amount Wei amount in underlying asset decimals (not cAsset) - ie. 18 dec for cETH, not 8
+   * @param from 
+   * @param onBehalf Defaults to DsProxy address if 0x0
    */
   constructor(cTokenAddr:EthAddress, amount:uint256, from:EthAddress, onBehalf:EthAddress = getAddr('Empty')) {
     super('CompPayback', getAddr('CompPayback'), ['address', 'uint256', 'address', 'address'], [cTokenAddr, amount, from, onBehalf]);

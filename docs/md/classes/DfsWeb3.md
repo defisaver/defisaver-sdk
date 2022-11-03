@@ -39,7 +39,7 @@
 
 #### Defined in
 
-[src/DfsWeb3.ts:22](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L22)
+[src/DfsWeb3.ts:22](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L22)
 
 ## Properties
 
@@ -49,7 +49,7 @@
 
 #### Defined in
 
-[src/DfsWeb3.ts:19](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L19)
+[src/DfsWeb3.ts:19](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L19)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:18](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L18)
+[src/DfsWeb3.ts:18](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L18)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:20](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L20)
+[src/DfsWeb3.ts:20](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L20)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:17](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L17)
+[src/DfsWeb3.ts:17](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L17)
 
 ## Methods
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:49](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L49)
+[src/DfsWeb3.ts:49](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L49)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:77](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L77)
+[src/DfsWeb3.ts:77](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L77)
 
 ___
 
@@ -124,9 +124,9 @@ ___
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `action` | [`Action`](Action.md) | {(Action)} |
+| Name | Type |
+| :------ | :------ |
+| `action` | [`Action`](Action.md) |
 
 #### Returns
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:87](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L87)
+[src/DfsWeb3.ts:87](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L87)
 
 ___
 
@@ -144,9 +144,9 @@ ___
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `recipe` | [`Recipe`](Recipe.md) | {(Recipe)} |
+| Name | Type |
+| :------ | :------ |
+| `recipe` | [`Recipe`](Recipe.md) |
 
 #### Returns
 
@@ -154,7 +154,7 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:94](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L94)
+[src/DfsWeb3.ts:94](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L94)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:33](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L33)
+[src/DfsWeb3.ts:33](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L33)
 
 ___
 
@@ -189,7 +189,7 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:37](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L37)
+[src/DfsWeb3.ts:37](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L37)
 
 ___
 
@@ -199,9 +199,9 @@ ___
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `action` | [`Action`](Action.md) | {(Action\|Recipe)} |
+| Name | Type |
+| :------ | :------ |
+| `action` | [`Action`](Action.md) |
 
 #### Returns
 
@@ -209,4 +209,4 @@ ___
 
 #### Defined in
 
-[src/DfsWeb3.ts:60](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/DfsWeb3.ts#L60)
+[src/DfsWeb3.ts:60](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/DfsWeb3.ts#L60)

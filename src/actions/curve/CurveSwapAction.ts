@@ -10,13 +10,13 @@ export class CurveSwapAction extends Action {
 
     /**
      *
-     * @param {EthAddress} sender
-     * @param {EthAddress} receiver
-     * @param {EthAddress} pool
-     * @param {EthAddress} tokenA
-     * @param {EthAddress} tokenB
-     * @param {string} amount
-     * @param {string} expected
+     * @param sender
+     * @param receiver
+     * @param pool
+     * @param tokenA
+     * @param tokenB
+     * @param amount
+     * @param expected
      */
     constructor(sender:EthAddress, receiver:EthAddress, pool:EthAddress, tokenA:EthAddress, tokenB:EthAddress, amount:uint256, expected:uint256) {
         requireAddress(sender);

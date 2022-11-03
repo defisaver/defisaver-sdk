@@ -9,7 +9,7 @@ import {uint256} from '../../types';
  */
 export class WrapEthAction extends ActionWithL2 {
   /**
-   * @param amount {string} Transfer amount
+   * @param amount Wrap amount
    */
   constructor(amount:uint256) {
     super("WrapEth", getAddr("WrapEth"), ["uint256"], [...arguments]);

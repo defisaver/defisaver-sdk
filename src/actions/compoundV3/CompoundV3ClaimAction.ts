@@ -10,10 +10,10 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CompoundV3ClaimAction extends Action {
   /**
-   * @param market {EthAddress} Comet proxy address of the market
-   * @param onBehalfOf {EthAddress} The owner to claim for
-   * @param to {EthAddress} The address to receive the rewards
-   * @param shouldAccrue {bool} If true, the protocol will account for the rewards owed to the account as of the current block before transferring
+   * @param market Comet proxy address of the market
+   * @param onBehalfOf The owner to claim for
+   * @param to The address to receive the rewards
+   * @param shouldAccrue If true, the protocol will account for the rewards owed to the account as of the current block before transferring
    */
   constructor(market:EthAddress, onBehalfOf:EthAddress, to:EthAddress, shouldAccrue:boolean) {
     requireAddress(onBehalfOf);

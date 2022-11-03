@@ -13,3 +13,5 @@ import { actionAddresses as _actionAddresses} from './src/addresses';
 
 export const actionAddressesAllChains = _actionAddresses;
 export const actionAddresses= (chainId = null) => _actionAddresses[chainId || CONFIG.chainId];
+
+export * from './src/types';

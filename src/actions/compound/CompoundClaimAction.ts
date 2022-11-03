@@ -10,10 +10,10 @@ import {EthAddress} from '../../types';
  */
 export class CompoundClaimAction extends Action {
   /**
-   * @param cSupplyAddresses {EthAddress[]}
-   * @param cBorrowAddresses {EthAddress[]}
-   * @param from {EthAddress}
-   * @param to {EthAddress}
+   * @param cSupplyAddresses 
+   * @param cBorrowAddresses
+   * @param from
+   * @param to
    */
   constructor(cSupplyAddresses:Array<EthAddress>, cBorrowAddresses:Array<EthAddress>, from:EthAddress, to:EthAddress) {
     requireAddress(to);

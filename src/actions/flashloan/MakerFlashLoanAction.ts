@@ -9,9 +9,9 @@ import {EthAddress,uint256,bytes} from '../../types';
  */
 export class MakerFlashLoanAction extends Action {
   /**
-   * @param amount {string}
-   * @param flParamGetterAddr {EthAddress}
-   * @param flParamGetterData {bytes}
+   * @param amount
+   * @param flParamGetterAddr
+   * @param flParamGetterData
    */
   constructor(amount:uint256, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes= []) {
     super(

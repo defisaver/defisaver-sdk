@@ -227,15 +227,36 @@
 - [YearnSupplyAction](classes/YearnSupplyAction.md)
 - [YearnWithdrawAction](classes/YearnWithdrawAction.md)
 
+### Type Aliases
+
+- [AccessList](modules.md#accesslist)
+- [AccessListItem](modules.md#accesslistitem)
+- [AccessLists](modules.md#accesslists)
+- [Config](modules.md#config)
+- [EthAddress](modules.md#ethaddress)
+- [Network](modules.md#network)
+- [Networks](modules.md#networks)
+- [bytes](modules.md#bytes)
+- [bytes32](modules.md#bytes32)
+- [int24](modules.md#int24)
+- [uint128](modules.md#uint128)
+- [uint16](modules.md#uint16)
+- [uint160](modules.md#uint160)
+- [uint24](modules.md#uint24)
+- [uint256](modules.md#uint256)
+- [uint64](modules.md#uint64)
+- [uint8](modules.md#uint8)
+- [uint80](modules.md#uint80)
+
 ### Properties
 
 - [poolInfo](modules.md#poolinfo)
 
 ### Variables
 
-- [CONFIG](modules.md#config)
+- [CONFIG](modules.md#config-1)
 - [DepositOption](modules.md#depositoption)
-- [NETWORKS](modules.md#networks)
+- [NETWORKS](modules.md#networks-1)
 - [WithdrawOption](modules.md#withdrawoption)
 - [actionAddressesAllChains](modules.md#actionaddressesallchains)
 - [mstableAssetPairs](modules.md#mstableassetpairs)
@@ -252,6 +273,230 @@
 - [getPoolAddressByAddresses](modules.md#getpooladdressbyaddresses)
 - [getPoolAddressBySymbols](modules.md#getpooladdressbysymbols)
 
+## Type Aliases
+
+### AccessList
+
+Ƭ **AccessList**: `any`[][]
+
+#### Defined in
+
+[src/types.ts:7](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L7)
+
+___
+
+### AccessListItem
+
+Ƭ **AccessListItem**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `address` | `string` |
+| `storageKeys` | `any`[] |
+
+#### Defined in
+
+[src/types.ts:1](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L1)
+
+___
+
+### AccessLists
+
+Ƭ **AccessLists**: `Object`
+
+#### Index signature
+
+▪ [key: `string`]: [`AccessList`](modules.md#accesslist)
+
+#### Defined in
+
+[src/types.ts:9](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L9)
+
+___
+
+### Config
+
+Ƭ **Config**: `Object`
+
+#### Index signature
+
+▪ [key: `string`]: `any`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `chainId` | `number` |
+| `testingMode` | `boolean` |
+
+#### Defined in
+
+[src/types.ts:13](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L13)
+
+___
+
+### EthAddress
+
+Ƭ **EthAddress**: `string`
+
+#### Defined in
+
+[src/types.ts:34](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L34)
+
+___
+
+### Network
+
+Ƭ **Network**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `blockExplorerUrls` | `string`[] |
+| `chainId` | `number` |
+| `chainName` | `string` |
+| `iconUrls` | `string`[] |
+| `nativeCurrency` | { `decimals`: `number` ; `name`: `string` ; `symbol`: `string`  } |
+| `nativeCurrency.decimals` | `number` |
+| `nativeCurrency.name` | `string` |
+| `nativeCurrency.symbol` | `string` |
+| `rpcUrls` | `string`[] |
+
+#### Defined in
+
+[src/types.ts:19](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L19)
+
+___
+
+### Networks
+
+Ƭ **Networks**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `arbitrum` | [`Network`](modules.md#network) |
+| `ethereum` | [`Network`](modules.md#network) |
+| `optimism` | [`Network`](modules.md#network) |
+
+#### Defined in
+
+[src/types.ts:28](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L28)
+
+___
+
+### bytes
+
+Ƭ **bytes**: `string` \| `any`[]
+
+#### Defined in
+
+[src/types.ts:36](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L36)
+
+___
+
+### bytes32
+
+Ƭ **bytes32**: `string`
+
+#### Defined in
+
+[src/types.ts:35](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L35)
+
+___
+
+### int24
+
+Ƭ **int24**: `string`
+
+#### Defined in
+
+[src/types.ts:45](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L45)
+
+___
+
+### uint128
+
+Ƭ **uint128**: `string`
+
+#### Defined in
+
+[src/types.ts:39](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L39)
+
+___
+
+### uint16
+
+Ƭ **uint16**: `string`
+
+#### Defined in
+
+[src/types.ts:43](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L43)
+
+___
+
+### uint160
+
+Ƭ **uint160**: `string`
+
+#### Defined in
+
+[src/types.ts:38](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L38)
+
+___
+
+### uint24
+
+Ƭ **uint24**: `string`
+
+#### Defined in
+
+[src/types.ts:42](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L42)
+
+___
+
+### uint256
+
+Ƭ **uint256**: `string`
+
+#### Defined in
+
+[src/types.ts:37](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L37)
+
+___
+
+### uint64
+
+Ƭ **uint64**: `string`
+
+#### Defined in
+
+[src/types.ts:41](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L41)
+
+___
+
+### uint8
+
+Ƭ **uint8**: `string`
+
+#### Defined in
+
+[src/types.ts:44](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L44)
+
+___
+
+### uint80
+
+Ƭ **uint80**: `string`
+
+#### Defined in
+
+[src/types.ts:40](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/types.ts#L40)
+
 ## Properties
 
 ### poolInfo
@@ -260,17 +505,17 @@
 
 #### Defined in
 
-[src/utils/convexPoolInfo.json:1](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/convexPoolInfo.json#L1)
+[src/utils/convexPoolInfo.json:1](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/convexPoolInfo.json#L1)
 
 ## Variables
 
 ### CONFIG
 
-• `Const` **CONFIG**: `Config`
+• `Const` **CONFIG**: [`Config`](modules.md#config)
 
 #### Defined in
 
-[src/config.ts:47](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/config.ts#L47)
+[src/config.ts:46](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/config.ts#L46)
 
 ___
 
@@ -290,17 +535,17 @@ Deposit options.
 
 #### Defined in
 
-[src/utils/convex-utils.ts:6](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/convex-utils.ts#L6)
+[src/utils/convex-utils.ts:6](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/convex-utils.ts#L6)
 
 ___
 
 ### NETWORKS
 
-• `Const` **NETWORKS**: `Networks`
+• `Const` **NETWORKS**: [`Networks`](modules.md#networks)
 
 #### Defined in
 
-[src/config.ts:16](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/config.ts#L16)
+[src/config.ts:16](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/config.ts#L16)
 
 ___
 
@@ -320,7 +565,7 @@ Withdraw options.
 
 #### Defined in
 
-[src/utils/convex-utils.ts:13](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/convex-utils.ts#L13)
+[src/utils/convex-utils.ts:13](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/convex-utils.ts#L13)
 
 ___
 
@@ -330,7 +575,7 @@ ___
 
 #### Defined in
 
-[index.ts:14](https://github.com/defisaver/defisaver-sdk/blob/4146181/index.ts#L14)
+[index.ts:14](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/index.ts#L14)
 
 ___
 
@@ -351,7 +596,7 @@ ___
 
 #### Defined in
 
-[src/utils/mstableAssetPairs.ts:1](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/mstableAssetPairs.ts#L1)
+[src/utils/mstableAssetPairs.ts:1](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/mstableAssetPairs.ts#L1)
 
 ## Functions
 
@@ -371,7 +616,7 @@ ___
 
 #### Defined in
 
-[index.ts:15](https://github.com/defisaver/defisaver-sdk/blob/4146181/index.ts#L15)
+[index.ts:15](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/index.ts#L15)
 
 ___
 
@@ -383,7 +628,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `config` | `Config` |
+| `config` | [`Config`](modules.md#config) |
 
 #### Returns
 
@@ -391,7 +636,7 @@ ___
 
 #### Defined in
 
-[src/config.ts:69](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/config.ts#L69)
+[src/config.ts:67](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/config.ts#L67)
 
 ___
 
@@ -407,13 +652,13 @@ For that purpose, the estimateSellPrice method can be used.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `sellAmount` | `string` | {string} Amount of asset being sold ('1.5') |
-| `sellToken` | `string` | {string} Symbol for asset being sold ('ETH') |
-| `buyToken` | `string` | {string} Symbol for asset being bought ('DAI') |
-| `expectedPrice` | `string` | {string} Price received from estimatePrice (so minPrice can be calculated based on what user saw) |
-| `acceptedSlippagePercent` | `string` \| `number` | {string\|Number} Slippage percentage tolerated [0-100] |
-| `fromAccount` | `string` | {EthAddress} Withdraw funds from this addr |
-| `toAccount` | `string` | {EthAddress} Send funds to this addr |
+| `sellAmount` | `string` | Amount of asset being sold ('1.5') |
+| `sellToken` | `string` | Symbol for asset being sold ('ETH') |
+| `buyToken` | `string` | Symbol for asset being bought ('DAI') |
+| `expectedPrice` | `string` | Price received from estimatePrice (so minPrice can be calculated based on what user saw) |
+| `acceptedSlippagePercent` | `string` \| `number` | Slippage percentage tolerated [0-100] |
+| `fromAccount` | `string` | Withdraw funds from this addr |
+| `toAccount` | `string` | Send funds to this addr |
 
 #### Returns
 
@@ -421,7 +666,7 @@ For that purpose, the estimateSellPrice method can be used.
 
 #### Defined in
 
-[src/utils/zeroExExchange.ts:199](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/zeroExExchange.ts#L199)
+[src/utils/zeroExExchange.ts:196](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/zeroExExchange.ts#L196)
 
 ___
 
@@ -436,9 +681,9 @@ Example: estimateBuyPrice('1000', 'DAI', 'ETH') - swapping 1000 DAI for some ETH
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `buyAmount` | `string` | {String} amount of buyToken (not in wei) |
-| `buyToken` | `string` | {String} Symbol for asset being bought |
-| `sellToken` | `string` | {String} Symbol for asset being sold |
+| `buyAmount` | `string` | amount of buyToken (not in wei) |
+| `buyToken` | `string` | Symbol for asset being bought |
+| `sellToken` | `string` | Symbol for asset being sold |
 
 #### Returns
 
@@ -448,7 +693,7 @@ price of sellToken in buyToken
 
 #### Defined in
 
-[src/utils/zeroExExchange.ts:115](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/zeroExExchange.ts#L115)
+[src/utils/zeroExExchange.ts:113](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/zeroExExchange.ts#L113)
 
 ___
 
@@ -463,9 +708,9 @@ Example: getBestExchangePrice('1', 'ETH', 'DAI') - swapping 1 ETH for some DAI
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `sellAmount` | `string` | {String} amount of sellToken (not in wei) |
-| `sellToken` | `string` | {String} Symbol for asset being sold |
-| `buyToken` | `string` | {String} Symbol for asset being bought |
+| `sellAmount` | `string` | amount of sellToken (not in wei) |
+| `sellToken` | `string` | Symbol for asset being sold |
+| `buyToken` | `string` | Symbol for asset being bought |
 
 #### Returns
 
@@ -475,7 +720,7 @@ price of sellToken in buyToken
 
 #### Defined in
 
-[src/utils/zeroExExchange.ts:104](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/zeroExExchange.ts#L104)
+[src/utils/zeroExExchange.ts:102](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/zeroExExchange.ts#L102)
 
 ___
 
@@ -497,13 +742,13 @@ Get convex pool based on provided LP Token.
 
 #### Defined in
 
-[src/utils/convex-utils.ts:20](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/convex-utils.ts#L20)
+[src/utils/convex-utils.ts:20](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/convex-utils.ts#L20)
 
 ___
 
 ### getNetworkData
 
-▸ **getNetworkData**(`chainId`): `Network`
+▸ **getNetworkData**(`chainId`): [`Network`](modules.md#network)
 
 #### Parameters
 
@@ -513,11 +758,11 @@ ___
 
 #### Returns
 
-`Network`
+[`Network`](modules.md#network)
 
 #### Defined in
 
-[src/config.ts:57](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/config.ts#L57)
+[src/config.ts:55](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/config.ts#L55)
 
 ___
 
@@ -532,16 +777,18 @@ Source: https://uniswap.org/docs/v2/javascript-SDK/getting-pair-addresses/#types
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tokenA` | `string` | {EthAddress} Use WETH for ETH |
-| `tokenB` | `string` | {EthAddress} Use WETH for ETH |
+| `tokenA` | `string` | Use WETH for ETH |
+| `tokenB` | `string` | Use WETH for ETH |
 
 #### Returns
 
 `string`
 
+Address of pool
+
 #### Defined in
 
-[src/utils/uniswapLP.ts:22](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/uniswapLP.ts#L22)
+[src/utils/uniswapLP.ts:22](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/uniswapLP.ts#L22)
 
 ___
 
@@ -551,15 +798,17 @@ ___
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `symbolA` | `string` | {string} |
-| `symbolB` | `string` | {string} |
+| Name | Type |
+| :------ | :------ |
+| `symbolA` | `string` |
+| `symbolB` | `string` |
 
 #### Returns
 
 `string`
 
+Address of pool
+
 #### Defined in
 
-[src/utils/uniswapLP.ts:40](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/utils/uniswapLP.ts#L40)
+[src/utils/uniswapLP.ts:40](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/utils/uniswapLP.ts#L40)

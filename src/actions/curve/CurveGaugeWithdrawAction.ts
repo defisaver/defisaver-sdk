@@ -9,10 +9,10 @@ import {EthAddress,uint256} from '../../types';
 export class CurveGaugeWithdrawAction extends Action {
 
     /**
-     * @param {EthAddress} gaugeAddr
-     * @param {EthAddress} lpToken
-     * @param {EthAddress} receiver
-     * @param {string} amount
+     * @param gaugeAddr
+     * @param lpToken
+     * @param receiver
+     * @param amount
      */
     constructor(gaugeAddr:EthAddress, lpToken:EthAddress, receiver:EthAddress, amount:uint256) {
         requireAddress(receiver);

@@ -19,10 +19,10 @@ export class Action {
   mappableArgs: Array<any>;
 
   /**
-   * @param name {string}
-   * @param contractAddress {string}
-   * @param paramTypes {Array<string>}
-   * @param args {Array<*>}
+   * @param name
+   * @param contractAddress
+   * @param paramTypes
+   * @param args
    */
   constructor(name: string, contractAddress: string, paramTypes : Array<string | Array<any>>, args : Array<any>) {
     // if (new.target === Action) throw new TypeError("Actions are instantiated using derived classes");
@@ -37,7 +37,6 @@ export class Action {
   }
 
   /**
-   * @returns {string}
    * @private
    */
   getId() : string {
@@ -45,7 +44,6 @@ export class Action {
   }
 
   /**
-   * @returns {Array<number>}
    * @private
    */
   _getArgumentMappingWithSlots(subSlots: Array<any>) : Array<number>{
@@ -67,7 +65,6 @@ export class Action {
   }
 
    /**
-   * @returns {Array<number>}
    * @private
    */
     _getArgumentMapping() : Array<number> {
@@ -81,7 +78,7 @@ export class Action {
     }
 
   /**
-   * @param type {string}
+   * @param type
    * @private
    */
   _getPlaceholderForType(type: string) : string {
@@ -114,7 +111,7 @@ export class Action {
 
   /**
    * Encode arguments for calling the action directly
-   * @returns {Array<string>} bytes-encoded args
+   * @returns bytes-encoded args
    * @private
    */
   _encodeForCall() : Array<string> {
@@ -133,7 +130,7 @@ export class Action {
 
   /**
    * Encode arguments for calling the action via DsProxy
-   * @returns {Array<string>} `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
+   * @returns `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
   encodeForDsProxyCall() : Array<string | string[]>{
     if (CONFIG.chainId === 1) {
@@ -149,7 +146,6 @@ export class Action {
 
   /**
    * Encodes action for Recipe call
-   * @returns {Array<string>}
    */
   encodeForRecipe() : Array<string | string[] | number[]> {
       return [
@@ -170,7 +166,6 @@ export class Action {
   /**
    * Assets requiring approval to be used by DsProxy
    * Approval is done from owner to DsProxy
-   * @returns {Promise<Array<{owner: string, asset: string,[key: string]:any}>>}
    */
   async getAssetsToApprove(): Promise<Array<{owner?: string, asset?: string,[key: string]:any}>> {
     return [];
@@ -178,7 +173,7 @@ export class Action {
 
   /**
    * ETH value to be sent with transaction
-   * @returns {Promise<string>} ETH value in wei
+   * @returns ETH value in wei
    */
   async getEthValue() : Promise<string> {
     return '0';
@@ -186,7 +181,6 @@ export class Action {
 
   /**
    * Access list for single action
-   * @returns {AccessList}
    */
   getAccessList() : Array<AccessListItem> {
     return [

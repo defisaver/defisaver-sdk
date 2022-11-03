@@ -10,10 +10,10 @@ import {EthAddress,uint256} from '../../types';
  */
 export class MakerGenerateAction extends Action {
   /**
-   * @param vaultId {VaultId}
-   * @param amount {string} Amount of DAI to generate in wei
-   * @param to {EthAddress} Generated DAI will be sent to this address
-   * @param mcdManager {EthAddress}
+   * @param vaultId
+   * @param amount Amount of DAI to generate in wei
+   * @param to Generated DAI will be sent to this address
+   * @param mcdManager
    */
   constructor(vaultId:uint256, amount:EthAddress, to:EthAddress, mcdManager:EthAddress = getAddr('McdCdpManager')) {
     requireAddress(to);

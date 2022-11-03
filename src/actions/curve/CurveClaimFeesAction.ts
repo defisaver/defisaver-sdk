@@ -11,8 +11,8 @@ export class CurveClaimFeesAction extends Action {
 
     /**
      *
-     * @param {EthAddress} claimFor
-     * @param {EthAddress} receiver
+     * @param claimFor
+     * @param receiver
      */
     constructor(
         claimFor:EthAddress,

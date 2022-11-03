@@ -14,11 +14,11 @@ import {EthAddress,uint256} from '../../types';
     tokenForApproval:EthAddress;
 
     /**
-     * @param market {EthAddress} Comet proxy address of the market
-     * @param tokenAddr {EthAddress}
-     * @param amount {uint256} wei amount of asset to supply
-     * @param from {EthAddress} Address from where we're pulling the tokens
-     * @param onBehalf {EthAddress} Address of the account we are supplying the tokens
+     * @param market Comet proxy address of the market
+     * @param tokenAddr
+     * @param amount wei amount of asset to supply
+     * @param from Address from where we're pulling the tokens
+     * @param onBehalf Address of the account we are supplying the tokens
      */
      constructor(market:EthAddress, tokenAddr:EthAddress, amount:uint256, from:EthAddress, onBehalf:EthAddress) {
         super('CompV3Supply', getAddr('CompV3Supply'), ['address','address','uint256','address', 'address'], [market, tokenAddr, amount, from, onBehalf]);

@@ -9,12 +9,12 @@ import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
  */
 export class BalancerV2SupplyAction extends Action {
   /**
-   * @param {bytes32} poolId
-   * @param {EthAddress} from
-   * @param {EthAddress} to
-   * @param {address[]} tokens
-   * @param {uint256[]} maxAmountsIn
-   * @param {bytes} userData
+   * @param poolId
+   * @param from
+   * @param to
+   * @param tokens
+   * @param maxAmountsIn
+   * @param userData
    */
   constructor(poolId:bytes32, from:EthAddress, to:EthAddress, tokens:Array<EthAddress>, maxAmountsIn:Array<uint256>, userData: bytes) {
     requireAddress(to);

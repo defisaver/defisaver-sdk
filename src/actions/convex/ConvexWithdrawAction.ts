@@ -13,11 +13,11 @@ export class ConvexWithdrawAction extends Action {
     curveLp:EthAddress;
 
     /**
-     * @param {address} from 
-     * @param {address} to 
-     * @param {address} curveLp 
-     * @param {uint256} amount 
-     * @param {uint8} option 
+     * @param from 
+     * @param to 
+     * @param curveLp 
+     * @param amount 
+     * @param option 
      */
     constructor(
         from:EthAddress,

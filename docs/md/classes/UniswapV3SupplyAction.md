@@ -46,7 +46,7 @@ ActionWithL2.constructor
 
 #### Defined in
 
-[src/actions/uniswapV3/UniswapV3SupplyAction.ts:23](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/actions/uniswapV3/UniswapV3SupplyAction.ts#L23)
+[src/actions/uniswapV3/UniswapV3SupplyAction.ts:23](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/actions/uniswapV3/UniswapV3SupplyAction.ts#L23)
 
 ## Methods
 
@@ -60,4 +60,4 @@ ActionWithL2.constructor
 
 #### Defined in
 
-[src/actions/uniswapV3/UniswapV3SupplyAction.ts:48](https://github.com/defisaver/defisaver-sdk/blob/4146181/src/actions/uniswapV3/UniswapV3SupplyAction.ts#L48)
+[src/actions/uniswapV3/UniswapV3SupplyAction.ts:48](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/actions/uniswapV3/UniswapV3SupplyAction.ts#L48)

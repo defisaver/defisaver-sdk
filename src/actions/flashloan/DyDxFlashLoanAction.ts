@@ -9,10 +9,10 @@ import {EthAddress,uint256,bytes} from '../../types';
  */
 export class DyDxFlashLoanAction extends Action {
   /**
-   * @param loanAmount {string}
-   * @param tokenAddr {EthAddress}
-   * @param flParamGetterAddr {EthAddress}
-   * @param flParamGetterData {bytes}
+   * @param loanAmount
+   * @param tokenAddr
+   * @param flParamGetterAddr
+   * @param flParamGetterData
    */
   constructor(loanAmount:uint256, tokenAddr:EthAddress, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes= []) {
     super('FLDyDx',

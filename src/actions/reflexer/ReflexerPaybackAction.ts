@@ -10,9 +10,9 @@ import { getAddr } from '../../addresses.js';
  */
 export class ReflexerPaybackAction extends Action {
   /**
-   * @param safeId {SafeId}
-   * @param amount {string} Amount of RAI to be payed back in wei
-   * @param from {EthAddress} RAI will be sent from this address
+   * @param safeId
+   * @param amount Amount of RAI to be payed back in wei
+   * @param from RAI will be sent from this address
    */
   constructor(safeId:uint256, amount:uint256, from:EthAddress) {
     super('ReflexerPayback', getAddr('ReflexerPayback'), ['uint256','uint256','address'], [safeId, amount, from]);

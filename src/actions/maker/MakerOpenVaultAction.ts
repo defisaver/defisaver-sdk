@@ -9,8 +9,8 @@ import {EthAddress} from '../../types';
  */
 export class MakerOpenVaultAction extends Action {
   /**
-   * @param joinAddr {EthAddress}
-   * @param mcdManager {EthAddress}
+   * @param joinAddr
+   * @param mcdManager
    */
   constructor(joinAddr:EthAddress, mcdManager:EthAddress = getAddr('McdCdpManager')) {
     super('McdOpen', getAddr('McdOpen'), ['address','address'], [joinAddr, mcdManager]);

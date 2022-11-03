@@ -13,12 +13,12 @@ export class CurveDepositAction extends Action {
     tokensForApproval:Array<EthAddress>;
 
     /**
-     * @param {EthAddress} sender
-     * @param {EthAddress} receiver
-     * @param {EthAddress} poolAddr
-     * @param {string} minMintAmount
-     * @param {bool} useUnderlying
-     * @param {Array<string>} amounts
+     * @param sender
+     * @param receiver
+     * @param poolAddr
+     * @param minMintAmount
+     * @param useUnderlying
+     * @param amounts
      */
     constructor(
         sender:EthAddress,

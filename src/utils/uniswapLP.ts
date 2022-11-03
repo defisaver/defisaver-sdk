@@ -15,9 +15,9 @@ const INIT_CODE_HASH = '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e
  * Computes deterministic LP address.
  * Source: https://uniswap.org/docs/v2/javascript-SDK/getting-pair-addresses/#typescript
  *
- * @param tokenA {EthAddress} Use WETH for ETH
- * @param tokenB {EthAddress} Use WETH for ETH
- * @returns {EthAddress}
+ * @param tokenA Use WETH for ETH
+ * @param tokenB Use WETH for ETH
+ * @returns Address of pool
  */
  export const getPoolAddressByAddresses = (tokenA: EthAddress, tokenB: EthAddress): EthAddress => {
   requireAddress(tokenA)
@@ -33,9 +33,9 @@ const INIT_CODE_HASH = '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e
 }
 
 /**
- * @param symbolA {string}
- * @param symbolB {string}
- * @returns {EthAddress}
+ * @param symbolA
+ * @param symbolB
+ * @returns Address of pool
  */
  export const getPoolAddressBySymbols = (symbolA: string, symbolB: string):EthAddress => {
   return module.exports.getPoolAddressByAddresses(

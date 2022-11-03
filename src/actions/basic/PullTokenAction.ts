@@ -11,9 +11,9 @@ import {EthAddress,uint256} from '../../types';
  */
 export class PullTokenAction extends Action {
   /**
-   * @param token {string} Token address
-   * @param from {string} Transfer sender
-   * @param amount {string} Transfer amount (-1 for whole sender balance)
+   * @param token Token address
+   * @param from Transfer sender
+   * @param amount Transfer amount (-1 for whole sender balance)
    */
   constructor(token:EthAddress, from:EthAddress, amount:uint256) {
     requireAddress(from);

@@ -10,10 +10,10 @@ import { getAddr } from '../../addresses.js';
  */
 export class MakerGiveAction extends Action {
   /**
-   * @param vaultId {VaultId}
-   * @param newOwner {EthAddress}
-   * @param createProxy {boolean}
-   * @param mcdManager {EthAddress}
+   * @param vaultId
+   * @param newOwner
+   * @param createProxy
+   * @param mcdManager
    */
   constructor(vaultId:uint256, newOwner:EthAddress, createProxy:boolean, mcdManager:EthAddress= getAddr('McdCdpManager')) {
     requireAddress(newOwner);
