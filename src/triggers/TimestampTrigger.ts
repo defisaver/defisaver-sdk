@@ -10,6 +10,6 @@ import {uint256} from '../types';
 export class TimestampTrigger extends Action {
 
   constructor(nextTimestamp:uint256) {
-    super("TimestampTrigger", getAddr("TimestampTrigger"), ["uint256"], [...arguments]);
+    super("TimestampTrigger", getAddr("TimestampTrigger"), ["uint256"], [nextTimestamp]);
   }
 }

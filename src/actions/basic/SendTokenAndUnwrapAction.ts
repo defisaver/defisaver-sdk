@@ -24,7 +24,7 @@ export class SendTokenAndUnwrapAction extends Action {
         "address",
         "uint",
       ],
-      [...arguments]
+      [token,to,amount]
     );
   }
 }

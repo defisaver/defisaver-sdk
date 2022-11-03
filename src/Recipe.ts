@@ -1,10 +1,10 @@
 import AbiCoder from 'web3-eth-abi';
-const { BN } = require('web3-utils');
-const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
+import {toBN} from 'web3-utils';
+import {getAssetInfo, utils} from "@defisaver/tokens";
 import {Action}  from './Action';
 import { getAddr } from './addresses';
 import RecipeAbi from './abis/Recipe.json';
-import { AccessLists,AccessListItem  } from './types';
+import { AccessListItem  } from './types';
 import { CONFIG } from './config';
 
 /**
@@ -96,7 +96,7 @@ export class Recipe {
         }
       }
     }
-    return uniqueAssetOwnerPairs.filter(({ address }) => !compare(address, getAssetInfo('ETH').address));
+    return uniqueAssetOwnerPairs.filter(({ address }) => !utils.compare(address, getAssetInfo('ETH').address));
   }
 
   /**
@@ -105,7 +105,7 @@ export class Recipe {
    */
   async getEthValue():Promise<string> {
     return (await Promise.all(this.actions.map(a => a.getEthValue())))
-      .reduce((acc, val) => acc.add(new BN(val)), new BN(0))
+      .reduce((acc, val) => acc.add(toBN(val)), toBN(0))
       .toString();
   }
 

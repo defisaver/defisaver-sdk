@@ -22,7 +22,7 @@ export class LiquitySPDepositAction extends Action {
         super('LiquitySPDeposit',
             getAddr('LiquitySPDeposit'),
             ['uint256', 'address', 'address', 'address'],
-            [...arguments]);
+            [lusdAmount, from, wethTo, lqtyTo]);
 
         this.mappableArgs = [
             this.args[0],

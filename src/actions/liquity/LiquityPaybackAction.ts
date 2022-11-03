@@ -19,7 +19,7 @@ export class LiquityPaybackAction extends Action {
         super('LiquityPayback',
             getAddr('LiquityPayback'),
             ['uint256', 'address', 'address', 'address'],
-            [...arguments]);
+            [lusdAmount, from, upperHint, lowerHint]);
 
         this.mappableArgs = [
             this.args[0],

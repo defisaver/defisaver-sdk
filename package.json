@@ -6,12 +6,11 @@
   "scripts": {
     "test": "mocha --recursive",
     "version-bump": "git commit -am \"Version bump to $(npm version patch | cut -c 2-)\"",
-    "documentDev": "jsdoc2md -p list --files {src/**.js,src/utils/**.js} > DEV.md",
-    "documentActions": "jsdoc2md -p list --files src/actions/**/**.js > ACTIONS.md",
     "build:esm": "rm -rf esm && tsc -b",
-    "build": "npm run build:esm",
-    "documentTSMD": "npx typedoc --plugin typedoc-plugin-markdown --out docs/md",
-    "documentTS": "npx typedoc --out docs/default"
+    "build": "npm run lint && npm run build:esm",
+    "documentMD": "npx typedoc --plugin typedoc-plugin-markdown --out docs/md",
+    "document": "npx typedoc --out docs/default",
+    "lint": "eslint . --ext .ts"
   },
   "author": "DeFi Saver",
   "repository": "https://github.com/DecenterApps/defisaver-sdk",
@@ -28,8 +27,11 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.8",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
     "chai": "^4.2.0",
     "dotenv": "^10.0.0",
+    "eslint": "^8.26.0",
     "jsdoc-to-markdown": "^6.0.1",
     "mocha": "^8.2.1",
     "ts-node": "^10.9.1",

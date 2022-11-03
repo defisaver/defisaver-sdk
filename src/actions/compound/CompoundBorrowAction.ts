@@ -16,6 +16,6 @@ export class CompoundBorrowAction extends Action {
    */
   constructor(cTokenAddr:EthAddress, amount:uint256, to:EthAddress) {
     requireAddress(to);
-    super('CompBorrow', getAddr('CompBorrow'), ['address','uint256','address'], [...arguments]);
+    super('CompBorrow', getAddr('CompBorrow'), ['address','uint256','address'], [cTokenAddr,amount,to]);
   }
 }

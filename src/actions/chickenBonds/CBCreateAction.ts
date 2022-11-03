@@ -15,7 +15,7 @@ export class CBCreateAction extends Action {
    */
   constructor(amount:uint256, from:EthAddress) {
     requireAddress(from);
-    super('CBCreate', getAddr('CBCreate'), ['uint256','address'], [...arguments]);
+    super('CBCreate', getAddr('CBCreate'), ['uint256','address'], [amount,from]);
   }
 
   async getAssetsToApprove() {

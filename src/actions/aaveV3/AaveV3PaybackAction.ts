@@ -1,7 +1,7 @@
 import { getAssetInfoByAddress } from "@defisaver/tokens";
 import {ActionWithL2} from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
-import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
+import {EthAddress,uint8,uint16,uint256} from '../../types';
 
 /**
  * AaveV3PaybackAction - Payback debt on Aave using underlying token

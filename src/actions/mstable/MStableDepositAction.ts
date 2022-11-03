@@ -43,7 +43,7 @@ export class MStableDepositAction extends Action {
             'MStableDeposit',
             getAddr('MStableDeposit'),
             ['address', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256'],
-            [...arguments],
+            [bAsset,mAsset,saveAddress,vaultAddress,from,to,amount,minOut,assetPair],
         );
 
         this.mappableArgs = [

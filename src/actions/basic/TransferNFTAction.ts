@@ -1,12 +1,14 @@
 import {Action}  from "../../Action";
 import { getAddr } from '../../addresses.js';
 import {EthAddress,uint256} from '../../types';
+import { requireAddress } from "../../utils/general";
 
 /**
  * @category BasicActions
  */
 export class TransferNFTAction extends Action {
   constructor(nftAddr:EthAddress, from:EthAddress, to:EthAddress, nftId:uint256) {
+    requireAddress(to);
     super(
       'TransferNFT',
       getAddr('TransferNFT'),
@@ -16,7 +18,7 @@ export class TransferNFTAction extends Action {
         "address",
         "uint256"
       ],
-      [...arguments]
+      [nftAddr,from,to,nftId]
     );
   }
 }

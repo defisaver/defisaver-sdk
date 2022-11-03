@@ -18,7 +18,7 @@ export class LiquityWithdrawAction extends Action {
         super('LiquityWithdraw',
             getAddr('LiquityWithdraw'),
             ['uint256', 'address', 'address', 'address'],
-            [...arguments]);
+            [collAmount, to, upperHint, lowerHint]);
 
         this.mappableArgs = [
             this.args[0],

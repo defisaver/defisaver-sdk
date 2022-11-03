@@ -14,7 +14,7 @@ export class TokenBalanceAction extends Action {
         "address",
         "address",
       ],
-      [...arguments]
+      [tokenAddr,holderAddr]
     );
   }
 }

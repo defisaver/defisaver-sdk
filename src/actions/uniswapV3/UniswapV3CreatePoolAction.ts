@@ -45,7 +45,7 @@ export class UniswapV3CreatePoolAction extends ActionWithL2 {
         "address",
         "uint160",
       ],
-      [...arguments]
+      [token0, token1, fee, tickLower, tickUpper, amount0Desired, amount1Desired, amount0Min, amount1Min, recipient, deadline, from, sqrtPriceX96]
     );
 
     this.mappableArgs = [

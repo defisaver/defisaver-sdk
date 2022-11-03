@@ -22,7 +22,7 @@ export class CurveGaugeDepositAction extends Action {
         super('CurveGaugeDeposit',
             getAddr('CurveGaugeDeposit'),
             ['address', 'address', 'address', 'address', 'uint256'],
-            [...arguments],
+            [gaugeAddr, lpToken, sender, onBehalfOf, amount],
         );
 
         this.mappableArgs = [

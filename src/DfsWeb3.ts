@@ -1,6 +1,5 @@
 import DFSPRoxyRegistyAbi from './abis/DFSProxyRegistry.json';
 import ProxyRegistryAbi from './abis/ProxyRegistry.json';
-import ActionAbi from './abis/Action.json';
 import DsProxyAbi from './abis/DsProxy.json';
 import Erc20Abi from './abis/Erc20.json';
 import { getAddr } from './addresses';
@@ -30,7 +29,8 @@ export class DfsWeb3 {
     }
   }
 
-  onAccountsChanged(arg0: string, onAccountsChanged: any) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  onAccountsChanged(_arg0: string, _onAccountsChanged: any) {
     throw new Error('Method not implemented.');
   }
 

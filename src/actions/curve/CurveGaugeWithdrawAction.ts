@@ -19,7 +19,7 @@ export class CurveGaugeWithdrawAction extends Action {
         super('CurveGaugeWithdraw',
             getAddr('CurveGaugeWithdraw'),
             ['address', 'address', 'address', 'uint256'],
-            [...arguments],
+            [gaugeAddr, lpToken, receiver, amount],
         );
 
         this.mappableArgs = [

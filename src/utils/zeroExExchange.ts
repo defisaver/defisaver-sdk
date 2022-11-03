@@ -7,7 +7,7 @@ import axios from 'axios';
 import { assetAmountInWei, getAssetInfo } from '@defisaver/tokens';
 import {EthAddress} from '../types';
 
-const SellAction = require('../actions/basic/SellAction');
+import {SellAction} from '../actions/basic/SellAction';
 import { parsePriceFromContract, formatPriceForContract } from './general';
 const API_URL = 'https://api.0x.org/swap/v1/';
 const ZEROX_WRAPPER = '0x0c4e16899f2059F4e41ddB164317414a5c0d2988';
@@ -25,7 +25,7 @@ const ZEROX_WRAPPER = '0x0c4e16899f2059F4e41ddB164317414a5c0d2988';
  *
  * @private
  */
-const get0xPrice = async (_sellToken: string, _buyToken: string, _amount: string, convertAmountToWei: boolean = true, infoOnly: boolean = false, acceptedSlippagePercent: number = 3, shouldSell: boolean = true): Promise<{ data: string; price: string; guaranteedPrice: string; protocolFee: string; to: EthAddress; value: string; wrapper: EthAddress; allowanceTarget: EthAddress; estimatedGas: string; }> => {
+const get0xPrice = async (_sellToken: string, _buyToken: string, _amount: string, convertAmountToWei = true, infoOnly = false, acceptedSlippagePercent = 3, shouldSell = true): Promise<{ data: string; price: string; guaranteedPrice: string; protocolFee: string; to: EthAddress; value: string; wrapper: EthAddress; allowanceTarget: EthAddress; estimatedGas: string; }> => {
   // 0x API expects WETH symbol
   const buyToken = _buyToken.replace(/^ETH$/, 'WETH');
   const sellToken = _sellToken.replace(/^ETH$/, 'WETH');
@@ -83,7 +83,7 @@ const get0xPrice = async (_sellToken: string, _buyToken: string, _amount: string
  *
  * @private
  */
-const estimatePrice = async (amount: string, sellToken: string, buyToken: string, shouldSell: boolean = true): Promise<string> => {
+const estimatePrice = async (amount: string, sellToken: string, buyToken: string, shouldSell = true): Promise<string> => {
   if (!amount || !parseFloat(amount)) return '0';
   if (sellToken === buyToken) return '1';
   const zeroxData = await get0xPrice(sellToken, buyToken, amount, true, true, 0, shouldSell);
@@ -133,23 +133,16 @@ const createExchangeAction = async (
   buyAmount: string,
   expectedPrice: string,
   acceptedSlippagePercent: number,
-  shouldSell: boolean = true,
+  shouldSell = true,
   fromAccount: EthAddress,
   toAccount: EthAddress,
-): Promise<(typeof SellAction)> => {
+): Promise<SellAction> => {
   const sellTokenData = getAssetInfo(sellToken);
   const buyTokenData = getAssetInfo(buyToken);
 
-  const minPrice = new Dec(expectedPrice)
-    .mul(100 - acceptedSlippagePercent)
-    .div(100)
-    .toString();
-
   const zeroExData = await get0xPrice(sellTokenData.symbol, buyTokenData.symbol, shouldSell ? sellAmount : buyAmount, true, false, acceptedSlippagePercent, shouldSell);
 
-  let extraGas = parseInt(zeroExData.estimatedGas);
-
-  let protocolFee = zeroExData.protocolFee;
+  const protocolFee = zeroExData.protocolFee;
 
   // let value = zeroExData.protocolFee;
   // if (withValue && sellTokenData.symbol === 'ETH') {
@@ -201,7 +194,7 @@ const createExchangeAction = async (
   acceptedSlippagePercent: string | number,
   fromAccount: EthAddress,
   toAccount: EthAddress,
-): Promise<typeof SellAction> => createExchangeAction(
+): Promise<SellAction> => createExchangeAction(
   sellToken,
   buyToken,
   sellAmount,

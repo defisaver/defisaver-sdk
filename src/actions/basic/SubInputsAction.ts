@@ -16,7 +16,7 @@ export class SubInputsAction extends Action {
         "uint",
         "uint",
       ],
-      [...arguments]
+      [a,b]
     );
   }
 }

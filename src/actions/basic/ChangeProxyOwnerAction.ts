@@ -12,6 +12,6 @@ export class ChangeProxyOwnerAction extends Action {
    * @param newOwner Address of new owner
    */
   constructor(newOwner:EthAddress) {
-    super("ChangeProxyOwner", getAddr("ChangeProxyOwner"), ["address"], [...arguments]);
+    super("ChangeProxyOwner", getAddr("ChangeProxyOwner"), ["address"], [newOwner]);
   }
 }

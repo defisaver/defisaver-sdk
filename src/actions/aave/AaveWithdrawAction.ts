@@ -1,7 +1,7 @@
 import {Action}  from "../../Action";
 import { requireAddress } from "../../utils/general";
 import { getAddr } from '../../addresses.js';
-import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
+import {EthAddress,uint256} from '../../types';
 
 /**
  * AaveWithdrawAction - Withdraw token from an aave position
@@ -17,6 +17,6 @@ export class AaveWithdrawAction extends Action {
    */
   constructor(market: EthAddress, tokenAddr: EthAddress, amount: uint256, to:EthAddress) {
     requireAddress(to);
-    super('AaveWithdraw', getAddr('AaveWithdraw'), ['address','address','uint256','address'], [...arguments]);
+    super('AaveWithdraw', getAddr('AaveWithdraw'), ['address','address','uint256','address'], [market,tokenAddr,amount,to]);
   }
 }

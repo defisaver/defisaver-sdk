@@ -17,8 +17,8 @@ export class ActionWithL2 extends Action {
   encodeForL2Recipe() { return `0x${this.encodeInputs().slice(10)}`; } // cut the method id
 
   encodeInputs() {
-    let _arg = this._replaceWithPlaceholders(this.args, this.paramTypes);
-    let _paramType = this._formatType(this.paramTypes);
+    const _arg = this._replaceWithPlaceholders(this.args, this.paramTypes);
+    const _paramType = this._formatType(this.paramTypes);
     const executeActionDirectAbi: any = ActionAbi.find(({ name }) => name === 'executeActionDirect');
     return AbiCoder.encodeFunctionCall(executeActionDirectAbi, [AbiCoder.encodeParameter(_paramType, _arg)]);
   }

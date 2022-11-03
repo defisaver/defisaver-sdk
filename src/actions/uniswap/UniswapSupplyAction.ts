@@ -37,7 +37,7 @@ export class UniswapSupplyAction extends Action {
         "uint256",
         "uint256",
       ],
-      [...arguments]
+      [tokenA, tokenB, from, to, amountADesired, amountBDesired, amountAMin, amountBMin, deadline]
     );
 
     this.mappableArgs = [

@@ -1,5 +1,5 @@
-const Action = require("../Action");
-const {getAddr} = require("../addresses.js");
+import {Action} from "../Action";
+import { getAddr } from "../addresses.js";
 import {uint256} from '../types';
 
 /**
@@ -10,6 +10,6 @@ import {uint256} from '../types';
 export class GasPriceTrigger extends Action {
 
   constructor(maxGasPrice:uint256) {
-    super("GasPriceTrigger", getAddr("GasPriceTrigger"), ["uint256"], [...arguments]);
+    super("GasPriceTrigger", getAddr("GasPriceTrigger"), ["uint256"], [maxGasPrice]);
   }
 }

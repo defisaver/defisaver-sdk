@@ -12,7 +12,7 @@ export class WrapEthAction extends ActionWithL2 {
    * @param amount Wrap amount
    */
   constructor(amount:uint256) {
-    super("WrapEth", getAddr("WrapEth"), ["uint256"], [...arguments]);
+    super("WrapEth", getAddr("WrapEth"), ["uint256"], [amount]);
   }
 
   async getEthValue() {

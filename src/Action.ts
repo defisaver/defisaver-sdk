@@ -54,7 +54,7 @@ export class Action {
       }
 
       // Handle SubSlots placeholder values in strategies
-      if (new RegExp(/\&\w+/).test(arg)) {
+      if (new RegExp(/&\w+/).test(arg)) {
         if (arg === '&proxy') return 254;
         if (arg === '&eoa') return 255;
         return parseInt(subSlots[arg].index);
@@ -96,7 +96,7 @@ export class Action {
     if (Array.isArray(arg)) return arg.map((_arg, i) => this._replaceWithPlaceholders(_arg, paramType[i]));
     if(typeof(paramType) === 'string'){
         if (new RegExp(/\$\d+/).test(arg)) return this._getPlaceholderForType(paramType);
-        if (new RegExp(/\&\w+/).test(arg)) return this._getPlaceholderForType(paramType);
+        if (new RegExp(/&\w+/).test(arg)) return this._getPlaceholderForType(paramType);
     }
     return arg;
   }
@@ -115,8 +115,8 @@ export class Action {
    * @private
    */
   _encodeForCall() : Array<string> {
-    let _arg = this._replaceWithPlaceholders(this.args, this.paramTypes);
-    let _paramType = this._formatType(this.paramTypes);
+    const _arg = this._replaceWithPlaceholders(this.args, this.paramTypes);
+    const _paramType = this._formatType(this.paramTypes);
     return [AbiCoder.encodeParameter(_paramType, _arg)];
   }
 

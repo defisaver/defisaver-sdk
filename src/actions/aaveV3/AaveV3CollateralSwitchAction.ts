@@ -1,6 +1,6 @@
 import {ActionWithL2} from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
-import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
+import {EthAddress,uint8,uint16} from '../../types';
 
 /**
  *  AaveV3CollateralSwitchAction - Aave enable/disable token usage as collateral for AaveV3 position

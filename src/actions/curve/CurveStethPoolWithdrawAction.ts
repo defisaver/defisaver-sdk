@@ -29,7 +29,7 @@ export class CurveStethPoolWithdrawAction extends Action {
             'CurveStethPoolWithdraw',
             getAddr('CurveStethPoolWithdraw'),
             ['address', 'address', 'uint256[2]', 'uint256', 'uint256'],
-            [...arguments],
+            [from,to,amounts,maxBurnAmount,returnValue],
         );
 
         this.mappableArgs = [

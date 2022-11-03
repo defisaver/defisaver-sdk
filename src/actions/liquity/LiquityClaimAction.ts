@@ -17,7 +17,7 @@ export class LiquityClaimAction extends Action {
         super('LiquityClaim',
             getAddr('LiquityClaim'),
             ['address'],
-            [...arguments]);
+            [to]);
 
             this.mappableArgs = [
                 this.args[0],

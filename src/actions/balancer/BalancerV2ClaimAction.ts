@@ -1,7 +1,7 @@
 import {Action}  from "../../Action";
 import { requireAddress } from "../../utils/general";
 import { getAddr } from '../../addresses.js';
-import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
+import {EthAddress,uint256,bytes32} from '../../types';
 
 /** 
  * BalancerV2ClaimAction - Claim BAL governance tokens

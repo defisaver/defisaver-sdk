@@ -1,5 +1,5 @@
 import Dec from 'decimal.js';
-const {getAssetInfo} = require('@defisaver/tokens');
+import {getAssetInfo} from '@defisaver/tokens';
 
 export const requireAddress = (address:string) => {
   if (address.startsWith('%') || address.startsWith('&')) return;

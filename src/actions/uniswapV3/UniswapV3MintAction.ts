@@ -1,5 +1,5 @@
 import { getAssetInfoByAddress } from '@defisaver/tokens';
-import {EthAddress,uint256,uint24,int24,uint160} from '../../types';
+import {EthAddress,uint256,uint24,int24} from '../../types';
 import {ActionWithL2} from '../../ActionWithL2';
 import { getAddr } from '../../addresses.js';
 import { requireAddress } from "../../utils/general";
@@ -44,7 +44,7 @@ export class UniswapV3MintAction extends ActionWithL2 {
         "uint256",
         "address",
       ],
-      [...arguments]
+      [token0, token1, fee, tickLower, tickUpper, amount0Desired, amount1Desired, amount0Min, amount1Min, recipient, deadline, from]
     );
 
     this.mappableArgs = [

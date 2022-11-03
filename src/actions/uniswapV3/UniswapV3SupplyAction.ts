@@ -1,7 +1,7 @@
-const { getAssetInfoByAddress } = require('@defisaver/tokens');
+import { getAssetInfoByAddress } from '@defisaver/tokens';
 import {EthAddress,uint256} from '../../types';
-const ActionWithL2 = require('../../ActionWithL2');
-const { getAddr } = require('../../addresses.js');
+import {ActionWithL2} from '../../ActionWithL2';
+import { getAddr } from '../../addresses.js';
 
 /**
  * Supplies a pair of tokens to an existing Uniswap v3 position identified by tokenId
@@ -35,7 +35,7 @@ export class UniswapV3SupplyAction extends ActionWithL2 {
         "address",
         "address",
       ],
-      [...arguments]
+      [tokenId, amount0Desired, amount1Desired, amount0Min, amount1Min, deadline, from, token0, token1]
     );
 
     this.mappableArgs = [

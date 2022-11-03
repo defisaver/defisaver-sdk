@@ -25,7 +25,7 @@ export class PullTokenAction extends Action {
         "address",
         "uint",
       ],
-      [...arguments]
+      [token,from,amount]
     );
   }
 

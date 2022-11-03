@@ -35,7 +35,7 @@ export class UniswapWithdrawAction extends Action {
         "uint256",
         "uint256",
       ],
-      [...arguments]
+      [tokenA, tokenB, liquidity, to, from, amountAMin, amountBMin, deadline]
     );
 
     this.mappableArgs = [

@@ -14,7 +14,7 @@ export class LiquityRatioTrigger extends Action {
       "LiquityRatioTrigger",
       getAddr("LiquityRatioTrigger"),
       ["addresss", "uint256", "uint8"],
-      [...arguments]
+      [troveOwner,ratio,state]
     );
   }
 }

@@ -27,7 +27,7 @@ export class CurveStethPoolDepositAction extends Action {
             'CurveStethPoolDeposit',
             getAddr('CurveStethPoolDeposit'),
             ['address', 'address', 'uint256[2]', 'uint256'],
-            [...arguments],
+            [from,to,amounts,minMintAmount],
         );
 
         this.mappableArgs = [

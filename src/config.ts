@@ -1,5 +1,5 @@
-const Dec = require("decimal.js");
-const dfsTokensSetConfig = require("@defisaver/tokens").set;
+import Dec from "decimal.js";
+import {set as dfsTokensSetConfig} from "@defisaver/tokens";
 import {Config,Network,Networks} from './types';
 
 Dec.set({

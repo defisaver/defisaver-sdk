@@ -17,7 +17,7 @@ import {EthAddress,uint256} from '../../types';
      */
     constructor(market:EthAddress, amount:uint256, to:EthAddress, onBehalf:EthAddress) {
       requireAddress(to);
-      super('CompV3Borrow', getAddr('CompV3Borrow'), ['address','uint256','address','address'], [...arguments]);
+      super('CompV3Borrow', getAddr('CompV3Borrow'), ['address','uint256','address','address'], [market,amount,to,onBehalf]);
 
       this.mappableArgs = [
         this.args[0],

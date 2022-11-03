@@ -18,7 +18,7 @@ export class CBRedeemAction extends Action {
   constructor(bLUSDAmount:uint256, minLUSDFromSP:uint256, from:EthAddress, to:EthAddress) {
     requireAddress(from);
     requireAddress(to);
-    super('CBRedeem', getAddr('CBRedeem'), ['uint256','uint256','address','address'], [...arguments]);
+    super('CBRedeem', getAddr('CBRedeem'), ['uint256','uint256','address','address'], [bLUSDAmount,minLUSDFromSP,from,to]);
   }
 
   async getAssetsToApprove() {

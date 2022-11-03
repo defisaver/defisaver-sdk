@@ -24,7 +24,7 @@ export class SendTokenAction extends Action {
         "address",
         "uint",
       ],
-      [...arguments]
+      [token,to,amount]
     );
   }
 }

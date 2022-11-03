@@ -24,7 +24,7 @@ export class CurveSwapAction extends Action {
         super('CurveSwap',
             getAddr('CurveSwap'),
             ['address', 'address', 'address', 'address', 'address', 'uint256', 'uint256'],
-            [...arguments]);
+            [sender, receiver, pool, tokenA, tokenB, amount, expected]);
 
         this.mappableArgs = [
             this.args[0],

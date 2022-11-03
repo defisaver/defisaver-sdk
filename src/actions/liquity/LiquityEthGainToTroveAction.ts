@@ -16,7 +16,7 @@ export class LiquityEthGainToTroveAction extends Action {
         super('LiquityEthGainToTrove',
             getAddr('LiquityEthGainToTrove'),
             ['address', 'address', 'address'],
-            [...arguments]);
+            [lqtyTo, upperHint, lowerHint]);
 
         this.mappableArgs = [
             this.args[0],

@@ -22,7 +22,7 @@ export  class UnwrapEthAction extends ActionWithL2 {
         "uint256",
         "address"
       ],
-      [...arguments]
+      [amount,to]
     );
   }
   encodeInputs(){

@@ -2,7 +2,7 @@ import {Action}  from '../../Action';
 import { getAddr } from '../../addresses';
 import { getConvexPool } from '../../utils/convex-utils';
 import { requireAddress } from '../../utils/general';
-import {EthAddress,uint256} from '../../types';
+import {EthAddress} from '../../types';
 
 /**
  * ConvexClaimAction - Claims convex rewards

@@ -16,7 +16,7 @@ export class SumInputsAction extends Action {
         "uint",
         "uint",
       ],
-      [...arguments]
+      [a,b]
     );
   }
 }

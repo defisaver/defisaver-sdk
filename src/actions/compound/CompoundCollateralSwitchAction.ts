@@ -1,6 +1,6 @@
 import {Action}  from "../../Action";
 import { getAddr } from '../../addresses.js';
-import {EthAddress,uint256} from '../../types';
+import {EthAddress} from '../../types';
 
 /**
  *  CompoundCollateralSwitchAction - Compound enable/disable cToken usage as collateral
@@ -13,7 +13,7 @@ export class CompoundCollateralSwitchAction extends Action {
       'CompCollateralSwitch',
       getAddr('CompCollateralSwitch'),
       ['address[]', 'bool[]'],
-      [...arguments],
+      [cTokens,useAsCollateral],
     );
   }
 }

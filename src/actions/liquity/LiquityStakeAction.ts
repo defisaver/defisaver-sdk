@@ -23,7 +23,7 @@ export class LiquityStakeAction extends Action {
         super('LiquityStake',
             getAddr('LiquityStake'),
             ['uint256', 'address', 'address', 'address'],
-            [...arguments]);
+            [lqtyAmount, from, wethTo, lusdTo]);
 
         this.mappableArgs = [
             this.args[0],

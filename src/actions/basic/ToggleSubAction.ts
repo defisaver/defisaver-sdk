@@ -13,7 +13,7 @@ export class ToggleSubAction extends Action {
    * @param active Set to true to activate action, to false to deactivate
    */
   constructor(subId:uint256, active:boolean) {
-    super("ToggleSub", getAddr("ToggleSub"), ["uint256", "bool"], [...arguments]);
+    super("ToggleSub", getAddr("ToggleSub"), ["uint256", "bool"], [subId,active]);
 
   }
 

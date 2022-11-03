@@ -28,7 +28,7 @@ export class MStableClaimAction extends Action {
             'MStableClaim',
             getAddr('MStableClaim'),
             ['address', 'address', 'uint256', 'uint256'],
-            [...arguments],
+            [vaultAddress,to,first,last],
         );
 
         this.mappableArgs = [

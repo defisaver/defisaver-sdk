@@ -15,7 +15,7 @@ export class CompoundSupplyAction extends Action {
    * @param from
    * @param enableAsColl If we need to enable asset as collateral
    */
-  constructor(cTokenAddr:EthAddress, amount:uint256, from:EthAddress, enableAsColl:boolean = true) {
+  constructor(cTokenAddr:EthAddress, amount:uint256, from:EthAddress, enableAsColl = true) {
     super('CompSupply', getAddr('CompSupply'), ['address','uint256','address','bool'], [cTokenAddr, amount, from, enableAsColl]);
 
     this.mappableArgs = [

@@ -16,6 +16,6 @@ export class DyDxWithdrawAction extends Action {
    */
   constructor(tokenAddr:EthAddress, amount:uint256, to:EthAddress) {
     requireAddress(to);
-    super('DyDxWithdraw', getAddr('DyDxWithdraw'), ['address','uint256','address'], [...arguments]);
+    super('DyDxWithdraw', getAddr('DyDxWithdraw'), ['address','uint256','address'], [tokenAddr, amount, to]);
   }
 }

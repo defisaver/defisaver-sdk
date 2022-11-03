@@ -21,7 +21,7 @@ export class SellAction extends ActionWithL2 {
    * @param to Order recipient
    * @param protocolFee 0x fee (amount of ETH in Wei)
    */
-  constructor(exchangeOrder:Array<any>, from:EthAddress, to:EthAddress, protocolFee: string = '0') {
+  constructor(exchangeOrder:Array<any>, from:EthAddress, to:EthAddress, protocolFee = '0') {
     requireAddress(to);
     super(
       'DFSSell',

@@ -1,7 +1,7 @@
 import {Action}  from "../../Action";
 import { requireAddress } from "../../utils/general";
 import { getAddr } from "../../addresses.js";
-import {EthAddress,uint256} from '../../types';
+import {EthAddress} from '../../types';
 
 /**
  * CompoundV3ClaimAction - Claims Comp tokens to, and for, a specified address
@@ -22,7 +22,7 @@ export class CompoundV3ClaimAction extends Action {
       "CompV3Claim",
       getAddr("CompV3Claim"),
       ["address","address", "address", "bool"],
-      [...arguments]
+      [market,onBehalfOf,to,shouldAccrue]
     );
 
     this.mappableArgs = [

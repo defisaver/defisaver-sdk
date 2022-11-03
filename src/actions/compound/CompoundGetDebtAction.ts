@@ -15,7 +15,7 @@ export class CompoundGetDebtAction extends Action {
         "address",
         "address",
       ],
-      [...arguments]
+      [cTokenAddr,holderAddr]
     );
   }
 }

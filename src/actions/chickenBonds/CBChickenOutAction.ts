@@ -16,6 +16,6 @@ export class CBChickenOutAction extends Action {
    */
   constructor(bondId:uint256, minLUSD:uint256, to:EthAddress) {
     requireAddress(to);
-    super('CBChickenOut', getAddr('CBChickenOut'), ['uint256','uint256','address'], [...arguments]);
+    super('CBChickenOut', getAddr('CBChickenOut'), ['uint256','uint256','address'], [bondId,minLUSD,to]);
   }
 }

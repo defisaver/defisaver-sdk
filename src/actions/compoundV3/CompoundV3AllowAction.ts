@@ -16,7 +16,7 @@ import {EthAddress} from '../../types';
      */
     constructor(market:EthAddress, manager:EthAddress, isAllowed:boolean) {
       requireAddress(manager);
-      super('CompV3Allow', getAddr('CompV3Allow'), ['address', 'address','bool'], [...arguments]);
+      super('CompV3Allow', getAddr('CompV3Allow'), ['address', 'address','bool'], [market,manager,isAllowed]);
 
       this.mappableArgs = [
         this.args[0],

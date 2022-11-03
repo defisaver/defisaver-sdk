@@ -10,11 +10,11 @@ import {EthAddress,uint256} from '../../types';
  */
 export class CBChickenInAction extends Action {
   /**
-   * @param bondID Nft id of the bond
+   * @param bondId Nft id of the bond
    * @param to 
    */
   constructor(bondId:uint256, to:EthAddress) {
     requireAddress(to);
-    super('CBChickenIn', getAddr('CBChickenIn'), ['uint256','address'], [...arguments]);
+    super('CBChickenIn', getAddr('CBChickenIn'), ['uint256','address'], [bondId,to]);
   }
 }

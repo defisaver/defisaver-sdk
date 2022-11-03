@@ -32,7 +32,7 @@ export class LiquityRedeemAction extends Action {
         super('LiquityRedeem',
             getAddr('LiquityRedeem'),
             ['uint256', 'address', 'address', 'address', 'address', 'address', 'uint256', 'uint256', 'uint256'],
-            [...arguments]);
+            [lusdAmount,from,to,firstRedemptionHint,upperPartialRedemptionHint,lowerPartialRedemptionHint,partialRedemptionHintNICR,maxIterations,maxFeePercentage]);
 
         this.mappableArgs = [
             this.args[0],

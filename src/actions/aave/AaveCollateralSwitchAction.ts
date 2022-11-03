@@ -18,7 +18,7 @@ export class AaveCollateralSwitchAction extends Action {
       'AaveCollateralSwitch',
       getAddr('AaveCollateralSwitch'),
       ['address', 'address[]', 'bool[]'],
-      [...arguments],
+      [market,tokens,useAsCollateral],
     );
     this.mappableArgs = [];
   }

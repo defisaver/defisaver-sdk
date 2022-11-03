@@ -20,7 +20,7 @@ export class AaveClaimStkAaveAction extends Action {
       'AaveClaimStkAave',
       getAddr('AaveClaimStkAave'),
       ['address[]', 'uint256', 'address'],
-      [...arguments],
+      [assets,amount,to],
     );
     this.mappableArgs = [
       this.args[1],

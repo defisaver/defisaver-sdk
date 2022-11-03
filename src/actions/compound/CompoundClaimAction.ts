@@ -17,7 +17,7 @@ export class CompoundClaimAction extends Action {
    */
   constructor(cSupplyAddresses:Array<EthAddress>, cBorrowAddresses:Array<EthAddress>, from:EthAddress, to:EthAddress) {
     requireAddress(to);
-    super('CompClaim', getAddr('CompClaim'), ["address[]", "address[]", "address", "address"], [...arguments]);
+    super('CompClaim', getAddr('CompClaim'), ["address[]", "address[]", "address", "address"], [cSupplyAddresses, cBorrowAddresses, from, to]);
 
     this.mappableArgs = [
       this.args[2],

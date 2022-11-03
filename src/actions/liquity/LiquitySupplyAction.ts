@@ -19,7 +19,7 @@ export class LiquitySupplyAction extends Action {
         super('LiquitySupply',
             getAddr('LiquitySupply'),
             ['uint256', 'address', 'address', 'address'],
-            [...arguments]);
+            [collAmount, from, upperHint, lowerHint]);
 
         this.mappableArgs = [
             this.args[0],

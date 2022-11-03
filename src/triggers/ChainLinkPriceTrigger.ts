@@ -10,7 +10,7 @@ import {EthAddress,uint256,uint8} from '../types';
 export class ChainLinkPriceTrigger extends Action {
 
   constructor(tokenAddr:EthAddress, price:uint256, state:uint8) {
-    super("ChainLinkPriceTrigger", getAddr("ChainLinkPriceTrigger"), ["address", "uint256", "uint8"], [...arguments]);
+    super("ChainLinkPriceTrigger", getAddr("ChainLinkPriceTrigger"), ["address", "uint256", "uint8"], [tokenAddr,price,state]);
   }
 
 }

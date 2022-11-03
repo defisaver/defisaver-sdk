@@ -28,7 +28,7 @@ import {EthAddress,uint256} from '../../types';
         'CompV3Payback',
         getAddr('CompV3Payback'),
         ['address','uint256','address','address'],
-        [...arguments].slice(0,4)
+        [market,amount,from,onBehalf,asset].slice(0,4)
       );
       this.mappableArgs = [
         this.args[0],

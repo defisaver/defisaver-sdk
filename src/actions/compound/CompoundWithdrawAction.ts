@@ -16,6 +16,6 @@ export class CompoundWithdrawAction extends Action {
    */
   constructor(cTokenAddr:EthAddress, amount:uint256, to:EthAddress) {
     requireAddress(to);
-    super('CompWithdraw', getAddr('CompWithdraw'), ['address','uint256','address'], [...arguments]);
+    super('CompWithdraw', getAddr('CompWithdraw'), ['address','uint256','address'], [cTokenAddr, amount, to]);
   }
 }

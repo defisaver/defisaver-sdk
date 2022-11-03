@@ -23,7 +23,7 @@ export class CompoundV3WithdrawAction extends Action {
       "CompV3Withdraw",
       getAddr("CompV3Withdraw"),
       ["address","address", "address","uint256","address"],
-      [...arguments]
+      [market,to,asset,amount,onBehalf]
     );
 
     this.mappableArgs = [

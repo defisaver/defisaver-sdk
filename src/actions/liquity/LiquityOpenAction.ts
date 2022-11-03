@@ -23,7 +23,7 @@ export class LiquityOpenAction extends Action {
         super('LiquityOpen',
             getAddr('LiquityOpen'),
             ['uint256', 'uint256', 'uint256', 'address', 'address', 'address', 'address'],
-            [...arguments]);
+            [maxFeePercentage, collAmount, lusdAmount, from, to, upperHint, lowerHint]);
 
         this.mappableArgs = [
             this.args[0],

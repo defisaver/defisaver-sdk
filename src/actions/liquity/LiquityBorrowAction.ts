@@ -19,7 +19,7 @@ export class LiquityBorrowAction extends Action {
         super('LiquityBorrow',
             getAddr('LiquityBorrow'),
             ['uint256', 'uint256', 'address', 'address', 'address'],
-            [...arguments]);
+            [maxFeePercentage, lusdAmount, to, upperHint, lowerHint]);
 
         this.mappableArgs = [
             this.args[0],

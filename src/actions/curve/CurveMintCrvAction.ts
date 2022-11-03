@@ -17,7 +17,7 @@ export class CurveMintCrvAction extends Action {
         super('CurveMintCrv',
             getAddr('CurveMintCrv'),
             ['address[8]', 'address'],
-            [...arguments],
+            [gaugeAddrs, receiver],
         );
 
         this.mappableArgs = [

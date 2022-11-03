@@ -22,7 +22,7 @@ export class LiquitySPWithdrawAction extends Action {
         super('LiquitySPWithdraw',
             getAddr('LiquitySPWithdraw'),
             ['uint256', 'address', 'address', 'address'],
-            [...arguments]);
+            [lusdAmount, to, wethTo, lqtyTo]);
 
         this.mappableArgs = [
             this.args[0],

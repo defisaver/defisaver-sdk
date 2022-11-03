@@ -24,7 +24,7 @@ import {EthAddress,uint256} from '../../types';
         'CompV3Transfer', 
         getAddr('CompV3Transfer'), 
         ['address','address','address','address','uint256'], 
-        [...arguments]
+        [market,from,to,asset,amount]
       );
 
       this.mappableArgs = [
