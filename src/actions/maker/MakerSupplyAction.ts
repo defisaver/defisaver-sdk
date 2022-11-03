@@ -1,4 +1,4 @@
-import Action from "../../Action";
+import {Action}  from "../../Action";
 import { tokenFromJoin, getAssetInfo } from "@defisaver/tokens";
 import {uint256, EthAddress} from '../../types';
 import { getAddr } from '../../addresses.js';

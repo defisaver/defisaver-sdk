@@ -1,6 +1,6 @@
 import { getAssetInfoByAddress } from '@defisaver/tokens';
 import {EthAddress,uint256,uint24,int24,uint160} from '../../types';
-import ActionWithL2 from '../../ActionWithL2';
+import {ActionWithL2} from '../../ActionWithL2';
 import { getAddr } from '../../addresses.js';
 import { requireAddress } from "../../utils/general";
 

@@ -1,5 +1,5 @@
 import { getAssetInfo } from '@defisaver/tokens';
-import Action from '../../Action';
+import {Action}  from '../../Action';
 import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
 import { poolInfo, makeFlags } from '../../utils/curve-utils';

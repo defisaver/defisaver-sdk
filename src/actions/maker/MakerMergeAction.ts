@@ -1,4 +1,4 @@
-import Action from "../../Action";
+import {Action}  from "../../Action";
 import {EthAddress,uint256} from '../../types';
 import { getAddr } from '../../addresses.js';
 

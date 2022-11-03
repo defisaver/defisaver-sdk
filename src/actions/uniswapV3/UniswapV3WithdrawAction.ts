@@ -1,4 +1,4 @@
-import ActionWithL2 from '../../ActionWithL2';
+import {ActionWithL2} from '../../ActionWithL2';
 import { getAddr } from '../../addresses.js';
 import {EthAddress,uint256,uint128} from '../../types';
 import { requireAddress } from "../../utils/general";

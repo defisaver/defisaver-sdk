@@ -1,6 +1,7 @@
 import poolInfo from './curvePoolInfo.json';
 export {poolInfo};
 
+/** Make Flags. */
 export const makeFlags = (
     depositTargetType: any,
     explicitUnderlying: any,

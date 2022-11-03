@@ -1,4 +1,4 @@
-import Action from '../../Action';
+import {Action}  from '../../Action';
 import { getAddr } from '../../addresses';
 import { getConvexPool } from '../../utils/convex-utils';
 import { requireAddress } from '../../utils/general';

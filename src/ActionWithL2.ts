@@ -1,9 +1,14 @@
-import Action from './Action';
+import {Action} from './Action';
 import Dec from 'decimal.js';
 import AbiCoder from 'web3-eth-abi';
 import ActionAbi from './abis/Action.json';
 
-export default class ActionWithL2 extends Action {
+/**
+ * Single L2 action that can be executed directly, or combined into a set (ie. supply a vault)
+ * 
+ * @category Base Classes
+ */
+export class ActionWithL2 extends Action {
   /**
    * Encode arguments for calling the action via DsProxy
    * @returns {string}

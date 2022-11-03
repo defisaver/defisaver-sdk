@@ -7,8 +7,10 @@ import { AccessLists } from '../AccessLists';
 
 /**
  * Single action that can be executed directly, or combined into a set (ie. supply a vault)
+ * 
+ * @category Base Classes
  */
-export default class Action {
+export class Action {
 
   contractAddress : string;
   paramTypes: Array<string | Array<any>>;

@@ -1,6 +1,6 @@
 import ActionAbi from '../../abis/Action.json';
 import AbiCoder from 'web3-eth-abi';
-import ActionWithL2 from "../../ActionWithL2";
+import {ActionWithL2} from "../../ActionWithL2";
 import { requireAddress } from "../../utils/general";
 import { getAssetInfoByAddress } from "@defisaver/tokens";
 import { getAddr } from '../../addresses.js';

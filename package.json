@@ -10,7 +10,8 @@
     "documentActions": "jsdoc2md -p list --files src/actions/**/**.js > ACTIONS.md",
     "build:esm": "rm -rf esm && tsc -b",
     "build": "npm run build:esm",
-    "documentTS":"npx typedoc"
+    "documentTSMD": "npx typedoc --plugin typedoc-plugin-markdown --out docs/md",
+    "documentTS": "npx typedoc --out docs/default"
   },
   "author": "DeFi Saver",
   "repository": "https://github.com/DecenterApps/defisaver-sdk",
@@ -32,7 +33,8 @@
     "jsdoc-to-markdown": "^6.0.1",
     "mocha": "^8.2.1",
     "ts-node": "^10.9.1",
-    "typedoc": "^0.23.19",
+    "typedoc": "^0.23.20",
+    "typedoc-plugin-markdown": "^3.13.6",
     "typescript": "^4.8.4",
     "web3": "^1.3.4"
   }

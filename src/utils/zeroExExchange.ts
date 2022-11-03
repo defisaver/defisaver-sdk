@@ -101,7 +101,7 @@ const estimatePrice = async (amount: string, sellToken: string, buyToken: string
  * @param buyToken {String} Symbol for asset being bought
  * @returns {Promise<string>} price of sellToken in buyToken
  */
-const estimateSellPrice = async (sellAmount: string, sellToken: string, buyToken: string): Promise<string> => estimatePrice(sellAmount, sellToken, buyToken, true);
+ export const estimateSellPrice = async (sellAmount: string, sellToken: string, buyToken: string): Promise<string> => estimatePrice(sellAmount, sellToken, buyToken, true);
 
 /**
  * Gets price estimate for buying a specific amount.
@@ -112,7 +112,7 @@ const estimateSellPrice = async (sellAmount: string, sellToken: string, buyToken
  * @param sellToken {String} Symbol for asset being sold
  * @returns {Promise<string>} price of sellToken in buyToken
  */
-const estimateBuyPrice = async (buyAmount: string, buyToken: string, sellToken: string): Promise<string> => estimatePrice(buyAmount, sellToken, buyToken, false);
+ export const estimateBuyPrice = async (buyAmount: string, buyToken: string, sellToken: string): Promise<string> => estimatePrice(buyAmount, sellToken, buyToken, false);
 
 /**
  * @param sellToken {string} Symbol for asset being sold ('ETH')
@@ -196,7 +196,7 @@ const createExchangeAction = async (
  * @param toAccount {EthAddress} Send funds to this addr
  * @return {Promise<SellAction>}
  */
-const createSellAction = async (
+ export const createSellAction = async (
   sellAmount: string,
   sellToken: string,
   buyToken: string,
@@ -216,8 +216,3 @@ const createSellAction = async (
   toAccount,
 );
 
-export default {
-  createSellAction,
-  estimateBuyPrice,
-  estimateSellPrice,
-}

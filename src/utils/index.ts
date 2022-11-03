@@ -1,4 +1,4 @@
-import zeroExExchange from "./zeroExExchange";
+export * from "./zeroExExchange";
 import {
   getPoolAddressByAddresses,
   getPoolAddressBySymbols,
@@ -11,8 +11,7 @@ import {
   getConvexPool,
 } from "./convex-utils";
 
-export default {
-  zeroExExchange,
+export {
   getPoolAddressByAddresses,
   getPoolAddressBySymbols,
   mstableAssetPairs,

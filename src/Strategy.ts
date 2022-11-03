@@ -1,6 +1,10 @@
-import Action from './Action';
+import {Action}  from './Action';
 
-export default class Strategy {
+/**
+ * 
+ * @category Base Classes
+ */
+export class Strategy {
 
   name: string;
   subSlots: any;

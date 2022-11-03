@@ -1,4 +1,4 @@
-import ActionWithL2 from "../../ActionWithL2";
+import {ActionWithL2} from "../../ActionWithL2";
 import { getAddr } from '../../addresses.js';
 import {EthAddress} from '../../types';
 /**

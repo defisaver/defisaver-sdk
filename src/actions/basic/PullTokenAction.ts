@@ -1,6 +1,6 @@
 import { requireAddress } from "../../utils/general";
 import { getAssetInfoByAddress } from "@defisaver/tokens";
-import Action from "../../Action";
+import {Action}  from "../../Action";
 import { getAddr } from "../../addresses.js";
 import {EthAddress,uint256} from '../../types';
 

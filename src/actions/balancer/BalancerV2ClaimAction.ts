@@ -1,4 +1,4 @@
-import Action from "../../Action";
+import {Action}  from "../../Action";
 import { requireAddress } from "../../utils/general";
 import { getAddr } from '../../addresses.js';
 import {EthAddress,uint8,uint16,uint256,bytes32,bytes} from '../../types';
