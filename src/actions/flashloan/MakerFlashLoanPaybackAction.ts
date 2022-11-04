@@ -1,5 +1,5 @@
 import {SendTokenAction} from "../basic/SendTokenAction";
-import { getAddr } from '../../addresses.js';
+import { getAddr } from '../../addresses';
 import {uint256} from '../../types';
 
 /**

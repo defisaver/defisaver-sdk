@@ -1,5 +1,5 @@
 import {Action}  from "../../Action";
-import { getAddr } from "../../addresses.js";
+import { getAddr } from "../../addresses";
 import {uint256,bytes,bytes32,uint64} from '../../types';
 
 /**

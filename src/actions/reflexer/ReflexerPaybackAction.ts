@@ -1,7 +1,7 @@
 import {Action}  from "../../Action";
 import { getAssetInfo } from "@defisaver/tokens";
 import {EthAddress,uint256} from '../../types';
-import { getAddr } from '../../addresses.js';
+import { getAddr } from '../../addresses';
 
 /**
  * ReflexerPaybackAction - Payback RAI to a Safe

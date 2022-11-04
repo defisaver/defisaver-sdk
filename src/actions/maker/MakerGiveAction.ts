@@ -1,7 +1,7 @@
 import {Action}  from "../../Action";
 import { requireAddress } from "../../utils/general";
 import {EthAddress,uint256} from '../../types';
-import { getAddr } from '../../addresses.js';
+import { getAddr } from '../../addresses';
 
 /**
  * MakerGiveAction - gives a vault to a selected address

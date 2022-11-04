@@ -1,6 +1,6 @@
 import {Action}  from "../../Action";
 import {EthAddress,uint256} from '../../types';
-import { getAddr } from '../../addresses.js';
+import { getAddr } from '../../addresses';
 
 /**
  * ReflexerNativeUniV2SaviourDepositAction - Deposit lpToken in the contract in order to provide cover for a specific SAFE managed by the SAFE Manager

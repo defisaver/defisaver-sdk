@@ -1,10 +1,9 @@
 const AbiCoder = require('web3-eth-abi');
 const { BN, padLeft, toHex } = require('web3-utils');
 const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
-const Action = require('../../src/Action');
-const {getAddr} = require('../../src/addresses');
 const RecipeAbi = require('../../src/abis/Recipe.json');
 const MockAccessLists = require('./MockAccessLists');
+const dfs = require("../../umd");
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
@@ -16,12 +15,12 @@ class Recipe {
    */
   constructor(name, actions = []) {
     actions.forEach((action) => {
-      if (!action instanceof Action) throw new TypeError('Supplied action does not inherit Action');
+      if (!action instanceof dfs.Action) throw new TypeError('Supplied action does not inherit Action');
     });
 
     this.name = name;
     this.actions = actions;
-    this.recipeExecutorAddress = getAddr('RecipeExecutor');
+    this.recipeExecutorAddress = dfs.getAddr('RecipeExecutor');
   }
 
   /**
@@ -29,7 +28,7 @@ class Recipe {
    * @returns {Recipe}
    */
   addAction(action) {
-    if (!action instanceof Action) throw new TypeError('Supplied action does not inherit Action');
+    if (!action instanceof dfs.Action) throw new TypeError('Supplied action does not inherit Action');
     this.actions.push(action);
     return this;
   }
@@ -107,8 +106,8 @@ class Recipe {
    */
   getAccessList() {
     const addressMapping = {
-      [getAddr('RecipeExecutor')]: [],
-      [getAddr('DFSRegistry')]: [],
+      [dfs.getAddr('RecipeExecutor')]: [],
+      [dfs.getAddr('DFSRegistry')]: [],
     };
     this.actions.forEach((action) => {
       const accessList = MockAccessLists[action.name].map(([address, storageKeys]) => ({ address, storageKeys: storageKeys.map(num => padLeft(toHex(num), 64)) }));

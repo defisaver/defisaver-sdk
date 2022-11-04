@@ -1,6 +1,6 @@
 import {Action}  from "../../Action";
 import { getPoolAddressByAddresses } from "../../utils/uniswapLP";
-import { getAddr } from '../../addresses.js';
+import { getAddr } from '../../addresses';
 import {EthAddress,uint256} from '../../types';
 import { requireAddress } from "../../utils/general";
 

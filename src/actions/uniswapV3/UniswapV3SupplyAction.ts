@@ -1,7 +1,7 @@
 import { getAssetInfoByAddress } from '@defisaver/tokens';
 import {EthAddress,uint256} from '../../types';
 import {ActionWithL2} from '../../ActionWithL2';
-import { getAddr } from '../../addresses.js';
+import { getAddr } from '../../addresses';
 
 /**
  * Supplies a pair of tokens to an existing Uniswap v3 position identified by tokenId

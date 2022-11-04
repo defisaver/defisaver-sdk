@@ -1,2 +1,2 @@
 export * from './GUniDeposit';
-export * from './GUniWithdraw.js';
+export * from './GUniWithdraw';

@@ -1,7 +1,7 @@
 const {assert} = require('chai');
 const {getAssetInfo, getAssetInfoByAddress} = require("@defisaver/tokens");
 const axios = require("axios");
-const dfs = require('../../index');
+const dfs = require('../../umd');
 const exchangeUtils = dfs.utils.zeroExExchange;
 
 describe('Exchange utils', () => {

@@ -69,5 +69,3 @@ export class ConvexWithdrawAction extends Action {
         return [];
     }
 }
-
-module.exports = ConvexWithdrawAction;

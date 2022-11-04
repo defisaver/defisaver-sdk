@@ -1,5 +1,5 @@
 import {ActionWithL2} from "../../ActionWithL2";
-import { getAddr } from '../../addresses.js';
+import { getAddr } from '../../addresses';
 import {EthAddress} from '../../types';
 /**
  * AaveV3SetEModeAction - Set EMode for the proxy AaveV3 position

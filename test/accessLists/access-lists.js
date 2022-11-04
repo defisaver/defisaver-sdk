@@ -1,5 +1,5 @@
 const { assert } = require("chai");
-const dfs = require("../../index.js");
+const dfs = require("../../umd");
 const Recipe = require("./Recipe");
 const MockAccessLists = require('./MockAccessLists');
 const { padLeft, toHex } = require('web3-utils');

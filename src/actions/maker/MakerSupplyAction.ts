@@ -1,7 +1,7 @@
 import {Action}  from "../../Action";
 import { tokenFromJoin, getAssetInfo } from "@defisaver/tokens";
 import {uint256, EthAddress} from '../../types';
-import { getAddr } from '../../addresses.js';
+import { getAddr } from '../../addresses';
 
 /**
  * MakerSupplyAction - Supply token to a Vault

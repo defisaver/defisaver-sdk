@@ -1,1 +1,1 @@
-export * from './InstPullTokensAction.js';
+export * from './InstPullTokensAction';
