@@ -182,7 +182,8 @@ export class Action {
   /**
    * Access list for single action
    */
-  getAccessList() : Array<AccessListItem> {
+  getAccessList(chainId: number) : Array<AccessListItem> {
+    if(chainId!=1) return [];
     return [
       [this.contractAddress, []],
       ...(AccessLists[this.name as keyof _AccessLists] || []),

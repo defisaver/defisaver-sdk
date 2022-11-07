@@ -118,7 +118,7 @@ export class Recipe {
       [getAddr('DFSRegistry',CONFIG.chainId)]: [],
     };
     this.actions.forEach((action) => {
-      const accessList = action.getAccessList();
+      const accessList = action.getAccessList(CONFIG.chainId);
       accessList.forEach(({ address, storageKeys }:{address: string,storageKeys: Array<string>}) => {
         addressMapping[address] = new Set([...storageKeys, ...(addressMapping[address] || [])]);
       })
