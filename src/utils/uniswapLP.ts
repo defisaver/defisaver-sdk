@@ -38,7 +38,7 @@ const INIT_CODE_HASH = '0x96e8ac4277198ff8b6f785478aa9a39f403cb768dd02cbee326c3e
  * @returns Address of pool
  */
  export const getPoolAddressBySymbols = (symbolA: string, symbolB: string):EthAddress => {
-  return module.exports.getPoolAddressByAddresses(
+  return getPoolAddressByAddresses(
     getAssetInfo(symbolA.replace(/^ETH$/, 'WETH')).address,
     getAssetInfo(symbolB.replace(/^ETH$/, 'WETH')).address,
   )
