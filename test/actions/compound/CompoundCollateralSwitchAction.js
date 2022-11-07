@@ -9,7 +9,7 @@ describe('Action: CompoundCollateralSwitchAction', () => {
   context('Enable one token, disable other token with CompoundCollSwitch Action', () => {
     it('constructor', () => {
       action = new dfs.actions.compound.CompoundCollateralSwitchAction(
-          [dfs.getAddr('RaiWethUniV2LPToken'), getAddr('BalancerToken')],
+          [dfs.getAddr('RaiWethUniV2LPToken'), dfs.getAddr('BalancerToken')],
           [true, false],
       )
     })

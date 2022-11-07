@@ -63,9 +63,9 @@ export class Recipe {
   encodeForDsProxyCall() : Array<string> {
     const executeTaskAbi : any = RecipeAbi.find(({name}:{name: string}) => name === 'executeRecipe');
     const encoded = this._encodeForCall();
-    if ((typeof(encoded) !== 'string')) throw new TypeError('Encoded not string');
     return [
       this.recipeExecutorAddress,
+      // @ts-expect-error Interface of AbiCoder is wrong :(
       AbiCoder.encodeFunctionCall(executeTaskAbi, encoded),
     ];
   }
