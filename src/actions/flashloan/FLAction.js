@@ -12,7 +12,6 @@ class FLAction extends Action {
         )
         this.paramTypes = ['address[]','uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'];
         this.args = handleArgs(specificFLAction);
-        console.log(this.args);
     }
 }
 
