@@ -23,7 +23,6 @@ const ZEROX_WRAPPER = '0x0c4e16899f2059F4e41ddB164317414a5c0d2988';
  * @param acceptedSlippagePercent Slippage percentage tolerated [0-100]
  * @param shouldSell look for price to sell or to buy
  *
- * @private
  */
 const get0xPrice = async (_sellToken: string, _buyToken: string, _amount: string, convertAmountToWei = true, infoOnly = false, acceptedSlippagePercent = 3, shouldSell = true): Promise<{ data: string; price: string; guaranteedPrice: string; protocolFee: string; to: EthAddress; value: string; wrapper: EthAddress; allowanceTarget: EthAddress; estimatedGas: string; }> => {
   // 0x API expects WETH symbol
@@ -81,7 +80,6 @@ const get0xPrice = async (_sellToken: string, _buyToken: string, _amount: string
  * @param buyToken Symbol for asset being bought
  * @param shouldSell=true Look for price to sell or to buy
  *
- * @private
  */
 const estimatePrice = async (amount: string, sellToken: string, buyToken: string, shouldSell = true): Promise<string> => {
   if (!amount || !parseFloat(amount)) return '0';
@@ -124,7 +122,6 @@ const estimatePrice = async (amount: string, sellToken: string, buyToken: string
  * @param toAccount Send funds to this addr
  * @return SellAction
  *
- * @private
  */
 const createExchangeAction = async (
   sellToken: string,

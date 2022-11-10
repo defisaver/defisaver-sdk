@@ -37,12 +37,14 @@ module.exports = {
   },
   externals: [
   "decimal.js",
+  'web3',
   "web3-eth-abi",
   "web3-utils",
   "@defisaver/tokens",
   "@ethersproject/address",
   "@ethersproject/solidity",
   "@types/web3-eth-abi",
+  '@types/web3',
   "axios"],
   resolve: {
     extensions: ['.ts', '.js'],

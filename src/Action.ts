@@ -4,6 +4,10 @@ import { CONFIG } from './config';
 import ActionAbi from './abis/Action.json';
 import { AccessLists as _AccessLists,AccessListItem} from './types';
 import { AccessLists } from '../AccessLists';
+import { EthAddress } from './types';
+
+type ParamTypes = Array<string | Array<any>>;
+type Args = Array<any>;
 
 /**
  * Single action that can be executed directly, or combined into a set (ie. supply a vault)
@@ -12,11 +16,11 @@ import { AccessLists } from '../AccessLists';
  */
 export class Action {
 
-  contractAddress : string;
-  paramTypes: Array<string | Array<any>>;
+  contractAddress : EthAddress;
+  paramTypes: ParamTypes;
   name: string;
-  args: Array<any>;
-  mappableArgs: Array<any>;
+  args: Args;
+  mappableArgs: Args;
 
   /**
    * @param name
@@ -24,7 +28,7 @@ export class Action {
    * @param paramTypes
    * @param args
    */
-  constructor(name: string, contractAddress: string, paramTypes : Array<string | Array<any>>, args : Array<any>) {
+  constructor(name: string, contractAddress: EthAddress, paramTypes : ParamTypes, args : Args) {
     // if (new.target === Action) throw new TypeError("Actions are instantiated using derived classes");
 
     if (paramTypes.length !== args.length) throw new Error('Parameters/arguments length mismatch')
@@ -37,16 +41,16 @@ export class Action {
   }
 
   /**
-   * @private
+   * 
    */
   getId() : string {
     return keccak256(this.name).substr(0, 10);
   }
 
   /**
-   * @private
+   * 
    */
-  _getArgumentMappingWithSlots(subSlots: Array<any>) : Array<number>{
+  #_getArgumentMappingWithSlots(subSlots: Args) : Array<number>{
     return this.mappableArgs.map(arg => {
       if (new RegExp(/\$\d+/).test(arg)) {
         if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
@@ -65,9 +69,9 @@ export class Action {
   }
 
    /**
-   * @private
+   * 
    */
-    _getArgumentMapping() : Array<number> {
+    _getArgumentMapping() : Args {
       return this.mappableArgs.map(arg => {
         if (new RegExp(/\$\d+/).test(arg)) {
           if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
@@ -79,9 +83,9 @@ export class Action {
 
   /**
    * @param type
-   * @private
+   * 
    */
-  _getPlaceholderForType(type: string) : string {
+  #_getPlaceholderForType(type: string) : string {
     // TODO handle arrays?
     if (type.startsWith('bytes')) return `0x${'0'.repeat(parseInt(type.substr(5)))}`;
     if (type === 'address') return `0x${'0'.repeat(40)}`;
@@ -90,21 +94,21 @@ export class Action {
   }
 
   /**
-   * @private
+   * 
    */
-  _replaceWithPlaceholders(arg: any, paramType: string | Array<any>) : any {
+  _replaceWithPlaceholders(arg: Args, paramType: string | ParamTypes) : any {
     if (Array.isArray(arg)) return arg.map((_arg, i) => this._replaceWithPlaceholders(_arg, paramType[i]));
     if(typeof(paramType) === 'string'){
-        if (new RegExp(/\$\d+/).test(arg)) return this._getPlaceholderForType(paramType);
-        if (new RegExp(/&\w+/).test(arg)) return this._getPlaceholderForType(paramType);
+        if (new RegExp(/\$\d+/).test(arg)) return this.#_getPlaceholderForType(paramType);
+        if (new RegExp(/&\w+/).test(arg)) return this.#_getPlaceholderForType(paramType);
     }
     return arg;
   }
 
   /**
-   * @private
+   * 
    */
-  _formatType(paramType: string | Array<any>) : string {
+  _formatType(paramType: string | ParamTypes) : string {
     if (Array.isArray(paramType)) return `(${paramType.map((_paramType) => this._formatType(_paramType))})`;
     return paramType;
   }
@@ -112,7 +116,7 @@ export class Action {
   /**
    * Encode arguments for calling the action directly
    * @returns bytes-encoded args
-   * @private
+   * 
    */
   _encodeForCall() : Array<string> {
     const _arg = this._replaceWithPlaceholders(this.args, this.paramTypes);
@@ -159,7 +163,7 @@ export class Action {
   encodeForStrategy(subSlots: any) : Array<(string | number[])>{
     return [
       this.getId(),
-      this._getArgumentMappingWithSlots(subSlots), // paramMappings
+      this.#_getArgumentMappingWithSlots(subSlots), // paramMappings
     ]
   }
 

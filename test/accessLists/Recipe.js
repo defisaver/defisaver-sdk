@@ -36,9 +36,8 @@ class Recipe {
   /**
    * Encode arguments for calling the action set directly
    * @returns {Array<string|Array<*>>}
-   * @private
    */
-  _encodeForCall() {
+  #_encodeForCall() {
     const encoded = this.actions.map(action => action.encodeForRecipe());
     const transposed = encoded[0].map((_, colIndex) => encoded.map(row => row[colIndex]));
     const taskStruct = [
@@ -56,7 +55,7 @@ class Recipe {
     const executeTaskAbi = RecipeAbi.find(({name}) => name === 'executeTask');
     return [
       this.recipeExecutorAddress,
-      AbiCoder.encodeFunctionCall(executeTaskAbi, this._encodeForCall()),
+      AbiCoder.encodeFunctionCall(executeTaskAbi, this.#_encodeForCall()),
     ];
   }
 

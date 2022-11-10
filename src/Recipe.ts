@@ -44,9 +44,9 @@ export class Recipe {
 
   /**
    * Encode arguments for calling the action set directly
-   * @private
+   *
    */
-  _encodeForCall(): Array<string|Array<any>> {
+  #_encodeForCall(): Array<string|Array<any>> {
     const encoded = this.actions.map(action => action.encodeForRecipe());
     const transposed = encoded[0].map((_, colIndex) => encoded.map(row => row[colIndex]));
     const taskStruct = [
@@ -62,7 +62,7 @@ export class Recipe {
    */
   encodeForDsProxyCall() : Array<string> {
     const executeTaskAbi : any = RecipeAbi.find(({name}:{name: string}) => name === 'executeRecipe');
-    const encoded = this._encodeForCall();
+    const encoded = this.#_encodeForCall();
     return [
       this.recipeExecutorAddress,
       // @ts-expect-error Interface of AbiCoder is wrong :(
