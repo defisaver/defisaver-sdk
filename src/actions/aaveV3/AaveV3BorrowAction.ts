@@ -5,7 +5,7 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * AaveV3BorrowAction - Borrow a token from AaveV3
- * 
+ *
  * @category AaveV3
  */
 export class AaveV3BorrowAction extends ActionWithL2 {
@@ -19,7 +19,7 @@ export class AaveV3BorrowAction extends ActionWithL2 {
    * @param useOnBehalf use on behalf or default to proxy
    * @param onBehalf On whose behalf we borrow the tokens, defaults to proxy
    */
-  constructor( useDefaultMarket:boolean,market:EthAddress, amount:uint256, to:EthAddress, rateMode:uint8, assetId:uint16, useOnBehalf:boolean , onBehalf: EthAddress = getAddr('Empty')) {
+  constructor(useDefaultMarket: boolean, market: EthAddress, amount: uint256, to: EthAddress, rateMode: uint8, assetId: uint16, useOnBehalf: boolean , onBehalf: EthAddress = getAddr('Empty')) {
     requireAddress(to);
     super('AaveV3Borrow', getAddr('AaveV3Borrow'),
     ['uint256','address','uint8','uint16','bool','bool','address','address'],

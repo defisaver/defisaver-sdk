@@ -5,11 +5,10 @@ import {EthAddress,uint8,uint16,uint256} from '../../types';
 
 /**
  * AaveV3PaybackAction - Payback debt on Aave using underlying token
- * 
+ *
  * @category AaveV3
  */
 export class AaveV3PaybackAction extends ActionWithL2 {
-
 
   tokenForApproval:EthAddress;
 
@@ -19,12 +18,12 @@ export class AaveV3PaybackAction extends ActionWithL2 {
    * @param amount Amount of tokens to be payed back
    * @param from Tokens will be supplied from this address
    * @param rateMode Type of borrow debt [Stable: 1, Variable: 2]
-   * @param tokenAddr Address of token to pay back.
+   * @param tokenAddress Address of token to pay back.
    * @param assetId The id of the underlying asset to be repaid
    * @param useOnBehalf  use on behalf param or default to proxy
    * @param onBehalf For what user we are paying back the debt, defaults to proxy
    */
-  constructor(useOnDefaultMarket: boolean, market:EthAddress, amount:uint256, from:EthAddress, rateMode:uint8, tokenAddr:EthAddress, assetId:uint16, useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {
+  constructor(useOnDefaultMarket: boolean, market:EthAddress, amount:uint256, from:EthAddress, rateMode:uint8, tokenAddress:EthAddress, assetId:uint16, useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {
     super('AaveV3Payback', getAddr('AaveV3Payback'),
     ['uint256','address','uint8','uint16', 'bool', 'bool','address','address'],
     [amount, from, rateMode, assetId, useOnDefaultMarket, useOnBehalf, market, onBehalf]
@@ -40,7 +39,7 @@ export class AaveV3PaybackAction extends ActionWithL2 {
         this.args[6],
         this.args[7],
       ];
-    this.tokenForApproval = tokenAddr;
+    this.tokenForApproval = tokenAddress;
   }
 
   async getAssetsToApprove() {

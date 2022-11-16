@@ -5,10 +5,13 @@ import {EthAddress,uint8,uint16,uint256} from '../../types';
 
 /**
  * AaveV3ATokenPaybackAction - Repay Aave V3 debt using aTokens
- * 
+ *
  * @category AaveV3
  */
 export class AaveV3ATokenPaybackAction extends ActionWithL2 {
+
+   addressForApproval: EthAddress;
+
   /**
    * @param useDefaultMarket If this is true it defaults to the hardcoded market in contract
    * @param market Address provider for specific market
@@ -18,10 +21,7 @@ export class AaveV3ATokenPaybackAction extends ActionWithL2 {
    * @param aTokenAddr address of the aToken to be pulled
    * @param assetId The id of the underlying asset to be repaid
    */
-
-   addressForApproval: EthAddress;
-
-  constructor( aTokenAddr:EthAddress,useDefaultMarket:boolean,market:EthAddress,amount:uint256, from:EthAddress, rateMode:uint8, assetId:uint16) {
+  constructor(useDefaultMarket: boolean, market: EthAddress, amount: uint256, from: EthAddress, rateMode: uint8, aTokenAddr: EthAddress, assetId: uint16) {
     super('AaveV3ATokenPayback', getAddr('AaveV3ATokenPayback'),
     ['uint256','address','uint8','uint16', 'bool', 'address'],
     [amount, from, rateMode, assetId, useDefaultMarket, market]

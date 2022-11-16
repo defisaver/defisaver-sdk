@@ -5,7 +5,7 @@ import {EthAddress,uint16,uint256} from '../../types';
 
 /**
  * AaveV3SupplyAction - Supply token to an aave position on Aave V3
- * 
+ *
  * @category AaveV3
  */
 export class AaveV3SupplyAction extends ActionWithL2 {
@@ -13,14 +13,14 @@ export class AaveV3SupplyAction extends ActionWithL2 {
   tokenForApproval: EthAddress;
 
   /**
+   * @param useDefaultMarket If this is true it defaults to the hardcoded market in contract
+   * @param market Address provider for specific market
    * @param amount Amount of tokens to be deposited
    * @param from Tokens will be supplied from this address
    * @param tokenAddress Address of the token
    * @param assetId The id of the token to be deposited
    * @param enableAsColl If we need to enable asset as collateral
-   * @param useDefaultMarket If this is true it defaults to the hardcoded market in contract
    * @param useOnBehalf use on behalf param or default to proxy
-   * @param market Address provider for specific market
    * @param onBehalf For what user we are supplying the tokens, defaults to proxy
    */
   constructor(useDefaultMarket:boolean,market:EthAddress,amount:uint256, from:EthAddress, tokenAddress:EthAddress, assetId:uint16, enableAsColl:boolean,  useOnBehalf:boolean , onBehalf:EthAddress = getAddr('Empty')) {

@@ -5,15 +5,15 @@ import {EthAddress,uint16,uint256} from '../../types';
 
 /**
  * AaveV3SwapBorrowRateModeAction - Swaps proxy positions borrow rate mode between stable and variable.
- * 
+ *
  * @category AaveV3
  */
 export class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
   /**
-   * @param rateMode rate mode the user is swapping from.[Stable: 1, Variable: 2]
-   * @param assetId id of the underlying asset in the market
    * @param useDefaultMarket If this is true it defaults to the hardcoded market in contract
    * @param market Address provider for specific market
+   * @param rateMode rate mode the user is swapping from.[Stable: 1, Variable: 2]
+   * @param assetId id of the underlying asset in the market
    *
    */
   constructor(useDefaultMarket:boolean, market:EthAddress,rateMode:uint256, assetId:uint16) {

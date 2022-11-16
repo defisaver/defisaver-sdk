@@ -6,11 +6,11 @@ import { requireAddress } from "../../utils/general";
 
 /**
  *  AaveV3ClaimRewardsAction
- * 
+ *
  * @category AaveV3
  */
 export class AaveV3ClaimRewardsAction extends ActionWithL2 {
-    /**
+  /**
    * @param assetsLength Address provider for specific market
    * @param amount length of two arrays
    * @param to Address where claimed tokens will end up on .
