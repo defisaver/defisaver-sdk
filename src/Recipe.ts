@@ -4,19 +4,20 @@ import {getAssetInfo, utils} from "@defisaver/tokens";
 import {Action}  from './Action';
 import { getAddr } from './addresses';
 import RecipeAbi from './abis/Recipe.json';
-import { AccessListItem  } from './types';
+import {AccessListItem, EthAddress} from './types';
 import { CONFIG } from './config';
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
- * 
+ *
  * @category Base Classes
  */
 export class Recipe {
-  
+
   name: string;
   actions: Array<Action>;
   recipeExecutorAddress: string;
+  extraGas: number;
 
   /**
    * @param name
@@ -30,6 +31,7 @@ export class Recipe {
     this.name = name;
     this.actions = actions;
 
+    this.extraGas = 0;
     this.recipeExecutorAddress = getAddr('RecipeExecutor',CONFIG.chainId);
   }
 
@@ -119,7 +121,7 @@ export class Recipe {
     };
     this.actions.forEach((action) => {
       const accessList = action.getAccessList(CONFIG.chainId);
-      accessList.forEach(({ address, storageKeys }:{address: string,storageKeys: Array<string>}) => {
+      accessList.forEach(({ address, storageKeys }:{address: EthAddress,storageKeys: Array<string>}) => {
         addressMapping[address] = new Set([...storageKeys, ...(addressMapping[address] || [])]);
       })
     });

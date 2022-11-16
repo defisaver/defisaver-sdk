@@ -1,5 +1,5 @@
 type AccessListItem = {
-  address: string,
+  address: EthAddress,
   storageKeys: Array<any>,
 }
 
