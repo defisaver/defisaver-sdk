@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   mode: "none",
-  entry: './index.ts',
+  entry: './src/index.ts',
   target: 'node',
   output: {
     library: 'defisaver-sdk',

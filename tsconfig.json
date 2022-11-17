@@ -70,11 +70,10 @@
     "forceConsistentCasingInFileNames": true  /* Disallow inconsistently-cased references to the same file. */
   },
   "include": [
-    "index.ts",
     "./src/*",
   ],
   "typedocOptions": {
-    "entryPoints": ["index.ts"],
+    "entryPoints": ["./src/index.ts"],
     "out": "docs",
 }
 }

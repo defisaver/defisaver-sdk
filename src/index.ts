@@ -5,7 +5,7 @@ import type {
   AccessList, AccessListItem, AccessLists,
   bytes32, bytes,
   uint256, uint160, uint128, uint80, uint64, uint24, uint16, uint8, int24,
-} from './src/types';
+} from './types';
 
 export type {
   EthAddress,
@@ -16,18 +16,18 @@ export type {
 };
 
 /* Export methods, classes and other here */
-import { Action } from './src/Action';
-import { ActionWithL2 } from './src/ActionWithL2';
-import { Recipe } from './src/Recipe';
-import { Strategy } from './src/Strategy';
-import { DfsWeb3 } from './src/DfsWeb3';
+import { Action } from './Action';
+import { ActionWithL2 } from './ActionWithL2';
+import { Recipe } from './Recipe';
+import { Strategy } from './Strategy';
+import { DfsWeb3 } from './DfsWeb3';
 
-import * as actions from './src/actions';
-import * as triggers from './src/triggers';
-import * as utils from './src/utils';
+import * as actions from './actions';
+import * as triggers from './triggers';
+import * as utils from './utils';
 
-import { configure, getNetworkData, CONFIG, NETWORKS as networks } from './src/config';
-import { actionAddresses as _actionAddresses, otherAddresses as _otherAddresses, getAddr } from './src/addresses';
+import { configure, getNetworkData, CONFIG, NETWORKS as networks } from './config';
+import { actionAddresses as _actionAddresses, otherAddresses as _otherAddresses, getAddr } from './addresses';
 
 const actionAddressesAllChains = _actionAddresses;
 const actionAddresses = (chainId = null) => _actionAddresses[chainId || CONFIG.chainId];
