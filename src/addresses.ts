@@ -235,7 +235,7 @@ export const actionAddresses = {
   }
 };
 
-const otherAddresses = {
+export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
     RecipeExecutor: '0x1D6DEdb49AF91A11B5C5F34954FD3E8cC4f03A86',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',

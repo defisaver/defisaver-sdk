@@ -27,15 +27,19 @@ import * as triggers from './src/triggers';
 import * as utils from './src/utils';
 
 import { configure, getNetworkData, CONFIG, NETWORKS as networks } from './src/config';
-import { actionAddresses as _actionAddresses, getAddr } from './src/addresses';
+import { actionAddresses as _actionAddresses, otherAddresses as _otherAddresses, getAddr } from './src/addresses';
+
 const actionAddressesAllChains = _actionAddresses;
 const actionAddresses = (chainId = null) => _actionAddresses[chainId || CONFIG.chainId];
+
+const otherAddressesAllChains = _otherAddresses
+const otherAddresses = (chainId = null) => _otherAddresses[chainId || CONFIG.chainId];
 
 export {
   Action, ActionWithL2, Recipe, Strategy, DfsWeb3,
   actions, triggers, utils,
   configure, getNetworkData, CONFIG, networks,
-  actionAddresses, actionAddressesAllChains, getAddr
+  actionAddresses, actionAddressesAllChains, otherAddresses, otherAddressesAllChains, getAddr
 };
 
 export default {
