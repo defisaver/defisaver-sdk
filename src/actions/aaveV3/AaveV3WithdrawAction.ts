@@ -6,16 +6,16 @@ import { requireAddress } from "../../utils/general";
 
 /**
  * AaveV3WithdrawAction - Withdraw a previously supplied token from a position in AaveV3
- * 
+ *
  * @category AaveV3
  */
 export class AaveV3WithdrawAction extends ActionWithL2 {
   /**
-   * @param assetId The id of the token to be deposited
    * @param useDefaultMarket If this is true it defaults to the hardcoded market in contract
+   * @param market Address provider for specific market
    * @param amount Amount of tokens to be withdrawn -> send type(uint).max for whole amount
    * @param to Where the withdrawn tokens will be sent
-   * @param market Address provider for specific market
+   * @param assetId The id of the token to be deposited
    */
   constructor(useDefaultMarket:boolean, market:EthAddress, amount:uint256, to:EthAddress,assetId:uint16) {
     requireAddress(to);
