@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "./umd/index.js",
-  "module": "./esm/index.js",
-  "types": "./esm/index.d.ts",
+  "module": "./esm/src/index.js",
+  "types": "./esm/src/index.d.ts",
   "scripts": {
     "test": "mocha --recursive",
     "version-bump": "git commit -am \"Version bump to $(npm version patch | cut -c 2-)\"",
