@@ -11,7 +11,7 @@ export class FLAction extends Action {
    * @param specificFLAction - FL Action to be used
    */
   #handleArgs (specificFLAction: Action){
-    let argsToReturn = [
+    const argsToReturn = [
       specificFLAction.args[0],
       specificFLAction.args[1],
       specificFLAction.args[2],
