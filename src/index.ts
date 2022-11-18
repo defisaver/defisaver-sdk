@@ -46,5 +46,5 @@ export default {
   Action, ActionWithL2, Recipe, Strategy, DfsWeb3,
   actions, triggers, utils,
   configure, getNetworkData, CONFIG, networks,
-  actionAddresses, actionAddressesAllChains, getAddr
+  actionAddresses, actionAddressesAllChains, otherAddresses, otherAddressesAllChains, getAddr
 };

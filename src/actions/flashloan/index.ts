@@ -7,6 +7,7 @@ export * from './AaveV3FlashLoanPaybackAction';
 export * from './MakerFlashLoanAction';
 export * from './MakerFlashLoanPaybackAction';
 export * from './BalancerFlashLoanAction';
-export *from './BalancerFlashLoanPaybackAction';
+export * from './BalancerFlashLoanPaybackAction';
 export * from './EulerFlashLoanAction';
 export * from './EulerFlashLoanPaybackAction';
+export * from './FLAction';
