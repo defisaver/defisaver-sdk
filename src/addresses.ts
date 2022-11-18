@@ -236,7 +236,7 @@ export const actionAddresses = {
     UniSupplyV3: '0x55675C6041A33EE9BDd796Edaa0f098AC7F3534f',
     UniWithdrawV3: '0xa004c22eFd0CD87847DE83Ce9ab92af5382c2efe',
     UniCreatePoolV3: '0x334Ab3C12a4c0315566fd9308880Dad71F838Dc5',
-  }
+  },
 };
 
 export const otherAddresses = {
@@ -249,9 +249,9 @@ export const otherAddresses = {
     McdCdpManager: '0x5ef30b9986345249bc32d8928b7ee64de9435e39',
     BCdpManager: '0x3f30c2381CD8B917Dd96EB2f1A4F96D91324BBed',
     AaveDefaultMarket: '0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5',
-    UniswapV3PositionManager : '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
-    RaiWethUniV2LPToken : '0x8aE720a71622e824F576b4A8C03031066548A3B1',
-    BalancerToken : '0xba100000625a3754423978a60c9317c58a424e3D',
+    UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
+    RaiWethUniV2LPToken: '0x8aE720a71622e824F576b4A8C03031066548A3B1',
+    BalancerToken: '0xba100000625a3754423978a60c9317c58a424e3D',
     CrvToken: '0xD533a949740bb3306d119CC777fa900bA034cd52',
     CvxToken: '0x4e3FBD56CD56c3e72c1403e103b45Db9da5B9D2B',
     DAI: '0x6b175474e89094c44da98b954eedeac495271d0f',
@@ -269,7 +269,7 @@ export const otherAddresses = {
     DefisaverLogger: '0xFc2f1355296ab7dd98a1260E3Ff5E906999d4Acb',
     Empty: '0x0000000000000000000000000000000000000000',
 
-    UniswapV3PositionManager : '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
+    UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
   },
   [NETWORKS.arbitrum.chainId]: {
     RecipeExecutor: '0xe775c59e5662597bcE8aB4432C06380709554883',
@@ -302,7 +302,6 @@ export const getAddr = (name: string, chainId:number = CONFIG.chainId) : EthAddr
     if (!actions[name as keyof typeof actions] && !other[name as keyof typeof other]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
   }
 
-  if(actions[name as keyof typeof actions])
-    return actions[name as keyof typeof actions]!
+  if (actions[name as keyof typeof actions]) return actions[name as keyof typeof actions]!;
   return other[name as keyof typeof other]!;
 };

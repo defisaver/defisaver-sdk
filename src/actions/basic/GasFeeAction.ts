@@ -1,6 +1,6 @@
-import {Action}  from "../../Action";
-import { getAddr } from "../../addresses";
-import {EthAddress,uint256} from '../../types';
+import { Action } from '../../Action';
+import { getAddr } from '../../addresses';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * @category BasicActions
@@ -13,9 +13,9 @@ export class GasFeeAction extends Action {
    * @param dfsFeeDivider Additional fee for DFS, default is 5bps
    */
   constructor(gasStart:uint256, feeToken:EthAddress, availableAmount:uint256, dfsFeeDivider:uint256 = '2000') {
-    super("GasFeeTaker",
-      getAddr("GasFeeTaker"),
-      ["uint256", "address", "uint256", "uint256"],
+    super('GasFeeTaker',
+      getAddr('GasFeeTaker'),
+      ['uint256', 'address', 'uint256', 'uint256'],
       [gasStart, feeToken, availableAmount, dfsFeeDivider],
     );
 
@@ -25,5 +25,4 @@ export class GasFeeAction extends Action {
       this.args[3],
     ];
   }
-
 }

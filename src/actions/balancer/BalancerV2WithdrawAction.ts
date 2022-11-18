@@ -1,7 +1,9 @@
-import {Action}  from "../../Action";
-import { requireAddress } from "../../utils/general";
+import { Action } from '../../Action';
+import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256,bytes32,bytes} from '../../types';
+import {
+  EthAddress, uint256, bytes32, bytes,
+} from '../../types';
 
 
 /**
@@ -26,15 +28,15 @@ export class BalancerV2WithdrawAction extends Action {
       'BalancerV2Withdraw',
       getAddr('BalancerV2Withdraw'),
       [
-        "bytes32",
-        "address",
-        "address",
-        "uint256",
-        "address[]",
-        "uint256[]",
-        "bytes",
+        'bytes32',
+        'address',
+        'address',
+        'uint256',
+        'address[]',
+        'uint256[]',
+        'bytes',
       ],
-      [poolId, from, to, lpTokenAmount, tokens, minAmountsOut, userData]
+      [poolId, from, to, lpTokenAmount, tokens, minAmountsOut, userData],
     );
 
     this.from = from;
@@ -45,15 +47,15 @@ export class BalancerV2WithdrawAction extends Action {
       this.args[3],
     ];
 
-    for (let i = 0; i < this.args[5].length; i++){
+    for (let i = 0; i < this.args[5].length; i++) {
       this.mappableArgs.push(this.args[5][i]);
     }
   }
 
   async getAssetsToApprove() {
     const approveArr = [];
-    const token = this.args[0].slice(0,42);
-    approveArr.push({asset: token, owner: this.args[1], specialApproveLabel: 'balancer'});
+    const token = this.args[0].slice(0, 42);
+    approveArr.push({ asset: token, owner: this.args[1], specialApproveLabel: 'balancer' });
     return approveArr;
   }
 }

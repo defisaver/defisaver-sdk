@@ -1,11 +1,11 @@
-import {Action} from './Action';
 import Dec from 'decimal.js';
 import AbiCoder from 'web3-eth-abi';
+import { Action } from './Action';
 import ActionAbi from './abis/Action.json';
 
 /**
  * Single L2 action that can be executed directly, or combined into a set (ie. supply a vault)
- * 
+ *
  * @category Base Classes
  */
 export class ActionWithL2 extends Action {
@@ -25,21 +25,21 @@ export class ActionWithL2 extends Action {
 
   addressToBytes20(address:string) { return address.slice(2); }
 
-  boolToBytes1(bool:boolean) { return bool ? '01' : '00' }
+  boolToBytes1(bool:boolean) { return bool ? '01' : '00'; }
 
   async getEthValue() { return '0'; }
 
-  numberToBytes2(number:number){
+  numberToBytes2(number:number) {
     const hexNumber = number.toString(16);
     return hexNumber.padStart(4, '0');
   }
 
-  numberToBytes1(number:number){
+  numberToBytes1(number:number) {
     const hexNumber = number.toString(16);
     return hexNumber.padStart(2, '0');
   }
 
-  numberToBytes32(number:number){
+  numberToBytes32(number:number) {
     let hexNumber = new Dec(number).toHex();
     hexNumber = hexNumber.slice(2);
 

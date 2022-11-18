@@ -1,7 +1,7 @@
-import {ActionWithL2} from "../../ActionWithL2";
+import { ActionWithL2 } from '../../ActionWithL2';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint8,uint256} from '../../types';
-import { requireAddress } from "../../utils/general";
+import { EthAddress, uint8, uint256 } from '../../types';
+import { requireAddress } from '../../utils/general';
 
 
 /**
@@ -26,9 +26,10 @@ export class AaveV3ClaimRewardsAction extends ActionWithL2 {
       [assetsLength, amount, to, reward, assets],
     );
   }
+
   encodeInputs() {
     // executeActionDirectL2
-    let encodedInput = "0x2895f3aa";
+    let encodedInput = '0x2895f3aa';
     // assetsLength
     encodedInput = encodedInput.concat(this.numberToBytes1(this.args[0]));
     // amount
@@ -39,9 +40,9 @@ export class AaveV3ClaimRewardsAction extends ActionWithL2 {
     encodedInput = encodedInput.concat(this.addressToBytes20(this.args[3]));
     // assets
     const arrayLength = this.args[0];
-    for (let i = 0; i < arrayLength; i++){
+    for (let i = 0; i < arrayLength; i++) {
       // assets[i]
-      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[4][i]))
+      encodedInput = encodedInput.concat(this.addressToBytes20(this.args[4][i]));
     }
 
     return encodedInput;

@@ -1,6 +1,6 @@
-import {Action}  from "../../Action";
-import { getAddr } from "../../addresses";
-import {EthAddress,uint256} from '../../types';
+import { Action } from '../../Action';
+import { getAddr } from '../../addresses';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * @category BasicActions
@@ -14,9 +14,9 @@ export class GasFeeActionL2 extends Action {
    * @param l1GasCostInEth Additional tx cost for L1 in eth
    */
   constructor(gasStart:uint256, feeToken:EthAddress, availableAmount:uint256, dfsFeeDivider:uint256 = '2000', l1GasCostInEth:uint256 = '0') {
-    super("GasFeeTakerL2",
-      getAddr("GasFeeTakerL2"),
-      ["uint256", "address", "uint256", "uint256", "uint256"],
+    super('GasFeeTakerL2',
+      getAddr('GasFeeTakerL2'),
+      ['uint256', 'address', 'uint256', 'uint256', 'uint256'],
       [gasStart, feeToken, availableAmount, dfsFeeDivider, l1GasCostInEth],
     );
 

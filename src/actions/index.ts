@@ -1,26 +1,26 @@
-import * as maker from "./maker";
-import * as aave from "./aave";
-import * as compound from "./compound";
-import * as basic from "./basic";
-import * as flashloan from "./flashloan";
-import * as uniswap from "./uniswap";
-import * as reflexer from "./reflexer";
-import * as dydx from "./dydx";
-import * as uniswapV3 from "./uniswapV3";
-import * as checkers from "./checkers";
-import * as liquity from "./liquity";
-import * as yearn from "./yearn";
-import * as lido from "./lido";
-import * as insta from "./insta";
-import * as balancer from "./balancer";
-import * as curve from "./curve";
-import * as guni from "./guni";
-import * as mstable from "./mstable";
-import * as rari from "./rari";
-import * as aaveV3 from "./aaveV3";
-import * as convex from "./convex";
-import * as chickenBonds from "./chickenBonds";
-import * as compoundV3 from "./compoundV3";
+import * as maker from './maker';
+import * as aave from './aave';
+import * as compound from './compound';
+import * as basic from './basic';
+import * as flashloan from './flashloan';
+import * as uniswap from './uniswap';
+import * as reflexer from './reflexer';
+import * as dydx from './dydx';
+import * as uniswapV3 from './uniswapV3';
+import * as checkers from './checkers';
+import * as liquity from './liquity';
+import * as yearn from './yearn';
+import * as lido from './lido';
+import * as insta from './insta';
+import * as balancer from './balancer';
+import * as curve from './curve';
+import * as guni from './guni';
+import * as mstable from './mstable';
+import * as rari from './rari';
+import * as aaveV3 from './aaveV3';
+import * as convex from './convex';
+import * as chickenBonds from './chickenBonds';
+import * as compoundV3 from './compoundV3';
 
 export {
   aave,
@@ -45,5 +45,5 @@ export {
   aaveV3,
   convex,
   chickenBonds,
-  compoundV3
+  compoundV3,
 };

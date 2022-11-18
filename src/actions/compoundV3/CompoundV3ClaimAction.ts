@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
-import { requireAddress } from "../../utils/general";
-import { getAddr } from "../../addresses";
-import {EthAddress} from '../../types';
+import { Action } from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import { EthAddress } from '../../types';
 
 /**
  * CompoundV3ClaimAction - Claims Comp tokens to, and for, a specified address
- * 
+ *
  * @category CompundV3
  */
 export class CompoundV3ClaimAction extends Action {
@@ -19,10 +19,10 @@ export class CompoundV3ClaimAction extends Action {
     requireAddress(onBehalfOf);
     requireAddress(to);
     super(
-      "CompV3Claim",
-      getAddr("CompV3Claim"),
-      ["address","address", "address", "bool"],
-      [market,onBehalfOf,to,shouldAccrue]
+      'CompV3Claim',
+      getAddr('CompV3Claim'),
+      ['address', 'address', 'address', 'bool'],
+      [market, onBehalfOf, to, shouldAccrue],
     );
 
     this.mappableArgs = [

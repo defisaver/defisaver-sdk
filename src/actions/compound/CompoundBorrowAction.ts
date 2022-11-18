@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
-import { requireAddress } from "../../utils/general";
+import { Action } from '../../Action';
+import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256} from '../../types';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * CompoundBorrowAction - Borrow tokens from Compound
- * 
+ *
  * @category CompundV2
  */
 export class CompoundBorrowAction extends Action {
@@ -16,6 +16,6 @@ export class CompoundBorrowAction extends Action {
    */
   constructor(cTokenAddr:EthAddress, amount:uint256, to:EthAddress) {
     requireAddress(to);
-    super('CompBorrow', getAddr('CompBorrow'), ['address','uint256','address'], [cTokenAddr,amount,to]);
+    super('CompBorrow', getAddr('CompBorrow'), ['address', 'uint256', 'address'], [cTokenAddr, amount, to]);
   }
 }

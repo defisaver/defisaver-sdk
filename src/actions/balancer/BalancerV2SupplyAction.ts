@@ -1,9 +1,11 @@
-import {Action}  from "../../Action";
-import { requireAddress } from "../../utils/general";
+import { Action } from '../../Action';
+import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256,bytes32,bytes} from '../../types';
+import {
+  EthAddress, uint256, bytes32, bytes,
+} from '../../types';
 
-/** 
+/**
  * BalancerV2SupplyAction - Supply tokens to Balancer pool
  * @category BalancerV2
  */
@@ -22,29 +24,29 @@ export class BalancerV2SupplyAction extends Action {
       'BalancerV2Supply',
       getAddr('BalancerV2Supply'),
       [
-        "bytes32",
-        "address",
-        "address",
-        "address[]",
-        "uint256[]",
-        "bytes",
+        'bytes32',
+        'address',
+        'address',
+        'address[]',
+        'uint256[]',
+        'bytes',
       ],
-      [poolId, from, to, tokens, maxAmountsIn, userData]
+      [poolId, from, to, tokens, maxAmountsIn, userData],
     );
 
     this.mappableArgs = [
       this.args[1],
       this.args[2],
     ];
-    for (let i = 0; i < this.args[4].length; i++){
+    for (let i = 0; i < this.args[4].length; i++) {
       this.mappableArgs.push(this.args[4][i]);
     }
   }
 
   async getAssetsToApprove() {
-    const approveArr :Array<{asset: EthAddress,owner:EthAddress,specialApproveLabel:string}> = [];
+    const approveArr :Array<{ asset: EthAddress, owner:EthAddress, specialApproveLabel:string }> = [];
     const tokens:Array<EthAddress> = this.args[3];
-    tokens.forEach(token => approveArr.push({asset: token, owner: this.args[1], specialApproveLabel: 'balancer'}));
+    tokens.forEach(token => approveArr.push({ asset: token, owner: this.args[1], specialApproveLabel: 'balancer' }));
 
     return approveArr;
   }

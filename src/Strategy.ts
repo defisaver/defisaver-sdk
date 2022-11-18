@@ -1,15 +1,18 @@
-import {Action}  from './Action';
+import { Action } from './Action';
 
 /**
- * 
+ *
  * @category Base Classes
  */
 export class Strategy {
-
   name: string;
+
   subSlots: any;
+
   actions: Array<Action>;
+
   triggers: Array<Action>;
+
   numSubSlots: number;
 
   constructor(name: string) {
@@ -21,7 +24,7 @@ export class Strategy {
   }
 
   addSubSlot(name: string, type: string) {
-    this.subSlots[name] = { type, index:  this.numSubSlots + 128 };
+    this.subSlots[name] = { type, index: this.numSubSlots + 128 };
     this.numSubSlots++;
   }
 
@@ -34,8 +37,8 @@ export class Strategy {
   }
 
   print() {
-    console.log(`Name: ${this.name }`);
-    console.log(`Slots: ${this.subSlots }`);
+    console.log(`Name: ${this.name}`);
+    console.log(`Slots: ${this.subSlots}`);
     console.log(`Action: ${this.actions[0]}`);
   }
 
@@ -60,8 +63,7 @@ export class Strategy {
       this.name,
       triggerIds,
       actionIds,
-      paramMappings
+      paramMappings,
     ];
   }
-
 }

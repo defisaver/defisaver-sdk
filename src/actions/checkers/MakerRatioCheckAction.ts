@@ -1,10 +1,10 @@
-import {Action}  from "../../Action";
-import { getAddr } from "../../addresses";
-import {uint8,uint256} from '../../types';
+import { Action } from '../../Action';
+import { getAddr } from '../../addresses';
+import { uint8, uint256 } from '../../types';
 
 /**
  * MakerRatioCheckAction - Checks mcd ratio at end of all actions
- * 
+ *
  * @category Checkers
  */
 export class MakerRatioCheckAction extends Action {
@@ -16,7 +16,7 @@ export class MakerRatioCheckAction extends Action {
    * @param startRatioIndex Index in returnValues where ratio before actions is stored
    */
   constructor(ratioState:uint8, checkTarget:boolean, targetRatio:uint256, vaultId:uint256, startRatioIndex:uint256) {
-    super("McdRatioCheck", getAddr("McdRatioCheck"), ["uint8","bool","uint256","uint256","uint256"], [ratioState, checkTarget, targetRatio, vaultId, startRatioIndex]);
+    super('McdRatioCheck', getAddr('McdRatioCheck'), ['uint8', 'bool', 'uint256', 'uint256', 'uint256'], [ratioState, checkTarget, targetRatio, vaultId, startRatioIndex]);
 
     this.mappableArgs = [
       this.args[0],

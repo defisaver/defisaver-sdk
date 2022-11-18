@@ -1,10 +1,10 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256,bytes} from '../../types';
+import { EthAddress, uint256, bytes } from '../../types';
 
 /**
  * Gets a flashloan from DyDx
- * 
+ *
  * @category Flashloans
  */
 export class DyDxFlashLoanAction extends Action {
@@ -14,11 +14,11 @@ export class DyDxFlashLoanAction extends Action {
    * @param flParamGetterAddr
    * @param flParamGetterData
    */
-  constructor(loanAmount:uint256, tokenAddr:EthAddress, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes= []) {
+  constructor(loanAmount:uint256, tokenAddr:EthAddress, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes = []) {
     super('FLDyDx',
       getAddr('FLDyDx'),
-      ['address[]','uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
-      [[tokenAddr], [loanAmount], [], getAddr('Empty'),flParamGetterAddr, flParamGetterData, []],
-      );
+      ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
+      [[tokenAddr], [loanAmount], [], getAddr('Empty'), flParamGetterAddr, flParamGetterData, []],
+    );
   }
 }

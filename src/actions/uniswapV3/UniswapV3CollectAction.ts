@@ -1,14 +1,13 @@
-import {ActionWithL2} from '../../ActionWithL2';
+import { ActionWithL2 } from '../../ActionWithL2';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256} from '../../types';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * Collects fees earned by user on position identified by tokenId
- * 
+ *
  * @category UniswapV3
  */
 export class UniswapV3CollectAction extends ActionWithL2 {
-
   from: EthAddress;
 
   /**
@@ -23,12 +22,12 @@ export class UniswapV3CollectAction extends ActionWithL2 {
       'UniCollectV3',
       getAddr('UniCollectV3'),
       [
-        "uint256",
-        "address",
-        "uint128",
-        "uint128",
+        'uint256',
+        'address',
+        'uint128',
+        'uint128',
       ],
-      [tokenId, recipient, amount0Max, amount1Max]
+      [tokenId, recipient, amount0Max, amount1Max],
     );
 
     this.from = from;
@@ -43,7 +42,7 @@ export class UniswapV3CollectAction extends ActionWithL2 {
       nft: getAddr('UniswapV3PositionManager'),
       tokenId: this.args[0],
       owner: this.from,
-      specialApproveLabel: 'uniswap v3'
+      specialApproveLabel: 'uniswap v3',
     }];
   }
 }

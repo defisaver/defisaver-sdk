@@ -1,6 +1,6 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {EthAddress} from '../../types';
+import { EthAddress } from '../../types';
 
 
 /**
@@ -12,10 +12,10 @@ export class CompoundGetDebtAction extends Action {
       'CompGetDebt',
       getAddr('CompGetDebt'),
       [
-        "address",
-        "address",
+        'address',
+        'address',
       ],
-      [cTokenAddr,holderAddr]
+      [cTokenAddr, holderAddr],
     );
   }
 }

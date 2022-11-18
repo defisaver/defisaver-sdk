@@ -1,7 +1,7 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256} from '../../types';
-import { requireAddress } from "../../utils/general";
+import { EthAddress, uint256 } from '../../types';
+import { requireAddress } from '../../utils/general';
 
 /**
  * @category BasicActions
@@ -13,12 +13,12 @@ export class TransferNFTAction extends Action {
       'TransferNFT',
       getAddr('TransferNFT'),
       [
-        "address",
-        "address",
-        "address",
-        "uint256"
+        'address',
+        'address',
+        'address',
+        'uint256',
       ],
-      [nftAddr,from,to,nftId]
+      [nftAddr, from, to, nftId],
     );
   }
 }

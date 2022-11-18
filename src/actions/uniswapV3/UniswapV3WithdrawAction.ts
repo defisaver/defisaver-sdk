@@ -1,15 +1,14 @@
-import {ActionWithL2} from '../../ActionWithL2';
+import { ActionWithL2 } from '../../ActionWithL2';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256,uint128} from '../../types';
-import { requireAddress } from "../../utils/general";
+import { EthAddress, uint256, uint128 } from '../../types';
+import { requireAddress } from '../../utils/general';
 
 /**
  * Burns liquidity, and returns underlying tokens to recipient
- * 
+ *
  * @category UniswapV3
  */
 export class UniswapV3WithdrawAction extends ActionWithL2 {
-
   from: EthAddress;
 
   /**
@@ -29,16 +28,16 @@ export class UniswapV3WithdrawAction extends ActionWithL2 {
       'UniWithdrawV3',
       getAddr('UniWithdrawV3'),
       [
-        "uint256",
-        "uint128",
-        "uint256",
-        "uint256",
-        "uint256",
-        "address",
-        "uint128",
-        "uint128",
+        'uint256',
+        'uint128',
+        'uint256',
+        'uint256',
+        'uint256',
+        'address',
+        'uint128',
+        'uint128',
       ],
-      [tokenId, liquidity, amount0Min, amount1Min, deadline, recipient, amount0Max, amount1Max]
+      [tokenId, liquidity, amount0Min, amount1Min, deadline, recipient, amount0Max, amount1Max],
     );
 
     this.from = from;
@@ -54,7 +53,7 @@ export class UniswapV3WithdrawAction extends ActionWithL2 {
       nft: getAddr('UniswapV3PositionManager'),
       tokenId: this.args[0],
       owner: this.from,
-      specialApproveLabel: 'uniswap v3'
+      specialApproveLabel: 'uniswap v3',
     }];
   }
 }

@@ -1,10 +1,10 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {uint256} from '../../types';
+import { uint256 } from '../../types';
 
 /**
  * MakerRatioAction
- * 
+ *
  * @category Maker
  */
 export class MakerRatioAction extends Action {

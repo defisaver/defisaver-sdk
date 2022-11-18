@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { requireAddress } from '../../utils/general';
-import {EthAddress,uint256} from '../../types';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * RariWithdrawAction - Send pool tokens to fund manager which burns them, receive underlying stablecoin back
- * 
+ *
  * @category Rari
  */
 export class RariWithdrawAction extends Action {
@@ -30,6 +30,6 @@ export class RariWithdrawAction extends Action {
   }
 
   async getAssetsToApprove() {
-    return [{asset: this.args[1], owner: this.args[3]}];
+    return [{ asset: this.args[1], owner: this.args[3] }];
   }
 }

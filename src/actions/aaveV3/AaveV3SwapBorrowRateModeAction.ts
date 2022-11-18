@@ -1,6 +1,6 @@
-import {ActionWithL2} from "../../ActionWithL2";
+import { ActionWithL2 } from '../../ActionWithL2';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint16,uint256} from '../../types';
+import { EthAddress, uint16, uint256 } from '../../types';
 
 
 /**
@@ -16,10 +16,10 @@ export class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
    * @param assetId id of the underlying asset in the market
    *
    */
-  constructor(useDefaultMarket:boolean, market:EthAddress,rateMode:uint256, assetId:uint16) {
+  constructor(useDefaultMarket:boolean, market:EthAddress, rateMode:uint256, assetId:uint16) {
     super('AaveV3SwapBorrowRateMode', getAddr('AaveV3SwapBorrowRateMode'),
-    ['uint256','uint16','bool','address'],
-    [rateMode, assetId, useDefaultMarket, market]
+      ['uint256', 'uint16', 'bool', 'address'],
+      [rateMode, assetId, useDefaultMarket, market],
     );
 
     this.mappableArgs = [
@@ -27,16 +27,17 @@ export class AaveV3SwapBorrowRateModeAction extends ActionWithL2 {
       this.args[3],
     ];
   }
+
   encodeInputs() {
     // executeActionDirectL2
-    let encodedInput = "0x2895f3aa";
+    let encodedInput = '0x2895f3aa';
     // rateMode
     encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0]));
     // assetId
-    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[1]))
+    encodedInput = encodedInput.concat(this.numberToBytes2(this.args[1]));
     // useOnDefaultMarket
-    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[2]))
-    if (!this.args[2]){
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[2]));
+    if (!this.args[2]) {
       // market
       encodedInput = encodedInput.concat(this.addressToBytes20(this.args[3]));
     }

@@ -1,18 +1,17 @@
-import ActionAbi from '../../abis/Action.json';
 import AbiCoder from 'web3-eth-abi';
-import {ActionWithL2} from "../../ActionWithL2";
-import { requireAddress } from "../../utils/general";
-import { getAssetInfoByAddress } from "@defisaver/tokens";
+import { getAssetInfoByAddress } from '@defisaver/tokens';
+import ActionAbi from '../../abis/Action.json';
+import { ActionWithL2 } from '../../ActionWithL2';
+import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
-import {EthAddress} from '../../types';
+import { EthAddress } from '../../types';
 
 /**
  * Sells token on DeFi Saver exchange aggregator
- * 
+ *
  * @category BasicActions
  */
 export class SellAction extends ActionWithL2 {
-
   protocolFee:string;
 
   /**
@@ -27,11 +26,11 @@ export class SellAction extends ActionWithL2 {
       'DFSSell',
       getAddr('DFSSell'),
       [
-        ["address","address","uint256","uint256","uint256","uint256","address","address","bytes",["address","address","address","uint256","uint256","bytes"]],
-        "address",
-        "address",
+        ['address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bytes', ['address', 'address', 'address', 'uint256', 'uint256', 'bytes']],
+        'address',
+        'address',
       ],
-      [exchangeOrder, from, to]
+      [exchangeOrder, from, to],
     );
 
     this.protocolFee = protocolFee;
@@ -52,7 +51,7 @@ export class SellAction extends ActionWithL2 {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[0][0]);
-    if (asset.symbol !== 'ETH') return [{asset: this.args[0][0], owner: this.args[1]}];
+    if (asset.symbol !== 'ETH') return [{ asset: this.args[0][0], owner: this.args[1] }];
     return [];
   }
 

@@ -5,10 +5,11 @@
 import Dec from 'decimal.js';
 import axios from 'axios';
 import { assetAmountInWei, getAssetInfo } from '@defisaver/tokens';
-import {EthAddress} from '../types';
+import { EthAddress } from '../types';
 
-import {SellAction} from '../actions/basic/SellAction';
+import { SellAction } from '../actions/basic';
 import { parsePriceFromContract, formatPriceForContract } from './general';
+
 const API_URL = 'https://api.0x.org/swap/v1/';
 const ZEROX_WRAPPER = '0x0c4e16899f2059F4e41ddB164317414a5c0d2988';
 
@@ -86,7 +87,7 @@ const estimatePrice = async (amount: string, sellToken: string, buyToken: string
   if (sellToken === buyToken) return '1';
   const zeroxData = await get0xPrice(sellToken, buyToken, amount, true, true, 0, shouldSell);
   return parsePriceFromContract(zeroxData.price, sellToken, buyToken);
-}
+};
 
 /**
  * Gets price estimate for selling a specific amount.
@@ -97,7 +98,7 @@ const estimatePrice = async (amount: string, sellToken: string, buyToken: string
  * @param buyToken Symbol for asset being bought
  * @returns price of sellToken in buyToken
  */
- export const estimateSellPrice = async (sellAmount: string, sellToken: string, buyToken: string): Promise<string> => estimatePrice(sellAmount, sellToken, buyToken, true);
+export const estimateSellPrice = async (sellAmount: string, sellToken: string, buyToken: string): Promise<string> => estimatePrice(sellAmount, sellToken, buyToken, true);
 
 /**
  * Gets price estimate for buying a specific amount.
@@ -108,7 +109,7 @@ const estimatePrice = async (amount: string, sellToken: string, buyToken: string
  * @param sellToken Symbol for asset being sold
  * @returns price of sellToken in buyToken
  */
- export const estimateBuyPrice = async (buyAmount: string, buyToken: string, sellToken: string): Promise<string> => estimatePrice(buyAmount, sellToken, buyToken, false);
+export const estimateBuyPrice = async (buyAmount: string, buyToken: string, sellToken: string): Promise<string> => estimatePrice(buyAmount, sellToken, buyToken, false);
 
 /**
  * @param sellToken Symbol for asset being sold ('ETH')
@@ -167,7 +168,7 @@ const createExchangeAction = async (
     '0x', // wrapperData,
     offchainDataArray,
   ];
-  return new SellAction(orderData, fromAccount, toAccount, protocolFee)
+  return new SellAction(orderData, fromAccount, toAccount, protocolFee);
 };
 
 /**
@@ -183,7 +184,7 @@ const createExchangeAction = async (
  * @param fromAccount Withdraw funds from this addr
  * @param toAccount Send funds to this addr
  */
- export const createSellAction = async (
+export const createSellAction = async (
   sellAmount: string,
   sellToken: string,
   buyToken: string,
@@ -197,7 +198,7 @@ const createExchangeAction = async (
   sellAmount,
   '0',
   expectedPrice,
-  typeof(acceptedSlippagePercent) === 'string' ? parseFloat(acceptedSlippagePercent) : acceptedSlippagePercent,
+  typeof (acceptedSlippagePercent) === 'string' ? parseFloat(acceptedSlippagePercent) : acceptedSlippagePercent,
   true,
   fromAccount,
   toAccount,

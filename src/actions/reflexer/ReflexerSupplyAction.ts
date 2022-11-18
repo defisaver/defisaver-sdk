@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
-import { tokenFromJoin, getAssetInfo } from "@defisaver/tokens";
-import {EthAddress,uint256} from '../../types';
+import { tokenFromJoin, getAssetInfo } from '@defisaver/tokens';
+import { Action } from '../../Action';
+import { EthAddress, uint256 } from '../../types';
 import { getAddr } from '../../addresses';
 
 /**
  * ReflexerSupplyAction - Supply token to a Safe
- * 
+ *
  * @category Reflexer
  */
 export class ReflexerSupplyAction extends Action {
@@ -16,12 +16,12 @@ export class ReflexerSupplyAction extends Action {
    * @param from Tokens will be supplied from this address
    */
   constructor(safeId:uint256, amount:uint256, adapterAddr:EthAddress, from:EthAddress) {
-    super('ReflexerSupply', getAddr('ReflexerSupply'), ['uint256','uint256','address','address'], [safeId, amount, adapterAddr, from]);
+    super('ReflexerSupply', getAddr('ReflexerSupply'), ['uint256', 'uint256', 'address', 'address'], [safeId, amount, adapterAddr, from]);
   }
 
   async getAssetsToApprove() {
     const asset = tokenFromJoin(this.args[2]);
-    if (asset !== 'ETH') return [{asset: getAssetInfo(asset).address, owner: this.args[3]}];
+    if (asset !== 'ETH') return [{ asset: getAssetInfo(asset).address, owner: this.args[3] }];
     return [];
   }
 

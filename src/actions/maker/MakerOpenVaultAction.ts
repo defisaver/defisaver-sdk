@@ -1,10 +1,10 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {EthAddress} from '../../types';
+import { EthAddress } from '../../types';
 
 /**
  * MakerOpenVaultAction
- * 
+ *
  * @category Maker
  */
 export class MakerOpenVaultAction extends Action {
@@ -13,6 +13,6 @@ export class MakerOpenVaultAction extends Action {
    * @param mcdManager
    */
   constructor(joinAddr:EthAddress, mcdManager:EthAddress = getAddr('McdCdpManager')) {
-    super('McdOpen', getAddr('McdOpen'), ['address','address'], [joinAddr, mcdManager]);
+    super('McdOpen', getAddr('McdOpen'), ['address', 'address'], [joinAddr, mcdManager]);
   }
 }

@@ -1,11 +1,11 @@
 import { getAssetInfoByAddress } from '@defisaver/tokens';
-import {EthAddress,uint256} from '../../types';
-import {ActionWithL2} from '../../ActionWithL2';
+import { EthAddress, uint256 } from '../../types';
+import { ActionWithL2 } from '../../ActionWithL2';
 import { getAddr } from '../../addresses';
 
 /**
  * Supplies a pair of tokens to an existing Uniswap v3 position identified by tokenId
- * 
+ *
  * @category UniswapV3
  */
 export class UniswapV3SupplyAction extends ActionWithL2 {
@@ -25,17 +25,17 @@ export class UniswapV3SupplyAction extends ActionWithL2 {
       'UniSupplyV3',
       getAddr('UniSupplyV3'),
       [
-        "uint256",
-        "uint256",
-        "uint256",
-        "uint256",
-        "uint256",
-        "uint256",
-        "address",
-        "address",
-        "address",
+        'uint256',
+        'uint256',
+        'uint256',
+        'uint256',
+        'uint256',
+        'uint256',
+        'address',
+        'address',
+        'address',
       ],
-      [tokenId, amount0Desired, amount1Desired, amount0Min, amount1Min, deadline, from, token0, token1]
+      [tokenId, amount0Desired, amount1Desired, amount0Min, amount1Min, deadline, from, token0, token1],
     );
 
     this.mappableArgs = [
@@ -51,8 +51,8 @@ export class UniswapV3SupplyAction extends ActionWithL2 {
 
     const approveArr = [];
 
-    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[7], owner: this.args[6], specialApproveLabel: 'uniswap v3'});
-    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[8], owner: this.args[6], specialApproveLabel: 'uniswap v3'});
+    if (assetA.symbol !== 'ETH') approveArr.push({ asset: this.args[7], owner: this.args[6], specialApproveLabel: 'uniswap v3' });
+    if (assetB.symbol !== 'ETH') approveArr.push({ asset: this.args[8], owner: this.args[6], specialApproveLabel: 'uniswap v3' });
 
     return approveArr;
   }

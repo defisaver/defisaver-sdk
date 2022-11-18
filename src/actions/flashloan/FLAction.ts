@@ -10,7 +10,7 @@ export class FLAction extends Action {
   /**
    * @param specificFLAction - FL Action to be used
    */
-  #handleArgs (specificFLAction: Action){
+  #handleArgs(specificFLAction: Action) {
     const argsToReturn = [
       specificFLAction.args[0],
       specificFLAction.args[1],
@@ -20,32 +20,32 @@ export class FLAction extends Action {
       [],
       specificFLAction.args[6],
     ];
-    if (specificFLAction.constructor.name == 'AaveV2FlashloanAction'){
+    if (specificFLAction.constructor.name === 'AaveV2FlashloanAction') {
       argsToReturn[5] = [1];
     }
-    if (specificFLAction.constructor.name == 'AaveV3FlashloanAction'){
+    if (specificFLAction.constructor.name === 'AaveV3FlashloanAction') {
       argsToReturn[5] = [1];
     }
-    if (specificFLAction.constructor.name == 'BalancerFlashloanAction'){
+    if (specificFLAction.constructor.name === 'BalancerFlashloanAction') {
       argsToReturn[5] = [2];
     }
-    if (specificFLAction.constructor.name == 'EulerFlashloanAction'){
+    if (specificFLAction.constructor.name === 'EulerFlashloanAction') {
       argsToReturn[5] = [3];
     }
-    if (specificFLAction.constructor.name == 'MakerFlashLoanAction'){
+    if (specificFLAction.constructor.name === 'MakerFlashLoanAction') {
       argsToReturn[5] = [4];
     }
     return argsToReturn;
   }
 
-  constructor (specificFLAction: Action) {
+  constructor(specificFLAction: Action) {
     super(
       'FLAction',
       getAddr('FLAction'),
       [],
-      []
-    )
-    this.paramTypes = ['address[]','uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'];
+      [],
+    );
+    this.paramTypes = ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'];
     this.args = this.#handleArgs(specificFLAction);
   }
 }

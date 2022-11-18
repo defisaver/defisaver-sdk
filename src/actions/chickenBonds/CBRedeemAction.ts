@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
-import { requireAddress } from "../../utils/general";
+import { Action } from '../../Action';
+import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256} from '../../types';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * CBRedeemAction - Redeems bLUSD for Lusd (might also get yTokens)
- * 
+ *
  * @category ChickenBonds
  */
 export class CBRedeemAction extends Action {
@@ -18,11 +18,10 @@ export class CBRedeemAction extends Action {
   constructor(bLUSDAmount:uint256, minLUSDFromSP:uint256, from:EthAddress, to:EthAddress) {
     requireAddress(from);
     requireAddress(to);
-    super('CBRedeem', getAddr('CBRedeem'), ['uint256','uint256','address','address'], [bLUSDAmount,minLUSDFromSP,from,to]);
+    super('CBRedeem', getAddr('CBRedeem'), ['uint256', 'uint256', 'address', 'address'], [bLUSDAmount, minLUSDFromSP, from, to]);
   }
 
   async getAssetsToApprove() {
-    return [{asset: getAddr('BLUSD'), owner: this.args[2]}]
+    return [{ asset: getAddr('BLUSD'), owner: this.args[2] }];
   }
-
 }

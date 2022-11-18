@@ -1,6 +1,6 @@
-import Dec from "decimal.js";
-import {set as dfsTokensSetConfig} from "@defisaver/tokens";
-import {Config,Network,Networks} from './types';
+import Dec from 'decimal.js';
+import { set as dfsTokensSetConfig } from '@defisaver/tokens';
+import { Config, Network, Networks } from './types';
 
 Dec.set({
   rounding: Dec.ROUND_DOWN,
@@ -45,7 +45,7 @@ export const NETWORKS : Networks = {
  */
 export const CONFIG : Config = {
   chainId: NETWORKS.ethereum.chainId,
-  testingMode: false
+  testingMode: false,
 };
 
 /**
@@ -58,7 +58,7 @@ export const getNetworkData = (chainId:number) : Network => {
   if (!networkData) throw new Error(`Cannot find network data for chainId: ${chainId}`);
 
   return networkData;
-}
+};
 
 /**
  *
@@ -70,7 +70,7 @@ export const configure = (config : Config) => {
   const newKeys : Array<string> = Object.keys(config);
 
   newKeys.forEach((key) => {
-    CONFIG[key as keyof Config] = config[key as keyof Config]
+    CONFIG[key as keyof Config] = config[key as keyof Config];
     if (key === 'chainId') dfsTokensSetConfig('network', config[key]);
   });
 };

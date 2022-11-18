@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
-import { requireAddress } from "../../utils/general";
-import { getAddr } from "../../addresses";
-import {EthAddress,uint256} from '../../types';
+import { Action } from '../../Action';
+import { requireAddress } from '../../utils/general';
+import { getAddr } from '../../addresses';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * CompoundV3WithdrawAction - Withdraw token from an Compound position
- * 
+ *
  * @category CompundV3
  */
 export class CompoundV3WithdrawAction extends Action {
@@ -20,10 +20,10 @@ export class CompoundV3WithdrawAction extends Action {
     requireAddress(to);
     requireAddress(asset);
     super(
-      "CompV3Withdraw",
-      getAddr("CompV3Withdraw"),
-      ["address","address", "address","uint256","address"],
-      [market,to,asset,amount,onBehalf]
+      'CompV3Withdraw',
+      getAddr('CompV3Withdraw'),
+      ['address', 'address', 'address', 'uint256', 'address'],
+      [market, to, asset, amount, onBehalf],
     );
 
     this.mappableArgs = [

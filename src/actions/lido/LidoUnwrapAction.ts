@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256} from '../../types';
-import { requireAddress } from "../../utils/general";
+import { EthAddress, uint256 } from '../../types';
+import { requireAddress } from '../../utils/general';
 
 /**
  * LidoUnwrapAction - Unwraps WStEth into StEth
- * 
+ *
  * @category Lido
  */
 export class LidoUnwrapAction extends Action {
@@ -16,10 +16,10 @@ export class LidoUnwrapAction extends Action {
    */
   constructor(amount:uint256, from:EthAddress, to:EthAddress) {
     requireAddress(to);
-    super('LidoUnwrap', getAddr('LidoUnwrap'), ['uint256','address', 'address'], [amount, from, to]);
+    super('LidoUnwrap', getAddr('LidoUnwrap'), ['uint256', 'address', 'address'], [amount, from, to]);
   }
 
   async getAssetsToApprove() {
-    return [{asset: '0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0', owner: this.args[1]}];
+    return [{ asset: '0x7f39C581F595B53c5cb19bD0b3f8dA6c935E2Ca0', owner: this.args[1] }];
   }
 }

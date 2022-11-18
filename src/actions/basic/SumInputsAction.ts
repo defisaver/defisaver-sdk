@@ -1,10 +1,10 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {uint256} from '../../types';
+import { uint256 } from '../../types';
 
 /**
  * Sums up 2 inputs/return values
- * 
+ *
  * @category BasicActions
  */
 export class SumInputsAction extends Action {
@@ -13,10 +13,10 @@ export class SumInputsAction extends Action {
       'SumInputs',
       getAddr('SumInputs'),
       [
-        "uint",
-        "uint",
+        'uint',
+        'uint',
       ],
-      [a,b]
+      [a, b],
     );
   }
 }

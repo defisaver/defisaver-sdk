@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
-import { requireAddress } from "../../utils/general";
+import { Action } from '../../Action';
+import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256} from '../../types';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * MakerGenerateAction - Generated Dai from a Vault
- * 
+ *
  * @category Maker
  */
 export class MakerGenerateAction extends Action {
@@ -17,6 +17,6 @@ export class MakerGenerateAction extends Action {
    */
   constructor(vaultId:uint256, amount:EthAddress, to:EthAddress, mcdManager:EthAddress = getAddr('McdCdpManager')) {
     requireAddress(to);
-    super('McdGenerate', getAddr('McdGenerate'), ['uint256','uint256','address','address'], [vaultId, amount, to, mcdManager]);
+    super('McdGenerate', getAddr('McdGenerate'), ['uint256', 'uint256', 'address', 'address'], [vaultId, amount, to, mcdManager]);
   }
 }

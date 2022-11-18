@@ -1,6 +1,6 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {EthAddress} from '../../types';
+import { EthAddress } from '../../types';
 
 /**
  * @category BasicActions
@@ -11,10 +11,10 @@ export class TokenBalanceAction extends Action {
       'TokenBalance',
       getAddr('TokenBalance'),
       [
-        "address",
-        "address",
+        'address',
+        'address',
       ],
-      [tokenAddr,holderAddr]
+      [tokenAddr, holderAddr],
     );
   }
 }

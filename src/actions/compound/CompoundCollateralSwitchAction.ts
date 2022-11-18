@@ -1,10 +1,10 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {EthAddress} from '../../types';
+import { EthAddress } from '../../types';
 
 /**
  *  CompoundCollateralSwitchAction - Compound enable/disable cToken usage as collateral
- * 
+ *
  * @category CompundV2
  */
 export class CompoundCollateralSwitchAction extends Action {
@@ -13,7 +13,7 @@ export class CompoundCollateralSwitchAction extends Action {
       'CompCollateralSwitch',
       getAddr('CompCollateralSwitch'),
       ['address[]', 'bool[]'],
-      [cTokens,useAsCollateral],
+      [cTokens, useAsCollateral],
     );
   }
 }

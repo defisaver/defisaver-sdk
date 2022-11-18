@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
-import { requireAddress } from "../../utils/general";
+import { Action } from '../../Action';
+import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256} from '../../types';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  *  AaveClaimStkAaveAction - Claims stkAave from incentives controller
- * 
+ *
  *  @category Aave
  */
 export class AaveClaimStkAaveAction extends Action {
@@ -20,7 +20,7 @@ export class AaveClaimStkAaveAction extends Action {
       'AaveClaimStkAave',
       getAddr('AaveClaimStkAave'),
       ['address[]', 'uint256', 'address'],
-      [assets,amount,to],
+      [assets, amount, to],
     );
     this.mappableArgs = [
       this.args[1],

@@ -1,14 +1,14 @@
-import {ActionWithL2} from "../../ActionWithL2";
-import { requireAddress } from "../../utils/general";
+import { ActionWithL2 } from '../../ActionWithL2';
+import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256} from '../../types';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * Unwraps a specified amount of WETH from the proxy
- * 
+ *
  * @category BasicActions
  */
-export  class UnwrapEthAction extends ActionWithL2 {
+export class UnwrapEthAction extends ActionWithL2 {
   /**
    * @param amount Amount to unwrap
    * @param to Transfer recipient
@@ -19,15 +19,16 @@ export  class UnwrapEthAction extends ActionWithL2 {
       'UnwrapEth',
       getAddr('UnwrapEth'),
       [
-        "uint256",
-        "address"
+        'uint256',
+        'address',
       ],
-      [amount,to]
+      [amount, to],
     );
   }
-  encodeInputs(){
+
+  encodeInputs() {
     // executeActionDirectL2
-    let encodedInput = "0x2895f3aa";
+    let encodedInput = '0x2895f3aa';
     // amount
     encodedInput = encodedInput.concat(this.numberToBytes32(this.args[0][0]));
     // to

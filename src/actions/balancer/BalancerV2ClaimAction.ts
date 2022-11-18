@@ -1,9 +1,9 @@
-import {Action}  from "../../Action";
-import { requireAddress } from "../../utils/general";
+import { Action } from '../../Action';
+import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256,bytes32} from '../../types';
+import { EthAddress, uint256, bytes32 } from '../../types';
 
-/** 
+/**
  * BalancerV2ClaimAction - Claim BAL governance tokens
  * @category BalancerV2
  */
@@ -21,13 +21,13 @@ export class BalancerV2ClaimAction extends Action {
       'BalancerV2Claim',
       getAddr('BalancerV2Claim'),
       [
-        "address",
-        "address",
-        "uint256[]",
-        "uint256[]",
-        "bytes32[][]",
+        'address',
+        'address',
+        'uint256[]',
+        'uint256[]',
+        'bytes32[][]',
       ],
-      [liquidityProvider, to, weeks, balances, merkleProofs]
+      [liquidityProvider, to, weeks, balances, merkleProofs],
     );
 
     this.mappableArgs = [
@@ -37,12 +37,11 @@ export class BalancerV2ClaimAction extends Action {
   }
 
   async getAssetsToApprove() {
-
     const approveArr = [];
-      if (this.args[0] !== this.args[1]){
-        const tokenAddress = getAddr('BalancerToken');
-        approveArr.push({asset: tokenAddress, owner: this.args[0]});
-      }
+    if (this.args[0] !== this.args[1]) {
+      const tokenAddress = getAddr('BalancerToken');
+      approveArr.push({ asset: tokenAddress, owner: this.args[0] });
+    }
     return approveArr;
   }
 }

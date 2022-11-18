@@ -1,18 +1,18 @@
-import {Action}  from "../../Action";
+import { getAssetInfoByAddress } from '@defisaver/tokens';
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint256} from '../../types';
-import { getAssetInfoByAddress } from "@defisaver/tokens";
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * AavePaybackAction - Payback borrowed tokens from Aave
- * 
+ *
  * @category Aave
  */
 export class AavePaybackAction extends Action {
   /**
    * @param market - Address of market
    * @param tokenAddr - Address of Token
-   * @param amount - Token amount 
+   * @param amount - Token amount
    * @param rateMode - Borrow rate mode: Stable: 1, Variable: 2
    * @param from - Tokens will be sent from this address
    * @param onBehalf - Tokens will be paid back to this address' position (defaults to sender's proxy)
@@ -27,7 +27,7 @@ export class AavePaybackAction extends Action {
 
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.args[1]);
-    if (asset.symbol !== 'ETH') return [{asset: this.args[1], owner: this.args[4]}];
+    if (asset.symbol !== 'ETH') return [{ asset: this.args[1], owner: this.args[4] }];
     return [];
   }
 }

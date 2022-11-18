@@ -1,7 +1,7 @@
-import {ActionWithL2} from "../../ActionWithL2";
+import { ActionWithL2 } from '../../ActionWithL2';
 import { getAddr } from '../../addresses';
-import {EthAddress,uint16,uint256} from '../../types';
-import { requireAddress } from "../../utils/general";
+import { EthAddress, uint16, uint256 } from '../../types';
+import { requireAddress } from '../../utils/general';
 
 
 /**
@@ -17,11 +17,11 @@ export class AaveV3WithdrawAction extends ActionWithL2 {
    * @param to Where the withdrawn tokens will be sent
    * @param assetId The id of the token to be deposited
    */
-  constructor(useDefaultMarket:boolean, market:EthAddress, amount:uint256, to:EthAddress,assetId:uint16) {
+  constructor(useDefaultMarket:boolean, market:EthAddress, amount:uint256, to:EthAddress, assetId:uint16) {
     requireAddress(to);
     super('AaveV3Withdraw', getAddr('AaveV3Withdraw'),
-    ['uint16','bool','uint256','address','address'],
-    [assetId, useDefaultMarket, amount, to, market]
+      ['uint16', 'bool', 'uint256', 'address', 'address'],
+      [assetId, useDefaultMarket, amount, to, market],
     );
 
     this.mappableArgs = [
@@ -32,18 +32,19 @@ export class AaveV3WithdrawAction extends ActionWithL2 {
       this.args[4],
     ];
   }
+
   encodeInputs() {
     // executeActionDirectL2
-    let encodedInput = "0x2895f3aa";
+    let encodedInput = '0x2895f3aa';
     // assetId
     encodedInput = encodedInput.concat(this.numberToBytes2(this.args[0]));
     // useOnDefaultMarket
-    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[1]))
+    encodedInput = encodedInput.concat(this.boolToBytes1(this.args[1]));
     // amount
     encodedInput = encodedInput.concat(this.numberToBytes32(this.args[2]));
     // from
     encodedInput = encodedInput.concat(this.addressToBytes20(this.args[3]));
-    if (!this.args[1]){
+    if (!this.args[1]) {
       // market
       encodedInput = encodedInput.concat(this.addressToBytes20(this.args[4]));
     }

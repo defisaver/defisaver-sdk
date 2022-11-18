@@ -2,24 +2,26 @@ import AbiCoder from 'web3-eth-abi';
 import { keccak256, padLeft, toHex } from 'web3-utils';
 import { CONFIG } from './config';
 import ActionAbi from './abis/Action.json';
-import { AccessLists as _AccessLists,AccessListItem} from './types';
+import { AccessLists as _AccessLists, AccessListItem, EthAddress } from './types';
 import { AccessLists } from '../AccessLists';
-import { EthAddress } from './types';
 
 type ParamTypes = Array<string | Array<any>>;
 type Args = Array<any>;
 
 /**
  * Single action that can be executed directly, or combined into a set (ie. supply a vault)
- * 
+ *
  * @category Base Classes
  */
 export class Action {
-
   contractAddress : EthAddress;
+
   paramTypes: ParamTypes;
+
   name: string;
+
   args: Args;
+
   mappableArgs: Args;
 
   /**
@@ -31,7 +33,7 @@ export class Action {
   constructor(name: string, contractAddress: EthAddress, paramTypes : ParamTypes, args : Args) {
     // if (new.target === Action) throw new TypeError("Actions are instantiated using derived classes");
 
-    if (paramTypes.length !== args.length) throw new Error('Parameters/arguments length mismatch')
+    if (paramTypes.length !== args.length) throw new Error('Parameters/arguments length mismatch');
 
     this.contractAddress = contractAddress;
     this.paramTypes = paramTypes;
@@ -41,26 +43,28 @@ export class Action {
   }
 
   /**
-   * 
+   *
    */
   getId() : string {
     return keccak256(this.name).substr(0, 10);
   }
 
   /**
-   * 
+   *
    */
-  #_getArgumentMappingWithSlots(subSlots: Args) : Array<number>{
+  #_getArgumentMappingWithSlots(subSlots: Args) : Array<number> {
     return this.mappableArgs.map(arg => {
       if (new RegExp(/\$\d+/).test(arg)) {
         if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
-        return parseInt(arg.substr(1))
+        // eslint-disable-next-line
+        return parseInt(arg.substr(1));
       }
 
       // Handle SubSlots placeholder values in strategies
       if (new RegExp(/&\w+/).test(arg)) {
         if (arg === '&proxy') return 254;
         if (arg === '&eoa') return 255;
+        // eslint-disable-next-line
         return parseInt(subSlots[arg].index);
       }
 
@@ -68,25 +72,27 @@ export class Action {
     });
   }
 
-   /**
-   * 
+  /**
+   *
    */
-    _getArgumentMapping() : Args {
-      return this.mappableArgs.map(arg => {
-        if (new RegExp(/\$\d+/).test(arg)) {
-          if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
-          return parseInt(arg.substr(1))
-        }
-        return 0;
-      });
-    }
+  _getArgumentMapping() : Args {
+    return this.mappableArgs.map(arg => {
+      if (new RegExp(/\$\d+/).test(arg)) {
+        if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
+        // eslint-disable-next-line
+        return parseInt(arg.substr(1));
+      }
+      return 0;
+    });
+  }
 
   /**
    * @param type
-   * 
+   *
    */
   #_getPlaceholderForType(type: string) : string {
     // TODO handle arrays?
+    // eslint-disable-next-line
     if (type.startsWith('bytes')) return `0x${'0'.repeat(parseInt(type.substr(5)))}`;
     if (type === 'address') return `0x${'0'.repeat(40)}`;
     if (type === 'string') return '';
@@ -94,19 +100,19 @@ export class Action {
   }
 
   /**
-   * 
+   *
    */
   _replaceWithPlaceholders(arg: Args, paramType: string | ParamTypes) : any {
     if (Array.isArray(arg)) return arg.map((_arg, i) => this._replaceWithPlaceholders(_arg, paramType[i]));
-    if(typeof(paramType) === 'string'){
-        if (new RegExp(/\$\d+/).test(arg)) return this.#_getPlaceholderForType(paramType);
-        if (new RegExp(/&\w+/).test(arg)) return this.#_getPlaceholderForType(paramType);
+    if (typeof (paramType) === 'string') {
+      if (new RegExp(/\$\d+/).test(arg)) return this.#_getPlaceholderForType(paramType);
+      if (new RegExp(/&\w+/).test(arg)) return this.#_getPlaceholderForType(paramType);
     }
     return arg;
   }
 
   /**
-   * 
+   *
    */
   _formatType(paramType: string | ParamTypes) : string {
     if (Array.isArray(paramType)) return `(${paramType.map((_paramType) => this._formatType(_paramType))})`;
@@ -116,7 +122,7 @@ export class Action {
   /**
    * Encode arguments for calling the action directly
    * @returns bytes-encoded args
-   * 
+   *
    */
   _encodeForCall() : Array<string> {
     const _arg = this._replaceWithPlaceholders(this.args, this.paramTypes);
@@ -136,42 +142,41 @@ export class Action {
    * Encode arguments for calling the action via DsProxy
    * @returns `address` & `data` to be passed on to DSProxy's `execute(address _target, bytes memory _data)`
    */
-  encodeForDsProxyCall() : Array<string | string[]>{
+  encodeForDsProxyCall() : Array<string | string[]> {
     if (CONFIG.chainId === 1) {
-      const executeActionDirectAbi : any = (ActionAbi.find(({ name }:{name: string}) => name === 'executeActionDirect'))!;
+      const executeActionDirectAbi : any = (ActionAbi.find(({ name }:{ name: string }) => name === 'executeActionDirect'))!;
       return [
         this.contractAddress,
         AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall()),
       ];
-    } else {
-      return [this.contractAddress, this.encodeForL2DsProxyCall()];
     }
+    return [this.contractAddress, this.encodeForL2DsProxyCall()];
   }
 
   /**
    * Encodes action for Recipe call
    */
   encodeForRecipe() : Array<string | string[] | number[]> {
-      return [
-        this._encodeForCall()[0],  // actionCallData
-        "0x0000000000000000000000000000000000000000000000000000000000000000", // subData
-        this.getId(),              // actionIds
-        this._getArgumentMapping(), // paramMappings
-      ]
+    return [
+      this._encodeForCall()[0], // actionCallData
+      '0x0000000000000000000000000000000000000000000000000000000000000000', // subData
+      this.getId(), // actionIds
+      this._getArgumentMapping(), // paramMappings
+    ];
   }
 
-  encodeForStrategy(subSlots: any) : Array<(string | number[])>{
+  encodeForStrategy(subSlots: any) : Array<(string | number[])> {
     return [
       this.getId(),
       this.#_getArgumentMappingWithSlots(subSlots), // paramMappings
-    ]
+    ];
   }
 
   /**
    * Assets requiring approval to be used by DsProxy
    * Approval is done from owner to DsProxy
    */
-  async getAssetsToApprove(): Promise<Array<{owner?: string, asset?: string,[key: string]:any}>> {
+  async getAssetsToApprove(): Promise<Array<{ owner?: string, asset?: string, [key: string]:any }>> {
     return [];
   }
 
@@ -187,12 +192,12 @@ export class Action {
    * Access list for single action
    */
   getAccessList(chainId: number) : Array<AccessListItem> {
-    if(chainId!=1) return [];
+    if (chainId !== 1) return [];
     return [
       [this.contractAddress, []],
       ...(AccessLists[this.name as keyof _AccessLists] || []),
     ].map(([address, storageKeys]) => ({
-      address: address,
+      address,
       storageKeys: storageKeys.map((num: number) => padLeft(toHex(num), 64)),
     }));
   }

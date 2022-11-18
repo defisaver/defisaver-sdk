@@ -1,11 +1,11 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { requireAddress } from '../../utils/general';
-import {EthAddress,uint256} from '../../types';
+import { EthAddress, uint256 } from '../../types';
 
 /**
  * RariDepositAction - action that deposits one stablecoin (DAI, USDC, USDT, TUSD, BUSD, and sUSD) and receives RSPT back
- * 
+ *
  * @category Rari
  */
 export class RariDepositAction extends Action {
@@ -28,6 +28,6 @@ export class RariDepositAction extends Action {
   }
 
   async getAssetsToApprove() {
-    return [{asset: this.args[1], owner: this.args[4]}];
+    return [{ asset: this.args[1], owner: this.args[4] }];
   }
 }

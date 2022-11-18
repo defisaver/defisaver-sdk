@@ -1,13 +1,15 @@
 import { getAssetInfoByAddress } from '@defisaver/tokens';
-import {EthAddress,uint256,uint24,int24} from '../../types';
-import {ActionWithL2} from '../../ActionWithL2';
+import {
+  EthAddress, uint256, uint24, int24,
+} from '../../types';
+import { ActionWithL2 } from '../../ActionWithL2';
 import { getAddr } from '../../addresses';
-import { requireAddress } from "../../utils/general";
+import { requireAddress } from '../../utils/general';
 
 
 /**
  * Creates a new Uniswap v3 LP supply position
- * 
+ *
  * @category UniswapV3
  */
 export class UniswapV3MintAction extends ActionWithL2 {
@@ -31,20 +33,20 @@ export class UniswapV3MintAction extends ActionWithL2 {
       'UniMintV3',
       getAddr('UniMintV3'),
       [
-        "address",
-        "address",
-        "uint24",
-        "int24",
-        "int24",
-        "uint256",
-        "uint256",
-        "uint256",
-        "uint256",
-        "address",
-        "uint256",
-        "address",
+        'address',
+        'address',
+        'uint24',
+        'int24',
+        'int24',
+        'uint256',
+        'uint256',
+        'uint256',
+        'uint256',
+        'address',
+        'uint256',
+        'address',
       ],
-      [token0, token1, fee, tickLower, tickUpper, amount0Desired, amount1Desired, amount0Min, amount1Min, recipient, deadline, from]
+      [token0, token1, fee, tickLower, tickUpper, amount0Desired, amount1Desired, amount0Min, amount1Min, recipient, deadline, from],
     );
 
     this.mappableArgs = [
@@ -59,8 +61,8 @@ export class UniswapV3MintAction extends ActionWithL2 {
 
     const approveArr = [];
 
-    if (assetA.symbol !== 'ETH') approveArr.push({asset: this.args[0], owner: this.args[11], specialApproveLabel: 'uniswap v3'});
-    if (assetB.symbol !== 'ETH') approveArr.push({asset: this.args[1], owner: this.args[11], specialApproveLabel: 'uniswap v3'});
+    if (assetA.symbol !== 'ETH') approveArr.push({ asset: this.args[0], owner: this.args[11], specialApproveLabel: 'uniswap v3' });
+    if (assetB.symbol !== 'ETH') approveArr.push({ asset: this.args[1], owner: this.args[11], specialApproveLabel: 'uniswap v3' });
 
     return approveArr;
   }

@@ -1,10 +1,10 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {uint256} from '../../types';
+import { uint256 } from '../../types';
 
 /**
  * Subs 2 inputs/return values
- * 
+ *
  * @category BasicActions
  */
 export class SubInputsAction extends Action {
@@ -13,10 +13,10 @@ export class SubInputsAction extends Action {
       'SubInputs',
       getAddr('SubInputs'),
       [
-        "uint",
-        "uint",
+        'uint',
+        'uint',
       ],
-      [a,b]
+      [a, b],
     );
   }
 }

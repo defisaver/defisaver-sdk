@@ -1,10 +1,10 @@
-import {Action}  from "../../Action";
+import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import {EthAddress} from '../../types';
+import { EthAddress } from '../../types';
 
 /**
  * ReflexerOpenSafeAction
- * 
+ *
  * @category Reflexer
  */
 export class ReflexerOpenSafeAction extends Action {
