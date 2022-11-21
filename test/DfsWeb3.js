@@ -1,8 +1,7 @@
 require('dotenv').config();
 const {assert} = require('chai');
-const DfsWeb3 = require('../src/DfsWeb3');
 const Web3 = require('web3');
-const dfs = require('../index');
+const dfs = require('../umd');
 const {getIlkInfo, assetAmountInWei} = require("@defisaver/tokens");
 
 describe('DfsWeb3', () => {
@@ -11,7 +10,7 @@ describe('DfsWeb3', () => {
     const web3 = new Web3(process.env.RPC);
 
     web3.eth.getAccounts = () => ['0x0a80C3C540eEF99811f4579fa7b1A0617294e06f'];
-    dfsWeb3 = new DfsWeb3(web3);
+    dfsWeb3 = new dfs.DfsWeb3(web3);
     dfsWeb3.account = '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f';
 
     await dfsWeb3.prepareAccount();

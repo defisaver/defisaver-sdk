@@ -1,4 +1,4 @@
-const dfs = require('../index.js');
+const dfs = require('../umd');
 const {assert} = require('chai');
 
 describe('DFS', () => {

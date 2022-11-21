@@ -1,4 +1,4 @@
-const dfs = require('../../../index.js');
+const dfs = require('../../../umd');
 const {assetAmountInWei} = require("@defisaver/tokens");
 const {getAssetInfo} = require("@defisaver/tokens");
 const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');

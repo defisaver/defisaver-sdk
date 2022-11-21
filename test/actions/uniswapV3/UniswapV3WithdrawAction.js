@@ -1,8 +1,7 @@
-const dfs = require('../../../index.js');
+const dfs = require('../../../umd');
 const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {getAssetInfo, assetAmountInEth} = require("@defisaver/tokens");
 const {assert} = require('chai');
-const {getAddr} = require('../../../src/addresses.js');
 
 describe('Action: UniswapV3WithdrawAction', () => {
   let action;
@@ -28,7 +27,7 @@ describe('Action: UniswapV3WithdrawAction', () => {
       assert.lengthOf(assetOwnerPairs, 1);
       assert.equal(assetOwnerPairs[0].tokenId, '1000');
       assert.equal(assetOwnerPairs[0].owner, '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f');
-      assert.equal(assetOwnerPairs[0].nft, getAddr('UniswapV3PositionManager'),);
+      assert.equal(assetOwnerPairs[0].nft, dfs.getAddr('UniswapV3PositionManager'),);
       
     })
     it('getEthValue', async () => {
