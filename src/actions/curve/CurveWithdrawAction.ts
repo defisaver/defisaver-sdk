@@ -9,27 +9,27 @@ import { EthAddress, uint256 } from '../../types';
  * @category Curve
  */
 export class CurveWithdrawAction extends Action {
-  lpToken:EthAddress;
+  lpToken: EthAddress;
 
   /**
-     * @param sender
-     * @param receiver
-     * @param poolAddr
-     * @param burnAmount
-     * @param useUnderlying
-     * @param withdrawExact
-     * @param minAmounts
-     * @param removeOneCoin
-     */
+   * @param sender
+   * @param receiver
+   * @param poolAddr
+   * @param burnAmount
+   * @param useUnderlying
+   * @param withdrawExact
+   * @param minAmounts
+   * @param removeOneCoin
+   */
   constructor(
-    sender:EthAddress,
-    receiver:EthAddress,
-    poolAddr:EthAddress,
-    burnAmount:uint256,
-    useUnderlying:boolean,
-    withdrawExact:boolean,
-    removeOneCoin:boolean,
-    minAmounts:Array<uint256> = [],
+    sender: EthAddress,
+    receiver: EthAddress,
+    poolAddr: EthAddress,
+    burnAmount: uint256,
+    useUnderlying: boolean,
+    withdrawExact: boolean,
+    removeOneCoin: boolean,
+    minAmounts: Array<uint256> = [],
   ) {
     requireAddress(sender);
     requireAddress(receiver);
@@ -38,7 +38,7 @@ export class CurveWithdrawAction extends Action {
     let depositTargetType = 0;
     let explicitUnderlying = false;
 
-    const pool = poolInfo.find((e:any) => e.swapAddr.toLowerCase() === poolAddr.toLowerCase())!;
+    const pool = poolInfo.find((e: any) => e.swapAddr.toLowerCase() === poolAddr.toLowerCase())!;
     if (useUnderlying) {
       if (pool.depositContract) {
         depositTarget = pool.depositContract;
