@@ -3,3 +3,5 @@ node_modules/
 .env
 esm/
 umd/
+
+yarn-error.log
