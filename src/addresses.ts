@@ -133,7 +133,7 @@ export const actionAddresses = {
     CurveStethPoolWithdraw: '0x4089731d843Ce52699Fe64F68556aBbD95D70D00',
 
     CurveDeposit: '0x160225c24300bD9fAA03Bc007D5e72bDbbcA9257',
-    CurveWithdraw: '0xA2A6D75417807ebAf8364613018D697f88021771',
+    CurveWithdraw: '0xb6Be5c486dD65c2cb18A388671b348E62307F0B3',
 
     // Euler
     FLEuler: '0x66DC6444CdC099153f89332e0d4C87af5C966A75',

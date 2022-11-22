@@ -59,7 +59,7 @@ export class CurveDepositAction extends Action {
         receiver,
         depositTarget,
         minMintAmount,
-        makeFlags(depositTargetType, explicitUnderlying, 0),
+        makeFlags(depositTargetType, explicitUnderlying, 0, 0),
         amounts,
       ],
     );
