@@ -1,4 +1,4 @@
-const dfs = require('../index.js');
+const dfs = require('../umd');
 const {encodeForDsProxyCall, encodeForRecipe} = require('./_actionUtils');
 const {assert} = require('chai');
 

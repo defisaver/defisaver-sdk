@@ -1,8 +1,7 @@
-const dfs = require('../../../index.js');
+const dfs = require('../../../umd');
 const {getIlkInfo, assetAmountInWei,getAssetInfo} = require("@defisaver/tokens");
 const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
-const { getAddr } = require('../../../src/addresses.js');
 
 describe('Action: MakerGiveAction', () => {
   let action;
@@ -14,7 +13,7 @@ describe('Action: MakerGiveAction', () => {
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
         true,
       );
-      assert.equal(action.args[3], getAddr('McdCdpManager'));
+      assert.equal(action.args[3], dfs.getAddr('McdCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -34,9 +33,9 @@ describe('Action: MakerGiveAction', () => {
         '1234',
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
         true,
-        getAddr('BCdpManager'),
+        dfs.getAddr('BCdpManager'),
       );
-      assert.equal(action.args[3], getAddr('BCdpManager'));
+      assert.equal(action.args[3], dfs.getAddr('BCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));

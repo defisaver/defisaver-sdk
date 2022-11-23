@@ -1,7 +1,6 @@
-const dfs = require('../../../index.js');
+const dfs = require('../../../umd');
 const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
-const { getAddr } = require('../../../src/addresses.js');
 
 describe('Action: InstPullTokensAction', () => {
   let action;
@@ -14,7 +13,7 @@ describe('Action: InstPullTokensAction', () => {
     it('constructor', () => {
       action = new dfs.actions.insta.InstPullTokensAction(
         dsaAddress,
-        [getAddr('RaiWethUniV2LPToken'), getAddr('BalancerToken')],
+        [dfs.getAddr('RaiWethUniV2LPToken'), dfs.getAddr('BalancerToken')],
         ['10000', '32000'],
         to
       );

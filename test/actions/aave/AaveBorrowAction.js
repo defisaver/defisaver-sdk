@@ -1,8 +1,7 @@
-const dfs = require('../../../index.js');
+const dfs = require('../../../umd');
 const {getAaveV2MarketInfo, assetAmountInWei,getAssetInfo} = require("@defisaver/tokens");
 const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
-const { getAddr } = require('../../../src/addresses.js');
 
 describe('Action: AaveBorrowAction', () => {
   let action;
@@ -16,7 +15,7 @@ describe('Action: AaveBorrowAction', () => {
         1,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f'
       );
-      assert.equal(action.args[5], getAddr('Empty'));
+      assert.equal(action.args[5], dfs.getAddr('Empty'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));

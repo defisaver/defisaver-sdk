@@ -1,8 +1,7 @@
-const dfs = require('../../../index.js');
+const dfs = require('../../../umd');
 const {getIlkInfo, assetAmountInWei,getAssetInfo} = require("@defisaver/tokens");
 const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
-const { getAddr } = require('../../../src/addresses.js');
 
 describe('Action: MakerMergeAction', () => {
   let action;
@@ -13,7 +12,7 @@ describe('Action: MakerMergeAction', () => {
         '1234',
         '1235',
       );
-      assert.equal(action.args[2], getAddr('McdCdpManager'));
+      assert.equal(action.args[2], dfs.getAddr('McdCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -32,9 +31,9 @@ describe('Action: MakerMergeAction', () => {
       action = new dfs.actions.maker.MakerMergeAction(
         '1234',
         '1235',
-        getAddr('BCdpManager'),
+        dfs.getAddr('BCdpManager'),
       );
-      assert.equal(action.args[2], getAddr('BCdpManager'));
+      assert.equal(action.args[2], dfs.getAddr('BCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
