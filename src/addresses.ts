@@ -19,7 +19,7 @@ export const actionAddresses = {
     TransferNFT: '0x861e893E1796F81248e75F06C0b09Abdc8fe2f6F',
 
     // exchange
-    DFSSell: '0xB744474Bdd7226736ACa4Ba87593e32d8315e5c9',
+    DFSSell: '0x951D7B421f45FF0e4A8ddE0288aE3f9C2C69b784',
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
@@ -162,7 +162,7 @@ export const actionAddresses = {
     CompV3Withdraw: '0x0b0F21EDE32DE4243D9145a899E97FC2366Aec46',
   },
   [NETWORKS.optimism.chainId]: {
-    DFSSell: '0xBA0f6039b95CC0A02B5fc983eCf0FC4437BaacC7',
+    DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -203,7 +203,7 @@ export const actionAddresses = {
     UniCreatePoolV3: '0xAF45d1380d89dB7260DC2684158c5dfA4E147d3e',
   },
   [NETWORKS.arbitrum.chainId]: {
-    DFSSell: '0x77c02Bb7CbBb2F896c5Ea14e1b60D65f81e552db',
+    DFSSell: '0x9109F34AB28D369cF894aF45C50E976B8E312a82',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
