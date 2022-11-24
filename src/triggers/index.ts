@@ -9,3 +9,4 @@ export * from './LiquityRatioTrigger';
 export * from './AaveV3RatioTrigger';
 export * from './CompV3RatioTrigger';
 export * from './TrailingStopTrigger';
+export * from './CBRebondTrigger';

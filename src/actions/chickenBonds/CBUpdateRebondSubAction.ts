@@ -7,7 +7,7 @@ import { uint256 } from '../../types';
  *
  * @category ChickenBonds
  */
-export class CBRedeemAction extends Action {
+export class CBUpdateRebondSubAction extends Action {
   /**
    * @param subId {string} Id of the subscription to update
    * @param bondId {string} Id of the bond in the strategy
