@@ -9,8 +9,8 @@ import { uint256 } from '../../types';
  */
 export class FetchBondIdAction extends Action {
   /**
-   * @param paybackSourceId 
-   * @param sourceType 
+   * @param paybackSourceId
+   * @param sourceType
    * @param cbRebondBondId
    */
   constructor(paybackSourceId:uint256, sourceType:uint256, cbRebondBondId:uint256) {
