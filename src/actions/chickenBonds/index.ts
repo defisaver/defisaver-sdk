@@ -4,3 +4,5 @@ export * from './CBChickenOutAction';
 export * from './CBRedeemAction';
 export * from './CBUpdateRebondSubAction';
 export * from './FetchBondIdAction';
+export * from './CBCreateRebondSubAction';
+
