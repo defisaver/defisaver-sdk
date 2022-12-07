@@ -1,8 +1,7 @@
-const dfs = require('../../../index.js');
+const dfs = require('../../../umd');
 const {getIlkInfo, assetAmountInWei, getAssetInfo, assetAmountInEth} = require("@defisaver/tokens");
 const {encodeForDsProxyCall, encodeForRecipe} = require('../../_actionUtils');
 const {assert} = require('chai');
-const { getAddr } = require('../../../src/addresses.js');
 
 describe('Action: MakerSupplyAction', () => {
   let action;
@@ -15,7 +14,7 @@ describe('Action: MakerSupplyAction', () => {
         getIlkInfo('ETH-A').join,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f'
       );
-      assert.equal(action.args[4], getAddr('McdCdpManager'));
+      assert.equal(action.args[4], dfs.getAddr('McdCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -36,9 +35,9 @@ describe('Action: MakerSupplyAction', () => {
         assetAmountInWei(1, 'WETH'),
         getIlkInfo('ETH-A').join,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
-        getAddr('BCdpManager'),
+        dfs.getAddr('BCdpManager'),
       );
-      assert.equal(action.args[4], getAddr('BCdpManager'));
+      assert.equal(action.args[4], dfs.getAddr('BCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -61,7 +60,7 @@ describe('Action: MakerSupplyAction', () => {
         getIlkInfo('WBTC-A').join,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f'
       );
-      assert.equal(action.args[4], getAddr('McdCdpManager'));
+      assert.equal(action.args[4], dfs.getAddr('McdCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
@@ -84,9 +83,9 @@ describe('Action: MakerSupplyAction', () => {
         assetAmountInWei(1, 'WBTC'),
         getIlkInfo('WBTC-A').join,
         '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f',
-        getAddr('BCdpManager'),
+        dfs.getAddr('BCdpManager'),
       );
-      assert.equal(action.args[4], getAddr('BCdpManager'));
+      assert.equal(action.args[4], dfs.getAddr('BCdpManager'));
     })
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));
     it('encodeForRecipe', () => encodeForRecipe(action));
