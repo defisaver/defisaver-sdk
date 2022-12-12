@@ -15,5 +15,9 @@ export class FetchBondIdAction extends Action {
    */
   constructor(paybackSourceId:uint256, sourceType:uint256, cbRebondBondId:uint256) {
     super('FetchBondId', getAddr('FetchBondId'), ['uint256', 'uint256', 'uint256'], [paybackSourceId, sourceType, cbRebondBondId]);
+    this.mappableArgs = [
+      this.args[0],
+      this.args[1],
+    ];
   }
 }
