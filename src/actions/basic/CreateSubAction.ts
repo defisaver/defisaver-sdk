@@ -15,5 +15,9 @@ export class CreateSubAction extends Action {
    */
   constructor(sub:[uint64, boolean, bytes[], bytes32[]]) {
     super('CreateSub', getAddr('CreateSub'), ['(uint64,bool,bytes[],bytes32[])'], [sub]);
+
+    for (let i = 0; i < this.args[0][3].length; i++) {
+      this.mappableArgs.push(this.args[0][3][i]);
+    }
   }
 }
