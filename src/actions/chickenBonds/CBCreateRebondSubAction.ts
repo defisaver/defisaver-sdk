@@ -12,7 +12,7 @@ export class CBCreateRebondSubAction extends Action {
    * @param bondId {string} Id of the bond in the strategy
    */
   constructor(bondId:uint256) {
-    super('CBCreateRebondSubAction', getAddr('CBCreateRebondSubAction'), ['uint256'], [bondId]);
+    super('CBCreateRebondSub', getAddr('CBCreateRebondSub'), ['uint256'], [bondId]);
     this.mappableArgs = [
       this.args[0],
     ];
