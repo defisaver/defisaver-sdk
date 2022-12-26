@@ -16,8 +16,8 @@ export class MakerFLBoostCompositeAction extends Action {
      */
   constructor(vaultId:uint256, joinAddr:EthAddress, gasUsed:EthAddress, exchangeParams:Array<any>) {
     super(
-      'MakerFLBoostComposite',
-      getAddr('MakerFLBoostComposite'),
+      'McdFLBoostComposite',
+      getAddr('McdFLBoostComposite'),
       [
         'uint256',
         'address',
