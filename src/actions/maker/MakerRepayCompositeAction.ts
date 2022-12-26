@@ -16,8 +16,8 @@ export class MakerRepayCompositeAction extends Action {
      */
   constructor(vaultId:uint256, joinAddr:EthAddress, gasUsed:EthAddress, exchangeParams:Array<any>) {
     super(
-      'MakerRepayComposite',
-      getAddr('MakerRepayComposite'),
+      'McdRepayComposite',
+      getAddr('McdRepayComposite'),
       [
         'uint256',
         'address',
