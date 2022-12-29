@@ -8,6 +8,4 @@ export * from './MakerMergeAction';
 export * from './MakerRatioAction';
 export * from './MakerClaimAction';
 export * from './MakerBoostCompositeAction';
-export * from './MakerFLBoostCompositeAction';
 export * from './MakerRepayCompositeAction';
-export * from './MakerFLRepayCompositeAction';
