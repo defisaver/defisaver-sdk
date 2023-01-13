@@ -13,9 +13,10 @@ export class MakerBoostCompositeAction extends Action {
      * @param joinAddr
      * @param gasUsed
      * @param flAddress
+     * @param flAmount
      * @param exchangeParams
      */
-  constructor(vaultId: uint256, joinAddr: EthAddress, gasUsed: EthAddress, flAddress: EthAddress, exchangeParams: Array<any>) {
+  constructor(vaultId: uint256, joinAddr: EthAddress, gasUsed: EthAddress, flAddress: EthAddress, flAmount: uint256, exchangeParams: Array<any>) {
     super(
       'McdBoostComposite',
       getAddr('McdBoostComposite'),
@@ -24,6 +25,7 @@ export class MakerBoostCompositeAction extends Action {
         'address',
         'uint256',
         'address',
+        'uint256',
         ['address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bytes', ['address', 'address', 'address', 'uint256', 'uint256', 'bytes']],
       ],
       [
@@ -31,15 +33,17 @@ export class MakerBoostCompositeAction extends Action {
         joinAddr,
         gasUsed,
         flAddress,
+        flAmount,
         exchangeParams,
       ],
     );
     this.mappableArgs = [
       this.args[0],
       this.args[1],
-      this.args[4][0],
-      this.args[4][1],
-      this.args[4][2],
+      this.args[4],
+      this.args[5][0],
+      this.args[5][1],
+      this.args[5][2],
     ];
   }
 }
