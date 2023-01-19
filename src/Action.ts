@@ -191,7 +191,7 @@ export class Action {
    * Assets requiring approval to be used by DsProxy
    * Approval is done from owner to DsProxy
    */
-  async getAssetsToApprove(): Promise<Array<{ owner?: string, asset?: string, [key: string]:any }>> {
+  async getAssetsToApprove(): Promise<Array<{ owner?: string, asset?: string, specialApproveLabel?: string, [key: string]:any } | { owner: string, nft: EthAddress, tokenId: string, specialApproveLabel?: string, [key: string]:any }>> {
     return [];
   }
 
