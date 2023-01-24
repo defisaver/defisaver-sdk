@@ -20,16 +20,16 @@ export class FLAction extends Action {
       [],
       specificFLAction.args[6],
     ];
-    if (specificFLAction.constructor.name === 'AaveV2FlashloanAction') {
+    if (specificFLAction.constructor.name === 'AaveV2FlashLoanAction') {
       argsToReturn[5] = [1];
     }
-    if (specificFLAction.constructor.name === 'AaveV3FlashloanAction') {
+    if (specificFLAction.constructor.name === 'AaveV3FlashLoanAction') {
       argsToReturn[5] = [1];
     }
-    if (specificFLAction.constructor.name === 'BalancerFlashloanAction') {
+    if (specificFLAction.constructor.name === 'BalancerFlashLoanAction') {
       argsToReturn[5] = [2];
     }
-    if (specificFLAction.constructor.name === 'EulerFlashloanAction') {
+    if (specificFLAction.constructor.name === 'EulerFlashLoanAction') {
       argsToReturn[5] = [3];
     }
     if (specificFLAction.constructor.name === 'MakerFlashLoanAction') {
