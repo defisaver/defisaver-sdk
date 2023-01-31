@@ -4,19 +4,19 @@ import { getAddr } from '../../addresses';
 import { EthAddress, uint256 } from '../../types';
 
 /**
- * MorphoSupplyAction - Supply token to morpho
+ * MorphoAaveV2PaybackAction - Supply token to morpho
  *
  * @category Morpho
  */
-export class MorphoSupplyAction extends Action {
+export class MorphoAaveV2PaybackAction extends Action {
   /**
-   * @param tokenAddr - Address of tokenAddr
+   * @param tokenAddr - Address of Token
    * @param amount - Token amount
    * @param from - Tokens will be sent from this address
-   * @param onBehalf - Tokens will be supplied to this address' position (defaults to sender's proxy)
+   * @param onBehalf - Tokens will be paid back to this address' position (defaults to sender's proxy)
    */
   constructor(tokenAddr:EthAddress, amount:uint256, from:EthAddress, onBehalf:EthAddress = getAddr('Empty')) {
-    super('MorphoSupply', getAddr('MorphoSupply'), ['address', 'uint256', 'address', 'address'], [tokenAddr, amount, from, onBehalf]);
+    super('MorphoAaveV2Payback', getAddr('MorphoAaveV2Payback'), ['address', 'uint256', 'address', 'address'], [tokenAddr, amount, from, onBehalf]);
 
     this.mappableArgs = [
       this.args[0],

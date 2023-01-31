@@ -3,18 +3,18 @@ import { getAddr } from '../../addresses';
 import { EthAddress, uint256 } from '../../types';
 
 /**
- * MorphoWithdrawAction - Withdraw token from morpho
+ * MorphoAaveV2BorrowAction - Borrow token from morpho on behalf of proxy
  *
  * @category Morpho
  */
-export class MorphoWithdrawAction extends Action {
+export class MorphoAaveV2BorrowAction extends Action {
   /**
    * @param tokenAddr - Address of Token
-   * @param amount - Token amount
-   * @param to - Tokens will be withdrawn to this address
+   * @param amount - Amount to borrow
+   * @param to - Borrowed tokens will be sent to this address
    */
   constructor(tokenAddr:EthAddress, amount:uint256, to:EthAddress) {
-    super('MorphoWithdraw', getAddr('MorphoWithdraw'), ['address', 'uint256','address'], [tokenAddr, amount, to]);
+    super('MorphoAaveV2Borrow', getAddr('MorphoAaveV2Borrow'), ['address', 'uint256', 'address'], [tokenAddr, amount, to]);
 
     this.mappableArgs = [
       this.args[0],
