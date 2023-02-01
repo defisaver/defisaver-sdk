@@ -13,3 +13,4 @@ export * from './LiquityUnstakeAction';
 export * from './LiquityEthGainToTroveAction';
 export * from './LiquityClaimSPRewardsAction';
 export * from './LiquityClaimStakingRewardsAction';
+export * from './LiquityAdjustAction';
