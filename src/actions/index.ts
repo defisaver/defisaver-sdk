@@ -21,6 +21,7 @@ import * as aaveV3 from './aaveV3';
 import * as convex from './convex';
 import * as chickenBonds from './chickenBonds';
 import * as compoundV3 from './compoundV3';
+import * as morpho from './morpho';
 
 export {
   aave,
@@ -46,4 +47,5 @@ export {
   convex,
   chickenBonds,
   compoundV3,
+  morpho,
 };
