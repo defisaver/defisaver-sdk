@@ -14,9 +14,21 @@ export class MorphoAaveV2SupplyAction extends Action {
    * @param amount - Token amount
    * @param from - Tokens will be sent from this address
    * @param onBehalf - Tokens will be supplied to this address' position (defaults to sender's proxy)
+   * @param maxGasForMatching - Max gas to spend on p2p matching
    */
-  constructor(tokenAddr:EthAddress, amount:uint256, from:EthAddress, onBehalf:EthAddress = getAddr('Empty')) {
-    super('MorphoAaveV2Supply', getAddr('MorphoAaveV2Supply'), ['address', 'uint256', 'address', 'address'], [tokenAddr, amount, from, onBehalf]);
+  constructor(
+    tokenAddr:EthAddress,
+    amount:uint256,
+    from:EthAddress,
+    onBehalf:EthAddress = getAddr('Empty'),
+    maxGasForMatching:uint256,
+  ) {
+    super(
+      'MorphoAaveV2Supply',
+      getAddr('MorphoAaveV2Supply'),
+      ['address', 'uint256', 'address', 'address', 'uint256'],
+      [tokenAddr, amount, from, onBehalf, maxGasForMatching],
+    );
 
     this.mappableArgs = [
       this.args[0],
