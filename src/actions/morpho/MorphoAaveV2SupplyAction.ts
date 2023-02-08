@@ -21,7 +21,7 @@ export class MorphoAaveV2SupplyAction extends Action {
     amount:uint256,
     from:EthAddress,
     onBehalf:EthAddress = getAddr('Empty'),
-    maxGasForMatching:uint256,
+    maxGasForMatching:uint256 = '0',
   ) {
     super(
       'MorphoAaveV2Supply',

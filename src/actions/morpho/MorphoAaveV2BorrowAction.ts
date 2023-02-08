@@ -18,7 +18,7 @@ export class MorphoAaveV2BorrowAction extends Action {
     tokenAddr:EthAddress,
     amount:uint256,
     to:EthAddress,
-    maxGasForMatching:uint256,
+    maxGasForMatching:uint256 = '0',
   ) {
     super(
       'MorphoAaveV2Borrow',
