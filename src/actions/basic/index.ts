@@ -16,3 +16,4 @@ export * from './GasFeeActionL2';
 export * from './TransferNFTAction';
 export * from './CreateSubAction';
 export * from './LimitSellAction';
+export * from './LimitSellActionL2';
