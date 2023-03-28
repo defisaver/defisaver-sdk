@@ -29,7 +29,7 @@ export class MorphoAaveV3SupplyAction extends Action {
     super(
       'MorphoAaveV3Supply',
       getAddr('MorphoAaveV3Supply'),
-      ['address', 'uint256', 'address', 'address', 'uint256'],
+      ['uint256', 'address', 'uint256', 'address', 'address', 'bool', 'uint256'],
       [emodeId, tokenAddr, amount, from, onBehalf, supplyAsColl, maxIterations],
     );
 
