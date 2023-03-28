@@ -23,9 +23,6 @@ export class FLAction extends Action {
     if (specificFLAction.constructor.name === 'AaveV2FlashLoanAction') {
       argsToReturn[5] = [1];
     }
-    if (specificFLAction.constructor.name === 'AaveV3FlashLoanAction') {
-      argsToReturn[5] = [1];
-    }
     if (specificFLAction.constructor.name === 'BalancerFlashLoanAction') {
       argsToReturn[5] = [2];
     }
@@ -34,6 +31,9 @@ export class FLAction extends Action {
     }
     if (specificFLAction.constructor.name === 'MakerFlashLoanAction') {
       argsToReturn[5] = [4];
+    }
+    if (specificFLAction.constructor.name === 'AaveV3FlashLoanAction') {
+      argsToReturn[5] = [5];
     }
     return argsToReturn;
   }
