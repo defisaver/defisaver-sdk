@@ -7,3 +7,5 @@ export * from './MakerGiveAction';
 export * from './MakerMergeAction';
 export * from './MakerRatioAction';
 export * from './MakerClaimAction';
+export * from './MakerBoostCompositeAction';
+export * from './MakerRepayCompositeAction';

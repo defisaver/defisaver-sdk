@@ -16,5 +16,12 @@ export class UpdateSubAction extends Action {
    */
   constructor(subId:uint256, sub:[uint64, boolean, bytes[], bytes32[]]) {
     super('UpdateSub', getAddr('UpdateSub'), ['uint256', '(uint64,bool,bytes[],bytes32[])'], [subId, sub]);
+
+    this.mappableArgs = [
+      this.args[0],
+    ];
+    for (let i = 0; i < this.args[1][3].length; i++) {
+      this.mappableArgs.push(this.args[1][3][i]);
+    }
   }
 }

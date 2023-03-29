@@ -93,17 +93,32 @@ export class Action {
   #_getPlaceholderForType(type: string) : string {
     // TODO handle arrays?
     // eslint-disable-next-line
-    if (type.startsWith('bytes')) return `0x${'0'.repeat(parseInt(type.substr(5)))}`;
+    if (type.startsWith('bytes')) return `0x${'0'.repeat(parseInt(type.substr(5)) * 2)}`;
     if (type === 'address') return `0x${'0'.repeat(40)}`;
     if (type === 'string') return '';
     return '0';
+  }
+
+  _parseParamType(paramType:string | ParamTypes, arg:Args) {
+    if (typeof (paramType) === 'string') {
+      if (paramType.startsWith('(')) {
+        let _paramType = paramType.replace('(', '');
+        _paramType = _paramType.replace(')', '');
+        return _paramType.split(',');
+      }
+      if (paramType.endsWith('[]')) {
+        return Array.from(Array(arg.length).fill(paramType.replace('[]', '')));
+      }
+    }
+    return paramType;
   }
 
   /**
    *
    */
   _replaceWithPlaceholders(arg: Args, paramType: string | ParamTypes) : any {
-    if (Array.isArray(arg)) return arg.map((_arg, i) => this._replaceWithPlaceholders(_arg, paramType[i]));
+    const paramTypeParsed = this._parseParamType(paramType, arg);
+    if (Array.isArray(arg)) return arg.map((_arg, i) => this._replaceWithPlaceholders(_arg, paramTypeParsed[i]));
     if (typeof (paramType) === 'string') {
       if (new RegExp(/\$\d+/).test(arg)) return this.#_getPlaceholderForType(paramType);
       if (new RegExp(/&\w+/).test(arg)) return this.#_getPlaceholderForType(paramType);
@@ -176,7 +191,7 @@ export class Action {
    * Assets requiring approval to be used by DsProxy
    * Approval is done from owner to DsProxy
    */
-  async getAssetsToApprove(): Promise<Array<{ owner?: string, asset?: string, [key: string]:any }>> {
+  async getAssetsToApprove(): Promise<Array<{ owner?: string, asset?: string, specialApproveLabel?: string, [key: string]:any } | { owner: string, nft: EthAddress, tokenId: string, specialApproveLabel?: string, [key: string]:any }>> {
     return [];
   }
 

@@ -89,14 +89,23 @@ export class Recipe {
    * Assets requiring approval to be used by DsProxy
    * Approval is done from owner to DsProxy
    */
-  async getAssetsToApprove() : Promise<Array<{ owner: string, asset: string }>> {
-    const uniqueAssetOwnerPairs : Array<{ owner: string, asset: string, [key: string]:any }> = [];
+  async getAssetsToApprove() : Promise<Array<{ owner: string, asset: string, specialApproveLabel?: string } | { owner: string, nft: EthAddress, tokenId: string, specialApproveLabel?: string }>> {
+    const uniqueAssetOwnerPairs : Array<{ owner: string, asset: string, specialApproveLabel?: string, [key: string]:any } | { owner: string, nft: EthAddress, tokenId: string, specialApproveLabel?: string, [key: string]:any }> = [];
     const assetOwnerPairs = await Promise.all(this.actions.map(a => a.getAssetsToApprove()));
     for (const pairsPerAction of assetOwnerPairs) {
       for (const pair of pairsPerAction) {
         const isNft = !pair.asset;
         if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && (isNft ? _pair.tokenId === pair.tokenId : _pair.asset === pair.asset))) {
-          uniqueAssetOwnerPairs.push({ owner: pair.owner!, asset: pair.asset! });
+          if (isNft) {
+            uniqueAssetOwnerPairs.push({
+              owner: pair.owner!,
+              nft: pair.nft!,
+              tokenId: pair.tokenId!,
+              specialApproveLabel: pair.specialApproveLabel!,
+            });
+          } else {
+            uniqueAssetOwnerPairs.push({ owner: pair.owner!, asset: pair.asset!, specialApproveLabel: pair.specialApproveLabel! });
+          }
         }
       }
     }
