@@ -14,4 +14,5 @@ export * from './UpdateSubAction';
 export * from './ToggleSubAction';
 export * from './GasFeeActionL2';
 export * from './TransferNFTAction';
+export * from './SendTokensAction';
 export * from './CreateSubAction';
