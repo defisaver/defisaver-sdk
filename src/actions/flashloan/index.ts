@@ -11,3 +11,5 @@ export * from './BalancerFlashLoanPaybackAction';
 export * from './EulerFlashLoanAction';
 export * from './EulerFlashLoanPaybackAction';
 export * from './FLAction';
+export * from './AaveV3WithFeeFlashLoanAction';
+export * from './AaveV3WithFeeFlashLoanPaybackAction';
