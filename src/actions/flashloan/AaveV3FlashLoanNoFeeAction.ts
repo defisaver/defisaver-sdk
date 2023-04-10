@@ -3,11 +3,11 @@ import { getAddr } from '../../addresses';
 import { EthAddress, uint256, bytes } from '../../types';
 
 /**
- * Gets a flashloan from Aave v3 with fee enabled
+ * Gets a flashloan from Aave v3
  *
  * @category Flashloans
  */
-export class AaveV3WithFeeFlashLoanAction extends ActionWithL2 {
+export class AaveV3FlashLoanNoFeeAction extends ActionWithL2 {
   /**
    * @param loanAmounts
    * @param tokens
@@ -18,8 +18,8 @@ export class AaveV3WithFeeFlashLoanAction extends ActionWithL2 {
    */
   constructor(tokens:Array<EthAddress>, loanAmounts:Array<uint256>, modes:Array<uint256>, loanPayer:EthAddress, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes = []) {
     super(
-      'FLAaveV3WithFee',
-      getAddr('FLAaveV3WithFee'),
+      'FLAaveV3NoFee',
+      getAddr('FLAaveV3NoFee'),
       ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
       [tokens, loanAmounts, modes, loanPayer, flParamGetterAddr, flParamGetterData, []],
     );

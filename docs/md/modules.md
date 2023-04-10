@@ -117,8 +117,8 @@
 
 - [AaveV2FlashLoanAction](classes/AaveV2FlashLoanAction.md)
 - [AaveV2FlashLoanPaybackAction](classes/AaveV2FlashLoanPaybackAction.md)
-- [AaveV3FlashLoanAction](classes/AaveV3FlashLoanAction.md)
-- [AaveV3FlashLoanPaybackAction](classes/AaveV3FlashLoanPaybackAction.md)
+- [AaveV3FlashLoanNoFeeAction](classes/AaveV3FlashLoanAction.md)
+- [AaveV3FlashLoanNoFeePaybackAction](classes/AaveV3FlashLoanPaybackAction.md)
 - [BalancerFlashLoanAction](classes/BalancerFlashLoanAction.md)
 - [BalancerFlashLoanPaybackAction](classes/BalancerFlashLoanPaybackAction.md)
 - [DyDxFlashLoanAction](classes/DyDxFlashLoanAction.md)

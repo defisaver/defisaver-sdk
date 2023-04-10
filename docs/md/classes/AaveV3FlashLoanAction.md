@@ -1,6 +1,6 @@
-[@defisaver/sdk](../README.md) / [Exports](../modules.md) / AaveV3FlashLoanAction
+[@defisaver/sdk](../README.md) / [Exports](../modules.md) / AaveV3FlashLoanNoFeeAction
 
-# Class: AaveV3FlashLoanAction
+# Class: AaveV3FlashLoanNoFeeAction
 
 Gets a flashloan from Aave v3
 
@@ -8,7 +8,7 @@ Gets a flashloan from Aave v3
 
 - [`ActionWithL2`](ActionWithL2.md)
 
-  ↳ **`AaveV3FlashLoanAction`**
+  ↳ **`AaveV3FlashLoanNoFeeAction`**
 
 ## Table of contents
 
@@ -52,7 +52,7 @@ Gets a flashloan from Aave v3
 
 ### constructor
 
-• **new AaveV3FlashLoanAction**(`tokens`, `loanAmounts`, `modes`, `loanPayer`, `flParamGetterAddr?`, `flParamGetterData?`)
+• **new AaveV3FlashLoanNoFeeAction**(`tokens`, `loanAmounts`, `modes`, `loanPayer`, `flParamGetterAddr?`, `flParamGetterData?`)
 
 #### Parameters
 
@@ -71,7 +71,7 @@ Gets a flashloan from Aave v3
 
 #### Defined in
 
-[src/actions/flashloan/AaveV3FlashLoanAction.ts:19](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/actions/flashloan/AaveV3FlashLoanAction.ts#L19)
+[src/actions/flashloan/AaveV3FlashLoanNoFeeAction.ts:19](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/actions/flashloan/AaveV3FlashLoanAction.ts#L19)
 
 ## Properties
 
