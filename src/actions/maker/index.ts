@@ -9,3 +9,5 @@ export * from './MakerRatioAction';
 export * from './MakerClaimAction';
 export * from './MakerBoostCompositeAction';
 export * from './MakerRepayCompositeAction';
+export * from './MakerDsrDepositAction';
+export * from './MakerDsrWithdrawAction';
