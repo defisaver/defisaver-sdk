@@ -18,7 +18,7 @@ export class AaveV3FlashLoanAction extends ActionWithL2 {
    */
   constructor(tokens:Array<EthAddress>, loanAmounts:Array<uint256>, modes:Array<uint256>, loanPayer:EthAddress, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes = []) {
     super(
-      'FLAaveV3',
+      'FLAaveV3WithFee',
       getAddr('FLAaveV3'),
       ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
       [tokens, loanAmounts, modes, loanPayer, flParamGetterAddr, flParamGetterData, []],
