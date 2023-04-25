@@ -119,6 +119,7 @@ export const actionAddresses = {
     LiquityEthGainToTrove: '0x65e19f967B3F3cB6466110aD238039F5423E3177',
     LiquityClaim: '0x526735aDcBe5c9059275c5ED2E0574b4a24b875e',
     LiquityRedeem: '0x20B78854658011394C931EF2BF3cEEA2Fe62E7f0',
+    LiquityAdjust: '0x0A398f6B97677192A5d5e7Ea8A937383FFf9304c',
 
     // lido
     LidoStake: '0x4a7dd38D2BcA817fb68165155F869ca4179d8060',
@@ -165,6 +166,7 @@ export const actionAddresses = {
     TrailingStopTrigger: '0x0000000000000000000000000000000000000000',
     CBRebondTrigger: '0x6Bb48580977e2aBfD6c70B522204EFbe828a9428',
     CBUpdateRebondSub: '0x2709Fd59a27F35997dFf618E3C68ABA1c9e91465',
+    LiquityRatioCheck: '0x4AE38243936FAcb0f42993D676b7df1Bb31082d9',
 
     // Convex
     ConvexDeposit: '0x3Ecc4F1FD5aA09D2E13Ec9ebFdF102063d66F458',
