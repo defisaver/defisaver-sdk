@@ -4,6 +4,8 @@ export * from './AaveV2FlashLoanAction';
 export * from './AaveV2FlashLoanPaybackAction';
 export * from './AaveV3FlashLoanAction';
 export * from './AaveV3FlashLoanPaybackAction';
+export * from './AaveV3FlashLoanNoFeeAction';
+export * from './AaveV3FlashLoanNoFeePaybackAction';
 export * from './MakerFlashLoanAction';
 export * from './MakerFlashLoanPaybackAction';
 export * from './BalancerFlashLoanAction';
