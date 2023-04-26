@@ -1,203 +1,296 @@
 [
-    {
-        "name": "susd",
-        "swapAddr": "0xA5407eAE9Ba41422680e2e00537571bcC53efBfD",
-        "depositContract": "0xFCBa3E75865d2d561BE8D220616520c171F12851",
-        "nCoins": 4,
-        "coins": [
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51"
-        ],
-        "decimals": [
-            18,
-            6,
-            6,
-            18
-        ],
-        "underlyingCoins": [
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "0xdAC17F958D2ee523a2206206994597C13D831ec7",
-            "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51"
-        ],
-        "underlyingDecimals": [
-            18,
-            6,
-            6,
-            18
-        ],
-        "isMeta": false,
-        "lpToken": "0xC25a3A3b969415c80451098fa907EC722572917F",
-        "gauges": [
-            "0xA90996896660DEcC6E997655E065b23788857849"
-        ],
-        "gaugeTypes": [
-            0
-        ],
-        "zapType": 1
-    },
-    {
-        "name": "compound",
-        "swapAddr": "0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56",
-        "depositContract": "0xeB21209ae4C2c9FF2a86ACA31E123764A3B6Bc06",
-        "nCoins": 2,
-        "coins": [
-            "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643",
-            "0x39AA39c021dfbaE8faC545936693aC917d5E7563"
-        ],
-        "decimals": [
-            8,
-            8
-        ],
-        "underlyingCoins": [
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
-        ],
-        "underlyingDecimals": [
-            18,
-            6
-        ],
-        "isMeta": false,
-        "lpToken": "0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2",
-        "gauges": [
-            "0x7ca5b0a2910B33e9759DC7dDB0413949071D7575"
-        ],
-        "gaugeTypes": [
-            0
-        ],
-        "zapType": 1
-    },
-    {
-        "underlyingFlag": true,
-        "name": "aave",
-        "swapAddr": "0xDeBF20617708857ebe4F679508E7b7863a8A8EeE",
-        "nCoins": 3,
-        "coins": [
-            "0x028171bCA77440897B824Ca71D1c56caC55b68A3",
-            "0xBcca60bB61934080951369a648Fb03DF4F96263C",
-            "0x3Ed3B47Dd13EC9a98b44e6204A523E766B225811"
-        ],
-        "decimals": [
-            18,
-            6,
-            6
-        ],
-        "underlyingCoins": [
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-        ],
-        "underlyingDecimals": [
-            18,
-            6,
-            6
-        ],
-        "isMeta": false,
-        "lpToken": "0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900",
-        "gauges": [
-            "0xd662908ADA2Ea1916B3318327A97eB18aD588b5d"
-        ],
-        "gaugeTypes": [
-            0
-        ]
-    },
-    {
-        "name": "steth",
-        "swapAddr": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
-        "nCoins": 2,
-        "coins": [
-            "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-            "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
-        ],
-        "decimals": [
-            18,
-            18
-        ],
-        "underlyingCoins": [
-            "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-            "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
-        ],
-        "underlyingDecimals": [
-            18,
-            18
-        ],
-        "isMeta": false,
-        "lpToken": "0x06325440D014e39736583c165C2963BA99fAf14E",
-        "gauges": [
-            "0x182B723a58739a9c974cFDB385ceaDb237453c28"
-        ],
-        "gaugeTypes": [
-            0
-        ]
-    },
-    {
-        "name": "3pool",
-        "swapAddr": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
-        "nCoins": 3,
-        "coins": [
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-        ],
-        "decimals": [
-            18,
-            6,
-            6
-        ],
-        "underlyingCoins": [
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-        ],
-        "underlyingDecimals": [
-            18,
-            6,
-            6
-        ],
-        "isMeta": false,
-        "lpToken": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
-        "gauges": [
-            "0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A"
-        ],
-        "gaugeTypes": [
-            0
-        ]
-    },
-    {
-        "name": "musd",
-        "swapAddr": "0x8474DdbE98F5aA3179B3B3F5942D724aFcdec9f6",
-        "depositContract": "0x803A2B40c5a9BB2B86DD630B274Fa2A9202874C2",
-        "nCoins": 2,
-        "coins": [
-            "0xe2f2a5C287993345a840Db3B0845fbC70f5935a5",
-            "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490"
-        ],
-        "decimals": [
-            18,
-            18
-        ],
-        "underlyingCoins": [
-            "0xe2f2a5C287993345a840Db3B0845fbC70f5935a5",
-            "0x6B175474E89094C44Da98b954EedeAC495271d0F",
-            "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
-            "0xdAC17F958D2ee523a2206206994597C13D831ec7"
-        ],
-        "underlyingDecimals": [
-            18,
-            18,
-            6,
-            6
-        ],
-        "isMeta": true,
-        "lpToken": "0x1AEf73d49Dedc4b1778d0706583995958Dc862e6",
-        "gauges": [
-            "0x5f626c30EC1215f4EdCc9982265E8b1F411D1352"
-        ],
-        "gaugeTypes": [
-            0
-        ],
-        "zapType": 0
-    }
+  {
+    "name": "susd",
+    "swapAddr": "0xA5407eAE9Ba41422680e2e00537571bcC53efBfD",
+    "depositContract": "0xFCBa3E75865d2d561BE8D220616520c171F12851",
+    "nCoins": 4,
+    "coins": [
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51"
+    ],
+    "decimals": [
+      18,
+      6,
+      6,
+      18
+    ],
+    "underlyingCoins": [
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7",
+      "0x57Ab1ec28D129707052df4dF418D58a2D46d5f51"
+    ],
+    "underlyingDecimals": [
+      18,
+      6,
+      6,
+      18
+    ],
+    "isMeta": false,
+    "lpToken": "0xC25a3A3b969415c80451098fa907EC722572917F",
+    "gauges": [
+      "0xA90996896660DEcC6E997655E065b23788857849"
+    ],
+    "gaugeTypes": [
+      0
+    ],
+    "zapType": 1
+  },
+  {
+    "name": "compound",
+    "swapAddr": "0xA2B47E3D5c44877cca798226B7B8118F9BFb7A56",
+    "depositContract": "0xeB21209ae4C2c9FF2a86ACA31E123764A3B6Bc06",
+    "nCoins": 2,
+    "coins": [
+      "0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643",
+      "0x39AA39c021dfbaE8faC545936693aC917d5E7563"
+    ],
+    "decimals": [
+      8,
+      8
+    ],
+    "underlyingCoins": [
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48"
+    ],
+    "underlyingDecimals": [
+      18,
+      6
+    ],
+    "isMeta": false,
+    "lpToken": "0x845838DF265Dcd2c412A1Dc9e959c7d08537f8a2",
+    "gauges": [
+      "0x7ca5b0a2910B33e9759DC7dDB0413949071D7575"
+    ],
+    "gaugeTypes": [
+      0
+    ],
+    "zapType": 1
+  },
+  {
+    "underlyingFlag": true,
+    "name": "aave",
+    "swapAddr": "0xDeBF20617708857ebe4F679508E7b7863a8A8EeE",
+    "nCoins": 3,
+    "coins": [
+      "0x028171bCA77440897B824Ca71D1c56caC55b68A3",
+      "0xBcca60bB61934080951369a648Fb03DF4F96263C",
+      "0x3Ed3B47Dd13EC9a98b44e6204A523E766B225811"
+    ],
+    "decimals": [
+      18,
+      6,
+      6
+    ],
+    "underlyingCoins": [
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    ],
+    "underlyingDecimals": [
+      18,
+      6,
+      6
+    ],
+    "isMeta": false,
+    "lpToken": "0xFd2a8fA60Abd58Efe3EeE34dd494cD491dC14900",
+    "gauges": [
+      "0xd662908ADA2Ea1916B3318327A97eB18aD588b5d"
+    ],
+    "gaugeTypes": [
+      0
+    ]
+  },
+  {
+    "name": "steth",
+    "swapAddr": "0xDC24316b9AE028F1497c275EB9192a3Ea0f67022",
+    "nCoins": 2,
+    "coins": [
+      "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
+    ],
+    "decimals": [
+      18,
+      18
+    ],
+    "underlyingCoins": [
+      "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      "0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84"
+    ],
+    "underlyingDecimals": [
+      18,
+      18
+    ],
+    "isMeta": false,
+    "lpToken": "0x06325440D014e39736583c165C2963BA99fAf14E",
+    "gauges": [
+      "0x182B723a58739a9c974cFDB385ceaDb237453c28"
+    ],
+    "gaugeTypes": [
+      0
+    ]
+  },
+  {
+    "name": "3pool",
+    "swapAddr": "0xbEbc44782C7dB0a1A60Cb6fe97d0b483032FF1C7",
+    "nCoins": 3,
+    "coins": [
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    ],
+    "decimals": [
+      18,
+      6,
+      6
+    ],
+    "underlyingCoins": [
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    ],
+    "underlyingDecimals": [
+      18,
+      6,
+      6
+    ],
+    "isMeta": false,
+    "lpToken": "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490",
+    "gauges": [
+      "0xbFcF63294aD7105dEa65aA58F8AE5BE2D9d0952A"
+    ],
+    "gaugeTypes": [
+      0
+    ]
+  },
+  {
+    "name": "musd",
+    "swapAddr": "0x8474DdbE98F5aA3179B3B3F5942D724aFcdec9f6",
+    "depositContract": "0x803A2B40c5a9BB2B86DD630B274Fa2A9202874C2",
+    "nCoins": 2,
+    "coins": [
+      "0xe2f2a5C287993345a840Db3B0845fbC70f5935a5",
+      "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490"
+    ],
+    "decimals": [
+      18,
+      18
+    ],
+    "underlyingCoins": [
+      "0xe2f2a5C287993345a840Db3B0845fbC70f5935a5",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    ],
+    "underlyingDecimals": [
+      18,
+      18,
+      6,
+      6
+    ],
+    "isMeta": true,
+    "lpToken": "0x1AEf73d49Dedc4b1778d0706583995958Dc862e6",
+    "gauges": [
+      "0x5f626c30EC1215f4EdCc9982265E8b1F411D1352"
+    ],
+    "gaugeTypes": [
+      0
+    ],
+    "zapType": 0
+  },
+  {
+    "name": "lusd",
+    "swapAddr": "0xEd279fDD11cA84bEef15AF5D39BB4d4bEE23F0cA",
+    "depositContract": "0xA79828DF1850E8a3A3064576f380D90aECDD3359",
+    "nCoins": 2,
+    "coins": [
+      "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+      "0x6c3F90f043a72FA612cbac8115EE7e52BDe6E490"
+    ],
+    "decimals": [
+      18,
+      18
+    ],
+    "underlyingCoins": [
+      "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
+      "0x6B175474E89094C44Da98b954EedeAC495271d0F",
+      "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48",
+      "0xdAC17F958D2ee523a2206206994597C13D831ec7"
+    ],
+    "underlyingDecimals": [
+      18,
+      18,
+      6,
+      6
+    ],
+    "isMeta": true,
+    "lpToken": "0xEd279fDD11cA84bEef15AF5D39BB4d4bEE23F0cA",
+    "gauges": [
+      "0x9B8519A9a00100720CCdC8a120fBeD319cA47a14"
+    ],
+    "gaugeTypes": [
+      0
+    ],
+    "zapType": 0
+  },
+  {
+    "name": "reth",
+    "swapAddr": "0x0f3159811670c117c372428D4E69AC32325e4D0F",
+    "nCoins": 2,
+    "coins": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xae78736Cd615f374D3085123A210448E74Fc6393"
+    ],
+    "decimals": [
+      18,
+      18
+    ],
+    "underlyingCoins": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xae78736Cd615f374D3085123A210448E74Fc6393"
+    ],
+    "underlyingDecimals": [
+      18,
+      18
+    ],
+    "isMeta": false,
+    "lpToken": "0x6c38cE8984a890F5e46e6dF6117C26b3F1EcfC9C",
+    "gauges": [
+      "0x9d4D981d8a9066f5db8532A5816543dE8819d4A8"
+    ],
+    "gaugeTypes": [
+      0
+    ]
+  },
+  {
+    "name": "cbeth",
+    "swapAddr": "0x5FAE7E604FC3e24fd43A72867ceBaC94c65b404A",
+    "nCoins": 2,
+    "coins": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704"
+    ],
+    "decimals": [
+      18,
+      18
+    ],
+    "underlyingCoins": [
+      "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2",
+      "0xBe9895146f7AF43049ca1c1AE358B0541Ea49704"
+    ],
+    "underlyingDecimals": [
+      18,
+      18
+    ],
+    "isMeta": false,
+    "lpToken": "0x5b6C539b224014A09B3388e51CaAA8e354c959C8",
+    "gauges": [
+      "0xAd96E10123Fa34a01cf2314C42D75150849C9295"
+    ],
+    "gaugeTypes": [
+      0
+    ]
+  }
 ]
