@@ -6,6 +6,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * BprotocolLiquitySPDeposit - Action that deposits LUSD into Bprotocol
  * @dev LQTY rewards accrue over time and are paid out each time the user interacts with the protocol
+ * @dev Deposit amount must be greater than zero, for LQTY only claim use BprotocolLiquitySPWithdraw
  * @category Bprotocol
  */
 export class BprotocolLiquitySPDepositAction extends Action {
