@@ -14,7 +14,7 @@ Transfers specified token from recipe (DsProxy) to specified address
 
   ↳↳ [`AaveV2FlashLoanPaybackAction`](AaveV2FlashLoanPaybackAction.md)
 
-  ↳↳ [`AaveV3FlashLoanPaybackAction`](AaveV3FlashLoanPaybackAction.md)
+  ↳↳ [`AaveV3FlashLoanNoFeePaybackAction`](AaveV3FlashLoanPaybackAction.md)
 
   ↳↳ [`MakerFlashLoanPaybackAction`](MakerFlashLoanPaybackAction.md)
 
