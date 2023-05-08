@@ -119,6 +119,10 @@ export const actionAddresses = {
     LiquityClaim: '0x526735aDcBe5c9059275c5ED2E0574b4a24b875e',
     LiquityRedeem: '0x20B78854658011394C931EF2BF3cEEA2Fe62E7f0',
 
+    // b.protocol
+    BprotocolLiquitySPDepositAction: '0x8a5dB35267D4788f6d2C0E14413421040E988223',
+    BprotocolLiquitySPWithdrawAction: '0xe8988a1EDb3dCd98C453A2a7182226B887CC3110',
+
     // lido
     LidoStake: '0x4a7dd38D2BcA817fb68165155F869ca4179d8060',
     LidoWrap: '0xE637544390db79EdDE0a9CAF352ED0FfF7451bDB',
