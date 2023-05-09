@@ -122,8 +122,8 @@ export const actionAddresses = {
     LiquityAdjust: '0x0A398f6B97677192A5d5e7Ea8A937383FFf9304c',
 
     // b.protocol
-    BprotocolLiquitySPDepositAction: '0x8a5dB35267D4788f6d2C0E14413421040E988223',
-    BprotocolLiquitySPWithdrawAction: '0xe8988a1EDb3dCd98C453A2a7182226B887CC3110',
+    BprotocolLiquitySPDeposit: '0x5A0436c7559e37da8cD24B0f66C155a0a2fd6309',
+    BprotocolLiquitySPWithdraw: '0x20Ece7CB4463bB1DbA4C4fA800E321A05dfB028B',
 
     // lido
     LidoStake: '0x4a7dd38D2BcA817fb68165155F869ca4179d8060',
