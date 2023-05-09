@@ -203,7 +203,8 @@
   {
     "name": "lusd",
     "swapAddr": "0xEd279fDD11cA84bEef15AF5D39BB4d4bEE23F0cA",
-    "depositContract": "0xA79828DF1850E8a3A3064576f380D90aECDD3359",
+    "depositContract": "0xEd279fDD11cA84bEef15AF5D39BB4d4bEE23F0cA",
+    "devComment": "it would follow logic that the depositContract should be the 3pool zap but because of the smart contract logic it is overridden here",
     "nCoins": 2,
     "coins": [
       "0x5f98805A4E8be255a32880FDeC7F6728C6568bA0",
@@ -233,10 +234,11 @@
     "gaugeTypes": [
       0
     ],
-    "zapType": 0
+    "zapType": 2
   },
   {
     "name": "reth",
+    "isFactory": true,
     "swapAddr": "0x0f3159811670c117c372428D4E69AC32325e4D0F",
     "nCoins": 2,
     "coins": [
@@ -266,6 +268,7 @@
   },
   {
     "name": "cbeth",
+    "isFactory": true,
     "swapAddr": "0x5FAE7E604FC3e24fd43A72867ceBaC94c65b404A",
     "nCoins": 2,
     "coins": [
