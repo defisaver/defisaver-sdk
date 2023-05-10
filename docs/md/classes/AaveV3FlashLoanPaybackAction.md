@@ -1,6 +1,6 @@
-[@defisaver/sdk](../README.md) / [Exports](../modules.md) / AaveV3FlashLoanPaybackAction
+[@defisaver/sdk](../README.md) / [Exports](../modules.md) / AaveV3FlashLoanNoFeePaybackAction
 
-# Class: AaveV3FlashLoanPaybackAction
+# Class: AaveV3FlashLoanNoFeePaybackAction
 
 Pays back a single flashloan from Aave v3
 
@@ -8,7 +8,7 @@ Pays back a single flashloan from Aave v3
 
 - [`SendTokenAction`](SendTokenAction.md)
 
-  ↳ **`AaveV3FlashLoanPaybackAction`**
+  ↳ **`AaveV3FlashLoanNoFeePaybackAction`**
 
 ## Table of contents
 
@@ -46,7 +46,7 @@ Pays back a single flashloan from Aave v3
 
 ### constructor
 
-• **new AaveV3FlashLoanPaybackAction**(`loanAmount`, `tokenAddr`)
+• **new AaveV3FlashLoanNoFeePaybackAction**(`loanAmount`, `tokenAddr`)
 
 #### Parameters
 
@@ -61,7 +61,7 @@ Pays back a single flashloan from Aave v3
 
 #### Defined in
 
-[src/actions/flashloan/AaveV3FlashLoanPaybackAction.ts:15](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/actions/flashloan/AaveV3FlashLoanPaybackAction.ts#L15)
+[src/actions/flashloan/AaveV3FlashLoanNoFeePaybackAction.ts:15](https://github.com/defisaver/defisaver-sdk/blob/7ebb702/src/actions/flashloan/AaveV3FlashLoanPaybackAction.ts#L15)
 
 ## Properties
 

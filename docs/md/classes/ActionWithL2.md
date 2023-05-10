@@ -16,7 +16,7 @@ Single L2 action that can be executed directly, or combined into a set (ie. supp
 
   ↳↳ [`UnwrapEthAction`](UnwrapEthAction.md)
 
-  ↳↳ [`AaveV3FlashLoanAction`](AaveV3FlashLoanAction.md)
+  ↳↳ [`AaveV3FlashLoanNoFeeAction`](AaveV3FlashLoanAction.md)
 
   ↳↳ [`UniswapV3MintAction`](UniswapV3MintAction.md)
 
