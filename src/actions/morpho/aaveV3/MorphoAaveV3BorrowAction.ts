@@ -22,7 +22,7 @@ export class MorphoAaveV3BorrowAction extends Action {
     amount: uint256,
     to: EthAddress,
     onBehalf: EthAddress = getAddr('Empty'),
-    maxIterations: uint256 = '0',
+    maxIterations: uint256 = '4',
   ) {
     super(
       'MorphoAaveV3Borrow',

@@ -14,6 +14,7 @@ export class MorphoAaveV3SupplyAction extends Action {
    * @param tokenAddr - Address of tokenAddr (underlying)
    * @param amount - Token amount
    * @param from - Tokens will be sent from this address
+   * @param onBehalf - For what user we are paying back the debt, defaults to proxy
    * @param supplyAsColl Whether to supplyAsCollateral or regular supply
    * @param maxIterations Max number of iterations for p2p matching, 0 will use default num of iterations
    */
@@ -24,7 +25,7 @@ export class MorphoAaveV3SupplyAction extends Action {
     from:EthAddress,
     onBehalf:EthAddress = getAddr('Empty'),
     supplyAsColl:boolean = true,
-    maxIterations:uint256 = '0',
+    maxIterations:uint256 = '4',
   ) {
     super(
       'MorphoAaveV3Supply',

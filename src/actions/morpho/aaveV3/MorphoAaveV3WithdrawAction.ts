@@ -24,7 +24,7 @@ export class MorphoAaveV3WithdrawAction extends Action {
     to: EthAddress,
     onBehalf: EthAddress = getAddr('Empty'),
     withdrawAsColl: boolean = true,
-    maxIterations: uint256 = '0',
+    maxIterations: uint256 = '4',
   ) {
     super(
       'MorphoAaveV3Withdraw',
