@@ -30,6 +30,8 @@ export const actionAddresses = {
     McdSupply: '0x84372e73e1A2E95510869D2D81A3ef1AEC9e0Da8',
     McdWithdraw: '0xa704FBBe2f7ea8eF45a8280f6Bf96939eBC73252',
     McdClaim: '0xc0FC0f5Ba156E16217F8C7f400AEc0a658419C13',
+    McdDsrDeposit: '0x64bde7F73e05c6a28b701D7f569f0c0Ae4f6aD33',
+    McdDsrWithdraw: '0x96190d1f1c040fd8449250b90778Aa360f2e0Ec1',
 
     // reflexer
     ReflexerSupply: '0xd7a36CD4ce7CCc2F1376Dc5C48BaC84380A4f698',
@@ -127,6 +129,10 @@ export const actionAddresses = {
     LiquityRedeem: '0x20B78854658011394C931EF2BF3cEEA2Fe62E7f0',
     LiquityAdjust: '0x0A398f6B97677192A5d5e7Ea8A937383FFf9304c',
 
+    // b.protocol
+    BprotocolLiquitySPDeposit: '0x5A0436c7559e37da8cD24B0f66C155a0a2fd6309',
+    BprotocolLiquitySPWithdraw: '0x20Ece7CB4463bB1DbA4C4fA800E321A05dfB028B',
+
     // lido
     LidoStake: '0x4a7dd38D2BcA817fb68165155F869ca4179d8060',
     LidoWrap: '0xE637544390db79EdDE0a9CAF352ED0FfF7451bDB',
@@ -160,8 +166,8 @@ export const actionAddresses = {
     CurveStethPoolDeposit: '0x5Ae5870dC0C780e9eb68bE7a223eCd7F3BDad12B',
     CurveStethPoolWithdraw: '0x4089731d843Ce52699Fe64F68556aBbD95D70D00',
 
-    CurveDeposit: '0x160225c24300bD9fAA03Bc007D5e72bDbbcA9257',
-    CurveWithdraw: '0xb6Be5c486dD65c2cb18A388671b348E62307F0B3',
+    CurveDeposit: '0xf46aCCE6d2559971bF5Aea03A10B3679709CE43d',
+    CurveWithdraw: '0x97616a969daaa8e1f27c4902745c88357e54ad6c',
 
     McdBoostComposite: '0x0000000000000000000000000000000000000000',
     McdRepayComposite: '0x0000000000000000000000000000000000000000',
