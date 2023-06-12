@@ -42,8 +42,9 @@ type uint64 = string;
 type uint24 = string;
 type uint16 = string;
 type uint8 = string;
+type int256 = string;
 type int24 = string;
 
 export {
-  AccessList, AccessListItem, AccessLists, Config, Network, Networks, EthAddress, bytes32, bytes, uint256, uint160, uint128, uint80, uint64, uint24, uint16, uint8, int24,
+  AccessList, AccessListItem, AccessLists, Config, Network, Networks, EthAddress, bytes32, bytes, uint256, uint160, uint128, uint80, uint64, uint24, uint16, uint8, int256, int24,
 };

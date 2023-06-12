@@ -23,6 +23,7 @@ import * as chickenBonds from './chickenBonds';
 import * as compoundV3 from './compoundV3';
 import * as morpho from './morpho';
 import * as bprotocol from './bprotocol';
+import * as curveusd from './curveusd';
 
 export {
   aave,
@@ -50,4 +51,5 @@ export {
   compoundV3,
   morpho,
   bprotocol,
+  curveusd,
 };
