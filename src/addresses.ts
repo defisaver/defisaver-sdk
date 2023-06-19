@@ -71,6 +71,12 @@ export const actionAddresses = {
     MorphoAaveV2Withdraw: '0x29a8b5a8889f465c85b778edccf984e44ad70f12',
     MorphoClaim: '0xa269C841E26EA8Ee1F0350a2E5905F71446998dC',
 
+    // morpho aave v3
+    MorphoAaveV3Borrow: '0x487719C57b88477F19423aB0652b3E26b96baA7F',
+    MorphoAaveV3Payback: '0x36b8b968c81D97cBfAa642e206b634A6f378d287',
+    MorphoAaveV3Supply: '0x51fA8FBc6F0aDEfe2FBA06104FCA39f5beD69291',
+    MorphoAaveV3Withdraw: '0xdc3e74C4cD577275296ceFE36A3D082223AfF206',
+
     // compound
     CompBorrow: '0x8495579BF6Ae848f7E59686536F834f1d2CCd79C',
     CompClaim: '0x81F488cF7A0128A9DB5e7207042cCAB1CB0ac902',
