@@ -1,9 +1,7 @@
-import { compare } from '@defisaver/tokens/esm/utils';
-import { getAssetInfo } from '@defisaver/tokens';
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256 } from '../../types';
-import { curveusdMarkets } from '../../utils/curveusd-utils';
+import { controllerToAssetMap } from '../../utils/curveusd-utils';
 
 
 /**
@@ -40,9 +38,7 @@ export class CurveUsdSupplyAction extends Action {
   async getAssetsToApprove() {
     return [{
       owner: this.args[1],
-      asset: getAssetInfo(
-        Object.entries(curveusdMarkets).filter(([, { controllerAddress }]) => compare(controllerAddress, this.args[0]))[0][0],
-      ).address,
+      asset: controllerToAssetMap[this.args[0] as keyof typeof controllerToAssetMap],
     }];
   }
 }
