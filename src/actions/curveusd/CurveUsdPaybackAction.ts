@@ -28,8 +28,8 @@ export class CurveUsdPaybackAction extends Action {
     maxActiveBand: int256,
   ) {
     super(
-      'CurveUsdBorrow',
-      getAddr('CurveUsdBorrow'),
+      'CurveUsdPayback',
+      getAddr('CurveUsdPayback'),
       ['address', 'address', 'address', 'address', 'uint256', 'int256'],
       [controllerAddress, from, onBehalfOf, to, debtAmount, maxActiveBand],
     );

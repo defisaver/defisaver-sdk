@@ -21,8 +21,8 @@ export class CurveUsdWithdrawAction extends Action {
     collateralAmount: uint256,
   ) {
     super(
-      'CurveUsdSupply',
-      getAddr('CurveUsdSupply'),
+      'CurveUsdWithdraw',
+      getAddr('CurveUsdWithdraw'),
       ['address', 'address', 'uint256'],
       [controllerAddress, to, collateralAmount],
     );

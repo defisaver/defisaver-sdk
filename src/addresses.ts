@@ -71,6 +71,12 @@ export const actionAddresses = {
     MorphoAaveV2Withdraw: '0x29a8b5a8889f465c85b778edccf984e44ad70f12',
     MorphoClaim: '0xa269C841E26EA8Ee1F0350a2E5905F71446998dC',
 
+    // morpho aave v3
+    MorphoAaveV3Borrow: '0x487719C57b88477F19423aB0652b3E26b96baA7F',
+    MorphoAaveV3Payback: '0x36b8b968c81D97cBfAa642e206b634A6f378d287',
+    MorphoAaveV3Supply: '0x51fA8FBc6F0aDEfe2FBA06104FCA39f5beD69291',
+    MorphoAaveV3Withdraw: '0xdc3e74C4cD577275296ceFE36A3D082223AfF206',
+
     // compound
     CompBorrow: '0x8495579BF6Ae848f7E59686536F834f1d2CCd79C',
     CompClaim: '0x81F488cF7A0128A9DB5e7207042cCAB1CB0ac902',
@@ -194,6 +200,13 @@ export const actionAddresses = {
     CompV3Supply: '0xaF36Eca43bb26468078B8163fe5Bc1fCFc292095',
     CompV3Transfer: '0xeD7450e9C17146476137b77198DFfB17857906c4',
     CompV3Withdraw: '0x0b0F21EDE32DE4243D9145a899E97FC2366Aec46',
+
+    // crvUSD
+    CurveUsdBorrow: '0x1BA4D23c1af6a57257bA54DDb9Dbc009941924a6',
+    CurveUsdCreate: '0x8Be91C3a8095B7086ea950f4E4AeF16eDe47Df25',
+    CurveUsdPayback: '0x9BD581efD76DeC4FA4a71B9e583094874fE1d9Ab',
+    CurveUsdSupply: '0x3eA5d08F8f7d6bA52DAa88c47E349125437e0eEA',
+    CurveUsdWithdraw: '0xa05Afb6C7f8b7B76B890c0839A4ceC17667Cde29',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
