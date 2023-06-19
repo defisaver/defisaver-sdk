@@ -200,6 +200,13 @@ export const actionAddresses = {
     CompV3Supply: '0xaF36Eca43bb26468078B8163fe5Bc1fCFc292095',
     CompV3Transfer: '0xeD7450e9C17146476137b77198DFfB17857906c4',
     CompV3Withdraw: '0x0b0F21EDE32DE4243D9145a899E97FC2366Aec46',
+
+    // crvUSD
+    CurveUsdBorrow: '0x1BA4D23c1af6a57257bA54DDb9Dbc009941924a6',
+    CurveUsdCreate: '0x8Be91C3a8095B7086ea950f4E4AeF16eDe47Df25',
+    CurveUsdPayback: '0x9BD581efD76DeC4FA4a71B9e583094874fE1d9Ab',
+    CurveUsdSupply: '0x3eA5d08F8f7d6bA52DAa88c47E349125437e0eEA',
+    CurveUsdWithdraw: '0xa05Afb6C7f8b7B76B890c0839A4ceC17667Cde29',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
