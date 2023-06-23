@@ -5,4 +5,6 @@ export * from './CurveUsdBorrowAction';
 export * from './CurveUsdPaybackAction';
 export * from './CurveUsdRepayAction';
 export * from './CurveUsdSelfLiquidateAction';
+export * from './CurveUsdLevCreateAction';
+export * from './CurveUsdSelfLiquidateWithCollAction';
 

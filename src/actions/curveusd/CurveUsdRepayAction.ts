@@ -1,6 +1,8 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import { EthAddress, uint256, int256 } from '../../types';
+import {
+  EthAddress, uint256, int256, bytes,
+} from '../../types';
 
 /**
  *
@@ -11,13 +13,14 @@ export class CurveUsdRepayAction extends Action {
     controllerAddress: EthAddress,
     collAmount: uint256,
     to: EthAddress,
-    swapData: int256[],
+    minAmount: uint256,
+    additionData: bytes,
   ) {
     super(
       'CurveUsdRepay',
       getAddr('CurveUsdRepay'),
-      ['address', 'uint256', 'address', 'uint256[]'],
-      [controllerAddress, collAmount, to, swapData],
+      ['address', 'uint256', 'address', 'uint256', 'bytes'],
+      [controllerAddress, collAmount, to, minAmount, additionData],
     );
 
     this.mappableArgs = [
