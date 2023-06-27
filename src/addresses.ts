@@ -207,7 +207,7 @@ export const actionAddresses = {
     CurveUsdPayback: '0x667E2Ef4371E3Da4aa3e09Cde18c908B10868C38',
     CurveUsdSupply: '0x08e50Dc1a22282A003Cff9AC6ef1A687acfe18c2',
     CurveUsdWithdraw: '0x5Ed2b787D2f76Ff0Ff5c789c9F48b5a8BaeBf56b',
-    CurveUsdSelfLiquidate: '0x47E8235A038BcBD979041E974F02b0A4eAe69fC3',
+    CurveUsdSelfLiquidate: '0x05c361DCbac9D0E474B7AB46E36C14d72BacC5AA',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
