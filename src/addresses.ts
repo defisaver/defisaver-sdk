@@ -202,11 +202,12 @@ export const actionAddresses = {
     CompV3Withdraw: '0x0b0F21EDE32DE4243D9145a899E97FC2366Aec46',
 
     // crvUSD
-    CurveUsdBorrow: '0x1BA4D23c1af6a57257bA54DDb9Dbc009941924a6',
-    CurveUsdCreate: '0x8Be91C3a8095B7086ea950f4E4AeF16eDe47Df25',
-    CurveUsdPayback: '0x9BD581efD76DeC4FA4a71B9e583094874fE1d9Ab',
-    CurveUsdSupply: '0x3eA5d08F8f7d6bA52DAa88c47E349125437e0eEA',
-    CurveUsdWithdraw: '0xa05Afb6C7f8b7B76B890c0839A4ceC17667Cde29',
+    CurveUsdBorrow: '0x6493Aa22802B97d2a1E0bF0248135258113D7358',
+    CurveUsdCreate: '0xE934d90FBACBeb3c13Be90061383b419415d5F9B',
+    CurveUsdPayback: '0x667E2Ef4371E3Da4aa3e09Cde18c908B10868C38',
+    CurveUsdSupply: '0x08e50Dc1a22282A003Cff9AC6ef1A687acfe18c2',
+    CurveUsdWithdraw: '0x5Ed2b787D2f76Ff0Ff5c789c9F48b5a8BaeBf56b',
+    CurveUsdSelfLiquidate: '0x47E8235A038BcBD979041E974F02b0A4eAe69fC3',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
