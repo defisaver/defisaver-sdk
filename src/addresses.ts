@@ -210,6 +210,7 @@ export const actionAddresses = {
     CurveUsdLevCreate: '0xB05a411734d05f0124d0Aea9Ebb932Bf25C06533',
     CurveUsdRepay: '0xB05a411734d05f0124d0Aea9Ebb932Bf25C06533',
     CurveUsdSwapper: '0xB05a411734d05f0124d0Aea9Ebb932Bf25C06533',
+    CurveUsdSelfLiquidate: '0xB05a411734d05f0124d0Aea9Ebb932Bf25C06533',
     CurveUsdSelfLiquidateWithColl: '0xB05a411734d05f0124d0Aea9Ebb932Bf25C06533',
   },
   [NETWORKS.optimism.chainId]: {
