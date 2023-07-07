@@ -77,6 +77,19 @@ export const actionAddresses = {
     MorphoAaveV3Supply: '0x51fA8FBc6F0aDEfe2FBA06104FCA39f5beD69291',
     MorphoAaveV3Withdraw: '0xdc3e74C4cD577275296ceFE36A3D082223AfF206',
 
+    // spark
+    SparkDsrWrap: '',
+    SparkDsrUnwrap: '',
+    SparkBorrow: '',
+    SparkClaimRewards: '',
+    SparkCollateralSwitch: '',
+    SparkPayback: '',
+    SparkSetEMode: '',
+    SparkSpTokenPayback: '',
+    SparkSupply: '',
+    SparkSwapBorrowRateMode: '',
+    SparkWithdraw: '',
+
     // compound
     CompBorrow: '0x8495579BF6Ae848f7E59686536F834f1d2CCd79C',
     CompClaim: '0x81F488cF7A0128A9DB5e7207042cCAB1CB0ac902',
@@ -93,6 +106,7 @@ export const actionAddresses = {
     FLDyDx: '0x08AC78B418fCB0DDF1096533856A757C28d430d7',
     FLMaker: '0x672DE08e36A1698fD5e9E34045F81558dB4c1AFE',
     FLBalancer: '0x540a83E36E5E6Aa916A6c591934d800e17115048',
+    FLSpark: '',
     FLAction: '0x72915D41982DfCAf30b871290618E59C45Edba7F',
 
     // uniswap
