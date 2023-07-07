@@ -1,3 +1,5 @@
+export * from './SparkDsrWrapAction';
+export * from './SparkDsrUnwrapAction';
 export * from './SparkSupplyAction';
 export * from './SparkBorrowAction';
 export * from './SparkPaybackAction';
