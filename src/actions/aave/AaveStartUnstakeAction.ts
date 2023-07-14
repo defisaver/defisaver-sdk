@@ -14,9 +14,5 @@ export class AaveStartUnstakeAction extends Action {
       ['uint256', 'address'],
       [0, getAddr('Empty')],
     );
-    this.mappableArgs = [
-      this.args[1],
-      this.args[2],
-    ];
   }
 }
