@@ -51,7 +51,7 @@ export const actionAddresses = {
     AaveSupply: '0xEbB200a529058B561B42Eab510DA157a63243CEc',
     AaveWithdraw: '0x754C58fA92246414a448c1ed44ea3D1AD446d482',
     AaveCollateralSwitch: '0xFf5dfF1B90bd5Aa6E12768AB497dB90cc9DE6F5d',
-    AaveUnstake: '0x0000000000000000000000000000000000000000',
+    AaveUnstake: '0x2FE4024e350cD2c64D2fd0Db5d16F5cE54Ca0E09',
 
     // aave v3
     AaveV3Withdraw: '0x9D4e4b26A5E2e6Dad30C5d95F5cE78A8310F04C2',
