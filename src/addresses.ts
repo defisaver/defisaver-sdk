@@ -209,7 +209,7 @@ export const actionAddresses = {
     CurveUsdWithdraw: '0x54B8D984fc79B000D7B6F6E0f52CD054E965120f',
     CurveUsdLevCreate: '0x8B5ACd4ce0a43327aaDfc5c42be029898e242393',
     CurveUsdRepay: '0xDaDFC60207C17be005ECf2B03f3B31885D22F908',
-    CurveUsdSwapper: '0xef8Aa00f824360236b6F586CeF8e4071Bd4448b6',
+    CurveUsdSwapper: '0xFa2dfE6AF842e3184D305a85d09cfcf220ed4CBd',
     CurveUsdSelfLiquidate: '0xd90d8a4955DfE9D4f45F7f60595313B0925ee1da',
     CurveUsdSelfLiquidateWithColl: '0x6d02300C1A68c63C60AFD713b744bA750aB33aB0',
   },
