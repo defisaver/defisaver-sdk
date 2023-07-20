@@ -6,11 +6,11 @@ import {
 import { requireAddress } from '../../utils/general';
 
 /**
- * SparkDsrUnwrapAction - Unwrap sDAI to DAI
+ * SDaiUnwrapAction - Unwrap sDAI to DAI
  *
  * @category Spark
  */
-export class SparkDsrUnwrapAction extends Action {
+export class SDaiUnwrapAction extends Action {
   /**
    * @param amount Amount of token to unwrap
    * @param from Address we are pulling sDAI from (fallback to proxy)
@@ -18,7 +18,7 @@ export class SparkDsrUnwrapAction extends Action {
    */
   constructor(amount: uint256, from: EthAddress = getAddr('Empty'), to: EthAddress = getAddr('Empty')) {
     requireAddress(to);
-    super('SparkDsrUnwrap', getAddr('SparkDsrUnwrap'),
+    super('SDaiUnwrap', getAddr('SDaiUnwrap'),
       ['uint256', 'address', 'address'],
       [amount, from, to],
     );

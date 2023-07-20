@@ -16,3 +16,5 @@ export * from './GasFeeActionL2';
 export * from './TransferNFTAction';
 export * from './SendTokensAction';
 export * from './CreateSubAction';
+export * from './SDaiWrapAction';
+export * from './SDaiUnwrapAction';
