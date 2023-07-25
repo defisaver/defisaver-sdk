@@ -91,7 +91,7 @@ export const actionAddresses = {
     SparkSupply: '0xf47f95379D486DDb4Ec2cF4c65a6b71EEEc28Fb7',
     SparkSwapBorrowRateMode: '0xEd7C08A26503A4d3b2Ab4EDeba799a58923B1FEd',
     SparkWithdraw: '0x711685B449F32686B5f7b9880140e5435bF786D4',
-    SparkDelegateCredit : '0x0000000000000000000000000000000000000000',
+    SparkDelegateCredit: '0x0000000000000000000000000000000000000000',
 
     // compound
     CompBorrow: '0x8495579BF6Ae848f7E59686536F834f1d2CCd79C',
