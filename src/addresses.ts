@@ -91,6 +91,7 @@ export const actionAddresses = {
     SparkSupply: '0xf47f95379D486DDb4Ec2cF4c65a6b71EEEc28Fb7',
     SparkSwapBorrowRateMode: '0xEd7C08A26503A4d3b2Ab4EDeba799a58923B1FEd',
     SparkWithdraw: '0x711685B449F32686B5f7b9880140e5435bF786D4',
+    SparkDelegateCredit : '0x0000000000000000000000000000000000000000',
 
     // compound
     CompBorrow: '0x8495579BF6Ae848f7E59686536F834f1d2CCd79C',
@@ -242,6 +243,7 @@ export const actionAddresses = {
     AaveV3SwapBorrowRateMode: '0xB8f0243b492f0e80feF5315Ba8692e7635481845',
     AaveV3Withdraw: '0xf19d045f6cFc04A5Ee5E0e8837b565b9f276e3F7',
     AaveV3ClaimRewards: '0xBE8e8cea67085F869C1C0040fD52F9F3115E962e',
+    AaveV3DelegateCredit: '0x0000000000000000000000000000000000000000',
 
     // flashloan
     FLAaveV3NoFee: '0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85',
