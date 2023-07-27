@@ -218,6 +218,18 @@ export const actionAddresses = {
     CompV3Supply: '0xaF36Eca43bb26468078B8163fe5Bc1fCFc292095',
     CompV3Transfer: '0xeD7450e9C17146476137b77198DFfB17857906c4',
     CompV3Withdraw: '0x0b0F21EDE32DE4243D9145a899E97FC2366Aec46',
+
+    // crvUSD
+    CurveUsdBorrow: '0x2512A976227a82Ef0F6bDdb463cBcD5B732596BF',
+    CurveUsdCreate: '0x715B40970dac1cfAf0bB85C4Fe64921b44b3f73e',
+    CurveUsdPayback: '0xbcAd628159ab0f3d7F391dBb4c3553aFCD61CA80',
+    CurveUsdSupply: '0xa55B3CE5ae7E59002f53b2153ABe326823ccCDE2',
+    CurveUsdWithdraw: '0x54B8D984fc79B000D7B6F6E0f52CD054E965120f',
+    CurveUsdLevCreate: '0x8B5ACd4ce0a43327aaDfc5c42be029898e242393',
+    CurveUsdRepay: '0xDaDFC60207C17be005ECf2B03f3B31885D22F908',
+    CurveUsdSwapper: '0xFa2dfE6AF842e3184D305a85d09cfcf220ed4CBd',
+    CurveUsdSelfLiquidate: '0xd90d8a4955DfE9D4f45F7f60595313B0925ee1da',
+    CurveUsdSelfLiquidateWithColl: '0x6d02300C1A68c63C60AFD713b744bA750aB33aB0',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
