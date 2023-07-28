@@ -1,3 +1,4 @@
+import { getAssetInfo } from '@defisaver/tokens';
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import {
@@ -28,5 +29,9 @@ export class SDaiWrapAction extends Action {
       this.args[1],
       this.args[2],
     ];
+  }
+
+  async getAssetsToApprove() {
+    return [{ asset: getAssetInfo('DAI').address, owner: this.args[1] }];
   }
 }
