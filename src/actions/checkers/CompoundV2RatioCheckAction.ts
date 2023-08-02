@@ -13,7 +13,7 @@ export class CompoundV2RatioCheckAction extends Action {
    * @param targetRatio The ratio user want to be at
    */
   constructor(ratioState:uint8, targetRatio:uint256) {
-    super('CompV3RatioCheck', getAddr('CompV3RatioCheck'), ['uint8', 'uint256'], [ratioState, targetRatio]);
+    super('CompV2RatioCheck', getAddr('CompV2RatioCheck'), ['uint8', 'uint256'], [ratioState, targetRatio]);
 
     this.mappableArgs = [
       this.args[0],
