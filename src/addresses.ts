@@ -11,7 +11,7 @@ export const actionAddresses = {
     SumInputs: '0x70907d840aBBc984Fd949311d2f005e6aC4a4D7a',
     SubInputs: '0xe1804b756188F63f723d2FECc02988D0Cc1aB823',
     ChangeProxyOwner: '0x81cA52CfE66421d0ceF82d5F33230e43b5F23D2B',
-    ChangeLSVProxyOwner: '0xA9A1dF2bdB384745c3b3E378A1A4bC193d3171B0',
+    ChangeLSVProxyOwner: '0x949AeB126D422E9e664D714894bEAF271B35d934',
     TokenBalance: '0xa92B177950F1460119940436515FD857C24494BC',
     AutomationV2Unsub: '0xe35Fb12fE9796847751076aCf5ee7d124108612C',
     SendTokenAndUnwrap: '0xeecd376026335261c89faD40D89625391b1eFF6a',
@@ -85,7 +85,7 @@ export const actionAddresses = {
     MorphoAaveV3Payback: '0x36b8b968c81D97cBfAa642e206b634A6f378d287',
     MorphoAaveV3Supply: '0x51fA8FBc6F0aDEfe2FBA06104FCA39f5beD69291',
     MorphoAaveV3Withdraw: '0xdc3e74C4cD577275296ceFE36A3D082223AfF206',
-    MorphoAaveV3SetManager: '0x587416110dE315e3F39b192445182D716DFA806c',
+    MorphoAaveV3SetManager: '0xbc0554355acB6AF4A6Ef8079eB90EDf3A670E10A',
 
     // compound
     CompBorrow: '0x8495579BF6Ae848f7E59686536F834f1d2CCd79C',
@@ -210,7 +210,6 @@ export const actionAddresses = {
     CompV3Supply: '0xaF36Eca43bb26468078B8163fe5Bc1fCFc292095',
     CompV3Transfer: '0xeD7450e9C17146476137b77198DFfB17857906c4',
     CompV3Withdraw: '0x0b0F21EDE32DE4243D9145a899E97FC2366Aec46',
-    CompV3SetManager: '0xb0FecDe1A2ce08894FAd5b70609d823040f1C364',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',

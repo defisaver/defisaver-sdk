@@ -5,4 +5,3 @@ export * from './CompoundV3WithdrawAction';
 export * from './CompoundV3ClaimAction';
 export * from './CompoundV3AllowAction';
 export * from './CompoundV3TransferAction';
-export * from './CompoundV3SetManagerAction';
