@@ -1,8 +1,6 @@
-import { getAssetInfo } from '@defisaver/tokens';
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import { EthAddress, uint256 } from '../../types';
-import { requireAddress } from '../../utils/general';
+import { EthAddress, uint256, uint8 } from '../../types';
 
 /**
  *
@@ -15,7 +13,7 @@ export class LSVSupplyAction extends Action {
    * @param token
    * @param amount
    */
-  constructor(protocol:string, token:EthAddress, amount:uint256) {
-    super('LSVSupply', getAddr('LSVSupply'), ['string', 'address', 'uint256'], [protocol, token, amount]);
+  constructor(protocol:uint8, token:EthAddress, amount:uint256) {
+    super('LSVSupply', getAddr('LSVSupply'), ['uint8', 'address', 'uint256'], [protocol, token, amount]);
   }
 }

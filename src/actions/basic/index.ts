@@ -18,3 +18,4 @@ export * from './SendTokensAction';
 export * from './CreateSubAction';
 export * from './ChangeLSVProxyOwnerAction';
 export * from './LSVSellAction';
+export * from './ApproveTokenAction';

@@ -1,8 +1,6 @@
-import { getAssetInfo } from '@defisaver/tokens';
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
-import { EthAddress, uint256 } from '../../types';
-import { requireAddress } from '../../utils/general';
+import { EthAddress, uint256, uint8 } from '../../types';
 
 /**
  *
@@ -15,7 +13,7 @@ export class LSVWithdrawAction extends Action {
    * @param amount
    * @param isPositionClosing
    */
-  constructor(protocol:string, token:EthAddress, amount:uint256, isPositionClosing:boolean) {
-    super('LSVWithdraw', getAddr('LSVWithdraw'), ['string', 'address', 'uint256', 'bool'], [protocol, token, amount, isPositionClosing]);
+  constructor(protocol:uint8, token:EthAddress, amount:uint256, isPositionClosing:boolean) {
+    super('LSVWithdraw', getAddr('LSVWithdraw'), ['uint8', 'address', 'uint256', 'bool'], [protocol, token, amount, isPositionClosing]);
   }
 }
