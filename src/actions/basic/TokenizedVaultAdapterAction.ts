@@ -15,6 +15,7 @@ export class TokenizedVaultAdapterAction extends Action {
    * @param from Address from which to pull the input token
    * @param to Asset that will receive the output token
    * @param operationId Enum id that represents the selected operation (DEPOSIT, MINT, WITHDRAW, REDEEM)
+   * @param underlyingAssetAddress Address of the underlying vault asset, only used in sdk for approvals
    */
   constructor(
     amount: uint256,
@@ -23,6 +24,7 @@ export class TokenizedVaultAdapterAction extends Action {
     from: EthAddress,
     to: EthAddress,
     operationId: TokenizedVaultOperationId,
+    public underlyingAssetAddress: EthAddress,
   ) {
     super(
       'TokenizedVaultAdapter',
@@ -30,5 +32,25 @@ export class TokenizedVaultAdapterAction extends Action {
       ['uint256', 'uint256', 'address', 'address', 'address', 'uint8'],
       [amount, minOutOrMaxIn, vaultAddress, from, to, operationId],
     );
+  }
+
+  async getAssetsToApprove() {
+    let asset;
+    const operationId = this.args[5];
+    switch (operationId) {
+      case TokenizedVaultOperationId.DEPOSIT:
+      case TokenizedVaultOperationId.MINT:
+        asset = this.underlyingAssetAddress;
+        break;
+
+      case TokenizedVaultOperationId.REDEEM:
+      case TokenizedVaultOperationId.WITHDRAW:
+        asset = this.args[2];
+        break;
+
+      default:
+        return [];
+    }
+    return [{ asset, owner: this.args[3] }];
   }
 }
