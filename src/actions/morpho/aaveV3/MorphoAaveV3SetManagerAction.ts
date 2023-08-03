@@ -1,6 +1,6 @@
 import { Action } from '../../../Action';
 import { getAddr } from '../../../addresses';
-import { EthAddress } from '../../../types';
+import { EthAddress, uint256 } from '../../../types';
 
 
 /**
@@ -9,20 +9,20 @@ import { EthAddress } from '../../../types';
  */
 export class MorphoAaveV3SetManagerAction extends Action {
   /**
-   * @param market
+   * @param emodeId
    * @param manager
    * @param isAllowed
    */
-  constructor(market: EthAddress, manager: EthAddress, isAllowed:boolean) {
+  constructor(emodeId: uint256, manager: EthAddress, isAllowed:boolean) {
     super(
       'MorphoAaveV3SetManager',
       getAddr('MorphoAaveV3SetManager'),
       [
-        'address',
+        'uint256',
         'address',
         'bool',
       ],
-      [market, manager, isAllowed],
+      [emodeId, manager, isAllowed],
     );
   }
 }
