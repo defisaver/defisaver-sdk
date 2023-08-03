@@ -18,3 +18,4 @@ export * from './SendTokensAction';
 export * from './CreateSubAction';
 export * from './SDaiWrapAction';
 export * from './SDaiUnwrapAction';
+export * from './TokenizedVaultAdapterAction';
