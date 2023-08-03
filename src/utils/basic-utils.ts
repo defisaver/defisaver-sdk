@@ -1,4 +1,4 @@
-export const enum OperationId {
+export enum TokenizedVaultOperationId {
   DEPOSIT,
   MINT,
   WITHDRAW,

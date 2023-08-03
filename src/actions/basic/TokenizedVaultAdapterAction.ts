@@ -1,7 +1,7 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { uint256, EthAddress } from '../../types';
-import { OperationId } from '../../utils/basic-utils';
+import { TokenizedVaultOperationId } from '../../utils/basic-utils';
 
 /**
  * TokenizedVaultAdapterAction - Action that handles ERC4626 vault operations
@@ -22,7 +22,7 @@ export class TokenizedVaultAdapterAction extends Action {
     vaultAddress: EthAddress,
     from: EthAddress,
     to: EthAddress,
-    operationId: OperationId,
+    operationId: TokenizedVaultOperationId,
   ) {
     super(
       'TokenizedVaultAdapter',
