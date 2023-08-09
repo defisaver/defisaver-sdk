@@ -10,7 +10,7 @@ import { TokenizedVaultOperationId } from '../../utils/basic-utils';
 export class TokenizedVaultAdapterMintAction extends Action {
   /**
    * @param amount Amount of shares to mint
-   * @param minOutOrMaxIn Max amount of underlying asset to deposit for minting
+   * @param maxIn Max amount of underlying asset to deposit for minting
    * @param vaultAddress Address of the ERC4626 vault
    * @param from Address from which to pull the underlying asset
    * @param to Asset that will receive the shares minted
@@ -18,7 +18,7 @@ export class TokenizedVaultAdapterMintAction extends Action {
    */
   constructor(
     amount: uint256,
-    minOutOrMaxIn: uint256,
+    maxIn: uint256,
     vaultAddress: EthAddress,
     from: EthAddress,
     to: EthAddress,
@@ -28,7 +28,7 @@ export class TokenizedVaultAdapterMintAction extends Action {
       'TokenizedVaultAdapter',
       getAddr('TokenizedVaultAdapter'),
       ['uint256', 'uint256', 'address', 'address', 'address', 'uint8'],
-      [amount, minOutOrMaxIn, vaultAddress, from, to, TokenizedVaultOperationId.MINT],
+      [amount, maxIn, vaultAddress, from, to, TokenizedVaultOperationId.MINT],
     );
   }
 

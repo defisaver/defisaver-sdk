@@ -10,14 +10,14 @@ import { TokenizedVaultOperationId } from '../../utils/basic-utils';
 export class TokenizedVaultAdapterWithdrawAction extends Action {
   /**
    * @param amount Amount of underlying asset to withdraw
-   * @param minOutOrMaxIn Max amount of shares to burn for withdrawal
+   * @param maxIn Max amount of shares to burn for withdrawal
    * @param vaultAddress Address of the ERC4626 vault
    * @param from Address from which to pull the shares
    * @param to Asset that will receive the underlying asset
    */
   constructor(
     amount: uint256,
-    minOutOrMaxIn: uint256,
+    maxIn: uint256,
     vaultAddress: EthAddress,
     from: EthAddress,
     to: EthAddress,
@@ -26,7 +26,7 @@ export class TokenizedVaultAdapterWithdrawAction extends Action {
       'TokenizedVaultAdapter',
       getAddr('TokenizedVaultAdapter'),
       ['uint256', 'uint256', 'address', 'address', 'address', 'uint8'],
-      [amount, minOutOrMaxIn, vaultAddress, from, to, TokenizedVaultOperationId.WITHDRAW],
+      [amount, maxIn, vaultAddress, from, to, TokenizedVaultOperationId.WITHDRAW],
     );
   }
 

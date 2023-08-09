@@ -10,14 +10,14 @@ import { TokenizedVaultOperationId } from '../../utils/basic-utils';
 export class TokenizedVaultAdapterRedeemAction extends Action {
   /**
    * @param amount Amount of shares to redeem
-   * @param minOutOrMaxIn Min amount of underlying asset to accept for the shares burned
+   * @param minOut Min amount of underlying asset to accept for the shares burned
    * @param vaultAddress Address of the ERC4626 vault
    * @param from Address from which to pull the shares
    * @param to Asset that will receive the underlying asset
    */
   constructor(
     amount: uint256,
-    minOutOrMaxIn: uint256,
+    minOut: uint256,
     vaultAddress: EthAddress,
     from: EthAddress,
     to: EthAddress,
@@ -26,7 +26,7 @@ export class TokenizedVaultAdapterRedeemAction extends Action {
       'TokenizedVaultAdapter',
       getAddr('TokenizedVaultAdapter'),
       ['uint256', 'uint256', 'address', 'address', 'address', 'uint8'],
-      [amount, minOutOrMaxIn, vaultAddress, from, to, TokenizedVaultOperationId.REDEEM],
+      [amount, minOut, vaultAddress, from, to, TokenizedVaultOperationId.REDEEM],
     );
   }
 
