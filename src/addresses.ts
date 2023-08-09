@@ -20,6 +20,7 @@ export const actionAddresses = {
     CreateSub: '0x7308e88BB21B934478E75bB6A2143b8cfDFf2961',
     SDaiWrap: '0xac7Ac294F29d818D26Bd9DF86d36904B1Ed346Ae',
     SDaiUnwrap: '0xe8Cb536BB96075241c4bd8f1831A8577562F2B32',
+    TokenizedVaultAdapter: '0x3944364Ce3a273D269707484F3a676fCa17E08b8',
 
     // exchange
     DFSSell: '0x951D7B421f45FF0e4A8ddE0288aE3f9C2C69b784',
@@ -242,7 +243,7 @@ export const actionAddresses = {
     SendTokenAndUnwrap: '0x8000174366066923D554cb466e190258A6FF3b1f',
     ToggleSub: '0x988C5C24AE6348404196267e19962f36961CAc29',
     TokenBalance: '0xC6FF5b01f7c7b35b6e093fF70D2332B361C5Be5A',
-
+    TokenizedVaultAdapter: '0xdf31669FEd440f5BfF658ca0bBF0D22B8abdeb73',
 
     // aave v3
     AaveV3ATokenPayback: '0x71B27114D1777298bD46c3770C42F9f807C49847',
@@ -284,6 +285,7 @@ export const actionAddresses = {
     SendTokenAndUnwrap: '0x0fb867A5Ee1CA9426D3dAb95e613Be166218b977',
     ToggleSub: '0x71015226EADFd4aC887fB56556F64338e352439b',
     TokenBalance: '0x483B903E702F60698Dd8124558C6199922737f1F',
+    TokenizedVaultAdapter: '0xD05C512bDFf6D3eAc5328807B3bC075F35271167',
 
     // aave v3
     AaveV3ATokenPayback: '0x261906e5E0D0D38D9cBb5c10dB9c4031aabdf8C1',
