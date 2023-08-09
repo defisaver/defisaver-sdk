@@ -18,4 +18,7 @@ export * from './SendTokensAction';
 export * from './CreateSubAction';
 export * from './SDaiWrapAction';
 export * from './SDaiUnwrapAction';
-export * from './TokenizedVaultAdapterAction';
+export * from './TokenizedVaultAdapterDepositAction';
+export * from './TokenizedVaultAdapterMintAction';
+export * from './TokenizedVaultAdapterRedeemAction';
+export * from './TokenizedVaultAdapterWithdrawAction';
