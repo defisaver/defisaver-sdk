@@ -26,6 +26,7 @@ export class AaveSupplyAction extends Action {
       this.args[2],
       this.args[3],
       this.args[4],
+      this.args[5],
     ];
   }
 
