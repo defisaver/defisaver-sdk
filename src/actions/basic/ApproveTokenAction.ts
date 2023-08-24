@@ -25,5 +25,10 @@ export class ApproveTokenAction extends Action {
       ],
       [token, spender, amount],
     );
+    this.mappableArgs = [
+      this.args[0],
+      this.args[1],
+      this.args[2],
+    ];
   }
 }

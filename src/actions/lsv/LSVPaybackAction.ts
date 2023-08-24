@@ -12,6 +12,9 @@ export class LSVPaybackAction extends Action {
    * @param amount
    */
   constructor(protocol:uint8, amount:uint256) {
-    super('LSVPayback', getAddr('LSVPayback'), ['uint8', 'uint256'], [protocol, amount]);
+    super('LSVPayback', getAddr('LSVPayback'), ['uint256', 'uint256'], [protocol, amount]);
+    this.mappableArgs = [
+      this.args[1],
+    ];
   }
 }

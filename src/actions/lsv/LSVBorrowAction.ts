@@ -13,6 +13,9 @@ export class LSVBorrowAction extends Action {
    * @param amount
    */
   constructor(protocol:uint8, amount:uint256) {
-    super('LSVBorrow', getAddr('LSVBorrow'), ['uint8', 'uint256'], [protocol, amount]);
+    super('LSVBorrow', getAddr('LSVBorrow'), ['uint256', 'uint256'], [protocol, amount]);
+    this.mappableArgs = [
+      this.args[1],
+    ];
   }
 }

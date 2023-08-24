@@ -24,5 +24,9 @@ export class MorphoAaveV3SetManagerAction extends Action {
       ],
       [emodeId, manager, isAllowed],
     );
+    this.mappableArgs = [
+      this.args[0],
+      this.args[1],
+    ];
   }
 }

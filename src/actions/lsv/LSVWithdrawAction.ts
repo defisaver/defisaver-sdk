@@ -14,6 +14,10 @@ export class LSVWithdrawAction extends Action {
    * @param isPositionClosing
    */
   constructor(protocol:uint8, token:EthAddress, amount:uint256, isPositionClosing:boolean) {
-    super('LSVWithdraw', getAddr('LSVWithdraw'), ['uint8', 'address', 'uint256', 'bool'], [protocol, token, amount, isPositionClosing]);
+    super('LSVWithdraw', getAddr('LSVWithdraw'), ['uint256', 'address', 'uint256', 'bool'], [protocol, token, amount, isPositionClosing]);
+    this.mappableArgs = [
+      this.args[1],
+      this.args[2],
+    ];
   }
 }
