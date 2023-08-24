@@ -4,6 +4,8 @@ import * as uniswapV3LP from './uniswapV3LP';
 import * as convexUtils from './convex-utils';
 import mstableAssetPairs from './mstableAssetPairs';
 import * as curveUtils from './curve-utils';
+import * as curveusdUtils from './curveusd-utils';
+import * as basicUtils from './basic-utils';
 
 export {
   zeroExExchange,
@@ -12,4 +14,6 @@ export {
   mstableAssetPairs,
   convexUtils,
   curveUtils,
+  curveusdUtils,
+  basicUtils,
 };
