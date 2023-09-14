@@ -313,6 +313,9 @@ export const actionAddresses = {
     UniWithdrawV3: '0xa004c22eFd0CD87847DE83Ce9ab92af5382c2efe',
     UniCreatePoolV3: '0x334Ab3C12a4c0315566fd9308880Dad71F838Dc5',
   },
+  [NETWORKS.base.chainId]: {
+    DFSSell: '0xCc0f04e8c34B670a1D06f4978C843952F690d3f4',
+  },
 };
 
 export const otherAddresses = {
@@ -359,6 +362,16 @@ export const otherAddresses = {
     Empty: '0x0000000000000000000000000000000000000000',
 
     UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
+  },
+  [NETWORKS.base.chainId]: {
+    RecipeExecutor: '0xdDFFd19564F9703800Da8a2FB9c2b4a7242bf01F',
+    DFSRegistry: '0x347FB634271F666353F23A3362f3935D96F97476',
+    ProxyRegistry: '0x425fA97285965E01Cc5F951B62A51F6CDEA5cc0d',
+
+    DSGuardFactory: '0x7783da8958013a57a5514737a4FBDFF06A0056e1',
+    AdminVault: '0xD8E67968d8a0df4beCf2D50daE1e34d4d80C701C',
+    DefisaverLogger: '0xc9D6EfA6e08B66a5Cdc516Bcd5807c2fa69E0f2A',
+    Empty: '0x0000000000000000000000000000000000000000',
   },
 };
 

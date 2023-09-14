@@ -38,6 +38,14 @@ export const NETWORKS : Networks = {
     rpcUrls: ['https://arb1.arbitrum.io/rpc'],
     nativeCurrency: { name: 'Ethereum', decimals: 18, symbol: 'ETH' },
   },
+  base: {
+    chainId: 8453,
+    chainName: 'Base',
+    blockExplorerUrls: ['https://basescan.io/'],
+    iconUrls: ['https://bridge.base.org/icons/base.svg'],
+    rpcUrls: [],
+    nativeCurrency: { name: 'Ethereum', decimals: 18, symbol: 'ETH' },
+  },
 };
 
 /**
