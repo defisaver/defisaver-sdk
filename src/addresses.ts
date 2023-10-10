@@ -225,6 +225,7 @@ export const actionAddresses = {
     CurveUsdCreate: '0x715B40970dac1cfAf0bB85C4Fe64921b44b3f73e',
     CurveUsdPayback: '0xbcAd628159ab0f3d7F391dBb4c3553aFCD61CA80',
     CurveUsdSupply: '0xa55B3CE5ae7E59002f53b2153ABe326823ccCDE2',
+    CurveUsdAdjust: '0x6f69A7d0B1BE7602381d9cCE6B29F05B9D0b85e6',
     CurveUsdWithdraw: '0x54B8D984fc79B000D7B6F6E0f52CD054E965120f',
     CurveUsdLevCreate: '0x8B5ACd4ce0a43327aaDfc5c42be029898e242393',
     CurveUsdRepay: '0xDaDFC60207C17be005ECf2B03f3B31885D22F908',
