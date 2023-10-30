@@ -14,11 +14,10 @@ export class MakerRepayCompositeAction extends Action {
      * @param gasUsed
      * @param flAddress
      * @param flAmount
-     * @param nextPrice
      * @param targetRatio
      * @param exchangeParams
      */
-  constructor(vaultId: uint256, joinAddr: EthAddress, gasUsed: EthAddress, flAddress: EthAddress, flAmount: uint256, nextPrice: uint256, targetRatio: uint256, exchangeParams: Array<any>) {
+  constructor(vaultId: uint256, joinAddr: EthAddress, gasUsed: EthAddress, flAddress: EthAddress, flAmount: uint256, targetRatio: uint256, exchangeParams: Array<any>) {
     super(
       'McdRepayComposite',
       getAddr('McdRepayComposite'),
@@ -29,7 +28,6 @@ export class MakerRepayCompositeAction extends Action {
         'address',
         'uint256',
         'uint256',
-        'uint256',
         ['address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bytes', ['address', 'address', 'address', 'uint256', 'uint256', 'bytes']],
       ],
       [
@@ -38,7 +36,6 @@ export class MakerRepayCompositeAction extends Action {
         gasUsed,
         flAddress,
         flAmount,
-        nextPrice,
         targetRatio,
         exchangeParams,
       ],
@@ -46,10 +43,10 @@ export class MakerRepayCompositeAction extends Action {
     this.mappableArgs = [
       this.args[0],
       this.args[1],
-      this.args[4],
-      this.args[5][0],
-      this.args[5][1],
-      this.args[5][2],
+      this.args[5],
+      this.args[6][0],
+      this.args[6][1],
+      this.args[6][2],
     ];
   }
 }
