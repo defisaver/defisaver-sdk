@@ -324,6 +324,7 @@ export const actionAddresses = {
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
     PullToken: '0x5B0B7E38C2a8e46CfAe13c360BC5927570BeEe94',
+    TokenBalance: '0xc44bcE580B1b3339fE9272D3bC3d6566083ea59C',
 
     // Flashloan
     FLAaveV3: '0x04ce4b2a9F524d976a8eD8a49B9313C5a2C3ccAD',
