@@ -13,3 +13,4 @@ export * from './CBRebondTrigger';
 export * from './AaveV3QuotePriceTrigger';
 export * from './SparkRatioTrigger';
 export * from './SparkQuotePriceTrigger';
+export * from './LiquityDebtInFrontWithLimitTrigger';
