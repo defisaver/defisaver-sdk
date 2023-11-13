@@ -3,7 +3,7 @@ import { getAddr } from '../../addresses';
 import { EthAddress, uint256 } from '../../types';
 
 /**
- * Pays back a single flashloan from Aave v3
+ * Pays back a single flashloan from Aave v3 with fee enabled
  *
  * @category Flashloans
  */

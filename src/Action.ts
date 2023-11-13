@@ -146,7 +146,8 @@ export class Action {
   }
 
   encodeForL2DsProxyCall() {
-    return this._encodeForCall()[0];
+    const executeActionDirectAbi : any = (ActionAbi.find(({ name }:{ name: string }) => name === 'executeActionDirect'))!;
+    return AbiCoder.encodeFunctionCall(executeActionDirectAbi, this._encodeForCall());
   }
 
   encodeForL2Recipe() {
