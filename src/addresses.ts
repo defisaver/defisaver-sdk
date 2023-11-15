@@ -57,6 +57,7 @@ export const actionAddresses = {
     AaveCollateralSwitch: '0xFf5dfF1B90bd5Aa6E12768AB497dB90cc9DE6F5d',
     AaveUnstake: '0x2FE4024e350cD2c64D2fd0Db5d16F5cE54Ca0E09',
     AaveClaimAAVE: '0xd52855bD011F3D87565f9040DdE2A59fB1b27b15',
+    AaveClaimStkAave: '0x5Dcd9Dc0185a6Ab07a31e5284D16Ce9f0A79Ce99',
     // aave v3
     AaveV3Withdraw: '0x9D4e4b26A5E2e6Dad30C5d95F5cE78A8310F04C2',
     AaveV3SwapBorrowRateMode: '0x630F530Ac523C935cf2528E62D0A06F8900C5b1B',
@@ -184,10 +185,10 @@ export const actionAddresses = {
     GasFeeTaker: '0x431F1E1A9859EF99953801dbdeB31d2846ADcc0d',
 
     CurveStethPoolDeposit: '0x5Ae5870dC0C780e9eb68bE7a223eCd7F3BDad12B',
-    CurveStethPoolWithdraw: '0x4089731d843Ce52699Fe64F68556aBbD95D70D00',
+    CurveStethPoolWithdraw: '0x41313695a4829a80c8019Ec8bCC529Fec08F9099',
 
     CurveDeposit: '0xf46aCCE6d2559971bF5Aea03A10B3679709CE43d',
-    CurveWithdraw: '0x97616a969daaa8e1f27c4902745c88357e54ad6c',
+    CurveWithdraw: '0x7127A1Cd69eC2A1F91661bc0ED40aD5B73898A54',
 
     McdBoostComposite: '0x0000000000000000000000000000000000000000',
     McdRepayComposite: '0x0000000000000000000000000000000000000000',
