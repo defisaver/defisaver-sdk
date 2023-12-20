@@ -969,10 +969,10 @@
     eslint-config-airbnb "^19.0.0"
     eslint-config-airbnb-typescript "^17.0.0"
 
-"@defisaver/tokens@^1.5.2":
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/@defisaver/tokens/-/tokens-1.5.2.tgz#8b6429f81c0103d58cc7d259d828333fcd8b9c5f"
-  integrity sha512-EThmixcYwilmI15fFpa+fKT40VxsQCb2zAEYg6AYsz57dKlZEQble8Go126wbwKmf9uXQ1D7yu5snzNeX5qovA==
+"@defisaver/tokens@^1.5.5":
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/@defisaver/tokens/-/tokens-1.5.5.tgz#afa8a71381027655b55c3e543e90250528c2c470"
+  integrity sha512-Fqi9sAsF3Xm3sZDPYshS7iC7U/7PhYJursMQ5THo1sO6nAZ+bsIYy2MmfUm96m8NrD5neNJaJfynuFHI1z8zMw==
   dependencies:
     decimal.js "^10.2.1"
 
