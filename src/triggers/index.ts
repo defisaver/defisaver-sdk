@@ -15,3 +15,4 @@ export * from './MorphoAaveV2RatioTrigger';
 export * from './SparkRatioTrigger';
 export * from './SparkQuotePriceTrigger';
 export * from './LiquityDebtInFrontWithLimitTrigger';
+export * from './CurveUsdCollRatioTrigger';
