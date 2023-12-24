@@ -24,4 +24,3 @@ export * from './TokenizedVaultAdapterDepositAction';
 export * from './TokenizedVaultAdapterMintAction';
 export * from './TokenizedVaultAdapterRedeemAction';
 export * from './TokenizedVaultAdapterWithdrawAction';
-export * from './ApproveTokenAction';
