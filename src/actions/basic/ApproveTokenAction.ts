@@ -32,4 +32,8 @@ export class ApproveTokenAction extends Action {
       this.args[2],
     ];
   }
+
+  async getAssetsToApprove() {
+    return [];
+  }
 }
