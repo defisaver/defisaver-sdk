@@ -7,4 +7,5 @@ export * from './CurveUsdRepayAction';
 export * from './CurveUsdSelfLiquidateAction';
 export * from './CurveUsdLevCreateAction';
 export * from './CurveUsdSelfLiquidateWithCollAction';
-
+export * from './CurveUsdAdjustAction';
+export * from './CurveUsdGetDebtAction';

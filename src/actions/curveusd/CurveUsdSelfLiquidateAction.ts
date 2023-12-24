@@ -34,7 +34,7 @@ export class CurveUsdSelfLiquidateAction extends Action {
 
   async getAssetsToApprove() {
     return [{
-      owner: this.args[1],
+      owner: this.args[2],
       asset: getAssetInfo('crvUSD').address,
     }];
   }
