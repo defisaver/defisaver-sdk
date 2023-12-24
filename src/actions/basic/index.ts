@@ -16,6 +16,8 @@ export * from './GasFeeActionL2';
 export * from './TransferNFTAction';
 export * from './SendTokensAction';
 export * from './CreateSubAction';
+export * from './LSVSellAction';
+export * from './ApproveTokenAction';
 export * from './SDaiWrapAction';
 export * from './SDaiUnwrapAction';
 export * from './TokenizedVaultAdapterDepositAction';

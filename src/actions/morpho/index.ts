@@ -7,3 +7,4 @@ export * from './aaveV3/MorphoAaveV3SupplyAction';
 export * from './aaveV3/MorphoAaveV3WithdrawAction';
 export * from './aaveV3/MorphoAaveV3BorrowAction';
 export * from './aaveV3/MorphoAaveV3PaybackAction';
+export * from './aaveV3/MorphoAaveV3SetManagerAction';
