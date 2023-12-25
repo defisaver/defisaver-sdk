@@ -26,6 +26,7 @@ import * as bprotocol from './bprotocol';
 import * as lsv from './lsv';
 import * as curveusd from './curveusd';
 import * as spark from './spark';
+import * as morphoblue from './morpho-blue';
 
 export {
   aave,
@@ -56,4 +57,5 @@ export {
   lsv,
   spark,
   curveusd,
+  morphoblue,
 };
