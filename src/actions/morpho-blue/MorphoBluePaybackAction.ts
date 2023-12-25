@@ -6,7 +6,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * MorphoBluePaybackAction - Payback debt on MorphoBlue
  *
- * @category Morpho
+ * @category MorphoBlue
  */
 export class MorphoBluePaybackAction extends Action {
   /**

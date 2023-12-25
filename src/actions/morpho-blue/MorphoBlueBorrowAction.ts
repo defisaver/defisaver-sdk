@@ -6,7 +6,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * MorphoBlueBorrowAction - Borrow a token from MorphoBlue
  *
- * @category Morpho
+ * @category MorphoBlue
  */
 export class MorphoBlueBorrowAction extends Action {
   /**

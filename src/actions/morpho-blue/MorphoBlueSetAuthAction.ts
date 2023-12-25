@@ -3,22 +3,23 @@ import { getAddr } from '../../addresses';
 import { EthAddress, uint256 } from '../../types';
 
 /**
- *
- * @category
+ * @category MorphoBlue
  */
-export class MorphoAaveV3SetAuthAction extends Action {
+export class MorphoBlueSetAuthAction extends Action {
   /**
+   * @param manager
+   * @param newIsAuthorized
    */
-  constructor() {
+  constructor(manager:EthAddress, newIsAuthorized:boolean) {
     super(
-      'MorphoAaveV3SetAuth',
-      getAddr('MorphoAaveV3SetAuth'),
+      'MorphoBlueSetAuth',
+      getAddr('MorphoBlueSetAuth'),
       [
-        'uint256',
         'address',
         'bool',
       ],
-      [],
+      [manager, newIsAuthorized],
     );
+    this.mappableArgs = [this.args[0], this.args[1]];
   }
 }

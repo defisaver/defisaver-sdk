@@ -6,7 +6,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * MorphoBlueSupplyCollateralAction - Supply token to use as collateral on MorphoBlue
  *
- * @category Morpho
+ * @category MorphoBlue
  */
 export class MorphoBlueSupplyCollateralAction extends Action {
   /**

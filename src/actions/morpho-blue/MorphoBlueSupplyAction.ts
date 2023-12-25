@@ -6,7 +6,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * MorphoBlueSupplyAction - Supply token as a lender on MorphoBlue to earn interest
  *
- * @category Morpho
+ * @category MorphoBlue
  */
 export class MorphoBlueSupplyAction extends Action {
   /**
