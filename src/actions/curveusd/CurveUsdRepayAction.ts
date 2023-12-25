@@ -5,7 +5,6 @@ import {
   uint256,
   uint32,
   bytes,
-  uint24,
 } from '../../types';
 
 /**
@@ -20,13 +19,14 @@ export class CurveUsdRepayAction extends Action {
     minAmount: uint256,
     additionData: bytes,
     gasUsed: uint32,
-    dfsFeeDivider: uint24,
+    dfsFeeDivider: uint32,
+    useSteth: Boolean,
   ) {
     super(
       'CurveUsdRepay',
       getAddr('CurveUsdRepay'),
-      ['address', 'uint256', 'address', 'uint256', 'bytes', 'uint32', 'uint24'],
-      [controllerAddress, collAmount, to, minAmount, additionData, gasUsed, dfsFeeDivider],
+      ['address', 'uint256', 'address', 'uint256', 'bytes', 'uint32', 'uint32', 'bool'],
+      [controllerAddress, collAmount, to, minAmount, additionData, gasUsed, dfsFeeDivider, useSteth],
     );
 
     this.mappableArgs = [

@@ -90,7 +90,7 @@ export class Recipe {
    * Approval is done from owner to DsProxy
    */
   async getAssetsToApprove() : Promise<Array<{ owner: string, asset: string, specialApproveLabel?: string } | { owner: string, nft: EthAddress, tokenId: string, specialApproveLabel?: string }>> {
-    const uniqueAssetOwnerPairs : Array<{ owner: string, asset: string, specialApproveLabel?: string, tokenId?: string } | { owner: string, nft: EthAddress, tokenId: string, specialApproveLabel?: string, [key: string]:any }> = [];
+    const uniqueAssetOwnerPairs : Array<{ owner: string, asset: string, specialApproveLabel?: string, [key: string]:any } | { owner: string, nft: EthAddress, tokenId: string, specialApproveLabel?: string, [key: string]:any }> = [];
     const assetOwnerPairs = await Promise.all(this.actions.map(a => a.getAssetsToApprove()));
     for (const pairsPerAction of assetOwnerPairs) {
       for (const pair of pairsPerAction) {
@@ -109,7 +109,7 @@ export class Recipe {
         }
       }
     }
-    return uniqueAssetOwnerPairs.filter(({ asset }) => !utils.compare(asset, getAssetInfo('ETH').address));
+    return uniqueAssetOwnerPairs.filter(({ address }) => !utils.compare(address, getAssetInfo('ETH').address));
   }
 
   /**

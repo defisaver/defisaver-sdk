@@ -6,7 +6,6 @@ import {
   uint256,
   uint32,
   bytes,
-  uint24,
 } from '../../types';
 
 /**
@@ -23,14 +22,15 @@ export class CurveUsdSelfLiquidateWithCollAction extends Action {
     to: EthAddress,
     additionData: bytes,
     gasUsed: uint32,
-    dfsFeeDivider: uint24,
+    dfsFeeDivider: uint32,
+    useSteth: Boolean,
   ) {
     requireAddress(to);
     super(
       'CurveUsdSelfLiquidateWithColl',
       getAddr('CurveUsdSelfLiquidateWithColl'),
-      ['address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'bytes', 'uint32', 'uint24'],
-      [controllerAddress, percentage, minCrvUsdExpected, swapAmount, minAmount, to, additionData, gasUsed, dfsFeeDivider],
+      ['address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'bytes', 'uint32', 'uint32', 'bool'],
+      [controllerAddress, percentage, minCrvUsdExpected, swapAmount, minAmount, to, additionData, gasUsed, dfsFeeDivider, useSteth],
     );
 
     this.mappableArgs = [

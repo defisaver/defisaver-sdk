@@ -34,7 +34,7 @@ export class CompoundV3SupplyAction extends Action {
   async getAssetsToApprove() {
     const asset = getAssetInfoByAddress(this.tokenForApproval);
 
-    if (asset.symbol !== 'ETH') return [{ asset: this.tokenForApproval, owner: this.args[3] }];
+    if (asset.symbol !== 'ETH') return [{ asset: this.tokenForApproval, owner: this.args[1] }];
     return [];
   }
 }

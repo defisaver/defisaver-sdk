@@ -15,7 +15,7 @@ export class UpdateSubAction extends Action {
    * @param sub object that contains new sub information
    */
   constructor(subId:uint256, sub:[uint64, boolean, bytes[], bytes32[]]) {
-    super('UpdateSub', getAddr('UpdateSub'), ['uint256', ['uint64', 'bool', 'bytes[]', 'bytes32[]']], [subId, sub]);
+    super('UpdateSub', getAddr('UpdateSub'), ['uint256', '(uint64,bool,bytes[],bytes32[])'], [subId, sub]);
 
     this.mappableArgs = [
       this.args[0],

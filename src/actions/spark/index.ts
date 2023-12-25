@@ -7,4 +7,3 @@ export * from './SparkSpTokenPaybackAction';
 export * from './SparkCollateralSwitchAction';
 export * from './SparkClaimRewardsAction';
 export * from './SparkSwapBorrowRateModeAction';
-export * from './SparkDelegateCredit';

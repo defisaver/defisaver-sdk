@@ -29,7 +29,6 @@ type Networks = {
   ethereum:Network,
   optimism:Network,
   arbitrum:Network,
-  base:Network,
 };
 
 type EthAddress = string;
