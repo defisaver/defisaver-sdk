@@ -47,9 +47,9 @@ export class MakerBoostCompositeAction extends Action {
       this.args[0],
       this.args[1],
       this.args[4],
-      this.args[5][0],
-      this.args[5][1],
-      this.args[5][2],
+      this.args[7][0],
+      this.args[7][1],
+      this.args[7][2],
     ];
   }
 }
