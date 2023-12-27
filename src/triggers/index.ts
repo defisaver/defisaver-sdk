@@ -11,6 +11,7 @@ export * from './CompV3RatioTrigger';
 export * from './TrailingStopTrigger';
 export * from './CBRebondTrigger';
 export * from './AaveV3QuotePriceTrigger';
+export * from './AaveV2RatioTrigger';
 export * from './MorphoAaveV2RatioTrigger';
 export * from './SparkRatioTrigger';
 export * from './SparkQuotePriceTrigger';
