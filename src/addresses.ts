@@ -245,6 +245,8 @@ export const actionAddresses = {
     CurveUsdSelfLiquidate: '0xd90d8a4955DfE9D4f45F7f60595313B0925ee1da',
     CurveUsdSelfLiquidateWithColl: '0x7cE305FC2A18c6820a533AD418dC0A549aFeDcAF',
     CurveUsdGetDebt: '0x3Bb41d3f300dA758780fe7696bb4fB93cD7172fB',
+    CurveUsdCollRatioTrigger: '0xFCc610809b735BB13E583c5E46595457083D2b0c',
+    CurveUsdCollRatioCheck: '0x8c65f37ca216de1625886431249be13ead051388',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
