@@ -33,7 +33,7 @@ export class MorphoBlueWithdrawCollateralAction extends Action {
       'MorphoBlueWithdrawCollateral',
       getAddr('MorphoBlueWithdrawCollateral'),
       [['address', 'address', 'address', 'address', 'uint256'], 'uint256', 'address', 'address'],
-      [[loanToken, collateralToken, oracle, irm, lltv, withdrawAmount, onBehalf, to]],
+      [[loanToken, collateralToken, oracle, irm, lltv], withdrawAmount, onBehalf, to],
     );
 
     this.mappableArgs = [
