@@ -5,4 +5,4 @@ export * from './MorphoBluePaybackAction';
 export * from './MorphoBlueWithdrawCollateralAction';
 export * from './MorphoBlueWithdrawAction';
 export * from './MorphoBlueSetAuthAction';
-export * from './MorphoBlueSetAuthBySigAction';
+export * from './MorphoBlueSetAuthWithSigAction';
