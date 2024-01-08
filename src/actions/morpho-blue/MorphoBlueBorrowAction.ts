@@ -25,7 +25,7 @@ export class MorphoBlueBorrowAction extends Action {
     oracle:EthAddress,
     irm:EthAddress,
     lltv:uint256,
-    supplyAmount:uint256,
+    borrowAmount:uint256,
     onBehalf:EthAddress,
     to:EthAddress,
   ) {
@@ -33,7 +33,7 @@ export class MorphoBlueBorrowAction extends Action {
       'MorphoBlueBorrow',
       getAddr('MorphoBlueBorrow'),
       [['address', 'address', 'address', 'address', 'uint256'], 'uint256', 'address', 'address'],
-      [[loanToken, collateralToken, oracle, irm, lltv], supplyAmount, onBehalf, to],
+      [[loanToken, collateralToken, oracle, irm, lltv], borrowAmount, onBehalf, to],
     );
 
     this.mappableArgs = [
