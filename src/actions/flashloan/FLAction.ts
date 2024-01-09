@@ -41,6 +41,9 @@ export class FLAction extends Action {
     if (specificFLAction.constructor.name === 'SparkFlashLoanAction') {
       argsToReturn[5] = [7];
     }
+    if (specificFLAction.constructor.name === 'MorphoBlueFlashLoanAction') {
+      argsToReturn[5] = [8];
+    }
     return argsToReturn;
   }
 

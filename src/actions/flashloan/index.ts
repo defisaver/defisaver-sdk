@@ -20,3 +20,5 @@ export * from './UniV3FlashLoanAction';
 export * from './UniV3FlashLoanPaybackAction';
 export * from './GhoFlashLoanAction';
 export * from './GhoFlashLoanPaybackAction';
+export * from './MorphoBlueFlashLoanAction';
+export * from './MorphoBlueFlashLoanPaybackAction';
