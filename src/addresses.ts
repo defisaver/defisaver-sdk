@@ -125,6 +125,7 @@ export const actionAddresses = {
     FLAction: '0x72915D41982DfCAf30b871290618E59C45Edba7F',
     FLUniV3: '0x9CAdAC8Be718572F82B672b950c53F0b58483A35',
     FLGho: '0xbb67b81dD080a406227A38965d0393f396ddECBc',
+    FLMorphoBlue: '0x6206C96EAc5EAC546861438A9f953B6BEa50EBAB',
 
     // uniswap
     UniSupply: '0x9935e12F0218E61c27D7f23eAC9A9D6881a078eC',
@@ -247,6 +248,15 @@ export const actionAddresses = {
     CurveUsdGetDebt: '0x3Bb41d3f300dA758780fe7696bb4fB93cD7172fB',
     CurveUsdCollRatioTrigger: '0xFCc610809b735BB13E583c5E46595457083D2b0c',
     CurveUsdCollRatioCheck: '0x8c65f37ca216de1625886431249be13ead051388',
+
+    MorphoBlueSupply: '0x1D0F6027Eeb118dEc06055735eE840E3Fe3E6f9a',
+    MorphoBlueSupplyCollateral: '0x1cdAC5D4b207e8DBd308504BbedD5D1BD19D26ac',
+    MorphoBlueWithdraw: '0xE97c7D2838D068C967B7c40080e09A08B9b11fca',
+    MorphoBlueWithdrawCollateral: '0xF339F5272E48f9b2c074dcCF7e169259465A4872',
+    MorphoBlueBorrow: '0xcc05A3e06DA9Bd2827C7e86a96C63EAda3935AA0',
+    MorphoBluePayback: '0x9f437E5F705E02d77adC2e72C34926978776b085',
+    MorphoBlueSetAuth: '0xf30935e20c6357c7bcecd5e58ad6de26d54b9f64',
+    MorphoBlueSetAuthWithSig: '0xE2d5fCDBf73BAd24A0FCAf6B2733933A98021808',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
