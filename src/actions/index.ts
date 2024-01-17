@@ -27,6 +27,7 @@ import * as lsv from './lsv';
 import * as curveusd from './curveusd';
 import * as spark from './spark';
 import * as morphoblue from './morpho-blue';
+import * as summerfi from './summerfi';
 
 export {
   aave,
@@ -58,4 +59,5 @@ export {
   spark,
   curveusd,
   morphoblue,
+  summerfi,
 };
