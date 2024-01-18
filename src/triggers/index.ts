@@ -17,3 +17,5 @@ export * from './SparkRatioTrigger';
 export * from './SparkQuotePriceTrigger';
 export * from './LiquityDebtInFrontWithLimitTrigger';
 export * from './CurveUsdCollRatioTrigger';
+export * from './OffchainPriceTrigger';
+
