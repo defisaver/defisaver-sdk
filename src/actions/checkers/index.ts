@@ -8,3 +8,4 @@ export * from './MorphoAaveV2RatioCheckAction';
 export * from './SparkRatioCheckAction';
 export * from './LiquityRatioIncreaseCheckAction';
 export * from './CurveUsdCollRatioCheck';
+export * from './MorphoBlueRatioCheckAction';
