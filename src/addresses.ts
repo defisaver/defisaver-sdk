@@ -302,6 +302,14 @@ export const actionAddresses = {
     UniSupplyV3: '0x533aDec68Eed581F4a7F202493Eaf4Df77b89EC0',
     UniWithdrawV3: '0xE920235ED2d52EcF6157BBAFedfB5bbbcF7c5825',
     UniCreatePoolV3: '0xAF45d1380d89dB7260DC2684158c5dfA4E147d3e',
+
+    // llamalend
+    LlamaLendCreate: '0x252Bc41120aD352a3330e74Ae34768B86EdFA9E5',
+    LlamaLendSupply: '0xE2B004e97fFe15FD5832d9eF02CDcee4254DDFE0',
+    LlamaLendBorrow: '0x1242A6C5011aB8B3BE4D90b96876b3599C63b29e',
+    LlamaLendWithdraw: '0xEE21a67f9586a57e1F637CA0904D6aAd74684B2F',
+    LlamaLendPayback: '0x2eCEc31b14F0144bea2e3b5318bf4F6c0e6096e2',
+    LlamaLendSelfLiquidate: '0xA108a3c059bC0d89819E089E7dbB0a84A0Af308D',
   },
   [NETWORKS.arbitrum.chainId]: {
     DFSSell: '0x9109F34AB28D369cF894aF45C50E976B8E312a82',

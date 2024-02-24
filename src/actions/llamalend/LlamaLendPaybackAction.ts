@@ -1,4 +1,3 @@
-import { getAssetInfo } from '@defisaver/tokens';
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, int256 } from '../../types';
