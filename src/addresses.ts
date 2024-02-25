@@ -259,12 +259,12 @@ export const actionAddresses = {
     MorphoBlueSetAuthWithSig: '0xE2d5fCDBf73BAd24A0FCAf6B2733933A98021808',
 
     // llamalend
-    LlamaLendCreate: '0x252Bc41120aD352a3330e74Ae34768B86EdFA9E5',
-    LlamaLendSupply: '0xE2B004e97fFe15FD5832d9eF02CDcee4254DDFE0',
-    LlamaLendBorrow: '0x1242A6C5011aB8B3BE4D90b96876b3599C63b29e',
-    LlamaLendWithdraw: '0xEE21a67f9586a57e1F637CA0904D6aAd74684B2F',
-    LlamaLendPayback: '0x2eCEc31b14F0144bea2e3b5318bf4F6c0e6096e2',
-    LlamaLendSelfLiquidate: '0xA108a3c059bC0d89819E089E7dbB0a84A0Af308D',
+    LlamaLendCreate: '0x4349be191ea63173eD98b7fC1b0DeC1ef9Bc6c11',
+    LlamaLendSupply: '0x1900eF943bD1b038c58d9F35C3825F119F9BB730',
+    LlamaLendBorrow: '0xCF693585C47049F3eACc2285E7Fe4e80123b2520',
+    LlamaLendWithdraw: '0x2593Da3c4110C531541424e9e847cd7905894C52',
+    LlamaLendPayback: '0x5b506b7a0117dbcd086632575da599bb603eb602',
+    LlamaLendSelfLiquidate: '0x098274c1C8Ea095fD016124a9754Be253fE0C1B5',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
