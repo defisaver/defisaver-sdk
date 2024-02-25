@@ -264,7 +264,7 @@ export const actionAddresses = {
     LlamaLendBorrow: '0xCF693585C47049F3eACc2285E7Fe4e80123b2520',
     LlamaLendWithdraw: '0x2593Da3c4110C531541424e9e847cd7905894C52',
     LlamaLendPayback: '0x5b506b7a0117dbcd086632575da599bb603eb602',
-    LlamaLendSelfLiquidate: '0x098274c1C8Ea095fD016124a9754Be253fE0C1B5',
+    LlamaLendSelfLiquidate: '0xe4944e0e46177300fa4c351ef72b95b9655e8394',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
