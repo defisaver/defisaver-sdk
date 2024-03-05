@@ -10,13 +10,14 @@ import { uint256 } from '../../types';
 export class WrapEthAction extends ActionWithL2 {
   /**
    * @param amount Wrap amount
+   * @param includeEthInTx If true, the transaction will include the ETH value in the transaction
    */
-  constructor(amount:uint256) {
-    super('WrapEth', getAddr('WrapEth'), ['uint256'], [amount]);
+  constructor(amount:uint256, includeEthInTx = true) {
+    super('WrapEth', getAddr('WrapEth'), ['uint256', 'bool'], [amount, includeEthInTx]);
   }
 
   async getEthValue() {
-    return this.args[0];
+    return this.args[1] ? this.args[0] : 0;
   }
 
   encodeInputs() {

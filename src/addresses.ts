@@ -273,6 +273,7 @@ export const actionAddresses = {
     ToggleSub: '0x988C5C24AE6348404196267e19962f36961CAc29',
     TokenBalance: '0xC6FF5b01f7c7b35b6e093fF70D2332B361C5Be5A',
     TokenizedVaultAdapter: '0xdf31669FEd440f5BfF658ca0bBF0D22B8abdeb73',
+    ChangeProxyOwner: '0x62769258ea8b3a85cc6fb4332fc2760a122dbc9e',
 
     // aave v3
     AaveV3ATokenPayback: '0x71B27114D1777298bD46c3770C42F9f807C49847',
@@ -316,6 +317,7 @@ export const actionAddresses = {
     ToggleSub: '0x71015226EADFd4aC887fB56556F64338e352439b',
     TokenBalance: '0x483B903E702F60698Dd8124558C6199922737f1F',
     TokenizedVaultAdapter: '0xD05C512bDFf6D3eAc5328807B3bC075F35271167',
+    ChangeProxyOwner: '0x29F66A5fcB601c806E7156f29FDEC771BdC9c08d',
 
     // aave v3
     AaveV3ATokenPayback: '0x261906e5E0D0D38D9cBb5c10dB9c4031aabdf8C1',
@@ -360,6 +362,7 @@ export const actionAddresses = {
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
     PullToken: '0x5B0B7E38C2a8e46CfAe13c360BC5927570BeEe94',
     TokenBalance: '0xc44bcE580B1b3339fE9272D3bC3d6566083ea59C',
+    ChangeProxyOwner: '0x1947a44d3717a47556175d64fdc208619aa08874',
 
     // Flashloan
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
