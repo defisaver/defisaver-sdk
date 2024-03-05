@@ -49,8 +49,8 @@ export class FLAction extends Action {
 
   constructor(specificFLAction: Action) {
     super(
-      'FLAction',
-      getAddr('FLAction'),
+      'FLActionTEMP',
+      getAddr('FLActionTEMP'),
       [],
       [],
     );

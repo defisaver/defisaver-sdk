@@ -23,8 +23,8 @@ export class SellAction extends ActionWithL2 {
   constructor(exchangeOrder:Array<any>, from:EthAddress, to:EthAddress, protocolFee = '0') {
     requireAddress(to);
     super(
-      'DFSSell',
-      getAddr('DFSSell'),
+      'DFSSellTEMP',
+      getAddr('DFSSellTEMP'),
       [
         ['address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bytes', ['address', 'address', 'address', 'uint256', 'uint256', 'bytes']],
         'address',
