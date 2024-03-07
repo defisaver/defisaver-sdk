@@ -6,6 +6,7 @@ import mstableAssetPairs from './mstableAssetPairs';
 import * as curveUtils from './curve-utils';
 import * as curveusdUtils from './curveusd-utils';
 import * as basicUtils from './basic-utils';
+import * as llamaLenUtils from './llamalend-utils';
 
 export {
   zeroExExchange,
@@ -16,4 +17,5 @@ export {
   curveUtils,
   curveusdUtils,
   basicUtils,
+  llamaLenUtils,
 };

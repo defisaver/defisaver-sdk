@@ -257,6 +257,14 @@ export const actionAddresses = {
     MorphoBluePayback: '0x9f437E5F705E02d77adC2e72C34926978776b085',
     MorphoBlueSetAuth: '0xf30935e20c6357c7bcecd5e58ad6de26d54b9f64',
     MorphoBlueSetAuthWithSig: '0xE2d5fCDBf73BAd24A0FCAf6B2733933A98021808',
+
+    // llamalend
+    LlamaLendCreate: '0x4349be191ea63173eD98b7fC1b0DeC1ef9Bc6c11',
+    LlamaLendSupply: '0x1900eF943bD1b038c58d9F35C3825F119F9BB730',
+    LlamaLendBorrow: '0xCF693585C47049F3eACc2285E7Fe4e80123b2520',
+    LlamaLendWithdraw: '0x2593Da3c4110C531541424e9e847cd7905894C52',
+    LlamaLendPayback: '0x5b506b7a0117dbcd086632575da599bb603eb602',
+    LlamaLendSelfLiquidate: '0xe4944e0e46177300fa4c351ef72b95b9655e8394',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
