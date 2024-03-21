@@ -267,6 +267,8 @@ export const actionAddresses = {
     LlamaLendWithdraw: '0x2593Da3c4110C531541424e9e847cd7905894C52',
     LlamaLendPayback: '0x5b506b7a0117dbcd086632575da599bb603eb602',
     LlamaLendSelfLiquidate: '0xe4944e0e46177300fa4c351ef72b95b9655e8394',
+
+    MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
