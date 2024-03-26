@@ -22,3 +22,4 @@ export * from './GhoFlashLoanAction';
 export * from './GhoFlashLoanPaybackAction';
 export * from './MorphoBlueFlashLoanAction';
 export * from './MorphoBlueFlashLoanPaybackAction';
+export * from './FLPaybackAction';
