@@ -12,11 +12,12 @@ export class MakerGiveAction extends Action {
   /**
    * @param vaultId
    * @param newOwner
+   * @param createProxy
    * @param mcdManager
    */
-  constructor(vaultId:uint256, newOwner:EthAddress, mcdManager:EthAddress = getAddr('McdCdpManager')) {
+  constructor(vaultId:uint256, newOwner:EthAddress, createProxy:boolean, mcdManager:EthAddress = getAddr('McdCdpManager')) {
     requireAddress(newOwner);
-    super('McdGive', getAddr('McdGive'), ['uint256', 'address', 'address'], [vaultId, newOwner, mcdManager]);
+    super('McdGive', getAddr('McdGive'), ['uint256', 'address', 'bool', 'address'], [vaultId, newOwner, createProxy, mcdManager]);
 
     this.mappableArgs = [
       this.args[0],
