@@ -24,7 +24,7 @@ export const actionAddresses = {
     TokenizedVaultAdapter: '0x3944364Ce3a273D269707484F3a676fCa17E08b8',
 
     // exchange
-    DFSSell: '0x951D7B421f45FF0e4A8ddE0288aE3f9C2C69b784',
+    DFSSell: '0x8bfc99652358884AF965324e6A233014510F0CFc',
     DFSSellTEMP: '0x8bfc99652358884AF965324e6A233014510F0CFc',
 
     // maker
@@ -271,7 +271,7 @@ export const actionAddresses = {
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
   [NETWORKS.optimism.chainId]: {
-    DFSSell: '0xC6c601fcAa870efd26C624F8c65fbc54cBe533b1',
+    DFSSell: '0x01f7DB086076a16Cebd940A95919Af088C0662FD',
     DFSSellTEMP: '0x01f7DB086076a16Cebd940A95919Af088C0662FD',
 
     // basic
@@ -320,7 +320,7 @@ export const actionAddresses = {
     UniCreatePoolV3: '0xAF45d1380d89dB7260DC2684158c5dfA4E147d3e',
   },
   [NETWORKS.arbitrum.chainId]: {
-    DFSSell: '0x9109F34AB28D369cF894aF45C50E976B8E312a82',
+    DFSSell: '0xF940aE73cb01c81e657916D14e5699c73a22566c',
     DFSSellTEMP: '0xF940aE73cb01c81e657916D14e5699c73a22566c',
 
     // basic
@@ -374,7 +374,7 @@ export const actionAddresses = {
   },
   [NETWORKS.base.chainId]: {
     // Basic
-    DFSSell: '0xCc0f04e8c34B670a1D06f4978C843952F690d3f4',
+    DFSSell: '0x76e5c4e10E36B2f7E8B7F8a570e8A485B86d0ac7',
     DFSSellTEMP: '0x76e5c4e10E36B2f7E8B7F8a570e8A485B86d0ac7',
     WrapEth: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
