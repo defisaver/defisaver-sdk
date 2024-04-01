@@ -41,9 +41,10 @@ export const actionAddresses = {
     // reflexer
     ReflexerSupply: '0xd7a36CD4ce7CCc2F1376Dc5C48BaC84380A4f698',
     ReflexerWithdraw: '0xD8a14d447AB6789F3bf1Eb763b6306db3FC3d666',
-    ReflexerPayback: '0xcC6838d8a61a4b29Ea565d39C38b830f1491cb29',
+    ReflexerPayback: '0xdAa3963798C2E3F5c16AAcc9114fc727C450d0cb',
     ReflexerGenerate: '0x8e8Fd178A5FAE3A29F9CB1A06aBBBCFd5B83beb7',
     ReflexerOpen: '0x4704a7cBd4d913d1233765B70531D601b4384011',
+    ReflexerWithdrawStuckFunds: '0x64759d064aaA1f9Ac7A458520Aad06128Da9b7b8',
 
     // not deployed as currently not used
     ReflexerNativeUniV2SaviourDeposit: '0x0000000000000000000000000000000000000000',
