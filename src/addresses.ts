@@ -346,6 +346,7 @@ export const actionAddresses = {
     AaveV3Supply: '0xF159c79077001E2a2C1a178BE68DB7F69a6Da486',
     AaveV3SwapBorrowRateMode: '0x738042389A8d6B0F6D6ab009c42dfF84ebB737C0',
     AaveV3Withdraw: '0xbf492F869DdB1A18BB4F41b6c3059D9f882Fe7ff',
+    AaveV3ClaimRewards: '0x3a4d72Ed2a47a409a82ba61f0fca1C749Ea8aB66',
 
     // CompV3
     CompV3Allow: '0x0380E8e13CdE0499c720999930CaA07A5744887c',
