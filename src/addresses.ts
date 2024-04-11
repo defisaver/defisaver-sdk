@@ -268,6 +268,11 @@ export const actionAddresses = {
     LlamaLendWithdraw: '0x2593Da3c4110C531541424e9e847cd7905894C52',
     LlamaLendPayback: '0x5b506b7a0117dbcd086632575da599bb603eb602',
     LlamaLendSelfLiquidate: '0xe4944e0e46177300fa4c351ef72b95b9655e8394',
+    // TODO: this is not deployed yet
+    LlamaLendBoost: '0x10B748Dc504C2515Bb6A9e23CB2F686090b6c584',
+    LlamaLendRepay: '0x270A0C7eBd1C0a98FdA613782b51419300AB6322',
+    LlamaLendLevCreate: '0x6e31Dd331571209043c8CF997f86b4291F648537',
+    LlamaLendSelfLiquidateWithColl: '0xC6C627c63389D8bB7913b55CD62fa451703AD1E1',
 
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
