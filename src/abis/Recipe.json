@@ -167,6 +167,73 @@
   {
     "inputs": [
       {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes[]",
+            "name": "callData",
+            "type": "bytes[]"
+          },
+          {
+            "internalType": "bytes32[]",
+            "name": "subData",
+            "type": "bytes32[]"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "actionIds",
+            "type": "bytes4[]"
+          },
+          {
+            "internalType": "uint8[][]",
+            "name": "paramMapping",
+            "type": "uint8[][]"
+          }
+        ],
+        "internalType": "struct StrategyModel.Recipe",
+        "name": "_currRecipe",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "maxGasPrice",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxAdditionalGasUsed",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "maxTxCostInFeeToken",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "feeToken",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct StrategyModel.TxRelayUserSignedData",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeRecipeFromTxRelay",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "uint256",
         "name": "_subId",
         "type": "uint256"

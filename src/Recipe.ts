@@ -4,7 +4,7 @@ import { getAssetInfo, utils } from '@defisaver/tokens';
 import { Action } from './Action';
 import { getAddr } from './addresses';
 import RecipeAbi from './abis/Recipe.json';
-import { AccessListItem, EthAddress } from './types';
+import { AccessListItem, EthAddress, TxRelayData } from './types';
 import { CONFIG } from './config';
 
 /**
@@ -70,6 +70,23 @@ export class Recipe {
     return [
       this.recipeExecutorAddress,
       // @ts-expect-error Interface of AbiCoder is wrong :(
+      AbiCoder.encodeFunctionCall(executeTaskAbi, encoded),
+    ];
+  }
+
+  encodeForTxRelayCall(data: TxRelayData): Array<string> {
+    const executeTaskAbi : any = RecipeAbi.find(({ name }:{ name: string }) => name === 'executeRecipeFromTxRelay');
+    const encodedRecipe = this.#_encodeForCall()[0];
+    const encodedTxRelayData = [
+      data.additionalGasUsed,
+      data.maxGasPrice,
+      data.maxTxCostInFeeToken,
+      data.feeToken,
+    ];
+    const encoded = [encodedRecipe, encodedTxRelayData];
+    return [
+      this.recipeExecutorAddress,
+      // @ts-expect-error
       AbiCoder.encodeFunctionCall(executeTaskAbi, encoded),
     ];
   }

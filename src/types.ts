@@ -32,6 +32,13 @@ type Networks = {
   base:Network,
 };
 
+type TxRelayData = {
+  additionalGasUsed: number,
+  maxGasPrice: string | number,
+  maxTxCostInFeeToken: string,
+  feeToken: EthAddress,
+};
+
 type EthAddress = string;
 type bytes32 = string;
 type bytes = string | Array<any>;
@@ -48,5 +55,5 @@ type int256 = string;
 type int24 = string;
 
 export {
-  AccessList, AccessListItem, AccessLists, Config, Network, Networks, EthAddress, bytes32, bytes, uint256, uint160, uint32, uint128, uint80, uint64, uint24, uint16, uint8, int256, int24,
+  AccessList, AccessListItem, AccessLists, Config, Network, Networks, TxRelayData, EthAddress, bytes32, bytes, uint256, uint160, uint32, uint128, uint80, uint64, uint24, uint16, uint8, int256, int24,
 };
