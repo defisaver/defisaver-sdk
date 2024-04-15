@@ -1,6 +1,7 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, uint32 } from '../../types';
+import { controllerToIdPerChainMap } from '../../utils/llamalend-utils';
 
 
 /**
@@ -13,11 +14,12 @@ export class LlamaLendRepayAction extends Action {
       getAddr('LlamaLendRepay'),
       [
         'address',
+        'uint256',
         ['address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bytes', ['address', 'address', 'address', 'uint256', 'uint256', 'bytes']],
         'address',
         'uint32',
       ],
-      [controller, exchangeOrder, to, gasUsed],
+      [controller, controllerToIdPerChainMap[CONFIG.chainId][controller], exchangeOrder, to, gasUsed],
     );
     this.mappableArgs = [
       this.args[0],

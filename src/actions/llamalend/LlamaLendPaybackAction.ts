@@ -1,7 +1,7 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, int256 } from '../../types';
-import { controllerToDebtAssetMap } from '../../utils/llamalend-utils';
+import { controllerToDebtAssetPerChainIdMap } from '../../utils/llamalend-utils';
 
 /**
  * LlamaLendPaybackAction - Action that pays back debt asset to a llamalend position
@@ -42,7 +42,7 @@ export class LlamaLendPaybackAction extends Action {
   async getAssetsToApprove() {
     return [{
       owner: this.args[1],
-      asset: controllerToDebtAssetMap[this.args[0] as keyof typeof controllerToDebtAssetMap],
+      asset: controllerToDebtAssetPerChainIdMap[CONFIG.chainId][this.args[0]],
     }];
   }
 }

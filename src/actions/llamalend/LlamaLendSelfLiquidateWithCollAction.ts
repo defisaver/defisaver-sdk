@@ -1,6 +1,7 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, uint32 } from '../../types';
+import { controllerToIdPerChainMap } from '../../utils/llamalend-utils';
 
 
 /**
@@ -15,12 +16,13 @@ export class LlamaLendSelfLiquidateWithCollAction extends Action {
         'address',
         'uint256',
         'uint256',
+        'uint256',
         ['address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bytes', ['address', 'address', 'address', 'uint256', 'uint256', 'bytes']],
         'address',
         'bool',
         'uint32',
       ],
-      [controller, percentage, minCrvUsdExpected, exchangeOrder, to, sellAllCollateral, gasUsed],
+      [controller, controllerToIdPerChainMap[CONFIG.chainId][controller], percentage, minCrvUsdExpected, exchangeOrder, to, sellAllCollateral, gasUsed],
     );
     this.mappableArgs = [
       this.args[0],
