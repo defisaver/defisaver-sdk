@@ -1,14 +1,13 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, uint32 } from '../../types';
-import { controllerToIdPerChainMap } from '../../utils/llamalend-utils';
 
 
 /**
  * @category LlamaLend
  */
 export class LlamaLendSelfLiquidateWithCollAction extends Action {
-  constructor(controller: EthAddress, percentage: uint256, minCrvUsdExpected: uint256, exchangeOrder: Array<any>, to: EthAddress, sellAllCollateral: boolean, gasUsed: uint32) {
+  constructor(controller: EthAddress, controllerId: uint256, percentage: uint256, minCrvUsdExpected: uint256, exchangeOrder: Array<any>, to: EthAddress, sellAllCollateral: boolean, gasUsed: uint32) {
     super(
       'LlamaLendSelfLiquidateWithColl',
       getAddr('LlamaLendSelfLiquidateWithColl'),
@@ -22,7 +21,7 @@ export class LlamaLendSelfLiquidateWithCollAction extends Action {
         'bool',
         'uint32',
       ],
-      [controller, controllerToIdPerChainMap[CONFIG.chainId][controller], percentage, minCrvUsdExpected, exchangeOrder, to, sellAllCollateral, gasUsed],
+      [controller, controllerId, percentage, minCrvUsdExpected, exchangeOrder, to, sellAllCollateral, gasUsed],
     );
     this.mappableArgs = [
       this.args[0],

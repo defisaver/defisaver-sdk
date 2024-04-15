@@ -1,14 +1,13 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, uint32 } from '../../types';
-import { controllerToIdPerChainMap } from '../../utils/llamalend-utils';
 
 
 /**
  * @category LlamaLend
  */
 export class LlamaLendRepayAction extends Action {
-  constructor(controller: EthAddress, exchangeOrder: Array<any>, to: EthAddress, gasUsed: uint32) {
+  constructor(controller: EthAddress, controllerId: uint256, exchangeOrder: Array<any>, to: EthAddress, gasUsed: uint32) {
     super(
       'LlamaLendRepay',
       getAddr('LlamaLendRepay'),
@@ -19,7 +18,7 @@ export class LlamaLendRepayAction extends Action {
         'address',
         'uint32',
       ],
-      [controller, controllerToIdPerChainMap[CONFIG.chainId][controller], exchangeOrder, to, gasUsed],
+      [controller, controllerId, exchangeOrder, to, gasUsed],
     );
     this.mappableArgs = [
       this.args[0],

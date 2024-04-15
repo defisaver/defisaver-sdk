@@ -1,14 +1,13 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, uint32 } from '../../types';
-import { controllerToIdPerChainMap } from '../../utils/llamalend-utils';
 
 
 /**
  * @category LlamaLend
  */
 export class LlamaLendLevCreateAction extends Action {
-  constructor(controller: EthAddress, from: EthAddress, collAmount: uint256, nBands: uint256, exchangeOrder: Array<any>, gasUsed: uint32) {
+  constructor(controller: EthAddress, controllerId: uint256, from: EthAddress, collAmount: uint256, nBands: uint256, exchangeOrder: Array<any>, gasUsed: uint32) {
     super(
       'LlamaLendLevCreate',
       getAddr('LlamaLendLevCreate'),
@@ -21,7 +20,7 @@ export class LlamaLendLevCreateAction extends Action {
         ['address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bytes', ['address', 'address', 'address', 'uint256', 'uint256', 'bytes']],
         'uint32',
       ],
-      [controller, controllerToIdPerChainMap[CONFIG.chainId][controller], from, collAmount, nBands, exchangeOrder, gasUsed],
+      [controller, controllerId, from, collAmount, nBands, exchangeOrder, gasUsed],
     );
     this.mappableArgs = [
       this.args[0],
@@ -34,7 +33,7 @@ export class LlamaLendLevCreateAction extends Action {
   async getAssetsToApprove() {
     return [{
       owner: this.args[1],
-      asset: controllerToCollateralAssetPerChainIdMap[CONFIG.chainId][this.args[0]],
+      asset: this.args[5][1],
     }];
   }
 }

@@ -1,7 +1,6 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256 } from '../../types';
-import { controllerToCollateralAssetMap, controllerToCollateralAssetPerChainIdMap } from '../../utils/llamalend-utils';
 
 
 /**
@@ -22,6 +21,7 @@ export class LlamaLendSupplyAction extends Action {
     from: EthAddress,
     onBehalfOf: EthAddress,
     collateralAmount: uint256,
+    collAsset: EthAddress,
   ) {
     super(
       'LlamaLendSupply',
@@ -38,7 +38,7 @@ export class LlamaLendSupplyAction extends Action {
   async getAssetsToApprove() {
     return [{
       owner: this.args[1],
-      asset: controllerToCollateralAssetPerChainIdMap[CONFIG.chainId][this.args[0]],
+      asset: this.args[4],
     }];
   }
 }
