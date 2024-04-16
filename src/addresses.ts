@@ -378,6 +378,19 @@ export const actionAddresses = {
     UniSupplyV3: '0x55675C6041A33EE9BDd796Edaa0f098AC7F3534f',
     UniWithdrawV3: '0xa004c22eFd0CD87847DE83Ce9ab92af5382c2efe',
     UniCreatePoolV3: '0x334Ab3C12a4c0315566fd9308880Dad71F838Dc5',
+
+    // llamalend
+    LlamaLendCreate: '0xaf14226ad0d782c71d3acf94ad02d6a39c89ec79',
+    LlamaLendSupply: '0x8f0814709d6d8b7c4b3021f7cb80e08476bc6959',
+    LlamaLendBorrow: '0x4948135f8b3a8f3b51fbd1050f5d0f755accb8e7',
+    LlamaLendWithdraw: '0xd7a80e7a2296d75cd1eebc2f0de0cebd14fbe117',
+    LlamaLendPayback: '0x21e05ffb9cf729630b5a9c2f01ff3b41f38be48c',
+    LlamaLendSelfLiquidate: '0xc9fd91f932d903023e887e4e4af0a298e10529a8',
+    LlamaLendGetDebt: '0x81c01f08b8fc4487501c88404ed17ebc17764f9c',
+    LlamaLendBoost: '0xc52a3af27696f8cf999463f3455e23440a376f8d',
+    LlamaLendRepay: '0x320fdfa922ee33c1cc8a042ada855c9dfe9bed06',
+    LlamaLendLevCreate: '0xe5cbdcbe494246c21851eea0642ff0791f95cc86',
+    LlamaLendSelfLiquidateWithColl: '0x4faef2cd1680ea00f9398a0525c536b2466a887b',
   },
   [NETWORKS.base.chainId]: {
     // Basic
