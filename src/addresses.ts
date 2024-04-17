@@ -323,7 +323,7 @@ export const actionAddresses = {
     // CompV3
     CompV3Allow: '0xec4937686022c6b83f0d914dde7a465b1108227e',
     CompV3Borrow: '0x2cc1ec3c2b8734b4e57c0415a7641bbaba1d8c21',
-    CompV3Claim: '0x673e831fffa32fb6c62def03fbfee7e3464ea486',
+    CompV3Claim: '0xAD36437D50DB3C6c225564A4081acb354b55a5D6',
     CompV3Payback: '0xdd15d90f92a4973b4c979e58b9e1eebbb4d1cc26',
     CompV3Supply: '0xf4c3D99c43E1DB968CF92770DaE6d377697b0B81',
     CompV3Transfer: '0x3e5af71709a9e591c5b25422a4419164bb5aba4b',
