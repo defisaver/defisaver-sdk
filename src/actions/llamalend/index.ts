@@ -4,3 +4,8 @@ export * from './LlamaLendSupplyAction';
 export * from './LlamaLendCreateAction';
 export * from './LlamaLendPaybackAction';
 export * from './LlamaLendSelfLiquidateAction';
+export * from './LlamaLendGetDebtAction';
+export * from './LlamaLendLevCreateAction';
+export * from './LlamaLendBoostAction';
+export * from './LlamaLendRepayAction';
+export * from './LlamaLendSelfLiquidateWithCollAction';

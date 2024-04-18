@@ -268,6 +268,11 @@ export const actionAddresses = {
     LlamaLendWithdraw: '0x2593Da3c4110C531541424e9e847cd7905894C52',
     LlamaLendPayback: '0x5b506b7a0117dbcd086632575da599bb603eb602',
     LlamaLendSelfLiquidate: '0xe4944e0e46177300fa4c351ef72b95b9655e8394',
+    LlamaLendGetDebt: '0x5625ea9fcd930d5f131b0261ec4dcaf279fea4ed',
+    LlamaLendBoost: '0xa21c1ce7318c6d38a10de44c2cd5d80514437d85',
+    LlamaLendRepay: '0x57693f72E628A3F7323D31De35Bd158493Aa9CC0',
+    LlamaLendLevCreate: '0x534b704a62385cfe5EEB8d9605419743d4fe105E',
+    LlamaLendSelfLiquidateWithColl: '0xc20460aabdb89e55c2d29067e031d170f2fb10e5',
 
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
@@ -371,6 +376,7 @@ export const actionAddresses = {
     FLAaveV3NoFee: '0x219ac6dA971dE6d943cffD1BD62abde71525d382',
     FLAaveV3: '0x53953aCEe438c083e4299F7976f03Ff3cb862161',
     FLBalancer: '0xdb28fE77709D88badC86868B27937428C3F48E73',
+    FLUniV3: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3', // @DEV - incorrect, same as FLAction
     FLAction: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3', // temp fixed
     FLActionTEMP: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3',
 
@@ -383,6 +389,19 @@ export const actionAddresses = {
     UniSupplyV3: '0x55675C6041A33EE9BDd796Edaa0f098AC7F3534f',
     UniWithdrawV3: '0xa004c22eFd0CD87847DE83Ce9ab92af5382c2efe',
     UniCreatePoolV3: '0x334Ab3C12a4c0315566fd9308880Dad71F838Dc5',
+
+    // llamalend
+    LlamaLendCreate: '0xaf14226ad0d782c71d3acf94ad02d6a39c89ec79',
+    LlamaLendSupply: '0x8f0814709d6d8b7c4b3021f7cb80e08476bc6959',
+    LlamaLendBorrow: '0x4948135f8b3a8f3b51fbd1050f5d0f755accb8e7',
+    LlamaLendWithdraw: '0xd7a80e7a2296d75cd1eebc2f0de0cebd14fbe117',
+    LlamaLendPayback: '0xB2B93495dA2Fee8F92513fBBfA804564110B63ee',
+    LlamaLendSelfLiquidate: '0xe63e836C3ab61481F60A9a56aA72d1D0c55Fc280',
+    LlamaLendGetDebt: '0x81c01f08b8fc4487501c88404ed17ebc17764f9c',
+    LlamaLendBoost: '0xc52a3af27696f8cf999463f3455e23440a376f8d',
+    LlamaLendRepay: '0x320fdfa922ee33c1cc8a042ada855c9dfe9bed06',
+    LlamaLendLevCreate: '0xe5cbdcbe494246c21851eea0642ff0791f95cc86',
+    LlamaLendSelfLiquidateWithColl: '0x4faef2cd1680ea00f9398a0525c536b2466a887b',
   },
   [NETWORKS.base.chainId]: {
     // Basic
