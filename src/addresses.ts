@@ -366,6 +366,7 @@ export const actionAddresses = {
     FLAaveV3NoFee: '0x219ac6dA971dE6d943cffD1BD62abde71525d382',
     FLAaveV3: '0x53953aCEe438c083e4299F7976f03Ff3cb862161',
     FLBalancer: '0xdb28fE77709D88badC86868B27937428C3F48E73',
+    FLUniV3: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3', // @DEV - incorrect, same as FLAction
     FLAction: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3', // temp fixed
     FLActionTEMP: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3',
 
