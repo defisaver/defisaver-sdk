@@ -27,3 +27,4 @@ export * from './TokenizedVaultAdapterWithdrawAction';
 export * from './LimitSellAction';
 export * from './ExecuteSafeTxAction';
 export * from './RemoveTokenApprovalAction';
+export * from './PermitTokenAction';
