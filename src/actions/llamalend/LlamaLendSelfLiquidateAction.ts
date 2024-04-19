@@ -1,7 +1,7 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
+import { CONFIG } from '../../config';
 import { EthAddress, uint256 } from '../../types';
-import { controllerToDebtAssetMap } from '../../utils/llamalend-utils';
 
 /**
  *
@@ -19,6 +19,7 @@ export class LlamaLendSelfLiquidateAction extends Action {
     minDebtAssetExpected: uint256,
     from: EthAddress,
     to: EthAddress,
+    debtAsset: EthAddress,
   ) {
     super(
       'LlamaLendSelfLiquidate',
@@ -35,7 +36,7 @@ export class LlamaLendSelfLiquidateAction extends Action {
   async getAssetsToApprove() {
     return [{
       owner: this.args[2],
-      asset: controllerToDebtAssetMap[this.args[0] as keyof typeof controllerToDebtAssetMap],
+      asset: this.args[4],
     }];
   }
 }
