@@ -2,7 +2,7 @@ import { Action } from '../../Action';
 import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256 } from '../../types';
-import { controllerToCollateralAssetMap } from '../../utils/llamalend-utils';
+import { CONFIG } from '../../config';
 
 /**
  * LlamaLendCreateAction - Action that creates a llamalend position on behalf of proxy
@@ -26,6 +26,7 @@ export class LlamaLendCreateAction extends Action {
     collateralAmount: uint256,
     debtAmount: uint256,
     nBands: uint256,
+    debtAsset: EthAddress,
   ) {
     requireAddress(to);
     super(
@@ -43,7 +44,7 @@ export class LlamaLendCreateAction extends Action {
   async getAssetsToApprove() {
     return [{
       owner: this.args[1],
-      asset: controllerToCollateralAssetMap[this.args[0] as keyof typeof controllerToCollateralAssetMap],
+      asset: this.args[6],
     }];
   }
 }

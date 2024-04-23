@@ -5,3 +5,5 @@ esm/
 umd/
 
 yarn-error.log
+.yarnrc.yml
+.yarn

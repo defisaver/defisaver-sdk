@@ -8,3 +8,4 @@ export * from './SparkCollateralSwitchAction';
 export * from './SparkClaimRewardsAction';
 export * from './SparkSwapBorrowRateModeAction';
 export * from './SparkDelegateCredit';
+export * from './SparkDelegateWithSigAction';
