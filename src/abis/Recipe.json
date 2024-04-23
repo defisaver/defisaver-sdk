@@ -207,7 +207,7 @@
           },
           {
             "internalType": "uint256",
-            "name": "maxAdditionalGasUsed",
+            "name": "additionalGasUsed",
             "type": "uint256"
           },
           {
