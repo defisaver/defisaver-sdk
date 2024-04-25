@@ -457,7 +457,7 @@ export const actionAddresses = {
 
 export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
-    RecipeExecutor: '0x5029336642814bC51a42bA80BF83a6322110035D',
+    RecipeExecutor: '0x8D9cDA62DC7Bf75f687c6C8729ABB51ac82E20d5',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
     DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
