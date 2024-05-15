@@ -35,6 +35,5 @@ export class FLAction extends Action {
     );
     this.paramTypes = ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'];
     this.args = this.#handleArgs(specificFLAction);
-    console.log('###ARGS:', this.args);
   }
 }
