@@ -4,7 +4,9 @@ import { getAssetInfo, utils } from '@defisaver/tokens';
 import { Action } from './Action';
 import { getAddr } from './addresses';
 import RecipeAbi from './abis/Recipe.json';
-import { AccessListItem, EthAddress, TxRelayData } from './types';
+import {
+  AccessListItem, EthAddress, TxRelayData,
+} from './types';
 import { CONFIG } from './config';
 
 /**
@@ -74,21 +76,31 @@ export class Recipe {
     ];
   }
 
-  encodeForTxRelayCall(data: TxRelayData): Array<string> {
-    const executeTaskAbi : any = RecipeAbi.find(({ name }:{ name: string }) => name === 'executeRecipeFromTxRelay');
+  /**
+   * Encode arguments for calling tx relay functions inside recipe executor
+   * @param data tx relay user signed data
+   * @param takeFeeFromPosition if true, fee will be taken from position, otherwise from user EOA/wallet
+   * @returns 'data' to be passed to Safe
+   */
+  encodeForTxRelayCall(data: TxRelayData, takeFeeFromPosition: boolean): string {
+    let functionName: string;
+    if (takeFeeFromPosition) {
+      functionName = 'executeRecipeFromTxRelayWhileTakingFeeFromPosition';
+      if (!this.actions.some((action) => action.name === 'DFSSell')) {
+        throw new Error('TxRelay encoding error: Only recipes with DFSSell action are supported for taking fee from position');
+      }
+    } else {
+      functionName = 'executeRecipeFromTxRelay';
+    }
+
+    const executeTaskAbi : any = RecipeAbi.find(({ name }:{ name: string }) => name === functionName);
     const encodedRecipe = this.#_encodeForCall()[0];
     const encodedTxRelayData = [
-      data.additionalGasUsed,
-      data.maxGasPrice,
       data.maxTxCostInFeeToken,
       data.feeToken,
     ];
-    const encoded = [encodedRecipe, encodedTxRelayData];
-    return [
-      this.recipeExecutorAddress,
-      // @ts-expect-error
-      AbiCoder.encodeFunctionCall(executeTaskAbi, encoded),
-    ];
+    // @ts-expect-error
+    return AbiCoder.encodeFunctionCall(executeTaskAbi, [encodedRecipe, encodedTxRelayData]);
   }
 
   /**
