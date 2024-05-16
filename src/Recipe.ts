@@ -80,9 +80,9 @@ export class Recipe {
    * Encode arguments for calling tx relay functions inside recipe executor
    * @param data tx relay user signed data
    * @param takeFeeFromPosition if true, fee will be taken from position, otherwise from user EOA/wallet
-   * @returns 'data' to be passed to Safe
+   * @returns recipe executor addr and 'data' to be passed to Safe
    */
-  encodeForTxRelayCall(data: TxRelayData, takeFeeFromPosition: boolean): string {
+  encodeForTxRelayCall(data: TxRelayData, takeFeeFromPosition: boolean): Array<string> {
     let functionName: string;
     if (takeFeeFromPosition) {
       functionName = 'executeRecipeFromTxRelayWhileTakingFeeFromPosition';
@@ -99,8 +99,11 @@ export class Recipe {
       data.maxTxCostInFeeToken,
       data.feeToken,
     ];
-    // @ts-expect-error
-    return AbiCoder.encodeFunctionCall(executeTaskAbi, [encodedRecipe, encodedTxRelayData]);
+    return [
+      this.recipeExecutorAddress,
+      // @ts-expect-error Interface of AbiCoder is wrong :(
+      AbiCoder.encodeFunctionCall(executeTaskAbi, [encodedRecipe, encodedTxRelayData]),
+    ];
   }
 
   /**

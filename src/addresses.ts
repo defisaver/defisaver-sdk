@@ -25,7 +25,7 @@ export const actionAddresses = {
     PermitToken: '0x2654056046ed5E3f673FbcBC99A1BDB77F5c460B',
 
     // exchange
-    DFSSell: '0xF6388C2FA7124dd3B0Df57aa96D07EACD2ABd105',
+    DFSSell: '0x2b10B000292745099Deb15304A247c0816bd8b73',
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
@@ -453,7 +453,7 @@ export const actionAddresses = {
 
 export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
-    RecipeExecutor: '0x6907450BCdaC332FEc945D4C1968829A726B158e',
+    RecipeExecutor: '0x270A0C7eBd1C0a98FdA613782b51419300AB6322',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
     DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
