@@ -1,4 +1,5 @@
 import { Action } from '../../Action';
+import { ActionWithL2 } from '../../ActionWithL2';
 import { getAddr } from '../../addresses';
 import { FlashLoanId } from './FlashLoanId';
 /**
@@ -6,7 +7,7 @@ import { FlashLoanId } from './FlashLoanId';
  *
  * @category Flashloans
  */
-type SpecificFlashLoanAction = Action & FlashLoanId;
+type SpecificFlashLoanAction = (Action & FlashLoanId) | (ActionWithL2 & FlashLoanId);
 
 export class FLAction extends Action {
   /**
