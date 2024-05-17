@@ -28,3 +28,4 @@ export * from './LimitSellAction';
 export * from './ExecuteSafeTxAction';
 export * from './RemoveTokenApprovalAction';
 export * from './PermitTokenAction';
+export * from './StarknetClaimAction';

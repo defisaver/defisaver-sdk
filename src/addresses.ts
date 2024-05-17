@@ -23,6 +23,7 @@ export const actionAddresses = {
     SDaiUnwrap: '0xe8Cb536BB96075241c4bd8f1831A8577562F2B32',
     TokenizedVaultAdapter: '0x3944364Ce3a273D269707484F3a676fCa17E08b8',
     PermitToken: '0x2654056046ed5E3f673FbcBC99A1BDB77F5c460B',
+    StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
 
     // exchange
     DFSSell: '0x8bfc99652358884AF965324e6A233014510F0CFc',
