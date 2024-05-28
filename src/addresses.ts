@@ -5,8 +5,8 @@ export const actionAddresses = {
   [NETWORKS.ethereum.chainId]: {
     // utils
     WrapEth: '0x8EbBd35f84D7f0DFCBEf08fD30CD09176133251A',
-    UnwrapEth: '0xDB6C8cFDd7c1C0F8895CDBC01Dbf4A6D4B6d2a29',
-    PullToken: '0x254cA89a00d53ab61de2Ba5641DBDC01aE48aed4',
+    UnwrapEth: '0x3298C6652beD903d3DfB6466A2C272eDe8ff741D',
+    PullToken: '0x29Bb266A72E585C661e292F7D8CA7C4581a0AF72',
     SendToken: '0x5c19aF6F5de91209c3bc2Ba447b1f5eb53c50759',
     SumInputs: '0x70907d840aBBc984Fd949311d2f005e6aC4a4D7a',
     SubInputs: '0xe1804b756188F63f723d2FECc02988D0Cc1aB823',
@@ -57,8 +57,8 @@ export const actionAddresses = {
     // aave
     AaveBorrow: '0x1B95E800a869bc3F89914470a7901D93D1401cD1',
     AavePayback: '0x066225964999F1D07C888c5Ac4a6C885bDa88b9A',
-    AaveSupply: '0xEbB200a529058B561B42Eab510DA157a63243CEc',
-    AaveWithdraw: '0x754C58fA92246414a448c1ed44ea3D1AD446d482',
+    AaveSupply: '0x3DbdC87d2299768AD82DDCAc13021A29681b8520',
+    AaveWithdraw: '0xee274301e8b06d2284c4c7ebfbd8f3a368ce24f2',
     AaveCollateralSwitch: '0xFf5dfF1B90bd5Aa6E12768AB497dB90cc9DE6F5d',
     AaveUnstake: '0x2FE4024e350cD2c64D2fd0Db5d16F5cE54Ca0E09',
     AaveClaimAAVE: '0xd52855bD011F3D87565f9040DdE2A59fB1b27b15',
@@ -241,8 +241,8 @@ export const actionAddresses = {
     CompV3Withdraw: '0xf1406deC224750CEfA709e4bcA6a3a3f458F0f7B',
 
     // crvUSD
-    CurveUsdBorrow: '0x2512A976227a82Ef0F6bDdb463cBcD5B732596BF',
-    CurveUsdCreate: '0x715B40970dac1cfAf0bB85C4Fe64921b44b3f73e',
+    CurveUsdBorrow: '0x9D82989715114D35903caf4077BC3e5b5DD70eA7',
+    CurveUsdCreate: '0xd44f3984249772fd5a667889e7a478d6beb912c9',
     CurveUsdPayback: '0x3Aa0F8Ff9419Cd5f6e73F3274b8bF86965Cd282c',
     CurveUsdSupply: '0xa55B3CE5ae7E59002f53b2153ABe326823ccCDE2',
     CurveUsdAdjust: '0x6f69A7d0B1BE7602381d9cCE6B29F05B9D0b85e6',
@@ -410,7 +410,7 @@ export const actionAddresses = {
     LlamaLendBoost: '0xc52a3af27696f8cf999463f3455e23440a376f8d',
     LlamaLendRepay: '0x320fdfa922ee33c1cc8a042ada855c9dfe9bed06',
     LlamaLendLevCreate: '0xe5cbdcbe494246c21851eea0642ff0791f95cc86',
-    LlamaLendSelfLiquidateWithColl: '0x4faef2cd1680ea00f9398a0525c536b2466a887b',
+    LlamaLendSelfLiquidateWithColl: '0xebf090e5e83f4cd63d84db013ac8271761a953cf',
   },
   [NETWORKS.base.chainId]: {
     // Basic
