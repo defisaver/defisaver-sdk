@@ -455,6 +455,17 @@ export const actionAddresses = {
     CompV3Supply: '0x94b63bf925C2Ab17F7df6914E110E969cC36A93e',
     CompV3Transfer: '0xdCAF9C6Bccc062Bc1b8704AA37005897FeA257a0',
     CompV3Withdraw: '0x8543133c3827D29b67D2b012101f463c870C1790',
+
+    // MorphoBlue
+    MorphoBlueSupply: '0xB4e67A3aF1707567D410f1E18B0CF7DCc38e03BA',
+    MorphoBlueSupplyCollateral: '0x57757974d4c4f4a3cfcd054401482672342b26b2',
+    MorphoBlueWithdraw: '0xaaccc17d850b48507c2478a9ad628c6f4132ede3',
+    MorphoBlueWithdrawCollateral: '0xe1778d05b274fa4193c8ecc50b0c45230f9ba1d3',
+    MorphoBlueBorrow: '0x8395eafe5633bcdedbf71893e24d4e86afd55436',
+    MorphoBluePayback: '0x245f9c1f8401f28da82afc50e4d242224991c4b3',
+    MorphoBlueSetAuth: '0xb565630c6ddd1fae169c453667f5aa52ef4e2e39',
+    MorphoBlueSetAuthWithSig: '0x80be65342f6172a6cd0b6a2653e8a887e3f46cab',
+    MorphoBlueView: '0xdbcacf59c5063da8b15481f88e7d70e13c92f2a1',
   },
 };
 
