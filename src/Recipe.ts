@@ -5,7 +5,7 @@ import { Action } from './Action';
 import { getAddr } from './addresses';
 import RecipeAbi from './abis/Recipe.json';
 import {
-  AccessListItem, EthAddress, TxRelayData,
+  AccessListItem, EthAddress, TxSaverData,
 } from './types';
 import { CONFIG } from './config';
 
@@ -77,32 +77,36 @@ export class Recipe {
   }
 
   /**
-   * Encode arguments for calling tx relay functions inside recipe executor
-   * @param data tx relay user signed data
-   * @param takeFeeFromPosition if true, fee will be taken from position, otherwise from user EOA/wallet
+   * Encode arguments for calling tx saver functions inside recipe executor
+   * @param data tx saver user signed data
    * @returns recipe executor addr and 'data' to be passed to Safe
    */
-  encodeForTxRelayCall(data: TxRelayData, takeFeeFromPosition: boolean): Array<string> {
-    let functionName: string;
-    if (takeFeeFromPosition) {
-      functionName = 'executeRecipeFromTxRelayWhileTakingFeeFromPosition';
-      if (!this.actions.some((action) => action.name === 'DFSSell')) {
-        throw new Error('TxRelay encoding error: Only recipes with DFSSell action are supported for taking fee from position');
+  encodeForTxSaverCall(data: TxSaverData): Array<string> {
+    const takeFeeFromPositionSupportedActions = [
+      'DFSSell',
+      'LlamaLendBoost',
+      'LlamaLendLevCreate',
+      'LlamaLendRepay',
+      'LlamaLendSelfLiquidateWithColl',
+    ];
+    if (data.shouldTakeFeeFromPosition) {
+      if (!this.actions.some((action) => takeFeeFromPositionSupportedActions.includes(action.name))) {
+        throw new Error('TxSaver encoding error: Only recipes with sell actions are supported for taking fee from position.');
       }
-    } else {
-      functionName = 'executeRecipeFromTxRelay';
     }
-
-    const executeTaskAbi : any = RecipeAbi.find(({ name }:{ name: string }) => name === functionName);
+    const executeTaskAbi : any = RecipeAbi.find(({ name }:{ name: string }) => name === 'executeRecipeFromTxSaver');
     const encodedRecipe = this.#_encodeForCall()[0];
-    const encodedTxRelayData = [
+    const encodedTxSaverData = [
       data.maxTxCostInFeeToken,
       data.feeToken,
+      data.tokenPriceInEth,
+      data.deadline,
+      data.shouldTakeFeeFromPosition,
     ];
     return [
       this.recipeExecutorAddress,
       // @ts-expect-error Interface of AbiCoder is wrong :(
-      AbiCoder.encodeFunctionCall(executeTaskAbi, [encodedRecipe, encodedTxRelayData]),
+      AbiCoder.encodeFunctionCall(executeTaskAbi, [encodedRecipe, encodedTxSaverData]),
     ];
   }
 

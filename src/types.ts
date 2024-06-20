@@ -32,9 +32,12 @@ type Networks = {
   base:Network,
 };
 
-type TxRelayData = {
+type TxSaverData = {
   maxTxCostInFeeToken: string,
   feeToken: EthAddress,
+  tokenPriceInEth: string,
+  deadline: string | number,
+  shouldTakeFeeFromPosition: boolean,
 };
 
 type EthAddress = string;
@@ -59,7 +62,7 @@ export {
   Config,
   Network,
   Networks,
-  TxRelayData,
+  TxSaverData,
   EthAddress,
   bytes32,
   bytes,
