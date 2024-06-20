@@ -7,7 +7,7 @@ import RecipeAbi from './abis/Recipe.json';
 import {
   AccessListItem, EthAddress, TxSaverData,
 } from './types';
-import { CONFIG } from './config';
+import { CONFIG, supportedActionsForTxSaverPositionFee } from './config';
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
@@ -77,21 +77,24 @@ export class Recipe {
   }
 
   /**
+   * Check if recipe can be encoded for taking fee from position in TxSaver tx
+   * @returns boolean
+   */
+  canEncodeForTxSaverCall(): boolean {
+    return this.actions.some((action) => supportedActionsForTxSaverPositionFee.includes(action.name));
+  }
+
+  /**
    * Encode arguments for calling tx saver functions inside recipe executor
    * @param data tx saver user signed data
    * @returns recipe executor addr and 'data' to be passed to Safe
    */
   encodeForTxSaverCall(data: TxSaverData): Array<string> {
-    const takeFeeFromPositionSupportedActions = [
-      'DFSSell',
-      'LlamaLendBoost',
-      'LlamaLendLevCreate',
-      'LlamaLendRepay',
-      'LlamaLendSelfLiquidateWithColl',
-    ];
     if (data.shouldTakeFeeFromPosition) {
-      if (!this.actions.some((action) => takeFeeFromPositionSupportedActions.includes(action.name))) {
-        throw new Error('TxSaver encoding error: Only recipes with sell actions are supported for taking fee from position.');
+      if (!this.canEncodeForTxSaverCall()) {
+        throw new Error(
+          'TxSaver encoding error: Only recipes with sell actions are supported for taking fee from position.'
+        );
       }
     }
     const executeTaskAbi : any = RecipeAbi.find(({ name }:{ name: string }) => name === 'executeRecipeFromTxSaver');
