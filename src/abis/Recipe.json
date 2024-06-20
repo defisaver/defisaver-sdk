@@ -15,8 +15,62 @@
     "type": "error"
   },
   {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "decimals",
+        "type": "uint256"
+      }
+    ],
+    "name": "TokenDecimalsUnsupportedError",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "TriggerNotActiveError",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "maxTxCost",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "txCost",
+        "type": "uint256"
+      }
+    ],
+    "name": "TxCostInFeeTokenTooHighError",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      }
+    ],
+    "name": "TxSaverAuthorizationError",
+    "type": "error"
+  },
+  {
     "inputs": [],
-    "name": "ADMIN_VAULT_ADDR",
+    "name": "ZeroTokenPriceInEthError",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CHAINLINK_FEED_REGISTRY",
     "outputs": [
       {
         "internalType": "address",
@@ -29,7 +83,59 @@
   },
   {
     "inputs": [],
-    "name": "DEFISAVER_LOGGER",
+    "name": "EXECUTE_ACTION_SELECTOR",
+    "outputs": [
+      {
+        "internalType": "bytes4",
+        "name": "",
+        "type": "bytes4"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "EXECUTE_SELECTOR",
+    "outputs": [
+      {
+        "internalType": "bytes4",
+        "name": "",
+        "type": "bytes4"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "MAX_DFS_FEE",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "SANITY_GAS_PRICE",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "SENTINEL_MODULES",
     "outputs": [
       {
         "internalType": "address",
@@ -42,25 +148,12 @@
   },
   {
     "inputs": [],
-    "name": "FACTORY_ADDRESS",
+    "name": "TX_SAVER_EXECUTOR_ID",
     "outputs": [
       {
-        "internalType": "address",
+        "internalType": "bytes4",
         "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "REGISTRY_ADDR",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        "type": "bytes4"
       }
     ],
     "stateMutability": "view",
@@ -127,6 +220,61 @@
   {
     "inputs": [
       {
+        "internalType": "uint256",
+        "name": "_gasUsed",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "_feeToken",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_l1GasCostInEth",
+        "type": "uint256"
+      }
+    ],
+    "name": "calcGasCost",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "txCost",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_moduleAddr",
+        "type": "address"
+      }
+    ],
+    "name": "disableLastModule",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_moduleAddr",
+        "type": "address"
+      }
+    ],
+    "name": "enableModule",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "components": [
           {
             "internalType": "string",
@@ -175,6 +323,43 @@
         "internalType": "bytes[]",
         "name": "_actionCallData",
         "type": "bytes[]"
+      },
+      {
+        "internalType": "bytes[]",
+        "name": "_triggerCallData",
+        "type": "bytes[]"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_strategyIndex",
+        "type": "uint256"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint64",
+            "name": "strategyOrBundleId",
+            "type": "uint64"
+          },
+          {
+            "internalType": "bool",
+            "name": "isBundle",
+            "type": "bool"
+          },
+          {
+            "internalType": "bytes[]",
+            "name": "triggerData",
+            "type": "bytes[]"
+          },
+          {
+            "internalType": "bytes32[]",
+            "name": "subData",
+            "type": "bytes32[]"
+          }
+        ],
+        "internalType": "struct StrategyModel.StrategySub",
+        "name": "_sub",
+        "type": "tuple"
       }
     ],
     "name": "executeRecipeFromStrategy",
@@ -185,14 +370,446 @@
   {
     "inputs": [
       {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "internalType": "bytes[]",
+            "name": "callData",
+            "type": "bytes[]"
+          },
+          {
+            "internalType": "bytes32[]",
+            "name": "subData",
+            "type": "bytes32[]"
+          },
+          {
+            "internalType": "bytes4[]",
+            "name": "actionIds",
+            "type": "bytes4[]"
+          },
+          {
+            "internalType": "uint8[][]",
+            "name": "paramMapping",
+            "type": "uint8[][]"
+          }
+        ],
+        "internalType": "struct StrategyModel.Recipe",
+        "name": "_currRecipe",
+        "type": "tuple"
+      },
+      {
+        "components": [
+          {
+            "internalType": "uint256",
+            "name": "maxTxCostInFeeToken",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "feeToken",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "tokenPriceInEth",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "deadline",
+            "type": "uint256"
+          },
+          {
+            "internalType": "bool",
+            "name": "shouldTakeFeeFromPosition",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct StrategyModel.TxSaverSignedData",
+        "name": "_txSaverData",
+        "type": "tuple"
+      }
+    ],
+    "name": "executeRecipeFromTxSaver",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "feeRecipient",
+    "outputs": [
+      {
+        "internalType": "contract FeeRecipient",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "feedRegistry",
+    "outputs": [
+      {
+        "internalType": "contract IFeedRegistry",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getAaveTokenPriceInETH",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getAaveTokenPriceInUSD",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getAaveV3TokenPriceInETH",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getAaveV3TokenPriceInUSD",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_inputTokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getAddrForChainlinkOracle",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "tokenAddrForChainlinkUsage",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "pure",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_inputTokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getChainlinkPriceInETH",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "chainlinkPriceInETH",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_inputTokenAddr",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "_useFallback",
+        "type": "bool"
+      }
+    ],
+    "name": "getChainlinkPriceInUSD",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "chainlinkPriceInUSD",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_inputTokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getPriceInETH",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_inputTokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getPriceInUSD",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_inputTokenAddr",
+        "type": "address"
+      },
+      {
+        "internalType": "uint80",
+        "name": "_roundId",
+        "type": "uint80"
+      },
+      {
+        "internalType": "contract IAggregatorV3",
+        "name": "aggregator",
+        "type": "address"
+      }
+    ],
+    "name": "getRoundInfo",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "updateTimestamp",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_inputTokenAddr",
+        "type": "address"
+      },
+      {
+        "internalType": "uint80",
+        "name": "_roundId",
+        "type": "uint80"
+      }
+    ],
+    "name": "getRoundInfo",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "updateTimestamp",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getSparkTokenPriceInETH",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_tokenAddr",
+        "type": "address"
+      }
+    ],
+    "name": "getSparkTokenPriceInUSD",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "price",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int256",
+        "name": "_btcPrice",
+        "type": "int256"
+      }
+    ],
+    "name": "getWBtcPrice",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "wBtcPrice",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "int256",
+        "name": "_stEthPrice",
+        "type": "int256"
+      }
+    ],
+    "name": "getWStEthPrice",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "wStEthPrice",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "address",
         "name": "_contractAddr",
         "type": "address"
       }
     ],
-    "name": "givePermission",
+    "name": "giveProxyPermission",
     "outputs": [],
     "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_proxy",
+        "type": "address"
+      }
+    ],
+    "name": "isDSProxy",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -223,7 +840,7 @@
         "type": "address"
       }
     ],
-    "name": "removePermission",
+    "name": "removeProxyPermission",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"

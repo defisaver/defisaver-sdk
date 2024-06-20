@@ -82,3 +82,11 @@ export const configure = (config : Config) => {
     if (key === 'chainId') dfsTokensSetConfig('network', config[key]);
   });
 };
+
+export const supportedActionsForTxSaverPositionFee = [
+  'DFSSell',
+  'LlamaLendBoost',
+  'LlamaLendLevCreate',
+  'LlamaLendRepay',
+  'LlamaLendSelfLiquidateWithColl',
+];

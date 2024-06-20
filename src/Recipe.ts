@@ -4,8 +4,10 @@ import { getAssetInfo, utils } from '@defisaver/tokens';
 import { Action } from './Action';
 import { getAddr } from './addresses';
 import RecipeAbi from './abis/Recipe.json';
-import { AccessListItem, EthAddress } from './types';
-import { CONFIG } from './config';
+import {
+  AccessListItem, EthAddress, TxSaverData,
+} from './types';
+import { CONFIG, supportedActionsForTxSaverPositionFee } from './config';
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
@@ -71,6 +73,43 @@ export class Recipe {
       this.recipeExecutorAddress,
       // @ts-expect-error Interface of AbiCoder is wrong :(
       AbiCoder.encodeFunctionCall(executeTaskAbi, encoded),
+    ];
+  }
+
+  /**
+   * Check if recipe can be encoded for taking fee from position in TxSaver tx
+   * @returns boolean
+   */
+  canEncodeForTxSaverCall(): boolean {
+    return this.actions.some((action) => supportedActionsForTxSaverPositionFee.includes(action.name));
+  }
+
+  /**
+   * Encode arguments for calling tx saver functions inside recipe executor
+   * @param data tx saver user signed data
+   * @returns recipe executor addr and 'data' to be passed to Safe
+   */
+  encodeForTxSaverCall(data: TxSaverData): Array<string> {
+    if (data.shouldTakeFeeFromPosition) {
+      if (!this.canEncodeForTxSaverCall()) {
+        throw new Error(
+          'TxSaver encoding error: Only recipes with sell actions are supported for taking fee from position.'
+        );
+      }
+    }
+    const executeTaskAbi : any = RecipeAbi.find(({ name }:{ name: string }) => name === 'executeRecipeFromTxSaver');
+    const encodedRecipe = this.#_encodeForCall()[0];
+    const encodedTxSaverData = [
+      data.maxTxCostInFeeToken,
+      data.feeToken,
+      data.tokenPriceInEth,
+      data.deadline,
+      data.shouldTakeFeeFromPosition,
+    ];
+    return [
+      this.recipeExecutorAddress,
+      // @ts-expect-error Interface of AbiCoder is wrong :(
+      AbiCoder.encodeFunctionCall(executeTaskAbi, [encodedRecipe, encodedTxSaverData]),
     ];
   }
 

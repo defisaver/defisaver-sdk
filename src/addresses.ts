@@ -26,8 +26,7 @@ export const actionAddresses = {
     StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
 
     // exchange
-    DFSSell: '0x8bfc99652358884AF965324e6A233014510F0CFc',
-    DFSSellTEMP: '0x8bfc99652358884AF965324e6A233014510F0CFc',
+    DFSSell: '0x2b10B000292745099Deb15304A247c0816bd8b73', // TODO[TX-SAVER]: set final address after deployment
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
@@ -282,7 +281,6 @@ export const actionAddresses = {
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x01f7DB086076a16Cebd940A95919Af088C0662FD',
-    DFSSellTEMP: '0x01f7DB086076a16Cebd940A95919Af088C0662FD',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -343,7 +341,6 @@ export const actionAddresses = {
   },
   [NETWORKS.arbitrum.chainId]: {
     DFSSell: '0xF940aE73cb01c81e657916D14e5699c73a22566c',
-    DFSSellTEMP: '0xF940aE73cb01c81e657916D14e5699c73a22566c',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
@@ -415,7 +412,6 @@ export const actionAddresses = {
   [NETWORKS.base.chainId]: {
     // Basic
     DFSSell: '0x76e5c4e10E36B2f7E8B7F8a570e8A485B86d0ac7',
-    DFSSellTEMP: '0x76e5c4e10E36B2f7E8B7F8a570e8A485B86d0ac7',
     WrapEth: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
@@ -471,7 +467,7 @@ export const actionAddresses = {
 
 export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
-    RecipeExecutor: '0x5029336642814bC51a42bA80BF83a6322110035D',
+    RecipeExecutor: '0x270A0C7eBd1C0a98FdA613782b51419300AB6322', // TODO[TX-SAVER]: set final address after deployment
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
     DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
