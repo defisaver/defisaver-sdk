@@ -93,7 +93,7 @@ export class Recipe {
     if (data.shouldTakeFeeFromPosition) {
       if (!this.canEncodeForTxSaverCall()) {
         throw new Error(
-          'TxSaver encoding error: Only recipes with sell actions are supported for taking fee from position.'
+          'TxSaver encoding error: Only recipes with sell actions are supported for taking fee from position.',
         );
       }
     }
