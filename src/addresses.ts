@@ -5,8 +5,8 @@ export const actionAddresses = {
   [NETWORKS.ethereum.chainId]: {
     // utils
     WrapEth: '0x8EbBd35f84D7f0DFCBEf08fD30CD09176133251A',
-    UnwrapEth: '0xDB6C8cFDd7c1C0F8895CDBC01Dbf4A6D4B6d2a29',
-    PullToken: '0x254cA89a00d53ab61de2Ba5641DBDC01aE48aed4',
+    UnwrapEth: '0x3298C6652beD903d3DfB6466A2C272eDe8ff741D',
+    PullToken: '0x29Bb266A72E585C661e292F7D8CA7C4581a0AF72',
     SendToken: '0x5c19aF6F5de91209c3bc2Ba447b1f5eb53c50759',
     SumInputs: '0x70907d840aBBc984Fd949311d2f005e6aC4a4D7a',
     SubInputs: '0xe1804b756188F63f723d2FECc02988D0Cc1aB823',
@@ -23,6 +23,7 @@ export const actionAddresses = {
     SDaiUnwrap: '0xe8Cb536BB96075241c4bd8f1831A8577562F2B32',
     TokenizedVaultAdapter: '0x3944364Ce3a273D269707484F3a676fCa17E08b8',
     PermitToken: '0x2654056046ed5E3f673FbcBC99A1BDB77F5c460B',
+    StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
 
     // exchange
     DFSSell: '0x2b10B000292745099Deb15304A247c0816bd8b73', // TODO[TX-SAVER]: set final address after deployment
@@ -55,8 +56,8 @@ export const actionAddresses = {
     // aave
     AaveBorrow: '0x1B95E800a869bc3F89914470a7901D93D1401cD1',
     AavePayback: '0x066225964999F1D07C888c5Ac4a6C885bDa88b9A',
-    AaveSupply: '0xEbB200a529058B561B42Eab510DA157a63243CEc',
-    AaveWithdraw: '0x754C58fA92246414a448c1ed44ea3D1AD446d482',
+    AaveSupply: '0x3DbdC87d2299768AD82DDCAc13021A29681b8520',
+    AaveWithdraw: '0xee274301e8b06d2284c4c7ebfbd8f3a368ce24f2',
     AaveCollateralSwitch: '0xFf5dfF1B90bd5Aa6E12768AB497dB90cc9DE6F5d',
     AaveUnstake: '0x2FE4024e350cD2c64D2fd0Db5d16F5cE54Ca0E09',
     AaveClaimAAVE: '0xd52855bD011F3D87565f9040DdE2A59fB1b27b15',
@@ -239,8 +240,8 @@ export const actionAddresses = {
     CompV3Withdraw: '0xf1406deC224750CEfA709e4bcA6a3a3f458F0f7B',
 
     // crvUSD
-    CurveUsdBorrow: '0x2512A976227a82Ef0F6bDdb463cBcD5B732596BF',
-    CurveUsdCreate: '0x715B40970dac1cfAf0bB85C4Fe64921b44b3f73e',
+    CurveUsdBorrow: '0x9D82989715114D35903caf4077BC3e5b5DD70eA7',
+    CurveUsdCreate: '0xd44f3984249772fd5a667889e7a478d6beb912c9',
     CurveUsdPayback: '0x3Aa0F8Ff9419Cd5f6e73F3274b8bF86965Cd282c',
     CurveUsdSupply: '0xa55B3CE5ae7E59002f53b2153ABe326823ccCDE2',
     CurveUsdAdjust: '0x6f69A7d0B1BE7602381d9cCE6B29F05B9D0b85e6',
@@ -288,7 +289,7 @@ export const actionAddresses = {
     PullToken: '0x392579E020a688068422A925c85f28bFD12a7EBB',
     SumInputs: '0xd19C646Be027a7a04ea4201f116d43659b8b5f65',
     SubInputs: '0x60d00020f12dd202eAfDba84e8F69E165a84c64D',
-    ApproveToken: '0xA4161cED7A29F0a3424e464a4a2dBf75888c5BF9',
+    ApproveToken: '0x842a81d2cfe26d401CD63Cc14e9DEf275c197C1a',
     SendTokenAndUnwrap: '0xd4f69250cb4d1f083Dd372FEace391A16ABbfBDc',
     ToggleSub: '0x988C5C24AE6348404196267e19962f36961CAc29',
     TokenBalance: '0xC6FF5b01f7c7b35b6e093fF70D2332B361C5Be5A',
@@ -349,6 +350,7 @@ export const actionAddresses = {
     SumInputs: '0xc530f49c11e5946735df8bad41bc6a64d32b56bc',
     SubInputs: '0x8ec14f9568e1d7cf73b68df899808abd7fe6fc8d',
     SendTokenAndUnwrap: '0x009C5B1c7C844Bd662Da3991295b1B3Bd71a430c',
+    ApproveToken: '0x01058999F5Ac434EF48DFB5Cd942c57A7661787B',
     ToggleSub: '0x71015226EADFd4aC887fB56556F64338e352439b',
     TokenBalance: '0x483B903E702F60698Dd8124558C6199922737f1F',
     TokenizedVaultAdapter: '0xD05C512bDFf6D3eAc5328807B3bC075F35271167',
@@ -405,7 +407,7 @@ export const actionAddresses = {
     LlamaLendBoost: '0xc52a3af27696f8cf999463f3455e23440a376f8d',
     LlamaLendRepay: '0x320fdfa922ee33c1cc8a042ada855c9dfe9bed06',
     LlamaLendLevCreate: '0xe5cbdcbe494246c21851eea0642ff0791f95cc86',
-    LlamaLendSelfLiquidateWithColl: '0x4faef2cd1680ea00f9398a0525c536b2466a887b',
+    LlamaLendSelfLiquidateWithColl: '0xebf090e5e83f4cd63d84db013ac8271761a953cf',
   },
   [NETWORKS.base.chainId]: {
     // Basic
@@ -414,6 +416,7 @@ export const actionAddresses = {
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
     PullToken: '0x5B0B7E38C2a8e46CfAe13c360BC5927570BeEe94',
+    ApproveToken: '0x24cb522be664b2a1ab9d37df7a3bded887566e18',
     SumInputs: '0xC856ef8fe425B2EFe373e0e7038fAFF4a4f764fE',
     SubInputs: '0xd244B1991Fcb8FC0f32FA55bce37714fc5929B95',
     TokenBalance: '0xc44bcE580B1b3339fE9272D3bC3d6566083ea59C',
@@ -448,6 +451,17 @@ export const actionAddresses = {
     CompV3Supply: '0x94b63bf925C2Ab17F7df6914E110E969cC36A93e',
     CompV3Transfer: '0xdCAF9C6Bccc062Bc1b8704AA37005897FeA257a0',
     CompV3Withdraw: '0x8543133c3827D29b67D2b012101f463c870C1790',
+
+    // MorphoBlue
+    MorphoBlueSupply: '0xB4e67A3aF1707567D410f1E18B0CF7DCc38e03BA',
+    MorphoBlueSupplyCollateral: '0x57757974d4c4f4a3cfcd054401482672342b26b2',
+    MorphoBlueWithdraw: '0xaaccc17d850b48507c2478a9ad628c6f4132ede3',
+    MorphoBlueWithdrawCollateral: '0xe1778d05b274fa4193c8ecc50b0c45230f9ba1d3',
+    MorphoBlueBorrow: '0x8395eafe5633bcdedbf71893e24d4e86afd55436',
+    MorphoBluePayback: '0x245f9c1f8401f28da82afc50e4d242224991c4b3',
+    MorphoBlueSetAuth: '0xb565630c6ddd1fae169c453667f5aa52ef4e2e39',
+    MorphoBlueSetAuthWithSig: '0x80be65342f6172a6cd0b6a2653e8a887e3f46cab',
+    MorphoBlueView: '0xdbcacf59c5063da8b15481f88e7d70e13c92f2a1',
   },
 };
 

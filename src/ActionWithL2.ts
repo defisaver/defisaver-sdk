@@ -40,9 +40,9 @@ export class ActionWithL2 extends Action {
   }
 
   numberToBytes32(number:number) {
-    let hexNumber = new Dec(number).toHex();
-    hexNumber = hexNumber.slice(2);
-
-    return hexNumber.padStart(64, '0');
+    return AbiCoder.encodeParameter(
+      'bytes32',
+      AbiCoder.encodeParameter('uint256', number),
+    ).slice(2);
   }
 }
