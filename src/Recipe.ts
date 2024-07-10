@@ -7,7 +7,11 @@ import RecipeAbi from './abis/Recipe.json';
 import {
   AccessListItem, EthAddress, TxSaverData,
 } from './types';
-import { CONFIG, supportedActionsForTxSaverPositionFee } from './config';
+import {
+  CONFIG,
+  actionsWithSwap,
+  txSaverSupportedActions,
+} from './config';
 
 /**
  * Set of Actions to be performed sequentially in a single transaction
@@ -77,11 +81,43 @@ export class Recipe {
   }
 
   /**
+   * Finds all actions from recipe that have a swap.
+   */
+  public getSwapActions(): Action[] {
+    return this.actions.filter((action) => !!actionsWithSwap.find(({ name }) => action.name === name));
+  }
+
+
+  private getTxSaverSupportedSwapActions(): Action[] {
+    return this.actions.filter((action) => !!txSaverSupportedActions.find(({ name }) => action.name === name));
+  }
+
+  getTxSaverOrderData(): { fromAsset: string, toAsset: string, fromAmount: string } {
+    const actionsWithOrder = this.getTxSaverSupportedSwapActions();
+    if (actionsWithOrder.length !== 1) {
+      throw new Error('TxSaver order data error: Only recipes with one sell action are supported for taking fee from position.');
+    }
+    const action = actionsWithOrder[0];
+    const orderDataParamIndex = actionsWithSwap.find(({ name }) => action.name === name)?.swapArgIndex!;
+    const orderData = action.args[orderDataParamIndex];
+    const fromAsset = orderData[0];
+    const toAsset = orderData[1];
+    const fromAmount = orderData[2];
+
+    return {
+      fromAsset,
+      toAsset,
+      fromAmount,
+    };
+  }
+
+  /**
    * Check if recipe can be encoded for taking fee from position in TxSaver tx
    * @returns boolean
    */
   canEncodeForTxSaverCall(): boolean {
-    return this.actions.some((action) => supportedActionsForTxSaverPositionFee.includes(action.name));
+    const actionsWithOrder = this.getTxSaverSupportedSwapActions();
+    return actionsWithOrder.length === 1;
   }
 
   /**

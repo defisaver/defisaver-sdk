@@ -83,10 +83,29 @@ export const configure = (config : Config) => {
   });
 };
 
-export const supportedActionsForTxSaverPositionFee = [
-  'DFSSell',
-  'LlamaLendBoost',
-  'LlamaLendLevCreate',
-  'LlamaLendRepay',
-  'LlamaLendSelfLiquidateWithColl',
+export const actionsWithSwap = [
+  {
+    name: 'DFSSell',
+    swapArgIndex: 0,
+  },
+  {
+    name: 'LlamaLendBoost',
+    swapArgIndex: 2,
+  },
+  {
+    name: 'LlamaLendLevCreate',
+    swapArgIndex: 6,
+  },
+  {
+    name: 'LlamaLendRepay',
+    swapArgIndex: 2,
+  },
+  {
+    name: 'LlamaLendSelfLiquidateWithColl',
+    swapArgIndex: 4,
+  },
+];
+
+export const txSaverSupportedActions = [
+  ...actionsWithSwap,
 ];

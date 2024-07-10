@@ -5,6 +5,7 @@ import type {
   AccessList, AccessListItem, AccessLists,
   bytes32, bytes,
   uint256, uint160, uint128, uint80, uint64, uint24, uint16, uint8, int24,
+  TxSaverData,
 } from './types';
 
 /* Export methods, classes and other here */
@@ -29,6 +30,7 @@ export type {
   AccessList, AccessListItem, AccessLists,
   bytes32, bytes,
   uint256, uint160, uint128, uint80, uint64, uint24, uint16, uint8, int24,
+  TxSaverData,
 };
 
 const actionAddressesAllChains = _actionAddresses;
