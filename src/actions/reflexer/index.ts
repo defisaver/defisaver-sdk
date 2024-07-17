@@ -6,3 +6,4 @@ export * from './ReflexerWithdrawAction';
 export * from './ReflexerNativeUniV2SaviourDepositAction';
 export * from './ReflexerNativeUniV2SaviourWithdrawAction';
 export * from './ReflexerNativeUniV2SaviourGetReservesAction';
+export * from './ReflexerWithdrawStuckFunds';

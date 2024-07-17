@@ -1,7 +1,10 @@
 node_modules/
+.vscode/
 .idea/
 .env
 esm/
 umd/
 
 yarn-error.log
+.yarnrc.yml
+.yarn
