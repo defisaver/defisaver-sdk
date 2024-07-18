@@ -94,7 +94,7 @@ export const actionsWithSwap = [
   },
   {
     name: 'LlamaLendLevCreate',
-    swapArgIndex: 6,
+    swapArgIndex: 5,
   },
   {
     name: 'LlamaLendRepay',
