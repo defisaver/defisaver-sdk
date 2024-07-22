@@ -32,6 +32,14 @@ type Networks = {
   base:Network,
 };
 
+type TxSaverData = {
+  maxTxCostInFeeToken: string,
+  feeToken: EthAddress,
+  tokenPriceInEth: string,
+  deadline: string | number,
+  shouldTakeFeeFromPosition: boolean,
+};
+
 type EthAddress = string;
 type bytes32 = string;
 type bytes = string | Array<any>;
@@ -48,5 +56,25 @@ type int256 = string;
 type int24 = string;
 
 export {
-  AccessList, AccessListItem, AccessLists, Config, Network, Networks, EthAddress, bytes32, bytes, uint256, uint160, uint32, uint128, uint80, uint64, uint24, uint16, uint8, int256, int24,
+  AccessList,
+  AccessListItem,
+  AccessLists,
+  Config,
+  Network,
+  Networks,
+  TxSaverData,
+  EthAddress,
+  bytes32,
+  bytes,
+  uint256,
+  uint160,
+  uint32,
+  uint128,
+  uint80,
+  uint64,
+  uint24,
+  uint16,
+  uint8,
+  int256,
+  int24,
 };
