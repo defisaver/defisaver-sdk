@@ -26,7 +26,7 @@ export const actionAddresses = {
     StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
 
     // exchange
-    DFSSell: '0x2b10B000292745099Deb15304A247c0816bd8b73', // TODO[TX-SAVER]: set final address after deployment
+    DFSSell: '0xba7f206610e2aab9f027c92debee4ff6f1682657',
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
@@ -272,15 +272,15 @@ export const actionAddresses = {
     LlamaLendPayback: '0x07e31d56E47EE6926892dCd928dF26899F58Ac8E',
     LlamaLendSelfLiquidate: '0x46173C379Fbf998E6db0B47F45b73f77C64d3897',
     LlamaLendGetDebt: '0x5625ea9fcd930d5f131b0261ec4dcaf279fea4ed',
-    LlamaLendBoost: '0x561013c605A17f5dC5b738C8a3fF9c5F33DbC3d8',
-    LlamaLendRepay: '0x13331157038254DF442969E4629789AD4b723e75',
-    LlamaLendLevCreate: '0xb3d3dFf3d68539F6a1bb51e56B7dC8d515aE8978',
-    LlamaLendSelfLiquidateWithColl: '0x8F5DB82611bA21CAC95DA8938896d690f66a2143',
+    LlamaLendBoost: '0xa21c1ce7318c6d38a10de44c2cd5d80514437d85',
+    LlamaLendRepay: '0x57693f72E628A3F7323D31De35Bd158493Aa9CC0',
+    LlamaLendLevCreate: '0x534b704a62385cfe5EEB8d9605419743d4fe105E',
+    LlamaLendSelfLiquidateWithColl: '0xA99DD1D91141cA63C423DB763dE75078336803B2',
 
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
   [NETWORKS.optimism.chainId]: {
-    DFSSell: '0x01f7DB086076a16Cebd940A95919Af088C0662FD',
+    DFSSell: '0x47c402981f3d06e467befc9bbae8da4135ff5e28',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -340,7 +340,7 @@ export const actionAddresses = {
 
   },
   [NETWORKS.arbitrum.chainId]: {
-    DFSSell: '0xF940aE73cb01c81e657916D14e5699c73a22566c',
+    DFSSell: '0xdC2C741b8A60B40BCc170F67C4aF02038b5086a7',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
@@ -411,7 +411,7 @@ export const actionAddresses = {
   },
   [NETWORKS.base.chainId]: {
     // Basic
-    DFSSell: '0x76e5c4e10E36B2f7E8B7F8a570e8A485B86d0ac7',
+    DFSSell: '0x31f218638dab2fc6d459319ae49271c3b98d2a3a',
     WrapEth: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
@@ -468,7 +468,7 @@ export const actionAddresses = {
 
 export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
-    RecipeExecutor: '0x270A0C7eBd1C0a98FdA613782b51419300AB6322', // TODO[TX-SAVER]: set final address after deployment
+    RecipeExecutor: '0x2ee96cf53ae5fbd5309284704f978d0ca66cb963',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
     DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
@@ -488,7 +488,7 @@ export const otherAddresses = {
     Empty: '0x0000000000000000000000000000000000000000',
   },
   [NETWORKS.optimism.chainId]: {
-    RecipeExecutor: '0xA532771BD90dAf94b456A4acC9E9cbBdF1367572',
+    RecipeExecutor: '0x993a8c81142044e1cb0cf0c3d84bea235d842fb0',
     DFSRegistry: '0xAf707Ee480204Ed6e2640B53cE86F680D28Afcbd',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
 
@@ -500,7 +500,7 @@ export const otherAddresses = {
     UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
   },
   [NETWORKS.arbitrum.chainId]: {
-    RecipeExecutor: '0x4417bffFD5e3131069f62Fac07e40704EE234404',
+    RecipeExecutor: '0x7a25174229ea402d8ccd35fc6d55af079c399884',
     DFSRegistry: '0xBF1CaC12DB60819Bfa71A328282ecbc1D40443aA',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
 
@@ -512,7 +512,7 @@ export const otherAddresses = {
     UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
   },
   [NETWORKS.base.chainId]: {
-    RecipeExecutor: '0xd0Ae279e330f98C399375f80968C8bf860202766',
+    RecipeExecutor: '0x7a87565b77dd65bbc153fe20e97743842f1a6e0c',
     DFSRegistry: '0x347FB634271F666353F23A3362f3935D96F97476',
     ProxyRegistry: '0x425fA97285965E01Cc5F951B62A51F6CDEA5cc0d',
 
