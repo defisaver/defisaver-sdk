@@ -492,7 +492,7 @@ export const otherAddresses = {
     Empty: '0x0000000000000000000000000000000000000000',
   },
   [NETWORKS.optimism.chainId]: {
-    RecipeExecutor: '0xA532771BD90dAf94b456A4acC9E9cbBdF1367572',
+    RecipeExecutor: '0x993A8c81142044E1CB0Cf0c3d84BEa235d842Fb0',
     DFSRegistry: '0xAf707Ee480204Ed6e2640B53cE86F680D28Afcbd',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
 
@@ -516,7 +516,7 @@ export const otherAddresses = {
     UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
   },
   [NETWORKS.base.chainId]: {
-    RecipeExecutor: '0xd0Ae279e330f98C399375f80968C8bf860202766',
+    RecipeExecutor: '0x7a87565b77dd65bbc153fe20e97743842f1a6e0c',
     DFSRegistry: '0x347FB634271F666353F23A3362f3935D96F97476',
     ProxyRegistry: '0x425fA97285965E01Cc5F951B62A51F6CDEA5cc0d',
 
