@@ -26,7 +26,7 @@ export const actionAddresses = {
     StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
 
     // exchange
-    DFSSell: '0xba7f206610e2aab9f027c92debee4ff6f1682657',
+    DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
@@ -280,7 +280,7 @@ export const actionAddresses = {
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
   [NETWORKS.optimism.chainId]: {
-    DFSSell: '0x47c402981f3d06e467befc9bbae8da4135ff5e28',
+    DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -340,7 +340,7 @@ export const actionAddresses = {
 
   },
   [NETWORKS.arbitrum.chainId]: {
-    DFSSell: '0xdC2C741b8A60B40BCc170F67C4aF02038b5086a7',
+    DFSSell: '0x1393eef11454ab068dd5e0d0be5eb922603eef1a',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
@@ -411,7 +411,7 @@ export const actionAddresses = {
   },
   [NETWORKS.base.chainId]: {
     // Basic
-    DFSSell: '0x31f218638dab2fc6d459319ae49271c3b98d2a3a',
+    DFSSell: '0xcd151d2bd3e129a4678f2116a9944b5aea0c860d',
     WrapEth: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
