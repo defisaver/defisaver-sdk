@@ -26,8 +26,7 @@ export const actionAddresses = {
     StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
 
     // exchange
-    DFSSell: '0x8bfc99652358884AF965324e6A233014510F0CFc',
-    DFSSellTEMP: '0x8bfc99652358884AF965324e6A233014510F0CFc',
+    DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
@@ -128,8 +127,7 @@ export const actionAddresses = {
     FLMaker: '0x0f8C3368cADF78167F5355D746Ed7b2A826A6e3b',
     FLBalancer: '0x93d333930c7f7260a1E6061B0a8C0CbdEC95F367',
     FLSpark: '0xe9Fe5a0f5e4B370Ae60d837da58744666D5C06F7',
-    FLAction: '0xC2b92B6c69e5c3b6b29385C1a17FEe906e0CA910', // temp fixed
-    FLActionTEMP: '0xC2b92B6c69e5c3b6b29385C1a17FEe906e0CA910',
+    FLAction: '0xC2b92B6c69e5c3b6b29385C1a17FEe906e0CA910',
     FLUniV3: '0x9CAdAC8Be718572F82B672b950c53F0b58483A35',
     FLGho: '0xbb67b81dD080a406227A38965d0393f396ddECBc',
     FLMorphoBlue: '0x6206C96EAc5EAC546861438A9f953B6BEa50EBAB',
@@ -281,8 +279,7 @@ export const actionAddresses = {
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
   [NETWORKS.optimism.chainId]: {
-    DFSSell: '0x01f7DB086076a16Cebd940A95919Af088C0662FD',
-    DFSSellTEMP: '0x01f7DB086076a16Cebd940A95919Af088C0662FD',
+    DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -316,9 +313,7 @@ export const actionAddresses = {
     FLAaveV3NoFee: '0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85',
     FLAaveV3: '0x8A07E93d2B74A80D726eE4E4A0aC1F906aB5Cc63',
     FLBalancer: '0x79d6bf536b8DD65909a3174C87eA6395310d5c41',
-    FLAction: '0x82d5eDeb005AfFbF381B5949C707a3305160F4A9', // temp fixed
-    FLActionTEMP: '0x82d5eDeb005AfFbF381B5949C707a3305160F4A9',
-
+    FLAction: '0x82d5eDeb005AfFbF381B5949C707a3305160F4A9',
 
     AaveV3RatioTrigger: '0xB76e3f7694589D0f34ba43b17AD0D15350Ab5f85',
     GasFeeTakerL2: '0xB3dB299622A9DB0E944ccda2Ef899d6fF365B082',
@@ -342,8 +337,7 @@ export const actionAddresses = {
 
   },
   [NETWORKS.arbitrum.chainId]: {
-    DFSSell: '0xF940aE73cb01c81e657916D14e5699c73a22566c',
-    DFSSellTEMP: '0xF940aE73cb01c81e657916D14e5699c73a22566c',
+    DFSSell: '0x1393eef11454ab068dd5e0d0be5eb922603eef1a',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
@@ -386,8 +380,7 @@ export const actionAddresses = {
     FLAaveV3: '0x53953aCEe438c083e4299F7976f03Ff3cb862161',
     FLBalancer: '0xdb28fE77709D88badC86868B27937428C3F48E73',
     FLUniV3: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3', // @DEV - incorrect, same as FLAction
-    FLAction: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3', // temp fixed
-    FLActionTEMP: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3',
+    FLAction: '0xab4AA2fcEA33205b44a556f8C48ceC3f21aFf0C3',
 
     GasFeeTakerL2: '0x2F64f73B222B4978CAfd0295c0fa106cE5f34996',
     AaveV3RatioCheck: '0x4a5c2cbCFB921b596Dec049389899CC8Eb4678ED',
@@ -414,8 +407,7 @@ export const actionAddresses = {
   },
   [NETWORKS.base.chainId]: {
     // Basic
-    DFSSell: '0x76e5c4e10E36B2f7E8B7F8a570e8A485B86d0ac7',
-    DFSSellTEMP: '0x76e5c4e10E36B2f7E8B7F8a570e8A485B86d0ac7',
+    DFSSell: '0xcd151d2bd3e129a4678f2116a9944b5aea0c860d',
     WrapEth: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
@@ -431,8 +423,8 @@ export const actionAddresses = {
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
     FLBalancer: '0x862E533198C9656B75bB6A5dDF0953F7ED5E8507',
     FLUniV3: '0x1bA6082D2ef1aB92a55B96264c72Eb8049C964Ce',
-    FLAction: '0xAAbd4B0372240E319F9722c4Fd1e2FE0C8d422D2', // fix temp
-    FLActionTEMP: '0xAAbd4B0372240E319F9722c4Fd1e2FE0C8d422D2',
+    FLAction: '0x5523E61fBEF59825831Ffbb1306aBc3Bb03BB3A4', // fix temp
+    FLMorphoBlue: '0x5523E61fBEF59825831Ffbb1306aBc3Bb03BB3A4',
 
     // AaveV3
     AaveV3Withdraw: '0x1d2Fa7dAcC660A9124c3685EE8a6E699d10409Eb',
@@ -471,7 +463,7 @@ export const actionAddresses = {
 
 export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
-    RecipeExecutor: '0x5029336642814bC51a42bA80BF83a6322110035D',
+    RecipeExecutor: '0x2ee96cf53ae5fbd5309284704f978d0ca66cb963',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
     DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
@@ -491,7 +483,7 @@ export const otherAddresses = {
     Empty: '0x0000000000000000000000000000000000000000',
   },
   [NETWORKS.optimism.chainId]: {
-    RecipeExecutor: '0xA532771BD90dAf94b456A4acC9E9cbBdF1367572',
+    RecipeExecutor: '0x993A8c81142044E1CB0Cf0c3d84BEa235d842Fb0',
     DFSRegistry: '0xAf707Ee480204Ed6e2640B53cE86F680D28Afcbd',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
 
@@ -503,7 +495,7 @@ export const otherAddresses = {
     UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
   },
   [NETWORKS.arbitrum.chainId]: {
-    RecipeExecutor: '0x4417bffFD5e3131069f62Fac07e40704EE234404',
+    RecipeExecutor: '0x7a25174229ea402d8ccd35fc6d55af079c399884',
     DFSRegistry: '0xBF1CaC12DB60819Bfa71A328282ecbc1D40443aA',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
 
@@ -515,7 +507,7 @@ export const otherAddresses = {
     UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
   },
   [NETWORKS.base.chainId]: {
-    RecipeExecutor: '0xd0Ae279e330f98C399375f80968C8bf860202766',
+    RecipeExecutor: '0x7a87565b77dd65bbc153fe20e97743842f1a6e0c',
     DFSRegistry: '0x347FB634271F666353F23A3362f3935D96F97476',
     ProxyRegistry: '0x425fA97285965E01Cc5F951B62A51F6CDEA5cc0d',
 

@@ -13,6 +13,6 @@ export class FLPaybackAction extends SendTokenAction {
    * @param tokenAddr
    */
   constructor(loanAmount: uint256, tokenAddr: EthAddress) {
-    super(tokenAddr, getAddr('FLActionTEMP'), loanAmount);
+    super(tokenAddr, getAddr('FLAction'), loanAmount);
   }
 }
