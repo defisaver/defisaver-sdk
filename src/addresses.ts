@@ -26,8 +26,7 @@ export const actionAddresses = {
     StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
 
     // exchange
-    DFSSell: '0x8bfc99652358884AF965324e6A233014510F0CFc',
-    DFSSellTEMP: '0x8bfc99652358884AF965324e6A233014510F0CFc',
+    DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
@@ -280,8 +279,7 @@ export const actionAddresses = {
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
   [NETWORKS.optimism.chainId]: {
-    DFSSell: '0x01f7DB086076a16Cebd940A95919Af088C0662FD',
-    DFSSellTEMP: '0x01f7DB086076a16Cebd940A95919Af088C0662FD',
+    DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -339,8 +337,7 @@ export const actionAddresses = {
 
   },
   [NETWORKS.arbitrum.chainId]: {
-    DFSSell: '0xF940aE73cb01c81e657916D14e5699c73a22566c',
-    DFSSellTEMP: '0xF940aE73cb01c81e657916D14e5699c73a22566c',
+    DFSSell: '0x1393eef11454ab068dd5e0d0be5eb922603eef1a',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
@@ -410,8 +407,7 @@ export const actionAddresses = {
   },
   [NETWORKS.base.chainId]: {
     // Basic
-    DFSSell: '0x76e5c4e10E36B2f7E8B7F8a570e8A485B86d0ac7',
-    DFSSellTEMP: '0x76e5c4e10E36B2f7E8B7F8a570e8A485B86d0ac7',
+    DFSSell: '0xcd151d2bd3e129a4678f2116a9944b5aea0c860d',
     WrapEth: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
@@ -467,7 +463,7 @@ export const actionAddresses = {
 
 export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
-    RecipeExecutor: '0x5029336642814bC51a42bA80BF83a6322110035D',
+    RecipeExecutor: '0x2ee96cf53ae5fbd5309284704f978d0ca66cb963',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
     DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
@@ -499,7 +495,7 @@ export const otherAddresses = {
     UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
   },
   [NETWORKS.arbitrum.chainId]: {
-    RecipeExecutor: '0x4417bffFD5e3131069f62Fac07e40704EE234404',
+    RecipeExecutor: '0x7a25174229ea402d8ccd35fc6d55af079c399884',
     DFSRegistry: '0xBF1CaC12DB60819Bfa71A328282ecbc1D40443aA',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
 
