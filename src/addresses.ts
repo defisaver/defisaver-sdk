@@ -24,6 +24,7 @@ export const actionAddresses = {
     TokenizedVaultAdapter: '0x3944364Ce3a273D269707484F3a676fCa17E08b8',
     PermitToken: '0x2654056046ed5E3f673FbcBC99A1BDB77F5c460B',
     StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
+    HandleAuth: '0xfc2e2b37c73d5d43cf5fcbd80a4049b620d60eba',
 
     // exchange
     DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
@@ -295,6 +296,7 @@ export const actionAddresses = {
     TokenizedVaultAdapter: '0xdf31669FEd440f5BfF658ca0bBF0D22B8abdeb73',
     ChangeProxyOwner: '0x62769258ea8b3a85cc6fb4332fc2760a122dbc9e',
     PermitToken: '0xE70c05125E7Cfe929f7ccC1baD348004aCF0f0d6',
+    HandleAuth: '0x7f143607250ee51e4dce31254c8ad33ec4c2dad5',
 
     // aave v3
     AaveV3ATokenPayback: '0x71B27114D1777298bD46c3770C42F9f807C49847',
@@ -353,6 +355,7 @@ export const actionAddresses = {
     TokenizedVaultAdapter: '0xD05C512bDFf6D3eAc5328807B3bC075F35271167',
     ChangeProxyOwner: '0x29F66A5fcB601c806E7156f29FDEC771BdC9c08d',
     PermitToken: '0x2E5E7a691092C158bb8341b936eF24FCcA6c0e00',
+    HandleAuth: '0xbfcab1339e1a56a0a836cbca6457eaf71f148fcb',
 
     // aave v3
     AaveV3ATokenPayback: '0x261906e5E0D0D38D9cBb5c10dB9c4031aabdf8C1',
@@ -418,6 +421,7 @@ export const actionAddresses = {
     TokenBalance: '0xc44bcE580B1b3339fE9272D3bC3d6566083ea59C',
     ChangeProxyOwner: '0x1947a44d3717a47556175d64fdc208619aa08874',
     PermitToken: '0x57c8ae94a5A11dA33e0518054102488b604628D0',
+    HandleAuth: '0x18a90e6db79199ace00140631ef931e0bd97837c',
 
     // Flashloan
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
