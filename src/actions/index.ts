@@ -27,6 +27,7 @@ import * as lsv from './lsv';
 import * as curveusd from './curveusd';
 import * as spark from './spark';
 import * as morphoblue from './morpho-blue';
+import * as summerfi from './summerfi';
 import * as llamalend from './llamalend';
 import * as merkl from './merkl';
 
@@ -60,6 +61,7 @@ export {
   spark,
   curveusd,
   morphoblue,
+  summerfi,
   llamalend,
   merkl,
 };
