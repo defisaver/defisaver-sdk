@@ -17,10 +17,10 @@ export class MakerTokenConverterAction extends Action {
   constructor(tokenAddr:EthAddress, from:EthAddress, to:EthAddress, amount:uint256) {
     super('McdTokenConverter', getAddr('McdTokenConverter'), ['address', 'address', 'address', 'uint256'], [tokenAddr, from, to, amount]);
     this.mappableArgs = [
+      this.args[0],
       this.args[1],
       this.args[2],
       this.args[3],
-      this.args[4],
     ];
   }
 
