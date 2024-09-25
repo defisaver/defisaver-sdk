@@ -9,3 +9,6 @@ export * from './CurveUsdLevCreateAction';
 export * from './CurveUsdSelfLiquidateWithCollAction';
 export * from './CurveUsdAdjustAction';
 export * from './CurveUsdGetDebtAction';
+export * from './CurveUsdLevCreateTransientAction';
+export * from './CurveUsdRepayTransientAction';
+export * from './CurveUsdSelfLiquidateWithCollTransientAction';
