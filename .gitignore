@@ -8,3 +8,5 @@ umd/
 yarn-error.log
 .yarnrc.yml
 .yarn
+
+.DS_Store
