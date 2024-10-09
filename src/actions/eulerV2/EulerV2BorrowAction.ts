@@ -13,20 +13,18 @@ export class EulerV2BorrowAction extends Action {
    * @param account The address of the Euler account, defaults to user's wallet
    * @param receiver The address to receive the borrowed assets
    * @param amount The amount of assets to borrow
-   * @param enableAsController Whether to enable borrow vault as controller. Can be skipped only if the vault is already enabled as controller
    */
   constructor(
     vault: EthAddress,
     account: EthAddress,
     receiver: EthAddress,
     amount: uint256,
-    enableAsController: boolean,
   ) {
     super(
       'EulerV2Borrow',
       getAddr('EulerV2Borrow'),
-      ['address', 'address', 'address', 'uint256', 'bool'],
-      [vault, account, receiver, amount, enableAsController],
+      ['address', 'address', 'address', 'uint256'],
+      [vault, account, receiver, amount],
     );
 
     this.mappableArgs = [
@@ -34,7 +32,6 @@ export class EulerV2BorrowAction extends Action {
       this.args[1],
       this.args[2],
       this.args[3],
-      this.args[4],
     ];
   }
 }

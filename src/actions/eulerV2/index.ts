@@ -6,7 +6,4 @@ export * from './EulerV2PaybackWithSharesAction';
 export * from './EulerV2PullDebtAction';
 export * from './EulerV2ReorderCollateralsAction';
 export * from './EulerV2CollateralSwitchAction';
-export * from './EulerV2ControllerSwitchAction';
-export * from './EulerV2LockDownModeSwitchAction';
-export * from './EulerV2PermitDisabledModeSwitchAction';
 
