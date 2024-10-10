@@ -1,0 +1,49 @@
+name: Tests
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, ready_for_review, synchronize]
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    if: github.event.pull_request.draft == false
+    name: Run tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Prep dependencies
+        run: npm i
+
+      - name: Run tests
+        run: npm run build-test
+        env:
+          RPC: ${{ secrets.RPC }}
+
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ always() && (needs.test.result == 'failure' || needs.test.result == 'timed_out') }}
+    needs:
+      - test
+    steps:
+    - uses: actions/checkout@v2
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_USERNAME: DeFi Saver SDK
+        SLACK_TITLE: DeFi Saver Workflow ${{ needs.test.result }}
+        SLACK_COLOR: ${{ needs.test.result }}
+        MSG_MINIMAL: actions url
+        SLACK_WEBHOOK: ${{ secrets.FE_TEST_RESULTS_WEBHOOK }}
+        SLACK_FOOTER: ""
