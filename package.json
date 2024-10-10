@@ -13,7 +13,8 @@
     "build": "npm run lint && npm run build:umd && npm run build:esm",
     "documentMD": "npx typedoc --plugin typedoc-plugin-markdown --out docs/md",
     "document": "npx typedoc --out docs/default",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "build-test": "npm run build && npm run test"
   },
   "author": "DeFi Saver",
   "repository": "https://github.com/DecenterApps/defisaver-sdk",
