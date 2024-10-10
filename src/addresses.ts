@@ -428,6 +428,7 @@ export const actionAddresses = {
     ChangeProxyOwner: '0x1947a44d3717a47556175d64fdc208619aa08874',
     PermitToken: '0x57c8ae94a5A11dA33e0518054102488b604628D0',
     HandleAuth: '0x18a90e6db79199ace00140631ef931e0bd97837c',
+    ToggleSub: '0x5F16C0a08d52b67fc73706c494F7535Dd3382b58',
 
     // Flashloan
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
