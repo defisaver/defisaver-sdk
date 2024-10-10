@@ -42,7 +42,7 @@ jobs:
       uses: rtCamp/action-slack-notify@v2
       env:
         SLACK_USERNAME: DeFi Saver SDK
-        SLACK_TITLE: DeFi Saver Workflow ${{ needs.test.result }}
+        SLACK_TITLE: DeFi Saver SDK Workflow ${{ needs.test.result }}
         SLACK_COLOR: ${{ needs.test.result }}
         MSG_MINIMAL: actions url
         SLACK_WEBHOOK: ${{ secrets.FE_TEST_RESULTS_WEBHOOK }}
