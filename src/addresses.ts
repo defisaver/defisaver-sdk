@@ -288,6 +288,7 @@ export const actionAddresses = {
     EulerV2Withdraw: '0x5bf1a54fe1e65B134E7920e53A5eB0D14b9e6aD1',
     EulerV2Borrow: '0x38d66ecD38b7800D8FD0Bc29489c2306170a9Ede',
     EulerV2Payback: '0x738b1df6b6962D8795Bda5bc5EFCd8b0B8c74d01',
+    EulerV2View: '0x25eCA04532C085F77Ea6CE92C94E9e69896686E6',
 
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
