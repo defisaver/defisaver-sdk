@@ -30,6 +30,7 @@ import * as morphoblue from './morpho-blue';
 import * as llamalend from './llamalend';
 import * as merkl from './merkl';
 import * as sky from './sky';
+import * as liquityV2 from './liquityV2';
 
 export {
   aave,
@@ -64,4 +65,5 @@ export {
   llamalend,
   merkl,
   sky,
+  liquityV2,
 };
