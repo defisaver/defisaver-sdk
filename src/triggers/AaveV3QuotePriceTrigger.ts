@@ -9,6 +9,6 @@ import { EthAddress, uint256, uint8 } from '../types';
  */
 export class AaveV3QuotePriceTrigger extends Action {
   constructor(baseTokenAddr:EthAddress, quoteTokenAddr:EthAddress, price:uint256, state:uint8) {
-    super('AaveV3QuotePriceTrigger', getAddr('AaveV3QuotePriceTrigger'), [['address', 'address', 'uint256', 'uint8']], [[baseTokenAddr, quoteTokenAddr, price, state]]);
+    super('AaveV3QuotePriceTrigger', getAddr('Empty'), [['address', 'address', 'uint256', 'uint8']], [[baseTokenAddr, quoteTokenAddr, price, state]]);
   }
 }

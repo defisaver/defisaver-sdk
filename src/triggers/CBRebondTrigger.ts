@@ -9,6 +9,6 @@ import { uint256 } from '../types';
  */
 export class CBRebondTrigger extends Action {
   constructor(bondID:uint256) {
-    super('CBRebondTrigger', getAddr('CBRebondTrigger'), ['uint256'], [bondID]);
+    super('CBRebondTrigger', getAddr('Empty'), ['uint256'], [bondID]);
   }
 }

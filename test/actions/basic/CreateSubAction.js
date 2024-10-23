@@ -19,7 +19,6 @@ describe('Action: CreateSubAction', () => {
           ],
         ]
       );
-      console.log(action);
     });
 
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));

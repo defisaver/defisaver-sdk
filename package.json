@@ -6,7 +6,7 @@
   "module": "./esm/src/index.js",
   "types": "./esm/src/index.d.ts",
   "scripts": {
-    "test": "mocha test/*",
+    "test": "mocha 'test/**'",
     "test-single": "mocha ./test/$npm_config_name.js",
     "version-bump": "git commit -am \"Version bump to $(npm version patch | cut -c 2-)\"",
     "build:esm": "rm -rf esm && tsc -p tsconfig.esm.json",

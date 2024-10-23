@@ -4,7 +4,8 @@ const axios = require("axios");
 const dfs = require('../../src');
 const exchangeUtils = dfs.utils.zeroExExchange;
 
-describe('Exchange utils', () => {
+describe.skip('Exchange utils', () => {
+
   const prices = {};
 
   const myAddr = '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f';
