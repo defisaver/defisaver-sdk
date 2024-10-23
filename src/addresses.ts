@@ -540,11 +540,8 @@ export const getAddr = (name: string, chainId:number = CONFIG.chainId) : EthAddr
   const actions = actionAddresses[_chainId];
   const other = otherAddresses[_chainId];
 
-  // skip this check if we're in testing mode
-  if (!CONFIG.testingMode) {
-    if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
-    if (!actions[name as keyof typeof actions] && !other[name as keyof typeof other]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
-  }
+  if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
+  if (!actions[name as keyof typeof actions] && !other[name as keyof typeof other]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
 
   if (actions[name as keyof typeof actions]) return actions[name as keyof typeof actions]!;
   return other[name as keyof typeof other]!;
