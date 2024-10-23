@@ -3,7 +3,7 @@ const { BN, padLeft, toHex } = require('web3-utils');
 const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
 const RecipeAbi = require('../../src/abis/Recipe.json');
 const MockAccessLists = require('./MockAccessLists');
-const dfs = require("../../umd");
+const dfs = require("../../src");
 
 /**
  * Set of Actions to be performed sequentially in a single transaction

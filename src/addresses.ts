@@ -436,6 +436,7 @@ export const actionAddresses = {
     ChangeProxyOwner: '0x1947a44d3717a47556175d64fdc208619aa08874',
     PermitToken: '0x57c8ae94a5A11dA33e0518054102488b604628D0',
     HandleAuth: '0x18a90e6db79199ace00140631ef931e0bd97837c',
+    ToggleSub: '0x5F16C0a08d52b67fc73706c494F7535Dd3382b58',
 
     // Flashloan
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
@@ -547,11 +548,8 @@ export const getAddr = (name: string, chainId:number = CONFIG.chainId) : EthAddr
   const actions = actionAddresses[_chainId];
   const other = otherAddresses[_chainId];
 
-  // skip this check if we're in testing mode
-  if (!CONFIG.testingMode) {
-    if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
-    if (!actions[name as keyof typeof actions] && !other[name as keyof typeof other]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
-  }
+  if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
+  if (!actions[name as keyof typeof actions] && !other[name as keyof typeof other]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
 
   if (actions[name as keyof typeof actions]) return actions[name as keyof typeof actions]!;
   return other[name as keyof typeof other]!;

@@ -1,4 +1,4 @@
-const dfs = require('../umd');
+const dfs = require('../src');
 const {getAssetInfo} = require("@defisaver/tokens");
 const {getIlkInfo} = require("@defisaver/tokens");
 const {assetAmountInWei} = require("@defisaver/tokens");

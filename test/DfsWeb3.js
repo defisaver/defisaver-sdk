@@ -1,7 +1,7 @@
 require('dotenv').config();
 const {assert} = require('chai');
 const Web3 = require('web3');
-const dfs = require('../umd');
+const dfs = require('../src');
 const {getIlkInfo, assetAmountInWei} = require("@defisaver/tokens");
 
 describe('DfsWeb3', () => {

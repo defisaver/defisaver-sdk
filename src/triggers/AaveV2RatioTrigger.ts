@@ -9,6 +9,6 @@ import { EthAddress, uint256, uint8 } from '../types';
  */
 export class AaveV2RatioTrigger extends Action {
   constructor(user:EthAddress, market:EthAddress, ratio:uint256, state:uint8) {
-    super('AaveV2RatioTrigger', getAddr('AaveV2RatioTrigger'), [['address', 'address', 'uint256', 'uint8']], [[user, market, ratio, state]]);
+    super('AaveV2RatioTrigger', getAddr('Empty'), [['address', 'address', 'uint256', 'uint8']], [[user, market, ratio, state]]);
   }
 }
