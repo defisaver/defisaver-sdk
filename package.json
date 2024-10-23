@@ -6,9 +6,10 @@
   "module": "./esm/src/index.js",
   "types": "./esm/src/index.d.ts",
   "scripts": {
-    "test": "mocha --recursive",
+    "test": "mocha 'test/**'",
+    "test-single": "mocha ./test/$npm_config_name.js",
     "version-bump": "git commit -am \"Version bump to $(npm version patch | cut -c 2-)\"",
-    "build:esm": "rm -rf esm && tsc -b",
+    "build:esm": "rm -rf esm && tsc -p tsconfig.esm.json",
     "build:umd": "rm -rf umd && webpack --config=webpack.umd.js",
     "build": "npm run lint && npm run build:umd && npm run build:esm",
     "documentMD": "npx typedoc --plugin typedoc-plugin-markdown --out docs/md",

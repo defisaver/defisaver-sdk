@@ -30,7 +30,7 @@ jobs:
         run: npm run lint-check
 
       - name: Run tests
-        run: npm run build-test
+        run: npm run test
         env:
           RPC: ${{ secrets.RPC }}
 
