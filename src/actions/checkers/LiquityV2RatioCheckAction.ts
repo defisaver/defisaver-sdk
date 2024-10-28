@@ -17,7 +17,7 @@ export class LiquityV2RatioCheckAction extends Action {
   constructor(market: EthAddress, troveId: uint256, ratioState:uint8, targetRatio:uint256) {
     super(
       'LiquityV2RatioCheck',
-      getAddr('LiquityV2RatioCheck'),
+      getAddr('Empty'),
       ['address', 'uint256', 'uint8', 'uint256'],
       [market, troveId, ratioState, targetRatio],
     );
