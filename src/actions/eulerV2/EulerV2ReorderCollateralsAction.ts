@@ -18,7 +18,7 @@ export class EulerV2ReorderCollateralsAction extends Action {
   ) {
     super(
       'EulerV2ReorderCollaterals',
-      getAddr('EulerV2ReorderCollaterals'),
+      getAddr('Empty'),
       ['address', 'uint8[][]'],
       [account, indexes],
     );

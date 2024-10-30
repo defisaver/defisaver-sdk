@@ -22,7 +22,7 @@ export class EulerV2PullDebtAction extends Action {
   ) {
     super(
       'EulerV2PullDebt',
-      getAddr('EulerV2PullDebt'),
+      getAddr('Empty'),
       ['address', 'address', 'address', 'uint256'],
       [vault, account, from, amount],
     );

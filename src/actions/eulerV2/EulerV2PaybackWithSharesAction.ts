@@ -22,7 +22,7 @@ export class EulerV2PaybackWithSharesAction extends Action {
   ) {
     super(
       'EulerV2PaybackWithShares',
-      getAddr('EulerV2PaybackWithShares'),
+      getAddr('Empty'),
       ['address', 'address', 'address', 'uint256'],
       [vault, account, from, amount],
     );
