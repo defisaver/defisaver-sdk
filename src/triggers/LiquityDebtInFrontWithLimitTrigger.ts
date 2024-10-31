@@ -11,7 +11,7 @@ export class LiquityDebtInFrontWithLimitTrigger extends Action {
   constructor(troveOwner:EthAddress, debtInFront:uint256) {
     super(
       'LiquityDebtInFrontWithLimitTrigger',
-      getAddr('LiquityDebtInFrontWithLimitTrigger'),
+      getAddr('Empty'),
       ['address', 'uint256'],
       [troveOwner, debtInFront],
     );

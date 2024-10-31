@@ -1,4 +1,4 @@
-const dfs = require('../umd');
+const dfs = require('../src');
 
 describe('Strategy', () => {
 

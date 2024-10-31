@@ -29,6 +29,8 @@ import * as spark from './spark';
 import * as morphoblue from './morpho-blue';
 import * as llamalend from './llamalend';
 import * as merkl from './merkl';
+import * as eulerV2 from './eulerV2';
+import * as sky from './sky';
 
 export {
   aave,
@@ -62,4 +64,6 @@ export {
   morphoblue,
   llamalend,
   merkl,
+  eulerV2,
+  sky,
 };

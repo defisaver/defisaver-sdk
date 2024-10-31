@@ -11,3 +11,4 @@ export * from './MakerBoostCompositeAction';
 export * from './MakerRepayCompositeAction';
 export * from './MakerDsrDepositAction';
 export * from './MakerDsrWithdrawAction';
+export * from './MakerTokenConverterAction';
