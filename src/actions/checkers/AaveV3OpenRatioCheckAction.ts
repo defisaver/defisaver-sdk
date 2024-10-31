@@ -17,7 +17,7 @@ export class AaveV3OpenRatioCheckAction extends Action {
   constructor(targetRatio:uint256, market:EthAddress) {
     super(
       'AaveV3OpenRatioCheck',
-      getAddr('AaveV3OpenRatioCheck'),
+      getAddr('Empty'),
       ['uint256', 'address'],
       [targetRatio, market],
     );
