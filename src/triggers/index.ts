@@ -21,3 +21,4 @@ export * from './CurveUsdHealthRatioTrigger';
 export * from './MorphoBlueRatioTrigger';
 export * from './OffchainPriceTrigger';
 export * from './LiquityV2RatioTrigger';
+export * from './ShouldClosePriceTrigger';
