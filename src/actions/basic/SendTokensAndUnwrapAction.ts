@@ -1,23 +1,22 @@
 import { Action } from '../../Action';
-import { requireAddress } from '../../utils/general';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256 } from '../../types';
 
 /**
- * Transfers specified tokens from recipe (DsProxy) to specified addresses
+ * Transfers specified tokens from user's wallet to specified addresses and unwraps for weth address
  *
  * @category BasicActions
  */
-export class SendTokensAction extends Action {
+export class SendTokensAndUnwrapAction extends Action {
   /**
    * @param tokens Token addresses
    * @param receivers Transfer recipients
-   * @param amounts Transfer amounts (-1 for whole Recipe (DsProxy) balance)
+   * @param amounts Transfer amounts
    */
   constructor(tokens: Array<EthAddress>, receivers: Array<EthAddress>, amounts:Array<uint256>) {
     super(
-      'SendTokens',
-      getAddr('SendTokens'),
+      'SendTokensAndUnwrap',
+      getAddr('Empty'),
       [
         'address[]',
         'address[]',

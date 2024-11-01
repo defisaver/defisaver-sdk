@@ -12,7 +12,7 @@ export class LiquityRatioTrigger extends Action {
     super(
       'LiquityRatioTrigger',
       getAddr('Empty'),
-      ['addresss', 'uint256', 'uint8'],
+      ['address', 'uint256', 'uint8'],
       [troveOwner, ratio, state],
     );
   }

@@ -30,3 +30,4 @@ export * from './RemoveTokenApprovalAction';
 export * from './PermitTokenAction';
 export * from './StarknetClaimAction';
 export * from './HandleAuthAction';
+export * from './SendTokensAndUnwrapAction';
