@@ -7,10 +7,10 @@ import { EthAddress, uint256 } from '../types';
  *
  * @category Triggers
  */
-export class ShouldClosePriceTrigger extends Action {
+export class ClosePriceTrigger extends Action {
   constructor(token:EthAddress, lowerPrice:uint256, upperPrice:uint256) {
     super(
-      'ShouldClosePriceTrigger',
+      'ClosePriceTrigger',
       getAddr('Empty'),
       ['address', 'uint256', 'uint256'],
       [token, lowerPrice, upperPrice],
