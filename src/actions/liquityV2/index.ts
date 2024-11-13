@@ -10,3 +10,4 @@ export * from './LiquityV2SPClaimCollAction';
 export * from './LiquityV2AdjustAction';
 export * from './LiquityV2ClaimAction';
 export * from './LiquityV2AdjustInterestRateAction';
+export * from './LiquityV2AdjustZombieTroveAction';
