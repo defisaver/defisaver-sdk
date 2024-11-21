@@ -29,7 +29,7 @@ export class MorphoBlueRatioCheckAction extends Action {
     targetRatio:uint256,
   ) {
     super('MorphoBlueRatioCheck',
-      getAddr('MorphoBlueRatioCheck'),
+      getAddr('Empty'),
       [['address', 'address', 'address', 'address', 'uint256'], 'address', 'uint8', 'uint256'],
       [[loanToken, collateralToken, oracle, irm, lltv], user, ratioState, targetRatio]);
 
