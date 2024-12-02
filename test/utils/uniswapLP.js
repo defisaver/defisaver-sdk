@@ -1,6 +1,6 @@
 const {assert} = require('chai');
 const {getAssetInfo} = require("@defisaver/tokens");
-const dfs = require('../../umd');
+const dfs = require('../../src');
 const uniswapUtils = dfs.utils.uniswapLP;
 
 describe('Utils', () => {

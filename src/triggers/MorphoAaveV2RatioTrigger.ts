@@ -10,6 +10,6 @@ import { EthAddress, uint256, uint8 } from '../types';
  */
 export class MorphoAaveV2RatioTrigger extends Action {
   constructor(user:EthAddress, ratio:uint256, state:uint8) {
-    super('MorphoAaveV2RatioTrigger', getAddr('MorphoAaveV2RatioTrigger'), ['address', 'uint256', 'uint8'], [user, ratio, state]);
+    super('MorphoAaveV2RatioTrigger', getAddr('Empty'), ['address', 'uint256', 'uint8'], [user, ratio, state]);
   }
 }

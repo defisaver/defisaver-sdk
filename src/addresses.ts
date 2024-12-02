@@ -14,20 +14,25 @@ export const actionAddresses = {
     TokenBalance: '0xa92B177950F1460119940436515FD857C24494BC',
     AutomationV2Unsub: '0xe35Fb12fE9796847751076aCf5ee7d124108612C',
     SendTokenAndUnwrap: '0x4155537e6933E59a62deb68f6ad93d237d07242a',
-    ToggleSub: '0x9A78E9d6538cfDbA0242Ca5eC46771E6132E8085',
+    ToggleSub: '0x2120ad7b4eE1795C8B027c1592eCB918faAb163A',
     UpdateSub: '0xF6Cb8f7e61a64075ec8FAC3f298745605E543233',
     TransferNFT: '0x861e893E1796F81248e75F06C0b09Abdc8fe2f6F',
     CreateSub: '0xEB13C96257667cF0A037305A46092bf7C70A61e1',
     ApproveToken: '0xA4161cED7A29F0a3424e464a4a2dBf75888c5BF9',
     SDaiWrap: '0xac7Ac294F29d818D26Bd9DF86d36904B1Ed346Ae',
     SDaiUnwrap: '0xe8Cb536BB96075241c4bd8f1831A8577562F2B32',
-    TokenizedVaultAdapter: '0x3944364Ce3a273D269707484F3a676fCa17E08b8',
+    TokenizedVaultAdapter: '0x30aB8926FBE6c3aeEf52aFC575E54FAD3ae84a24',
     PermitToken: '0x2654056046ed5E3f673FbcBC99A1BDB77F5c460B',
     StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
     HandleAuth: '0xfc2e2b37c73d5d43cf5fcbd80a4049b620d60eba',
 
     // exchange
     DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
+
+    // sky
+    SkyStake: '0x5803C399EE9f887C8b81075E4C185c448361c235',
+    SkyUnstake: '0x4b6d3A01465fa88D7D596333D15832434a568452',
+    SkyClaimRewards: '0x8A2A23DfC0CD1738bD4408F1668E2B12ACD95369',
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
@@ -76,6 +81,8 @@ export const actionAddresses = {
     AaveV3ATokenPayback: '0xDe5c012cd1878D86E91309593764895a3adb380E',
     AaveV3View: '0x9ECB0645b357fDD7B92789B91595160862Bd45d0',
     AaveV3DelegateWithSig: '0x9253E22Ce4f0AeE541301CF8cC29843f9083a1F4',
+    GhoClaimAAVE: '0xA53060d822cB31AFd5B26D899130a14E8Efc5917',
+    GhoUnstake: '0x3fD02e65B4fb12381946D03815Ff3FF8Ebe2fC63',
 
     // LSV action
     LSVWithdraw: '0x0A4Ef5ADf759064b546441a50109eCbC2528A455',
@@ -264,6 +271,7 @@ export const actionAddresses = {
     MorphoBluePayback: '0x9f437E5F705E02d77adC2e72C34926978776b085',
     MorphoBlueSetAuth: '0xf30935e20c6357c7bcecd5e58ad6de26d54b9f64',
     MorphoBlueSetAuthWithSig: '0xE2d5fCDBf73BAd24A0FCAf6B2733933A98021808',
+    MorphoTokenWrap: '0x71b6d268c2Aabcb0dA16CbA4c77e65d9e29b0644',
 
     // llamalend
     LlamaLendCreate: '0x4349be191ea63173eD98b7fC1b0DeC1ef9Bc6c11',
@@ -277,6 +285,14 @@ export const actionAddresses = {
     LlamaLendRepay: '0x57693f72E628A3F7323D31De35Bd158493Aa9CC0',
     LlamaLendLevCreate: '0x534b704a62385cfe5EEB8d9605419743d4fe105E',
     LlamaLendSelfLiquidateWithColl: '0xA99DD1D91141cA63C423DB763dE75078336803B2',
+
+    // eulerV2
+    EulerV2Supply: '0xa067787D086841437D112e0C847dDB3e5D95173f',
+    EulerV2Withdraw: '0x5bf1a54fe1e65B134E7920e53A5eB0D14b9e6aD1',
+    EulerV2Borrow: '0x38d66ecD38b7800D8FD0Bc29489c2306170a9Ede',
+    EulerV2Payback: '0x738b1df6b6962D8795Bda5bc5EFCd8b0B8c74d01',
+    EulerV2CollateralSwitch: '0x38950b50Fb38aC19D06e8CE5AAE632D6dF1EEb1a',
+    EulerV2View: '0x8932E46Ecf96b5Fe033F5e27Ab6dC755Cb668967',
 
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
   },
@@ -292,7 +308,7 @@ export const actionAddresses = {
     SubInputs: '0x60d00020f12dd202eAfDba84e8F69E165a84c64D',
     ApproveToken: '0x842a81d2cfe26d401CD63Cc14e9DEf275c197C1a',
     SendTokenAndUnwrap: '0xd4f69250cb4d1f083Dd372FEace391A16ABbfBDc',
-    ToggleSub: '0x988C5C24AE6348404196267e19962f36961CAc29',
+    ToggleSub: '0xfc19a12e35bb0b5e6a3d3017be9e9022a6486eee',
     TokenBalance: '0xC6FF5b01f7c7b35b6e093fF70D2332B361C5Be5A',
     TokenizedVaultAdapter: '0xdf31669FEd440f5BfF658ca0bBF0D22B8abdeb73',
     ChangeProxyOwner: '0x62769258ea8b3a85cc6fb4332fc2760a122dbc9e',
@@ -351,7 +367,7 @@ export const actionAddresses = {
     SubInputs: '0x8ec14f9568e1d7cf73b68df899808abd7fe6fc8d',
     SendTokenAndUnwrap: '0x009C5B1c7C844Bd662Da3991295b1B3Bd71a430c',
     ApproveToken: '0x01058999F5Ac434EF48DFB5Cd942c57A7661787B',
-    ToggleSub: '0x71015226EADFd4aC887fB56556F64338e352439b',
+    ToggleSub: '0x2eabbab99759c2ab6e9e309d42ee07d3bc7c38fe',
     TokenBalance: '0x483B903E702F60698Dd8124558C6199922737f1F',
     TokenizedVaultAdapter: '0xD05C512bDFf6D3eAc5328807B3bC075F35271167',
     ChangeProxyOwner: '0x29F66A5fcB601c806E7156f29FDEC771BdC9c08d',
@@ -423,6 +439,7 @@ export const actionAddresses = {
     ChangeProxyOwner: '0x1947a44d3717a47556175d64fdc208619aa08874',
     PermitToken: '0x57c8ae94a5A11dA33e0518054102488b604628D0',
     HandleAuth: '0x18a90e6db79199ace00140631ef931e0bd97837c',
+    ToggleSub: '0x5F16C0a08d52b67fc73706c494F7535Dd3382b58',
 
     // Flashloan
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
@@ -534,11 +551,8 @@ export const getAddr = (name: string, chainId:number = CONFIG.chainId) : EthAddr
   const actions = actionAddresses[_chainId];
   const other = otherAddresses[_chainId];
 
-  // skip this check if we're in testing mode
-  if (!CONFIG.testingMode) {
-    if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
-    if (!actions[name as keyof typeof actions] && !other[name as keyof typeof other]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
-  }
+  if (!actions && !other) throw new Error(`Cannot find address for chainId: ${_chainId}.`);
+  if (!actions[name as keyof typeof actions] && !other[name as keyof typeof other]) throw new Error(`Cannot find address for name: ${name} (chainId: ${_chainId}).`);
 
   if (actions[name as keyof typeof actions]) return actions[name as keyof typeof actions]!;
   return other[name as keyof typeof other]!;

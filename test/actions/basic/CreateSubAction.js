@@ -1,4 +1,4 @@
-const dfs = require("../../../umd");
+const dfs = require("../../../src");
 const {encodeForDsProxyCall, encodeForRecipe} = require("../../_actionUtils");
 
 describe('Action: CreateSubAction', () => {
@@ -19,7 +19,6 @@ describe('Action: CreateSubAction', () => {
           ],
         ]
       );
-      console.log(action);
     });
 
     it('encodeForDsProxyCall', () => encodeForDsProxyCall(action));

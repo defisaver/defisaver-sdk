@@ -9,6 +9,6 @@ import { EthAddress, uint256, uint8 } from '../types';
  */
 export class CompoundRatioTrigger extends Action {
   constructor(user:EthAddress, ratio:uint256, state:uint8) {
-    super('CompoundRatioTrigger', getAddr('CompoundRatioTrigger'), ['address', 'uint256', 'uint8'], [user, ratio, state]);
+    super('CompoundRatioTrigger', getAddr('Empty'), ['address', 'uint256', 'uint8'], [user, ratio, state]);
   }
 }

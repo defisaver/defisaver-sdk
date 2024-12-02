@@ -9,6 +9,6 @@ import { EthAddress, uint256 } from '../types';
  */
 export class CurveUsdHealthRatioTrigger extends Action {
   constructor(user:EthAddress, controller:EthAddress, ratio:uint256) {
-    super('CurveUsdHealthRatioTrigger', getAddr('CurveUsdHealthRatioTrigger'), [['address', 'address', 'uint256']], [[user, controller, ratio]]);
+    super('CurveUsdHealthRatioTrigger', getAddr('Empty'), [['address', 'address', 'uint256']], [[user, controller, ratio]]);
   }
 }
