@@ -9,6 +9,6 @@ import { uint256 } from '../types';
  */
 export class GasPriceTrigger extends Action {
   constructor(maxGasPrice:uint256) {
-    super('GasPriceTrigger', getAddr('GasPriceTrigger'), ['uint256'], [maxGasPrice]);
+    super('GasPriceTrigger', getAddr('Empty'), ['uint256'], [maxGasPrice]);
   }
 }

@@ -9,6 +9,6 @@ import { EthAddress, uint256, uint8 } from '../types';
  */
 export class SparkRatioTrigger extends Action {
   constructor(user:EthAddress, market:EthAddress, ratio:uint256, state:uint8) {
-    super('SparkRatioTrigger', getAddr('SparkRatioTrigger'), [['address', 'address', 'uint256', 'uint8']], [[user, market, ratio, state]]);
+    super('SparkRatioTrigger', getAddr('Empty'), [['address', 'address', 'uint256', 'uint8']], [[user, market, ratio, state]]);
   }
 }

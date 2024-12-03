@@ -9,6 +9,6 @@ import { EthAddress, uint256, uint8 } from '../types';
  */
 export class CurveUsdCollRatioTrigger extends Action {
   constructor(user:EthAddress, controller:EthAddress, ratio:uint256, state:uint8) {
-    super('CurveUsdCollRatioTrigger', getAddr('CurveUsdCollRatioTrigger'), [['address', 'address', 'uint256', 'uint8']], [[user, controller, ratio, state]]);
+    super('CurveUsdCollRatioTrigger', getAddr('Empty'), [['address', 'address', 'uint256', 'uint8']], [[user, controller, ratio, state]]);
   }
 }

@@ -18,7 +18,7 @@ export class MorphoBlueRatioTrigger extends Action {
   ) {
     super(
       'MorphoBlueRatioTrigger',
-      getAddr('MorphoBlueRatioTrigger'),
+      getAddr('Empty'),
       [['bytes32', 'address', 'uint256', 'uint8']],
       [[marketId, user, ratio, state]]);
   }

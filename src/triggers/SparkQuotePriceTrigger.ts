@@ -9,6 +9,6 @@ import { EthAddress, uint256, uint8 } from '../types';
  */
 export class SparkQuotePriceTrigger extends Action {
   constructor(baseTokenAddr:EthAddress, quoteTokenAddr:EthAddress, price:uint256, state:uint8) {
-    super('SparkQuotePriceTrigger', getAddr('SparkQuotePriceTrigger'), [['address', 'address', 'uint256', 'uint8']], [[baseTokenAddr, quoteTokenAddr, price, state]]);
+    super('SparkQuotePriceTrigger', getAddr('Empty'), [['address', 'address', 'uint256', 'uint8']], [[baseTokenAddr, quoteTokenAddr, price, state]]);
   }
 }
