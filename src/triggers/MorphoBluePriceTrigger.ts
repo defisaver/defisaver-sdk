@@ -6,7 +6,7 @@ import { EthAddress, uint256, uint8 } from '../types';
  * Trigger contract that verifies if current token price ratio is over/under the price ratio specified during subscription
  * @category Triggers
  */
-export class MorphoBluePriceTriggerAction extends Action {
+export class MorphoBluePriceTrigger extends Action {
   /**
    * @param loanToken - MarketParams loanToken
    * @param collateralToken -  MarketParams collateralToken
