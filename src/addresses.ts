@@ -440,6 +440,8 @@ export const actionAddresses = {
     PermitToken: '0x57c8ae94a5A11dA33e0518054102488b604628D0',
     HandleAuth: '0x18a90e6db79199ace00140631ef931e0bd97837c',
     ToggleSub: '0x5F16C0a08d52b67fc73706c494F7535Dd3382b58',
+    CreateSub: '0xeE739937085A716477BCB5b01b0f74e1BE046645',
+    UpdateSub: '0x1601c6ABCDE6e6d8Ad96628AFe20d47908127Aea',
 
     // Flashloan
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
