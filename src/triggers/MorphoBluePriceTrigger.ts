@@ -11,8 +11,6 @@ export class MorphoBluePriceTrigger extends Action {
    * @param loanToken - MarketParams loanToken
    * @param collateralToken -  MarketParams collateralToken
    * @param oracle -  MarketParams oracle
-   * @param irm -  MarketParams irm
-   * @param lltv -  MarketParams lltv
    * @param price - price of the collateral token in terms of the loan token that represents the triggerable point.
    * @param state - 0 for over, 1 for under
    */
@@ -20,16 +18,14 @@ export class MorphoBluePriceTrigger extends Action {
     loanToken:EthAddress,
     collateralToken:EthAddress,
     oracle:EthAddress,
-    irm:EthAddress,
-    lltv:uint256,
     price:uint256,
     state:uint8,
   ) {
     super(
       'MorphoBluePriceTrigger',
       getAddr('Empty'),
-      [['address', 'address', 'address', 'address', 'uint256'], 'uint256', 'uint8'],
-      [[loanToken, collateralToken, oracle, irm, lltv], price, state],
+      [['address', 'address', 'address'], 'uint256', 'uint8'],
+      [[oracle, collateralToken, loanToken], price, state],
     );
   }
 }
