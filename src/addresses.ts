@@ -25,6 +25,7 @@ export const actionAddresses = {
     PermitToken: '0x2654056046ed5E3f673FbcBC99A1BDB77F5c460B',
     StarknetClaim: '0x40069889098cd54d6c1021578000f37b197479cf',
     HandleAuth: '0xfc2e2b37c73d5d43cf5fcbd80a4049b620d60eba',
+    SendTokens: '0x7d05c0ABeF6d91300a237026507c4a2631ddAdEa',
 
     // exchange
     DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
