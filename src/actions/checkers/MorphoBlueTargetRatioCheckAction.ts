@@ -26,7 +26,7 @@ export class MorphoBlueTargetRatioCheckAction extends Action {
     user:EthAddress,
     targetRatio:uint256,
   ) {
-    super('MorphoBlueTargetRatioCheckAction',
+    super('MorphoBlueTargetRatioCheck',
       getAddr('Empty'),
       [['address', 'address', 'address', 'address', 'uint256'], 'address', 'uint256'],
       [[loanToken, collateralToken, oracle, irm, lltv], user, targetRatio]);
