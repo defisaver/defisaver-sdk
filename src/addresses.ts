@@ -86,11 +86,11 @@ export const actionAddresses = {
     GhoUnstake: '0x3fD02e65B4fb12381946D03815Ff3FF8Ebe2fC63',
 
     // LSV action
-    LSVWithdraw: '0x0A4Ef5ADf759064b546441a50109eCbC2528A455',
+    LSVWithdraw: '0xB0197CF09cc4c9891B0c2fCbE4AD7323154cA8a5',
     LSVBorrow: '0x7dFB434527Fdb39854156cDBa9bF4799E36E7e82',
-    LSVSupply: '0x984c00DC098c98bed1CDfe2Ed786Fe1443da6671',
+    LSVSupply: '0x17a3e39a1aA6d9BA1Ffd80Ae0E388cA064a8D28F',
     LSVPayback: '0x10749CE97583dBcEb54a083386CC8438C4e0FE65',
-    LSVSell: '0x0c1bb9A39d4A0EF4215Ade19Ce4F954E8419Dfd7',
+    LSVSell: '0xE4D93b8d55D7456e85afc0fcF91AC085aF26bbBA',
 
     // morpho aave v2
     MorphoAaveV2Borrow: '0xa85C3E41Bf9F75a381927e1Aa9b00f77C4631109',
@@ -299,6 +299,13 @@ export const actionAddresses = {
     EulerV2View: '0x8932E46Ecf96b5Fe033F5e27Ab6dC755Cb668967',
 
     MerklClaim: '0xE88036F3F0D7e216D63726356cA2bC334e305fe5',
+
+    RenzoStake: '0x17DCF7132E30a0dC3d515C605E7c3D750c61E73c',
+
+    // etherFi
+    EtherFiStake: '0xcadB650B6a60C89f7847Cba555A7eeCC220EA2e8',
+    EtherFiWrap: '0x086464be5c73f66cfbe6b64ec23aa5a86749ef58',
+    EtherFiUnwrap: '0x6Eb09948DDf9332d628d156950b9B1C0c091e8D8',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
@@ -444,6 +451,8 @@ export const actionAddresses = {
     PermitToken: '0x57c8ae94a5A11dA33e0518054102488b604628D0',
     HandleAuth: '0x18a90e6db79199ace00140631ef931e0bd97837c',
     ToggleSub: '0x5F16C0a08d52b67fc73706c494F7535Dd3382b58',
+    CreateSub: '0xeE739937085A716477BCB5b01b0f74e1BE046645',
+    UpdateSub: '0x1601c6ABCDE6e6d8Ad96628AFe20d47908127Aea',
 
     // Flashloan
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
