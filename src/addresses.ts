@@ -454,6 +454,7 @@ export const actionAddresses = {
     ToggleSub: '0x5F16C0a08d52b67fc73706c494F7535Dd3382b58',
     CreateSub: '0xeE739937085A716477BCB5b01b0f74e1BE046645',
     UpdateSub: '0x1601c6ABCDE6e6d8Ad96628AFe20d47908127Aea',
+    MerklClaim: '0xa2c6cd875c52bf5c27516fae3b6ba9241790908a',
 
     // Flashloan
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
