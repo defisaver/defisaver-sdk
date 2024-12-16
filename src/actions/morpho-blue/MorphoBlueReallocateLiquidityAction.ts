@@ -28,7 +28,7 @@ export class MorphoBlueReallocateLiquidityAction extends Action {
   ) {
     super(
       'MorphoBlueReallocateLiquidity',
-      getAddr('Empty'),
+      getAddr('MorphoBlueReallocateLiquidity'),
       [
         ['address', 'address', 'address', 'address', 'uint256'], // MarketParams
         'address[]', // vaults
