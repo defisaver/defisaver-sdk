@@ -277,6 +277,7 @@ export const actionAddresses = {
     MorphoBlueSetAuth: '0xf30935e20c6357c7bcecd5e58ad6de26d54b9f64',
     MorphoBlueSetAuthWithSig: '0xE2d5fCDBf73BAd24A0FCAf6B2733933A98021808',
     MorphoTokenWrap: '0x71b6d268c2Aabcb0dA16CbA4c77e65d9e29b0644',
+    MorphoBlueReallocateLiquidity: '0x17cCA8194602020e855CC8Bc11ffA82d8F998A93',
 
     // llamalend
     LlamaLendCreate: '0x4349be191ea63173eD98b7fC1b0DeC1ef9Bc6c11',
@@ -495,6 +496,7 @@ export const actionAddresses = {
     MorphoBlueSetAuth: '0xb565630c6ddd1fae169c453667f5aa52ef4e2e39',
     MorphoBlueSetAuthWithSig: '0x80be65342f6172a6cd0b6a2653e8a887e3f46cab',
     MorphoBlueView: '0xdbcacf59c5063da8b15481f88e7d70e13c92f2a1',
+    MorphoBlueReallocateLiquidity: '0x5Ea7F30E40F6A25BE2aD23A6FC1C31A6c95F3dc8',
   },
 };
 
