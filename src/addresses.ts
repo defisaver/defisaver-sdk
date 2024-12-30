@@ -457,6 +457,8 @@ export const actionAddresses = {
     UpdateSub: '0x1601c6ABCDE6e6d8Ad96628AFe20d47908127Aea',
     MerklClaim: '0xa2c6cd875c52bf5c27516fae3b6ba9241790908a',
 
+    GasFeeTakerL2: '0xAEe02caf404332c40Fd7FF8d5c25F91f7c1641d0',
+
     // Flashloan
     FLAaveV3: '0x79Eb9cEe432Cd3e7b09A9eFdB21A733A6d7b4c3A',
     FLBalancer: '0x862E533198C9656B75bB6A5dDF0953F7ED5E8507',
