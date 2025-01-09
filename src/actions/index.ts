@@ -32,6 +32,8 @@ import * as merkl from './merkl';
 import * as eulerV2 from './eulerV2';
 import * as sky from './sky';
 import * as stkgho from './stkgho';
+import * as renzo from './renzo';
+import * as etherfi from './etherfi';
 
 export {
   aave,
@@ -68,4 +70,6 @@ export {
   eulerV2,
   sky,
   stkgho,
+  renzo,
+  etherfi,
 };
