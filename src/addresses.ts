@@ -189,7 +189,7 @@ export const actionAddresses = {
     LiquityV2SPDeposit: '0x1e533364fE613AaD64B8D46F7A096Ae0c722239D',
     LiquityV2SPWithdraw: '0xb080DC160415Ffe1a4b80d75b0Be92EE38a0b426',
     LiquityV2SPClaimColl: '0xD50B0295C69e3F77BE7d99e7BdeAc442F37b373b',
-    LiquityV2AdjustZombieTrove: '0x457d4969d73FfCb656AF9002703EB4B33504dEFF',
+    LiquityV2AdjustZombieTrove: '0x88bBa5Ce5cE20286Cf866b9f310354FFB701A296',
 
     // b.protocol
     BprotocolLiquitySPDeposit: '0x5A0436c7559e37da8cD24B0f66C155a0a2fd6309',
