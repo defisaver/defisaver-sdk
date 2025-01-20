@@ -1,6 +1,6 @@
 {
   "name": "@defisaver/sdk",
-  "version": "1.2.16-dev-liquity-v2-3",
+  "version": "1.2.16-dev-liquity-v2-4",
   "description": "",
   "main": "./umd/index.js",
   "module": "./esm/src/index.js",
