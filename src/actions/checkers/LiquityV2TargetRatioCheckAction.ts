@@ -13,9 +13,9 @@ export class LiquityV2TargetRatioCheckAction extends Action {
    * @param troveId Trove id of the user
    * @param targetRatio The ratio user want to be at
    */
-  constructor(market: EthAddress, troveId: uint256, ratioState:uint8, targetRatio:uint256) {
+  constructor(market: EthAddress, troveId: uint256, targetRatio:uint256) {
     super(
-      'LiquityV2RatioCheck',
+      'LiquityV2TargetRatioCheck',
       getAddr('Empty'),
       ['address', 'uint256', 'uint256'],
       [market, troveId, targetRatio],
