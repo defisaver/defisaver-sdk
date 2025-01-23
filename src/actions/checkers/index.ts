@@ -10,3 +10,5 @@ export * from './LiquityRatioIncreaseCheckAction';
 export * from './CurveUsdCollRatioCheck';
 export * from './MorphoBlueRatioCheckAction';
 export * from './AaveV3OpenRatioCheckAction';
+export * from './LiquityV2RatioCheckAction';
+export * from './LiquityV2TargetRatioCheckAction';

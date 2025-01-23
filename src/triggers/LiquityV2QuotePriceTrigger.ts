@@ -3,17 +3,15 @@ import { getAddr } from '../addresses';
 import { EthAddress, uint256, uint8 } from '../types';
 
 /**
- *
- *
  * @category Triggers
  */
-export class LiquityRatioTrigger extends Action {
-  constructor(troveOwner:EthAddress, ratio:uint256, state:uint8) {
+export class LiquityV2QuotePriceTrigger extends Action {
+  constructor(market: EthAddress, price:uint256, state:uint8) {
     super(
-      'LiquityRatioTrigger',
+      'LiquityV2QuotePriceTrigger',
       getAddr('Empty'),
       ['address', 'uint256', 'uint8'],
-      [troveOwner, ratio, state],
+      [market, price, state],
     );
   }
 }
