@@ -15,7 +15,7 @@ export class GasFeeActionL2 extends Action {
    */
   constructor(gasStart:uint256, feeToken:EthAddress, availableAmount:uint256, dfsFeeDivider:uint256 = '2000', l1GasCostInEth:uint256 = '0') {
     super('GasFeeTakerL2',
-      getAddr('GasFeeTakerL2'),
+      getAddr('Empty'),
       ['uint256', 'address', 'uint256', 'uint256', 'uint256'],
       [gasStart, feeToken, availableAmount, dfsFeeDivider, l1GasCostInEth],
     );

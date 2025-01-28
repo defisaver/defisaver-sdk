@@ -3,11 +3,11 @@ import { getAddr } from '../../addresses';
 import { uint8, uint256, EthAddress } from '../../types';
 
 /**
- * MorphoBlueRatioCheckAction - Checks MorphoBlue ratio for user position and reverts if faulty
+ * MorphoBlueTargetRatioCheckAction - Checks MorphoBlue ratio for user position and reverts if faulty
  *
  * @category Checkers
  */
-export class MorphoBlueRatioCheckAction extends Action {
+export class MorphoBlueTargetRatioCheckAction extends Action {
   /**
    * @param loanToken - MarketParams loanToken
    * @param collateralToken -  MarketParams collateralToken
@@ -15,7 +15,6 @@ export class MorphoBlueRatioCheckAction extends Action {
    * @param irm -  MarketParams irm
    * @param lltv -  MarketParams lltv
    * @param user Address of the user we are checking the ratio for
-   * @param ratioState If it should lower/higher
    * @param targetRatio The ratio user want to be at
    */
   constructor(
@@ -25,13 +24,12 @@ export class MorphoBlueRatioCheckAction extends Action {
     irm:EthAddress,
     lltv:uint256,
     user:EthAddress,
-    ratioState:uint8,
     targetRatio:uint256,
   ) {
-    super('MorphoBlueRatioCheck',
+    super('MorphoBlueTargetRatioCheck',
       getAddr('Empty'),
-      [['address', 'address', 'address', 'address', 'uint256'], 'address', 'uint8', 'uint256'],
-      [[loanToken, collateralToken, oracle, irm, lltv], user, ratioState, targetRatio]);
+      [['address', 'address', 'address', 'address', 'uint256'], 'address', 'uint256'],
+      [[loanToken, collateralToken, oracle, irm, lltv], user, targetRatio]);
 
     this.mappableArgs = [
       this.args[0][0],
@@ -41,7 +39,6 @@ export class MorphoBlueRatioCheckAction extends Action {
       this.args[0][4],
       this.args[1],
       this.args[2],
-      this.args[3],
     ];
   }
 }
