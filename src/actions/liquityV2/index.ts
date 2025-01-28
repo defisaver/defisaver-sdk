@@ -11,3 +11,6 @@ export * from './LiquityV2AdjustAction';
 export * from './LiquityV2ClaimAction';
 export * from './LiquityV2AdjustInterestRateAction';
 export * from './LiquityV2AdjustZombieTroveAction';
+export * from './LiquityV2StakeAction';
+export * from './LiquityV2UnstakeAction';
+export * from './LiquityV2ClaimStakingRewardsAction';
