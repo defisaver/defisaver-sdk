@@ -176,6 +176,21 @@ export const actionAddresses = {
     LiquityRedeem: '0x20B78854658011394C931EF2BF3cEEA2Fe62E7f0',
     LiquityAdjust: '0x0A398f6B97677192A5d5e7Ea8A937383FFf9304c',
 
+    // liquity v2
+    LiquityV2Open: '0x6CEdC0317A9236CdFD800e6a6F41074f01d8229F',
+    LiquityV2Close: '0xBD97F8fCfdb03ca29F0C9baCA7Cb09c5A51E4adE',
+    LiquityV2Supply: '0x89403Bc80FDb1adbcf4Ea7b6acFB26197E47F2AA',
+    LiquityV2Withdraw: '0xDcBd59b7095edC5fd29063873Ec5d62F8BB18E9A',
+    LiquityV2Borrow: '0x092afc8AB25C6d5A2cE8CeAc4801fd8B1eFa5759',
+    LiquityV2Payback: '0x2B51c21a1af1316Af89f0493b2FF5C5D34D4626f',
+    LiquityV2Claim: '0x1b5a0c2573A1692bB183cC5d6f506e108c0599FC',
+    LiquityV2Adjust: '0x6063CaD05DBf1c15f643C0F483bc5ce749501d3C',
+    LiquityV2AdjustInterestRate: '0x685f0237D8b85B2018278E975a481b0650dE0b54',
+    LiquityV2SPDeposit: '0x1556711572a53c89912AE185f3a6Dba9FF365Bf3',
+    LiquityV2SPWithdraw: '0x237eaB8D7f9bBeaF8D27dB9797EB835e4062B8C2',
+    LiquityV2SPClaimColl: '0x3f783de20C3095bcB999AEA999aF4DF184b6630f',
+    LiquityV2AdjustZombieTrove: '0xDaB6aA000B0EBAa653A2715cb3847976bf614272',
+
     // b.protocol
     BprotocolLiquitySPDeposit: '0x5A0436c7559e37da8cD24B0f66C155a0a2fd6309',
     BprotocolLiquitySPWithdraw: '0x20Ece7CB4463bB1DbA4C4fA800E321A05dfB028B',
