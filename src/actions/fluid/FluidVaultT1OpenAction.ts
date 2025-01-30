@@ -14,6 +14,7 @@ export class FluidVaultT1OpenAction extends Action {
    * @param debtAmount Amount of debt to borrow. Can be 0 if only depositing collateral.
    * @param from Address to pull the collateral from.
    * @param to Address to send the borrowed assets to.
+   * @param wrapBorrowedEth Whether to wrap the borrowed ETH into WETH if the borrowed asset is ETH.
    */
   constructor(
     vault: EthAddress,
@@ -21,12 +22,13 @@ export class FluidVaultT1OpenAction extends Action {
     debtAmount: uint256,
     from: EthAddress,
     to: EthAddress,
+    wrapBorrowedEth: boolean,
   ) {
     super(
       'FluidVaultT1Open',
       getAddr('Empty'),
-      ['address', 'uint256', 'uint256', 'address', 'address'],
-      [vault, collAmount, debtAmount, from, to],
+      ['address', 'uint256', 'uint256', 'address', 'address', 'bool'],
+      [vault, collAmount, debtAmount, from, to, wrapBorrowedEth],
     );
 
     this.mappableArgs = [
@@ -35,6 +37,7 @@ export class FluidVaultT1OpenAction extends Action {
       this.args[2],
       this.args[3],
       this.args[4],
+      this.args[5],
     ];
   }
 }
