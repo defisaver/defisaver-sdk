@@ -13,18 +13,20 @@ export class FluidVaultT1BorrowAction extends Action {
    * @param nftId ID of the NFT representing the position
    * @param amount Amount to borrow
    * @param to Address to send the borrowed assets to
+   * @param wrapBorrowedEth Whether to wrap the borrowed ETH into WETH if the borrowed asset is ETH
    */
   constructor(
     vault: EthAddress,
     nftId: uint256,
     amount: uint256,
     to: EthAddress,
+    wrapBorrowedEth: boolean,
   ) {
     super(
       'FluidVaultT1Borrow',
       getAddr('Empty'),
-      ['address', 'uint256', 'uint256', 'address'],
-      [vault, nftId, amount, to],
+      ['address', 'uint256', 'uint256', 'address', 'bool'],
+      [vault, nftId, amount, to, wrapBorrowedEth],
     );
 
     this.mappableArgs = [
@@ -32,6 +34,7 @@ export class FluidVaultT1BorrowAction extends Action {
       this.args[1],
       this.args[2],
       this.args[3],
+      this.args[4],
     ];
   }
 }

@@ -13,18 +13,20 @@ export class FluidVaultT1WithdrawAction extends Action {
    * @param nftId ID of the NFT representing the position
    * @param amount Amount to withdraw. Pass type(uint256).max to withdraw all.
    * @param to Address to send the withdrawn assets to
+   * @param wrapWithdrawnEth Whether to wrap the withdrawn ETH into WETH if the withdrawn asset is ETH.
    */
   constructor(
     vault: EthAddress,
     nftId: uint256,
     amount: uint256,
     to: EthAddress,
+    wrapWithdrawnEth: boolean,
   ) {
     super(
       'FluidVaultT1Withdraw',
       getAddr('Empty'),
-      ['address', 'uint256', 'uint256', 'address'],
-      [vault, nftId, amount, to],
+      ['address', 'uint256', 'uint256', 'address', 'bool'],
+      [vault, nftId, amount, to, wrapWithdrawnEth],
     );
 
     this.mappableArgs = [
@@ -32,6 +34,7 @@ export class FluidVaultT1WithdrawAction extends Action {
       this.args[1],
       this.args[2],
       this.args[3],
+      this.args[4],
     ];
   }
 }

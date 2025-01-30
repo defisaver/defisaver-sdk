@@ -15,6 +15,7 @@ export class FluidVaultT1AdjustAction extends Action {
    * @param debtAmount Amount of debt to payback/borrow
    * @param from Address to pull tokens from
    * @param to Address to send tokens to
+   * @param sendWrappedEth Whether to wrap the ETH into WETH before sending to 'to' address
    * @param collAction Type of collateral action to perform. 0 for supply, 1 for withdraw
    * @param debtAction Type of debt action to perform. 0 for payback, 1 for borrow
    */
@@ -25,14 +26,15 @@ export class FluidVaultT1AdjustAction extends Action {
     debtAmount: uint256,
     from: EthAddress,
     to: EthAddress,
+    sendWrappedEth: boolean,
     collAction: uint8,
     debtAction: uint8,
   ) {
     super(
       'FluidVaultT1Adjust',
       getAddr('Empty'),
-      ['address', 'uint256', 'uint256', 'uint256', 'address', 'address', 'uint8', 'uint8'],
-      [vault, nftId, collAmount, debtAmount, from, to, collAction, debtAction],
+      ['address', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bool', 'uint8', 'uint8'],
+      [vault, nftId, collAmount, debtAmount, from, to, sendWrappedEth, collAction, debtAction],
     );
 
     this.mappableArgs = [
@@ -44,6 +46,7 @@ export class FluidVaultT1AdjustAction extends Action {
       this.args[5],
       this.args[6],
       this.args[7],
+      this.args[8],
     ];
   }
 }
