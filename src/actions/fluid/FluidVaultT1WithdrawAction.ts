@@ -24,7 +24,7 @@ export class FluidVaultT1WithdrawAction extends Action {
   ) {
     super(
       'FluidVaultT1Withdraw',
-      getAddr('Empty'),
+      getAddr('FluidVaultT1Withdraw'),
       ['address', 'uint256', 'uint256', 'address', 'bool'],
       [vault, nftId, amount, to, wrapWithdrawnEth],
     );

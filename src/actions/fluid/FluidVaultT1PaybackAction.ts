@@ -22,7 +22,7 @@ export class FluidVaultT1PaybackAction extends Action {
   ) {
     super(
       'FluidVaultT1Payback',
-      getAddr('Empty'),
+      getAddr('FluidVaultT1Payback'),
       ['address', 'uint256', 'uint256', 'address'],
       [vault, nftId, amount, from],
     );

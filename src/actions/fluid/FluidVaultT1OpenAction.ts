@@ -26,7 +26,7 @@ export class FluidVaultT1OpenAction extends Action {
   ) {
     super(
       'FluidVaultT1Open',
-      getAddr('Empty'),
+      getAddr('FluidVaultT1Open'),
       ['address', 'uint256', 'uint256', 'address', 'address', 'bool'],
       [vault, collAmount, debtAmount, from, to, wrapBorrowedEth],
     );

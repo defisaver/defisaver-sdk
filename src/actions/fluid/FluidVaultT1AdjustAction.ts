@@ -32,7 +32,7 @@ export class FluidVaultT1AdjustAction extends Action {
   ) {
     super(
       'FluidVaultT1Adjust',
-      getAddr('Empty'),
+      getAddr('FluidVaultT1Adjust'),
       ['address', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bool', 'uint8', 'uint8'],
       [vault, nftId, collAmount, debtAmount, from, to, sendWrappedEth, collAction, debtAction],
     );

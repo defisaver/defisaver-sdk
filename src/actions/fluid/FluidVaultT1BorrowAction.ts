@@ -24,7 +24,7 @@ export class FluidVaultT1BorrowAction extends Action {
   ) {
     super(
       'FluidVaultT1Borrow',
-      getAddr('Empty'),
+      getAddr('FluidVaultT1Borrow'),
       ['address', 'uint256', 'uint256', 'address', 'bool'],
       [vault, nftId, amount, to, wrapBorrowedEth],
     );

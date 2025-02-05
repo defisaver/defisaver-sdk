@@ -22,7 +22,7 @@ export class FluidVaultT1SupplyAction extends Action {
   ) {
     super(
       'FluidVaultT1Supply',
-      getAddr('Empty'),
+      getAddr('FluidVaultT1Supply'),
       ['address', 'uint256', 'uint256', 'address'],
       [vault, nftId, amount, from],
     );
