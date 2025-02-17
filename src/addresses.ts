@@ -323,6 +323,15 @@ export const actionAddresses = {
     EtherFiStake: '0xcadB650B6a60C89f7847Cba555A7eeCC220EA2e8',
     EtherFiWrap: '0x086464be5c73f66cfbe6b64ec23aa5a86749ef58',
     EtherFiUnwrap: '0x6Eb09948DDf9332d628d156950b9B1C0c091e8D8',
+
+    // fluid
+    FluidVaultT1Open: '0x372404335C05C2493Ff156Ef60cC0B286f6f2971',
+    FluidVaultT1Adjust: '0x792D40CAE821905A2B57522BF8a77347e7BB0c0a',
+    FluidVaultT1Borrow: '0x36AF0cE762a016e8b4a80c70Af406DFcBc1FCbD4',
+    FluidVaultT1Payback: '0x13b021b52989e257537b4C0ee6Ef12E77AFD4652',
+    FluidVaultT1Withdraw: '0x5673b9ab4A035C5C7474C344664Be91DaFafa17E',
+    FluidVaultT1Supply: '0x0c6100209D8A0bb14CC7d18e45dA1bd1E7a3a187',
+    FluidView: '0xf8e3bbf7c95057be1fD5E741a9ADb73E956dC724',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
@@ -454,6 +463,15 @@ export const actionAddresses = {
     LlamaLendRepay: '0x320fdfa922ee33c1cc8a042ada855c9dfe9bed06',
     LlamaLendLevCreate: '0xe5cbdcbe494246c21851eea0642ff0791f95cc86',
     LlamaLendSelfLiquidateWithColl: '0xebf090e5e83f4cd63d84db013ac8271761a953cf',
+
+    // fluid
+    FluidVaultT1Open: '0x1947Ce90ACCf0E243CcF85140fCceC2EfAeeA193',
+    FluidVaultT1Adjust: '0x00d45Aa82b487E633EF0D9fD9940cc786E9dcc14',
+    FluidVaultT1Borrow: '0x499da89aD564F5D6C828259ce55F53Fa288e7Be7',
+    FluidVaultT1Payback: '0x9Fc3FD0E181bD48e2D254dd071809527dED37e95',
+    FluidVaultT1Withdraw: '0xc13d93227d97197e5F1751d0a3e80c1080A5fa2B',
+    FluidVaultT1Supply: '0xBCF0Dc5bb2C4434AD07369207904F5900d391b0B',
+    FluidView: '0x2d51BB6Ac5c1eC8DD6432e1FF980fC864B626e01',
   },
   [NETWORKS.base.chainId]: {
     // Basic
@@ -517,6 +535,15 @@ export const actionAddresses = {
     MorphoBlueSetAuthWithSig: '0x80be65342f6172a6cd0b6a2653e8a887e3f46cab',
     MorphoBlueView: '0xdbcacf59c5063da8b15481f88e7d70e13c92f2a1',
     MorphoBlueReallocateLiquidity: '0x5Ea7F30E40F6A25BE2aD23A6FC1C31A6c95F3dc8',
+
+    // fluid
+    FluidVaultT1Open: '0xCd4d5896AEAf97e738d3E7215ac01c2CF97474bc',
+    FluidVaultT1Adjust: '0x93bFBf44b87be48D46b25Fe0C7F549A79Ca05167',
+    FluidVaultT1Borrow: '0x8dCBF436cC0971FE29886E58CE0CAeb36d43E91E',
+    FluidVaultT1Payback: '0x56ca4b24D85c33F3A4Be918b7f2ce2831a723704',
+    FluidVaultT1Withdraw: '0x26bE6a2EdE97aE826ed9DA8Fb79428037fe55cEB',
+    FluidVaultT1Supply: '0x028ACA45244d4897ff80ef65ed0b735Bb0D4B0A5',
+    FluidView: '0x5835CaDbA8843CD6d6d55782908351E9c74221aD',
   },
 };
 

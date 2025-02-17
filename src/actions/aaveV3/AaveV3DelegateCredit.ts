@@ -19,7 +19,7 @@ export class AaveV3DelegateCredit extends ActionWithL2 {
    * @param delegatee The id of the underlying asset to be repaid
    */
   constructor(useOnDefaultMarket: boolean, market:EthAddress, amount:uint256, rateMode:uint8, assetId:uint16, delegatee:EthAddress) {
-    super('AaveV3DelegateCredit', getAddr('AaveV3DelegateCredit'),
+    super('AaveV3DelegateCredit', getAddr('Empty'),
       ['uint256', 'address', 'uint16', 'uint8', 'bool', 'address'],
       [amount, delegatee, assetId, rateMode, useOnDefaultMarket, market],
     );
