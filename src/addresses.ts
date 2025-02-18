@@ -323,6 +323,8 @@ export const actionAddresses = {
     EtherFiStake: '0xcadB650B6a60C89f7847Cba555A7eeCC220EA2e8',
     EtherFiWrap: '0x086464be5c73f66cfbe6b64ec23aa5a86749ef58',
     EtherFiUnwrap: '0x6Eb09948DDf9332d628d156950b9B1C0c091e8D8',
+
+    KingClaim: '0x483816678e2348bf87f88b0f4eb6a923017de0d6',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
