@@ -407,6 +407,7 @@ export const actionAddresses = {
     SendTokenAndUnwrap: '0x009C5B1c7C844Bd662Da3991295b1B3Bd71a430c',
     ApproveToken: '0x01058999F5Ac434EF48DFB5Cd942c57A7661787B',
     ToggleSub: '0x2eabbab99759c2ab6e9e309d42ee07d3bc7c38fe',
+    CreateSub: '0xbFD17a0a844b75976585a382a5BcCaFC9EAd731f',
     TokenBalance: '0x483B903E702F60698Dd8124558C6199922737f1F',
     TokenizedVaultAdapter: '0xD05C512bDFf6D3eAc5328807B3bC075F35271167',
     ChangeProxyOwner: '0x29F66A5fcB601c806E7156f29FDEC771BdC9c08d',
