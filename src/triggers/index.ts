@@ -24,3 +24,4 @@ export * from './MorphoBluePriceTrigger';
 export * from './LiquityV2RatioTrigger';
 export * from './ClosePriceTrigger';
 export * from './LiquityV2QuotePriceTrigger';
+export * from './FluidRatioTrigger';

@@ -15,7 +15,7 @@ export class CompoundV3RatioCheckAction extends Action {
    * @param user Address of the user we are checking the ratio for (default to proxy)
    */
   constructor(ratioState:uint8, targetRatio:uint256, market:EthAddress, user:EthAddress) {
-    super('CompV3RatioCheck', getAddr('CompV3RatioCheck'), ['uint8', 'uint256', 'address', 'address'], [ratioState, targetRatio, market, user]);
+    super('CompV3RatioCheck', getAddr('Empty'), ['uint8', 'uint256', 'address', 'address'], [ratioState, targetRatio, market, user]);
 
     this.mappableArgs = [
       this.args[0],
