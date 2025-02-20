@@ -413,6 +413,8 @@ export const actionAddresses = {
     ChangeProxyOwner: '0x29F66A5fcB601c806E7156f29FDEC771BdC9c08d',
     PermitToken: '0x2E5E7a691092C158bb8341b936eF24FCcA6c0e00',
     HandleAuth: '0xbfcab1339e1a56a0a836cbca6457eaf71f148fcb',
+    UpdateSub: '0x3511f444362F8cBd185DbF21C9488D16c1306461',
+    TransferNFT: '0xf73b14cf4bc10509446fc4111407a721f8a81f7d',
 
     // aave v3
     AaveV3ATokenPayback: '0x261906e5E0D0D38D9cBb5c10dB9c4031aabdf8C1',
@@ -493,6 +495,7 @@ export const actionAddresses = {
     CreateSub: '0xeE739937085A716477BCB5b01b0f74e1BE046645',
     UpdateSub: '0x1601c6ABCDE6e6d8Ad96628AFe20d47908127Aea',
     MerklClaim: '0xa2c6cd875c52bf5c27516fae3b6ba9241790908a',
+    TransferNFT: '0xe49c70c673c3ef9019fe9c875ed5ed3dc02f5613',
 
     GasFeeTakerL2: '0xAEe02caf404332c40Fd7FF8d5c25F91f7c1641d0',
 
