@@ -545,6 +545,8 @@ export const actionAddresses = {
     FluidVaultT1Withdraw: '0x26bE6a2EdE97aE826ed9DA8Fb79428037fe55cEB',
     FluidVaultT1Supply: '0x028ACA45244d4897ff80ef65ed0b735Bb0D4B0A5',
     FluidView: '0x5835CaDbA8843CD6d6d55782908351E9c74221aD',
+
+    TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
   },
 };
 
