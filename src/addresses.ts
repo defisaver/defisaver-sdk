@@ -293,7 +293,7 @@ export const actionAddresses = {
     MorphoBlueSetAuthWithSig: '0xE2d5fCDBf73BAd24A0FCAf6B2733933A98021808',
     MorphoTokenWrap: '0x71b6d268c2Aabcb0dA16CbA4c77e65d9e29b0644',
     MorphoBlueReallocateLiquidity: '0x17cCA8194602020e855CC8Bc11ffA82d8F998A93',
-    MorphoBlueClaim: '0x270A0C7eBd1C0a98FdA613782b51419300AB6322',
+    MorphoBlueClaim: '0xBB562a790AD7773D54A423bD2A10E4073cb98142',
 
     // llamalend
     LlamaLendCreate: '0x4349be191ea63173eD98b7fC1b0DeC1ef9Bc6c11',
