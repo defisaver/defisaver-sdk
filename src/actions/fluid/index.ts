@@ -4,3 +4,4 @@ export * from './FluidVaultT1BorrowAction';
 export * from './FluidVaultT1PaybackAction';
 export * from './FluidVaultT1SupplyAction';
 export * from './FluidVaultT1WithdrawAction';
+export * from './FluidClaimAction';
