@@ -1,3 +1,4 @@
+import { getAssetInfoByAddress } from '@defisaver/tokens';
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256 } from '../../types';
@@ -8,6 +9,8 @@ import { EthAddress, uint256 } from '../../types';
  * @category Fluid
  */
 export class FluidVaultT1OpenAction extends Action {
+  tokenForApproval: EthAddress;
+
   /**
    * @param vault The address of the Fluid Vault T1
    * @param collAmount Amount of collateral to deposit.
@@ -15,6 +18,7 @@ export class FluidVaultT1OpenAction extends Action {
    * @param from Address to pull the collateral from.
    * @param to Address to send the borrowed assets to.
    * @param wrapBorrowedEth Whether to wrap the borrowed ETH into WETH if the borrowed asset is ETH.
+   * @param collToken Address of the collateral token.
    */
   constructor(
     vault: EthAddress,
@@ -23,6 +27,7 @@ export class FluidVaultT1OpenAction extends Action {
     from: EthAddress,
     to: EthAddress,
     wrapBorrowedEth: boolean,
+    collToken: EthAddress,
   ) {
     super(
       'FluidVaultT1Open',
@@ -39,5 +44,12 @@ export class FluidVaultT1OpenAction extends Action {
       this.args[4],
       this.args[5],
     ];
+    this.tokenForApproval = collToken;
+  }
+
+  async getAssetsToApprove() {
+    const asset = getAssetInfoByAddress(this.tokenForApproval);
+    if (asset.symbol !== 'ETH') return [{ asset: this.tokenForApproval, owner: this.args[3] }];
+    return [];
   }
 }
