@@ -293,6 +293,7 @@ export const actionAddresses = {
     MorphoBlueSetAuthWithSig: '0xE2d5fCDBf73BAd24A0FCAf6B2733933A98021808',
     MorphoTokenWrap: '0x71b6d268c2Aabcb0dA16CbA4c77e65d9e29b0644',
     MorphoBlueReallocateLiquidity: '0x17cCA8194602020e855CC8Bc11ffA82d8F998A93',
+    MorphoBlueClaim: '0xBB562a790AD7773D54A423bD2A10E4073cb98142',
 
     // llamalend
     LlamaLendCreate: '0x4349be191ea63173eD98b7fC1b0DeC1ef9Bc6c11',
@@ -323,6 +324,8 @@ export const actionAddresses = {
     EtherFiStake: '0xcadB650B6a60C89f7847Cba555A7eeCC220EA2e8',
     EtherFiWrap: '0x086464be5c73f66cfbe6b64ec23aa5a86749ef58',
     EtherFiUnwrap: '0x6Eb09948DDf9332d628d156950b9B1C0c091e8D8',
+
+    KingClaim: '0x483816678e2348bf87f88b0f4eb6a923017de0d6',
 
     // fluid
     FluidVaultT1Open: '0x372404335C05C2493Ff156Ef60cC0B286f6f2971',
@@ -407,11 +410,14 @@ export const actionAddresses = {
     SendTokenAndUnwrap: '0x009C5B1c7C844Bd662Da3991295b1B3Bd71a430c',
     ApproveToken: '0x01058999F5Ac434EF48DFB5Cd942c57A7661787B',
     ToggleSub: '0x2eabbab99759c2ab6e9e309d42ee07d3bc7c38fe',
+    CreateSub: '0xbFD17a0a844b75976585a382a5BcCaFC9EAd731f',
     TokenBalance: '0x483B903E702F60698Dd8124558C6199922737f1F',
     TokenizedVaultAdapter: '0xD05C512bDFf6D3eAc5328807B3bC075F35271167',
     ChangeProxyOwner: '0x29F66A5fcB601c806E7156f29FDEC771BdC9c08d',
     PermitToken: '0x2E5E7a691092C158bb8341b936eF24FCcA6c0e00',
     HandleAuth: '0xbfcab1339e1a56a0a836cbca6457eaf71f148fcb',
+    UpdateSub: '0x3511f444362F8cBd185DbF21C9488D16c1306461',
+    TransferNFT: '0xf73b14cf4bc10509446fc4111407a721f8a81f7d',
 
     // aave v3
     AaveV3ATokenPayback: '0x261906e5E0D0D38D9cBb5c10dB9c4031aabdf8C1',
@@ -492,6 +498,7 @@ export const actionAddresses = {
     CreateSub: '0xeE739937085A716477BCB5b01b0f74e1BE046645',
     UpdateSub: '0x1601c6ABCDE6e6d8Ad96628AFe20d47908127Aea',
     MerklClaim: '0xa2c6cd875c52bf5c27516fae3b6ba9241790908a',
+    TransferNFT: '0xe49c70c673c3ef9019fe9c875ed5ed3dc02f5613',
 
     GasFeeTakerL2: '0xAEe02caf404332c40Fd7FF8d5c25F91f7c1641d0',
 
@@ -535,6 +542,7 @@ export const actionAddresses = {
     MorphoBlueSetAuthWithSig: '0x80be65342f6172a6cd0b6a2653e8a887e3f46cab',
     MorphoBlueView: '0xdbcacf59c5063da8b15481f88e7d70e13c92f2a1',
     MorphoBlueReallocateLiquidity: '0x5Ea7F30E40F6A25BE2aD23A6FC1C31A6c95F3dc8',
+    MorphoBlueClaim: '0xE279E9100d6d524602f98E8736BA5F8f065Dd3e0',
 
     // fluid
     FluidVaultT1Open: '0xCd4d5896AEAf97e738d3E7215ac01c2CF97474bc',
@@ -544,6 +552,8 @@ export const actionAddresses = {
     FluidVaultT1Withdraw: '0x26bE6a2EdE97aE826ed9DA8Fb79428037fe55cEB',
     FluidVaultT1Supply: '0x028ACA45244d4897ff80ef65ed0b735Bb0D4B0A5',
     FluidView: '0x5835CaDbA8843CD6d6d55782908351E9c74221aD',
+
+    TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
   },
 };
 
