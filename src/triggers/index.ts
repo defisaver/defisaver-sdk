@@ -1,6 +1,5 @@
 export * from './MakerRatioTrigger';
 export * from './ChainLinkPriceTrigger';
-export * from './UniV3CurrentTickTrigger';
 export * from './TimestampTrigger';
 export * from './GasPriceTrigger';
 export * from './CompoundRatioTrigger';

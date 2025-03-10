@@ -1,4 +1,3 @@
-export * from './CurveSwapAction';
 export * from './CurveDepositAction';
 export * from './CurveWithdrawAction';
 export * from './CurveGaugeDepositAction';
