@@ -335,6 +335,7 @@ export const actionAddresses = {
     FluidVaultT1Withdraw: '0x5673b9ab4A035C5C7474C344664Be91DaFafa17E',
     FluidVaultT1Supply: '0x0c6100209D8A0bb14CC7d18e45dA1bd1E7a3a187',
     FluidView: '0xf8e3bbf7c95057be1fD5E741a9ADb73E956dC724',
+    FluidClaim: '0x0000000000000000000000000000000000000000', // TODO: add after deployment
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
