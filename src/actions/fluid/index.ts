@@ -5,3 +5,8 @@ export * from './FluidVaultT1PaybackAction';
 export * from './FluidVaultT1SupplyAction';
 export * from './FluidVaultT1WithdrawAction';
 export * from './FluidClaimAction';
+export * from './FluidDexOpenAction';
+export * from './FluidDexSupplyAction';
+export * from './FluidDexBorrowAction';
+export * from './FluidDexPaybackAction';
+export * from './FluidDexWithdrawAction';
