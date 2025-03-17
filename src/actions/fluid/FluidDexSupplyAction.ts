@@ -34,5 +34,14 @@ export class FluidDexSupplyAction extends Action {
       ],
       [vault, from, nftId, supplyAmount, supplyVariableData],
     );
+    this.mappableArgs = [
+      this.args[0],
+      this.args[1],
+      this.args[2],
+      this.args[3],
+      this.args[4][0],
+      this.args[4][1],
+      this.args[4][2],
+    ];
   }
 }

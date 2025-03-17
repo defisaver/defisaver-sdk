@@ -43,5 +43,19 @@ export class FluidDexOpenAction extends Action {
       ],
       [vault, from, to, supplyAmount, supplyVariableData, borrowAmount, borrowVariableData, wrapBorrowedEth],
     );
+    this.mappableArgs = [
+      this.args[0],
+      this.args[1],
+      this.args[2],
+      this.args[3],
+      this.args[4][0],
+      this.args[4][1],
+      this.args[4][2],
+      this.args[5],
+      this.args[6][0],
+      this.args[6][1],
+      this.args[6][2],
+      this.args[7],
+    ];
   }
 }
