@@ -293,6 +293,7 @@ export const actionAddresses = {
     MorphoBlueSetAuthWithSig: '0xE2d5fCDBf73BAd24A0FCAf6B2733933A98021808',
     MorphoTokenWrap: '0x71b6d268c2Aabcb0dA16CbA4c77e65d9e29b0644',
     MorphoBlueReallocateLiquidity: '0x17cCA8194602020e855CC8Bc11ffA82d8F998A93',
+    MorphoBlueClaim: '0xBB562a790AD7773D54A423bD2A10E4073cb98142',
 
     // llamalend
     LlamaLendCreate: '0x4349be191ea63173eD98b7fC1b0DeC1ef9Bc6c11',
@@ -334,6 +335,7 @@ export const actionAddresses = {
     FluidVaultT1Withdraw: '0x5673b9ab4A035C5C7474C344664Be91DaFafa17E',
     FluidVaultT1Supply: '0x0c6100209D8A0bb14CC7d18e45dA1bd1E7a3a187',
     FluidView: '0xf8e3bbf7c95057be1fD5E741a9ADb73E956dC724',
+    FluidClaim: '0x0bC0aeF7702C204DEF308994C84D8fBce676dB47',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
@@ -541,6 +543,7 @@ export const actionAddresses = {
     MorphoBlueSetAuthWithSig: '0x80be65342f6172a6cd0b6a2653e8a887e3f46cab',
     MorphoBlueView: '0xdbcacf59c5063da8b15481f88e7d70e13c92f2a1',
     MorphoBlueReallocateLiquidity: '0x5Ea7F30E40F6A25BE2aD23A6FC1C31A6c95F3dc8',
+    MorphoBlueClaim: '0xE279E9100d6d524602f98E8736BA5F8f065Dd3e0',
 
     // fluid
     FluidVaultT1Open: '0xCd4d5896AEAf97e738d3E7215ac01c2CF97474bc',
