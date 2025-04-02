@@ -32,7 +32,7 @@ export class FluidDexWithdrawAction extends Action {
         'address',
         'uint256',
         'uint256',
-        ['uint256', 'uint256', 'uint256'],
+        ['uint256', 'uint256', 'uint256', 'uint256'],
         'bool',
       ],
       [vault, to, nftId, withdrawAmount, withdrawVariableData, wrapWithdrawnEth],
@@ -45,6 +45,7 @@ export class FluidDexWithdrawAction extends Action {
       this.args[4][0],
       this.args[4][1],
       this.args[4][2],
+      this.args[4][3],
       this.args[5],
     ];
   }

@@ -30,7 +30,7 @@ export class FluidDexPaybackAction extends Action {
         'address',
         'uint256',
         'uint256',
-        ['uint256', 'uint256', 'uint256'],
+        ['uint256', 'uint256', 'uint256', 'uint256'],
       ],
       [vault, from, nftId, paybackAmount, paybackVariableData],
     );
@@ -42,6 +42,7 @@ export class FluidDexPaybackAction extends Action {
       this.args[4][0],
       this.args[4][1],
       this.args[4][2],
+      this.args[4][3],
     ];
   }
 }
