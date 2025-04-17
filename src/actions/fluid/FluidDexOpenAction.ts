@@ -5,7 +5,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * FluidDexOpenAction - Open a new position in the Fluid DEX vault.
  *
- * @category FluidDexOpen
+ * @category Fluid
  */
 export class FluidDexOpenAction extends Action {
   /**
