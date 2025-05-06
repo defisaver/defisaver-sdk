@@ -1,6 +1,6 @@
 import AbiCoder from 'web3-eth-abi';
 import { toBN } from 'web3-utils';
-import { getAssetInfo, utils } from '@defisaver/tokens';
+import { getAssetInfo, compare } from '@defisaver/tokens';
 import { Action } from './Action';
 import { getAddr } from './addresses';
 import RecipeAbi from './abis/Recipe.json';
@@ -184,7 +184,7 @@ export class Recipe {
         }
       }
     }
-    return uniqueAssetOwnerPairs.filter(({ asset }) => !utils.compare(asset, getAssetInfo('ETH').address));
+    return uniqueAssetOwnerPairs.filter(({ asset }) => !compare(asset, getAssetInfo('ETH').address));
   }
 
   /**
