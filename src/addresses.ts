@@ -329,9 +329,9 @@ export const actionAddresses = {
 
     // fluid
     FluidVaultT1Open: '0x372404335C05C2493Ff156Ef60cC0B286f6f2971',
-    FluidVaultT1Adjust: '0x792D40CAE821905A2B57522BF8a77347e7BB0c0a',
+    FluidVaultT1Adjust: '0x8f1443c9F24843D14fa6b302A55C59468ED7D28B',
     FluidVaultT1Borrow: '0x36AF0cE762a016e8b4a80c70Af406DFcBc1FCbD4',
-    FluidVaultT1Payback: '0x13b021b52989e257537b4C0ee6Ef12E77AFD4652',
+    FluidVaultT1Payback: '0xa7A4B84D38CD33F9901922687db24B8aE14f2455',
     FluidVaultT1Withdraw: '0x5673b9ab4A035C5C7474C344664Be91DaFafa17E',
     FluidVaultT1Supply: '0x0c6100209D8A0bb14CC7d18e45dA1bd1E7a3a187',
     FluidView: '0xf8e3bbf7c95057be1fD5E741a9ADb73E956dC724',
@@ -481,9 +481,9 @@ export const actionAddresses = {
 
     // fluid
     FluidVaultT1Open: '0x1947Ce90ACCf0E243CcF85140fCceC2EfAeeA193',
-    FluidVaultT1Adjust: '0x00d45Aa82b487E633EF0D9fD9940cc786E9dcc14',
+    FluidVaultT1Adjust: '0xF8374Aa0F6d9D28790f90745f0360b5C945DEA20',
     FluidVaultT1Borrow: '0x499da89aD564F5D6C828259ce55F53Fa288e7Be7',
-    FluidVaultT1Payback: '0x9Fc3FD0E181bD48e2D254dd071809527dED37e95',
+    FluidVaultT1Payback: '0x226c871E0a27B12065c9128b8e7440b054b59155',
     FluidVaultT1Withdraw: '0xc13d93227d97197e5F1751d0a3e80c1080A5fa2B',
     FluidVaultT1Supply: '0xBCF0Dc5bb2C4434AD07369207904F5900d391b0B',
     FluidView: '0x2d51BB6Ac5c1eC8DD6432e1FF980fC864B626e01',
@@ -555,9 +555,9 @@ export const actionAddresses = {
 
     // fluid
     FluidVaultT1Open: '0xCd4d5896AEAf97e738d3E7215ac01c2CF97474bc',
-    FluidVaultT1Adjust: '0x93bFBf44b87be48D46b25Fe0C7F549A79Ca05167',
+    FluidVaultT1Adjust: '0x4405A81c25Be495325f76Aa4d82176f9ae3275bc',
     FluidVaultT1Borrow: '0x8dCBF436cC0971FE29886E58CE0CAeb36d43E91E',
-    FluidVaultT1Payback: '0x56ca4b24D85c33F3A4Be918b7f2ce2831a723704',
+    FluidVaultT1Payback: '0xA65daAa4FB4Fe9feaDF25bf2C062c3Faa2b02e5D',
     FluidVaultT1Withdraw: '0x26bE6a2EdE97aE826ed9DA8Fb79428037fe55cEB',
     FluidVaultT1Supply: '0x028ACA45244d4897ff80ef65ed0b735Bb0D4B0A5',
     FluidView: '0x5835CaDbA8843CD6d6d55782908351E9c74221aD',
