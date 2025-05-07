@@ -29,7 +29,7 @@ export const actionAddresses = {
 
     // exchange
     DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
-
+    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
     // sky
     SkyStake: '0x5803C399EE9f887C8b81075E4C185c448361c235',
     SkyUnstake: '0x4b6d3A01465fa88D7D596333D15832434a568452',
@@ -339,6 +339,7 @@ export const actionAddresses = {
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
+    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -400,6 +401,7 @@ export const actionAddresses = {
   },
   [NETWORKS.arbitrum.chainId]: {
     DFSSell: '0x1393eef11454ab068dd5e0d0be5eb922603eef1a',
+    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
@@ -485,6 +487,7 @@ export const actionAddresses = {
   [NETWORKS.base.chainId]: {
     // Basic
     DFSSell: '0xcd151d2bd3e129a4678f2116a9944b5aea0c860d',
+    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
     WrapEth: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
