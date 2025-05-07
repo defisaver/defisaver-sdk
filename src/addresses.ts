@@ -29,7 +29,7 @@ export const actionAddresses = {
 
     // exchange
     DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
-    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
+    DFSSellNoFee: '0x3845C89c861eBb0a0c856CEBB064Ee93678bdE8E',
     // sky
     SkyStake: '0x5803C399EE9f887C8b81075E4C185c448361c235',
     SkyUnstake: '0x4b6d3A01465fa88D7D596333D15832434a568452',
