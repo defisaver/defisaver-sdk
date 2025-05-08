@@ -336,6 +336,9 @@ export const actionAddresses = {
     FluidVaultT1Supply: '0x0c6100209D8A0bb14CC7d18e45dA1bd1E7a3a187',
     FluidView: '0xf8e3bbf7c95057be1fD5E741a9ADb73E956dC724',
     FluidClaim: '0x0bC0aeF7702C204DEF308994C84D8fBce676dB47',
+
+    // summer.fi
+    SFApproveTokens: '0x0000000000000000000000000000000000000000',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
