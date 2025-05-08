@@ -32,3 +32,4 @@ export * from './StarknetClaimAction';
 export * from './HandleAuthAction';
 export * from './SendTokensAndUnwrapAction';
 export * from './KingClaimAction';
+export * from './SellNoFeeAction';
