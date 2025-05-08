@@ -6,3 +6,6 @@ export * from './MorphoBlueWithdrawCollateralAction';
 export * from './MorphoBlueWithdrawAction';
 export * from './MorphoBlueSetAuthAction';
 export * from './MorphoBlueSetAuthWithSigAction';
+export * from './MorphoTokenWrapAction';
+export * from './MorphoBlueReallocateLiquidityAction';
+export * from './MorphoBlueClaimAction';

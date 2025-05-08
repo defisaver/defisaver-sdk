@@ -10,7 +10,7 @@ import { EthAddress, uint256 } from '../../types';
  */
 export class SendTokensAction extends Action {
   /**
-   * @param tokens Token addressess
+   * @param tokens Token addresses
    * @param receivers Transfer recipients
    * @param amounts Transfer amounts (-1 for whole Recipe (DsProxy) balance)
    */

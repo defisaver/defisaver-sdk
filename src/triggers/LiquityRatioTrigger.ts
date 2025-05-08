@@ -11,8 +11,8 @@ export class LiquityRatioTrigger extends Action {
   constructor(troveOwner:EthAddress, ratio:uint256, state:uint8) {
     super(
       'LiquityRatioTrigger',
-      getAddr('LiquityRatioTrigger'),
-      ['addresss', 'uint256', 'uint8'],
+      getAddr('Empty'),
+      ['address', 'uint256', 'uint8'],
       [troveOwner, ratio, state],
     );
   }
