@@ -1,6 +1,6 @@
 {
   "name": "@defisaver/sdk",
-  "version": "1.2.25",
+  "version": "1.2.26",
   "description": "",
   "main": "./umd/index.js",
   "module": "./esm/src/index.js",
@@ -23,7 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@defisaver/eslint-config": "^1.0.0",
-    "@defisaver/tokens": "^1.6.1",
+    "@defisaver/tokens": "^1.6.3",
     "@ethersproject/address": "^5.0.10",
     "@ethersproject/solidity": "^5.0.9",
     "@types/web3-eth-abi": "^1.2.2",
