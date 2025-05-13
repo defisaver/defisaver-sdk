@@ -325,7 +325,7 @@ export const actionAddresses = {
     EtherFiWrap: '0x086464be5c73f66cfbe6b64ec23aa5a86749ef58',
     EtherFiUnwrap: '0x6Eb09948DDf9332d628d156950b9B1C0c091e8D8',
 
-    KingClaim: '0x483816678e2348bf87f88b0f4eb6a923017de0d6',
+    KingClaim: '0xd4C4D1Ef0e79389173EBc247972F355c6f2FEC76',
 
     // fluid
     FluidVaultT1Open: '0x372404335C05C2493Ff156Ef60cC0B286f6f2971',
