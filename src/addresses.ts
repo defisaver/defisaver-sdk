@@ -176,6 +176,9 @@ export const actionAddresses = {
     LiquityRedeem: '0x20B78854658011394C931EF2BF3cEEA2Fe62E7f0',
     LiquityAdjust: '0x0A398f6B97677192A5d5e7Ea8A937383FFf9304c',
 
+    // liquity v2 legacy
+    LiquityV2CloseLegacyAction: '0xBD97F8fCfdb03ca29F0C9baCA7Cb09c5A51E4adE',
+    LiquityV2PaybackLegacyAction: '0x2B51c21a1af1316Af89f0493b2FF5C5D34D4626f',
     // liquity v2
     LiquityV2Open: '0x32491148a6DE3c4D7F8E025721146960373eC5C9',
     LiquityV2Close: '0x4854d11A534224D7bc43455a7084687450020e03',
