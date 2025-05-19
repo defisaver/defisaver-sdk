@@ -47,6 +47,6 @@ export class LiquityV2CloseLegacyAction extends Action {
   }
 
   async getAssetsToApprove() {
-    return [{ asset: getAssetInfo('BOLD').address, owner: this.args[1] }];
+    return [{ asset: getAssetInfo('BOLD Legacy').address, owner: this.args[1] }];
   }
 }
