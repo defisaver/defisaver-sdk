@@ -337,8 +337,14 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0xa7A4B84D38CD33F9901922687db24B8aE14f2455',
     FluidVaultT1Withdraw: '0x5673b9ab4A035C5C7474C344664Be91DaFafa17E',
     FluidVaultT1Supply: '0x0c6100209D8A0bb14CC7d18e45dA1bd1E7a3a187',
-    FluidView: '0xf8e3bbf7c95057be1fD5E741a9ADb73E956dC724',
+    FluidView: '0xc8df052bD7A8d76a34c09e758Dff3c6298C0115c',
     FluidClaim: '0x0bC0aeF7702C204DEF308994C84D8fBce676dB47',
+    // fluid dex actions
+    FluidDexOpen: '0x071e1369E1c9030Aa1a089bDE2F72797a14FE3b3',
+    FluidDexSupply: '0xB3BE39850d8939Cceb4Fc49c415c428548FA9f9C',
+    FluidDexBorrow: '0x3fa8EF6DA8f5b2BaAee77493a3A3dA68a7Aa75f3',
+    FluidDexPayback: '0xD733BD32F4AAEe92a983E2021B85ca5d31236FA0',
+    FluidDexWithdraw: '0x14d5bb8E96fbf7C1f9A8E3EFD0eF5fe6832ff3cd',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
@@ -485,7 +491,12 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0x226c871E0a27B12065c9128b8e7440b054b59155',
     FluidVaultT1Withdraw: '0xc13d93227d97197e5F1751d0a3e80c1080A5fa2B',
     FluidVaultT1Supply: '0xBCF0Dc5bb2C4434AD07369207904F5900d391b0B',
-    FluidView: '0x2d51BB6Ac5c1eC8DD6432e1FF980fC864B626e01',
+    FluidView: '0xf9e6d5568887ac8eC6fA33B7eefD2A176A958e71',
+    FluidDexOpen: '0xA456f13d358B8B93bE6778be3244111E267C0AaC',
+    FluidDexSupply: '0x3E49c4f914E01e5612719a7B4965e4FAfb324762',
+    FluidDexBorrow: '0x8626b70CDf64e557fDdcFbcb783833Dc314d95F4',
+    FluidDexPayback: '0xA9B46Da016F22cf9F8841A30881bB88E2Ad5CA94',
+    FluidDexWithdraw: '0x076D5434793798b153298bF70b014f5E6145aB2E',
   },
   [NETWORKS.base.chainId]: {
     // Basic
@@ -560,7 +571,7 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0xA65daAa4FB4Fe9feaDF25bf2C062c3Faa2b02e5D',
     FluidVaultT1Withdraw: '0x26bE6a2EdE97aE826ed9DA8Fb79428037fe55cEB',
     FluidVaultT1Supply: '0x028ACA45244d4897ff80ef65ed0b735Bb0D4B0A5',
-    FluidView: '0x5835CaDbA8843CD6d6d55782908351E9c74221aD',
+    FluidView: '0x6cd4D6af4F292817eA2A2311F099dF26cd015028',
 
     TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
   },
