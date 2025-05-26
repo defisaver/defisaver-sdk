@@ -26,7 +26,7 @@ export class PendleTokenRedeemAction extends Action {
     from: EthAddress,
     to: EthAddress,
     ptAmount: uint256,
-    minAmountOut: uint256
+    minAmountOut: uint256,
   ) {
     super(
       'PendleTokenRedeem',
@@ -35,12 +35,12 @@ export class PendleTokenRedeemAction extends Action {
       [market, underlyingToken, from, to, ptAmount, minAmountOut],
     );
     this.mappableArgs = [
-        this.args[0],
-        this.args[1],
-        this.args[2],
-        this.args[3],
-        this.args[4],
-        this.args[5],
+      this.args[0],
+      this.args[1],
+      this.args[2],
+      this.args[3],
+      this.args[4],
+      this.args[5],
     ];
     this.tokenForApproval = ptToken;
   }

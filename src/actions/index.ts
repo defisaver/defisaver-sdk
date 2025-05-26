@@ -77,4 +77,5 @@ export {
   renzo,
   etherfi,
   fluid,
+  pendle,
 };
