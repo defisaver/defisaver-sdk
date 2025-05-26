@@ -563,6 +563,9 @@ export const actionAddresses = {
     FluidView: '0x5835CaDbA8843CD6d6d55782908351E9c74221aD',
 
     TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
+
+    // pendle
+    PendleTokenRedeem: '0x0000000000000000000000000000000000000000',
   },
 };
 
