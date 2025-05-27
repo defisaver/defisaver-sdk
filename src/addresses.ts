@@ -565,7 +565,7 @@ export const actionAddresses = {
     TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
 
     // pendle
-    PendleTokenRedeem: '0x0000000000000000000000000000000000000000',
+    PendleTokenRedeem: '0x94682544aCC5f4D82ECB1ab97998baa0e428EA0f',
   },
 };
 
