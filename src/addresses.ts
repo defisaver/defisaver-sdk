@@ -345,6 +345,9 @@ export const actionAddresses = {
     FluidDexBorrow: '0x3fa8EF6DA8f5b2BaAee77493a3A3dA68a7Aa75f3',
     FluidDexPayback: '0xD733BD32F4AAEe92a983E2021B85ca5d31236FA0',
     FluidDexWithdraw: '0x14d5bb8E96fbf7C1f9A8E3EFD0eF5fe6832ff3cd',
+
+    // pendle
+    PendleTokenRedeem: '0x94682544aCC5f4D82ECB1ab97998baa0e428EA0f',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
@@ -574,9 +577,6 @@ export const actionAddresses = {
     FluidView: '0x6cd4D6af4F292817eA2A2311F099dF26cd015028',
 
     TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
-
-    // pendle
-    PendleTokenRedeem: '0x94682544aCC5f4D82ECB1ab97998baa0e428EA0f',
   },
 };
 
