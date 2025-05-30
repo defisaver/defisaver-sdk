@@ -37,6 +37,7 @@ import * as stkgho from './stkgho';
 import * as renzo from './renzo';
 import * as etherfi from './etherfi';
 import * as fluid from './fluid';
+import * as pendle from './pendle';
 
 export {
   aave,
@@ -78,4 +79,5 @@ export {
   renzo,
   etherfi,
   fluid,
+  pendle,
 };

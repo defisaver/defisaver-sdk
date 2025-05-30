@@ -29,7 +29,7 @@ export const actionAddresses = {
 
     // exchange
     DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
-
+    DFSSellNoFee: '0x3845C89c861eBb0a0c856CEBB064Ee93678bdE8E',
     // sky
     SkyStake: '0x5803C399EE9f887C8b81075E4C185c448361c235',
     SkyUnstake: '0x4b6d3A01465fa88D7D596333D15832434a568452',
@@ -176,20 +176,23 @@ export const actionAddresses = {
     LiquityRedeem: '0x20B78854658011394C931EF2BF3cEEA2Fe62E7f0',
     LiquityAdjust: '0x0A398f6B97677192A5d5e7Ea8A937383FFf9304c',
 
+    // liquity v2 legacy
+    LiquityV2CloseLegacy: '0xBD97F8fCfdb03ca29F0C9baCA7Cb09c5A51E4adE',
+    LiquityV2PaybackLegacy: '0x2B51c21a1af1316Af89f0493b2FF5C5D34D4626f',
     // liquity v2
-    LiquityV2Open: '0x6CEdC0317A9236CdFD800e6a6F41074f01d8229F',
-    LiquityV2Close: '0xBD97F8fCfdb03ca29F0C9baCA7Cb09c5A51E4adE',
+    LiquityV2Open: '0x32491148a6DE3c4D7F8E025721146960373eC5C9',
+    LiquityV2Close: '0x4854d11A534224D7bc43455a7084687450020e03',
     LiquityV2Supply: '0x89403Bc80FDb1adbcf4Ea7b6acFB26197E47F2AA',
     LiquityV2Withdraw: '0xDcBd59b7095edC5fd29063873Ec5d62F8BB18E9A',
-    LiquityV2Borrow: '0x092afc8AB25C6d5A2cE8CeAc4801fd8B1eFa5759',
-    LiquityV2Payback: '0x2B51c21a1af1316Af89f0493b2FF5C5D34D4626f',
+    LiquityV2Borrow: '0x9198D8bCe49c3E2819653ce350C82Cd009D3E49E',
+    LiquityV2Payback: '0x902cebdbF9ed3EC434C2246CDace1c825F0d5110',
     LiquityV2Claim: '0x1b5a0c2573A1692bB183cC5d6f506e108c0599FC',
-    LiquityV2Adjust: '0x6063CaD05DBf1c15f643C0F483bc5ce749501d3C',
+    LiquityV2Adjust: '0x3BbC88f3b75cB898395C9b5AE8D9c2a26744993b',
     LiquityV2AdjustInterestRate: '0x685f0237D8b85B2018278E975a481b0650dE0b54',
-    LiquityV2SPDeposit: '0x1556711572a53c89912AE185f3a6Dba9FF365Bf3',
-    LiquityV2SPWithdraw: '0x237eaB8D7f9bBeaF8D27dB9797EB835e4062B8C2',
+    LiquityV2SPDeposit: '0x73FF552646A7D93764Ff8D1F9e7662c422E715ef',
+    LiquityV2SPWithdraw: '0x8E8a4213745Ed68b3fce9d1500f563d885D02FDf',
     LiquityV2SPClaimColl: '0x3f783de20C3095bcB999AEA999aF4DF184b6630f',
-    LiquityV2AdjustZombieTrove: '0xDaB6aA000B0EBAa653A2715cb3847976bf614272',
+    LiquityV2AdjustZombieTrove: '0x45F5CEe8f89AdBCe4f5B20f38a49402b152ba99e',
 
     // b.protocol
     BprotocolLiquitySPDeposit: '0x5A0436c7559e37da8cD24B0f66C155a0a2fd6309',
@@ -325,7 +328,7 @@ export const actionAddresses = {
     EtherFiWrap: '0x086464be5c73f66cfbe6b64ec23aa5a86749ef58',
     EtherFiUnwrap: '0x6Eb09948DDf9332d628d156950b9B1C0c091e8D8',
 
-    KingClaim: '0x483816678e2348bf87f88b0f4eb6a923017de0d6',
+    KingClaim: '0xd4C4D1Ef0e79389173EBc247972F355c6f2FEC76',
 
     // fluid
     FluidVaultT1Open: '0x372404335C05C2493Ff156Ef60cC0B286f6f2971',
@@ -334,14 +337,24 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0xa7A4B84D38CD33F9901922687db24B8aE14f2455',
     FluidVaultT1Withdraw: '0x5673b9ab4A035C5C7474C344664Be91DaFafa17E',
     FluidVaultT1Supply: '0x0c6100209D8A0bb14CC7d18e45dA1bd1E7a3a187',
-    FluidView: '0xf8e3bbf7c95057be1fD5E741a9ADb73E956dC724',
+    FluidView: '0xc8df052bD7A8d76a34c09e758Dff3c6298C0115c',
     FluidClaim: '0x0bC0aeF7702C204DEF308994C84D8fBce676dB47',
+    // fluid dex actions
+    FluidDexOpen: '0x071e1369E1c9030Aa1a089bDE2F72797a14FE3b3',
+    FluidDexSupply: '0xB3BE39850d8939Cceb4Fc49c415c428548FA9f9C',
+    FluidDexBorrow: '0x3fa8EF6DA8f5b2BaAee77493a3A3dA68a7Aa75f3',
+    FluidDexPayback: '0xD733BD32F4AAEe92a983E2021B85ca5d31236FA0',
+    FluidDexWithdraw: '0x14d5bb8E96fbf7C1f9A8E3EFD0eF5fe6832ff3cd',
+
+    // pendle
+    PendleTokenRedeem: '0x94682544aCC5f4D82ECB1ab97998baa0e428EA0f',
 
     // summer.fi
     SFApproveTokens: '0x0000000000000000000000000000000000000000',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
+    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
 
     // basic
     WrapEth: '0x6D735db054AC4a1F10f96b99f8550E9eefbC2AC5',
@@ -403,6 +416,7 @@ export const actionAddresses = {
   },
   [NETWORKS.arbitrum.chainId]: {
     DFSSell: '0x1393eef11454ab068dd5e0d0be5eb922603eef1a',
+    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
 
     // basic
     WrapEth: '0x35136b25bFA7CCC8f5b94E3181a16B61c06980F0',
@@ -483,11 +497,17 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0x226c871E0a27B12065c9128b8e7440b054b59155',
     FluidVaultT1Withdraw: '0xc13d93227d97197e5F1751d0a3e80c1080A5fa2B',
     FluidVaultT1Supply: '0xBCF0Dc5bb2C4434AD07369207904F5900d391b0B',
-    FluidView: '0x2d51BB6Ac5c1eC8DD6432e1FF980fC864B626e01',
+    FluidView: '0xf9e6d5568887ac8eC6fA33B7eefD2A176A958e71',
+    FluidDexOpen: '0xA456f13d358B8B93bE6778be3244111E267C0AaC',
+    FluidDexSupply: '0x3E49c4f914E01e5612719a7B4965e4FAfb324762',
+    FluidDexBorrow: '0x8626b70CDf64e557fDdcFbcb783833Dc314d95F4',
+    FluidDexPayback: '0xA9B46Da016F22cf9F8841A30881bB88E2Ad5CA94',
+    FluidDexWithdraw: '0x076D5434793798b153298bF70b014f5E6145aB2E',
   },
   [NETWORKS.base.chainId]: {
     // Basic
     DFSSell: '0xcd151d2bd3e129a4678f2116a9944b5aea0c860d',
+    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
     WrapEth: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     SendToken: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
@@ -557,7 +577,7 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0xA65daAa4FB4Fe9feaDF25bf2C062c3Faa2b02e5D',
     FluidVaultT1Withdraw: '0x26bE6a2EdE97aE826ed9DA8Fb79428037fe55cEB',
     FluidVaultT1Supply: '0x028ACA45244d4897ff80ef65ed0b735Bb0D4B0A5',
-    FluidView: '0x5835CaDbA8843CD6d6d55782908351E9c74221aD',
+    FluidView: '0x6cd4D6af4F292817eA2A2311F099dF26cd015028',
 
     TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
   },

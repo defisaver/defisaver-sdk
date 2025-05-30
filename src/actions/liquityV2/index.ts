@@ -11,3 +11,5 @@ export * from './LiquityV2AdjustAction';
 export * from './LiquityV2ClaimAction';
 export * from './LiquityV2AdjustInterestRateAction';
 export * from './LiquityV2AdjustZombieTroveAction';
+export * from './LiquityV2CloseLegacyAction';
+export * from './LiquityV2PaybackLegacyAction';
