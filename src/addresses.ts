@@ -348,6 +348,11 @@ export const actionAddresses = {
 
     // pendle
     PendleTokenRedeem: '0x94682544aCC5f4D82ECB1ab97998baa0e428EA0f',
+
+    // umbrella staking
+    UmbrellaClaimRewards: '0x0000000000000000000000000000000000000000',
+    UmbrellaStake: '0x0000000000000000000000000000000000000000',
+    UmbrellaUnstake: '0x0000000000000000000000000000000000000000',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
