@@ -13,24 +13,22 @@ export class UmbrellaFinalizeUnstakeAction extends Action {
   /**
    * @param stkToken The umbrella stake token.
    * @param to The address to which the aToken or GHO will be transferred
-   * @param amount The amount of aToken or GHO to be unstaked (max.uint to redeem whole balance, 0 to start cooldown period)
-   * @param minOutOrMaxBurn Two cases:
-   * 1. For max redeem, it's the minimum amount of aTokens or GHO to be received
-   * 2. For partial redeem, it's the max amount of stkToken shares to burn
+   * @param stkAmount The amount of stkToken shares to burn (max.uint to redeem whole balance, 0 to start cooldown period)
+   * @param minAmountOut The minimum amount of aToken or GHO to be received
    */
   constructor(
     stkToken: EthAddress,
     to: EthAddress,
-    amount: uint256,
-    minOutOrMaxBurn: uint256,
+    stkAmount: uint256,
+    minAmountOut: uint256,
   ) {
     requireAddress(to);
-    if (amount === '0') throw new Error('Amount must be greater than 0. If you want to start cooldown period, use UmbrellaStartUnstakeAction');
+    if (stkAmount === '0') throw new Error('Amount must be greater than 0. If you want to start cooldown period, use UmbrellaStartUnstakeAction');
     super(
       'UmbrellaUnstake',
       getAddr('UmbrellaUnstake'),
       ['address', 'address', 'uint256', 'uint256'],
-      [stkToken, to, amount, minOutOrMaxBurn],
+      [stkToken, to, stkAmount, minAmountOut],
     );
     this.mappableArgs = [
       this.args[0],
