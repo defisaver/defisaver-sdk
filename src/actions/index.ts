@@ -79,4 +79,5 @@ export {
   etherfi,
   fluid,
   pendle,
+  umbrella,
 };

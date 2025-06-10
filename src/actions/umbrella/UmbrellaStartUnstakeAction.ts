@@ -4,7 +4,7 @@ import { EthAddress, uint256 } from '../../types';
 import { requireAddress } from '../../utils/general';
 
 /**
- * UmbrellaStartUnstakeAction - Start un-staking of aTokens or GHO tokens using Umbrella Stake Token
+ * UmbrellaStartUnstakeAction - Start un-staking of aTokens/underlying or GHO tokens using Umbrella Stake Token
  *
  * @category Umbrella
  */
@@ -18,8 +18,8 @@ export class UmbrellaStartUnstakeAction extends Action {
     super(
       'UmbrellaUnstake',
       getAddr('UmbrellaUnstake'),
-      ['address', 'address', 'uint256', 'uint256'],
-      [stkToken, getAddr('Empty'), '0', '0'],
+      ['address', 'address', 'uint256', 'bool', 'uint256'],
+      [stkToken, getAddr('Empty'), '0', false, '0'],
     );
     this.mappableArgs = [
       this.args[0],
