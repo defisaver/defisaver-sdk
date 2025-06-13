@@ -350,9 +350,9 @@ export const actionAddresses = {
     PendleTokenRedeem: '0x94682544aCC5f4D82ECB1ab97998baa0e428EA0f',
 
     // umbrella staking
-    UmbrellaClaimRewards: '0x0000000000000000000000000000000000000000',
-    UmbrellaStake: '0x0000000000000000000000000000000000000000',
-    UmbrellaUnstake: '0x0000000000000000000000000000000000000000',
+    UmbrellaClaimRewards: '0xe2c92F323d5e6F088D6195e6a9156817587De5E2',
+    UmbrellaStake: '0x3Ce0791050C7cA507F90914Ddf9c357eC2973bbC',
+    UmbrellaUnstake: '0xc27634A1D6c5Ed151ebd963Ef35487000C28dc0b',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
@@ -547,7 +547,7 @@ export const actionAddresses = {
     AaveV3ClaimRewards: '0xCeB876C6A4dd76aFe645622db00D4E051D16dA66',
     AaveV3Borrow: '0x8C6eC1A4869e2B307Ee1667e1c18D5776b61CCe3',
     AaveV3ATokenPayback: '0x3D57875885e3cEe9E56Cb65D21789893B6e67815',
-    AaveV3View: '0x125b8b832BD7F2EBD77Eef148A6319AdE751C44b',
+    AaveV3View: '0xea6092C334Cc1Ed2a4154C2101D70d09B7Ad0b1E',
     AaveV3DelegateWithSig: '0x9e295AFaC75E7843b88a563D119FD953EDf441c2',
 
     // CompV3
