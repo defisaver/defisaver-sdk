@@ -9,3 +9,4 @@ export * from './SparkClaimRewardsAction';
 export * from './SparkSwapBorrowRateModeAction';
 export * from './SparkDelegateCredit';
 export * from './SparkDelegateWithSigAction';
+export * from './SparkSPKClaimAction';
