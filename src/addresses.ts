@@ -118,6 +118,7 @@ export const actionAddresses = {
     SparkWithdraw: '0x1e3187D89e79B5c411D710E0fdF2709517852600',
     SparkDelegateCredit: '0x0000000000000000000000000000000000000000',
     SparkDelegateWithSig: '0xDaDC0a8B6359487257B91347064534c4B3fAc515',
+    SparkSPKClaim: '0xBc2DD203cDBE5D48c8A24F9e22fA4b3912f446E7',
 
     // compound
     CompBorrow: '0x8495579BF6Ae848f7E59686536F834f1d2CCd79C',
@@ -353,6 +354,9 @@ export const actionAddresses = {
     UmbrellaClaimRewards: '0xe2c92F323d5e6F088D6195e6a9156817587De5E2',
     UmbrellaStake: '0x3Ce0791050C7cA507F90914Ddf9c357eC2973bbC',
     UmbrellaUnstake: '0xc27634A1D6c5Ed151ebd963Ef35487000C28dc0b',
+
+    // summer.fi
+    SFApproveTokens: '0x0aC29D44eeC8e8f3b010c2e8FC960957db0c8298',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
@@ -415,6 +419,8 @@ export const actionAddresses = {
     CompV3Transfer: '0x3e5af71709a9e591c5b25422a4419164bb5aba4b',
     CompV3Withdraw: '0x744ad24e92d092e0788d429f5178286672288782',
 
+    // summer.fi
+    SFApproveTokens: '0xcc63B281b29a4c7f33aF780e9B480A15eb676e81',
   },
   [NETWORKS.arbitrum.chainId]: {
     DFSSell: '0x1393eef11454ab068dd5e0d0be5eb922603eef1a',
@@ -505,6 +511,9 @@ export const actionAddresses = {
     FluidDexBorrow: '0x8626b70CDf64e557fDdcFbcb783833Dc314d95F4',
     FluidDexPayback: '0xA9B46Da016F22cf9F8841A30881bB88E2Ad5CA94',
     FluidDexWithdraw: '0x076D5434793798b153298bF70b014f5E6145aB2E',
+
+    // summer.fi
+    SFApproveTokens: '0x98101bDBFaA3f8efa4A14a5A6a2f9A20D514a5D5',
   },
   [NETWORKS.base.chainId]: {
     // Basic
@@ -582,6 +591,9 @@ export const actionAddresses = {
     FluidView: '0x6cd4D6af4F292817eA2A2311F099dF26cd015028',
 
     TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
+
+    // summer.fi
+    SFApproveTokens: '0x03EDC9A683f37BFB7516FF234223fFb6E38D5eb9',
   },
 };
 
