@@ -80,7 +80,7 @@ export const actionAddresses = {
     AaveV3ClaimRewards: '0x998A2E9aaE03c11b7A9863C1F59c42A21fcf47D0',
     AaveV3Borrow: '0x7079ba1Bd00EeFCD2a260BbD6D088230505e3858',
     AaveV3ATokenPayback: '0xDe5c012cd1878D86E91309593764895a3adb380E',
-    AaveV3View: '0x9ECB0645b357fDD7B92789B91595160862Bd45d0',
+    AaveV3View: '0x0CB0170F3413e54405F64d3C23BA3A1D8Bb96D99',
     AaveV3DelegateWithSig: '0x9253E22Ce4f0AeE541301CF8cC29843f9083a1F4',
     GhoClaimAAVE: '0xA53060d822cB31AFd5B26D899130a14E8Efc5917',
     GhoUnstake: '0x3fD02e65B4fb12381946D03815Ff3FF8Ebe2fC63',
@@ -350,6 +350,11 @@ export const actionAddresses = {
     // pendle
     PendleTokenRedeem: '0x94682544aCC5f4D82ECB1ab97998baa0e428EA0f',
 
+    // umbrella staking
+    UmbrellaClaimRewards: '0xe2c92F323d5e6F088D6195e6a9156817587De5E2',
+    UmbrellaStake: '0x3Ce0791050C7cA507F90914Ddf9c357eC2973bbC',
+    UmbrellaUnstake: '0xc27634A1D6c5Ed151ebd963Ef35487000C28dc0b',
+
     // summer.fi
     SFApproveTokens: '0x0aC29D44eeC8e8f3b010c2e8FC960957db0c8298',
   },
@@ -551,7 +556,7 @@ export const actionAddresses = {
     AaveV3ClaimRewards: '0xCeB876C6A4dd76aFe645622db00D4E051D16dA66',
     AaveV3Borrow: '0x8C6eC1A4869e2B307Ee1667e1c18D5776b61CCe3',
     AaveV3ATokenPayback: '0x3D57875885e3cEe9E56Cb65D21789893B6e67815',
-    AaveV3View: '0x125b8b832BD7F2EBD77Eef148A6319AdE751C44b',
+    AaveV3View: '0xf140B2904beb743C2f17e0b5f766074212a7e243',
     AaveV3DelegateWithSig: '0x9e295AFaC75E7843b88a563D119FD953EDf441c2',
 
     // CompV3
