@@ -38,6 +38,7 @@ import * as renzo from './renzo';
 import * as etherfi from './etherfi';
 import * as fluid from './fluid';
 import * as pendle from './pendle';
+import * as umbrella from './umbrella';
 
 export {
   aave,
@@ -80,4 +81,5 @@ export {
   etherfi,
   fluid,
   pendle,
+  umbrella,
 };
