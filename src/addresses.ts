@@ -46,7 +46,7 @@ export const actionAddresses = {
     McdClaim: '0xc0FC0f5Ba156E16217F8C7f400AEc0a658419C13',
     McdDsrDeposit: '0x64bde7F73e05c6a28b701D7f569f0c0Ae4f6aD33',
     McdDsrWithdraw: '0x96190d1f1c040fd8449250b90778Aa360f2e0Ec1',
-    McdTokenConverter: '0x1ef664440dc7342253780472dad90d9a3258a71d',
+    McdTokenConverter: '0x8064B61A4DCc913C21Ca9bf7fF56314993d10849',
 
     // reflexer
     ReflexerSupply: '0xd7a36CD4ce7CCc2F1376Dc5C48BaC84380A4f698',
