@@ -1,7 +1,7 @@
-import { Action } from "../../Action";
-import { getAddr } from "../../addresses";
-import { EthAddress, uint256, bytes } from "../../types";
-import { FlashLoanId } from "./FlashLoanId";
+import { Action } from '../../Action';
+import { getAddr } from '../../addresses';
+import { EthAddress, uint256, bytes } from '../../types';
+import { FlashLoanId } from './FlashLoanId';
 
 /**
  * Gets a flashloan from BalancerV3
@@ -24,20 +24,20 @@ export class BalancerV3FlashLoanAction extends Action implements FlashLoanId {
     loanAmounts: Array<uint256>,
     modes: Array<uint256>,
     loanPayer: EthAddress,
-    flParamGetterAddr: EthAddress = getAddr("Empty"),
-    flParamGetterData: bytes = []
+    flParamGetterAddr: EthAddress = getAddr('Empty'),
+    flParamGetterData: bytes = [],
   ) {
     super(
-      "FLAction",
-      getAddr("FLAction"),
+      'FLAction',
+      getAddr('FLAction'),
       [
-        "address[]",
-        "uint256[]",
-        "uint256[]",
-        "address",
-        "address",
-        "bytes",
-        "bytes",
+        'address[]',
+        'uint256[]',
+        'uint256[]',
+        'address',
+        'address',
+        'bytes',
+        'bytes',
       ],
       [
         tokens,
@@ -47,7 +47,7 @@ export class BalancerV3FlashLoanAction extends Action implements FlashLoanId {
         flParamGetterAddr,
         flParamGetterData,
         [],
-      ]
+      ],
     );
   }
 }
