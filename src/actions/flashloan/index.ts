@@ -24,3 +24,4 @@ export * from './MorphoBlueFlashLoanAction';
 export * from './MorphoBlueFlashLoanPaybackAction';
 export * from './FLPaybackAction';
 export * from './CurveUsdFlashLoanAction';
+export * from './BalancerV3FlashLoanAction';
