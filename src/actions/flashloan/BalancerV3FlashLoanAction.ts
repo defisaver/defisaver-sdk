@@ -4,7 +4,7 @@ import { EthAddress, uint256, bytes } from "../../types";
 import { FlashLoanId } from "./FlashLoanId";
 
 /**
- * Gets a flashloan from BalancerV3 with fee enabled
+ * Gets a flashloan from BalancerV3
  *
  * @category Flashloans
  */
