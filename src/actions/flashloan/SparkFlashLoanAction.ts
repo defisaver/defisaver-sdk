@@ -12,8 +12,8 @@ export class SparkFlashLoanAction extends ActionWithL2 implements FlashLoanId {
   public flashLoanId = 7;
 
   /**
-   * @param loanAmounts
    * @param tokens
+   * @param loanAmounts
    * @param modes
    * @param loanPayer
    * @param flParamGetterAddr
