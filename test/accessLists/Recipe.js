@@ -1,6 +1,6 @@
 const AbiCoder = require('web3-eth-abi');
 const { BN, padLeft, toHex } = require('web3-utils');
-const {getAssetInfo, utils: {compare}} = require("@defisaver/tokens");
+const {getAssetInfo, utils} = require("@defisaver/tokens");
 const RecipeAbi = require('../../src/abis/Recipe.json');
 const MockAccessLists = require('./MockAccessLists');
 const dfs = require("../../src");
@@ -86,7 +86,7 @@ class Recipe {
         }
       }
     }
-    return uniqueAssetOwnerPairs.filter(({ address }) => !compare(address, getAssetInfo('ETH').address));
+    return uniqueAssetOwnerPairs.filter(({ address }) => !utils.compare(address, getAssetInfo('ETH').address));
   }
 
   /**
