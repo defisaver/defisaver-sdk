@@ -14,16 +14,12 @@ export class BalancerV3FlashLoanAction extends Action implements FlashLoanId {
   /**
    * @param tokens
    * @param loanAmounts
-   * @param modes
-   * @param loanPayer
    * @param flParamGetterAddr
    * @param flParamGetterData
    */
   constructor(
     tokens: Array<EthAddress>,
     loanAmounts: Array<uint256>,
-    modes: Array<uint256>,
-    loanPayer: EthAddress,
     flParamGetterAddr: EthAddress = getAddr('Empty'),
     flParamGetterData: bytes = [],
   ) {
@@ -42,8 +38,8 @@ export class BalancerV3FlashLoanAction extends Action implements FlashLoanId {
       [
         tokens,
         loanAmounts,
-        modes,
-        loanPayer,
+        [],
+        getAddr('Empty'),
         flParamGetterAddr,
         flParamGetterData,
         [],
