@@ -14,4 +14,3 @@ export * from './MorphoBlueTargetRatioCheckAction';
 export * from './LiquityV2RatioCheckAction';
 export * from './LiquityV2TargetRatioCheckAction';
 export * from './FluidRatioCheckAction';
-export * from './CompV3TargetRatioCheck';
