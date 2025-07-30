@@ -84,6 +84,7 @@ export const actionAddresses = {
     AaveV3DelegateWithSig: '0x9253E22Ce4f0AeE541301CF8cC29843f9083a1F4',
     GhoClaimAAVE: '0xA53060d822cB31AFd5B26D899130a14E8Efc5917',
     GhoUnstake: '0x3fD02e65B4fb12381946D03815Ff3FF8Ebe2fC63',
+    GhoStake: '0x6cfBFd04702f3b7d4fc52D457eDf91D6E4A081bb',
 
     // LSV action
     LSVWithdraw: '0xB0197CF09cc4c9891B0c2fCbE4AD7323154cA8a5',
