@@ -374,6 +374,7 @@ export const actionAddresses = {
     ApproveToken: '0x842a81d2cfe26d401CD63Cc14e9DEf275c197C1a',
     SendTokenAndUnwrap: '0xd4f69250cb4d1f083Dd372FEace391A16ABbfBDc',
     ToggleSub: '0xfc19a12e35bb0b5e6a3d3017be9e9022a6486eee',
+    CreateSub: '0x2daED8030BFC87B3d27c02E2f044B9CF4841Ff3e',
     TokenBalance: '0xC6FF5b01f7c7b35b6e093fF70D2332B361C5Be5A',
     TokenizedVaultAdapter: '0xdf31669FEd440f5BfF658ca0bBF0D22B8abdeb73',
     ChangeProxyOwner: '0x62769258ea8b3a85cc6fb4332fc2760a122dbc9e',
