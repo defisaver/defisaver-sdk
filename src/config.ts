@@ -46,6 +46,14 @@ export const NETWORKS : Networks = {
     rpcUrls: [],
     nativeCurrency: { name: 'Ethereum', decimals: 18, symbol: 'ETH' },
   },
+  linea: {
+    chainId: 59144,
+    chainName: 'Linea',
+    blockExplorerUrls: ['https://lineascan.build/'],
+    iconUrls: ['https://bridge.base.org/icons/base.svg'],
+    rpcUrls: [],
+    nativeCurrency: { name: 'Ethereum', decimals: 18, symbol: 'ETH' },
+  },
 };
 
 /**
