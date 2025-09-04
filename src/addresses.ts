@@ -597,7 +597,7 @@ export const actionAddresses = {
     // summer.fi
     SFApproveTokens: '0x03EDC9A683f37BFB7516FF234223fFb6E38D5eb9',
   },
-  [NETWORKS.base.chainId]: {
+  [NETWORKS.linea.chainId]: {
     // Basic
     DFSSell: '0x0a9b2080c14daf008ae87c977dfdf5f5d6d0937f',
     DFSSellNoFee: '0x0000000000000000000000000000000000000000',
