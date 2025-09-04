@@ -1,6 +1,6 @@
 {
   "name": "@defisaver/sdk",
-  "version": "1.3.1-dev-linea-1",
+  "version": "1.3.1-dev-linea-2",
   "description": "",
   "main": "./umd/index.js",
   "module": "./esm/src/index.js",
