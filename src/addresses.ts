@@ -616,7 +616,7 @@ export const actionAddresses = {
     TransferNFT: '0xAC17f651591f417934EeA04CF6629584Eb50A4bB',
 
     // Flashloan
-    FLAction: '0xdDFFd19564F9703800Da8a2FB9c2b4a7242bf01F ', // fix temp
+    FLAction: '0xdDFFd19564F9703800Da8a2FB9c2b4a7242bf01F', // fix temp
     FLAaveV3: '0xdDFFd19564F9703800Da8a2FB9c2b4a7242bf01F',
 
     // AaveV3
