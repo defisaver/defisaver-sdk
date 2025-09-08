@@ -617,6 +617,7 @@ export const actionAddresses = {
 
     // Flashloan
     FLAction: '0xdDFFd19564F9703800Da8a2FB9c2b4a7242bf01F ', // fix temp
+    FLAaveV3: '0xdDFFd19564F9703800Da8a2FB9c2b4a7242bf01F',
 
     // AaveV3
     AaveV3Withdraw: '0xae56474aBe3C271579b513b6668864e39f65Ae15',
