@@ -614,6 +614,7 @@ export const actionAddresses = {
     PermitToken: '0xcc0f04e8c34b670a1d06f4978c843952f690d3f4',
     MerklClaim: '0x4E1946059Dc2426Ef3a9AE82fB30B7718a09B7E1',
     TransferNFT: '0xAC17f651591f417934EeA04CF6629584Eb50A4bB',
+    TokenizedVaultAdapter: '0x1155BF929D78F1DeF999ACedE1867f79A7C66066',
 
     // Flashloan
     FLAction: '0x27c0bae2338ce28097122393faf90375b9395dd1', // fix temp
