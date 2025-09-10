@@ -23,7 +23,7 @@
   "license": "ISC",
   "dependencies": {
     "@defisaver/eslint-config": "^1.0.0",
-    "@defisaver/tokens": "^1.6.19",
+    "@defisaver/tokens": "^1.7.0",
     "@ethersproject/address": "^5.0.10",
     "@ethersproject/solidity": "^5.0.9",
     "@types/web3-eth-abi": "^1.2.2",
