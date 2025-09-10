@@ -27,3 +27,4 @@ export * from './LiquityV2QuotePriceTrigger';
 export * from './FluidRatioTrigger';
 export * from './CompV3PriceTrigger';
 export * from './CompV3PriceRangeTrigger';
+export * from './LiquityV2AdjustRateDebtInFrontTrigger';

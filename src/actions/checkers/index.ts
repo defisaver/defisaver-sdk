@@ -13,4 +13,5 @@ export * from './AaveV3OpenRatioCheckAction';
 export * from './MorphoBlueTargetRatioCheckAction';
 export * from './LiquityV2RatioCheckAction';
 export * from './LiquityV2TargetRatioCheckAction';
+export * from './LiquityV2NewInterestRateCheckerAction';
 export * from './FluidRatioCheckAction';
