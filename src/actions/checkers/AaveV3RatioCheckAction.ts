@@ -22,7 +22,7 @@ export class AaveV3RatioCheckAction extends Action {
   ) {
     super(
       'AaveV3RatioCheck',
-      getAddr('Empty'), // TODO -> is this ok?
+      getAddr('Empty'),
       ['uint8', 'uint256', 'address', 'address'],
       [ratioState, targetRatio, market, user],
     );
