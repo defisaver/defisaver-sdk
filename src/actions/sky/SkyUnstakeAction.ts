@@ -1,10 +1,9 @@
 import { Action } from '../../Action';
-import { requireAddress } from '../../utils/general';
 import { uint256, EthAddress } from '../../types';
 import { getAddr } from '../../addresses';
 
 /**
- * SkyStakeAction
+ * SkyUnstakeAction
  *
  * @category Sky
  */

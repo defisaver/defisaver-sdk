@@ -1,17 +1,16 @@
 import { Action } from '../../Action';
-import { requireAddress } from '../../utils/general';
-import { uint256, EthAddress } from '../../types';
+import { EthAddress } from '../../types';
 import { getAddr } from '../../addresses';
 
 /**
- * SkyStakeAction
+ * SkyClaimRewardsAction
  *
  * @category Sky
  */
 export class SkyClaimRewardsAction extends Action {
   /**
    * @param stakingContract
-   * @param stakingToken
+   * @param rewardToken
    * @param to
    */
   constructor(stakingContract:EthAddress, rewardToken:EthAddress, to:EthAddress) {

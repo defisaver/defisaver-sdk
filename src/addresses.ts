@@ -34,6 +34,11 @@ export const actionAddresses = {
     SkyStake: '0x5803C399EE9f887C8b81075E4C185c448361c235',
     SkyUnstake: '0x4b6d3A01465fa88D7D596333D15832434a568452',
     SkyClaimRewards: '0x8A2A23DfC0CD1738bD4408F1668E2B12ACD95369',
+    SkyStakingEngineOpenAction: '0x7F7669d926beeba495e8D97C6DAF6C000F05AEC0',
+    SkyStakingEngineSelectFarmAction: '0x44fe1615294E9D50faeb690D2a944EAF8B500892',
+    SkyStakingEngineStakeAction: '0xBb7F34F8A7809Ffe0775D13a783fE885EBB9aea5',
+    SkyStakingEngineUnstakeAction: '0x5456F09bBbBDB6bFad50A22256bAC7f3DDaab121',
+    SkyStakingEngineClaimRewardsAction: '0x0aF3F032A8544c63c35FD2995be8EE2Df68d2c21',
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
