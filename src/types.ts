@@ -30,6 +30,7 @@ type Networks = {
   optimism:Network,
   arbitrum:Network,
   base:Network,
+  linea:Network,
 };
 
 type TxSaverData = {

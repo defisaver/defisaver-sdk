@@ -34,6 +34,11 @@ export const actionAddresses = {
     SkyStake: '0x5803C399EE9f887C8b81075E4C185c448361c235',
     SkyUnstake: '0x4b6d3A01465fa88D7D596333D15832434a568452',
     SkyClaimRewards: '0x8A2A23DfC0CD1738bD4408F1668E2B12ACD95369',
+    SkyStakingEngineOpen: '0x7F7669d926beeba495e8D97C6DAF6C000F05AEC0',
+    SkyStakingEngineSelectFarm: '0x44fe1615294E9D50faeb690D2a944EAF8B500892',
+    SkyStakingEngineStake: '0xBb7F34F8A7809Ffe0775D13a783fE885EBB9aea5',
+    SkyStakingEngineUnstake: '0x5456F09bBbBDB6bFad50A22256bAC7f3DDaab121',
+    SkyStakingEngineClaimRewards: '0x0aF3F032A8544c63c35FD2995be8EE2Df68d2c21',
 
     // maker
     McdGenerate: '0xCb50a91C0f12f439b8bf11E9474B9c1ED62Bf7a3',
@@ -46,7 +51,7 @@ export const actionAddresses = {
     McdClaim: '0xc0FC0f5Ba156E16217F8C7f400AEc0a658419C13',
     McdDsrDeposit: '0x64bde7F73e05c6a28b701D7f569f0c0Ae4f6aD33',
     McdDsrWithdraw: '0x96190d1f1c040fd8449250b90778Aa360f2e0Ec1',
-    McdTokenConverter: '0x8064B61A4DCc913C21Ca9bf7fF56314993d10849',
+    McdTokenConverter: '0x81f9DB43EbA7E8EE6a8d9d399d5ca886C567F9dd',
 
     // reflexer
     ReflexerSupply: '0xd7a36CD4ce7CCc2F1376Dc5C48BaC84380A4f698',
@@ -108,13 +113,13 @@ export const actionAddresses = {
     MorphoAaveV3SetManager: '0x1082AE0565504E3617BD5b6E80f91B59b81a82D9',
 
     // spark
-    SparkBorrow: '0x3E2C366065bA0f6f9936C2C6A802D72F250b27AA',
+    SparkBorrow: '0x7a0207c1b5864B41629abBA4137b82a69F21F34d',
     SparkClaimRewards: '0x9C3E31f42a46676785C72401cD4F2287b355b003',
     SparkCollateralSwitch: '0xA859Dff8BCEE9C6daaEF5d0eCCb25219Da4B62b4',
     SparkPayback: '0x3a0F7Ca5cCf15aF19147F71de5fc84DC195f149f',
     SparkSetEMode: '0x2252a83Da69A237686eD9AC07a38DDA74ec7cE5f',
     SparkSpTokenPayback: '0x57403bB33A4829EBf5935D39eD08F19282F61d9c',
-    SparkSupply: '0xcb4505a5ED92e405BF1F5cD7C791B15c4564AAe9',
+    SparkSupply: '0xD10608B45718437082B9aF5DdC498080ad63Ac9E',
     SparkSwapBorrowRateMode: '0x71B0687C7ec0286dc3cfb715fe97249604aC898f',
     SparkWithdraw: '0x1e3187D89e79B5c411D710E0fdF2709517852600',
     SparkDelegateCredit: '0x0000000000000000000000000000000000000000',
@@ -597,6 +602,42 @@ export const actionAddresses = {
     // summer.fi
     SFApproveTokens: '0x03EDC9A683f37BFB7516FF234223fFb6E38D5eb9',
   },
+  [NETWORKS.linea.chainId]: {
+    // Basic
+    DFSSell: '0x0a9b2080c14daf008ae87c977dfdf5f5d6d0937f',
+    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
+    WrapEth: '0xB8af168883D049FF9C811ab5B5DE179f3e7d6Fb7',
+    UnwrapEth: '0xc5D0FF89e950a364207fC5be1b070170C874Dd87',
+    SendToken: '0x93A6E0dC4C4a6033922d386e4cbd9e31278A2BBa',
+    SendTokens: '0x3455057cE720b4c9B53D77509361E87f0F17b971',
+    SendTokenAndUnwrap: '0x520E8b0573a03D26D0E39a409E85E28459e24C0E',
+    PullToken: '0x75198244Ad7b3ebFCbFd67e6e06B1452bd6Fa831',
+    ApproveToken: '0x13976feAeC930Cc51986605D6f479d97a3b90FA9',
+    SumInputs: '0xA5b3aA3f06C2c0986E1f45ae36CD6C20392798f1',
+    SubInputs: '0x4C0607dAD18c0DE19f6d7b25c0B0f1990818e9d7',
+    TokenBalance: '0x16c9de87215D2198614dbC5419658eAdf4465025',
+    PermitToken: '0xcc0f04e8c34b670a1d06f4978c843952f690d3f4',
+    MerklClaim: '0x4E1946059Dc2426Ef3a9AE82fB30B7718a09B7E1',
+    TransferNFT: '0xAC17f651591f417934EeA04CF6629584Eb50A4bB',
+    TokenizedVaultAdapter: '0x1155BF929D78F1DeF999ACedE1867f79A7C66066',
+
+    // Flashloan
+    FLAction: '0x27c0bae2338ce28097122393faf90375b9395dd1', // fix temp
+    FLAaveV3: '0x27c0bae2338ce28097122393faf90375b9395dd1',
+
+    // AaveV3
+    AaveV3Withdraw: '0xae56474aBe3C271579b513b6668864e39f65Ae15',
+    AaveV3Supply: '0x7dFF34190d0307fC234fc7E8C152C9715083eB02',
+    AaveV3SetEMode: '0xa2ABA81e65543d18dd1a1E4A31Bc41C4a86453cf',
+    AaveV3Payback: '0x125b8b832bd7f2ebd77eef148a6319ade751c44b',
+    AaveV3CollateralSwitch: '0xa898078f369A78CE6b8023715e8f6d2Ad7d2719f',
+    AaveV3ClaimRewards: '0x4839d021A24820e57C31D386d430e2e82694F73B',
+    AaveV3Borrow: '0x9D95de57631DD8Ac071892843DA67FEe52EA3962',
+    AaveV3ATokenPayback: '0xedfc68e2874b0afc0963e18ae4d68522aec7f97d',
+    AaveV3View: '0xc9d6efa6e08b66a5cdc516bcd5807c2fa69e0f2a',
+    AaveV3DelegateWithSig: '0x169D6E128238ebabF86032Ae9da65938eaD7F69e',
+    AaveV3DelegateCredit: '0x2A588cBCBd5e6c6ba7ED0E260B8107F599017DDE',
+  },
 };
 
 export const otherAddresses = {
@@ -652,6 +693,14 @@ export const otherAddresses = {
     DSGuardFactory: '0x7783da8958013a57a5514737a4FBDFF06A0056e1',
     AdminVault: '0xD8E67968d8a0df4beCf2D50daE1e34d4d80C701C',
     DefisaverLogger: '0xc9D6EfA6e08B66a5Cdc516Bcd5807c2fa69E0f2A',
+    Empty: '0x0000000000000000000000000000000000000000',
+  },
+  [NETWORKS.linea.chainId]: {
+    RecipeExecutor: '0x50bCFC115283dF48Ab6382551B9B93b08E197747',
+    DFSRegistry: '0x09fBeC68D216667C3262211D2E5609578951dCE0',
+    DSGuardFactory: '0x02a516861f41262f22617511d00b6fccab65f762',
+    AdminVault: '0x71a9ef13c960c2f1dd17962d3592a5bcdfad6de0',
+    DefisaverLogger: '0x44e98bb58d725f2ef93a195f518b335dcb784c78',
     Empty: '0x0000000000000000000000000000000000000000',
   },
 };
