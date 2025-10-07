@@ -54,6 +54,14 @@ export const NETWORKS : Networks = {
     rpcUrls: [],
     nativeCurrency: { name: 'Ethereum', decimals: 18, symbol: 'ETH' },
   },
+  plasma: {
+    chainId: 9745,
+    chainName: 'Plasma',
+    blockExplorerUrls: ['https://plasmascan.to/'],
+    iconUrls: ['https://bridge.base.org/icons/base.svg'],
+    rpcUrls: [],
+    nativeCurrency: { name: 'XPL', decimals: 18, symbol: 'XPL' },
+  },
 };
 
 /**

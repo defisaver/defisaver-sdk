@@ -31,6 +31,7 @@ type Networks = {
   arbitrum:Network,
   base:Network,
   linea:Network,
+  plasma:Network,
 };
 
 type TxSaverData = {
