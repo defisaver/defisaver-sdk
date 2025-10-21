@@ -51,7 +51,7 @@ export const NETWORKS : Networks = {
     chainName: 'Linea',
     blockExplorerUrls: ['https://lineascan.build/'],
     iconUrls: ['https://bridge.base.org/icons/base.svg'],
-    rpcUrls: [],
+    rpcUrls: ['https://rpc.linea.build'],
     nativeCurrency: { name: 'Ethereum', decimals: 18, symbol: 'ETH' },
   },
   plasma: {
@@ -59,7 +59,7 @@ export const NETWORKS : Networks = {
     chainName: 'Plasma',
     blockExplorerUrls: ['https://plasmascan.to/'],
     iconUrls: ['https://bridge.base.org/icons/base.svg'],
-    rpcUrls: [],
+    rpcUrls: ['https://rpc.plasma.to'],
     nativeCurrency: { name: 'XPL', decimals: 18, symbol: 'XPL' },
   },
 };
