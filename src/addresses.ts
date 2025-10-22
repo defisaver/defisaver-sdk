@@ -379,6 +379,7 @@ export const actionAddresses = {
     ApproveToken: '0x842a81d2cfe26d401CD63Cc14e9DEf275c197C1a',
     SendTokenAndUnwrap: '0xd4f69250cb4d1f083Dd372FEace391A16ABbfBDc',
     ToggleSub: '0xfc19a12e35bb0b5e6a3d3017be9e9022a6486eee',
+    UpdateSub: '0xAe6ea1d13dF2bE60dC7933DB56067Cb89d6A2cDe',
     CreateSub: '0x2daED8030BFC87B3d27c02E2f044B9CF4841Ff3e',
     TokenBalance: '0xC6FF5b01f7c7b35b6e093fF70D2332B361C5Be5A',
     TokenizedVaultAdapter: '0xdf31669FEd440f5BfF658ca0bBF0D22B8abdeb73',
@@ -596,6 +597,11 @@ export const actionAddresses = {
     FluidVaultT1Withdraw: '0x26bE6a2EdE97aE826ed9DA8Fb79428037fe55cEB',
     FluidVaultT1Supply: '0x028ACA45244d4897ff80ef65ed0b735Bb0D4B0A5',
     FluidView: '0x6cd4D6af4F292817eA2A2311F099dF26cd015028',
+    FluidDexOpen: '0x5eA8Da9679145D51F5eAEC8Bf2f42f47003A8799',
+    FluidDexSupply: '0x2fCb7db80d3Be5C1B0049dF074b1AcFbcA93A867',
+    FluidDexBorrow: '0x9D40776a876fA67C6757DA386434844cB6616C5F',
+    FluidDexPayback: '0xc177c885872592EDA598276bD3FAe5B6d27F80Bf',
+    FluidDexWithdraw: '0xEaBA867c49FE8e53F5716fFF8857F239bd7202e1',
 
     TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
 
@@ -641,7 +647,7 @@ export const actionAddresses = {
   [NETWORKS.plasma.chainId]: {
     // Basic
     DFSSell: '0xAC17f651591f417934EeA04CF6629584Eb50A4bB',
-    DFSSellNoFee: '0x0000000000000000000000000000000000000000',
+    DFSSellNoFee: '0x45314C4265a378427f204483b3eFb89981129085',
     WrapEth: '0x520E8b0573a03D26D0E39a409E85E28459e24C0E',
     UnwrapEth: '0x93A6E0dC4C4a6033922d386e4cbd9e31278A2BBa',
     SendToken: '0xa2ABA81e65543d18dd1a1E4A31Bc41C4a86453cf',
@@ -687,6 +693,8 @@ export const actionAddresses = {
     FluidDexBorrow: '0xa2A878a09639D1ab3AF544566c0CA4D0FeAEE65E',
     FluidDexPayback: '0x04ce4b2a9F524d976a8eD8a49B9313C5a2C3ccAD',
     FluidDexWithdraw: '0x17B4ecd173b3Df2F5cB02c53Df8AA34e23Bcb92E',
+    // Pendle
+    PendleTokenRedeem: '0xB4c5f33bb5791D0174Df1879b809Bf57eE540B62',
   },
 };
 
