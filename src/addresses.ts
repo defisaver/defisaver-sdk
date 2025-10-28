@@ -522,6 +522,19 @@ export const actionAddresses = {
 
     // summer.fi
     SFApproveTokens: '0x98101bDBFaA3f8efa4A14a5A6a2f9A20D514a5D5',
+
+    // MorphoBlue
+    MorphoBlueSupply: '0xeaF1c037716b447C178f3604BCFd10e650704525',
+    MorphoBlueSupplyCollateral: '0x65A5900F2faab9cC495b92389844739DF08A290D',
+    MorphoBlueWithdraw: '0xd7132c78677E764b352F83D1ACbCd9564eC08569',
+    MorphoBlueWithdrawCollateral: '0x374553273E681C6cfA69006CEd70710d415a02D0',
+    MorphoBlueBorrow: '0xAe3073ab93DAde55e8B9390E5f3A3071B1ec99Ec',
+    MorphoBluePayback: '0x0e5493737FC3466341E0372219ef72FA0B4DDBbB',
+    MorphoBlueSetAuth: '0x7e1deb39317A7542Be231123733d94167FaC73D5',
+    MorphoBlueSetAuthWithSig: '0x14da4D942b2b855550b47567c333edB8443cF1A7',
+    MorphoBlueView: '0xa3b8b400a2eFF0314fa9605E778692bd4Bd9f880',
+    MorphoBlueReallocateLiquidity: '0x79C0E0eFe0Df71B2d301f4e08cfB5Ca8814A8f4c',
+    MorphoBlueClaim: '0x3ae0160e27778f7286182eAc774fD7ECd40539a7',
   },
   [NETWORKS.base.chainId]: {
     // Basic
