@@ -1,0 +1,40 @@
+name: DEV - npm publish
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Enter version number:"
+        required: true
+        type: string
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Set version
+        run: |
+          VERSION="${{ github.event.inputs.version }}-dev"
+          echo "Setting version to $VERSION"
+          npm version "$VERSION" --no-git-tag-version
+
+      - name: Build package
+        run: npm run build
+
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: npm publish --tag dev
