@@ -23,6 +23,10 @@ export class UmbrellaStartUnstakeAction extends Action {
     );
     this.mappableArgs = [
       this.args[0],
+      getAddr('Empty'),
+      '0',
+      false,
+      '0',
     ];
   }
 }
