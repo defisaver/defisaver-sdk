@@ -18,6 +18,7 @@ export class AaveV4SupplyAction extends Action {
    * @param reserveId Reserve id.
    * @param amount Amount of tokens to supply.
    * @param useAsCollateral Whether to use the tokens as collateral.
+   * @param tokenAddress Address of the token to approve.
    *
    */
   constructor(
