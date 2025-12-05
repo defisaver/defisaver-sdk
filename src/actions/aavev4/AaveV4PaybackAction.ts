@@ -17,7 +17,7 @@ export class AaveV4PaybackAction extends Action {
    * @param from Address from which to pull the payback tokens.
    * @param reserveId Reserve id.
    * @param amount Amount of tokens to payback. Send type(uint).max to payback whole amount.
-   * @param tokenAddress Address of the token to approve.
+   * @param tokenAddress Address of the token to approve. Optional, as it is only used for token approval, not part of encoding.
    */
   constructor(
     spoke: EthAddress,
@@ -25,7 +25,7 @@ export class AaveV4PaybackAction extends Action {
     from: EthAddress,
     reserveId: uint256,
     amount: uint256,
-    tokenAddress: EthAddress,
+    tokenAddress: EthAddress = getAddr('Empty'),
   ) {
     super(
       'AaveV4Payback',

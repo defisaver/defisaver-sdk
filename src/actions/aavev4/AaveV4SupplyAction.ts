@@ -18,7 +18,7 @@ export class AaveV4SupplyAction extends Action {
    * @param reserveId Reserve id.
    * @param amount Amount of tokens to supply.
    * @param useAsCollateral Whether to use the tokens as collateral.
-   * @param tokenAddress Address of the token to approve.
+   * @param tokenAddress Address of the token to approve. Optional, as it is only used for token approval, not part of encoding.
    *
    */
   constructor(
@@ -28,7 +28,7 @@ export class AaveV4SupplyAction extends Action {
     reserveId: uint256,
     amount: uint256,
     useAsCollateral: boolean,
-    tokenAddress: EthAddress,
+    tokenAddress: EthAddress = getAddr('Empty'),
   ) {
     super(
       'AaveV4Supply',
