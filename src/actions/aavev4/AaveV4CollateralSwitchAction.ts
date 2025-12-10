@@ -5,7 +5,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * AaveV4CollateralSwitchAction
  *
- * @category AaveV4CollateralSwitch
+ * @category AaveV4
  */
 export class AaveV4CollateralSwitchAction extends Action {
   /**

@@ -5,7 +5,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * AaveV4WithdrawAction
  *
- * @category AaveV4Withdraw
+ * @category AaveV4
  */
 export class AaveV4WithdrawAction extends Action {
   /**

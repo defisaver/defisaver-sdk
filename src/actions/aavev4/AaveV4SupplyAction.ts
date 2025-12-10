@@ -6,7 +6,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * AaveV4SupplyAction
  *
- * @category AaveV4Supply
+ * @category AaveV4
  */
 export class AaveV4SupplyAction extends Action {
   tokenForApproval: EthAddress;

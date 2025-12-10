@@ -6,7 +6,7 @@ import { EthAddress, uint256 } from '../../types';
 /**
  * AaveV4PaybackAction
  *
- * @category AaveV4Payback
+ * @category AaveV4
  */
 export class AaveV4PaybackAction extends Action {
   tokenForApproval: EthAddress;
