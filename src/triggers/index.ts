@@ -29,3 +29,5 @@ export * from './CompV3PriceTrigger';
 export * from './CompV3PriceRangeTrigger';
 export * from './LiquityV2AdjustRateDebtInFrontTrigger';
 export * from './AaveV3QuotePriceRangeTrigger';
+export * from './SparkQuotePriceRangeTrigger';
+export * from './MorphoBluePriceRangeTrigger';
