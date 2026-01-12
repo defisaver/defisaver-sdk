@@ -388,8 +388,8 @@ export const actionAddresses = {
 
     // summer.fi
     SFApproveTokens: '0x0aC29D44eeC8e8f3b010c2e8FC960957db0c8298',
-    SummerfiUnsubAction: '0x26c39fe05466dba72a98d095d019dc5e067f6b28',
-    SummerfiUnsubV2Action: '0xc3a61ca1c53ca4bebc8329a0ece2128fcac70fc4',
+    SummerfiUnsub: '0x26c39fe05466dba72a98d095d019dc5e067f6b28',
+    SummerfiUnsubV2: '0xc3a61ca1c53ca4bebc8329a0ece2128fcac70fc4',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
