@@ -1,6 +1,5 @@
 import { CONFIG, NETWORKS } from './config';
 import { EthAddress } from './types';
-import { SummerfiUnsubAction, SummerfiUnsubV2Action } from './actions/summerfi';
 
 export const actionAddresses = {
   [NETWORKS.ethereum.chainId]: {
