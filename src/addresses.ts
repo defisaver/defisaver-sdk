@@ -144,7 +144,7 @@ export const actionAddresses = {
     FLMaker: '0x0f8C3368cADF78167F5355D746Ed7b2A826A6e3b',
     FLBalancer: '0x93d333930c7f7260a1E6061B0a8C0CbdEC95F367',
     FLSpark: '0xe9Fe5a0f5e4B370Ae60d837da58744666D5C06F7',
-    FLAction: '0x5f1dC84Ba060Ea3f7429c6A7bBEdd9243CF1209b',
+    FLAction: '0x8d9cda62dc7bf75f687c6c8729abb51ac82e20d5',
     FLUniV3: '0x9CAdAC8Be718572F82B672b950c53F0b58483A35',
     FLGho: '0xbb67b81dD080a406227A38965d0393f396ddECBc',
     FLMorphoBlue: '0x6206C96EAc5EAC546861438A9f953B6BEa50EBAB',
@@ -714,7 +714,7 @@ export const actionAddresses = {
 
 export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
-    RecipeExecutor: '0x2ee96cf53ae5fbd5309284704f978d0ca66cb963',
+    RecipeExecutor: '0x10b748dc504c2515bb6a9e23cb2f686090b6c584',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
     DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
