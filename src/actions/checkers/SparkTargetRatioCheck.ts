@@ -13,7 +13,7 @@ export class SparkTargetRatioCheck extends Action {
      * @param market Address of the market
      */
   constructor(targetRatio: uint256, market: EthAddress) {
-    super('SparkTargetRatioCheck', getAddr('SparkTargetRatioCheck'), ['uint256', 'address'], [targetRatio, market]);
+    super('SparkTargetRatioCheck', getAddr('Empty'), ['uint256', 'address'], [targetRatio, market]);
 
     this.mappableArgs = [
       this.args[0],
