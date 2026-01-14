@@ -759,15 +759,18 @@ export const actionAddresses = {
 export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
     RecipeExecutor: '0xbc3Fc959FeF3F12a41738f406c02198cdeE7481F',
-    RecipeExecutorForTxSaver: '0x2ee96cf53ae5fbd5309284704f978d0ca66cb963',
+    RecipeExecutorForTxSaver:
+             '0x2ee96cf53ae5fbd5309284704f978d0ca66cb963',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
     DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
+    SFProxyEntryPoint: '0xAa15ca459659F35B1064EC546A44d962d54bA89e',
 
     McdCdpManager: '0x5ef30b9986345249bc32d8928b7ee64de9435e39',
     BCdpManager: '0x3f30c2381CD8B917Dd96EB2f1A4F96D91324BBed',
     AaveDefaultMarket: '0xB53C1a33016B2DC2fF3653530bfF1848a515c8c5',
-    UniswapV3PositionManager: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
+    UniswapV3PositionManager:
+             '0xC36442b4a4522E871399CD717aBDD847Ab11FE88',
     RaiWethUniV2LPToken: '0x8aE720a71622e824F576b4A8C03031066548A3B1',
     BalancerToken: '0xba100000625a3754423978a60c9317c58a424e3D',
     CrvToken: '0xD533a949740bb3306d119CC777fa900bA034cd52',
@@ -783,6 +786,7 @@ export const otherAddresses = {
     RecipeExecutorForTxSaver: '0x993A8c81142044E1CB0Cf0c3d84BEa235d842Fb0',
     DFSRegistry: '0xAf707Ee480204Ed6e2640B53cE86F680D28Afcbd',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
+    SFProxyEntryPoint: '0x06299D4A07E8C6D7C1aEc14Ab2F46DF05Dd9588E',
 
     DSGuardFactory: '0xc19d0F1E2b38AA283E226Ca4044766A43aA7B02b',
     AdminVault: '0x136b1bEAfff362530F98f10E3D8C38f3a3F3d38C',
@@ -796,6 +800,7 @@ export const otherAddresses = {
     RecipeExecutorForTxSaver: '0x7a25174229ea402d8ccd35fc6d55af079c399884',
     DFSRegistry: '0xBF1CaC12DB60819Bfa71A328282ecbc1D40443aA',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
+    SFProxyEntryPoint: '0x15D776C062bF292f8F70A81533E49adC7C06Cb69',
 
     DSGuardFactory: '0x5261abC3a94a6475D0A1171daE94A5f84fbaEcD2',
     AdminVault: '0xd47D8D97cAd12A866900eEc6Cde1962529F25351',
@@ -809,6 +814,7 @@ export const otherAddresses = {
     RecipeExecutorForTxSaver: '0x7a87565b77dd65bbc153fe20e97743842f1a6e0c',
     DFSRegistry: '0x347FB634271F666353F23A3362f3935D96F97476',
     ProxyRegistry: '0x425fA97285965E01Cc5F951B62A51F6CDEA5cc0d',
+    SFProxyEntryPoint: '0xab6e5cde983fF98Cdb0F61f5F99cb58D40D0c837',
 
     DSGuardFactory: '0x7783da8958013a57a5514737a4FBDFF06A0056e1',
     AdminVault: '0xD8E67968d8a0df4beCf2D50daE1e34d4d80C701C',
