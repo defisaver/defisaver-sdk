@@ -389,6 +389,13 @@ export const actionAddresses = {
     SFApproveTokens: '0x0aC29D44eeC8e8f3b010c2e8FC960957db0c8298',
     SummerfiUnsub: '0x926405D69b77A514ED974901095AcFf9e5131366',
     SummerfiUnsubV2: '0x5E805eD9B7581a9f1398F75833f9663a459F5E30',
+
+    // AaveV4
+    AaveV4Supply: '0x30f333997eA08CA7Af95E32F4f90DACEf284D746',
+    AaveV4Withdraw: '0x8fc7F5dCeb5da1B0293A246ed6aeDc44EB37dB38',
+    AaveV4Borrow: '0x0a58710A67837E6d026B83c434519c5f0A0cD7a1',
+    AaveV4Payback: '0xCbcbD3b3e0D704Ad26b7dCfe1BdA6e85CDd8DBf0',
+    AaveV4CollateralSwitch: '0x19Ef19d6b8818103b8Cae086BB23e183EF7E433f',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
