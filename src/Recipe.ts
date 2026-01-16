@@ -143,7 +143,7 @@ export class Recipe {
       data.shouldTakeFeeFromPosition,
     ];
     return [
-      this.recipeExecutorAddress,
+      getAddr('RecipeExecutorForTxSaver', CONFIG.chainId),
       // @ts-expect-error Interface of AbiCoder is wrong :(
       AbiCoder.encodeFunctionCall(executeTaskAbi, [encodedRecipe, encodedTxSaverData]),
     ];
