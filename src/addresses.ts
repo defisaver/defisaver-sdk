@@ -766,8 +766,6 @@ export const actionAddresses = {
 export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
     RecipeExecutor: '0xbc3Fc959FeF3F12a41738f406c02198cdeE7481F',
-    RecipeExecutorForTxSaver:
-             '0x2ee96cf53ae5fbd5309284704f978d0ca66cb963',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
     DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
@@ -790,7 +788,6 @@ export const otherAddresses = {
   },
   [NETWORKS.optimism.chainId]: {
     RecipeExecutor: '0xEC891E6b5A93F5f29241De6B234a4e77A5456A1C',
-    RecipeExecutorForTxSaver: '0x993A8c81142044E1CB0Cf0c3d84BEa235d842Fb0',
     DFSRegistry: '0xAf707Ee480204Ed6e2640B53cE86F680D28Afcbd',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
     SFProxyEntryPoint: '0x06299D4A07E8C6D7C1aEc14Ab2F46DF05Dd9588E',
@@ -804,7 +801,6 @@ export const otherAddresses = {
   },
   [NETWORKS.arbitrum.chainId]: {
     RecipeExecutor: '0x667609f05DdC5E9Fb939eC376F07953403745cf3',
-    RecipeExecutorForTxSaver: '0x7a25174229ea402d8ccd35fc6d55af079c399884',
     DFSRegistry: '0xBF1CaC12DB60819Bfa71A328282ecbc1D40443aA',
     ProxyRegistry: '0x283Cc5C26e53D66ed2Ea252D986F094B37E6e895',
     SFProxyEntryPoint: '0x15D776C062bF292f8F70A81533E49adC7C06Cb69',
@@ -818,7 +814,6 @@ export const otherAddresses = {
   },
   [NETWORKS.base.chainId]: {
     RecipeExecutor: '0xc91305DdE651c899EF8eE1D0C33E7dab1B5ABF0D',
-    RecipeExecutorForTxSaver: '0x7a87565b77dd65bbc153fe20e97743842f1a6e0c',
     DFSRegistry: '0x347FB634271F666353F23A3362f3935D96F97476',
     ProxyRegistry: '0x425fA97285965E01Cc5F951B62A51F6CDEA5cc0d',
     SFProxyEntryPoint: '0xab6e5cde983fF98Cdb0F61f5F99cb58D40D0c837',
