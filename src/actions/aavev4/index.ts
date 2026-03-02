@@ -4,3 +4,4 @@ export * from './AaveV4BorrowAction';
 export * from './AaveV4PaybackAction';
 export * from './AaveV4CollateralSwitchAction';
 export * from './AaveV4StoreRatioAction';
+export * from './AaveV4RefreshPremiumAction';
