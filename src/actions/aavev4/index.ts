@@ -5,3 +5,6 @@ export * from './AaveV4PaybackAction';
 export * from './AaveV4CollateralSwitchAction';
 export * from './AaveV4StoreRatioAction';
 export * from './AaveV4RefreshPremiumAction';
+export * from './AaveV4DelegateBorrowWithSigAction';
+export * from './AaveV4DelegateWithdrawWithSigAction';
+export * from './AaveV4SetUserManagersWithSigAction';
