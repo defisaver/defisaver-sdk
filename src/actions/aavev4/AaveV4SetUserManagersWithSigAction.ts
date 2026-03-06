@@ -27,7 +27,7 @@ export class AaveV4SetUserManagersWithSigAction extends Action {
     super(
       'AaveV4SetUserManagersWithSig',
       getAddr('AaveV4SetUserManagersWithSig'),
-      ['address', 'address', 'uint256', 'uint256', 'bytes', '(address,bool)[]'],
+      ['address', 'address', 'uint256', 'uint256', 'bytes', 'tuple(address,bool)[]'],
       [spoke, onBehalf, nonce, deadline, signature, updates],
     );
   }
