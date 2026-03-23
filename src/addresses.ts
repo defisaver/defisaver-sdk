@@ -397,9 +397,10 @@ export const actionAddresses = {
     AaveV4Payback: '0x6e31Dd331571209043c8CF997f86b4291F648537',
     AaveV4CollateralSwitch: '0x26C39FE05466dBA72A98d095d019dC5e067F6b28',
     AaveV4RefreshPremium: '0xb080DC160415Ffe1a4b80d75b0Be92EE38a0b426',
-    AaveV4SetUserManagersWithSig: '0xe3459a0fEBc8276c428951125A10f589ea195760',
-    AaveV4DelegateWithdrawWithSig: '0xDDCcE054Ea32dc857A2D7Cf87E55310Feb2DD86c',
-    AaveV4DelegateBorrowWithSig: '0xdDef60521E4cf82e971D1f1387ab0d5e226D0533',
+    AaveV4SetUserManagersWithSig: '0xD50B0295C69e3F77BE7d99e7BdeAc442F37b373b',
+    AaveV4DelegateWithdrawWithSig: '0x88bBa5Ce5cE20286Cf866b9f310354FFB701A296',
+    AaveV4DelegateBorrowWithSig: '0xBAc6dc3edB72Bc705Ab4e31F2a2151Fe06550D9B',
+    AaveV4DelegateSetUsingAsCollateralWithSig: '0x780d8fB962AA44645494E0aAa52477a9A82f6C79',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
