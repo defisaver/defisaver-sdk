@@ -8,3 +8,4 @@ export * from './AaveV4RefreshPremiumAction';
 export * from './AaveV4DelegateBorrowWithSigAction';
 export * from './AaveV4DelegateWithdrawWithSigAction';
 export * from './AaveV4SetUserManagersWithSigAction';
+export * from './AaveV4DelegateSetUsingAsCollateralWithSigAction';
