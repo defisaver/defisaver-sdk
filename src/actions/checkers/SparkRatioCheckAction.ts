@@ -13,7 +13,7 @@ export class SparkRatioCheckAction extends Action {
    * @param targetRatio The ratio user want to be at
    */
   constructor(ratioState:uint8, targetRatio:uint256) {
-    super('SparkRatioCheck', getAddr('SparkRatioCheck'), ['uint8', 'uint256'], [ratioState, targetRatio]);
+    super('SparkRatioCheck', getAddr('Empty'), ['uint8', 'uint256'], [ratioState, targetRatio]);
 
     this.mappableArgs = [
       this.args[0],

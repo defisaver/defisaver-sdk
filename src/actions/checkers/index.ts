@@ -15,3 +15,4 @@ export * from './LiquityV2RatioCheckAction';
 export * from './LiquityV2TargetRatioCheckAction';
 export * from './LiquityV2NewInterestRateCheckerAction';
 export * from './FluidRatioCheckAction';
+export * from './SparkTargetRatioCheck';
