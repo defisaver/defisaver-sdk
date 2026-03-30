@@ -36,6 +36,10 @@ export class Strategy {
     this.actions.push(newAction);
   }
 
+  addActions(newActions: Array<Action>) {
+    this.actions.push(...newActions);
+  }
+
   print() {
     console.log(`Name: ${this.name}`);
     console.log(`Slots: ${this.subSlots}`);
