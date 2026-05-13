@@ -25,7 +25,7 @@ export class LimitSellAction extends ActionWithL2 {
     requireAddress(to);
     super(
       'LimitSell',
-      getAddr('LimitSell'),
+      getAddr('Empty'),
       [
         ['address', 'address', 'uint256', 'uint256', 'uint256', 'uint256', 'address', 'address', 'bytes', ['address', 'address', 'address', 'uint256', 'uint256', 'bytes']],
         'address',
