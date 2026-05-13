@@ -17,6 +17,7 @@ export * from './TransferNFTAction';
 export * from './SendTokensAction';
 export * from './CreateSubAction';
 export * from './LSVSellAction';
+export * from './LimitSellActionL2';
 export * from './ApproveTokenAction';
 export * from './SDaiWrapAction';
 export * from './SDaiUnwrapAction';
