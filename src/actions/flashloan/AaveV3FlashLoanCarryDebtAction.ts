@@ -9,27 +9,21 @@ import { EthAddress, uint256, bytes } from '../../types';
  */
 export class AaveV3FlashLoanCarryDebtAction extends ActionWithL2 {
   /**
-   * @param loanAmounts
    * @param tokens
-   * @param modes
-   * @param loanPayer
+   * @param loanAmounts
    * @param flParamGetterAddr
    * @param flParamGetterData
    */
-  constructor(tokens:Array<EthAddress>, loanAmounts:Array<uint256>, modes:Array<uint256>, loanPayer:EthAddress, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes = []) {
+  constructor(tokens:Array<EthAddress>, loanAmounts:Array<uint256>, flParamGetterAddr:EthAddress = getAddr('Empty'), flParamGetterData:bytes = []) {
+    if (tokens.length !== loanAmounts.length) {
+      throw new Error('Tokens and loan amounts must be of the same length');
+    }
+    const modes: Array<uint256> = Array(tokens.length).fill(2); // always use variable borrow rate
     super(
       'FLAaveV3CarryDebt',
       getAddr('FLAaveV3CarryDebt'),
       ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
-      [tokens, loanAmounts, modes, loanPayer, flParamGetterAddr, flParamGetterData, []],
+      [tokens, loanAmounts, modes, getAddr('Empty'), flParamGetterAddr, flParamGetterData, []],
     );
-    if (tokens.length !== modes.length || tokens.length !== loanAmounts.length) {
-      throw new Error('Arrays must be of the same length');
-    }
-    modes.forEach((mode) => {
-      if (mode.toString() !== '1' && mode.toString() !== '2') {
-        throw new Error('Invalid borrow mode set');
-      }
-    });
   }
 }

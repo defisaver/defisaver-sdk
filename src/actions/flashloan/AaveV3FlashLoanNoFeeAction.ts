@@ -9,8 +9,8 @@ import { EthAddress, uint256, bytes } from '../../types';
  */
 export class AaveV3FlashLoanNoFeeAction extends ActionWithL2 {
   /**
-   * @param loanAmounts
    * @param tokens
+   * @param loanAmounts
    * @param modes
    * @param loanPayer
    * @param flParamGetterAddr
