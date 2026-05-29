@@ -698,8 +698,8 @@ export const actionAddresses = {
     TokenizedVaultAdapter: '0x1155BF929D78F1DeF999ACedE1867f79A7C66066',
 
     // Flashloan
-    FLAction: '0x27c0bae2338ce28097122393faf90375b9395dd1', // fix temp
-    FLAaveV3: '0x27c0bae2338ce28097122393faf90375b9395dd1',
+    FLAction: '0x04ce4b2a9F524d976a8eD8a49B9313C5a2C3ccAD', // fix temp
+    FLAaveV3: '0x04ce4b2a9F524d976a8eD8a49B9313C5a2C3ccAD',
 
     // AaveV3
     AaveV3Withdraw: '0xae56474aBe3C271579b513b6668864e39f65Ae15',
@@ -734,8 +734,8 @@ export const actionAddresses = {
     TokenizedVaultAdapter: '0x75198244Ad7b3ebFCbFd67e6e06B1452bd6Fa831',
 
     // Flashloan
-    FLAction: '0xa67f6A6Af60dD626ce7bF3d4705ABe5D593D90Ec', // fix temp
-    FLAaveV3: '0xa67f6A6Af60dD626ce7bF3d4705ABe5D593D90Ec',
+    FLAction: '0x40C9ce603923AACD0b7407Ff0EE844c9C067cEB7', // fix temp
+    FLAaveV3: '0x40C9ce603923AACD0b7407Ff0EE844c9C067cEB7',
 
     // AaveV3
     AaveV3Withdraw: '0x4839d021A24820e57C31D386d430e2e82694F73B',
@@ -829,7 +829,7 @@ export const otherAddresses = {
     Empty: '0x0000000000000000000000000000000000000000',
   },
   [NETWORKS.linea.chainId]: {
-    RecipeExecutor: '0x50bCFC115283dF48Ab6382551B9B93b08E197747',
+    RecipeExecutor: '0x903F7C93FFC4AAbaBB096a7A722F1f057816B399',
     DFSRegistry: '0x09fBeC68D216667C3262211D2E5609578951dCE0',
     DSGuardFactory: '0x02a516861f41262f22617511d00b6fccab65f762',
     AdminVault: '0x71a9ef13c960c2f1dd17962d3592a5bcdfad6de0',
@@ -837,7 +837,7 @@ export const otherAddresses = {
     Empty: '0x0000000000000000000000000000000000000000',
   },
   [NETWORKS.plasma.chainId]: {
-    RecipeExecutor: '0xB8af168883D049FF9C811ab5B5DE179f3e7d6Fb7',
+    RecipeExecutor: '0xe1315EE74E2A3057c0ede9E0E2cf30b3ee3ad121',
     DFSRegistry: '0x44e98bB58d725F2eF93a195F518b335dCB784c78',
     AdminVault: '0x6AB90ff536f0E2a880DbCdef1bB665C2acC0eDdC',
     DefisaverLogger: '0x02a516861f41262F22617511d00B6FCcAb65f762',
