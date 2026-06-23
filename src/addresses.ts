@@ -95,6 +95,7 @@ export const actionAddresses = {
     AaveV3ATokenPayback: '0xDe5c012cd1878D86E91309593764895a3adb380E',
     AaveV3View: '0x0CB0170F3413e54405F64d3C23BA3A1D8Bb96D99',
     AaveV3DelegateWithSig: '0x9253E22Ce4f0AeE541301CF8cC29843f9083a1F4',
+    AaveV3DelegateCredit: '0xa7ab39edCb0a1b742DCd908EC6CFe178d8322580',
     GhoClaimAAVE: '0xA53060d822cB31AFd5B26D899130a14E8Efc5917',
     GhoUnstake: '0x3fD02e65B4fb12381946D03815Ff3FF8Ebe2fC63',
     GhoStake: '0x6cfBFd04702f3b7d4fc52D457eDf91D6E4A081bb',
@@ -438,7 +439,7 @@ export const actionAddresses = {
     AaveV3Withdraw: '0xf19d045f6cFc04A5Ee5E0e8837b565b9f276e3F7',
     AaveV3ClaimRewards: '0xBE8e8cea67085F869C1C0040fD52F9F3115E962e',
     AaveV3DelegateWithSig: '0x8dd05d32fB05E8c3e8F37294e6f2d13e5823a712',
-    AaveV3DelegateCredit: '0x0000000000000000000000000000000000000000',
+    AaveV3DelegateCredit: '0x11E7B19195a76D2E5A4863cf6cbE8030443c729A',
 
     // flashloan
     FLAaveV3NoFee: '0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85',
@@ -509,6 +510,7 @@ export const actionAddresses = {
     AaveV3Withdraw: '0xbf492F869DdB1A18BB4F41b6c3059D9f882Fe7ff',
     AaveV3ClaimRewards: '0x3a4d72Ed2a47a409a82ba61f0fca1C749Ea8aB66',
     AaveV3DelegateWithSig: '0xFF2CE05250d1880f0f45ea8fB453292CABA42F12',
+    AaveV3DelegateCredit: '0x8C13353e3DA67d3171D6F73751E3caa791a3AACD',
 
     // CompV3
     CompV3Allow: '0x0380E8e13CdE0499c720999930CaA07A5744887c',
@@ -633,6 +635,7 @@ export const actionAddresses = {
     AaveV3ATokenPayback: '0x3D57875885e3cEe9E56Cb65D21789893B6e67815',
     AaveV3View: '0xf140B2904beb743C2f17e0b5f766074212a7e243',
     AaveV3DelegateWithSig: '0x9e295AFaC75E7843b88a563D119FD953EDf441c2',
+    AaveV3DelegateCredit: '0xF85aD63c513A76a1dc05B2AddC4777F17336c7e9',
 
     // CompV3
     CompV3Allow: '0x3Fe56B85BBcD759459408Bd8434c37bac93e26bF',
@@ -716,7 +719,7 @@ export const actionAddresses = {
     AaveV3ATokenPayback: '0xedfc68e2874b0afc0963e18ae4d68522aec7f97d',
     AaveV3View: '0xc9d6efa6e08b66a5cdc516bcd5807c2fa69e0f2a',
     AaveV3DelegateWithSig: '0x169D6E128238ebabF86032Ae9da65938eaD7F69e',
-    AaveV3DelegateCredit: '0x2A588cBCBd5e6c6ba7ED0E260B8107F599017DDE',
+    AaveV3DelegateCredit: '0x1bA6082D2ef1aB92a55B96264c72Eb8049C964Ce',
   },
   [NETWORKS.plasma.chainId]: {
     // Basic
@@ -753,7 +756,7 @@ export const actionAddresses = {
     AaveV3ATokenPayback: '0x425fA97285965E01Cc5F951B62A51F6CDEA5cc0d',
     AaveV3View: '0xD8E67968d8a0df4beCf2D50daE1e34d4d80C701C',
     AaveV3DelegateWithSig: '0x49658E0CF3883c338397C7257619B280dF581057',
-    AaveV3DelegateCredit: '0x0a9b2080C14DaF008AE87C977dFDf5f5D6D0937F',
+    AaveV3DelegateCredit: '0x6F53fa9e7d1323d24515a51AB72Da3cf1E9883Bc',
 
     // Fluid
     FluidVaultT1Open: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
