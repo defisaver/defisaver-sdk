@@ -161,6 +161,7 @@ export const actionAddresses = {
     // uniswap
     UniSupply: '0x9935e12F0218E61c27D7f23eAC9A9D6881a078eC',
     UniWithdraw: '0xf8bb8F68b0A45DC315F3f7602a60cfb274B00951',
+    UniswapClaim: '0x4Eed50e142BFaE83b2d05ce960C55F4c536d123f',
 
     // uniswap V3
     UniCollectV3: '0x331D7C3F6E710cB6cFE94c4Aa04AC3345AC00e00',
