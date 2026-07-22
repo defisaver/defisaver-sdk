@@ -677,6 +677,11 @@ export const actionAddresses = {
     SFApproveTokens: '0x03EDC9A683f37BFB7516FF234223fFb6E38D5eb9',
     SummerfiUnsub: '0x0000000000000000000000000000000000000000', // Only exists for Maker on Mainnet
     SummerfiUnsubV2: '0x60587B8Fe62Fc149d285a611822263206b4138da',
+
+    MidnightPaybackDirect: '0xC1B049A038f9E9811dc1Ad1D335369844d4268D9',
+    MidnightSupplyCollateral: '0xC83C7Ca37203FC30636EDcd3Ef127194542504c5',
+    MidnightWithdrawCollateral: '0x4fA4DA5fDD813279409B4Bf0Bde5Fe9ca8006A9C',
+    MidnightView: '0x3aa272f329E8B562A3bA56Bb6979a44D23A28839',
   },
   [NETWORKS.linea.chainId]: {
     // Basic
