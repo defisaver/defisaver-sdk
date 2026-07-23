@@ -95,6 +95,7 @@ export const actionAddresses = {
     AaveV3ATokenPayback: '0xDe5c012cd1878D86E91309593764895a3adb380E',
     AaveV3View: '0x0CB0170F3413e54405F64d3C23BA3A1D8Bb96D99',
     AaveV3DelegateWithSig: '0x9253E22Ce4f0AeE541301CF8cC29843f9083a1F4',
+    AaveV3DelegateCredit: '0xa7ab39edCb0a1b742DCd908EC6CFe178d8322580',
     GhoClaimAAVE: '0xA53060d822cB31AFd5B26D899130a14E8Efc5917',
     GhoUnstake: '0x3fD02e65B4fb12381946D03815Ff3FF8Ebe2fC63',
     GhoStake: '0x6cfBFd04702f3b7d4fc52D457eDf91D6E4A081bb',
@@ -147,7 +148,7 @@ export const actionAddresses = {
     // flashloan
     FLAaveV2: '0xEA55576383C96A69B3E8beD51Ce0d0294001bc5F',
     FLAaveV3NoFee: '0xd9D8e68717Ce24CCbf162868aaad7E38d81b05d1',
-    FLAaveV3CarryDebt: '0x7BdD8ACE8a48B7032Df68B7f53E0D6D9Ea9411A7',
+    FLAaveV3CarryDebt: '0x8225D3833D88BD1420E7d25e69A00F1A27aB9143',
     FLAaveV3: '0x5021d70aB7D757D61E0230c472ff89b8B2B8705e',
     FLDyDx: '0x08AC78B418fCB0DDF1096533856A757C28d430d7',
     FLMaker: '0x0f8C3368cADF78167F5355D746Ed7b2A826A6e3b',
@@ -438,13 +439,14 @@ export const actionAddresses = {
     AaveV3Withdraw: '0xf19d045f6cFc04A5Ee5E0e8837b565b9f276e3F7',
     AaveV3ClaimRewards: '0xBE8e8cea67085F869C1C0040fD52F9F3115E962e',
     AaveV3DelegateWithSig: '0x8dd05d32fB05E8c3e8F37294e6f2d13e5823a712',
-    AaveV3DelegateCredit: '0x0000000000000000000000000000000000000000',
+    AaveV3DelegateCredit: '0x11E7B19195a76D2E5A4863cf6cbE8030443c729A',
 
     // flashloan
     FLAaveV3NoFee: '0xfbcF23D2BeF8A2C491cfa4dD409D8dF12d431c85',
     FLAaveV3: '0x8A07E93d2B74A80D726eE4E4A0aC1F906aB5Cc63',
     FLBalancer: '0x79d6bf536b8DD65909a3174C87eA6395310d5c41',
     FLAction: '0xB57b666dAB46229e2b80113b5187F6DCD91AB159',
+    FLAaveV3CarryDebt: '0x4ab7a392aF23215A9049A64F3B2d44726aD2D6fe',
 
     AaveV3RatioTrigger: '0xB76e3f7694589D0f34ba43b17AD0D15350Ab5f85',
     GasFeeTakerL2: '0xB3dB299622A9DB0E944ccda2Ef899d6fF365B082',
@@ -508,6 +510,7 @@ export const actionAddresses = {
     AaveV3Withdraw: '0xbf492F869DdB1A18BB4F41b6c3059D9f882Fe7ff',
     AaveV3ClaimRewards: '0x3a4d72Ed2a47a409a82ba61f0fca1C749Ea8aB66',
     AaveV3DelegateWithSig: '0xFF2CE05250d1880f0f45ea8fB453292CABA42F12',
+    AaveV3DelegateCredit: '0x8C13353e3DA67d3171D6F73751E3caa791a3AACD',
 
     // CompV3
     CompV3Allow: '0x0380E8e13CdE0499c720999930CaA07A5744887c',
@@ -525,6 +528,7 @@ export const actionAddresses = {
     FLUniV3: '0xf041C72e201CD7d04a240fe06c5783E2Ee2D92b3', // @DEV - incorrect, same as FLAction
     FLAction: '0xf041C72e201CD7d04a240fe06c5783E2Ee2D92b3',
     FLMorphoBlue: '0xf041C72e201CD7d04a240fe06c5783E2Ee2D92b3',
+    FLAaveV3CarryDebt: '0xEc6Db90d9EFa7cD75d5b716896A497e9d9103D5b',
 
     GasFeeTakerL2: '0x2F64f73B222B4978CAfd0295c0fa106cE5f34996',
     AaveV3RatioCheck: '0x4a5c2cbCFB921b596Dec049389899CC8Eb4678ED',
@@ -616,6 +620,7 @@ export const actionAddresses = {
     FLUniV3: '0x1bA6082D2ef1aB92a55B96264c72Eb8049C964Ce',
     FLAction: '0x87Af4769e4134379125A262408e1f3EC60d2Ab52', // fix temp
     FLMorphoBlue: '0x87Af4769e4134379125A262408e1f3EC60d2Ab52',
+    FLAaveV3CarryDebt: '0x760e97862DD8652e5BB8b4D8ad9C99a74BBe7E7A',
 
     // AaveV3
     AaveV3Withdraw: '0x1d2Fa7dAcC660A9124c3685EE8a6E699d10409Eb',
@@ -630,6 +635,7 @@ export const actionAddresses = {
     AaveV3ATokenPayback: '0x3D57875885e3cEe9E56Cb65D21789893B6e67815',
     AaveV3View: '0xf140B2904beb743C2f17e0b5f766074212a7e243',
     AaveV3DelegateWithSig: '0x9e295AFaC75E7843b88a563D119FD953EDf441c2',
+    AaveV3DelegateCredit: '0xF85aD63c513A76a1dc05B2AddC4777F17336c7e9',
 
     // CompV3
     CompV3Allow: '0x3Fe56B85BBcD759459408Bd8434c37bac93e26bF',
@@ -700,6 +706,7 @@ export const actionAddresses = {
     // Flashloan
     FLAction: '0x04ce4b2a9F524d976a8eD8a49B9313C5a2C3ccAD', // fix temp
     FLAaveV3: '0x04ce4b2a9F524d976a8eD8a49B9313C5a2C3ccAD',
+    FLAaveV3CarryDebt: '0x862E533198C9656B75bB6A5dDF0953F7ED5E8507',
 
     // AaveV3
     AaveV3Withdraw: '0xae56474aBe3C271579b513b6668864e39f65Ae15',
@@ -712,7 +719,7 @@ export const actionAddresses = {
     AaveV3ATokenPayback: '0xedfc68e2874b0afc0963e18ae4d68522aec7f97d',
     AaveV3View: '0xc9d6efa6e08b66a5cdc516bcd5807c2fa69e0f2a',
     AaveV3DelegateWithSig: '0x169D6E128238ebabF86032Ae9da65938eaD7F69e',
-    AaveV3DelegateCredit: '0x2A588cBCBd5e6c6ba7ED0E260B8107F599017DDE',
+    AaveV3DelegateCredit: '0x1bA6082D2ef1aB92a55B96264c72Eb8049C964Ce',
   },
   [NETWORKS.plasma.chainId]: {
     // Basic
@@ -736,6 +743,7 @@ export const actionAddresses = {
     // Flashloan
     FLAction: '0x40C9ce603923AACD0b7407Ff0EE844c9C067cEB7', // fix temp
     FLAaveV3: '0x40C9ce603923AACD0b7407Ff0EE844c9C067cEB7',
+    FLAaveV3CarryDebt: '0x6Dc6C0e38fBd066b89Ba7E6f711B4288246891b3',
 
     // AaveV3
     AaveV3Withdraw: '0x4839d021A24820e57C31D386d430e2e82694F73B',
@@ -748,7 +756,7 @@ export const actionAddresses = {
     AaveV3ATokenPayback: '0x425fA97285965E01Cc5F951B62A51F6CDEA5cc0d',
     AaveV3View: '0xD8E67968d8a0df4beCf2D50daE1e34d4d80C701C',
     AaveV3DelegateWithSig: '0x49658E0CF3883c338397C7257619B280dF581057',
-    AaveV3DelegateCredit: '0x0a9b2080C14DaF008AE87C977dFDf5f5D6D0937F',
+    AaveV3DelegateCredit: '0x6F53fa9e7d1323d24515a51AB72Da3cf1E9883Bc',
 
     // Fluid
     FluidVaultT1Open: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
