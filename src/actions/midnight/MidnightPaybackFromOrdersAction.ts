@@ -28,7 +28,7 @@ export class MidnightPaybackFromOrdersAction extends Action {
   ) {
     super(
       'MidnightPaybackFromOrders',
-      getAddr('Empty'),
+      getAddr('MidnightPaybackFromOrders'),
       ['bytes32', 'address', 'address', 'uint256', 'uint256', offerFillsParamType],
       [marketId, onBehalf, from, amount, minUnits, offerFills],
     );

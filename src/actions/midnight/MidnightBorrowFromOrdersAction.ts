@@ -28,7 +28,7 @@ export class MidnightBorrowFromOrdersAction extends Action {
   ) {
     super(
       'MidnightBorrowFromOrders',
-      getAddr('Empty'),
+      getAddr('MidnightBorrowFromOrders'),
       ['bytes32', 'address', 'address', 'uint256', 'uint256', offerFillsParamType],
       [marketId, onBehalf, to, amount, maxUnits, offerFills],
     );
