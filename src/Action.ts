@@ -101,13 +101,29 @@ export class Action {
 
   _parseParamType(paramType:string | ParamTypes, arg:Args) {
     if (typeof (paramType) === 'string') {
-      if (paramType.startsWith('(')) {
-        let _paramType = paramType.replace('(', '');
-        _paramType = _paramType.replace(')', '');
-        return _paramType.split(',');
-      }
       if (paramType.endsWith('[]')) {
         return Array.from(Array(arg.length).fill(paramType.replace('[]', '')));
+      }
+      if (paramType.startsWith('(') || paramType.startsWith('tuple(')) {
+        const tupleStart = paramType.indexOf('(');
+        const tupleEnd = paramType.lastIndexOf(')');
+        const tupleContents = paramType.slice(tupleStart + 1, tupleEnd);
+        const tupleTypes = [];
+        let currentType = '';
+        let nestingDepth = 0;
+
+        for (const character of tupleContents) {
+          if (character === ',' && nestingDepth === 0) {
+            tupleTypes.push(currentType);
+            currentType = '';
+          } else {
+            currentType += character;
+            if (character === '(') nestingDepth += 1;
+            if (character === ')') nestingDepth -= 1;
+          }
+        }
+        tupleTypes.push(currentType);
+        return tupleTypes;
       }
     }
     return paramType;
