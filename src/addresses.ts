@@ -358,6 +358,7 @@ export const actionAddresses = {
 
     // etherFi
     EtherFiStake: '0xcadB650B6a60C89f7847Cba555A7eeCC220EA2e8',
+    EtherFiStakeFromLido: '0x0000000000000000000000000000000000000000',
     EtherFiWrap: '0x086464be5c73f66cfbe6b64ec23aa5a86749ef58',
     EtherFiUnwrap: '0x6Eb09948DDf9332d628d156950b9B1C0c091e8D8',
 
