@@ -300,7 +300,7 @@ export const actionAddresses = {
     CurveUsdSwapper: '0xFA8c594b903651F97b27aCADEa83b720cfD7F80b',
     CurveUsdSwapperTransient:
              '0xcF0298592b8FCB3823d31Bb257b65afFCAcCb8b6',
-    CurveUsdSelfLiquidate: '0xd90d8a4955DfE9D4f45F7f60595313B0925ee1da',
+    CurveUsdSelfLiquidate: '0x0B21996Fc90993f975D8279bE8ff2D34518da79C',
     CurveUsdSelfLiquidateWithColl:
              '0x7cE305FC2A18c6820a533AD418dC0A549aFeDcAF',
     CurveUsdGetDebt: '0x3Bb41d3f300dA758780fe7696bb4fB93cD7172fB',
@@ -335,7 +335,7 @@ export const actionAddresses = {
     LlamaLendBorrow: '0xCF693585C47049F3eACc2285E7Fe4e80123b2520',
     LlamaLendWithdraw: '0x5aEb07Ce4A49b7EaE2A1e5281768cFc0C3e1d8F3',
     LlamaLendPayback: '0x07e31d56E47EE6926892dCd928dF26899F58Ac8E',
-    LlamaLendSelfLiquidate: '0x46173C379Fbf998E6db0B47F45b73f77C64d3897',
+    LlamaLendSelfLiquidate: '0xF0D7b730B40b02Ad555E27CFe5FAF43D6a75dfba',
     LlamaLendGetDebt: '0x5625ea9fcd930d5f131b0261ec4dcaf279fea4ed',
     LlamaLendBoost: '0xa21c1ce7318c6d38a10de44c2cd5d80514437d85',
     LlamaLendRepay: '0x57693f72E628A3F7323D31De35Bd158493Aa9CC0',
@@ -366,9 +366,9 @@ export const actionAddresses = {
 
     // fluid
     FluidVaultT1Open: '0x372404335C05C2493Ff156Ef60cC0B286f6f2971',
-    FluidVaultT1Adjust: '0x8f1443c9F24843D14fa6b302A55C59468ED7D28B',
+    FluidVaultT1Adjust: '0x0Dfe1e40F3DA8687a68824022176bE547Ecc0906',
     FluidVaultT1Borrow: '0x36AF0cE762a016e8b4a80c70Af406DFcBc1FCbD4',
-    FluidVaultT1Payback: '0xa7A4B84D38CD33F9901922687db24B8aE14f2455',
+    FluidVaultT1Payback: '0x8D56b267C6a3e5295EFAebC67Ac413483c885C05',
     FluidVaultT1Withdraw: '0x5673b9ab4A035C5C7474C344664Be91DaFafa17E',
     FluidVaultT1Supply: '0x0c6100209D8A0bb14CC7d18e45dA1bd1E7a3a187',
     FluidView: '0xc8df052bD7A8d76a34c09e758Dff3c6298C0115c',
@@ -377,7 +377,7 @@ export const actionAddresses = {
     FluidDexOpen: '0x071e1369E1c9030Aa1a089bDE2F72797a14FE3b3',
     FluidDexSupply: '0xB3BE39850d8939Cceb4Fc49c415c428548FA9f9C',
     FluidDexBorrow: '0x3fa8EF6DA8f5b2BaAee77493a3A3dA68a7Aa75f3',
-    FluidDexPayback: '0xD733BD32F4AAEe92a983E2021B85ca5d31236FA0',
+    FluidDexPayback: '0x12D0D7c4c2c5304E5ba96A019E0F092FdF555123',
     FluidDexWithdraw: '0x14d5bb8E96fbf7C1f9A8E3EFD0eF5fe6832ff3cd',
 
     // pendle
@@ -548,7 +548,7 @@ export const actionAddresses = {
     LlamaLendBorrow: '0x4948135f8b3a8f3b51fbd1050f5d0f755accb8e7',
     LlamaLendWithdraw: '0xd7a80e7a2296d75cd1eebc2f0de0cebd14fbe117',
     LlamaLendPayback: '0xB2B93495dA2Fee8F92513fBBfA804564110B63ee',
-    LlamaLendSelfLiquidate: '0xe63e836C3ab61481F60A9a56aA72d1D0c55Fc280',
+    LlamaLendSelfLiquidate: '0xC330F048B15CA5aadF34A9033B3a24c65200230A',
     LlamaLendGetDebt: '0x81c01f08b8fc4487501c88404ed17ebc17764f9c',
     LlamaLendBoost: '0xc52a3af27696f8cf999463f3455e23440a376f8d',
     LlamaLendRepay: '0x320fdfa922ee33c1cc8a042ada855c9dfe9bed06',
@@ -558,16 +558,16 @@ export const actionAddresses = {
 
     // fluid
     FluidVaultT1Open: '0x1947Ce90ACCf0E243CcF85140fCceC2EfAeeA193',
-    FluidVaultT1Adjust: '0xF8374Aa0F6d9D28790f90745f0360b5C945DEA20',
+    FluidVaultT1Adjust: '0x212bB7577B6b302450860E128Eb73Eb2F83514c7',
     FluidVaultT1Borrow: '0x499da89aD564F5D6C828259ce55F53Fa288e7Be7',
-    FluidVaultT1Payback: '0x226c871E0a27B12065c9128b8e7440b054b59155',
+    FluidVaultT1Payback: '0x19FF948437B7f1221173effC029739568F5f844a',
     FluidVaultT1Withdraw: '0xc13d93227d97197e5F1751d0a3e80c1080A5fa2B',
     FluidVaultT1Supply: '0xBCF0Dc5bb2C4434AD07369207904F5900d391b0B',
     FluidView: '0xf9e6d5568887ac8eC6fA33B7eefD2A176A958e71',
     FluidDexOpen: '0xA456f13d358B8B93bE6778be3244111E267C0AaC',
     FluidDexSupply: '0x3E49c4f914E01e5612719a7B4965e4FAfb324762',
     FluidDexBorrow: '0x8626b70CDf64e557fDdcFbcb783833Dc314d95F4',
-    FluidDexPayback: '0xA9B46Da016F22cf9F8841A30881bB88E2Ad5CA94',
+    FluidDexPayback: '0x72b9AAf4864631976D764574f4780B1562CCF0F4',
     FluidDexWithdraw: '0x076D5434793798b153298bF70b014f5E6145aB2E',
 
     // summer.fi
@@ -667,16 +667,16 @@ export const actionAddresses = {
 
     // fluid
     FluidVaultT1Open: '0xCd4d5896AEAf97e738d3E7215ac01c2CF97474bc',
-    FluidVaultT1Adjust: '0x4405A81c25Be495325f76Aa4d82176f9ae3275bc',
+    FluidVaultT1Adjust: '0x2f7839a733B93641aa6a6AF0b593202335c351D3',
     FluidVaultT1Borrow: '0x8dCBF436cC0971FE29886E58CE0CAeb36d43E91E',
-    FluidVaultT1Payback: '0xA65daAa4FB4Fe9feaDF25bf2C062c3Faa2b02e5D',
+    FluidVaultT1Payback: '0xD4cEe5755e4f713B69f5Fc73068505ec6B9ee2a2',
     FluidVaultT1Withdraw: '0x26bE6a2EdE97aE826ed9DA8Fb79428037fe55cEB',
     FluidVaultT1Supply: '0x028ACA45244d4897ff80ef65ed0b735Bb0D4B0A5',
     FluidView: '0x6cd4D6af4F292817eA2A2311F099dF26cd015028',
     FluidDexOpen: '0x5eA8Da9679145D51F5eAEC8Bf2f42f47003A8799',
     FluidDexSupply: '0x2fCb7db80d3Be5C1B0049dF074b1AcFbcA93A867',
     FluidDexBorrow: '0x9D40776a876fA67C6757DA386434844cB6616C5F',
-    FluidDexPayback: '0xc177c885872592EDA598276bD3FAe5B6d27F80Bf',
+    FluidDexPayback: '0xcaa8877aD3847B428135653AcA5fAd13a2811483',
     FluidDexWithdraw: '0xEaBA867c49FE8e53F5716fFF8857F239bd7202e1',
 
     TokenizedVaultAdapter: '0x88cf6cfa51b6f771570f6df450edf1c886212d3e',
@@ -762,16 +762,16 @@ export const actionAddresses = {
 
     // Fluid
     FluidVaultT1Open: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
-    FluidVaultT1Adjust: '0xD37d4DB98E67305ef92f34886B25500500E04Aed',
+    FluidVaultT1Adjust: '0xC196dC97Eb0B58E3755a71143b41D3F24595643f',
     FluidVaultT1Borrow: '0x95a8665Ba58aa13A58c60B0803572772cda153dB',
-    FluidVaultT1Payback: '0x1420f4977E7B71AFddccBFc6F6e1505CefdF99F0',
+    FluidVaultT1Payback: '0xdeF8B05Ce194D50C376233C9C5530027f6180442',
     FluidVaultT1Withdraw: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     FluidVaultT1Supply: '0x54D1b51d2d68CD0Dc877296527780CA6aff68a39',
     FluidView: '0x27C0BAe2338cE28097122393faF90375B9395dd1',
     FluidDexOpen: '0xF32d5d8D81f2662A02955CE537537088DF29daf5',
     FluidDexSupply: '0x903F7C93FFC4AAbaBB096a7A722F1f057816B399',
     FluidDexBorrow: '0xa2A878a09639D1ab3AF544566c0CA4D0FeAEE65E',
-    FluidDexPayback: '0x04ce4b2a9F524d976a8eD8a49B9313C5a2C3ccAD',
+    FluidDexPayback: '0x3094D0D64fa5318162150720c19669d1A163937B',
     FluidDexWithdraw: '0x17B4ecd173b3Df2F5cB02c53Df8AA34e23Bcb92E',
     // Pendle
     PendleTokenRedeem: '0xB4c5f33bb5791D0174Df1879b809Bf57eE540B62',
