@@ -40,6 +40,7 @@ import * as fluid from './fluid';
 import * as pendle from './pendle';
 import * as umbrella from './umbrella';
 import * as aaveV4 from './aavev4';
+import * as midnight from './midnight';
 
 export {
   aave,
@@ -84,4 +85,5 @@ export {
   pendle,
   umbrella,
   aaveV4,
+  midnight,
 };
