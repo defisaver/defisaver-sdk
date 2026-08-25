@@ -16,7 +16,7 @@ export class AaveV3DelegateCredit extends ActionWithL2 {
    * @param amount Amount of tokens to be payed back
    * @param rateMode Type of borrow debt [Stable: 1, Variable: 2]
    * @param assetId The id of the token to be borrowed
-   * @param delegatee The id of the underlying asset to be repaid
+   * @param delegatee The address of the delegatee to be credited
    */
   constructor(useOnDefaultMarket: boolean, market:EthAddress, amount:uint256, rateMode:uint8, assetId:uint16, delegatee:EthAddress) {
     super('AaveV3DelegateCredit', getAddr('Empty'),

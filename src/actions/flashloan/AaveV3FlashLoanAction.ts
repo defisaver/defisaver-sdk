@@ -12,8 +12,8 @@ export class AaveV3FlashLoanAction extends ActionWithL2 implements FlashLoanId {
   public flashLoanId = 5;
 
   /**
-   * @param loanAmounts
    * @param tokens
+   * @param loanAmounts
    * @param modes
    * @param loanPayer
    * @param flParamGetterAddr
