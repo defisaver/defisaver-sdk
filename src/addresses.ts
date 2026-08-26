@@ -208,8 +208,8 @@ export const actionAddresses = {
     LiquityV2Adjust: '0x3BbC88f3b75cB898395C9b5AE8D9c2a26744993b',
     LiquityV2AdjustInterestRate:
              '0x685f0237D8b85B2018278E975a481b0650dE0b54',
-    LiquityV2SPDeposit: '0x73FF552646A7D93764Ff8D1F9e7662c422E715ef',
-    LiquityV2SPWithdraw: '0x8E8a4213745Ed68b3fce9d1500f563d885D02FDf',
+    LiquityV2SPDeposit: '0x256e97E7f7B42Cf7De5258C59A2935AdEdDdfC63',
+    LiquityV2SPWithdraw: '0x7ab4A43DE2628EA53c88E27755325d090f28D9c9',
     LiquityV2SPClaimColl: '0x3f783de20C3095bcB999AEA999aF4DF184b6630f',
     LiquityV2AdjustZombieTrove:
              '0x45F5CEe8f89AdBCe4f5B20f38a49402b152ba99e',
