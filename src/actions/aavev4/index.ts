@@ -9,3 +9,6 @@ export * from './AaveV4DelegateBorrowWithSigAction';
 export * from './AaveV4DelegateWithdrawWithSigAction';
 export * from './AaveV4SetUserManagersWithSigAction';
 export * from './AaveV4DelegateSetUsingAsCollateralWithSigAction';
+export * from './AaveV4DelegateBorrowAction';
+export * from './AaveV4DelegateWithdrawAction';
+export * from './AaveV4DelegateSetUsingAsCollateralAction';
