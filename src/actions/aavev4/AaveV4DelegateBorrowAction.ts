@@ -18,7 +18,7 @@ export class AaveV4DelegateBorrowAction extends Action {
     spoke: EthAddress,
     reserveId: uint256,
     spender: EthAddress,
-    amount: uint256
+    amount: uint256,
   ) {
     super(
       'AaveV4DelegateBorrow',

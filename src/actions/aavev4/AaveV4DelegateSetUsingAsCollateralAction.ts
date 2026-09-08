@@ -16,7 +16,7 @@ export class AaveV4DelegateSetUsingAsCollateralAction extends Action {
   constructor(
     spoke: EthAddress,
     delegatee: EthAddress,
-    permission: boolean
+    permission: boolean,
   ) {
     super(
       'AaveV4DelegateSetUsingAsCollateral',
