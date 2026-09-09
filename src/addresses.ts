@@ -404,6 +404,10 @@ export const actionAddresses = {
     AaveV4DelegateWithdrawWithSig: '0x81864dBd69c46B19463eC7BEC6cE0B271126531a',
     AaveV4DelegateBorrowWithSig: '0x9D68b41BB9f9e9Ac1E1ee49d3566CAd4624886BA',
     AaveV4DelegateSetUsingAsCollateralWithSig: '0xF3D7C7e8F5154c669EAA0dE996cdE0575D7d3A00',
+    AaveV4DelegateBorrow: '0x4284B4e09c46Ee2b4E703dB8e5A2F892d12638e1',
+    AaveV4DelegateWithdraw: '0x5e7c404d46971E7BD3a95570A80Bc37F38bf9E29',
+    AaveV4DelegateSetUsingAsCollateral: '0xa97f8E483C147f27aE7370DeaC4E6585A37884A2',
+    AaveV4SetUserManagers: '0x61e5d59bD82FFC61B916d2F2114eF671b17d0662',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
