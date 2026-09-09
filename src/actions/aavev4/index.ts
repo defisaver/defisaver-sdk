@@ -12,3 +12,4 @@ export * from './AaveV4DelegateSetUsingAsCollateralWithSigAction';
 export * from './AaveV4DelegateBorrowAction';
 export * from './AaveV4DelegateWithdrawAction';
 export * from './AaveV4DelegateSetUsingAsCollateralAction';
+export * from './AaveV4SetUserManagersAction';
