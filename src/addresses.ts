@@ -404,6 +404,13 @@ export const actionAddresses = {
     AaveV4DelegateWithdrawWithSig: '0x81864dBd69c46B19463eC7BEC6cE0B271126531a',
     AaveV4DelegateBorrowWithSig: '0x9D68b41BB9f9e9Ac1E1ee49d3566CAd4624886BA',
     AaveV4DelegateSetUsingAsCollateralWithSig: '0xF3D7C7e8F5154c669EAA0dE996cdE0575D7d3A00',
+
+    MidnightPaybackDirect: '0x2911FFF5C567Ac71d653AAf5919410A3e078D186',
+    MidnightBorrowFromOrders: '0xB37fB30b93e1D5b0E870312997426c4a04Cff8Ce',
+    MidnightPaybackFromOrders: '0x55cd72fB914A60587a88962Efa680117aE900729',
+    MidnightSupplyCollateral: '0x32e25a420cF132832173AFfF7e74a7A0F9EC7430',
+    MidnightWithdrawCollateral: '0x4791Ffa530757AC56Cab7857291557ad3ef8b370',
+    MidnightView: '0xB64FBf011343961D9AC4A04b714414E35ebE6BE0',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
