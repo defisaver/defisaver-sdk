@@ -19,6 +19,7 @@ export * from './LiquityDebtInFrontWithLimitTrigger';
 export * from './CurveUsdCollRatioTrigger';
 export * from './CurveUsdHealthRatioTrigger';
 export * from './MorphoBlueRatioTrigger';
+export * from './FtDnmmRatioTrigger';
 export * from './OffchainPriceTrigger';
 export * from './MorphoBluePriceTrigger';
 export * from './LiquityV2RatioTrigger';

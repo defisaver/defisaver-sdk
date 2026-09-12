@@ -9,6 +9,7 @@ export * from './SparkRatioCheckAction';
 export * from './LiquityRatioIncreaseCheckAction';
 export * from './CurveUsdCollRatioCheck';
 export * from './MorphoBlueRatioCheckAction';
+export * from './FtDnmmRatioCheckAction';
 export * from './AaveV3OpenRatioCheckAction';
 export * from './MorphoBlueTargetRatioCheckAction';
 export * from './LiquityV2RatioCheckAction';
