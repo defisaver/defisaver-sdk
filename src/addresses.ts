@@ -410,7 +410,7 @@ export const actionAddresses = {
     MidnightPaybackFromOrders: '0x55cd72fB914A60587a88962Efa680117aE900729',
     MidnightSupplyCollateral: '0x32e25a420cF132832173AFfF7e74a7A0F9EC7430',
     MidnightWithdrawCollateral: '0x4791Ffa530757AC56Cab7857291557ad3ef8b370',
-    MidnightView: '0xB64FBf011343961D9AC4A04b714414E35ebE6BE0',
+    MidnightView: '0xb8e1dAAd42e18203cfCED7193FE0e2E19d713A56',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
@@ -698,7 +698,7 @@ export const actionAddresses = {
     MidnightPaybackFromOrders: '0x4B0c242195B1C941A2e7a871Bfa242c40dbf032F',
     MidnightSupplyCollateral: '0xC83C7Ca37203FC30636EDcd3Ef127194542504c5',
     MidnightWithdrawCollateral: '0x4fA4DA5fDD813279409B4Bf0Bde5Fe9ca8006A9C',
-    MidnightView: '0x3aa272f329E8B562A3bA56Bb6979a44D23A28839',
+    MidnightView: '0xdEab43eb1519bD4314bc99c4019866734103D3Ae',
   },
   [NETWORKS.linea.chainId]: {
     // Basic
