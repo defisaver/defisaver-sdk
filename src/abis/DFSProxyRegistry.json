@@ -3,25 +3,156 @@
     "inputs": [
       {
         "internalType": "address",
-        "name": "_user",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "name": "InvalidDSProxy",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NonContractCall",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SenderNotAdmin",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "SenderNotOwner",
+    "type": "error"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "sender",
         "type": "address"
       },
       {
         "internalType": "address",
-        "name": "_proxy",
+        "name": "user",
         "type": "address"
       }
     ],
-    "name": "addAdditionalProxy",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "name": "SenderNotUserOrOwner",
+    "type": "error"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "name": "AdditionalProxyAdded",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "name": "AdditionalProxyRemoved",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "caller",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "excluded",
+        "type": "bool"
+      }
+    ],
+    "name": "ProxyExclusionUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "oldOwner",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "newOwner",
+        "type": "address"
+      }
+    ],
+    "name": "ProxySynced",
+    "type": "event"
+  },
+  {
+    "inputs": [],
+    "name": "MCD_REGISTRY",
+    "outputs": [
+      {
+        "internalType": "contract IDSProxyRegistry",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
       {
         "internalType": "address",
-        "name": "",
+        "name": "user",
         "type": "address"
       },
       {
@@ -34,8 +165,32 @@
     "outputs": [
       {
         "internalType": "address",
-        "name": "",
+        "name": "proxies",
         "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "name": "additionalProxyIndex",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "indexPlusOne",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -46,57 +201,7 @@
     "name": "adminVault",
     "outputs": [
       {
-        "internalType": "contract AdminVault",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_newAdminVault",
-        "type": "address"
-      }
-    ],
-    "name": "changeAdminVault",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_user",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_proxy",
-        "type": "address"
-      }
-    ],
-    "name": "changeMcdOwner",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "name": "changedOwners",
-    "outputs": [
-      {
-        "internalType": "address",
+        "internalType": "contract IAdminVault",
         "name": "",
         "type": "address"
       }
@@ -116,12 +221,12 @@
     "outputs": [
       {
         "internalType": "address",
-        "name": "",
+        "name": "mcdProxy",
         "type": "address"
       },
       {
         "internalType": "address[]",
-        "name": "",
+        "name": "validAdditionalProxies",
         "type": "address[]"
       }
     ],
@@ -140,7 +245,7 @@
     "outputs": [
       {
         "internalType": "address",
-        "name": "",
+        "name": "proxy",
         "type": "address"
       }
     ],
@@ -148,19 +253,122 @@
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "kill",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      },
+      {
+        "internalType": "address[]",
+        "name": "_proxies",
+        "type": "address[]"
+      }
+    ],
+    "name": "removeAdditionalProxies",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [],
-    "name": "mcdRegistry",
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_proxy",
+        "type": "address"
+      }
+    ],
+    "name": "removeAdditionalProxy",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "name": "removedProxies",
     "outputs": [
       {
-        "internalType": "contract IProxyRegistry",
-        "name": "",
+        "internalType": "bool",
+        "name": "removed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_user",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_proxy",
+        "type": "address"
+      }
+    ],
+    "name": "restoreAdditionalProxy",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "_proxies",
+        "type": "address[]"
+      }
+    ],
+    "name": "syncProxies",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_proxy",
+        "type": "address"
+      }
+    ],
+    "name": "syncProxy",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "proxy",
+        "type": "address"
+      }
+    ],
+    "name": "trackedOwner",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "owner",
         "type": "address"
       }
     ],
