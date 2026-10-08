@@ -47,8 +47,14 @@ export class DfsWeb3 {
     const DFSPRoxyRegistyAbiItems : AbiItem[] = DFSPRoxyRegistyAbi.map(item => ({ ...item, stateMutability: item.stateMutability as StateMutabilityType, type: item.type as AbiType }));
     const dfsRegistry = new this.web3.eth.Contract(DFSPRoxyRegistyAbiItems, getAddr('DFSProxyRegistry', CONFIG.chainId));
     const proxies = await dfsRegistry.methods.getAllProxies(this.account).call();
-    if (proxies[0] !== '0x0000000000000000000000000000000000000000') {
-      this.proxy = proxies[0];
+    const mcdProxy = proxies.mcdProxy ?? proxies[0];
+    const additionalProxies = proxies.validAdditionalProxies ?? proxies[1] ?? [];
+    // DFSProxyRegistryV2 only returns mcdProxy when Maker registry still matches current owner.
+    // Ownership-transferred wallets show up in validAdditionalProxies instead.
+    if (mcdProxy && mcdProxy !== '0x0000000000000000000000000000000000000000') {
+      this.proxy = mcdProxy;
+    } else if (additionalProxies.length > 0) {
+      this.proxy = additionalProxies[0];
     }
     this.accountReady = true;
   }

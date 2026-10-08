@@ -22,10 +22,6 @@ export const UtilsAccessLists : AccessLists = {
 
   SubInputs: [],
 
-  ChangeProxyOwner: [
-    ['0xF8f8B3C98Cf2E63Df3041b73f80F362a4cf3A576', []], // DFSProxyRegistryController
-  ],
-
   TokenBalance: [],
 
   AutomationV2Unsub: [

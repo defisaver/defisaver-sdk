@@ -11,7 +11,7 @@ export const actionAddresses = {
     SendTokens: '0x7d05c0ABeF6d91300a237026507c4a2631ddAdEa',
     SumInputs: '0x70907d840aBBc984Fd949311d2f005e6aC4a4D7a',
     SubInputs: '0xe1804b756188F63f723d2FECc02988D0Cc1aB823',
-    ChangeProxyOwner: '0x81cA52CfE66421d0ceF82d5F33230e43b5F23D2B',
+    ChangeProxyOwner: '0x1cc4A7f6B17a4C900F2afe4A0718A73714AC33f2',
     TokenBalance: '0xa92B177950F1460119940436515FD857C24494BC',
     AutomationV2Unsub: '0xe35Fb12fE9796847751076aCf5ee7d124108612C',
     SendTokenAndUnwrap: '0x4155537e6933E59a62deb68f6ad93d237d07242a',
@@ -408,6 +408,13 @@ export const actionAddresses = {
     AaveV4DelegateWithdraw: '0x5e7c404d46971E7BD3a95570A80Bc37F38bf9E29',
     AaveV4DelegateSetUsingAsCollateral: '0xa97f8E483C147f27aE7370DeaC4E6585A37884A2',
     AaveV4SetUserManagers: '0x61e5d59bD82FFC61B916d2F2114eF671b17d0662',
+
+    MidnightPaybackDirect: '0x2911FFF5C567Ac71d653AAf5919410A3e078D186',
+    MidnightBorrowFromOrders: '0xB37fB30b93e1D5b0E870312997426c4a04Cff8Ce',
+    MidnightPaybackFromOrders: '0x55cd72fB914A60587a88962Efa680117aE900729',
+    MidnightSupplyCollateral: '0x32e25a420cF132832173AFfF7e74a7A0F9EC7430',
+    MidnightWithdrawCollateral: '0x4791Ffa530757AC56Cab7857291557ad3ef8b370',
+    MidnightView: '0xb8e1dAAd42e18203cfCED7193FE0e2E19d713A56',
   },
   [NETWORKS.optimism.chainId]: {
     DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
@@ -428,7 +435,7 @@ export const actionAddresses = {
     CreateSub: '0x2daED8030BFC87B3d27c02E2f044B9CF4841Ff3e',
     TokenBalance: '0xC6FF5b01f7c7b35b6e093fF70D2332B361C5Be5A',
     TokenizedVaultAdapter: '0xdf31669FEd440f5BfF658ca0bBF0D22B8abdeb73',
-    ChangeProxyOwner: '0x62769258ea8b3a85cc6fb4332fc2760a122dbc9e',
+    ChangeProxyOwner: '0xf573585C38d947D8A70F7F6c83D060F1F89855AE',
     PermitToken: '0xE70c05125E7Cfe929f7ccC1baD348004aCF0f0d6',
     HandleAuth: '0x7f143607250ee51e4dce31254c8ad33ec4c2dad5',
     MerklClaim: '0xa7574a72D93D236040648b1dc80ddA3E7A4de40F',
@@ -497,7 +504,7 @@ export const actionAddresses = {
     CreateSub: '0xbFD17a0a844b75976585a382a5BcCaFC9EAd731f',
     TokenBalance: '0x483B903E702F60698Dd8124558C6199922737f1F',
     TokenizedVaultAdapter: '0xD05C512bDFf6D3eAc5328807B3bC075F35271167',
-    ChangeProxyOwner: '0x29F66A5fcB601c806E7156f29FDEC771BdC9c08d',
+    ChangeProxyOwner: '0xacf5bAD9543A98EcAcC620cF6CB989Ec88f1650D',
     PermitToken: '0x2E5E7a691092C158bb8341b936eF24FCcA6c0e00',
     HandleAuth: '0xbfcab1339e1a56a0a836cbca6457eaf71f148fcb',
     UpdateSub: '0x3511f444362F8cBd185DbF21C9488D16c1306461',
@@ -609,7 +616,7 @@ export const actionAddresses = {
     SumInputs: '0xC856ef8fe425B2EFe373e0e7038fAFF4a4f764fE',
     SubInputs: '0xd244B1991Fcb8FC0f32FA55bce37714fc5929B95',
     TokenBalance: '0xc44bcE580B1b3339fE9272D3bC3d6566083ea59C',
-    ChangeProxyOwner: '0x1947a44d3717a47556175d64fdc208619aa08874',
+    ChangeProxyOwner: '0x7b55d25BfF49Fd62563823570f47E9a35AA39541',
     PermitToken: '0x57c8ae94a5A11dA33e0518054102488b604628D0',
     HandleAuth: '0x18a90e6db79199ace00140631ef931e0bd97837c',
     ToggleSub: '0x5F16C0a08d52b67fc73706c494F7535Dd3382b58',
@@ -695,7 +702,7 @@ export const actionAddresses = {
     MidnightPaybackFromOrders: '0x4B0c242195B1C941A2e7a871Bfa242c40dbf032F',
     MidnightSupplyCollateral: '0xC83C7Ca37203FC30636EDcd3Ef127194542504c5',
     MidnightWithdrawCollateral: '0x4fA4DA5fDD813279409B4Bf0Bde5Fe9ca8006A9C',
-    MidnightView: '0x3aa272f329E8B562A3bA56Bb6979a44D23A28839',
+    MidnightView: '0xdEab43eb1519bD4314bc99c4019866734103D3Ae',
   },
   [NETWORKS.linea.chainId]: {
     // Basic
@@ -793,7 +800,7 @@ export const otherAddresses = {
   [NETWORKS.ethereum.chainId]: {
     RecipeExecutor: '0xbc3Fc959FeF3F12a41738f406c02198cdeE7481F',
     DFSRegistry: '0x287778F121F134C66212FB16c9b53eC991D32f5b',
-    DFSProxyRegistry: '0x29474FdaC7142f9aB7773B8e38264FA15E3805ed',
+    DFSProxyRegistry: '0x0cCB1F91beb8590949880D2a61C26C11d6280319',
     ProxyRegistry: '0x4678f0a6958e4D2Bc4F1BAF7Bc52E8F3564f3fE4',
     SFProxyEntryPoint: '0xAa15ca459659F35B1064EC546A44d962d54bA89e',
 
