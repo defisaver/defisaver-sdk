@@ -19,7 +19,7 @@
     "build-test": "npm run build && npm run test"
   },
   "author": "DeFi Saver",
-  "repository": "https://github.com/DecenterApps/defisaver-sdk",
+  "repository": "https://github.com/defisaver/defisaver-sdk",
   "license": "ISC",
   "overrides": {
     "tar": "^7.5.21",
