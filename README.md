@@ -41,7 +41,10 @@ Amounts use token base units as decimal strings. Here, `value` is the ETH amount
 From a local checkout, install dependencies with `npm ci`, then run:
 
 ```sh
-# Run all tests
+# Run offline tests (no RPC required)
+npm run test:unit
+
+# Run all tests, including RPC-dependent wallet tests
 npm test
 
 # Run a single test file (test/Recipe.js)
