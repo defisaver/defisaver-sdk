@@ -49,16 +49,25 @@ export class Action {
     return keccak256(this.name).substr(0, 10);
   }
 
+  #_getReturnValueReference(arg: unknown): number | undefined {
+    if (typeof arg !== 'string' || !/\$\d+/.test(arg)) return undefined;
+    const index = Number(arg.slice(1));
+    if (!/^\$\d+$/.test(arg) || !Number.isSafeInteger(index) || index < 1) {
+      throw new Error(`Invalid action return reference: ${arg}`);
+    }
+    return index;
+  }
+
   /**
    *
    */
   #_getArgumentMappingWithSlots(subSlots: Args) : Array<number> {
     return this.mappableArgs.map(arg => {
-      if (new RegExp(/\$\d+/).test(arg)) {
-        if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
-        // eslint-disable-next-line
-        return parseInt(arg.substr(1));
+      if (Array.isArray(arg) && /\$\d+/.test(arg.toString())) {
+        throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
       }
+      const reference = this.#_getReturnValueReference(arg);
+      if (reference !== undefined) return reference;
 
       // Handle SubSlots placeholder values in strategies
       if (new RegExp(/&\w+/).test(arg)) {
@@ -77,11 +86,11 @@ export class Action {
    */
   _getArgumentMapping() : Args {
     return this.mappableArgs.map(arg => {
-      if (new RegExp(/\$\d+/).test(arg)) {
-        if (Array.isArray(arg)) throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
-        // eslint-disable-next-line
-        return parseInt(arg.substr(1));
+      if (Array.isArray(arg) && /\$\d+/.test(arg.toString())) {
+        throw TypeError('Input can\'t be mapped to arrays (tuples/structs). Specify `mappableArgs` array in constructor.');
       }
+      const reference = this.#_getReturnValueReference(arg);
+      if (reference !== undefined) return reference;
       return 0;
     });
   }
@@ -136,7 +145,7 @@ export class Action {
     const paramTypeParsed = this._parseParamType(paramType, arg);
     if (Array.isArray(arg)) return arg.map((_arg, i) => this._replaceWithPlaceholders(_arg, paramTypeParsed[i]));
     if (typeof (paramType) === 'string') {
-      if (new RegExp(/\$\d+/).test(arg)) return this.#_getPlaceholderForType(paramType);
+      if (this.#_getReturnValueReference(arg) !== undefined) return this.#_getPlaceholderForType(paramType);
       if (new RegExp(/&\w+/).test(arg)) return this.#_getPlaceholderForType(paramType);
     }
     return arg;
