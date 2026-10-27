@@ -1372,19 +1372,6 @@
         [ 8, 4, 12, 3, 13, 9 ]
        ]
     ],
-    "ChangeProxyOwner": [
-       [
-        "0x32cEdFfF6e64f6cD1907Ae0b27b78c36320587E7",
-        [ 3, 11, 1, 15, 10, 8 ]
-       ],
-       [
-        "0xF8f8B3C98Cf2E63Df3041b73f80F362a4cf3A576",
-        [
-          10, 5, 8, 6,
-          13, 2, 0
-        ]
-       ]
-    ],
     "TokenBalance": [
        [
         "0xFEb82445aEaA675D59A43CD5833f5A6807f97ea2",

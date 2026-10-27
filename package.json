@@ -1,25 +1,24 @@
 {
   "name": "@defisaver/sdk",
-  "version": "1.3.26",
+  "version": "1.3.36",
   "description": "",
   "main": "./umd/index.js",
   "module": "./esm/src/index.js",
   "types": "./esm/src/index.d.ts",
   "scripts": {
     "test": "mocha 'test/**'",
+    "test:unit": "mocha 'test/**/*.js' --exclude test/DfsWeb3.js",
     "test-single": "mocha ./test/$npm_config_name.js",
     "version-bump": "git commit -am \"Version bump to $(npm version patch | cut -c 2-)\"",
     "build:esm": "rm -rf esm && tsc -p tsconfig.esm.json",
     "build:umd": "rm -rf umd && webpack --config=webpack.umd.js",
     "build": "npm run lint && npm run build:umd && npm run build:esm",
-    "documentMD": "npx typedoc --plugin typedoc-plugin-markdown --out docs/md",
-    "document": "npx typedoc --out docs/default",
     "lint": "eslint . --ext .ts --fix",
     "lint-check": "eslint .",
     "build-test": "npm run build && npm run test"
   },
   "author": "DeFi Saver",
-  "repository": "https://github.com/DecenterApps/defisaver-sdk",
+  "repository": "https://github.com/defisaver/defisaver-sdk",
   "license": "ISC",
   "overrides": {
     "tar": "^7.5.21",
@@ -30,12 +29,24 @@
     "serialize-javascript": "^7.1.0",
     "fast-uri": "^3.1.6",
     "js-yaml": "^4.3.2",
-    "eslint": { "minimatch": "^3.1.5" },
-    "@eslint/eslintrc": { "minimatch": "^3.1.5" },
-    "@humanwhocodes/config-array": { "minimatch": "^3.1.5" },
-    "eslint-plugin-import": { "minimatch": "^3.1.5" },
-    "eslint-plugin-jsx-a11y": { "minimatch": "^3.1.5" },
-    "eslint-plugin-react": { "minimatch": "^3.1.5" }
+    "eslint": {
+      "minimatch": "^3.1.5"
+    },
+    "@eslint/eslintrc": {
+      "minimatch": "^3.1.5"
+    },
+    "@humanwhocodes/config-array": {
+      "minimatch": "^3.1.5"
+    },
+    "eslint-plugin-import": {
+      "minimatch": "^3.1.5"
+    },
+    "eslint-plugin-jsx-a11y": {
+      "minimatch": "^3.1.5"
+    },
+    "eslint-plugin-react": {
+      "minimatch": "^3.1.5"
+    }
   },
   "dependencies": {
     "@defisaver/eslint-config": "^1.0.0",
@@ -62,11 +73,8 @@
     "chai": "^4.2.0",
     "dotenv": "^10.0.0",
     "eslint": "^8.57.0",
-    "jsdoc-to-markdown": "^9.1.3",
     "mocha": "^11.8.0",
     "ts-node": "^10.9.1",
-    "typedoc": "^0.23.20",
-    "typedoc-plugin-markdown": "^3.13.6",
     "typescript": "^4.8.4",
     "webpack": "^5.91.0",
     "webpack-cli": "^4.10.0"

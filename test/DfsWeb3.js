@@ -5,13 +5,15 @@ const dfs = require('../src');
 const {getIlkInfo, assetAmountInWei} = require("@defisaver/tokens");
 
 describe('DfsWeb3', () => {
+  // Current owner of previously used test proxy 0x9cCf... (ownership transferred from 0x0a80...)
+  const testAccount = '0xa9BB3c0637a9Bc10A43b6D9565A8e1C287B3d2DE';
   let dfsWeb3;
   before(async () => {
     const web3 = new Web3(process.env.RPC);
 
-    web3.eth.getAccounts = () => ['0x0a80C3C540eEF99811f4579fa7b1A0617294e06f'];
+    web3.eth.getAccounts = () => [testAccount];
     dfsWeb3 = new dfs.DfsWeb3(web3);
-    dfsWeb3.account = '0x0a80C3C540eEF99811f4579fa7b1A0617294e06f';
+    dfsWeb3.account = testAccount;
 
     await dfsWeb3.prepareAccount();
     assert.containsAllKeys(dfsWeb3, ['web3', 'account', 'proxy']);
