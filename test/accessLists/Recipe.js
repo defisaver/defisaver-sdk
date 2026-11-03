@@ -109,7 +109,7 @@ class Recipe {
       [dfs.getAddr('DFSRegistry')]: [],
     };
     this.actions.forEach((action) => {
-      const accessList = MockAccessLists[action.name].map(([address, storageKeys]) => ({ address, storageKeys: storageKeys.map(num => padLeft(toHex(num), 64)) }));
+      const accessList = (action.name === 'FLAction' ? [[dfs.getAddr('FLAction'), []]] : MockAccessLists[action.name]).map(([address, storageKeys]) => ({ address, storageKeys: storageKeys.map(num => padLeft(toHex(num), 64)) }));
       accessList.forEach(({ address, storageKeys }) => {
         addressMapping[address] = new Set([...storageKeys, ...(addressMapping[address] || [])]);
       })

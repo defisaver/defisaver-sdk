@@ -44,6 +44,43 @@ For a DSProxy, pass `target` and `data` to its `execute(address,bytes)` method a
 
 A single action also exposes `encodeForDsProxyCall()`, `getAssetsToApprove()`, and `getEthValue()`. `ActionWithL2` supports specialized packed calldata; callers should normally use the public encoding methods rather than pack bytes themselves.
 
+## Flashloans
+
+Choose a provider action to borrow and use `FLPaybackAction` to repay. You can use
+the provider action directly or pass it to `FLAction`.
+
+```js
+const { configure, Recipe, actions } = require('@defisaver/sdk');
+const { FLAction, MorphoBlueFlashLoanAction, FLPaybackAction } = actions.flashloan;
+
+configure({ chainId: 1, testingMode: false });
+const usdc = '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48';
+
+const recipe = new Recipe('Morpho flashloan', [
+  new MorphoBlueFlashLoanAction(usdc, '1000000000'),
+  // Add your actions here.
+  new FLPaybackAction('$1', usdc),
+]);
+```
+
+This borrows 1,000 USDC from Morpho Blue and repays it in the same recipe. The
+flashloan can also be written with an explicit wrapper:
+
+```js
+const flashloan = new FLAction(
+  new MorphoBlueFlashLoanAction(usdc, '1000000000'),
+);
+```
+
+Both forms produce identical calldata for the same provider and arguments. Each
+encodes one loan through the network's `FLAction` contract.
+
+Constructors throw if the chosen provider isn't supported on the selected network.
+Use `isFlashLoanSourceSupported(FLSource.MORPHO_BLUE, chainId)` from
+`actions.flashloan` to check support beforehand.
+
+For Aave V3 loans that open debt instead of repaying, use `AaveV3FlashLoanCarryDebtAction`.
+
 ## Strategies
 
 `Strategy` describes reusable automation: add subscription slots with `addSubSlot`, triggers with `addTrigger`, and actions with `addAction`. Strategy inputs can refer to named subscription slots such as `'&vaultId'`, or the special addresses `'&proxy'` and `'&eoa'`. Action return references still use `'$1'`, `'$2'`, and so on.

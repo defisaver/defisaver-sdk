@@ -1,3 +1,5 @@
+import { FLSource } from './FLSource';
+
 export interface FlashLoanId {
-  flashLoanId: number;
+  flashLoanId: FLSource;
 }

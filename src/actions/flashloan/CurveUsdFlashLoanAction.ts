@@ -1,27 +1,23 @@
-import { Action } from '../../Action';
+import { FLAction } from './FLAction';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, bytes } from '../../types';
-import { FlashLoanId } from './FlashLoanId';
+import { FLSource } from './FLSource';
 
 /**
  * Gets a crvUSD flashloan from CurveUsd Flash Minter
  *
  * @category Flashloans
  */
-export class CurveUsdFlashLoanAction extends Action implements FlashLoanId {
-  public flashLoanId = 9;
-
+export class CurveUsdFlashLoanAction extends FLAction {
   /**
    * @param amount
    * @param flParamGetterAddr
    * @param flParamGetterData
    */
   constructor(amount: uint256, flParamGetterAddr: EthAddress = getAddr('Empty'), flParamGetterData: bytes = []) {
-    super(
-      'FLAction',
-      getAddr('FLAction'),
-      ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
-      [[], [amount], [], getAddr('Empty'), flParamGetterAddr, flParamGetterData, []],
-    );
+    super({
+      flashLoanId: FLSource.CURVEUSD,
+      args: [[], [amount], [], getAddr('Empty'), flParamGetterAddr, flParamGetterData, []],
+    });
   }
 }

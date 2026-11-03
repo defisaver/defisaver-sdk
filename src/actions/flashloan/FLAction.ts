@@ -1,33 +1,21 @@
 import { Action } from '../../Action';
 import { getAddr } from '../../addresses';
 import { FlashLoanId } from './FlashLoanId';
-import { ActionWithL2 } from '../../ActionWithL2';
+import { FLSource, assertFlashLoanSourceSupported } from './FLSource';
 /**
- * Gets a specific FL action
+ * Executes a supported provider through the unified FLAction contract.
+ * The inner action's arguments and flashLoanId are used.
+ * Repay with FLPaybackAction or send tokens to FLAction.
  *
  * @category Flashloans
  */
-type SpecificFlashLoanAction = (Action & FlashLoanId) | (ActionWithL2 & FlashLoanId);
+type SpecificFlashLoanAction = FlashLoanId & Pick<Action, 'args'>;
 
-export class FLAction extends Action {
-  /**
-   * @param specificFLAction - FL Action to be used
-   */
-  #handleArgs(specificFLAction: SpecificFlashLoanAction) {
-    const argsToReturn = [
-      specificFLAction.args[0],
-      specificFLAction.args[1],
-      specificFLAction.args[2],
-      specificFLAction.args[3],
-      getAddr('Empty'),
-      [specificFLAction.flashLoanId],
-      specificFLAction.args[6],
-    ];
-
-    return argsToReturn;
-  }
+export class FLAction extends Action implements FlashLoanId {
+  public flashLoanId: FLSource;
 
   constructor(specificFLAction: SpecificFlashLoanAction) {
+    assertFlashLoanSourceSupported(specificFLAction?.flashLoanId);
     super(
       'FLAction',
       getAddr('FLAction'),
@@ -35,6 +23,15 @@ export class FLAction extends Action {
       [],
     );
     this.paramTypes = ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'];
-    this.args = this.#handleArgs(specificFLAction);
+    this.flashLoanId = specificFLAction.flashLoanId;
+    this.args = [
+      specificFLAction.args[0],
+      specificFLAction.args[1],
+      specificFLAction.args[2],
+      specificFLAction.args[3],
+      getAddr('Empty'),
+      [this.flashLoanId],
+      specificFLAction.args[6],
+    ];
   }
 }
