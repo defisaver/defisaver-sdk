@@ -31,11 +31,13 @@ export class ActionWithL2 extends Action {
 
   numberToBytes2(number:number) {
     const hexNumber = number.toString(16);
+    if (!/^[0-9a-f]{1,4}$/i.test(hexNumber)) throw new RangeError('Value must fit in an unsigned 2-byte integer');
     return hexNumber.padStart(4, '0');
   }
 
   numberToBytes1(number:number) {
     const hexNumber = number.toString(16);
+    if (!/^[0-9a-f]{1,2}$/i.test(hexNumber)) throw new RangeError('Value must fit in an unsigned 1-byte integer');
     return hexNumber.padStart(2, '0');
   }
 

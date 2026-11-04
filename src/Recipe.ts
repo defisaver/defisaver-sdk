@@ -57,6 +57,7 @@ export class Recipe {
    *
    */
   #_encodeForCall(): Array<string | Array<any>> {
+    if (this.actions.length === 0) throw new Error('Cannot encode an empty recipe');
     const encoded = this.actions.map(action => action.encodeForRecipe());
     const transposed = encoded[0].map((_, colIndex) => encoded.map(row => row[colIndex]));
     const taskStruct = [
@@ -170,7 +171,9 @@ export class Recipe {
     for (const pairsPerAction of assetOwnerPairs) {
       for (const pair of pairsPerAction) {
         const isNft = !pair.asset;
-        if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && (isNft ? _pair.tokenId === pair.tokenId : _pair.asset === pair.asset))) {
+        if (!uniqueAssetOwnerPairs.find(_pair => _pair.owner === pair.owner && (isNft
+          ? 'nft' in _pair && _pair.nft === pair.nft && _pair.tokenId === pair.tokenId
+          : _pair.asset === pair.asset))) {
           if (isNft) {
             uniqueAssetOwnerPairs.push({
               owner: pair.owner!,

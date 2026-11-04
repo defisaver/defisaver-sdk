@@ -1,16 +1,14 @@
-import { ActionWithL2 } from '../../ActionWithL2';
+import { FLAction } from './FLAction';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, bytes } from '../../types';
-import { FlashLoanId } from './FlashLoanId';
+import { FLSource } from './FLSource';
 
 /**
  * Gets a flashloan from Aave v3 with fee enabled
  *
  * @category Flashloans
  */
-export class AaveV3FlashLoanAction extends ActionWithL2 implements FlashLoanId {
-  public flashLoanId = 5;
-
+export class AaveV3FlashLoanAction extends FLAction {
   /**
    * @param tokens
    * @param loanAmounts
@@ -20,11 +18,9 @@ export class AaveV3FlashLoanAction extends ActionWithL2 implements FlashLoanId {
    * @param flParamGetterData
    */
   constructor(tokens: Array<EthAddress>, loanAmounts: Array<uint256>, modes: Array<uint256>, loanPayer: EthAddress, flParamGetterAddr: EthAddress = getAddr('Empty'), flParamGetterData: bytes = []) {
-    super(
-      'FLAaveV3WithFee',
-      getAddr('FLAaveV3'),
-      ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
-      [tokens, loanAmounts, modes, loanPayer, flParamGetterAddr, flParamGetterData, []],
-    );
+    super({
+      flashLoanId: FLSource.AAVEV3,
+      args: [tokens, loanAmounts, modes, loanPayer, flParamGetterAddr, flParamGetterData, []],
+    });
   }
 }
