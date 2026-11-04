@@ -2,7 +2,7 @@ import { ActionWithL2 } from '../../ActionWithL2';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint8 } from '../../types';
 /**
- * AaveV3SetEModeAction - Set EMode for the proxy AaveV3 position
+ * AaveV3SetEModeAction - Set EMode for an AaveV3 position
  *
  * @category AaveV3
  */
@@ -11,15 +11,22 @@ export class AaveV3SetEModeAction extends ActionWithL2 {
    * @param useOnDefaultMarket If this is true it defaults to the hardcoded market in contract
    * @param market Address provider for specific market
    * @param categoryId ID of the category emode
+   * @param onBehalf Address of the position owner, defaults to proxy
    */
-  constructor(useOnDefaultMarket: boolean, market: EthAddress, categoryId: uint8) {
+  constructor(
+    useOnDefaultMarket: boolean,
+    market: EthAddress,
+    categoryId: uint8,
+    onBehalf: EthAddress = getAddr('Empty'),
+  ) {
     super('AaveV3SetEMode', getAddr('AaveV3SetEMode'),
-      ['uint8', 'bool', 'address'],
-      [categoryId, useOnDefaultMarket, market],
+      ['uint8', 'bool', 'address', 'address'],
+      [categoryId, useOnDefaultMarket, market, onBehalf],
     );
 
     this.mappableArgs = [
       this.args[2],
+      this.args[3],
     ];
   }
 
@@ -34,6 +41,8 @@ export class AaveV3SetEModeAction extends ActionWithL2 {
       // market
       encodedInput = encodedInput.concat(this.addressToBytes20(this.args[2]));
     }
+    // onBehalf
+    encodedInput = encodedInput.concat(this.addressToBytes20(this.args[3]));
 
     return encodedInput;
   }
