@@ -1,16 +1,14 @@
-import { Action } from '../../Action';
+import { FLAction } from './FLAction';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, bytes } from '../../types';
-import { FlashLoanId } from './FlashLoanId';
+import { FLSource } from './FLSource';
 
 /**
  * Gets a flashloan from MorphoBlue
  *
  * @category Flashloans
  */
-export class MorphoBlueFlashLoanAction extends Action implements FlashLoanId {
-  public flashLoanId = 8;
-
+export class MorphoBlueFlashLoanAction extends FLAction {
   /**
    * @param token
    * @param amount
@@ -18,11 +16,9 @@ export class MorphoBlueFlashLoanAction extends Action implements FlashLoanId {
    * @param flParamGetterData
    */
   constructor(token: EthAddress, amount: uint256, flParamGetterAddr: EthAddress = getAddr('Empty'), flParamGetterData: bytes = []) {
-    super(
-      'FLMorphoBlue',
-      getAddr('FLMorphoBlue'),
-      ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
-      [[token], [amount], [], getAddr('Empty'), flParamGetterAddr, flParamGetterData, []],
-    );
+    super({
+      flashLoanId: FLSource.MORPHO_BLUE,
+      args: [[token], [amount], [], getAddr('Empty'), flParamGetterAddr, flParamGetterData, []],
+    });
   }
 }

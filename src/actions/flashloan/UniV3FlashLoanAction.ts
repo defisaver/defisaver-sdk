@@ -1,16 +1,14 @@
-import { Action } from '../../Action';
+import { FLAction } from './FLAction';
 import { getAddr } from '../../addresses';
 import { EthAddress, uint256, bytes } from '../../types';
-import { FlashLoanId } from './FlashLoanId';
+import { FLSource } from './FLSource';
 
 /**
  * Gets a flashloan from UniV3 pool
  *
  * @category Flashloans
  */
-export class UniV3FlashLoanAction extends Action implements FlashLoanId {
-  public flashLoanId = 6;
-
+export class UniV3FlashLoanAction extends FLAction {
   /**
    * @param token0
    * @param token1
@@ -21,11 +19,9 @@ export class UniV3FlashLoanAction extends Action implements FlashLoanId {
    * @param flParamGetterData
    */
   constructor(token0: EthAddress, token1: EthAddress, pool: EthAddress, amount0: uint256, amount1: uint256, flParamGetterAddr: EthAddress = getAddr('Empty'), flParamGetterData: bytes = []) {
-    super(
-      'FLUniV3',
-      getAddr('FLUniV3'),
-      ['address[]', 'uint256[]', 'uint256[]', 'address', 'address', 'bytes', 'bytes'],
-      [[token0, token1, pool], [amount0, amount1], [], getAddr('Empty'), flParamGetterAddr, flParamGetterData, []],
-    );
+    super({
+      flashLoanId: FLSource.UNIV3,
+      args: [[token0, token1, pool], [amount0, amount1], [], getAddr('Empty'), flParamGetterAddr, flParamGetterData, []],
+    });
   }
 }

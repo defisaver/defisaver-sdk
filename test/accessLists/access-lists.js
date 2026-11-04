@@ -28,7 +28,7 @@ const testInclusion = (recipe, accessList) => {
       return list;
     }, {});
     actions.forEach((action) => {
-        MockAccessLists[action.name]
+        (action.name === 'FLAction' ? [[dfs.getAddr('FLAction'), []]] : MockAccessLists[action.name])
           .map(([address, storageKeys]) => ({ address, storageKeys: storageKeys.map(num => padLeft(toHex(num), 64)) }))
           .forEach((entry) => {
             const storageAddrs = new Set(addressMapping[entry.address]);
