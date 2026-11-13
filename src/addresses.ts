@@ -372,7 +372,7 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0x8D56b267C6a3e5295EFAebC67Ac413483c885C05',
     FluidVaultT1Withdraw: '0x5673b9ab4A035C5C7474C344664Be91DaFafa17E',
     FluidVaultT1Supply: '0x0c6100209D8A0bb14CC7d18e45dA1bd1E7a3a187',
-    FluidView: '0xc8df052bD7A8d76a34c09e758Dff3c6298C0115c',
+    FluidView: '0xDd71a9cd4902a0BA417e609b986FA6A96D465C57',
     FluidClaim: '0x0bC0aeF7702C204DEF308994C84D8fBce676dB47',
 
     // Fluid DEX actions
@@ -573,7 +573,7 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0x19FF948437B7f1221173effC029739568F5f844a',
     FluidVaultT1Withdraw: '0xc13d93227d97197e5F1751d0a3e80c1080A5fa2B',
     FluidVaultT1Supply: '0xBCF0Dc5bb2C4434AD07369207904F5900d391b0B',
-    FluidView: '0x7d80a45eFA1F9033D5390fC8A3Ccd26eF1C8463e',
+    FluidView: '0xc63b7847202324E3F3746A2f1E275598e33D5404',
 
     // Fluid DEX actions
     FluidDexOpen: '0xA456f13d358B8B93bE6778be3244111E267C0AaC',
@@ -681,7 +681,7 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0xD4cEe5755e4f713B69f5Fc73068505ec6B9ee2a2',
     FluidVaultT1Withdraw: '0x26bE6a2EdE97aE826ed9DA8Fb79428037fe55cEB',
     FluidVaultT1Supply: '0x028ACA45244d4897ff80ef65ed0b735Bb0D4B0A5',
-    FluidView: '0x6cd4D6af4F292817eA2A2311F099dF26cd015028',
+    FluidView: '0x533C19808a1612c411fe8C1B5CBbee44bE1921B9',
 
     // Fluid DEX actions
     FluidDexOpen: '0x5eA8Da9679145D51F5eAEC8Bf2f42f47003A8799',
@@ -785,7 +785,7 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0xdeF8B05Ce194D50C376233C9C5530027f6180442',
     FluidVaultT1Withdraw: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
     FluidVaultT1Supply: '0x54D1b51d2d68CD0Dc877296527780CA6aff68a39',
-    FluidView: '0x27C0BAe2338cE28097122393faF90375B9395dd1',
+    FluidView: '0xBd2d2d4718C24B8D35168480553b1F5a11f9884b',
 
     // Fluid DEX actions
     FluidDexOpen: '0xF32d5d8D81f2662A02955CE537537088DF29daf5',
