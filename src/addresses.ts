@@ -573,7 +573,7 @@ export const actionAddresses = {
     FluidVaultT1Payback: '0x19FF948437B7f1221173effC029739568F5f844a',
     FluidVaultT1Withdraw: '0xc13d93227d97197e5F1751d0a3e80c1080A5fa2B',
     FluidVaultT1Supply: '0xBCF0Dc5bb2C4434AD07369207904F5900d391b0B',
-    FluidView: '0xf9e6d5568887ac8eC6fA33B7eefD2A176A958e71',
+    FluidView: '0x7d80a45eFA1F9033D5390fC8A3Ccd26eF1C8463e',
 
     // Fluid DEX actions
     FluidDexOpen: '0xA456f13d358B8B93bE6778be3244111E267C0AaC',
