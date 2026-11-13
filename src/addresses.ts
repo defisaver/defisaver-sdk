@@ -294,9 +294,6 @@ export const actionAddresses = {
     CurveUsdWithdraw: '0x54B8D984fc79B000D7B6F6E0f52CD054E965120f',
     CurveUsdLevCreate: '0xcbd9aFc2b7532b9eeB3A7EC4ea8Bb4320795d9Ad',
     CurveUsdRepay: '0x6F91E8671d17ecEE3D3fb17DcCA87E86B8D83807',
-    CurveUsdSwapper: '0xFA8c594b903651F97b27aCADEa83b720cfD7F80b',
-    CurveUsdSwapperTransient:
-             '0xcF0298592b8FCB3823d31Bb257b65afFCAcCb8b6',
     CurveUsdSelfLiquidate: '0x0B21996Fc90993f975D8279bE8ff2D34518da79C',
     CurveUsdSelfLiquidateWithColl:
              '0x7cE305FC2A18c6820a533AD418dC0A549aFeDcAF',
