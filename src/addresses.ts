@@ -28,8 +28,8 @@ export const actionAddresses = {
     HandleAuth: '0xfc2e2b37c73d5d43cf5fcbd80a4049b620d60eba',
 
     // Exchange
-    DFSSell: '0x901d383c37b30cefad9b6e2bbb0539a40e02c5f4',
-    DFSSellNoFee: '0x3845C89c861eBb0a0c856CEBB064Ee93678bdE8E',
+    DFSSell: '0xa144A66eEa5E92540f4fe52836B2C3d60De69e6a',
+    DFSSellNoFee: '0xfBfd56efC7f29cD9F5a9277C0B2B4FFbb9Edb2fb',
 
     // Sky
     SkyStake: '0x5803C399EE9f887C8b81075E4C185c448361c235',
@@ -109,7 +109,7 @@ export const actionAddresses = {
     LSVBorrow: '0x7dFB434527Fdb39854156cDBa9bF4799E36E7e82',
     LSVSupply: '0x17a3e39a1aA6d9BA1Ffd80Ae0E388cA064a8D28F',
     LSVPayback: '0x10749CE97583dBcEb54a083386CC8438C4e0FE65',
-    LSVSell: '0xE4D93b8d55D7456e85afc0fcF91AC085aF26bbBA',
+    LSVSell: '0x3c4913f8c295A9aF8BB77d3A5e7248e977D91781',
 
     // Morpho Aave V2
     MorphoAaveV2Borrow: '0xa85C3E41Bf9F75a381927e1Aa9b00f77C4631109',
@@ -418,7 +418,7 @@ export const actionAddresses = {
   },
   [NETWORKS.optimism.chainId]: {
     // Exchange
-    DFSSell: '0x9f234af5c10c136863a20865ba00b26951ab8269',
+    DFSSell: '0x28144F33fd68C6a84EDbd6CF9562F2E60E9698D5',
     DFSSellNoFee: '0x0000000000000000000000000000000000000000',
 
     // Basic
@@ -487,7 +487,7 @@ export const actionAddresses = {
   },
   [NETWORKS.arbitrum.chainId]: {
     // Exchange
-    DFSSell: '0x1393eef11454ab068dd5e0d0be5eb922603eef1a',
+    DFSSell: '0x9AaC4041a964Af951Eedc09eFe12Cc3f8C6D54c6',
     DFSSellNoFee: '0x0000000000000000000000000000000000000000',
 
     // Basic
@@ -603,7 +603,7 @@ export const actionAddresses = {
   },
   [NETWORKS.base.chainId]: {
     // Basic
-    DFSSell: '0xcd151d2bd3e129a4678f2116a9944b5aea0c860d',
+    DFSSell: '0xb59c13d7D3da6b5D9D5469335F73A8789A2e65e6',
     DFSSellNoFee: '0x0000000000000000000000000000000000000000',
     WrapEth: '0x491cc4AFbE0081C3464DeF1114ba27BE114b2401',
     UnwrapEth: '0xcF91546046F16B3c38b890CC508E280BEffa66b9',
@@ -705,7 +705,7 @@ export const actionAddresses = {
   },
   [NETWORKS.linea.chainId]: {
     // Basic
-    DFSSell: '0x0a9b2080c14daf008ae87c977dfdf5f5d6d0937f',
+    DFSSell: '0x741FcFC1D708CEA0d845Fd04de51022b6d00e060',
     DFSSellNoFee: '0x0000000000000000000000000000000000000000',
     WrapEth: '0xB8af168883D049FF9C811ab5B5DE179f3e7d6Fb7',
     UnwrapEth: '0xc5D0FF89e950a364207fC5be1b070170C874Dd87',
@@ -741,8 +741,8 @@ export const actionAddresses = {
   },
   [NETWORKS.plasma.chainId]: {
     // Basic
-    DFSSell: '0xAC17f651591f417934EeA04CF6629584Eb50A4bB',
-    DFSSellNoFee: '0x45314C4265a378427f204483b3eFb89981129085',
+    DFSSell: '0x7107A975120dd06efA446782c8c3A2A3FaDe0F41',
+    DFSSellNoFee: '0xA1C459e28b383a3107046efe165456B6de373052',
     WrapEth: '0x520E8b0573a03D26D0E39a409E85E28459e24C0E',
     UnwrapEth: '0x93A6E0dC4C4a6033922d386e4cbd9e31278A2BBa',
     SendToken: '0xa2ABA81e65543d18dd1a1E4A31Bc41C4a86453cf',
